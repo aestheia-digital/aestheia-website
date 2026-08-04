@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+  <defs>
+    <linearGradient id="aestheiaGradient" x1="4" y1="3" x2="20" y2="21" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5e17eb"/>
+      <stop offset=".55" stop-color="#0077dd"/>
+      <stop offset="1" stop-color="#00b0ff"/>
+    </linearGradient>
+  </defs>
+  <g stroke="url(#aestheiaGradient)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="9"/>
+    <path d="m15.7 8.3-2.2 5.2-5.2 2.2 2.2-5.2 5.2-2.2z"/>
+    <circle cx="12" cy="12" r=".7"/>
+  </g>
+</svg>
