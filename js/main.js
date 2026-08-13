@@ -1,7 +1,61 @@
+const themeStorageKey = "aestheia-theme";
+const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+const getStoredTheme = () => {
+  try {
+    const storedTheme = window.localStorage.getItem(themeStorageKey);
+    return storedTheme === "dark" || storedTheme === "light" ? storedTheme : null;
+  } catch {
+    return null;
+  }
+};
+
+const applyTheme = (theme) => {
+  document.documentElement.dataset.theme = theme;
+  document.documentElement.style.colorScheme = theme;
+
+  const themeToggle = document.querySelector(".theme-toggle");
+  if (themeToggle) {
+    const isDark = theme === "dark";
+    themeToggle.setAttribute("aria-pressed", String(isDark));
+    themeToggle.setAttribute("aria-label", isDark ? "Activer le mode clair" : "Activer le mode nuit");
+    themeToggle.setAttribute("title", isDark ? "Mode clair" : "Mode nuit");
+  }
+};
+
+applyTheme(getStoredTheme() || (systemTheme.matches ? "dark" : "light"));
+
 const navToggle = document.querySelector(".nav-toggle");
 const nav = document.querySelector(".main-nav");
 const navDropdown = document.querySelector(".nav-dropdown");
 const navDropdownToggle = document.querySelector(".nav-dropdown-toggle");
+
+if (navToggle && !document.querySelector(".theme-toggle")) {
+  const themeToggle = document.createElement("button");
+  themeToggle.className = "theme-toggle";
+  themeToggle.type = "button";
+  themeToggle.innerHTML = '<span class="theme-toggle-icon" aria-hidden="true"></span>';
+  navToggle.before(themeToggle);
+  applyTheme(document.documentElement.dataset.theme);
+
+  themeToggle.addEventListener("click", () => {
+    const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+
+    try {
+      window.localStorage.setItem(themeStorageKey, nextTheme);
+    } catch {
+      // The selected theme still applies for the current page when storage is unavailable.
+    }
+
+    applyTheme(nextTheme);
+  });
+}
+
+systemTheme.addEventListener("change", (event) => {
+  if (!getStoredTheme()) {
+    applyTheme(event.matches ? "dark" : "light");
+  }
+});
 
 if (navToggle && nav) {
   navToggle.addEventListener("click", () => {
