@@ -255,49 +255,6 @@ strong {
   cursor: pointer;
 }
 
-.theme-toggle {
-  position: relative;
-  width: 40px;
-  height: 40px;
-  flex: 0 0 40px;
-  margin-left: auto;
-  border: 1px solid var(--color-border);
-  border-radius: 50%;
-  color: var(--color-primary);
-  background: var(--color-bg);
-  cursor: pointer;
-}
-
-.theme-toggle-icon,
-.theme-toggle-icon::before {
-  position: absolute;
-  border-radius: 50%;
-  content: "";
-}
-
-.theme-toggle-icon {
-  inset: 10px;
-  border: 2px solid currentColor;
-  transition: transform 0.2s ease;
-}
-
-.theme-toggle-icon::before {
-  top: -4px;
-  right: -4px;
-  width: 14px;
-  height: 14px;
-  background: var(--color-bg);
-  transition: opacity 0.2s ease;
-}
-
-.theme-toggle[aria-pressed="true"] .theme-toggle-icon {
-  transform: scale(0.78);
-}
-
-.theme-toggle[aria-pressed="true"] .theme-toggle-icon::before {
-  opacity: 0;
-}
-
 .nav-toggle span {
   display: block;
   width: 18px;
@@ -2824,7 +2781,8 @@ h3 {
   }
 }
 
-:root[data-theme="dark"] {
+@media (prefers-color-scheme: dark) {
+  :root {
     color-scheme: dark;
     --color-primary: #eef2ff;
     --color-bg: #0b1028;
@@ -2840,142 +2798,141 @@ h3 {
     --shadow-soft: 0 16px 38px rgba(2, 5, 18, 0.3);
   }
 
-:root[data-theme="dark"] .site-header {
+  .site-header {
     background: rgba(9, 14, 36, 0.94);
     border-bottom-color: rgba(155, 124, 255, 0.24);
   }
 
-:root[data-theme="dark"] .main-nav,
-:root[data-theme="dark"] .nav-dropdown-menu {
+  .main-nav,
+  .nav-dropdown-menu {
     background: #0d1330;
   }
 
-:root[data-theme="dark"] .nav-toggle,
-:root[data-theme="dark"] .theme-toggle {
+  .nav-toggle {
     background: #11183d;
   }
 
-:root[data-theme="dark"] .skip-link {
+  .skip-link {
     color: #eef2ff;
     background: #151c46;
   }
 
-:root[data-theme="dark"] .section-soft {
+  .section-soft {
     background:
       radial-gradient(circle at 90% 18%, rgba(94, 23, 235, 0.14), transparent 34%),
       #11183d;
   }
 
-:root[data-theme="dark"] .section-mist {
+  .section-mist {
     background:
       radial-gradient(circle at 12% 84%, rgba(94, 23, 235, 0.12), transparent 34%),
       linear-gradient(135deg, #11183d 0%, #0d1330 52%, #151c46 100%);
   }
 
-:root[data-theme="dark"] .positioning-section,
-:root[data-theme="dark"] .location-section {
+  .positioning-section,
+  .location-section {
     background:
       radial-gradient(circle at 88% 16%, rgba(94, 23, 235, 0.16), transparent 34%),
       radial-gradient(circle at 12% 82%, rgba(0, 176, 255, 0.1), transparent 36%),
       linear-gradient(135deg, #0b1028 0%, #11183d 48%, #151c46 100%);
   }
 
-:root[data-theme="dark"] .section-warm {
+  .section-warm {
     background: linear-gradient(135deg, #0d1330 0%, #11183d 52%, #171943 100%);
   }
 
-:root[data-theme="dark"] .positioning-section .card,
-:root[data-theme="dark"] .offer-card,
-:root[data-theme="dark"] .card,
-:root[data-theme="dark"] .sector-card,
-:root[data-theme="dark"] .conversion-card,
-:root[data-theme="dark"] .legal-box,
-:root[data-theme="dark"] .behind-media,
-:root[data-theme="dark"] .quote-box,
-:root[data-theme="dark"] .process-step,
-:root[data-theme="dark"] .reassurance-note,
-:root[data-theme="dark"] .faq-item,
-:root[data-theme="dark"] .resource-card,
-:root[data-theme="dark"] .breadcrumb,
-:root[data-theme="dark"] .service-row > div,
-:root[data-theme="dark"] .contact-option {
+  .positioning-section .card,
+  .offer-card,
+  .card,
+  .sector-card,
+  .conversion-card,
+  .legal-box,
+  .behind-media,
+  .quote-box,
+  .process-step,
+  .reassurance-note,
+  .faq-item,
+  .resource-card,
+  .breadcrumb,
+  .service-row > div,
+  .contact-option {
     background: #131a3d;
     border-color: #2f3a68;
     box-shadow: var(--shadow-soft);
   }
 
-:root[data-theme="dark"] .sector-card:hover,
-:root[data-theme="dark"] .sector-side-band:hover {
+  .sector-card:hover,
+  .sector-side-band:hover {
     border-color: rgba(155, 124, 255, 0.62);
     box-shadow: 0 22px 48px rgba(2, 5, 18, 0.42);
   }
 
-:root[data-theme="dark"] .sector-card img {
+  .sector-card img {
     background:
       radial-gradient(circle at 85% 18%, rgba(94, 23, 235, 0.16), transparent 34%),
       linear-gradient(135deg, #11183d 0%, #151a3d 50%, #151c46 100%);
   }
 
-:root[data-theme="dark"] .sector-side-band {
+  .sector-side-band {
     background: linear-gradient(135deg, #131a3d 0%, #171943 48%, #151c46 100%);
     border-color: #2f3a68;
   }
 
-:root[data-theme="dark"] .sector-side-band-media {
+  .sector-side-band-media {
     background: #151c46;
     border-color: #2f3a68;
   }
 
-:root[data-theme="dark"] .resource-meta,
-:root[data-theme="dark"] .article-meta,
-:root[data-theme="dark"] .breadcrumb ol {
+  .resource-meta,
+  .article-meta,
+  .breadcrumb ol {
     color: #c7cee9;
   }
 
-:root[data-theme="dark"] .breadcrumb li:not(:last-child)::after {
+  .breadcrumb li:not(:last-child)::after {
     color: rgba(199, 206, 233, 0.58);
   }
 
-:root[data-theme="dark"] .btn-secondary,
-:root[data-theme="dark"] .location-map-link {
+  .btn-secondary,
+  .location-map-link {
     color: #eef2ff;
     background: #151c46;
     border-color: #3a4779;
   }
 
-:root[data-theme="dark"] .btn-secondary:hover {
+  .btn-secondary:hover {
     color: #eef2ff;
     background: #1a2352;
   }
 
-:root[data-theme="dark"] .location-photo,
-:root[data-theme="dark"] .location-map {
+  .location-photo,
+  .location-map {
     border-color: #2f3a68;
     box-shadow: var(--shadow-soft);
   }
 
-:root[data-theme="dark"] .location-map {
+  .location-map {
     background: #11183d;
   }
 
-:root[data-theme="dark"] .location-map iframe {
+  .location-map iframe {
     filter: invert(90%) hue-rotate(180deg) saturate(0.72) contrast(0.9);
   }
 
-:root[data-theme="dark"] .site-footer {
+  .site-footer {
     background: #080d22;
   }
 
-:root[data-theme="dark"] .main-nav a:focus-visible,
-:root[data-theme="dark"] .nav-dropdown-toggle:focus-visible,
-:root[data-theme="dark"] .nav-toggle:focus-visible,
-:root[data-theme="dark"] .theme-toggle:focus-visible,
-:root[data-theme="dark"] .btn:focus-visible,
-:root[data-theme="dark"] .text-link:focus-visible,
-:root[data-theme="dark"] .subtle-link:focus-visible,
-:root[data-theme="dark"] .breadcrumb a:focus-visible,
-:root[data-theme="dark"] .faq-accordion-item summary:focus-visible {
+  .main-nav a:focus-visible,
+  .nav-dropdown-toggle:focus-visible,
+  .nav-toggle:focus-visible,
+  .btn:focus-visible,
+  .text-link:focus-visible,
+  .subtle-link:focus-visible,
+  .breadcrumb a:focus-visible,
+  .faq-accordion-item summary:focus-visible {
     outline: 2px solid #00b0ff;
     outline-offset: 4px;
     border-radius: 4px;
   }
+}
