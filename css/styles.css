@@ -2092,6 +2092,85 @@ h3 {
   overflow-wrap: anywhere;
 }
 
+.location-heading .location-contact-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.7rem 1.4rem;
+  max-width: 100%;
+}
+
+.location-heading .location-contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  white-space: nowrap;
+}
+
+.location-contact-icon {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+  color: currentColor;
+}
+
+.location-contact-icon-email {
+  border: 1.5px solid currentColor;
+  border-radius: 2px;
+}
+
+.location-contact-icon-email::before,
+.location-contact-icon-email::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  width: 9px;
+  height: 1.5px;
+  background: currentColor;
+}
+
+.location-contact-icon-email::before {
+  left: 0;
+  transform: rotate(33deg);
+  transform-origin: left center;
+}
+
+.location-contact-icon-email::after {
+  right: 0;
+  transform: rotate(-33deg);
+  transform-origin: right center;
+}
+
+.location-contact-icon-phone {
+  width: 10px;
+  margin-inline: 3px;
+  border: 1.5px solid currentColor;
+  border-radius: 3px;
+}
+
+.location-contact-icon-phone::before,
+.location-contact-icon-phone::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  background: currentColor;
+  transform: translateX(-50%);
+}
+
+.location-contact-icon-phone::before {
+  top: 2px;
+  width: 4px;
+  height: 1px;
+}
+
+.location-contact-icon-phone::after {
+  bottom: 1px;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+}
+
 .location-grid {
   display: grid;
   grid-template-columns: 1fr;
