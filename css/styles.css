@@ -1254,6 +1254,78 @@ h3 {
   font-weight: 600;
 }
 
+.medicine-page .medicine-solutions-grid,
+.medicine-page .medicine-method-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.2rem;
+  margin: 2rem 0 0;
+  padding: 0;
+}
+
+.medicine-page .medicine-solution-card,
+.medicine-page .medicine-method-card {
+  min-width: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.medicine-page .medicine-card-icon {
+  display: block;
+  width: 28px;
+  height: 28px;
+  margin-bottom: 0.75rem;
+  object-fit: contain;
+}
+
+.medicine-page .medicine-card-number {
+  display: inline-flex;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.85rem;
+  border: 1px solid rgba(94, 23, 235, 0.2);
+  border-radius: 50%;
+  background: var(--color-soft);
+  color: var(--color-accent);
+  font-family: var(--font-structure);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.medicine-page .medicine-solution-card h3 {
+  margin-bottom: 0.8rem;
+}
+
+.medicine-page .medicine-solution-card > p:not(.medicine-card-benefit) {
+  margin-bottom: 0.85rem;
+}
+
+.medicine-page .medicine-card-benefit {
+  width: 100%;
+  margin: auto 0 0;
+  padding-top: 1.15rem;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-primary);
+  font-style: normal;
+}
+
+.medicine-page .medicine-card-benefit strong {
+  color: var(--color-accent);
+}
+
+.medicine-page .medicine-method-grid {
+  list-style: none;
+}
+
+.medicine-page .medicine-method-card {
+  gap: 0;
+  font-size: 0.96rem;
+}
+
 .sector-grid {
   margin-top: 2rem;
   display: grid;
@@ -2335,6 +2407,17 @@ h3 {
     font-size: 1.05rem;
   }
 
+  .medicine-page .medicine-solutions-grid,
+  .medicine-page .medicine-method-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .medicine-page .medicine-method-card:last-child {
+    width: calc(50% - 0.6rem);
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+
   .article-shell {
     width: min(760px, calc(100% - 40px));
   }
@@ -2509,6 +2592,23 @@ h3 {
   .card-title-pictogram {
     width: 24px;
     height: 24px;
+  }
+
+  .medicine-page .medicine-method-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .medicine-page .medicine-method-card {
+    grid-column: span 2;
+  }
+
+  .medicine-page .medicine-method-card:nth-child(4) {
+    grid-column: 2 / span 2;
+  }
+
+  .medicine-page .medicine-method-card:last-child {
+    width: auto;
+    grid-column: 4 / span 2;
   }
 
   .nav-shell {
