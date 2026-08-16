@@ -2076,6 +2076,7 @@ h3 {
 }
 
 .location-contact-icon {
+  --location-contact-icon-gradient: linear-gradient(135deg, #0077dd 0%, #00b0ff 100%);
   position: relative;
   width: 16px;
   height: 16px;
@@ -2137,6 +2138,19 @@ h3 {
   width: 2px;
   height: 2px;
   border-radius: 50%;
+}
+
+.location-contact-icon-email,
+.location-contact-icon-phone {
+  border-color: transparent;
+  border-image: var(--location-contact-icon-gradient) 1;
+}
+
+.location-contact-icon-email::before,
+.location-contact-icon-email::after,
+.location-contact-icon-phone::before,
+.location-contact-icon-phone::after {
+  background: var(--location-contact-icon-gradient);
 }
 
 .location-grid {
