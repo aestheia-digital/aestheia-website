@@ -2697,6 +2697,10 @@ h3 {
     align-self: stretch;
   }
 
+  .medicine-page .medicine-method-card .card-title-with-icon {
+    column-gap: 0.5rem;
+  }
+
   .medicine-page .medicine-solution-card .card-title-with-icon {
     min-height: 4rem;
   }
