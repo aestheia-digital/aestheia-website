@@ -1,0 +1,202 @@
+(function () {
+  "use strict";
+
+  const CONSENT_POLICY_VERSION = "2026-08-17";
+  const CONSENT_DURATION_DAYS = 183;
+  const CONSENT_STORAGE_KEY = "aestheia_consent";
+  const GA_MEASUREMENT_ID = "G-66HBEWJ4CB";
+  const CONSENT_CATEGORIES = Object.freeze(["analytics", "externalContent"]);
+  const COOKIE_POLICY_URL = "/gestion-cookies.html";
+
+  let preferences = { analytics: false, externalContent: false };
+  let lastFocusedElement = null;
+
+  const consentMarkup = `
+    <section class="consent-banner" data-consent-banner role="region" aria-label="Choix relatifs aux cookies" hidden>
+      <div class="consent-banner__content">
+        <div>
+          <h2>Vos choix en matière de cookies</h2>
+          <p>AesthéIA utilise des cookies de mesure d’audience pour comprendre la fréquentation du site et améliorer ses contenus. Certains contenus externes, comme Google Maps, peuvent également déposer des traceurs. Vous pouvez accepter, refuser ou personnaliser vos choix.</p>
+          <a href="${COOKIE_POLICY_URL}">Consulter la gestion des cookies</a>
+        </div>
+        <div class="consent-actions" aria-label="Actions de consentement">
+          <button class="consent-button consent-button--primary" type="button" data-consent-accept>Tout accepter</button>
+          <button class="consent-button consent-button--primary" type="button" data-consent-refuse>Tout refuser</button>
+          <button class="consent-button" type="button" data-consent-customize>Personnaliser</button>
+        </div>
+      </div>
+    </section>
+    <div class="consent-dialog-backdrop" data-consent-dialog-backdrop hidden>
+      <section class="consent-dialog" data-consent-dialog role="dialog" aria-modal="true" aria-labelledby="consent-dialog-title" tabindex="-1">
+        <div class="consent-dialog__header">
+          <h2 id="consent-dialog-title">Personnaliser mes choix</h2>
+          <button class="consent-dialog__close" type="button" data-consent-close aria-label="Fermer le panneau de personnalisation">×</button>
+        </div>
+        <p>Choisissez librement les services facultatifs. Vous pourrez modifier ces choix à tout moment.</p>
+        <div class="consent-category">
+          <div><strong>Cookies strictement nécessaires</strong><p>Ils mémorisent vos choix et assurent le fonctionnement du site.</p></div>
+          <input type="checkbox" checked disabled aria-label="Cookies strictement nécessaires, toujours activés">
+        </div>
+        <label class="consent-category">
+          <span><strong>Mesure d’audience – Google Analytics</strong><span>Permet de comprendre la fréquentation du site.</span></span>
+          <input type="checkbox" data-consent-analytics>
+        </label>
+        <label class="consent-category">
+          <span><strong>Contenus externes – Google Maps</strong><span>Autorise l’affichage de la carte intégrée.</span></span>
+          <input type="checkbox" data-consent-external>
+        </label>
+        <div class="consent-actions">
+          <button class="consent-button consent-button--primary" type="button" data-consent-save>Enregistrer mes choix</button>
+        </div>
+      </section>
+    </div>`;
+
+  function readStoredConsent() {
+    try {
+      const value = JSON.parse(localStorage.getItem(CONSENT_STORAGE_KEY));
+      const chosenAt = value && Date.parse(value.chosenAt);
+      const expiresAt = chosenAt + CONSENT_DURATION_DAYS * 86400000;
+      if (!value || value.version !== CONSENT_POLICY_VERSION || !chosenAt || Date.now() >= expiresAt) return null;
+      return {
+        analytics: value.analytics === true,
+        externalContent: value.externalContent === true,
+      };
+    } catch (_) {
+      return null;
+    }
+  }
+
+  function storeConsent(nextPreferences) {
+    localStorage.setItem(CONSENT_STORAGE_KEY, JSON.stringify({
+      version: CONSENT_POLICY_VERSION,
+      chosenAt: new Date().toISOString(),
+      analytics: nextPreferences.analytics,
+      externalContent: nextPreferences.externalContent,
+    }));
+  }
+
+  function deleteAnalyticsCookies() {
+    document.cookie.split(";").forEach((entry) => {
+      const name = entry.split("=")[0].trim();
+      if (name === "_ga" || name.startsWith("_ga_") || name === "_gid" || name === "_gat") {
+        ["", ".aestheia.fr", "aestheia.fr"].forEach((domain) => {
+          document.cookie = `${name}=; Max-Age=0; path=/;${domain ? ` domain=${domain};` : ""} SameSite=Lax`;
+        });
+      }
+    });
+  }
+
+  function disableAnalytics() {
+    window[`ga-disable-${GA_MEASUREMENT_ID}`] = true;
+    document.querySelectorAll("script[data-aestheia-ga]").forEach((script) => script.remove());
+    deleteAnalyticsCookies();
+  }
+
+  function enableAnalytics() {
+    window[`ga-disable-${GA_MEASUREMENT_ID}`] = false;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+    if (!document.querySelector("script[data-aestheia-ga]")) {
+      const script = document.createElement("script");
+      script.async = true;
+      script.dataset.aestheiaGa = "true";
+      script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+      document.head.appendChild(script);
+    }
+    window.gtag("js", new Date());
+    window.gtag("config", GA_MEASUREMENT_ID, {
+      page_location: `${location.origin}${location.pathname}`,
+      page_referrer: document.referrer ? new URL(document.referrer).origin + new URL(document.referrer).pathname : "",
+    });
+  }
+
+  function updateMaps() {
+    document.querySelectorAll("[data-consent-map]").forEach((map) => {
+      const iframe = map.querySelector("iframe[data-map-src]");
+      const placeholder = map.querySelector("[data-map-placeholder]");
+      if (preferences.externalContent) {
+        if (!iframe) {
+          const newIframe = document.createElement("iframe");
+          newIframe.title = map.dataset.mapTitle;
+          newIframe.dataset.mapSrc = map.dataset.mapSrc;
+          newIframe.src = map.dataset.mapSrc;
+          newIframe.loading = "lazy";
+          newIframe.referrerPolicy = "no-referrer-when-downgrade";
+          newIframe.allowFullscreen = true;
+          map.prepend(newIframe);
+        }
+        if (placeholder) placeholder.hidden = true;
+      } else {
+        if (iframe) iframe.remove();
+        if (placeholder) placeholder.hidden = false;
+      }
+    });
+  }
+
+  function applyPreferences() {
+    preferences.analytics ? enableAnalytics() : disableAnalytics();
+    updateMaps();
+    document.dispatchEvent(new CustomEvent("aestheia:consentchange", { detail: { ...preferences } }));
+  }
+
+  function closePreferences() {
+    document.querySelector("[data-consent-dialog-backdrop]").hidden = true;
+    document.body.classList.remove("consent-dialog-open");
+    lastFocusedElement?.focus();
+  }
+
+  function openPreferences(options) {
+    lastFocusedElement = document.activeElement;
+    const analytics = document.querySelector("[data-consent-analytics]");
+    const external = document.querySelector("[data-consent-external]");
+    analytics.checked = preferences.analytics;
+    external.checked = options && options.suggestExternal ? true : preferences.externalContent;
+    document.querySelector("[data-consent-dialog-backdrop]").hidden = false;
+    document.body.classList.add("consent-dialog-open");
+    document.querySelector("[data-consent-dialog]").focus();
+  }
+
+  function choose(nextPreferences) {
+    preferences = nextPreferences;
+    storeConsent(preferences);
+    document.querySelector("[data-consent-banner]").hidden = true;
+    closePreferences();
+    applyPreferences();
+  }
+
+  function trapDialogFocus(event) {
+    const dialog = document.querySelector("[data-consent-dialog]");
+    if (event.key === "Escape") return closePreferences();
+    if (event.key !== "Tab") return;
+    const focusable = [...dialog.querySelectorAll("button, input:not([disabled]), a[href]")];
+    const first = focusable[0];
+    const last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+    if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+  }
+
+  document.body.insertAdjacentHTML("beforeend", consentMarkup);
+  const storedConsent = readStoredConsent();
+  if (storedConsent) preferences = storedConsent;
+  document.querySelector("[data-consent-banner]").hidden = Boolean(storedConsent);
+  applyPreferences();
+
+  document.querySelector("[data-consent-accept]").addEventListener("click", () => choose({ analytics: true, externalContent: true }));
+  document.querySelector("[data-consent-refuse]").addEventListener("click", () => choose({ analytics: false, externalContent: false }));
+  document.querySelector("[data-consent-customize]").addEventListener("click", () => openPreferences());
+  document.querySelector("[data-consent-save]").addEventListener("click", () => choose({
+    analytics: document.querySelector("[data-consent-analytics]").checked,
+    externalContent: document.querySelector("[data-consent-external]").checked,
+  }));
+  document.querySelector("[data-consent-close]").addEventListener("click", closePreferences);
+  document.querySelector("[data-consent-dialog]").addEventListener("keydown", trapDialogFocus);
+  document.querySelector("[data-consent-dialog-backdrop]").addEventListener("click", (event) => {
+    if (event.target.matches("[data-consent-dialog-backdrop]")) closePreferences();
+  });
+  document.addEventListener("click", (event) => {
+    if (event.target.closest("[data-manage-cookies]")) { event.preventDefault(); openPreferences(); }
+    if (event.target.closest("[data-enable-map]")) { event.preventDefault(); openPreferences({ suggestExternal: true }); }
+  });
+
+  window.AestheiaConsent = Object.freeze({ openPreferences, categories: CONSENT_CATEGORIES });
+})();
