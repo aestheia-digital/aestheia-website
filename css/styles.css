@@ -2694,6 +2694,19 @@ h3 {
 
   .medicine-page .medicine-solutions-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: stretch;
+  }
+
+  .medicine-page .medicine-solution-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-self: stretch;
+  }
+
+  .medicine-page .medicine-card-benefit {
+    height: 11rem;
+    margin-top: auto;
   }
 
   .medicine-page .medicine-method-grid {
