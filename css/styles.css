@@ -1314,6 +1314,66 @@ h3 {
   margin: 0;
 }
 
+.institutes-page .institutes-solutions-grid,
+.institutes-page .institutes-method-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: stretch;
+  gap: 1.2rem;
+  margin: 2rem 0 0;
+  padding: 0;
+}
+
+.institutes-page .institutes-solution-card,
+.institutes-page .institutes-method-card {
+  min-width: 0;
+  height: 100%;
+}
+
+.institutes-page .institutes-solution-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.institutes-page .institutes-solution-card .card-title-with-icon {
+  margin-bottom: 1rem;
+}
+
+.institutes-page .institutes-card-copy {
+  flex: 1;
+}
+
+.institutes-page .institutes-card-copy p {
+  margin-bottom: 0.85rem;
+}
+
+.institutes-page .institutes-card-benefit {
+  width: 100%;
+  margin: auto 0 0;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-primary);
+  font-style: normal;
+}
+
+.institutes-page .institutes-card-benefit strong {
+  color: var(--color-accent);
+}
+
+.institutes-page .institutes-method-grid {
+  list-style: none;
+}
+
+.institutes-page .institutes-method-card {
+  display: flex;
+  font-size: 0.96rem;
+}
+
+.institutes-page .institutes-method-card .card-title-with-icon {
+  width: 100%;
+  margin: 0;
+}
+
 .sector-grid {
   margin-top: 2rem;
   display: grid;
@@ -2493,6 +2553,11 @@ h3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .institutes-page .institutes-solutions-grid,
+  .institutes-page .institutes-method-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .article-shell {
     width: min(760px, calc(100% - 40px));
   }
@@ -2702,6 +2767,38 @@ h3 {
   }
 
   .medicine-page .medicine-solution-card .card-title-with-icon {
+    min-height: 4rem;
+  }
+
+  .institutes-page .institutes-solutions-grid,
+  .institutes-page .institutes-method-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: stretch;
+  }
+
+  .institutes-page .institutes-solution-card {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 3;
+    row-gap: 0;
+    height: 100%;
+    align-self: stretch;
+  }
+
+  .institutes-page .institutes-card-benefit {
+    margin-top: 0;
+  }
+
+  .institutes-page .institutes-method-card {
+    height: 100%;
+    align-self: stretch;
+  }
+
+  .institutes-page .institutes-method-card .card-title-with-icon {
+    column-gap: 0.5rem;
+  }
+
+  .institutes-page .institutes-solution-card .card-title-with-icon {
     min-height: 4rem;
   }
 
