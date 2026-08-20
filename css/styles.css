@@ -1374,6 +1374,77 @@ h3 {
   margin: 0;
 }
 
+.institutes-page .institutes-editorial-list {
+  margin-top: 2.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.institutes-page .institutes-editorial-chapter {
+  position: relative;
+  padding: 2.6rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.institutes-page .institutes-editorial-heading {
+  position: relative;
+  min-height: 5rem;
+  padding-right: 4.5rem;
+}
+
+.institutes-page .institutes-editorial-number {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: auto;
+  transform: translateY(-50%);
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  font-size: 4.4rem;
+  font-weight: 400;
+  line-height: 0.75;
+  opacity: 0.14;
+}
+
+.institutes-page .institutes-editorial-heading h3 {
+  position: relative;
+  align-items: flex-start;
+  column-gap: 0.85rem;
+  margin: 0;
+  color: var(--color-primary);
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+}
+
+.institutes-page .institutes-editorial-heading .title-pictogram {
+  width: 28px;
+  height: 28px;
+  margin-top: 0.05em;
+}
+
+.institutes-page .institutes-editorial-content {
+  margin-top: 1.35rem;
+}
+
+.institutes-page .institutes-editorial-content > p:not(.institutes-editorial-benefit) {
+  max-width: 760px;
+}
+
+.institutes-page .institutes-editorial-benefit {
+  max-width: 760px;
+  margin: 1.5rem 0 0;
+  padding: 1rem 1.2rem;
+  border-left: 3px solid #00b0ff;
+  border-radius: 0 12px 12px 0;
+  background: linear-gradient(135deg, rgba(0, 176, 255, 0.08), rgba(94, 23, 235, 0.04));
+  color: var(--color-primary);
+}
+
+.institutes-page .institutes-editorial-benefit strong {
+  color: var(--color-accent);
+}
+
 .sector-grid {
   margin-top: 2rem;
   display: grid;
@@ -2558,6 +2629,32 @@ h3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .institutes-page .institutes-editorial-chapter {
+    display: grid;
+    grid-template-columns: minmax(210px, 0.75fr) minmax(0, 1.7fr);
+    gap: 3rem;
+    align-items: start;
+    padding: 3.4rem 0;
+  }
+
+  .institutes-page .institutes-editorial-heading {
+    min-height: 100%;
+    padding: 0 0 7.25rem;
+  }
+
+  .institutes-page .institutes-editorial-number {
+    top: auto;
+    right: 0;
+    bottom: 0;
+    transform: none;
+    font-size: 7.6rem;
+    opacity: 0.13;
+  }
+
+  .institutes-page .institutes-editorial-content {
+    margin-top: 0;
+  }
+
   .article-shell {
     width: min(760px, calc(100% - 40px));
   }
@@ -2800,6 +2897,26 @@ h3 {
 
   .institutes-page .institutes-solution-card .card-title-with-icon {
     min-height: 4rem;
+  }
+
+  .institutes-page .institutes-editorial-chapter {
+    grid-template-columns: minmax(250px, 0.72fr) minmax(0, 1.65fr);
+    gap: 5rem;
+    padding: 4.25rem 0;
+  }
+
+  .institutes-page .institutes-editorial-heading h3 {
+    font-size: 1.5rem;
+  }
+
+  .institutes-page .institutes-editorial-number {
+    right: 0.35rem;
+    bottom: 0.25rem;
+    font-size: 8.6rem;
+  }
+
+  .institutes-page .institutes-editorial-content {
+    font-size: 1.03rem;
   }
 
   .nav-shell {
