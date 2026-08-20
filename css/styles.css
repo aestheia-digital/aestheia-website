@@ -2553,9 +2553,28 @@ h3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .institutes-page .institutes-solutions-grid,
+  .institutes-page .institutes-solutions-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .institutes-page .institutes-method-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .institutes-page .institutes-solution-card {
+    display: grid;
+    grid-template-columns: minmax(190px, 0.8fr) minmax(0, 1.4fr);
+    column-gap: 1.5rem;
+    align-items: start;
+  }
+
+  .institutes-page .institutes-solution-card .card-title-with-icon {
+    margin: 0;
+  }
+
+  .institutes-page .institutes-card-benefit {
+    grid-column: 1 / -1;
+    margin-top: 0.35rem;
   }
 
   .article-shell {
@@ -2770,7 +2789,10 @@ h3 {
     min-height: 4rem;
   }
 
-  .institutes-page .institutes-solutions-grid,
+  .institutes-page .institutes-solutions-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .institutes-page .institutes-method-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     align-items: stretch;
@@ -2778,15 +2800,23 @@ h3 {
 
   .institutes-page .institutes-solution-card {
     display: grid;
-    grid-template-rows: subgrid;
-    grid-row: span 3;
-    row-gap: 0;
-    height: 100%;
-    align-self: stretch;
+    grid-template-columns: minmax(220px, 0.8fr) minmax(0, 1.7fr) minmax(260px, 1fr);
+    grid-template-rows: auto;
+    grid-row: auto;
+    column-gap: 2rem;
+    align-items: start;
+    padding: 1.75rem;
   }
 
   .institutes-page .institutes-card-benefit {
-    margin-top: 0;
+    grid-column: auto;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0 0 0 2rem;
+    border-top: 0;
+    border-left: 1px solid var(--color-border);
   }
 
   .institutes-page .institutes-method-card {
@@ -2799,7 +2829,8 @@ h3 {
   }
 
   .institutes-page .institutes-solution-card .card-title-with-icon {
-    min-height: 4rem;
+    min-height: 0;
+    margin: 0;
   }
 
   .nav-shell {
