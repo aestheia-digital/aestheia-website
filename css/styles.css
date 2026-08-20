@@ -1674,11 +1674,13 @@ h3 {
   font-weight: 500;
 }
 
-.pme-page .sector-method-card .card-title-with-icon {
+.pme-page .sector-method-card .card-title-with-icon,
+.spa-page .sector-method-card .card-title-with-icon {
   color: var(--color-primary);
 }
 
-.pme-page .sector-method-card .card-title-with-icon strong {
+.pme-page .sector-method-card .card-title-with-icon strong,
+.spa-page .sector-method-card .card-title-with-icon strong {
   color: var(--color-accent);
   font-weight: 600;
 }
