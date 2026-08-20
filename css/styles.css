@@ -1998,15 +1998,16 @@ h3 {
 
 .home-process .process-step::after {
   position: absolute;
-  right: 0.65rem;
-  bottom: 0.2rem;
+  top: 50%;
+  right: 0.8rem;
   z-index: 0;
+  transform: translateY(-35%);
   color: var(--color-accent);
   font-family: var(--font-display);
   font-size: 4.8rem;
   font-weight: 400;
   line-height: 0.8;
-  opacity: 0.09;
+  opacity: 0.055;
   pointer-events: none;
 }
 
