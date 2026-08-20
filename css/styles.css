@@ -1395,6 +1395,8 @@ h3 {
 }
 
 .institutes-page .institutes-reality-metric-value {
+  display: block;
+  padding: 0.08em 0.04em 0.02em 0;
   color: var(--color-accent);
   background: var(--gradient-ia);
   -webkit-background-clip: text;
@@ -1402,7 +1404,7 @@ h3 {
   font-family: var(--font-display);
   font-size: clamp(3.6rem, 15vw, 5rem);
   font-weight: 400;
-  line-height: 0.92;
+  line-height: 1;
   letter-spacing: -0.045em;
   -webkit-text-fill-color: transparent;
 }
