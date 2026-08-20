@@ -2004,10 +2004,10 @@ h3 {
   transform: translateY(-35%);
   color: var(--color-accent);
   font-family: var(--font-display);
-  font-size: 4.8rem;
+  font-size: clamp(5.6rem, 8vw, 7rem);
   font-weight: 400;
   line-height: 0.8;
-  opacity: 0.055;
+  opacity: 0.08;
   pointer-events: none;
 }
 
