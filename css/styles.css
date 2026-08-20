@@ -134,7 +134,7 @@ strong {
 }
 
 .brand-ia {
-  color: #00b0ff;
+  color: var(--color-accent);
   background: var(--gradient-ia);
   -webkit-background-clip: text;
   background-clip: text;
@@ -1402,7 +1402,7 @@ h3 {
   font-size: 4.4rem;
   font-weight: 400;
   line-height: 0.75;
-  opacity: 0.18;
+  opacity: 0.14;
 }
 
 .institutes-page .institutes-editorial-heading h3 {
@@ -2648,7 +2648,7 @@ h3 {
     bottom: 0;
     transform: none;
     font-size: 7.6rem;
-    opacity: 0.16;
+    opacity: 0.13;
   }
 
   .institutes-page .institutes-editorial-content {
