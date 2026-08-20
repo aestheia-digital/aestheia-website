@@ -4,12 +4,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Gestion des cookies - AesthéIA</title>
-    <meta name="description" content="Cette page précisera la gestion des cookies du site AesthéIA.">
+    <meta name="description" content="Comprendre et gérer les cookies et services externes utilisés par AesthéIA.">
     <link rel="icon" href="assets/images/brand/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/consent-manager.css">
   </head>
   <body>
     <a class="skip-link" href="#contenu">Aller au contenu</a>
@@ -47,7 +48,40 @@
       <section class="section">
         <div class="container legal-box">
           <h1>Gestion des cookies</h1>
-          <p>Cette page précisera la gestion des cookies du site AesthéIA.</p>
+          <p><strong>Dernière mise à jour : 17 août 2026.</strong></p>
+          <p>Un cookie est un petit fichier enregistré par un site ou un service tiers sur votre appareil. Il peut notamment conserver un choix ou permettre de mesurer l’utilisation d’un site.</p>
+
+          <h2>Pourquoi AesthéIA utilise des traceurs</h2>
+          <p>AesthéIA utilise un stockage local strictement nécessaire pour mémoriser vos préférences. Avec votre accord uniquement, le site peut aussi mesurer anonymement sa fréquentation avec Google Analytics 4 et afficher une carte Google Maps. Ces informations aident AesthéIA à comprendre l’utilisation du site et à améliorer ses contenus.</p>
+
+          <h2>Vos choix par catégorie</h2>
+          <h3>Cookies strictement nécessaires</h3>
+          <p>Cette catégorie est toujours active. Le stockage local <code>aestheia_consent</code> conserve la version de la politique, la date du choix et vos préférences pendant six mois. Sans lui, le site ne pourrait pas retenir votre réponse.</p>
+
+          <h3>Mesure d’audience – Google Analytics</h3>
+          <p>Cette catégorie facultative contrôle Google Analytics 4, fourni par Google Ireland Limited. Avant votre accord, le script Analytics n’est pas téléchargé et aucune mesure n’est envoyée. Si vous acceptez, le service peut mesurer les pages consultées et les interactions prévues par les mesures améliorées de GA4. Les paramètres et fragments des adresses de pages ne sont pas transmis. Si vous refusez, le site reste entièrement consultable sans mesure d’audience.</p>
+
+          <h3>Contenus externes – Google Maps</h3>
+          <p>Cette catégorie facultative contrôle la carte Google Maps, fournie par Google Ireland Limited. Avant votre accord, aucune carte intégrée n’est chargée. Si vous refusez, un encart remplace la carte et vous pouvez toujours ouvrir volontairement l’adresse sur le site Google Maps au moyen du lien prévu à cet effet.</p>
+
+          <h2>Cookies susceptibles d’être déposés</h2>
+          <div class="legal-table-wrapper" tabindex="0" role="region" aria-label="Tableau des cookies Google Analytics">
+            <table>
+              <thead><tr><th>Service</th><th>Nom</th><th>Finalité</th><th>Durée indiquée par Google</th></tr></thead>
+              <tbody>
+                <tr><td>Google Analytics 4</td><td><code>_ga</code></td><td>Distinguer les visiteurs.</td><td>2 ans</td></tr>
+                <tr><td>Google Analytics 4</td><td><code>_ga_&lt;identifiant&gt;</code></td><td>Conserver l’état de la session.</td><td>2 ans</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p>Google peut faire évoluer ses technologies et leurs durées. Consultez la <a href="https://support.google.com/analytics/answer/11397207?hl=fr" target="_blank" rel="noopener noreferrer">documentation officielle sur les cookies Google Analytics</a>.</p>
+
+          <h2>Modifier ou retirer votre consentement</h2>
+          <p>Votre choix est conservé pendant six mois. Il sera demandé à nouveau à l’expiration de cette durée ou si la politique de consentement change. Vous pouvez le modifier ou le retirer à tout moment : le retrait bloque les nouveaux chargements et le site tente de supprimer les cookies Analytics accessibles sur le domaine AesthéIA.</p>
+          <p><button class="btn btn-primary" type="button" data-manage-cookies>Modifier mes préférences</button></p>
+
+          <h2>Fournisseurs et informations complémentaires</h2>
+          <p>AesthéIA est responsable des choix d’intégration sur ce site. Pour toute question, vous pouvez écrire à <a href="mailto:contact@aestheia.fr">contact@aestheia.fr</a>. Google Ireland Limited fournit Google Analytics et Google Maps. Consultez les <a href="https://policies.google.com/privacy?hl=fr" target="_blank" rel="noopener noreferrer">règles de confidentialité de Google</a> et les <a href="https://policies.google.com/technologies/cookies?hl=fr" target="_blank" rel="noopener noreferrer">informations de Google sur les cookies</a>.</p>
         </div>
       </section>
     </main>
@@ -75,6 +109,7 @@
           <a href="mentions-legales.html">Mentions légales</a>
           <a href="politique-confidentialite.html">Politique de confidentialité</a>
           <a href="gestion-cookies.html">Gestion des cookies</a>
+          <button class="footer-cookie-button" type="button" data-manage-cookies>Gérer mes cookies</button>
           <a href="conditions-utilisation.html">Conditions d'utilisation</a>
           <a href="plan-du-site.html">Plan du site</a>
         </nav>
@@ -89,6 +124,7 @@
         </div>
       </div>
     </footer>
+    <script src="js/consent-manager.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>

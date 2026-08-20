@@ -15,6 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/consent-manager.css">
     <link rel="stylesheet" href="css/home-certifications.css">
     <script type="application/ld+json">
       {
@@ -433,9 +434,14 @@
           </div>
           <div class="location-grid">
             <img class="location-photo" src="assets/images/local/bureau-aestheia-paris.webp" alt="Salle de réunion lumineuse du local AesthéIA au 6 rue d'Armaillé à Paris." width="804" height="726" loading="lazy" decoding="async">
-            <div class="location-map">
-              <iframe title="Carte Google Maps - AesthéIA, 6 rue d'Armaillé, 75017 Paris" src="https://maps.google.com/maps?hl=fr&amp;q=6%20Rue%20d%27Armaill%C3%A9%2C%2075017%20Paris&amp;z=15&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
-              <a class="btn btn-secondary location-map-link" href="https://www.google.com/maps/search/?api=1&query=6%20rue%20d%27Armaill%C3%A9%2075017%20Paris" target="_blank" rel="noopener noreferrer">Ouvrir dans Google Maps</a>
+            <div class="location-map" data-consent-map data-map-title="Carte Google Maps - AesthéIA, 6 rue d'Armaillé, 75017 Paris" data-map-src="https://maps.google.com/maps?hl=fr&amp;q=6%20Rue%20d%27Armaill%C3%A9%2C%2075017%20Paris&amp;z=15&amp;output=embed">
+              <div class="map-consent-placeholder" data-map-placeholder>
+                <p>Cette carte est fournie par Google Maps. Son affichage nécessite votre accord pour le chargement de contenus externes.</p>
+                <div class="map-consent-actions">
+                  <button class="btn btn-secondary" type="button" data-enable-map>Afficher la carte</button>
+                  <a class="btn btn-secondary" href="https://www.google.com/maps/search/?api=1&amp;query=6%20rue%20d%27Armaill%C3%A9%2075017%20Paris" target="_blank" rel="noopener noreferrer">Ouvrir l’adresse dans Google Maps</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -466,6 +472,7 @@
           <a href="mentions-legales.html">Mentions légales</a>
           <a href="politique-confidentialite.html">Politique de confidentialité</a>
           <a href="gestion-cookies.html">Gestion des cookies</a>
+          <button class="footer-cookie-button" type="button" data-manage-cookies>Gérer mes cookies</button>
           <a href="conditions-utilisation.html">Conditions d'utilisation</a>
           <a href="plan-du-site.html">Plan du site</a>
         </nav>
@@ -480,6 +487,7 @@
         </div>
       </div>
     </footer>
+    <script src="js/consent-manager.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
