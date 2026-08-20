@@ -2756,12 +2756,6 @@ h3 {
     margin-top: 2.4rem;
   }
 
-  .institutes-page .institutes-method-section h2 + .institutes-method-intro,
-  .institutes-page .institutes-method-section .institutes-method-grid,
-  .institutes-page .institutes-method-section .institutes-method-conclusion {
-    margin-top: 2.5rem;
-  }
-
   .institutes-page .institutes-editorial-chapter {
     display: grid;
     grid-template-columns: minmax(210px, 0.75fr) minmax(0, 1.7fr);
