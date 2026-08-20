@@ -1511,7 +1511,7 @@ h3 {
   align-items: flex-start;
   column-gap: 0.85rem;
   margin: 0;
-  color: var(--color-primary);
+  color: var(--color-accent);
   font-size: 1.35rem;
   font-weight: 500;
   line-height: 1.18;
@@ -1538,12 +1538,12 @@ h3 {
   padding: 1rem 1.2rem;
   border-left: 3px solid #00b0ff;
   border-radius: 0 12px 12px 0;
-  background: linear-gradient(135deg, rgba(0, 176, 255, 0.08), rgba(94, 23, 235, 0.04));
-  color: var(--color-primary);
+  background: #1e2a50;
+  color: #fff;
 }
 
 .institutes-page .institutes-editorial-benefit strong {
-  color: var(--color-accent);
+  color: #fff;
 }
 
 .sector-grid {
