@@ -1567,6 +1567,168 @@ h3 {
   color: #fff;
 }
 
+/* Ligne éditoriale commune aux pages secteurs */
+.sector-editorial-list {
+  margin-top: 2.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.sector-editorial-chapter {
+  position: relative;
+  padding: 2.6rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.sector-editorial-heading {
+  position: relative;
+}
+
+.sector-editorial-heading h3 {
+  position: relative;
+  align-items: flex-start;
+  column-gap: 0.85rem;
+  margin: 0;
+  color: var(--color-accent);
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+}
+
+.sector-editorial-heading .title-pictogram {
+  width: 28px;
+  height: 28px;
+  margin-top: 0.05em;
+}
+
+.sector-editorial-content {
+  margin-top: 1.35rem;
+}
+
+.sector-editorial-content > p:not(.sector-editorial-benefit) {
+  max-width: 760px;
+}
+
+.sector-editorial-benefit,
+.sector-reality-conclusion,
+.sector-method-conclusion {
+  position: relative;
+  overflow: hidden;
+  max-width: 760px;
+  margin: 1.5rem 0 0;
+  padding: 1rem 1.2rem;
+  border-radius: 0 12px 12px 0;
+  background: #26365f;
+  color: #fff;
+  font-style: normal;
+}
+
+.sector-editorial-benefit::before,
+.sector-reality-conclusion::before,
+.sector-method-conclusion::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: linear-gradient(180deg, rgba(94, 23, 235, 0.82), rgba(0, 176, 255, 0.76));
+}
+
+.sector-editorial-benefit strong,
+.sector-reality-conclusion strong,
+.sector-method-conclusion strong {
+  color: #fff;
+}
+
+.sector-method-section h2 + p,
+.sector-method-intro,
+.sector-method-grid,
+.sector-method-conclusion {
+  margin-top: 2rem;
+}
+
+.sector-method-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: stretch;
+  gap: 1.2rem;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sector-method-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  min-width: 0;
+  height: 100%;
+  font-size: 0.96rem;
+}
+
+.sector-method-card .card-title-with-icon {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  margin: 0;
+  font-weight: 500;
+}
+
+.sector-method-number {
+  position: absolute;
+  right: 0.65rem;
+  bottom: 0.2rem;
+  z-index: 0;
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  font-size: 4.8rem;
+  font-weight: 400;
+  line-height: 0.8;
+  opacity: 0.09;
+  pointer-events: none;
+}
+
+.sector-method-conclusion {
+  max-width: none;
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+.sector-reality-conclusion {
+  max-width: none;
+  margin-top: 2rem;
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+.feature-list.sector-reality-list {
+  display: block;
+  margin: 1.35rem 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--color-border);
+}
+
+.feature-list.sector-reality-list li {
+  position: relative;
+  padding: 1rem 0 1rem 1.35rem;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-primary);
+}
+
+.feature-list.sector-reality-list li::before {
+  content: "";
+  position: absolute;
+  top: 1.65rem;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00b0ff, var(--color-accent));
+  margin-top: 0;
+  transform: translateY(-50%);
+}
+
 .sector-grid {
   margin-top: 2rem;
   display: grid;
@@ -2794,6 +2956,22 @@ h3 {
     margin-top: 0;
   }
 
+  .sector-editorial-chapter {
+    display: grid;
+    grid-template-columns: minmax(210px, 0.75fr) minmax(0, 1.7fr);
+    gap: 3rem;
+    align-items: start;
+    padding: 3.4rem 0;
+  }
+
+  .sector-editorial-content {
+    margin-top: 0;
+  }
+
+  .sector-method-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .article-shell {
     width: min(760px, calc(100% - 40px));
   }
@@ -3050,6 +3228,32 @@ h3 {
 
   .institutes-page .institutes-editorial-content {
     font-size: 1.03rem;
+  }
+
+  .sector-editorial-chapter {
+    grid-template-columns: minmax(250px, 0.72fr) minmax(0, 1.65fr);
+    gap: 5rem;
+    padding: 4.25rem 0;
+  }
+
+  .sector-editorial-heading h3 {
+    font-size: 1.5rem;
+  }
+
+  .sector-editorial-content {
+    font-size: 1.03rem;
+  }
+
+  .sector-method-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .sector-method-grid-five {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .sector-method-card .card-title-with-icon {
+    column-gap: 0.5rem;
   }
 
   .nav-shell {
