@@ -1400,9 +1400,9 @@ h3 {
   background: var(--gradient-ia);
   -webkit-background-clip: text;
   background-clip: text;
-  font-family: var(--font-structure);
+  font-family: var(--font-display);
   font-size: clamp(3.6rem, 15vw, 5rem);
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1;
   letter-spacing: -0.045em;
   white-space: nowrap;
