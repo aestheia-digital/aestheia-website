@@ -1408,6 +1408,7 @@ h3 {
 .institutes-page .institutes-editorial-heading h3 {
   position: relative;
   align-items: flex-start;
+  column-gap: 0.85rem;
   margin: 0;
   color: var(--color-accent);
   font-size: 1.35rem;
@@ -1417,9 +1418,9 @@ h3 {
 }
 
 .institutes-page .institutes-editorial-heading .title-pictogram {
-  width: 25px;
-  height: 25px;
-  margin-top: 0.08em;
+  width: 28px;
+  height: 28px;
+  margin-top: 0.05em;
 }
 
 .institutes-page .institutes-editorial-content {
