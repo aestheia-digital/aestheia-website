@@ -3741,6 +3741,11 @@ h3 {
   line-height: 1.55;
 }
 
+.institutes-page .institutes-editorial-benefit + p,
+.sector-editorial-benefit + p {
+  margin-top: 0.75rem;
+}
+
 @media (min-width: 721px) {
   .institutes-page .institutes-editorial-chapter,
   .sector-editorial-chapter {
