@@ -1674,6 +1674,15 @@ h3 {
   font-weight: 500;
 }
 
+.pme-page .sector-method-card .card-title-with-icon {
+  color: var(--color-primary);
+}
+
+.pme-page .sector-method-card .card-title-with-icon strong {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
 .sector-method-number {
   position: absolute;
   right: 0.65rem;
