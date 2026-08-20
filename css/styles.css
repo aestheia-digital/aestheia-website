@@ -1405,6 +1405,7 @@ h3 {
   font-weight: 500;
   line-height: 1;
   letter-spacing: -0.045em;
+  white-space: nowrap;
   -webkit-text-fill-color: transparent;
 }
 
