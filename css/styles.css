@@ -1674,6 +1674,15 @@ h3 {
   font-weight: 500;
 }
 
+.pme-page .sector-method-card .card-title-with-icon {
+  color: var(--color-primary);
+}
+
+.pme-page .sector-method-card .card-title-with-icon strong {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
 .sector-method-number {
   position: absolute;
   right: 0.65rem;
@@ -3680,5 +3689,84 @@ h3 {
     outline: 2px solid #00b0ff;
     outline-offset: 4px;
     border-radius: 4px;
+  }
+}
+
+/* Chapitres horizontaux compacts communs aux pages secteurs */
+.institutes-page .institutes-editorial-list,
+.sector-editorial-list {
+  display: block;
+  margin-top: 1.8rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.institutes-page .institutes-editorial-chapter,
+.sector-editorial-chapter {
+  display: block;
+  padding: 1.9rem 0;
+  border: 0;
+  border-bottom: 1px solid var(--color-border);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.institutes-page .institutes-editorial-heading h3,
+.sector-editorial-heading h3 {
+  font-size: 1.22rem;
+  line-height: 1.22;
+}
+
+.institutes-page .institutes-editorial-content,
+.sector-editorial-content {
+  display: block;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.institutes-page .institutes-editorial-content > p:not(.institutes-editorial-benefit),
+.sector-editorial-content > p:not(.sector-editorial-benefit) {
+  max-width: none;
+}
+
+.institutes-page .institutes-editorial-benefit,
+.sector-editorial-benefit {
+  width: 100%;
+  max-width: 680px;
+  min-height: 0;
+  margin-top: 1rem;
+  padding: 0.85rem 1rem;
+  border-radius: 0 10px 10px 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.institutes-page .institutes-editorial-benefit + p,
+.sector-editorial-benefit + p {
+  margin-top: 0.75rem;
+}
+
+@media (min-width: 721px) {
+  .institutes-page .institutes-editorial-chapter,
+  .sector-editorial-chapter {
+    display: grid;
+    grid-template-columns: minmax(210px, 0.72fr) minmax(0, 1.7fr);
+    gap: 2.25rem;
+    align-items: start;
+    padding: 2.3rem 0;
+  }
+
+  .institutes-page .institutes-editorial-content,
+  .sector-editorial-content {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 1051px) {
+  .institutes-page .institutes-editorial-chapter,
+  .sector-editorial-chapter {
+    grid-template-columns: minmax(240px, 0.68fr) minmax(0, 1.7fr);
+    gap: 3rem;
+    padding: 2.55rem 0;
   }
 }
