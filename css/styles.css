@@ -1985,6 +1985,47 @@ h3 {
   background: #fff;
 }
 
+.home-process .process-step {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.home-process .process-step > * {
+  position: relative;
+  z-index: 1;
+}
+
+.home-process .process-step::after {
+  position: absolute;
+  right: 0.65rem;
+  bottom: 0.2rem;
+  z-index: 0;
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  font-size: 4.8rem;
+  font-weight: 400;
+  line-height: 0.8;
+  opacity: 0.09;
+  pointer-events: none;
+}
+
+.home-process .process-step:nth-child(1)::after {
+  content: "01";
+}
+
+.home-process .process-step:nth-child(2)::after {
+  content: "02";
+}
+
+.home-process .process-step:nth-child(3)::after {
+  content: "03";
+}
+
+.home-process .process-step:nth-child(4)::after {
+  content: "04";
+}
+
 .process-icon {
   display: inline-flex;
   width: 42px;
