@@ -1365,13 +1365,32 @@ h3 {
 }
 
 .institutes-page .institutes-method-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
   display: flex;
   font-size: 0.96rem;
 }
 
 .institutes-page .institutes-method-card .card-title-with-icon {
+  position: relative;
+  z-index: 1;
   width: 100%;
   margin: 0;
+}
+
+.institutes-page .institutes-method-number {
+  position: absolute;
+  right: 0.65rem;
+  bottom: 0.2rem;
+  z-index: 0;
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  font-size: 4.8rem;
+  font-weight: 400;
+  line-height: 0.8;
+  opacity: 0.09;
+  pointer-events: none;
 }
 
 .institutes-page .institutes-method-section h2 + .institutes-method-intro,
@@ -1497,22 +1516,6 @@ h3 {
 
 .institutes-page .institutes-editorial-heading {
   position: relative;
-  min-height: 5rem;
-  padding-right: 4.5rem;
-}
-
-.institutes-page .institutes-editorial-number {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  left: auto;
-  transform: translateY(-50%);
-  color: var(--color-accent);
-  font-family: var(--font-display);
-  font-size: 4.4rem;
-  font-weight: 400;
-  line-height: 0.75;
-  opacity: 0.14;
 }
 
 .institutes-page .institutes-editorial-heading h3 {
@@ -2783,17 +2786,8 @@ h3 {
   }
 
   .institutes-page .institutes-editorial-heading {
-    min-height: 100%;
-    padding: 0 0 7.25rem;
-  }
-
-  .institutes-page .institutes-editorial-number {
-    top: auto;
-    right: 0;
-    bottom: 0;
-    transform: none;
-    font-size: 7.6rem;
-    opacity: 0.13;
+    min-height: 0;
+    padding: 0;
   }
 
   .institutes-page .institutes-editorial-content {
@@ -3052,12 +3046,6 @@ h3 {
 
   .institutes-page .institutes-editorial-heading h3 {
     font-size: 1.5rem;
-  }
-
-  .institutes-page .institutes-editorial-number {
-    right: 0.35rem;
-    bottom: 0.25rem;
-    font-size: 8.6rem;
   }
 
   .institutes-page .institutes-editorial-content {
