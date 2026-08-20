@@ -1365,18 +1365,147 @@ h3 {
 }
 
 .institutes-page .institutes-method-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
   display: flex;
   font-size: 0.96rem;
 }
 
 .institutes-page .institutes-method-card .card-title-with-icon {
+  position: relative;
+  z-index: 1;
   width: 100%;
   margin: 0;
+}
+
+.institutes-page .institutes-method-number {
+  position: absolute;
+  right: 0.65rem;
+  bottom: 0.2rem;
+  z-index: 0;
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  font-size: 4.8rem;
+  font-weight: 400;
+  line-height: 0.8;
+  opacity: 0.09;
+  pointer-events: none;
+}
+
+.institutes-page .institutes-method-section h2 + .institutes-method-intro,
+.institutes-page .institutes-method-section .institutes-method-grid,
+.institutes-page .institutes-method-section .institutes-method-conclusion {
+  margin-top: 2rem;
+}
+
+.institutes-page .institutes-method-section .institutes-method-grid {
+  margin-bottom: 0;
+}
+
+.institutes-page .institutes-method-section .institutes-method-conclusion {
+  margin-bottom: 0;
 }
 
 .institutes-page .institutes-editorial-list {
   margin-top: 2.5rem;
   border-top: 1px solid var(--color-border);
+}
+
+.institutes-page .institutes-reality-layout {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2.25rem;
+}
+
+.institutes-page .institutes-reality-metric {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: fit-content;
+  padding: 0.35rem 0 0.4rem 1.15rem;
+  border-left: 3px solid #00b0ff;
+}
+
+.institutes-page .institutes-reality-metric-value {
+  display: block;
+  color: var(--color-accent);
+  background: var(--gradient-ia);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-family: var(--font-display);
+  font-size: clamp(3.6rem, 15vw, 5rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.045em;
+  white-space: nowrap;
+  -webkit-text-fill-color: transparent;
+}
+
+.institutes-page .institutes-reality-metric-label {
+  margin-top: 0.7rem;
+  color: var(--color-primary);
+  font-family: var(--font-structure);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.institutes-page .institutes-reality-metric-note {
+  margin-top: 0.15rem;
+  color: var(--color-muted);
+  font-size: 0.86rem;
+}
+
+.institutes-page .institutes-reality-intro {
+  max-width: 820px;
+  margin: 0;
+  font-size: 1.02rem;
+}
+
+.institutes-page .institutes-reality-list {
+  margin: 1.35rem 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--color-border);
+}
+
+.institutes-page .institutes-reality-list li {
+  position: relative;
+  padding: 1rem 0 1rem 1.35rem;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-primary);
+}
+
+.institutes-page .institutes-reality-list li::before {
+  content: "";
+  position: absolute;
+  top: 1.65rem;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #00b0ff, var(--color-accent));
+  transform: translateY(-50%);
+}
+
+.institutes-page .institutes-reality-conclusion {
+  position: relative;
+  overflow: hidden;
+  margin: 2rem 0 0;
+  padding: 1.1rem 1.25rem;
+  border-radius: 0 12px 12px 0;
+  background: #26365f;
+  color: #fff;
+  font-weight: 500;
+}
+
+.institutes-page .institutes-reality-conclusion::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: linear-gradient(180deg, rgba(94, 23, 235, 0.82), rgba(0, 176, 255, 0.76));
 }
 
 .institutes-page .institutes-editorial-chapter {
@@ -1387,22 +1516,6 @@ h3 {
 
 .institutes-page .institutes-editorial-heading {
   position: relative;
-  min-height: 5rem;
-  padding-right: 4.5rem;
-}
-
-.institutes-page .institutes-editorial-number {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  left: auto;
-  transform: translateY(-50%);
-  color: var(--color-accent);
-  font-family: var(--font-display);
-  font-size: 4.4rem;
-  font-weight: 400;
-  line-height: 0.75;
-  opacity: 0.14;
 }
 
 .institutes-page .institutes-editorial-heading h3 {
@@ -1410,7 +1523,7 @@ h3 {
   align-items: flex-start;
   column-gap: 0.85rem;
   margin: 0;
-  color: var(--color-primary);
+  color: var(--color-accent);
   font-size: 1.35rem;
   font-weight: 500;
   line-height: 1.18;
@@ -1432,17 +1545,26 @@ h3 {
 }
 
 .institutes-page .institutes-editorial-benefit {
+  position: relative;
+  overflow: hidden;
   max-width: 760px;
   margin: 1.5rem 0 0;
   padding: 1rem 1.2rem;
-  border-left: 3px solid #00b0ff;
   border-radius: 0 12px 12px 0;
-  background: linear-gradient(135deg, rgba(0, 176, 255, 0.08), rgba(94, 23, 235, 0.04));
-  color: var(--color-primary);
+  background: #26365f;
+  color: #fff;
+}
+
+.institutes-page .institutes-editorial-benefit::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: linear-gradient(180deg, rgba(94, 23, 235, 0.82), rgba(0, 176, 255, 0.76));
 }
 
 .institutes-page .institutes-editorial-benefit strong {
-  color: var(--color-accent);
+  color: #fff;
 }
 
 .sector-grid {
@@ -2563,6 +2685,13 @@ h3 {
   margin-top: 0.25rem;
 }
 
+.site-footer .footer-phone {
+  color: #fff;
+  font-size: 0.96rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
 .site-footer a:hover {
   color: #fff;
 }
@@ -2629,6 +2758,25 @@ h3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .institutes-page .institutes-reality-layout {
+    grid-template-columns: minmax(220px, 0.62fr) minmax(0, 1.48fr);
+    gap: clamp(2.5rem, 5vw, 5rem);
+    align-items: start;
+    margin-top: 2.75rem;
+  }
+
+  .institutes-page .institutes-reality-metric {
+    margin-top: 0.2rem;
+  }
+
+  .institutes-page .institutes-reality-metric-value {
+    font-size: clamp(4.4rem, 7vw, 6.2rem);
+  }
+
+  .institutes-page .institutes-reality-conclusion {
+    margin-top: 2.4rem;
+  }
+
   .institutes-page .institutes-editorial-chapter {
     display: grid;
     grid-template-columns: minmax(210px, 0.75fr) minmax(0, 1.7fr);
@@ -2638,17 +2786,8 @@ h3 {
   }
 
   .institutes-page .institutes-editorial-heading {
-    min-height: 100%;
-    padding: 0 0 7.25rem;
-  }
-
-  .institutes-page .institutes-editorial-number {
-    top: auto;
-    right: 0;
-    bottom: 0;
-    transform: none;
-    font-size: 7.6rem;
-    opacity: 0.13;
+    min-height: 0;
+    padding: 0;
   }
 
   .institutes-page .institutes-editorial-content {
@@ -2907,12 +3046,6 @@ h3 {
 
   .institutes-page .institutes-editorial-heading h3 {
     font-size: 1.5rem;
-  }
-
-  .institutes-page .institutes-editorial-number {
-    right: 0.35rem;
-    bottom: 0.25rem;
-    font-size: 8.6rem;
   }
 
   .institutes-page .institutes-editorial-content {
