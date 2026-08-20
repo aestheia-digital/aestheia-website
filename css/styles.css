@@ -3691,3 +3691,98 @@ h3 {
     border-radius: 4px;
   }
 }
+
+/* Cartes verticales communes aux offres des pages secteurs */
+.institutes-page .institutes-editorial-list,
+.sector-editorial-list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: stretch;
+  gap: 1.2rem;
+  margin-top: 2.5rem;
+  border-top: 0;
+}
+
+.institutes-page .institutes-editorial-chapter,
+.sector-editorial-chapter {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+  padding: 1.45rem;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-bg);
+  box-shadow: var(--shadow-soft);
+}
+
+.institutes-page .institutes-editorial-heading h3,
+.sector-editorial-heading h3 {
+  font-size: 1.22rem;
+  line-height: 1.22;
+}
+
+.institutes-page .institutes-editorial-content,
+.sector-editorial-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin-top: 1.25rem;
+  font-size: 0.96rem;
+}
+
+.institutes-page .institutes-editorial-content > p:not(.institutes-editorial-benefit),
+.sector-editorial-content > p:not(.sector-editorial-benefit) {
+  max-width: none;
+}
+
+.institutes-page .institutes-editorial-benefit,
+.sector-editorial-benefit {
+  width: 100%;
+  max-width: none;
+  margin-top: auto;
+  padding: 1rem;
+  border-radius: 0 10px 10px 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+@media (min-width: 721px) {
+  .institutes-page .institutes-editorial-list,
+  .sector-editorial-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .institutes-page .institutes-editorial-benefit,
+  .sector-editorial-benefit {
+    min-height: 9.5rem;
+  }
+}
+
+@media (min-width: 1051px) {
+  .institutes-page .institutes-editorial-list,
+  .sector-editorial-list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .sector-editorial-list-three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .institutes-page .institutes-editorial-benefit,
+  .sector-editorial-benefit {
+    min-height: 11.5rem;
+  }
+
+  .sector-editorial-list-three .sector-editorial-benefit {
+    min-height: 8.75rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .institutes-page .institutes-editorial-chapter,
+  .sector-editorial-chapter {
+    background: #131a3d;
+    border-color: #2f3a68;
+  }
+}
