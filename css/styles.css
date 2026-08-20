@@ -1471,13 +1471,22 @@ h3 {
 }
 
 .institutes-page .institutes-reality-conclusion {
+  position: relative;
+  overflow: hidden;
   margin: 2rem 0 0;
   padding: 1.1rem 1.25rem;
-  border-left: 3px solid #00b0ff;
   border-radius: 0 12px 12px 0;
-  background: linear-gradient(135deg, rgba(0, 176, 255, 0.08), rgba(94, 23, 235, 0.045));
-  color: var(--color-primary);
+  background: #26365f;
+  color: #fff;
   font-weight: 500;
+}
+
+.institutes-page .institutes-reality-conclusion::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: linear-gradient(180deg, rgba(94, 23, 235, 0.82), rgba(0, 176, 255, 0.76));
 }
 
 .institutes-page .institutes-editorial-chapter {
@@ -3384,10 +3393,6 @@ h3 {
 
   .section-warm {
     background: linear-gradient(135deg, #0d1330 0%, #11183d 52%, #171943 100%);
-  }
-
-  .institutes-page .institutes-reality-conclusion {
-    background: linear-gradient(135deg, rgba(0, 176, 255, 0.12), rgba(155, 124, 255, 0.1));
   }
 
   .positioning-section .card,
