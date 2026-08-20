@@ -1374,6 +1374,20 @@ h3 {
   margin: 0;
 }
 
+.institutes-page .institutes-method-section h2 + .institutes-method-intro,
+.institutes-page .institutes-method-section .institutes-method-grid,
+.institutes-page .institutes-method-section .institutes-method-conclusion {
+  margin-top: 2rem;
+}
+
+.institutes-page .institutes-method-section .institutes-method-grid {
+  margin-bottom: 0;
+}
+
+.institutes-page .institutes-method-section .institutes-method-conclusion {
+  margin-bottom: 0;
+}
+
 .institutes-page .institutes-editorial-list {
   margin-top: 2.5rem;
   border-top: 1px solid var(--color-border);
@@ -2740,6 +2754,12 @@ h3 {
 
   .institutes-page .institutes-reality-conclusion {
     margin-top: 2.4rem;
+  }
+
+  .institutes-page .institutes-method-section h2 + .institutes-method-intro,
+  .institutes-page .institutes-method-section .institutes-method-grid,
+  .institutes-page .institutes-method-section .institutes-method-conclusion {
+    margin-top: 2.5rem;
   }
 
   .institutes-page .institutes-editorial-chapter {
