@@ -1387,19 +1387,22 @@ h3 {
 
 .institutes-page .institutes-editorial-heading {
   position: relative;
-  padding-top: 2.75rem;
+  min-height: 5rem;
+  padding-right: 4.5rem;
 }
 
 .institutes-page .institutes-editorial-number {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  right: 0;
+  left: auto;
+  transform: translateY(-50%);
   color: var(--color-accent);
   font-family: var(--font-display);
-  font-size: 4.8rem;
+  font-size: 4.4rem;
   font-weight: 400;
   line-height: 0.75;
-  opacity: 0.12;
+  opacity: 0.18;
 }
 
 .institutes-page .institutes-editorial-heading h3 {
@@ -2631,12 +2634,17 @@ h3 {
   }
 
   .institutes-page .institutes-editorial-heading {
-    padding-top: 1.15rem;
+    min-height: 100%;
+    padding: 0 0 7.25rem;
   }
 
   .institutes-page .institutes-editorial-number {
-    top: -0.45rem;
-    font-size: 5.8rem;
+    top: auto;
+    right: 0;
+    bottom: 0;
+    transform: none;
+    font-size: 7.6rem;
+    opacity: 0.16;
   }
 
   .institutes-page .institutes-editorial-content {
@@ -2895,6 +2903,12 @@ h3 {
 
   .institutes-page .institutes-editorial-heading h3 {
     font-size: 1.5rem;
+  }
+
+  .institutes-page .institutes-editorial-number {
+    right: 0.35rem;
+    bottom: 0.25rem;
+    font-size: 8.6rem;
   }
 
   .institutes-page .institutes-editorial-content {
