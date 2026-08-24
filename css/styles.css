@@ -1852,7 +1852,7 @@ h3 {
 }
 
 .section.behind-section {
-  padding: 2.8rem 0;
+  padding: 2.4rem 0 1.6rem;
 }
 
 .behind-inner {
@@ -3125,7 +3125,7 @@ h3 {
   }
 
   .section.behind-section {
-    padding: 3.2rem 0;
+    padding: 2.6rem 0 1.5rem;
   }
 
   .behind-media {
