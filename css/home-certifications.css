@@ -26,6 +26,32 @@
   filter: drop-shadow(0 4px 8px rgba(33, 42, 89, 0.08));
 }
 
+.founder-objective em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.founder-signature {
+  display: grid;
+  gap: 0.1rem;
+  margin-top: 1rem;
+}
+
+.founder-signature__name {
+  color: var(--color-primary);
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.founder-signature__role {
+  color: var(--color-accent);
+  font-size: 0.86rem;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
 @media (max-width: 720px) {
   .certification-badges {
     flex-wrap: nowrap;
