@@ -2862,8 +2862,8 @@ h3 {
   max-width: 300px;
 }
 
-.footer-signature {
-  margin-top: 1rem;
+.site-footer .footer-signature {
+  margin-top: 1.3rem;
   color: rgba(255, 255, 255, 0.9);
   font-family: var(--font-display);
   font-size: 1rem;
