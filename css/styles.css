@@ -2865,6 +2865,10 @@ h3 {
 .footer-signature {
   margin-top: 1rem;
   color: rgba(255, 255, 255, 0.9);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.45;
 }
 
 .footer-copyright {
@@ -2902,9 +2906,10 @@ h3 {
 
 .site-footer .footer-phone {
   color: #fff;
-  font-size: 0.96rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  font-weight: 500;
+  letter-spacing: 0.035em;
 }
 
 .site-footer a:hover {
