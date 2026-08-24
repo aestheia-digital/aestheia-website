@@ -1851,7 +1851,7 @@ h3 {
   padding-top: 0;
 }
 
-.behind-section {
+.section.behind-section {
   padding: 2.8rem 0;
 }
 
@@ -3124,7 +3124,7 @@ h3 {
     min-height: 6.4rem;
   }
 
-  .behind-section {
+  .section.behind-section {
     padding: 3.2rem 0;
   }
 
