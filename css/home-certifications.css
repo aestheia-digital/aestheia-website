@@ -33,8 +33,10 @@
 
 .founder-signature {
   display: grid;
+  justify-items: end;
   gap: 0.1rem;
   margin-top: 1rem;
+  text-align: right;
 }
 
 .founder-signature__name {
@@ -53,6 +55,11 @@
 }
 
 @media (max-width: 720px) {
+  .founder-signature {
+    justify-items: start;
+    text-align: left;
+  }
+
   .certification-badges {
     flex-wrap: nowrap;
     gap: 0.7rem;
