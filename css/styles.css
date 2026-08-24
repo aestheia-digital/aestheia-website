@@ -2543,6 +2543,13 @@ h3 {
   white-space: nowrap;
 }
 
+.location-heading .location-contact-phone {
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  font-weight: 500;
+  letter-spacing: 0.035em;
+}
+
 .location-contact-icon {
   --location-contact-icon-gradient: linear-gradient(135deg, #0077dd 0%, #00b0ff 100%);
   position: relative;
