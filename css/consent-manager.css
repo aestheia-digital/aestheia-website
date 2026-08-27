@@ -72,6 +72,7 @@
   margin-top: 0.55rem !important;
 }
 
+/* Retour strict au rendu violet léger d’origine pour les numéros 01 à 04. */
 .home-process .process-step::after {
   color: #5e17eb !important;
   opacity: 0.08 !important;
