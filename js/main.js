@@ -202,3 +202,189 @@ if (
     revealObserver.observe(item);
   });
 }
+
+// Clarification commerciale validée — modifications ciblées uniquement.
+const commercialPages = [
+  "/",
+  "/index.html",
+  "/medecine-esthetique/",
+  "/medecine-esthetique/index.html",
+  "/spa-hotelier/",
+  "/spa-hotelier/index.html",
+  "/thalasso-thermal/",
+  "/thalasso-thermal/index.html",
+  "/instituts-independantes/",
+  "/instituts-independantes/index.html",
+  "/automatisation-pme/",
+  "/automatisation-pme/index.html",
+];
+
+const currentPath = window.location.pathname;
+const isCommercialPage = commercialPages.some((path) => currentPath === path || currentPath.endsWith(path));
+
+if (isCommercialPage) {
+  document.querySelectorAll(".hero .hero-actions .btn").forEach((button) => {
+    const label = button.textContent.trim();
+    if (label.startsWith("Discutons") || label.startsWith("Parlons")) {
+      button.classList.remove("btn-ghost", "btn-secondary");
+      button.classList.add("btn-primary");
+    }
+  });
+
+  const hero = document.querySelector("main > .hero");
+  const heroActions = hero?.querySelector(".hero-actions");
+
+  if (heroActions && !hero?.querySelector(".hero-phone-action")) {
+    const phoneActions = document.createElement("div");
+    phoneActions.className = "hero-actions hero-phone-action";
+    phoneActions.style.marginTop = "0.8rem";
+    phoneActions.innerHTML = `
+      <a class="btn btn-primary" href="tel:+33642789057" aria-label="Appeler AesthéIA au 06 42 78 90 57">
+        <span style="font-family: var(--font-body);">Appelez AesthéIA :</span>&nbsp;<span style="font-family: var(--font-display); font-weight: 400; text-transform: none;">06 42 78 90 57</span>
+      </a>
+    `;
+    heroActions.insertAdjacentElement("afterend", phoneActions);
+  }
+}
+
+const homeOffers = document.querySelector(".home-offers");
+
+if (homeOffers) {
+  const sectionTitle = homeOffers.querySelector("h2");
+  if (sectionTitle && !homeOffers.querySelector(".commercial-domain-intro")) {
+    const intro = document.createElement("p");
+    intro.className = "section-intro commercial-domain-intro";
+    intro.textContent = "Ces quatre domaines d’intervention ne sont pas des offres fermées. Selon votre situation, AesthéIA peut intervenir par un audit, la mise en place d’une première solution ciblée ou une mission plus complète.";
+    sectionTitle.insertAdjacentElement("afterend", intro);
+  }
+
+  const proposalTexts = [
+    "Audit Automatisation & IA, mise en place d’une première solution ou mise en œuvre plus complète selon les processus à améliorer.",
+    "Audit Visibilité & Acquisition, optimisation du parcours de demande ou mise en œuvre plus complète selon les points de friction identifiés.",
+    "Audit Visibilité & Acquisition, structuration des contenus ou mission éditoriale assistée par IA selon les besoins.",
+    "Audit Visibilité & Acquisition, optimisation de la présence locale et digitale ou mission SEO/GEO selon les priorités identifiées.",
+  ];
+
+  homeOffers.querySelectorAll(".offer-card").forEach((card, index) => {
+    if (card.querySelector(".commercial-offer-proposal") || !proposalTexts[index]) {
+      return;
+    }
+
+    const result = card.querySelector(".offer-result");
+    const proposal = document.createElement("p");
+    proposal.className = "commercial-offer-proposal";
+    proposal.innerHTML = `<strong>Ce que nous vous proposons :</strong> ${proposalTexts[index]}`;
+    result?.insertAdjacentElement("beforebegin", proposal);
+  });
+}
+
+const homeEngagements = document.querySelector(".home-engagements");
+
+if (homeEngagements) {
+  const eyebrow = homeEngagements.querySelector(".eyebrow");
+  if (eyebrow) {
+    eyebrow.textContent = "Les formats de mission";
+  }
+
+  const headingText = homeEngagements.querySelector("h2 span");
+  if (headingText) {
+    headingText.textContent = "Choisir le bon format selon vos priorités.";
+  }
+
+  const cards = homeEngagements.querySelectorAll(".engagement-card");
+  const firstCard = cards[0];
+  if (firstCard) {
+    const title = firstCard.querySelector("h3 span");
+    const body = firstCard.querySelector("p:not(.deliverable)");
+    const deliverable = firstCard.querySelector(".deliverable");
+    if (title) {
+      title.textContent = "Audits stratégiques";
+    }
+    if (body) {
+      body.innerHTML = "<strong>Audit Visibilité &amp; Acquisition :</strong> site, Google, contenus, visibilité locale et parcours de contact.<br><strong>Audit Automatisation &amp; IA :</strong> tâches répétitives, demandes, suivi et processus à simplifier.";
+    }
+    if (deliverable) {
+      deliverable.innerHTML = "<strong>Livrable :</strong> priorités et plan d’action.";
+    }
+  }
+
+  const completeCard = cards[2];
+  if (completeCard) {
+    const title = completeCard.querySelector("h3 span");
+    const deliverable = completeCard.querySelector(".deliverable");
+    if (title) {
+      title.textContent = "Mise en œuvre complète";
+    }
+    if (deliverable) {
+      deliverable.innerHTML = "<strong>Livrable :</strong> stratégie, mise en place, automatisations, coordination et documentation.";
+    }
+  }
+}
+
+const firstHomeStep = document.querySelector(".home-method .process-step:first-child");
+if (firstHomeStep) {
+  const title = firstHomeStep.querySelector("h3");
+  const text = firstHomeStep.querySelector("p");
+  if (title) {
+    title.textContent = "Commencer par l’audit adapté";
+  }
+  if (text) {
+    text.innerHTML = "Selon le besoin, démarrer par un <strong>Audit Visibilité &amp; Acquisition</strong> ou un <strong>Audit Automatisation &amp; IA</strong> afin d’identifier les freins, les priorités et les premières actions utiles.";
+  }
+}
+
+const homeFaq = document.querySelector(".home-safety ~ .section-warm + .faq-section") || document.querySelector("body > main .faq-section");
+if (homeOffers && homeFaq) {
+  homeFaq.querySelectorAll("details").forEach((item) => {
+    const summary = item.querySelector("summary h3, summary");
+    const answer = item.querySelector(".faq-answer p");
+    if (!summary || !answer) {
+      return;
+    }
+
+    if (summary.textContent.includes("Combien coûte un accompagnement")) {
+      summary.textContent = "Combien coûte une mission avec AesthéIA ?";
+      answer.textContent = answer.textContent
+        .replace("Un diagnostic ciblé", "Un audit ciblé")
+        .replace("les accompagnements plus complets", "les missions plus complètes");
+    }
+
+    if (summary.textContent.includes("Combien de temps faut-il pour voir des résultats")) {
+      answer.textContent = answer.textContent
+        .replace("Un diagnostic initial", "Un audit initial")
+        .replace("Les accompagnements plus complets", "Les missions plus complètes");
+    }
+  });
+
+  homeFaq.querySelectorAll('script[type="application/ld+json"]').forEach((script) => {
+    script.textContent = script.textContent
+      .replace("Combien coûte un accompagnement avec AesthéIA ?", "Combien coûte une mission avec AesthéIA ?")
+      .replace(/Un diagnostic ciblé/g, "Un audit ciblé")
+      .replace(/les accompagnements plus complets/g, "les missions plus complètes")
+      .replace(/Un diagnostic initial/g, "Un audit initial")
+      .replace(/Les accompagnements plus complets/g, "Les missions plus complètes");
+  });
+}
+
+const sectorAuditCopy = {
+  "/medecine-esthetique/": "La mission peut démarrer par un Audit Visibilité & Acquisition pour examiner la présence digitale et le parcours de prise de contact, ou par un Audit Automatisation & IA pour identifier les tâches non médicales et les processus à simplifier.",
+  "/spa-hotelier/": "La mission peut démarrer par un Audit Visibilité & Acquisition pour examiner la visibilité, les contenus et le parcours de réservation, ou par un Audit Automatisation & IA pour identifier les demandes, le suivi client et la coordination à simplifier.",
+  "/thalasso-thermal/": "La mission peut démarrer par un Audit Visibilité & Acquisition pour examiner la visibilité, les contenus et les demandes de séjour, ou par un Audit Automatisation & IA pour identifier les devis, le suivi, la coordination et la planification à simplifier.",
+  "/instituts-independantes/": "La mission peut démarrer par un Audit Visibilité & Acquisition pour examiner la visibilité locale, le site, les contenus et le parcours de réservation, ou par un Audit Automatisation & IA pour identifier les tâches administratives, les relances, les rappels et le suivi à simplifier.",
+  "/automatisation-pme/": "La mission peut démarrer par un Audit Automatisation & IA pour identifier les tâches, les demandes, les relances et les processus à simplifier, ou par un Audit Visibilité & Acquisition lorsque le principal frein concerne la présence en ligne, les contenus et la conversion.",
+};
+
+const sectorPath = Object.keys(sectorAuditCopy).find((path) => currentPath === path || currentPath === `${path}index.html`);
+if (sectorPath) {
+  const methodContainer = document.querySelector(".sector-method-section .container, .institutes-method-section .container");
+  const methodHeading = methodContainer?.querySelector("h2");
+
+  if (methodContainer && methodHeading && !methodContainer.querySelector(".sector-audit-intro")) {
+    const auditIntro = document.createElement("p");
+    auditIntro.className = "sector-audit-intro";
+    auditIntro.innerHTML = sectorAuditCopy[sectorPath]
+      .replace("Audit Visibilité & Acquisition", "<strong>Audit Visibilité &amp; Acquisition</strong>")
+      .replace("Audit Automatisation & IA", "<strong>Audit Automatisation &amp; IA</strong>");
+    methodHeading.insertAdjacentElement("afterend", auditIntro);
+  }
+}
