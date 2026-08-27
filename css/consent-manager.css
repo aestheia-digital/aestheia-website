@@ -130,3 +130,185 @@
     flex-wrap: wrap;
   }
 }
+
+/* Pages secteurs : retour à des cartes verticales de même hauteur pour la partie Systèmes. */
+.sector-editorial-list,
+.institutes-page .institutes-editorial-list {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+  gap: 1.2rem !important;
+  align-items: stretch;
+  margin-top: 2rem !important;
+  border-top: 0 !important;
+}
+
+.sector-editorial-chapter,
+.institutes-page .institutes-editorial-chapter {
+  display: flex !important;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+  padding: 1.45rem !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius) !important;
+  background: var(--color-bg) !important;
+  box-shadow: var(--shadow-soft) !important;
+}
+
+.sector-editorial-heading,
+.institutes-page .institutes-editorial-heading {
+  min-width: 0;
+}
+
+.sector-editorial-heading h3,
+.institutes-page .institutes-editorial-heading h3 {
+  min-height: 4.9rem;
+  margin: 0;
+  font-size: 1.05rem !important;
+  line-height: 1.24 !important;
+}
+
+.sector-editorial-content,
+.institutes-page .institutes-editorial-content {
+  display: flex !important;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  margin-top: 1rem !important;
+  font-size: 0.97rem !important;
+}
+
+.sector-editorial-content > p:not(.sector-editorial-benefit),
+.institutes-page .institutes-editorial-content > p:not(.institutes-editorial-benefit) {
+  max-width: none !important;
+}
+
+.sector-editorial-benefit,
+.institutes-page .institutes-editorial-benefit {
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 0 !important;
+  margin-top: auto !important;
+  padding: 0.9rem 1rem !important;
+  border-radius: 0 10px 10px 0 !important;
+  font-size: 0.92rem !important;
+  line-height: 1.5 !important;
+}
+
+@media (max-width: 1049px) {
+  .sector-editorial-list,
+  .institutes-page .institutes-editorial-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sector-editorial-heading h3,
+  .institutes-page .institutes-editorial-heading h3 {
+    min-height: 4.2rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .sector-editorial-list,
+  .institutes-page .institutes-editorial-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sector-editorial-heading h3,
+  .institutes-page .institutes-editorial-heading h3 {
+    min-height: 0;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .sector-editorial-chapter,
+  .institutes-page .institutes-editorial-chapter {
+    background: #141b3c !important;
+    border-color: #35416f !important;
+  }
+}
+
+/* Conseils & ressources : même cube interactif que l'accueil, adapté au bandeau de la page. */
+.resources-hero.hero-cube-hero .hero-inner {
+  isolation: isolate;
+}
+
+@media (min-width: 1180px) {
+  .resources-hero.hero-cube-hero .hero-content {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1179px) {
+  .resources-hero.hero-cube-hero .hero-tech-backdrop {
+    display: block;
+    opacity: 0.58;
+  }
+
+  .resources-hero.hero-cube-hero .hero-cube-stage {
+    --cube-size: clamp(190px, 20vw, 216px);
+    --cube-zone: clamp(320px, 35vw, 375px);
+    display: grid;
+    top: 50%;
+    right: clamp(-76px, -5vw, -40px);
+    bottom: auto;
+    opacity: 0.78;
+    transform: translateY(-50%);
+  }
+
+  .resources-hero.hero-cube-hero .hero-content {
+    max-width: 68%;
+  }
+}
+
+@media (min-width: 721px) and (max-width: 899px) {
+  .resources-hero.hero-cube-hero .hero-tech-backdrop {
+    display: block;
+    opacity: 0.4;
+  }
+
+  .resources-hero.hero-cube-hero .hero-cube-stage {
+    --cube-size: clamp(172px, 23vw, 194px);
+    --cube-zone: clamp(285px, 39vw, 328px);
+    display: grid;
+    top: 52%;
+    right: clamp(-94px, -8vw, -64px);
+    bottom: auto;
+    opacity: 0.64;
+    transform: translateY(-50%);
+  }
+
+  .resources-hero.hero-cube-hero .hero-content {
+    max-width: 70%;
+  }
+}
+
+@media (max-width: 720px) {
+  .resources-hero.hero-cube-hero .hero-tech-backdrop {
+    display: block;
+    opacity: 0.26;
+  }
+
+  .resources-hero.hero-cube-hero .hero-cube-stage {
+    --cube-size: clamp(154px, 43vw, 180px);
+    --cube-zone: clamp(245px, 70vw, 292px);
+    display: grid;
+    top: auto;
+    right: clamp(-108px, -25vw, -82px);
+    bottom: 1%;
+    opacity: 0.34;
+    filter: saturate(1.08) contrast(1.04);
+    transform: none;
+  }
+
+  .resources-hero.hero-cube-hero .hero-cube-stage::before {
+    opacity: 0.38;
+  }
+
+  .resources-hero.hero-cube-hero .hero-cube-effects {
+    opacity: 0.5;
+  }
+
+  .resources-hero.hero-cube-hero .hero-content {
+    max-width: none;
+  }
+}
