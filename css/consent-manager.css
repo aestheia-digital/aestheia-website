@@ -58,3 +58,20 @@
     color: #b79cff !important;
   }
 }
+
+/* Ajustements visuels validés : CTA Ressources, espacement des offres et numéros de méthode. */
+.resource-cta .btn-secondary,
+.resource-cta .btn-secondary:hover {
+  color: #fff !important;
+  border-color: transparent !important;
+  background: var(--gradient-ia) !important;
+  box-shadow: 0 16px 30px rgba(0, 176, 255, 0.18);
+}
+
+.home-offers .commercial-offer-proposal {
+  margin-top: 0.55rem !important;
+}
+
+.home-process .process-step::after {
+  color: #1e2a50 !important;
+}
