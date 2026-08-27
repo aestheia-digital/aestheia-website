@@ -34,3 +34,7 @@
   .consent-button--primary { background: #eef2ff; color: #101737; }
   .consent-category { border-color: #35416f; }
 }
+html.theme-dark .consent-banner, html.theme-dark .consent-dialog { background: #101737; color: #eef2ff; border-color: #35416f; }
+html.theme-dark .consent-button { border-color: #b8c4ef; background: #101737; color: #fff; }
+html.theme-dark .consent-button--primary { background: #eef2ff; color: #101737; }
+html.theme-dark .consent-category { border-color: #35416f; }
