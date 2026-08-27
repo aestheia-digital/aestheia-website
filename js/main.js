@@ -231,20 +231,63 @@ if (isCommercialPage) {
     }
   });
 
-  const hero = document.querySelector("main > .hero");
-  const heroActions = hero?.querySelector(".hero-actions");
-
-  if (heroActions && !hero?.querySelector(".hero-phone-action")) {
-    const phoneActions = document.createElement("div");
-    phoneActions.className = "hero-actions hero-phone-action";
-    phoneActions.style.marginTop = "0.8rem";
-    phoneActions.innerHTML = `
-      <a class="btn btn-primary" href="tel:+33642789057" aria-label="Appeler AesthéIA au 06 42 78 90 57">
-        <span style="font-family: var(--font-body);">Appelez AesthéIA :</span>&nbsp;<span style="font-family: var(--font-display); font-weight: 400; text-transform: none;">06 42 78 90 57</span>
-      </a>
-    `;
-    heroActions.insertAdjacentElement("afterend", phoneActions);
+  const brandLink = document.querySelector(".site-header .brand-link");
+  if (brandLink && !document.querySelector(".site-header .header-phone-direct")) {
+    const headerPhone = document.createElement("a");
+    headerPhone.className = "header-phone-direct";
+    headerPhone.href = "tel:+33642789057";
+    headerPhone.setAttribute("aria-label", "Appeler AesthéIA au 06 42 78 90 57");
+    headerPhone.textContent = "06 42 78 90 57";
+    brandLink.insertAdjacentElement("afterend", headerPhone);
   }
+}
+
+if (!document.getElementById("commercial-alignment-rules")) {
+  const commercialStyles = document.createElement("style");
+  commercialStyles.id = "commercial-alignment-rules";
+  commercialStyles.textContent = `
+    .site-header .header-phone-direct {
+      margin-right: auto;
+      color: var(--color-primary);
+      font-family: var(--font-display);
+      font-size: 1.02rem;
+      font-weight: 400;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .site-header .header-phone-direct:hover {
+      color: var(--color-accent);
+    }
+
+    .home-offers .commercial-domain-intro {
+      width: 100%;
+      max-width: none;
+    }
+
+    @media (min-width: 960px) {
+      .home-offers .offer-grid {
+        align-items: stretch;
+      }
+
+      .home-offers .offer-card {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+      }
+
+      .home-offers .offer-result {
+        margin-top: auto;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .site-header .header-phone-direct {
+        font-size: 0.86rem;
+      }
+    }
+  `;
+  document.head.appendChild(commercialStyles);
 }
 
 const homeOffers = document.querySelector(".home-offers");
@@ -266,16 +309,52 @@ if (homeOffers) {
   ];
 
   homeOffers.querySelectorAll(".offer-card").forEach((card, index) => {
-    if (card.querySelector(".commercial-offer-proposal") || !proposalTexts[index]) {
+    if (!card.querySelector(".commercial-offer-proposal") && proposalTexts[index]) {
+      const result = card.querySelector(".offer-result");
+      const proposal = document.createElement("p");
+      proposal.className = "commercial-offer-proposal";
+      proposal.innerHTML = `<strong>Ce que nous vous proposons :</strong> ${proposalTexts[index]}`;
+      result?.insertAdjacentElement("beforebegin", proposal);
+    }
+
+    const benefitLabel = card.querySelector(".offer-result strong");
+    if (benefitLabel) {
+      benefitLabel.textContent = "Bénéfice :";
+    }
+  });
+
+  const alignHomeOfferRows = () => {
+    const cards = Array.from(homeOffers.querySelectorAll(".offer-card"));
+    const titles = cards.map((card) => card.querySelector("h3")).filter(Boolean);
+    const descriptions = cards
+      .map((card) => Array.from(card.children).find((child) => child.tagName === "P" && !child.classList.contains("commercial-offer-proposal") && !child.classList.contains("offer-result")))
+      .filter(Boolean);
+
+    [...titles, ...descriptions].forEach((element) => {
+      element.style.removeProperty("min-height");
+    });
+
+    if (!window.matchMedia("(min-width: 960px)").matches) {
       return;
     }
 
-    const result = card.querySelector(".offer-result");
-    const proposal = document.createElement("p");
-    proposal.className = "commercial-offer-proposal";
-    proposal.innerHTML = `<strong>Ce que nous vous proposons :</strong> ${proposalTexts[index]}`;
-    result?.insertAdjacentElement("beforebegin", proposal);
-  });
+    const setSharedMinHeight = (elements) => {
+      const maxHeight = Math.max(...elements.map((element) => element.getBoundingClientRect().height));
+      elements.forEach((element) => {
+        element.style.minHeight = `${Math.ceil(maxHeight)}px`;
+      });
+    };
+
+    if (titles.length) {
+      setSharedMinHeight(titles);
+    }
+    if (descriptions.length) {
+      setSharedMinHeight(descriptions);
+    }
+  };
+
+  window.requestAnimationFrame(alignHomeOfferRows);
+  window.addEventListener("resize", alignHomeOfferRows, { passive: true });
 }
 
 const homeEngagements = document.querySelector(".home-engagements");
