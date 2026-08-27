@@ -1495,7 +1495,7 @@ h3 {
   margin: 2rem 0 0;
   padding: 1.1rem 1.25rem;
   border-radius: 0 12px 12px 0;
-  background: #26365f;
+  background: #40547f;
   color: #fff;
   font-weight: 500;
 }
@@ -1551,7 +1551,7 @@ h3 {
   margin: 1.5rem 0 0;
   padding: 1rem 1.2rem;
   border-radius: 0 12px 12px 0;
-  background: #26365f;
+  background: #40547f;
   color: #fff;
 }
 
@@ -1618,7 +1618,7 @@ h3 {
   margin: 1.5rem 0 0;
   padding: 1rem 1.2rem;
   border-radius: 0 12px 12px 0;
-  background: #26365f;
+  background: #40547f;
   color: #fff;
   font-style: normal;
 }
@@ -4081,7 +4081,7 @@ html.theme-dark .faq-accordion-item summary:focus-visible {
   padding: 1rem 1.15rem;
   border-top: 1px solid rgba(255, 255, 255, 0.13);
   border-radius: 0 0 11px 11px;
-  background: #26365f;
+  background: #40547f;
   color: #fff;
   font-size: 0.91rem;
   line-height: 1.5;
