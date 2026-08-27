@@ -336,24 +336,62 @@
   }
 }
 
-/* Correction stricte demandée : espacement, alignement des bénéfices et harmonisation des bandeaux. */
+/* Correction stricte : cartes Systèmes, bénéfices et bandeaux sectoriels. */
 .sector-editorial-chapter,
 .institutes-page .institutes-editorial-chapter {
   gap: 0 !important;
 }
 
+.sector-editorial-heading h3,
+.institutes-page .institutes-editorial-heading h3 {
+  min-height: 3.2rem !important;
+}
+
 .sector-editorial-content,
 .institutes-page .institutes-editorial-content {
-  margin-top: 0.18rem !important;
+  margin-top: 0.08rem !important;
+}
+
+.sector-editorial-content > :not(.sector-editorial-benefit),
+.institutes-page .institutes-editorial-content > :not(.institutes-editorial-benefit) {
+  order: 1 !important;
 }
 
 .sector-editorial-benefit,
 .institutes-page .institutes-editorial-benefit {
-  display: flex !important;
-  align-items: flex-start;
-  height: 10.5rem !important;
-  min-height: 10.5rem !important;
-  flex: 0 0 10.5rem;
+  order: 99 !important;
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin-top: auto !important;
+  margin-bottom: 0 !important;
+  height: 12rem !important;
+  min-height: 12rem !important;
+  flex: 0 0 12rem !important;
+  padding: 0.9rem 1rem !important;
+  text-align: left !important;
+  background: #dceeff !important;
+  color: #1e2a50 !important;
+  border-left: 4px solid #00a9ee !important;
+  border-radius: 0 10px 10px 0 !important;
+  font-size: 0.92rem !important;
+  line-height: 1.5 !important;
+}
+
+.sector-editorial-benefit strong,
+.institutes-page .institutes-editorial-benefit strong {
+  display: inline !important;
+  color: #1e2a50 !important;
+  font-size: 0 !important;
+  white-space: nowrap !important;
+}
+
+.sector-editorial-benefit strong::after,
+.institutes-page .institutes-editorial-benefit strong::after {
+  content: "Bénéfice :";
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin-right: 0.28em;
 }
 
 .sector-reality-conclusion,
@@ -375,27 +413,32 @@
 @media (max-width: 1049px) and (min-width: 721px) {
   .sector-editorial-heading h3,
   .institutes-page .institutes-editorial-heading h3 {
-    min-height: 3.2rem;
+    min-height: 3rem !important;
   }
 
   .sector-editorial-benefit,
   .institutes-page .institutes-editorial-benefit {
-    height: 9.5rem !important;
-    min-height: 9.5rem !important;
-    flex-basis: 9.5rem;
+    height: 11rem !important;
+    min-height: 11rem !important;
+    flex-basis: 11rem !important;
   }
 }
 
 @media (max-width: 720px) {
+  .sector-editorial-heading h3,
+  .institutes-page .institutes-editorial-heading h3 {
+    min-height: 0 !important;
+  }
+
   .sector-editorial-content,
   .institutes-page .institutes-editorial-content {
-    margin-top: 0.12rem !important;
+    margin-top: 0.04rem !important;
   }
 
   .sector-editorial-benefit,
   .institutes-page .institutes-editorial-benefit {
     height: auto !important;
     min-height: 0 !important;
-    flex-basis: auto;
+    flex-basis: auto !important;
   }
 }
