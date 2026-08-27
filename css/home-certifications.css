@@ -94,6 +94,45 @@
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 7h-4V3'/%3E%3Cpath d='M20 7a8 8 0 0 0-13.7-2.7L5 5.6'/%3E%3Cpath d='M4 17h4v4'/%3E%3Cpath d='M4 17a8 8 0 0 0 13.7 2.7l1.3-1.3'/%3E%3C/g%3E%3C/svg%3E");
 }
 
+/* Continuité visuelle du cube de la page d'accueil sur tablette. */
+@media (min-width: 721px) and (max-width: 899px) {
+  .home-hero .hero-tech-backdrop {
+    display: block;
+    opacity: 0.42;
+  }
+
+  .home-hero .hero-cube-stage {
+    --cube-size: clamp(176px, 23vw, 196px);
+    --cube-zone: clamp(290px, 39vw, 330px);
+    top: 52%;
+    right: clamp(-92px, -8vw, -62px);
+    bottom: auto;
+    display: grid;
+    opacity: 0.4;
+    filter: saturate(1.1) contrast(1.04);
+    transform: translateY(-50%);
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1179px) {
+  .home-hero .hero-tech-backdrop {
+    display: block;
+    opacity: 0.62;
+  }
+
+  .home-hero .hero-cube-stage {
+    --cube-size: clamp(198px, 21vw, 222px);
+    --cube-zone: clamp(330px, 36vw, 390px);
+    top: 50%;
+    right: clamp(-72px, -5vw, -38px);
+    bottom: auto;
+    display: grid;
+    opacity: 0.58;
+    filter: saturate(1.1) contrast(1.05);
+    transform: translateY(-50%);
+  }
+}
+
 @media (max-width: 720px) {
   .founder-signature {
     justify-items: start;
@@ -118,5 +157,19 @@
     width: 20px;
     height: 20px;
     flex-basis: 20px;
+  }
+
+  /* Le cube mobile reste en arrière-plan, mais légèrement plus net. */
+  .home-hero .hero-cube-stage {
+    opacity: 0.38;
+    filter: saturate(1.12) contrast(1.06);
+  }
+
+  .home-hero .hero-cube-stage::before {
+    opacity: 0.42;
+  }
+
+  .home-hero .hero-cube-effects {
+    opacity: 0.56;
   }
 }
