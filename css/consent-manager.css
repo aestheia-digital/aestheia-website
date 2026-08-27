@@ -162,7 +162,7 @@
 
 .sector-editorial-heading h3,
 .institutes-page .institutes-editorial-heading h3 {
-  min-height: 4.9rem;
+  min-height: 4rem;
   margin: 0;
   font-size: 1.05rem !important;
   line-height: 1.24 !important;
@@ -174,25 +174,36 @@
   flex: 1;
   flex-direction: column;
   min-width: 0;
-  margin-top: 1rem !important;
+  margin-top: 0.5rem !important;
   font-size: 0.97rem !important;
 }
 
-.sector-editorial-content > p:not(.sector-editorial-benefit),
-.institutes-page .institutes-editorial-content > p:not(.institutes-editorial-benefit) {
+.sector-editorial-content > p,
+.institutes-page .institutes-editorial-content > p {
+  order: 1;
   max-width: none !important;
 }
 
 .sector-editorial-benefit,
 .institutes-page .institutes-editorial-benefit {
+  order: 2;
   width: 100% !important;
   max-width: none !important;
   min-height: 0 !important;
   margin-top: auto !important;
+  margin-bottom: 0 !important;
   padding: 0.9rem 1rem !important;
+  border-left: 4px solid #00a9ee !important;
   border-radius: 0 10px 10px 0 !important;
+  background: #dceeff !important;
+  color: #1e2a50 !important;
   font-size: 0.92rem !important;
   line-height: 1.5 !important;
+}
+
+.sector-editorial-benefit strong,
+.institutes-page .institutes-editorial-benefit strong {
+  color: #1e2a50 !important;
 }
 
 @media (max-width: 1049px) {
@@ -203,7 +214,7 @@
 
   .sector-editorial-heading h3,
   .institutes-page .institutes-editorial-heading h3 {
-    min-height: 4.2rem;
+    min-height: 3.6rem;
   }
 }
 
@@ -217,6 +228,11 @@
   .institutes-page .institutes-editorial-heading h3 {
     min-height: 0;
   }
+
+  .sector-editorial-content,
+  .institutes-page .institutes-editorial-content {
+    margin-top: 0.45rem !important;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -224,6 +240,13 @@
   .institutes-page .institutes-editorial-chapter {
     background: #141b3c !important;
     border-color: #35416f !important;
+  }
+
+  .sector-editorial-benefit,
+  .institutes-page .institutes-editorial-benefit,
+  .sector-editorial-benefit strong,
+  .institutes-page .institutes-editorial-benefit strong {
+    color: #1e2a50 !important;
   }
 }
 
