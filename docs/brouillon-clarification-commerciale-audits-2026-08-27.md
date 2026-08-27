@@ -1,4 +1,4 @@
-# Brouillon de validation — clarification commerciale AesthéIA
+# Brouillon de validation v2 — clarification commerciale AesthéIA
 
 ## Statut
 
@@ -6,85 +6,92 @@
 
 Ce document prépare les modifications éditoriales à appliquer au site **avant tout déploiement public sur Netlify**.
 
-Aucun changement de structure, de design, de responsive, de CTA, de couleur, de police, d’image, d’URL, de header ou de footer n’est autorisé dans cette passe.
-
 Objectif : **clarifier l’offre commerciale sans refaire les pages**.
 
 ---
 
-# 1. Page d’accueil — téléphone visible sous les CTA
+# 1. Page d’accueil — téléphone sous les CTA
 
-Sous les deux CTA du hero, ajouter exactement :
+Sous les deux CTA existants du hero, ajouter un **troisième CTA téléphonique discret**, sur une ligne séparée :
 
-> **Vous préférez échanger directement ?** [06 42 78 90 57](tel:+33642789057)
+> **Appeler AesthéIA — 06 42 78 90 57**
 
-Le numéro doit rester discret, directement sous les CTA, sans nouveau bouton et sans modifier la structure du hero.
+Contraintes :
+
+- lien `tel:+33642789057` ;
+- bouton CTA, pas une ligne de texte ;
+- typographie **Playfair Display** ;
+- ne pas utiliser la phrase « Vous préférez échanger directement ? » ;
+- conserver les deux CTA existants inchangés ;
+- ne pas modifier la structure du hero au-delà de cette insertion minimale.
 
 ---
 
-# 2. Page d’accueil — clarifier que les quatre offres sont des domaines d’intervention
+# 2. Page d’accueil — clarifier les quatre domaines d’intervention
 
 Conserver les quatre cartes actuelles et leur ordre.
 
 Ajouter sous le titre de la section « Les solutions AesthéIA » :
 
-> **Ces quatre domaines d’intervention ne sont pas des offres fermées. Selon votre situation, AesthéIA peut intervenir par un audit, la mise en place d’une première solution ciblée ou un accompagnement plus complet.**
+> **Ces quatre domaines d’intervention ne sont pas des offres fermées. Selon votre situation, AesthéIA peut intervenir par un audit, la mise en place d’une première solution ciblée ou une mission plus complète.**
 
 ## Carte 1 — Automatisation, assistants et agents IA
 
-Conserver le texte actuel, puis ajouter :
+Ajouter :
 
-> **Accompagnement :** Audit Automatisation & IA, mise en place d’une première solution ou accompagnement complet selon les processus à améliorer.
+> **Ce que nous vous proposons :** Audit Automatisation & IA, mise en place d’une première solution ou déploiement plus complet selon les processus à améliorer.
 
 ## Carte 2 — Acquisition et suivi des demandes
 
-Conserver le texte actuel, puis ajouter :
+Ajouter :
 
-> **Accompagnement :** Audit Visibilité & Acquisition, optimisation du parcours de demande ou accompagnement plus complet selon les points de friction identifiés.
+> **Ce que nous vous proposons :** Audit Visibilité & Acquisition, optimisation du parcours de demande ou mise en place d’un suivi commercial plus structuré.
 
 ## Carte 3 — Contenus et communication assistés par IA
 
-Conserver le texte actuel, puis ajouter :
+Ajouter :
 
-> **Accompagnement :** Audit Visibilité & Acquisition, structuration des contenus ou accompagnement éditorial assisté par IA selon les besoins.
+> **Ce que nous vous proposons :** Audit Visibilité & Acquisition, structuration des contenus ou production éditoriale assistée par IA selon les besoins.
 
 ## Carte 4 — Visibilité digitale, SEO et GEO
 
-Conserver le texte actuel, puis ajouter :
+Ajouter :
 
-> **Accompagnement :** Audit Visibilité & Acquisition, optimisation de la présence locale et digitale ou accompagnement SEO/GEO selon les priorités identifiées.
+> **Ce que nous vous proposons :** Audit Visibilité & Acquisition, optimisation de la présence locale et digitale ou mission SEO/GEO ciblée selon les priorités identifiées.
 
-Ne pas transformer ces quatre cartes en quatre produits tarifaires distincts.
+Ne pas présenter ces quatre domaines comme quatre packs fermés.
 
 ---
 
-# 3. Page d’accueil — faire apparaître clairement les deux audits
+# 3. Page d’accueil — rendre les audits visibles sans déséquilibrer la grille
 
-Dans la section actuelle « Les accompagnements », conserver la grille et les quatre cartes.
+Dans la section actuelle dédiée aux formats de mission, conserver la grille et les quatre cartes.
 
-Remplacer la carte actuelle **« Diagnostic stratégique »** par :
+Le bloc « Diagnostic stratégique » devient un bloc beaucoup plus compact :
 
-## Deux audits pour commencer
+## Faire le point avant d’agir
 
-> **Audit Visibilité & Acquisition** — Analyse de votre présence sur Google, votre site, vos contenus, votre visibilité locale et votre parcours de prise de contact afin d’identifier les freins qui limitent votre visibilité et la transformation des visiteurs en demandes.
+> **Audit Visibilité & Acquisition** — Visibilité, prise de contact et conversion.
 
-> **Audit Automatisation & IA** — Analyse de vos tâches répétitives, de vos demandes entrantes, de votre suivi commercial et de vos processus internes afin d’identifier les actions qui peuvent être simplifiées, assistées ou automatisées.
+> **Audit Automatisation & IA** — Tâches, processus et opportunités d’automatisation.
 
-**Livrable :** diagnostic priorisé, recommandations et plan d’action.
+**Livrable :** priorités, recommandations et plan d’action.
 
-Les trois autres cartes restent :
+Les trois autres cartes deviennent :
 
 - Mise en place d’une première solution ;
-- Accompagnement complet ;
+- Mise en œuvre complète ;
 - Suivi mensuel.
 
-Aucune nouvelle carte ne doit être créée.
+Ne pas créer de nouvelle carte.
+
+Objectif visuel : la première carte ne doit pas devenir sensiblement plus haute que les trois autres sur desktop.
 
 ---
 
 # 4. Page d’accueil — clarifier la première étape de la méthode
 
-Dans la section « La méthode », conserver strictement les quatre étapes et leur design.
+Conserver strictement les quatre étapes et leur design.
 
 Remplacer uniquement l’étape 1 actuelle par :
 
@@ -96,9 +103,26 @@ Les étapes 2, 3 et 4 restent inchangées.
 
 ---
 
-# 5. Page d’accueil — harmoniser le vocabulaire dans la FAQ commerciale
+# 5. Page d’accueil — harmoniser le vocabulaire commercial
 
-Dans la réponse à « Combien coûte un accompagnement avec AesthéIA ? », remplacer uniquement l’expression :
+Éviter le mot **« accompagnement »** dans les nouveaux textes commerciaux et, lorsque la section directement concernée est modifiée, privilégier selon le contexte :
+
+- mission ;
+- mise en place ;
+- mise en œuvre ;
+- intervention ;
+- ce que nous vous proposons ;
+- suivi.
+
+Dans la FAQ commerciale, faire évoluer si nécessaire :
+
+> « Combien coûte un accompagnement avec AesthéIA ? »
+
+vers :
+
+> **« Combien coûte une mission avec AesthéIA ? »**
+
+Et remplacer :
 
 > « Un diagnostic ciblé démarre autour de 800 € HT »
 
@@ -106,7 +130,7 @@ par :
 
 > **« Un audit ciblé démarre autour de 800 € HT »**
 
-Dans la réponse à « Combien de temps faut-il pour voir des résultats ? », remplacer :
+Remplacer également :
 
 > « Un diagnostic initial prend généralement quelques jours »
 
@@ -114,15 +138,17 @@ par :
 
 > **« Un audit initial prend généralement quelques jours »**
 
-Mettre à jour les données structurées FAQ correspondantes afin que le contenu visible et le JSON-LD restent strictement cohérents.
+Si la FAQ visible est modifiée, mettre à jour le JSON-LD correspondant pour conserver une stricte cohérence.
 
 ---
 
 # 6. Pages secteurs — téléphone sous les CTA
 
-Ajouter sous les CTA du hero, sur chacune des cinq pages secteurs, exactement :
+Sur chacune des cinq pages secteurs, ajouter sous les deux CTA existants le même bouton :
 
-> **Vous préférez échanger directement ?** [06 42 78 90 57](tel:+33642789057)
+> **Appeler AesthéIA — 06 42 78 90 57**
+
+Contraintes identiques à la Home : bouton CTA, Playfair Display, lien téléphonique, pas de phrase intermédiaire.
 
 Pages concernées :
 
@@ -132,15 +158,13 @@ Pages concernées :
 - `/instituts-independantes/`
 - `/automatisation-pme/`
 
-Ne pas créer un nouveau bouton. Ne pas déplacer les CTA existants.
-
 ---
 
 # 7. Médecine esthétique — introduire clairement les audits
 
-Dans la section méthode existante, sans créer de nouvelle section, ajouter un court paragraphe d’introduction :
+Dans la section méthode existante, sans créer de nouvelle section, ajouter :
 
-> L’accompagnement peut commencer par un **Audit Visibilité & Acquisition** pour analyser le site, Google, les contenus, la visibilité locale et le parcours de prise de contact, ou par un **Audit Automatisation & IA** pour identifier les tâches non médicales, le suivi des demandes et les processus pouvant être simplifiés ou assistés.
+> Selon le besoin, la première étape peut être un **Audit Visibilité & Acquisition** pour analyser le site, Google, les contenus et le parcours de prise de contact, ou un **Audit Automatisation & IA** pour identifier les tâches non médicales, les demandes et le suivi pouvant être simplifiés.
 
 Conserver la méthode, les cartes et la structure actuelles.
 
@@ -150,7 +174,7 @@ Conserver la méthode, les cartes et la structure actuelles.
 
 Dans la section méthode existante, sans créer de nouvelle section, ajouter :
 
-> L’accompagnement peut commencer par un **Audit Visibilité & Acquisition** pour analyser la présence Google, le site, les contenus, les points de réservation et la cohérence entre visibilité et prise de rendez-vous, ou par un **Audit Automatisation & IA** pour identifier les tâches de coordination, de suivi client et de gestion des demandes pouvant être simplifiées.
+> Selon le besoin, la première étape peut être un **Audit Visibilité & Acquisition** pour analyser Google, le site, les contenus et les points de réservation, ou un **Audit Automatisation & IA** pour identifier les tâches de coordination, de suivi client et de gestion des demandes pouvant être simplifiées.
 
 Conserver tout le reste de la page.
 
@@ -160,7 +184,7 @@ Conserver tout le reste de la page.
 
 Dans la section méthode existante, sans créer de nouvelle section, ajouter :
 
-> L’accompagnement peut commencer par un **Audit Visibilité & Acquisition** pour analyser la visibilité de l’établissement, les contenus, les parcours de demande de séjour et la conversion, ou par un **Audit Automatisation & IA** pour identifier les étapes de devis, de suivi, de coordination et de planification pouvant être simplifiées.
+> Selon le besoin, la première étape peut être un **Audit Visibilité & Acquisition** pour analyser la visibilité, les contenus, les demandes de séjour et la conversion, ou un **Audit Automatisation & IA** pour identifier les étapes de devis, de suivi, de coordination et de planification pouvant être simplifiées.
 
 Conserver tout le reste de la page.
 
@@ -170,7 +194,7 @@ Conserver tout le reste de la page.
 
 Dans la section méthode existante, sans créer de nouvelle section, ajouter :
 
-> L’accompagnement peut commencer par un **Audit Visibilité & Acquisition** pour analyser la fiche Google Business Profile, le site, les contenus, les réseaux sociaux utiles à la découverte et le parcours de réservation, ou par un **Audit Automatisation & IA** pour identifier les tâches administratives, les relances, les rappels et les suivis pouvant être simplifiés.
+> Selon le besoin, la première étape peut être un **Audit Visibilité & Acquisition** pour analyser Google Business Profile, le site, les contenus, les réseaux sociaux utiles à la découverte et la réservation, ou un **Audit Automatisation & IA** pour identifier les tâches administratives, les relances, les rappels et le suivi pouvant être simplifiés.
 
 Conserver tout le reste de la page.
 
@@ -180,19 +204,19 @@ Conserver tout le reste de la page.
 
 Dans la section méthode existante, sans créer de nouvelle section, ajouter :
 
-> L’accompagnement peut commencer par un **Audit Automatisation & IA** pour identifier les tâches, les demandes, les relances et les processus à fort potentiel de simplification, ou par un **Audit Visibilité & Acquisition** lorsque le principal frein concerne la présence en ligne, les contenus et la transformation des visiteurs en demandes.
+> Selon le besoin, la première étape peut être un **Audit Automatisation & IA** pour identifier les tâches, les demandes, les relances et les processus à simplifier, ou un **Audit Visibilité & Acquisition** lorsque le principal frein concerne la présence en ligne et la transformation des visiteurs en demandes.
 
 Conserver tout le reste de la page.
 
 ---
 
-# 12. Règle commerciale commune à toutes les pages
+# 12. Parcours commercial commun
 
-Le parcours commercial doit devenir clairement compréhensible :
+Le parcours doit devenir clairement compréhensible :
 
 > **Audit → priorisation → mise en place → suivi**
 
-Avec deux portes d’entrée :
+Deux portes d’entrée :
 
 1. **Audit Visibilité & Acquisition**
 2. **Audit Automatisation & IA**
@@ -204,36 +228,37 @@ Les domaines d’intervention restent :
 - Contenus et communication assistés par IA ;
 - Visibilité digitale, SEO et GEO.
 
-Ils ne doivent pas être présentés comme quatre offres rigides ou quatre packs fermés.
+Ils restent des expertises transversales, pas quatre offres rigides.
 
 ---
 
 # 13. Contraintes fermes d’intégration
 
-Lors de l’application de ce brouillon aux fichiers HTML :
+Lors de l’application aux pages réelles :
 
 - ne pas modifier l’architecture des pages ;
 - ne supprimer aucune section ;
 - ne créer aucune nouvelle section ;
 - ne modifier aucun visuel ;
-- ne modifier aucun CTA ;
-- ne modifier aucune URL ;
+- ne modifier aucun CTA existant ;
+- seul le nouveau CTA téléphonique validé peut être ajouté ;
+- ne modifier aucune URL existante ;
 - ne modifier aucun lien Google Forms ou Google Agenda ;
 - ne modifier ni le header ni le footer ;
 - ne modifier aucune couleur ;
-- ne modifier aucune police ;
-- ne modifier aucun espacement déjà validé ;
+- ne remplacer aucune police existante ;
+- utiliser Playfair Display uniquement pour le nouveau CTA téléphone ;
+- ne modifier aucun espacement déjà validé au-delà du strict nécessaire pour intégrer le CTA ;
 - ne modifier aucune animation ;
-- ne modifier aucun composant ;
-- ne modifier aucune classe CSS sauf nécessité strictement technique et après validation ;
-- ne pas déployer sur la branche `main` ;
+- ne restructurer aucun composant ;
+- ne pas déployer sur `main` ;
 - ne déclencher aucun déploiement de production Netlify avant validation explicite.
 
 En cas de doute, conserver l’existant.
 
 ---
 
-# 14. Fichiers qui seront concernés après validation du brouillon
+# 14. Fichiers concernés après validation
 
 - `index.html`
 - `medecine-esthetique/index.html`
@@ -242,4 +267,4 @@ En cas de doute, conserver l’existant.
 - `instituts-independantes/index.html`
 - `automatisation-pme/index.html`
 
-Aucun autre fichier ne doit être modifié dans cette passe, sauf éventuelle nécessité technique validée séparément.
+Aucun autre fichier ne doit être modifié dans cette passe, sauf nécessité technique validée séparément.
