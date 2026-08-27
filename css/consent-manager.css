@@ -72,10 +72,7 @@
   margin-top: 0.55rem !important;
 }
 
-/* Numéros de méthode en filigrane bleu marine : contour net, remplissage très léger. */
 .home-process .process-step::after {
-  color: rgba(30, 42, 80, 0.16) !important;
-  opacity: 1 !important;
-  -webkit-text-stroke: 1.1px rgba(30, 42, 80, 0.58);
-  text-shadow: 0 0 14px rgba(30, 42, 80, 0.08);
+  color: #1e2a50 !important;
+  opacity: 0.28 !important;
 }
