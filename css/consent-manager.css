@@ -74,4 +74,5 @@
 
 .home-process .process-step::after {
   color: #1e2a50 !important;
+  opacity: 0.28 !important;
 }
