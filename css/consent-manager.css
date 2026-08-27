@@ -335,3 +335,67 @@
     max-width: none;
   }
 }
+
+/* Correction stricte demandée : espacement, alignement des bénéfices et harmonisation des bandeaux. */
+.sector-editorial-chapter,
+.institutes-page .institutes-editorial-chapter {
+  gap: 0 !important;
+}
+
+.sector-editorial-content,
+.institutes-page .institutes-editorial-content {
+  margin-top: 0.18rem !important;
+}
+
+.sector-editorial-benefit,
+.institutes-page .institutes-editorial-benefit {
+  display: flex !important;
+  align-items: flex-start;
+  height: 10.5rem !important;
+  min-height: 10.5rem !important;
+  flex: 0 0 10.5rem;
+}
+
+.sector-reality-conclusion,
+.sector-method-conclusion,
+.institutes-page .institutes-reality-conclusion,
+.institutes-page .institutes-method-conclusion {
+  background: #dceeff !important;
+  color: #1e2a50 !important;
+  border-left: 4px solid #00a9ee !important;
+}
+
+.sector-reality-conclusion strong,
+.sector-method-conclusion strong,
+.institutes-page .institutes-reality-conclusion strong,
+.institutes-page .institutes-method-conclusion strong {
+  color: #1e2a50 !important;
+}
+
+@media (max-width: 1049px) and (min-width: 721px) {
+  .sector-editorial-heading h3,
+  .institutes-page .institutes-editorial-heading h3 {
+    min-height: 3.2rem;
+  }
+
+  .sector-editorial-benefit,
+  .institutes-page .institutes-editorial-benefit {
+    height: 9.5rem !important;
+    min-height: 9.5rem !important;
+    flex-basis: 9.5rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .sector-editorial-content,
+  .institutes-page .institutes-editorial-content {
+    margin-top: 0.12rem !important;
+  }
+
+  .sector-editorial-benefit,
+  .institutes-page .institutes-editorial-benefit {
+    height: auto !important;
+    min-height: 0 !important;
+    flex-basis: auto;
+  }
+}
