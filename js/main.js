@@ -1,3 +1,24 @@
+const siteThemeMedia = window.matchMedia("(prefers-color-scheme: dark)");
+const siteThemeRoot = document.documentElement;
+
+const applyAutomaticSiteTheme = () => {
+  const currentHour = new Date().getHours();
+  const isNightTime = currentHour >= 19 || currentHour < 7;
+  const shouldUseDarkTheme = siteThemeMedia.matches || isNightTime;
+
+  siteThemeRoot.classList.toggle("theme-dark", shouldUseDarkTheme);
+  siteThemeRoot.dataset.theme = shouldUseDarkTheme ? "dark" : "light";
+};
+
+applyAutomaticSiteTheme();
+siteThemeMedia.addEventListener?.("change", applyAutomaticSiteTheme);
+window.setInterval(applyAutomaticSiteTheme, 60000);
+document.addEventListener("visibilitychange", () => {
+  if (!document.hidden) {
+    applyAutomaticSiteTheme();
+  }
+});
+
 const navToggle = document.querySelector(".nav-toggle");
 const nav = document.querySelector(".main-nav");
 const navDropdown = document.querySelector(".nav-dropdown");

@@ -3878,3 +3878,159 @@ h3 {
   letter-spacing: 0.035em;
   line-height: 1.35;
 }
+
+/* Mode nuit automatique : secours horaire pour les navigateurs mobiles qui
+   ne transmettent pas correctement la préférence sombre du téléphone. */
+html.theme-dark {
+  color-scheme: dark;
+  --color-primary: #eef2ff;
+  --color-bg: #0b1028;
+  --color-soft: #11183d;
+  --color-border: #2f3a68;
+  --color-muted: #c7cee9;
+  --color-ink: #eef2ff;
+  --color-mist: #121a42;
+  --color-warm: #151a3d;
+  --color-blush: #1c1743;
+  --color-accent: #9b7cff;
+  --gradient-soft-blue: linear-gradient(135deg, #0b1028 0%, #11183d 48%, #151c46 100%);
+  --shadow-soft: 0 16px 38px rgba(2, 5, 18, 0.3);
+}
+
+html.theme-dark .site-header {
+  background: rgba(9, 14, 36, 0.94);
+  border-bottom-color: rgba(155, 124, 255, 0.24);
+}
+
+html.theme-dark .main-nav,
+html.theme-dark .nav-dropdown-menu {
+  background: #0d1330;
+}
+
+html.theme-dark .nav-toggle {
+  background: #11183d;
+}
+
+html.theme-dark .skip-link {
+  color: #eef2ff;
+  background: #151c46;
+}
+
+html.theme-dark .section-soft {
+  background:
+    radial-gradient(circle at 90% 18%, rgba(94, 23, 235, 0.14), transparent 34%),
+    #11183d;
+}
+
+html.theme-dark .section-mist {
+  background:
+    radial-gradient(circle at 12% 84%, rgba(94, 23, 235, 0.12), transparent 34%),
+    linear-gradient(135deg, #11183d 0%, #0d1330 52%, #151c46 100%);
+}
+
+html.theme-dark .positioning-section,
+html.theme-dark .location-section {
+  background:
+    radial-gradient(circle at 88% 16%, rgba(94, 23, 235, 0.16), transparent 34%),
+    radial-gradient(circle at 12% 82%, rgba(0, 176, 255, 0.1), transparent 36%),
+    linear-gradient(135deg, #0b1028 0%, #11183d 48%, #151c46 100%);
+}
+
+html.theme-dark .section-warm {
+  background: linear-gradient(135deg, #0d1330 0%, #11183d 52%, #171943 100%);
+}
+
+html.theme-dark .positioning-section .card,
+html.theme-dark .offer-card,
+html.theme-dark .card,
+html.theme-dark .sector-card,
+html.theme-dark .conversion-card,
+html.theme-dark .legal-box,
+html.theme-dark .behind-media,
+html.theme-dark .quote-box,
+html.theme-dark .process-step,
+html.theme-dark .reassurance-note,
+html.theme-dark .faq-item,
+html.theme-dark .resource-card,
+html.theme-dark .breadcrumb,
+html.theme-dark .service-row > div,
+html.theme-dark .contact-option {
+  background: #131a3d;
+  border-color: #2f3a68;
+  box-shadow: var(--shadow-soft);
+}
+
+html.theme-dark .sector-card:hover,
+html.theme-dark .sector-side-band:hover {
+  border-color: rgba(155, 124, 255, 0.62);
+  box-shadow: 0 22px 48px rgba(2, 5, 18, 0.42);
+}
+
+html.theme-dark .sector-card img {
+  background:
+    radial-gradient(circle at 85% 18%, rgba(94, 23, 235, 0.16), transparent 34%),
+    linear-gradient(135deg, #11183d 0%, #151a3d 50%, #151c46 100%);
+}
+
+html.theme-dark .sector-side-band {
+  background: linear-gradient(135deg, #131a3d 0%, #171943 48%, #151c46 100%);
+  border-color: #2f3a68;
+}
+
+html.theme-dark .sector-side-band-media {
+  background: #151c46;
+  border-color: #2f3a68;
+}
+
+html.theme-dark .resource-meta,
+html.theme-dark .article-meta,
+html.theme-dark .breadcrumb ol {
+  color: #c7cee9;
+}
+
+html.theme-dark .breadcrumb li:not(:last-child)::after {
+  color: rgba(199, 206, 233, 0.58);
+}
+
+html.theme-dark .btn-secondary,
+html.theme-dark .location-map-link {
+  color: #eef2ff;
+  background: #151c46;
+  border-color: #3a4779;
+}
+
+html.theme-dark .btn-secondary:hover {
+  color: #eef2ff;
+  background: #1a2352;
+}
+
+html.theme-dark .location-photo,
+html.theme-dark .location-map {
+  border-color: #2f3a68;
+  box-shadow: var(--shadow-soft);
+}
+
+html.theme-dark .location-map {
+  background: #11183d;
+}
+
+html.theme-dark .location-map iframe {
+  filter: invert(90%) hue-rotate(180deg) saturate(0.72) contrast(0.9);
+}
+
+html.theme-dark .site-footer {
+  background: #080d22;
+}
+
+html.theme-dark .main-nav a:focus-visible,
+html.theme-dark .nav-dropdown-toggle:focus-visible,
+html.theme-dark .nav-toggle:focus-visible,
+html.theme-dark .btn:focus-visible,
+html.theme-dark .text-link:focus-visible,
+html.theme-dark .subtle-link:focus-visible,
+html.theme-dark .breadcrumb a:focus-visible,
+html.theme-dark .faq-accordion-item summary:focus-visible {
+  outline: 2px solid #00b0ff;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
