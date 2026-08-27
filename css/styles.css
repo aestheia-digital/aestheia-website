@@ -142,8 +142,8 @@ strong {
 }
 
 .site-header .brand-ia {
-  color: #0077dd;
-  background: linear-gradient(135deg, #0077dd 0%, #00b0ff 100%);
+  color: #2452e8;
+  background: var(--gradient-ia);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -1384,7 +1384,7 @@ h3 {
   right: 0.65rem;
   bottom: 0.2rem;
   z-index: 0;
-  color: #40547f;
+  color: #0b3f86;
   font-family: var(--font-display);
   font-size: 4.8rem;
   font-weight: 400;
@@ -1690,7 +1690,7 @@ h3 {
   right: 0.65rem;
   bottom: 0.2rem;
   z-index: 0;
-  color: #40547f;
+  color: #0b3f86;
   font-family: var(--font-display);
   font-size: 4.8rem;
   font-weight: 400;
@@ -2004,7 +2004,7 @@ h3 {
   right: 0.8rem;
   z-index: 0;
   transform: translateY(-35%);
-  color: #40547f;
+  color: #0b3f86;
   font-family: var(--font-display);
   font-size: clamp(5.6rem, 8vw, 7rem);
   font-weight: 400;
