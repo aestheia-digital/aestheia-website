@@ -19,6 +19,87 @@
       .contact-option > h3 + p {
         margin-top: 0.75rem;
       }
+
+      @media (min-width: 900px) and (max-width: 1179px) {
+        .contact-cube-hero .hero-tech-backdrop {
+          display: block;
+          opacity: 0.5;
+        }
+
+        .contact-cube-hero .hero-cube-stage {
+          --cube-size: clamp(188px, 20vw, 214px);
+          --cube-zone: clamp(315px, 35vw, 370px);
+          display: grid;
+          top: 50%;
+          right: clamp(-78px, -5vw, -42px);
+          bottom: auto;
+          opacity: 0.68;
+          transform: translateY(-50%);
+        }
+
+        .contact-cube-hero .hero-content {
+          position: relative;
+          z-index: 2;
+          max-width: 70%;
+        }
+      }
+
+      @media (min-width: 721px) and (max-width: 899px) {
+        .contact-cube-hero .hero-tech-backdrop {
+          display: block;
+          opacity: 0.38;
+        }
+
+        .contact-cube-hero .hero-cube-stage {
+          --cube-size: clamp(170px, 23vw, 192px);
+          --cube-zone: clamp(282px, 39vw, 324px);
+          display: grid;
+          top: 52%;
+          right: clamp(-94px, -8vw, -64px);
+          bottom: auto;
+          opacity: 0.56;
+          transform: translateY(-50%);
+        }
+
+        .contact-cube-hero .hero-content {
+          position: relative;
+          z-index: 2;
+          max-width: 72%;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .contact-cube-hero .hero-tech-backdrop {
+          display: block;
+          opacity: 0.24;
+        }
+
+        .contact-cube-hero .hero-cube-stage {
+          --cube-size: clamp(154px, 43vw, 180px);
+          --cube-zone: clamp(245px, 70vw, 292px);
+          display: grid;
+          top: auto;
+          right: clamp(-108px, -25vw, -82px);
+          bottom: 1%;
+          opacity: 0.32;
+          filter: saturate(1.08) contrast(1.04);
+          transform: none;
+        }
+
+        .contact-cube-hero .hero-cube-stage::before {
+          opacity: 0.36;
+        }
+
+        .contact-cube-hero .hero-cube-effects {
+          opacity: 0.48;
+        }
+
+        .contact-cube-hero .hero-content {
+          position: relative;
+          z-index: 2;
+          max-width: none;
+        }
+      }
     </style>
   </head>
   <body>
