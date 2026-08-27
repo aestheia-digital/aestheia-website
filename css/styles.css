@@ -1384,7 +1384,7 @@ h3 {
   right: 0.65rem;
   bottom: 0.2rem;
   z-index: 0;
-  color: var(--color-accent);
+  color: #40547f;
   font-family: var(--font-display);
   font-size: 4.8rem;
   font-weight: 400;
@@ -1690,7 +1690,7 @@ h3 {
   right: 0.65rem;
   bottom: 0.2rem;
   z-index: 0;
-  color: var(--color-accent);
+  color: #40547f;
   font-family: var(--font-display);
   font-size: 4.8rem;
   font-weight: 400;
@@ -2004,7 +2004,7 @@ h3 {
   right: 0.8rem;
   z-index: 0;
   transform: translateY(-35%);
-  color: var(--color-accent);
+  color: #40547f;
   font-family: var(--font-display);
   font-size: clamp(5.6rem, 8vw, 7rem);
   font-weight: 400;
