@@ -3,22 +3,67 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Brouillon — clarification commerciale AesthéIA</title>
+    <title>Brouillon v2 — clarification commerciale AesthéIA</title>
     <meta name="robots" content="noindex,nofollow">
     <link rel="icon" href="../../assets/images/brand/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../css/styles.css?v=draft-commercial-20260827">
+    <link rel="stylesheet" href="../../css/styles.css?v=draft-commercial-v2-20260827">
+    <style>
+      .draft-phone-row {
+        margin-top: 1rem;
+      }
+
+      .draft-phone-cta {
+        font-family: var(--font-display);
+        font-size: 1.05rem;
+        font-weight: 400;
+        letter-spacing: 0;
+        text-transform: none;
+      }
+
+      .draft-note {
+        max-width: 780px;
+        margin-top: 1.1rem;
+      }
+
+      .draft-offer-label {
+        margin-top: 1rem;
+        margin-bottom: 0.45rem;
+        font-family: var(--font-structure);
+        font-size: 0.78rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: var(--color-accent);
+      }
+
+      .draft-audit-card .audit-item {
+        margin-bottom: 0.85rem;
+      }
+
+      .draft-audit-card .audit-item:last-of-type {
+        margin-bottom: 1rem;
+      }
+
+      .draft-audit-card .audit-item strong {
+        display: block;
+        margin-bottom: 0.2rem;
+      }
+
+      .sector-draft-phone {
+        margin-top: 1.25rem;
+      }
+    </style>
   </head>
   <body>
     <main id="contenu">
       <section class="hero page-hero hero-brand">
         <div class="hero-inner">
           <div class="hero-content">
-            <p class="eyebrow">Brouillon de validation — ne pas publier</p>
+            <p class="eyebrow">Brouillon v2 — ne pas publier</p>
             <h1>Clarification commerciale des offres AesthéIA</h1>
-            <p>Prévisualisation éditoriale uniquement. Cette page présente les textes à valider avant toute modification des pages publiques et avant tout déploiement sur Netlify.</p>
+            <p>Cette version intègre les corrections de présentation et de vocabulaire validées avant toute modification des pages publiques.</p>
           </div>
         </div>
       </section>
@@ -26,12 +71,15 @@
       <section class="section section-mist">
         <div class="container">
           <p class="eyebrow">Accueil — Hero</p>
-          <h2>Téléphone visible sous les CTA</h2>
+          <h2>Le téléphone devient un vrai CTA, sans phrase intermédiaire.</h2>
           <div class="hero-actions" style="margin-top:1.4rem;">
             <a class="btn btn-primary" href="#">Identifions vos besoins</a>
             <a class="btn btn-secondary" href="#">Discutons ensemble de votre projet</a>
           </div>
-          <p style="margin-top:1rem;"><strong>Vous préférez échanger directement ?</strong> <a href="tel:+33642789057">06 42 78 90 57</a></p>
+          <div class="draft-phone-row">
+            <a class="btn btn-secondary draft-phone-cta" href="tel:+33642789057">Appeler AesthéIA — 06 42 78 90 57</a>
+          </div>
+          <p class="draft-note"><strong>Présentation retenue :</strong> bouton placé directement sous les deux CTA existants, avec une typographie Playfair Display. Pas de phrase « Vous préférez échanger directement ? ».</p>
         </div>
       </section>
 
@@ -39,30 +87,34 @@
         <div class="container">
           <p class="eyebrow">Accueil — Domaines d’intervention</p>
           <h2>Les quatre domaines restent inchangés, mais leur rôle devient plus clair.</h2>
-          <p class="section-intro"><strong>Ces quatre domaines d’intervention ne sont pas des offres fermées.</strong> Selon votre situation, AesthéIA peut intervenir par un audit, la mise en place d’une première solution ciblée ou un accompagnement plus complet.</p>
+          <p class="section-intro"><strong>Ces quatre domaines d’intervention ne sont pas des offres fermées.</strong> Selon votre situation, AesthéIA peut intervenir par un audit, la mise en place d’une première solution ciblée ou une mission plus complète.</p>
           <div class="offer-grid" style="margin-top:2rem;">
             <article class="offer-card">
               <h3>Automatisation, assistants et agents IA</h3>
               <p>Simplifier les tâches répétitives, organiser les informations et assister les équipes sans perdre la maîtrise des actions sensibles.</p>
-              <p><strong>Accompagnement :</strong> Audit Automatisation &amp; IA, mise en place d’une première solution ou accompagnement complet selon les processus à améliorer.</p>
+              <p class="draft-offer-label">Ce que nous vous proposons</p>
+              <p>Audit Automatisation &amp; IA, mise en place d’une première solution ou déploiement plus complet selon les processus à améliorer.</p>
               <p class="offer-result"><strong>Résultat :</strong> Moins de manipulations, d’oublis et de temps perdu.</p>
             </article>
             <article class="offer-card">
               <h3>Acquisition et suivi des demandes</h3>
               <p>Centraliser, qualifier et suivre les demandes pour limiter les opportunités perdues et faciliter le passage à l’action.</p>
-              <p><strong>Accompagnement :</strong> Audit Visibilité &amp; Acquisition, optimisation du parcours de demande ou accompagnement plus complet selon les points de friction identifiés.</p>
+              <p class="draft-offer-label">Ce que nous vous proposons</p>
+              <p>Audit Visibilité &amp; Acquisition, optimisation du parcours de demande ou mise en place d’un suivi commercial plus structuré.</p>
               <p class="offer-result"><strong>Résultat :</strong> Un suivi commercial plus clair et plus régulier.</p>
             </article>
             <article class="offer-card">
               <h3>Contenus et communication assistés par IA</h3>
               <p>Préparer, organiser et décliner les contenus plus efficacement, tout en conservant l’identité et la validation de l’entreprise.</p>
-              <p><strong>Accompagnement :</strong> Audit Visibilité &amp; Acquisition, structuration des contenus ou accompagnement éditorial assisté par IA selon les besoins.</p>
+              <p class="draft-offer-label">Ce que nous vous proposons</p>
+              <p>Audit Visibilité &amp; Acquisition, structuration des contenus ou production éditoriale assistée par IA selon les besoins.</p>
               <p class="offer-result"><strong>Résultat :</strong> Une communication plus régulière et moins chronophage.</p>
             </article>
             <article class="offer-card">
               <h3>Visibilité digitale, SEO et GEO</h3>
               <p>Clarifier la présence en ligne pour être mieux compris par les prospects, Google et les moteurs de réponse utilisant l’IA.</p>
-              <p><strong>Accompagnement :</strong> Audit Visibilité &amp; Acquisition, optimisation de la présence locale et digitale ou accompagnement SEO/GEO selon les priorités identifiées.</p>
+              <p class="draft-offer-label">Ce que nous vous proposons</p>
+              <p>Audit Visibilité &amp; Acquisition, optimisation de la présence locale et digitale ou mission SEO/GEO ciblée selon les priorités identifiées.</p>
               <p class="offer-result"><strong>Résultat :</strong> Une visibilité plus lisible et orientée vers la prise de contact.</p>
             </article>
           </div>
@@ -71,14 +123,14 @@
 
       <section class="section section-soft">
         <div class="container">
-          <p class="eyebrow">Accueil — Les accompagnements</p>
-          <h2>Deux audits pour commencer, puis mise en place et suivi.</h2>
+          <p class="eyebrow">Accueil — Formats de mission</p>
+          <h2>Un point de départ clair, puis une mise en œuvre adaptée.</h2>
           <div class="grid grid-4 engagement-grid" style="margin-top:2rem;">
-            <article class="card engagement-card">
-              <h3>Deux audits pour commencer</h3>
-              <p><strong>Audit Visibilité &amp; Acquisition</strong> — Analyse de votre présence sur Google, votre site, vos contenus, votre visibilité locale et votre parcours de prise de contact afin d’identifier les freins qui limitent votre visibilité et la transformation des visiteurs en demandes.</p>
-              <p><strong>Audit Automatisation &amp; IA</strong> — Analyse de vos tâches répétitives, de vos demandes entrantes, de votre suivi commercial et de vos processus internes afin d’identifier les actions qui peuvent être simplifiées, assistées ou automatisées.</p>
-              <p class="deliverable"><strong>Livrable :</strong> diagnostic priorisé, recommandations et plan d’action.</p>
+            <article class="card engagement-card draft-audit-card">
+              <h3>Faire le point avant d’agir</h3>
+              <p class="audit-item"><strong>Audit Visibilité &amp; Acquisition</strong> Visibilité, prise de contact et conversion.</p>
+              <p class="audit-item"><strong>Audit Automatisation &amp; IA</strong> Tâches, processus et opportunités d’automatisation.</p>
+              <p class="deliverable"><strong>Livrable :</strong> priorités, recommandations et plan d’action.</p>
             </article>
             <article class="card engagement-card">
               <h3>Mise en place d’une première solution</h3>
@@ -86,9 +138,9 @@
               <p class="deliverable"><strong>Livrable :</strong> solution fonctionnelle, documentation et prise en main.</p>
             </article>
             <article class="card engagement-card">
-              <h3>Accompagnement complet</h3>
+              <h3>Mise en œuvre complète</h3>
               <p>Relier plusieurs étapes de votre activité : acquisition, traitement des demandes, suivi, communication, conversion et pilotage.</p>
-              <p class="deliverable"><strong>Livrable :</strong> stratégie, mise en place, automatisations, accompagnement et documentation.</p>
+              <p class="deliverable"><strong>Livrable :</strong> stratégie, mise en place, automatisations, documentation et suivi initial.</p>
             </article>
             <article class="card engagement-card">
               <h3>Suivi mensuel</h3>
@@ -112,8 +164,8 @@
         <div class="container">
           <p class="eyebrow">Médecine esthétique</p>
           <h2>Ajout prévu dans la méthode existante</h2>
-          <p>L’accompagnement peut commencer par un <strong>Audit Visibilité &amp; Acquisition</strong> pour analyser le site, Google, les contenus, la visibilité locale et le parcours de prise de contact, ou par un <strong>Audit Automatisation &amp; IA</strong> pour identifier les tâches non médicales, le suivi des demandes et les processus pouvant être simplifiés ou assistés.</p>
-          <p><strong>Vous préférez échanger directement ?</strong> <a href="tel:+33642789057">06 42 78 90 57</a></p>
+          <p>Selon le besoin, la première étape peut être un <strong>Audit Visibilité &amp; Acquisition</strong> pour analyser le site, Google, les contenus et le parcours de prise de contact, ou un <strong>Audit Automatisation &amp; IA</strong> pour identifier les tâches non médicales, les demandes et le suivi pouvant être simplifiés.</p>
+          <div class="sector-draft-phone"><a class="btn btn-secondary draft-phone-cta" href="tel:+33642789057">Appeler AesthéIA — 06 42 78 90 57</a></div>
         </div>
       </section>
 
@@ -121,8 +173,8 @@
         <div class="container">
           <p class="eyebrow">Spas hôteliers &amp; spas haut de gamme</p>
           <h2>Ajout prévu dans la méthode existante</h2>
-          <p>L’accompagnement peut commencer par un <strong>Audit Visibilité &amp; Acquisition</strong> pour analyser la présence Google, le site, les contenus, les points de réservation et la cohérence entre visibilité et prise de rendez-vous, ou par un <strong>Audit Automatisation &amp; IA</strong> pour identifier les tâches de coordination, de suivi client et de gestion des demandes pouvant être simplifiées.</p>
-          <p><strong>Vous préférez échanger directement ?</strong> <a href="tel:+33642789057">06 42 78 90 57</a></p>
+          <p>Selon le besoin, la première étape peut être un <strong>Audit Visibilité &amp; Acquisition</strong> pour analyser Google, le site, les contenus et les points de réservation, ou un <strong>Audit Automatisation &amp; IA</strong> pour identifier les tâches de coordination, de suivi client et de gestion des demandes pouvant être simplifiées.</p>
+          <div class="sector-draft-phone"><a class="btn btn-secondary draft-phone-cta" href="tel:+33642789057">Appeler AesthéIA — 06 42 78 90 57</a></div>
         </div>
       </section>
 
@@ -130,8 +182,8 @@
         <div class="container">
           <p class="eyebrow">Thalasso, thermal &amp; centres aquatiques</p>
           <h2>Ajout prévu dans la méthode existante</h2>
-          <p>L’accompagnement peut commencer par un <strong>Audit Visibilité &amp; Acquisition</strong> pour analyser la visibilité de l’établissement, les contenus, les parcours de demande de séjour et la conversion, ou par un <strong>Audit Automatisation &amp; IA</strong> pour identifier les étapes de devis, de suivi, de coordination et de planification pouvant être simplifiées.</p>
-          <p><strong>Vous préférez échanger directement ?</strong> <a href="tel:+33642789057">06 42 78 90 57</a></p>
+          <p>Selon le besoin, la première étape peut être un <strong>Audit Visibilité &amp; Acquisition</strong> pour analyser la visibilité, les contenus, les demandes de séjour et la conversion, ou un <strong>Audit Automatisation &amp; IA</strong> pour identifier les étapes de devis, de suivi, de coordination et de planification pouvant être simplifiées.</p>
+          <div class="sector-draft-phone"><a class="btn btn-secondary draft-phone-cta" href="tel:+33642789057">Appeler AesthéIA — 06 42 78 90 57</a></div>
         </div>
       </section>
 
@@ -139,8 +191,8 @@
         <div class="container">
           <p class="eyebrow">Instituts &amp; indépendantes</p>
           <h2>Ajout prévu dans la méthode existante</h2>
-          <p>L’accompagnement peut commencer par un <strong>Audit Visibilité &amp; Acquisition</strong> pour analyser la fiche Google Business Profile, le site, les contenus, les réseaux sociaux utiles à la découverte et le parcours de réservation, ou par un <strong>Audit Automatisation &amp; IA</strong> pour identifier les tâches administratives, les relances, les rappels et les suivis pouvant être simplifiés.</p>
-          <p><strong>Vous préférez échanger directement ?</strong> <a href="tel:+33642789057">06 42 78 90 57</a></p>
+          <p>Selon le besoin, la première étape peut être un <strong>Audit Visibilité &amp; Acquisition</strong> pour analyser Google Business Profile, le site, les contenus, les réseaux sociaux utiles à la découverte et la réservation, ou un <strong>Audit Automatisation &amp; IA</strong> pour identifier les tâches administratives, les relances, les rappels et le suivi pouvant être simplifiés.</p>
+          <div class="sector-draft-phone"><a class="btn btn-secondary draft-phone-cta" href="tel:+33642789057">Appeler AesthéIA — 06 42 78 90 57</a></div>
         </div>
       </section>
 
@@ -148,8 +200,8 @@
         <div class="container">
           <p class="eyebrow">TPE &amp; PME</p>
           <h2>Ajout prévu dans la méthode existante</h2>
-          <p>L’accompagnement peut commencer par un <strong>Audit Automatisation &amp; IA</strong> pour identifier les tâches, les demandes, les relances et les processus à fort potentiel de simplification, ou par un <strong>Audit Visibilité &amp; Acquisition</strong> lorsque le principal frein concerne la présence en ligne, les contenus et la transformation des visiteurs en demandes.</p>
-          <p><strong>Vous préférez échanger directement ?</strong> <a href="tel:+33642789057">06 42 78 90 57</a></p>
+          <p>Selon le besoin, la première étape peut être un <strong>Audit Automatisation &amp; IA</strong> pour identifier les tâches, les demandes, les relances et les processus à simplifier, ou un <strong>Audit Visibilité &amp; Acquisition</strong> lorsque le principal frein concerne la présence en ligne et la transformation des visiteurs en demandes.</p>
+          <div class="sector-draft-phone"><a class="btn btn-secondary draft-phone-cta" href="tel:+33642789057">Appeler AesthéIA — 06 42 78 90 57</a></div>
         </div>
       </section>
 
@@ -158,7 +210,7 @@
           <div>
             <p class="eyebrow">Parcours commercial cible</p>
             <h2>Audit → priorisation → mise en place → suivi</h2>
-            <p>Deux portes d’entrée seulement : <strong>Audit Visibilité &amp; Acquisition</strong> et <strong>Audit Automatisation &amp; IA</strong>. Les quatre domaines d’intervention restent des expertises transversales, pas quatre packs fermés.</p>
+            <p>Deux portes d’entrée : <strong>Audit Visibilité &amp; Acquisition</strong> et <strong>Audit Automatisation &amp; IA</strong>. Les quatre domaines d’intervention restent des expertises transversales, pas quatre packs fermés.</p>
           </div>
         </div>
       </section>
