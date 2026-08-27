@@ -176,6 +176,13 @@ cubeHeroes.forEach((cubeHero) => {
 
 const homeHero = document.querySelector(".home-hero");
 
+if (homeHero) {
+  const heroLead = homeHero.querySelector(".hero-content > p");
+  if (heroLead) {
+    heroLead.textContent = "AesthéIA conçoit des automatisations, des assistants IA et des systèmes digitaux sur mesure pour simplifier votre organisation, mieux suivre vos prospects et renforcer votre visibilité digitale sur Google et les moteurs de réponse utilisant l’IA.";
+  }
+}
+
 if (
   homeHero &&
   "IntersectionObserver" in window &&
@@ -260,9 +267,16 @@ if (!document.getElementById("commercial-alignment-rules")) {
       color: var(--color-accent);
     }
 
-    .home-offers .commercial-domain-intro {
-      width: 100%;
-      max-width: none;
+    .site-header .brand-ia {
+      color: #1fa4dd;
+      background: linear-gradient(135deg, #3923b8 0%, #435bd8 50%, #1fa4dd 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .home-offers .commercial-offer-proposal {
+      margin-bottom: 0.65rem !important;
     }
 
     @media (min-width: 960px) {
@@ -288,6 +302,48 @@ if (!document.getElementById("commercial-alignment-rules")) {
     }
   `;
   document.head.appendChild(commercialStyles);
+}
+
+const homeProblems = document.querySelector(".home-problems");
+
+if (homeProblems) {
+  const heading = homeProblems.querySelector("h2");
+  const intro = homeProblems.querySelector(".section-intro");
+  const problemCards = Array.from(homeProblems.querySelectorAll(".problem-card"));
+  const problemIcons = [
+    "assets/icons/acquisition-target.svg",
+    "assets/icons/content-spark.svg",
+    "assets/icons/systems-cog.svg",
+    "assets/icons/seo-search.svg",
+  ];
+
+  if (heading) {
+    heading.textContent = "Votre organisation vous fait perdre du temps et votre visibilité digitale reste difficile à maintenir.";
+  }
+
+  if (intro) {
+    intro.textContent = "De nombreuses entreprises cumulent tâches répétitives, informations dispersées, suivis irréguliers et présence digitale difficile à maintenir. Les demandes se perdent, les contenus sont préparés dans l’urgence et le site, Google ou les moteurs de réponse utilisant l’IA ne reflètent pas toujours clairement l’activité.";
+  }
+
+  problemCards.forEach((card, index) => {
+    const title = card.querySelector("h3");
+    const text = card.querySelector("p");
+
+    if (index === 3) {
+      if (title) {
+        title.textContent = "Visibilité digitale";
+      }
+      if (text) {
+        text.textContent = "Mettre à jour le site, la fiche Google et les contenus sans toujours savoir si l’entreprise est réellement visible et comprise par les prospects, Google et les moteurs de réponse utilisant l’IA.";
+      }
+    }
+
+    if (title && problemIcons[index] && !title.querySelector("img")) {
+      const label = title.textContent.trim();
+      title.classList.add("title-with-icon", "card-title-with-icon");
+      title.innerHTML = `<img class="title-pictogram card-title-pictogram" src="${problemIcons[index]}" alt="" aria-hidden="true"><span>${label}</span>`;
+    }
+  });
 }
 
 const homeOffers = document.querySelector(".home-offers");
@@ -408,7 +464,7 @@ if (firstHomeStep) {
     title.textContent = "Commencer par l’audit adapté";
   }
   if (text) {
-    text.innerHTML = "Selon le besoin, démarrer par un <strong>Audit Visibilité &amp; Acquisition</strong> ou un <strong>Audit Automatisation &amp; IA</strong> afin d’identifier les freins, les priorités et les premières actions utiles.";
+    text.innerHTML = "Selon le besoin, démarrer par un <strong>Audit Visibilité & Acquisition</strong> ou un <strong>Audit Automatisation & IA</strong> afin d’identifier les freins, les priorités et les premières actions utiles.";
   }
 }
 
