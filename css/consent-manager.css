@@ -72,7 +72,61 @@
   margin-top: 0.55rem !important;
 }
 
+/* Retour strict au rendu violet léger d’origine pour les numéros 01 à 04. */
 .home-process .process-step::after {
-  color: #1e2a50 !important;
-  opacity: 0.28 !important;
+  color: #5e17eb !important;
+  opacity: 0.08 !important;
+}
+
+/* Conseils & ressources : CTA alignés et accès téléphone direct. */
+.resource-cta .resource-cta-buttons {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+  width: 100%;
+  align-items: stretch;
+}
+
+.resource-cta .resource-cta-buttons > .btn {
+  width: 100%;
+  height: 62px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.resource-cta .resource-phone-cta,
+.resource-cta .resource-phone-cta:hover {
+  grid-column: 1 / -1;
+  gap: 0.65rem;
+  color: #fff !important;
+  border-color: transparent !important;
+  background: var(--gradient-ia) !important;
+  box-shadow: 0 16px 30px rgba(0, 176, 255, 0.18);
+}
+
+.resource-cta .resource-phone-label {
+  font-family: var(--font-body);
+  font-weight: 600;
+}
+
+.resource-cta .resource-phone-number {
+  font-family: var(--font-display);
+  font-size: 1.16rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 760px) {
+  .resource-cta .resource-cta-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .resource-cta .resource-phone-cta {
+    grid-column: auto;
+    min-height: 62px;
+    height: auto;
+    flex-wrap: wrap;
+  }
 }
