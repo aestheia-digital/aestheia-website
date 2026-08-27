@@ -34,3 +34,27 @@
   .consent-button--primary { background: #eef2ff; color: #101737; }
   .consent-category { border-color: #35416f; }
 }
+
+/* Mise en valeur discrète des numéros de téléphone, sans modifier leur typographie. */
+.site-header .header-phone-direct {
+  color: #5e17eb !important;
+}
+
+.site-header .header-phone-direct:hover {
+  color: #5e17eb !important;
+  opacity: 0.82;
+}
+
+.site-footer .footer-phone {
+  color: #a788ff !important;
+}
+
+.site-footer .footer-phone:hover {
+  color: #c4b3ff !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  .site-header .header-phone-direct {
+    color: #b79cff !important;
+  }
+}
