@@ -73,8 +73,8 @@
 }
 
 .home-process .process-step::after {
-  color: #1e2a50 !important;
-  opacity: 0.28 !important;
+  color: #5e17eb !important;
+  opacity: 0.08 !important;
 }
 
 /* Conseils & ressources : CTA alignés et accès téléphone direct. */
