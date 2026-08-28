@@ -4186,3 +4186,24 @@ html.theme-dark .btn[href="https://calendar.app.google/qx6dT7WJfTrsFe6j9"]:hover
   background: var(--gradient-ia) !important;
   box-shadow: 0 16px 30px rgba(0, 176, 255, 0.18);
 }
+
+/* Lien intersectoriel Spa vers Thalasso : dégradé constant, y compris en mode nuit. */
+.sector-crosslink-cta,
+.sector-crosslink-cta:hover,
+html.theme-dark .sector-crosslink-cta,
+html.theme-dark .sector-crosslink-cta:hover {
+  color: #fff !important;
+  border-color: transparent !important;
+  background: var(--gradient-ia) !important;
+  box-shadow: 0 16px 30px rgba(0, 176, 255, 0.18);
+}
+
+@media (prefers-color-scheme: dark) {
+  .sector-crosslink-cta,
+  .sector-crosslink-cta:hover {
+    color: #fff !important;
+    border-color: transparent !important;
+    background: var(--gradient-ia) !important;
+    box-shadow: 0 16px 30px rgba(0, 176, 255, 0.18);
+  }
+}
