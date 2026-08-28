@@ -4034,3 +4034,18 @@ html.theme-dark .faq-accordion-item summary:focus-visible {
   outline-offset: 4px;
   border-radius: 4px;
 }
+
+
+/* Page Contact : CTA conservés uniquement dans les deux options, de taille identique */
+.contact-option .contact-choice-button {
+  width: min(100%, 460px);
+  min-height: 58px;
+  justify-content: center;
+}
+
+@media (max-width: 720px) {
+  .contact-option .contact-choice-button {
+    width: 100%;
+    min-height: 56px;
+  }
+}
