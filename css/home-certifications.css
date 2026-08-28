@@ -173,3 +173,39 @@
     opacity: 0.56;
   }
 }
+
+/* Mobile en mode nuit : le cube remonte derrière le texte et gagne en netteté,
+   sans modifier l'espace occupé par le bandeau ni la version tablette/desktop. */
+@media (max-width: 720px) and (prefers-color-scheme: dark) {
+  .home-hero .hero-cube-stage {
+    bottom: 18%;
+    opacity: 0.56;
+    filter: saturate(1.3) contrast(1.2) brightness(1.12);
+  }
+
+  .home-hero .hero-cube-stage::before {
+    opacity: 0.62;
+  }
+
+  .home-hero .hero-cube-stage::after,
+  .home-hero .hero-cube-effects {
+    opacity: 0.68;
+  }
+}
+
+@media (max-width: 720px) {
+  html.theme-dark .home-hero .hero-cube-stage {
+    bottom: 18%;
+    opacity: 0.56;
+    filter: saturate(1.3) contrast(1.2) brightness(1.12);
+  }
+
+  html.theme-dark .home-hero .hero-cube-stage::before {
+    opacity: 0.62;
+  }
+
+  html.theme-dark .home-hero .hero-cube-stage::after,
+  html.theme-dark .home-hero .hero-cube-effects {
+    opacity: 0.68;
+  }
+}
