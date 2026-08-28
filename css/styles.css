@@ -4207,3 +4207,52 @@ html.theme-dark .sector-crosslink-cta:hover {
     box-shadow: 0 16px 30px rgba(0, 176, 255, 0.18);
   }
 }
+
+/* Mode nuit : adoucir les blocs de bénéfices et de validation sans modifier leur structure. */
+@media (prefers-color-scheme: dark) {
+  .medicine-page .medicine-card-benefit,
+  .institutes-page .institutes-card-benefit,
+  .institutes-page .institutes-reality-conclusion,
+  .institutes-page .institutes-editorial-benefit,
+  .sector-editorial-benefit,
+  .sector-reality-conclusion,
+  .sector-method-conclusion {
+    color: #f3f6ff;
+    border-color: rgba(139, 164, 220, 0.34);
+    background: linear-gradient(135deg, #26365f 0%, #2a3e68 52%, #304673 100%);
+    box-shadow: 0 12px 28px rgba(2, 5, 18, 0.22);
+  }
+
+  .medicine-page .medicine-card-benefit strong,
+  .institutes-page .institutes-card-benefit strong,
+  .institutes-page .institutes-reality-conclusion strong,
+  .institutes-page .institutes-editorial-benefit strong,
+  .sector-editorial-benefit strong,
+  .sector-reality-conclusion strong,
+  .sector-method-conclusion strong {
+    color: #fff;
+  }
+}
+
+html.theme-dark .medicine-page .medicine-card-benefit,
+html.theme-dark .institutes-page .institutes-card-benefit,
+html.theme-dark .institutes-page .institutes-reality-conclusion,
+html.theme-dark .institutes-page .institutes-editorial-benefit,
+html.theme-dark .sector-editorial-benefit,
+html.theme-dark .sector-reality-conclusion,
+html.theme-dark .sector-method-conclusion {
+  color: #f3f6ff;
+  border-color: rgba(139, 164, 220, 0.34);
+  background: linear-gradient(135deg, #26365f 0%, #2a3e68 52%, #304673 100%);
+  box-shadow: 0 12px 28px rgba(2, 5, 18, 0.22);
+}
+
+html.theme-dark .medicine-page .medicine-card-benefit strong,
+html.theme-dark .institutes-page .institutes-card-benefit strong,
+html.theme-dark .institutes-page .institutes-reality-conclusion strong,
+html.theme-dark .institutes-page .institutes-editorial-benefit strong,
+html.theme-dark .sector-editorial-benefit strong,
+html.theme-dark .sector-reality-conclusion strong,
+html.theme-dark .sector-method-conclusion strong {
+  color: #fff;
+}
