@@ -4167,3 +4167,22 @@ html.theme-dark .location-section {
     max-width: none;
   }
 }
+
+/* Mode nuit : tous les CTA de prise de rendez-vous conservent le dégradé IA. */
+@media (prefers-color-scheme: dark) {
+  .btn[href="https://calendar.app.google/qx6dT7WJfTrsFe6j9"],
+  .btn[href="https://calendar.app.google/qx6dT7WJfTrsFe6j9"]:hover {
+    color: #fff !important;
+    border-color: transparent !important;
+    background: var(--gradient-ia) !important;
+    box-shadow: 0 16px 30px rgba(0, 176, 255, 0.18);
+  }
+}
+
+html.theme-dark .btn[href="https://calendar.app.google/qx6dT7WJfTrsFe6j9"],
+html.theme-dark .btn[href="https://calendar.app.google/qx6dT7WJfTrsFe6j9"]:hover {
+  color: #fff !important;
+  border-color: transparent !important;
+  background: var(--gradient-ia) !important;
+  box-shadow: 0 16px 30px rgba(0, 176, 255, 0.18);
+}

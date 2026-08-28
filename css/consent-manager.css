@@ -55,8 +55,14 @@
 
 @media (prefers-color-scheme: dark) {
   .site-header .header-phone-direct {
-    color: #b79cff !important;
+    color: #fff !important;
   }
+}
+
+html.theme-dark .site-header .header-phone-direct,
+html.theme-dark .site-header .header-phone-direct:hover,
+html.theme-dark .site-header .header-phone-direct:focus-visible {
+  color: #fff !important;
 }
 
 /* Ajustements visuels validés : CTA Ressources, espacement des offres et numéros de méthode. */
