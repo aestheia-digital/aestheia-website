@@ -318,7 +318,46 @@ if (!document.getElementById("commercial-alignment-rules")) {
 
     @media (max-width: 520px) {
       .site-header .header-phone-direct {
-        font-size: 0.86rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.38rem;
+        padding: 0.4rem 0.56rem;
+        border: 1px solid rgba(94, 23, 235, 0.16);
+        border-radius: 999px;
+        color: #5e17eb;
+        background: rgba(94, 23, 235, 0.055);
+        box-shadow: 0 5px 14px rgba(41, 31, 94, 0.08);
+        font-family: var(--font-structure);
+        font-size: 0.84rem;
+        font-weight: 600;
+        letter-spacing: 0.01em;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      }
+
+      .site-header .header-phone-direct::before {
+        content: "";
+        width: 0.76rem;
+        height: 0.76rem;
+        flex: 0 0 0.76rem;
+        background: currentColor;
+        -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 3.7c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1l-2.2 2.2z'/%3E%3C/svg%3E") center / contain no-repeat;
+        mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 3.7c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1l-2.2 2.2z'/%3E%3C/svg%3E") center / contain no-repeat;
+      }
+
+      .site-header .header-phone-direct:hover,
+      .site-header .header-phone-direct:focus-visible {
+        color: #5e17eb;
+        background: rgba(94, 23, 235, 0.09);
+        box-shadow: 0 0 0 4px rgba(94, 23, 235, 0.08), 0 7px 18px rgba(41, 31, 94, 0.1);
+        transform: translateY(-1px);
+      }
+    }
+
+    @media (max-width: 380px) {
+      .site-header .header-phone-direct {
+        gap: 0.28rem;
+        padding-inline: 0.42rem;
+        font-size: 0.78rem;
       }
     }
   `;
