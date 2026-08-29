@@ -41,6 +41,7 @@
   position: relative;
   color: var(--header-phone-base) !important;
   font-family: var(--font-body) !important;
+  background-color: var(--header-phone-base);
   background-image: linear-gradient(
     105deg,
     var(--header-phone-base) 0%,
@@ -120,7 +121,7 @@ html.theme-dark .site-header .header-phone-direct:focus-visible {
     padding: 0 !important;
     border: 0 !important;
     border-radius: 0 !important;
-    background: transparent !important;
+    background-color: var(--header-phone-base) !important;
     box-shadow: none !important;
   }
 
@@ -131,7 +132,7 @@ html.theme-dark .site-header .header-phone-direct:focus-visible {
 
   .site-header .header-phone-direct:hover,
   .site-header .header-phone-direct:focus-visible {
-    background: transparent !important;
+    background-color: var(--header-phone-base) !important;
     box-shadow: none !important;
     transform: none !important;
   }
