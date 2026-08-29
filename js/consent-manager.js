@@ -12,8 +12,9 @@
    * Correctif UI global de la branche de prévisualisation.
    * - Les catégories de la page Ressources reprennent exactement le gradient IA des CTA.
    * - Les encarts volontairement clairs en dark mode sont nettement assombris.
-   * - Sur l'accueil, le bandeau de navigation est légèrement éclairci et uniformisé,
-   *   tandis que le hero est assombri pour renforcer la présence visuelle du cube.
+   * - Le bandeau de navigation est légèrement éclairci et uniformisé.
+   * - Les hero Accueil, Ressources et Contact utilisent le même bleu nuit plus sombre
+   *   pour renforcer la présence visuelle du cube.
    * Ces ajustements s'appliquent sur desktop, tablette et mobile sans modifier la structure.
    */
   const uiVisualOverrides = document.createElement("style");
@@ -56,14 +57,18 @@
         border-bottom-color: rgba(92, 111, 174, 0.38) !important;
       }
 
-      .home-hero {
+      .home-hero,
+      .resources-hero,
+      .contact-cube-hero {
         background:
           radial-gradient(circle at 86% 22%, rgba(84, 12, 228, 0.10), transparent 34%),
           radial-gradient(circle at 12% 88%, rgba(0, 176, 255, 0.08), transparent 38%),
           linear-gradient(135deg, #080d22 0%, #0a1028 58%, #131b40 100%) !important;
       }
 
-      .home-hero::after {
+      .home-hero::after,
+      .resources-hero::after,
+      .contact-cube-hero::after {
         background:
           linear-gradient(90deg, rgba(7, 12, 30, 0.94), rgba(10, 16, 40, 0.80), rgba(16, 24, 58, 0.50)),
           linear-gradient(0deg, rgba(6, 10, 25, 0.62), rgba(6, 10, 25, 0.16)) !important;
@@ -99,14 +104,18 @@
       border-bottom-color: rgba(92, 111, 174, 0.38) !important;
     }
 
-    html.theme-dark .home-hero {
+    html.theme-dark .home-hero,
+    html.theme-dark .resources-hero,
+    html.theme-dark .contact-cube-hero {
       background:
         radial-gradient(circle at 86% 22%, rgba(84, 12, 228, 0.10), transparent 34%),
         radial-gradient(circle at 12% 88%, rgba(0, 176, 255, 0.08), transparent 38%),
         linear-gradient(135deg, #080d22 0%, #0a1028 58%, #131b40 100%) !important;
     }
 
-    html.theme-dark .home-hero::after {
+    html.theme-dark .home-hero::after,
+    html.theme-dark .resources-hero::after,
+    html.theme-dark .contact-cube-hero::after {
       background:
         linear-gradient(90deg, rgba(7, 12, 30, 0.94), rgba(10, 16, 40, 0.80), rgba(16, 24, 58, 0.50)),
         linear-gradient(0deg, rgba(6, 10, 25, 0.62), rgba(6, 10, 25, 0.16)) !important;
