@@ -253,3 +253,31 @@
 .site-header .header-phone-direct {
   animation-duration: 7s !important;
 }
+
+/* Accueil uniquement : le passage bleu reste visible mais beaucoup plus discret. */
+.site-header .header-phone-direct {
+  background-image: linear-gradient(
+    105deg,
+    var(--header-phone-base) 0%,
+    var(--header-phone-base) 38%,
+    rgba(67, 91, 216, 0.34) 45%,
+    rgba(0, 176, 255, 0.42) 50%,
+    rgba(67, 91, 216, 0.34) 55%,
+    var(--header-phone-base) 62%,
+    var(--header-phone-base) 100%
+  ) !important;
+}
+
+/* Accueil sombre : halos violets du corps de page atténués sans les supprimer. */
+html.theme-dark #contenu > .home-hero ~ .home-problems::before,
+html.theme-dark #contenu > .home-hero ~ .home-offers::before,
+html.theme-dark #contenu > .home-hero ~ .home-engagements::before,
+html.theme-dark #contenu > .home-hero ~ .home-method::before,
+html.theme-dark #contenu > .home-hero ~ .home-safety::before,
+html.theme-dark #contenu > .home-hero ~ .behind-section::before,
+html.theme-dark #contenu > .home-hero ~ .faq-section::before,
+html.theme-dark #contenu > .home-hero ~ .location-section::before {
+  background:
+    radial-gradient(circle at 84% 24%, rgba(94, 23, 235, 0.11), transparent 42%),
+    radial-gradient(circle at 16% 78%, rgba(139, 92, 246, 0.06), transparent 46%) !important;
+}
