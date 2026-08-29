@@ -4338,3 +4338,154 @@ html.theme-dark .sector-reality-conclusion strong,
 html.theme-dark .sector-method-conclusion strong {
   color: #fff;
 }
+
+/* Accueil : nuée de micro-particules navy, limitée au corps éditorial. */
+#contenu > .home-hero ~ .home-problems,
+#contenu > .home-hero ~ .home-offers,
+#contenu > .home-hero ~ .home-engagements,
+#contenu > .home-hero ~ .home-method,
+#contenu > .home-hero ~ .home-safety,
+#contenu > .home-hero ~ .behind-section,
+#contenu > .home-hero ~ .faq-section,
+#contenu > .home-hero ~ .location-section {
+  --home-particle-cloud-x: calc(50% + 250px);
+  --home-particle-cloud-y: 50%;
+  --home-particle-cloud-opacity: 0.72;
+}
+
+/* Neutralise uniquement les halos radiaux violets des sections de l’accueil. */
+#contenu > .home-hero ~ .home-problems {
+  background: linear-gradient(135deg, #f7f8fc 0%, #ffffff 52%, #eef4ff 100%);
+}
+
+#contenu > .home-hero ~ .section-soft {
+  background: var(--color-soft);
+}
+
+#contenu > .home-hero ~ .behind-section {
+  background: linear-gradient(135deg, #ffffff 0%, #fbfaff 52%, #f1f5ff 100%);
+}
+
+#contenu > .home-hero ~ .location-section {
+  background: linear-gradient(135deg, #ffffff 0%, #fbfcff 48%, #eef4ff 100%);
+}
+
+#contenu > .home-hero ~ .home-offers::before,
+#contenu > .home-hero ~ .home-engagements::before,
+#contenu > .home-hero ~ .home-safety::before,
+#contenu > .home-hero ~ .faq-section::before {
+  background: none;
+}
+
+#contenu > .home-hero ~ .home-problems::after,
+#contenu > .home-hero ~ .home-offers::after,
+#contenu > .home-hero ~ .home-engagements::after,
+#contenu > .home-hero ~ .home-method::after,
+#contenu > .home-hero ~ .home-safety::after,
+#contenu > .home-hero ~ .behind-section::after,
+#contenu > .home-hero ~ .faq-section::after,
+#contenu > .home-hero ~ .location-section::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: var(--home-particle-cloud-y);
+  left: var(--home-particle-cloud-x);
+  width: clamp(760px, 74vw, 1180px);
+  aspect-ratio: 20 / 9;
+  background: url("../assets/images/brand/halo-particles-blue.svg") center / contain no-repeat;
+  opacity: var(--home-particle-cloud-opacity);
+  pointer-events: none;
+  transform: translate(-50%, -50%) rotate(-4deg);
+}
+
+#contenu > .home-hero ~ .home-offers,
+#contenu > .home-hero ~ .home-method,
+#contenu > .home-hero ~ .behind-section,
+#contenu > .home-hero ~ .location-section {
+  --home-particle-cloud-x: calc(50% - 280px);
+}
+
+#contenu > .home-hero ~ .home-engagements,
+#contenu > .home-hero ~ .home-safety,
+#contenu > .home-hero ~ .faq-section {
+  --home-particle-cloud-opacity: 0.6;
+}
+
+html.theme-dark #contenu > .home-hero ~ .home-problems,
+html.theme-dark #contenu > .home-hero ~ .home-method {
+  background: linear-gradient(135deg, #11183d 0%, #0d1330 52%, #151c46 100%);
+}
+
+html.theme-dark #contenu > .home-hero ~ .section-soft {
+  background: #11183d;
+}
+
+html.theme-dark #contenu > .home-hero ~ .behind-section,
+html.theme-dark #contenu > .home-hero ~ .location-section {
+  background: linear-gradient(135deg, #0b1028 0%, #11183d 48%, #151c46 100%);
+}
+
+html.theme-dark #contenu > .home-hero ~ .home-problems,
+html.theme-dark #contenu > .home-hero ~ .home-offers,
+html.theme-dark #contenu > .home-hero ~ .home-engagements,
+html.theme-dark #contenu > .home-hero ~ .home-method,
+html.theme-dark #contenu > .home-hero ~ .home-safety,
+html.theme-dark #contenu > .home-hero ~ .behind-section,
+html.theme-dark #contenu > .home-hero ~ .faq-section,
+html.theme-dark #contenu > .home-hero ~ .location-section {
+  --home-particle-cloud-opacity: 0.48;
+}
+
+@media (max-width: 900px) {
+  #contenu > .home-hero ~ .home-problems,
+  #contenu > .home-hero ~ .home-offers,
+  #contenu > .home-hero ~ .home-engagements,
+  #contenu > .home-hero ~ .home-method,
+  #contenu > .home-hero ~ .home-safety,
+  #contenu > .home-hero ~ .behind-section,
+  #contenu > .home-hero ~ .faq-section,
+  #contenu > .home-hero ~ .location-section {
+    --home-particle-cloud-x: calc(50% + 150px);
+    --home-particle-cloud-opacity: 0.58;
+  }
+
+  #contenu > .home-hero ~ .home-offers,
+  #contenu > .home-hero ~ .home-method,
+  #contenu > .home-hero ~ .behind-section,
+  #contenu > .home-hero ~ .location-section {
+    --home-particle-cloud-x: calc(50% - 150px);
+  }
+}
+
+@media (max-width: 560px) {
+  #contenu > .home-hero ~ .home-problems,
+  #contenu > .home-hero ~ .home-offers,
+  #contenu > .home-hero ~ .home-engagements,
+  #contenu > .home-hero ~ .home-method,
+  #contenu > .home-hero ~ .home-safety,
+  #contenu > .home-hero ~ .behind-section,
+  #contenu > .home-hero ~ .faq-section,
+  #contenu > .home-hero ~ .location-section {
+    --home-particle-cloud-x: calc(50% + 105px);
+    --home-particle-cloud-opacity: 0.46;
+  }
+
+  #contenu > .home-hero ~ .home-offers,
+  #contenu > .home-hero ~ .home-method,
+  #contenu > .home-hero ~ .behind-section,
+  #contenu > .home-hero ~ .location-section {
+    --home-particle-cloud-x: calc(50% - 105px);
+  }
+
+  #contenu > .home-hero ~ .home-problems::after,
+  #contenu > .home-hero ~ .home-offers::after,
+  #contenu > .home-hero ~ .home-engagements::after,
+  #contenu > .home-hero ~ .home-method::after,
+  #contenu > .home-hero ~ .home-safety::after,
+  #contenu > .home-hero ~ .behind-section::after,
+  #contenu > .home-hero ~ .faq-section::after,
+  #contenu > .home-hero ~ .location-section::after {
+    width: 700px;
+    transform: translate(-50%, -50%) rotate(-8deg);
+  }
+}
