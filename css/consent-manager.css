@@ -38,6 +38,7 @@
 /* Mise en valeur discrète des numéros de téléphone, sans modifier leur typographie. */
 .site-header .header-phone-direct {
   color: #5e17eb !important;
+  font-family: var(--font-body) !important;
 }
 
 .site-header .header-phone-direct:hover {
@@ -63,6 +64,30 @@ html.theme-dark .site-header .header-phone-direct,
 html.theme-dark .site-header .header-phone-direct:hover,
 html.theme-dark .site-header .header-phone-direct:focus-visible {
   color: #fff !important;
+}
+
+/* En-tête mobile : numéro seul, sans pictogramme ni capsule décorative. */
+@media (max-width: 720px) {
+  .site-header .header-phone-direct {
+    gap: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .site-header .header-phone-direct::before {
+    display: none !important;
+    content: none !important;
+  }
+
+  .site-header .header-phone-direct:hover,
+  .site-header .header-phone-direct:focus-visible {
+    background: transparent !important;
+    box-shadow: none !important;
+    transform: none !important;
+  }
 }
 
 /* Ajustements visuels validés : CTA Ressources, espacement des offres et numéros de méthode. */
