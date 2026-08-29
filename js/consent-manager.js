@@ -8,6 +8,76 @@
   const CONSENT_CATEGORIES = Object.freeze(["analytics", "externalContent"]);
   const COOKIE_POLICY_URL = "/gestion-cookies.html";
 
+  /*
+   * Correctif UI global de la branche de prévisualisation.
+   * - Les catégories de la page Ressources reprennent exactement le gradient IA des CTA.
+   * - Les encarts volontairement clairs en dark mode utilisent un bleu pâle plus soutenu,
+   *   afin d'éviter l'effet blanc éblouissant tout en conservant une lecture confortable.
+   * Ce style est injecté après les feuilles CSS existantes et s'applique sur desktop,
+   * tablette et mobile sans modifier la structure des pages.
+   */
+  const uiVisualOverrides = document.createElement("style");
+  uiVisualOverrides.id = "aestheia-ui-visual-overrides";
+  uiVisualOverrides.textContent = `
+    .resource-category {
+      color: #fff !important;
+      border-color: transparent !important;
+      background: var(--gradient-ia, linear-gradient(135deg, #540ce4 0%, #00b0ff 100%)) !important;
+      box-shadow: 0 8px 20px rgba(0, 176, 255, 0.12);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .medicine-card-benefit,
+      .institutes-card-benefit,
+      .institutes-reality-conclusion,
+      .institutes-editorial-benefit,
+      .institutes-method-conclusion,
+      .sector-editorial-benefit,
+      .sector-reality-conclusion,
+      .sector-method-conclusion {
+        background: #cbdcf0 !important;
+        color: #17264a !important;
+        border-color: rgba(63, 116, 183, 0.42) !important;
+      }
+
+      .medicine-card-benefit strong,
+      .institutes-card-benefit strong,
+      .institutes-reality-conclusion strong,
+      .institutes-editorial-benefit strong,
+      .institutes-method-conclusion strong,
+      .sector-editorial-benefit strong,
+      .sector-reality-conclusion strong,
+      .sector-method-conclusion strong {
+        color: #17264a !important;
+      }
+    }
+
+    html.theme-dark .medicine-card-benefit,
+    html.theme-dark .institutes-card-benefit,
+    html.theme-dark .institutes-reality-conclusion,
+    html.theme-dark .institutes-editorial-benefit,
+    html.theme-dark .institutes-method-conclusion,
+    html.theme-dark .sector-editorial-benefit,
+    html.theme-dark .sector-reality-conclusion,
+    html.theme-dark .sector-method-conclusion {
+      background: #cbdcf0 !important;
+      color: #17264a !important;
+      border-color: rgba(63, 116, 183, 0.42) !important;
+    }
+
+    html.theme-dark .medicine-card-benefit strong,
+    html.theme-dark .institutes-card-benefit strong,
+    html.theme-dark .institutes-reality-conclusion strong,
+    html.theme-dark .institutes-editorial-benefit strong,
+    html.theme-dark .institutes-method-conclusion strong,
+    html.theme-dark .sector-editorial-benefit strong,
+    html.theme-dark .sector-reality-conclusion strong,
+    html.theme-dark .sector-method-conclusion strong {
+      color: #17264a !important;
+    }
+  `;
+  document.head.appendChild(uiVisualOverrides);
+
   let preferences = { analytics: false, externalContent: false };
   let lastFocusedElement = null;
 
