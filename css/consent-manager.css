@@ -31,7 +31,7 @@
 @media (prefers-color-scheme: dark) {
   .consent-banner, .consent-dialog { background: #101737; color: #eef2ff; border-color: #35416f; }
   .consent-button { border-color: #b8c4ef; background: #101737; color: #fff; }
-  .consent-button--primary { background: #eaf2ff; color: #101737; }
+  .consent-button--primary { background: #d6e3f3; color: #101737; }
   .consent-category { border-color: #35416f; }
 }
 
@@ -544,13 +544,16 @@ html.theme-dark .site-header .header-phone-direct:focus-visible {
 
 html.theme-dark .consent-banner, html.theme-dark .consent-dialog { background: #101737; color: #eef2ff; border-color: #35416f; }
 html.theme-dark .consent-button { border-color: #b8c4ef; background: #101737; color: #fff; }
-html.theme-dark .consent-button--primary { background: #eaf2ff; color: #101737; }
+html.theme-dark .consent-button--primary { background: #d6e3f3; color: #101737; }
 html.theme-dark .consent-category { border-color: #35416f; }
 
 /* Footer : même passage lumineux que le téléphone validé sur l’accueil. */
 html.theme-dark .site-footer .footer-phone,
 html.theme-dark .site-footer .footer-phone:hover,
-html.theme-dark .site-footer .footer-phone:focus-visible {
+html.theme-dark .site-footer .footer-phone:focus-visible,
+html.theme-dark:has(.contact-cube-hero) .contact-phone-display,
+html.theme-dark:has(.contact-cube-hero) .contact-phone-display:hover,
+html.theme-dark:has(.contact-cube-hero) .contact-phone-display:focus-visible {
   --footer-phone-base: #a788ff;
   color: var(--footer-phone-base) !important;
   background-color: var(--footer-phone-base) !important;
@@ -576,7 +579,10 @@ html.theme-dark .site-footer .footer-phone:focus-visible {
 @media (prefers-reduced-motion: reduce) {
   html.theme-dark .site-footer .footer-phone,
   html.theme-dark .site-footer .footer-phone:hover,
-  html.theme-dark .site-footer .footer-phone:focus-visible {
+  html.theme-dark .site-footer .footer-phone:focus-visible,
+  html.theme-dark:has(.contact-cube-hero) .contact-phone-display,
+  html.theme-dark:has(.contact-cube-hero) .contact-phone-display:hover,
+  html.theme-dark:has(.contact-cube-hero) .contact-phone-display:focus-visible {
     background-position: 50% 50%;
     animation: none;
   }

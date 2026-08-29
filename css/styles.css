@@ -4513,6 +4513,14 @@ html.theme-dark .site-footer .brand-ia {
   -webkit-text-fill-color: transparent;
 }
 
+html.theme-dark:has(.contact-cube-hero) .site-footer .brand-ia {
+  color: #00b0ff !important;
+  background: var(--gradient-ia) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
 /* Test accueil sombre : halo violet secondaire, nuée navy au premier plan visuel. */
 html.theme-dark #contenu > .home-hero ~ .home-problems::before,
 html.theme-dark #contenu > .home-hero ~ .home-offers::before,
