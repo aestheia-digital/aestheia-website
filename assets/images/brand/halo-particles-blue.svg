@@ -1,76 +1,79 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" preserveAspectRatio="xMidYMid meet">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2600 1400" preserveAspectRatio="xMidYMid meet">
   <defs>
     <linearGradient id="flowBlue" x1="0" y1="1" x2="1" y2="0">
-      <stop offset="0" stop-color="#061838"/>
-      <stop offset="0.34" stop-color="#0a2857"/>
-      <stop offset="0.68" stop-color="#0b477f"/>
-      <stop offset="0.88" stop-color="#0d69a6"/>
-      <stop offset="1" stop-color="#2497cf"/>
+      <stop offset="0" stop-color="#06152f"/>
+      <stop offset="0.34" stop-color="#082653"/>
+      <stop offset="0.66" stop-color="#0a3f75"/>
+      <stop offset="0.86" stop-color="#0c5f98"/>
+      <stop offset="1" stop-color="#147db6"/>
     </linearGradient>
 
-    <path id="flow-main" d="M-150 625 C90 545 245 640 420 565 C585 494 665 385 820 365 C982 344 1067 444 1218 388 C1372 331 1432 195 1740 112"/>
-    <path id="flow-upper" d="M-160 580 C84 508 250 593 430 522 C605 452 688 345 842 331 C1007 315 1087 406 1233 349 C1391 287 1462 165 1735 90"/>
-    <path id="flow-lower" d="M-155 666 C110 586 272 674 452 603 C625 535 706 434 858 413 C1015 393 1102 481 1252 428 C1390 380 1485 245 1742 160"/>
+    <!-- La forme occupe volontairement seulement le centre du grand viewBox :
+         le fond de section garde ainsi beaucoup d'espace vide autour de la nuée. -->
+    <path id="flow-main" d="M500 1100 C720 1002 862 1086 1028 1012 C1185 942 1252 817 1395 790 C1548 761 1640 845 1787 777 C1935 709 1997 569 2130 443"/>
+    <path id="flow-upper" d="M510 1045 C731 953 878 1028 1043 958 C1202 890 1270 772 1410 748 C1562 721 1657 806 1803 735 C1944 666 2009 530 2115 417"/>
+    <path id="flow-lower" d="M492 1155 C727 1052 878 1136 1048 1063 C1205 995 1276 866 1421 835 C1572 803 1662 889 1807 823 C1955 755 2018 614 2142 475"/>
 
-    <filter id="blur-wide" x="-30%" y="-80%" width="160%" height="260%">
-      <feGaussianBlur stdDeviation="42"/>
+    <filter id="blur-wide" x="-35%" y="-90%" width="170%" height="280%">
+      <feGaussianBlur stdDeviation="52"/>
     </filter>
-    <filter id="blur-soft" x="-30%" y="-80%" width="160%" height="260%">
-      <feGaussianBlur stdDeviation="18"/>
+    <filter id="blur-soft" x="-35%" y="-90%" width="170%" height="280%">
+      <feGaussianBlur stdDeviation="22"/>
     </filter>
 
-    <filter id="dust-dense" x="-10%" y="-20%" width="120%" height="140%" color-interpolation-filters="sRGB">
-      <feTurbulence type="fractalNoise" baseFrequency="0.82 0.94" numOctaves="1" seed="27" stitchTiles="stitch" result="noise"/>
-      <feColorMatrix in="noise" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  .333 .333 .333 0 -.57" result="mono"/>
+    <!-- Deux grains différents : la superposition évite l'effet motif ou gros points. -->
+    <filter id="dust-dense" x="-12%" y="-25%" width="124%" height="150%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.48 0.56" numOctaves="1" seed="27" stitchTiles="stitch" result="noise"/>
+      <feColorMatrix in="noise" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  .333 .333 .333 0 -.575" result="mono"/>
       <feComponentTransfer in="mono" result="specks">
-        <feFuncA type="linear" slope="7.5" intercept="-2.35"/>
+        <feFuncA type="linear" slope="8" intercept="-2.55"/>
       </feComponentTransfer>
       <feComposite in="SourceGraphic" in2="specks" operator="in"/>
-      <feGaussianBlur stdDeviation="0.18"/>
+      <feGaussianBlur stdDeviation="0.16"/>
     </filter>
 
-    <filter id="dust-fine" x="-10%" y="-20%" width="120%" height="140%" color-interpolation-filters="sRGB">
-      <feTurbulence type="fractalNoise" baseFrequency="1.18 1.34" numOctaves="1" seed="61" stitchTiles="stitch" result="noise"/>
+    <filter id="dust-fine" x="-12%" y="-25%" width="124%" height="150%" color-interpolation-filters="sRGB">
+      <feTurbulence type="fractalNoise" baseFrequency="0.76 0.87" numOctaves="1" seed="61" stitchTiles="stitch" result="noise"/>
       <feColorMatrix in="noise" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  .333 .333 .333 0 -.62" result="mono"/>
       <feComponentTransfer in="mono" result="specks">
-        <feFuncA type="linear" slope="9" intercept="-3.15"/>
+        <feFuncA type="linear" slope="9.5" intercept="-3.35"/>
       </feComponentTransfer>
       <feComposite in="SourceGraphic" in2="specks" operator="in"/>
-      <feGaussianBlur stdDeviation="0.1"/>
+      <feGaussianBlur stdDeviation="0.08"/>
     </filter>
 
     <mask id="cloud-mask">
-      <rect width="1600" height="700" fill="black"/>
+      <rect width="2600" height="1400" fill="black"/>
       <g fill="none" stroke="white" stroke-linecap="round">
-        <use href="#flow-main" stroke-width="205" opacity="0.94" filter="url(#blur-soft)"/>
-        <use href="#flow-upper" stroke-width="118" opacity="0.62" filter="url(#blur-soft)"/>
-        <use href="#flow-lower" stroke-width="142" opacity="0.57" filter="url(#blur-soft)"/>
+        <use href="#flow-main" stroke-width="214" opacity="0.92" filter="url(#blur-soft)"/>
+        <use href="#flow-upper" stroke-width="122" opacity="0.56" filter="url(#blur-soft)"/>
+        <use href="#flow-lower" stroke-width="145" opacity="0.53" filter="url(#blur-soft)"/>
       </g>
     </mask>
 
     <mask id="inner-mask">
-      <rect width="1600" height="700" fill="black"/>
+      <rect width="2600" height="1400" fill="black"/>
       <g fill="none" stroke="white" stroke-linecap="round">
-        <use href="#flow-main" stroke-width="132" opacity="0.86" filter="url(#blur-soft)"/>
-        <use href="#flow-upper" stroke-width="72" opacity="0.42" filter="url(#blur-soft)"/>
+        <use href="#flow-main" stroke-width="128" opacity="0.82" filter="url(#blur-soft)"/>
+        <use href="#flow-upper" stroke-width="70" opacity="0.34" filter="url(#blur-soft)"/>
       </g>
     </mask>
   </defs>
 
-  <!-- Lueur diffuse qui donne du volume sans dessiner de ligne. -->
+  <!-- Volume diffus seulement : aucun trait visible n'est dessiné. -->
   <g fill="none" stroke="url(#flowBlue)" stroke-linecap="round">
-    <use href="#flow-main" stroke-width="238" opacity="0.12" filter="url(#blur-wide)"/>
-    <use href="#flow-upper" stroke-width="142" opacity="0.08" filter="url(#blur-wide)"/>
-    <use href="#flow-lower" stroke-width="158" opacity="0.075" filter="url(#blur-wide)"/>
+    <use href="#flow-main" stroke-width="252" opacity="0.105" filter="url(#blur-wide)"/>
+    <use href="#flow-upper" stroke-width="148" opacity="0.065" filter="url(#blur-wide)"/>
+    <use href="#flow-lower" stroke-width="166" opacity="0.06" filter="url(#blur-wide)"/>
   </g>
 
-  <!-- Nuée principale : micro-particules nombreuses, pas de trait continu. -->
+  <!-- Nuée de poussière principale. -->
   <g mask="url(#cloud-mask)">
-    <rect x="-90" y="-70" width="1780" height="850" fill="url(#flowBlue)" opacity="0.76" filter="url(#dust-dense)"/>
+    <rect x="380" y="300" width="1900" height="980" fill="url(#flowBlue)" opacity="0.78" filter="url(#dust-dense)"/>
   </g>
 
-  <!-- Densité interne plus fine pour retrouver l'aspect poussière lumineuse. -->
+  <!-- Densité interne légèrement plus lumineuse, toujours sous forme de poussière. -->
   <g mask="url(#inner-mask)">
-    <rect x="-90" y="-70" width="1780" height="850" fill="#124f88" opacity="0.54" filter="url(#dust-fine)"/>
+    <rect x="390" y="320" width="1880" height="940" fill="#0d477d" opacity="0.48" filter="url(#dust-fine)"/>
   </g>
 </svg>
