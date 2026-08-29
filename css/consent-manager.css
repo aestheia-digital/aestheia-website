@@ -37,8 +37,11 @@
 
 /* Mise en valeur discrète des numéros de téléphone, sans modifier leur typographie. */
 .site-header .header-phone-direct {
+  --header-phone-glow-soft: rgba(94, 23, 235, 0.24);
+  --header-phone-glow-strong: rgba(94, 23, 235, 0.42);
   color: #5e17eb !important;
   font-family: var(--font-body) !important;
+  animation: header-phone-breath 7s ease-in-out infinite;
 }
 
 .site-header .header-phone-direct:hover {
@@ -56,6 +59,8 @@
 
 @media (prefers-color-scheme: dark) {
   .site-header .header-phone-direct {
+    --header-phone-glow-soft: rgba(155, 124, 255, 0.28);
+    --header-phone-glow-strong: rgba(255, 255, 255, 0.42);
     color: #fff !important;
   }
 }
@@ -63,7 +68,39 @@
 html.theme-dark .site-header .header-phone-direct,
 html.theme-dark .site-header .header-phone-direct:hover,
 html.theme-dark .site-header .header-phone-direct:focus-visible {
+  --header-phone-glow-soft: rgba(155, 124, 255, 0.28);
+  --header-phone-glow-strong: rgba(255, 255, 255, 0.42);
   color: #fff !important;
+}
+
+/* Ordinateur en mode jour uniquement : typographie éditoriale Playfair Display. */
+@media (min-width: 1051px) and (prefers-color-scheme: light) {
+  html:not(.theme-dark) .site-header .header-phone-direct {
+    font-family: var(--font-display) !important;
+  }
+}
+
+/* Une respiration lumineuse brève attire l'œil sans faire clignoter le numéro. */
+@keyframes header-phone-breath {
+  0%, 18%, 100% {
+    text-shadow: 0 0 0 transparent;
+  }
+
+  7% {
+    text-shadow:
+      0 0 6px var(--header-phone-glow-strong),
+      0 0 14px var(--header-phone-glow-soft);
+  }
+
+  12% {
+    text-shadow: 0 0 5px var(--header-phone-glow-soft);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header .header-phone-direct {
+    animation: none;
+  }
 }
 
 /* En-tête mobile : numéro seul, sans pictogramme ni capsule décorative. */
