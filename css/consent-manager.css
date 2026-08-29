@@ -35,31 +35,29 @@
   .consent-category { border-color: #35416f; }
 }
 
-/* Mise en valeur discrète des numéros de téléphone, sans modifier leur typographie. */
+/* Une vague bleue traverse directement les chiffres, sans halo périphérique. */
 .site-header .header-phone-direct {
-  --header-phone-glow-blue: rgba(67, 91, 216, 0.3);
-  --header-phone-glow-cyan: rgba(0, 176, 255, 0.48);
+  --header-phone-base: #5e17eb;
   position: relative;
-  isolation: isolate;
-  color: #5e17eb !important;
+  color: var(--header-phone-base) !important;
   font-family: var(--font-body) !important;
-  animation: header-phone-wave-glow 4s ease-in-out infinite;
-}
-
-.site-header .header-phone-direct::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  bottom: -0.24rem;
-  left: 0;
-  z-index: -1;
-  height: 2px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, transparent 0%, #435bd8 28%, #00b0ff 72%, transparent 100%);
-  filter: blur(0.45px);
-  opacity: 0;
-  pointer-events: none;
-  animation: header-phone-wave-line 4s ease-in-out infinite;
+  background-image: linear-gradient(
+    105deg,
+    var(--header-phone-base) 0%,
+    var(--header-phone-base) 36%,
+    #435bd8 44%,
+    #00b0ff 50%,
+    #435bd8 56%,
+    var(--header-phone-base) 64%,
+    var(--header-phone-base) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 260% 100%;
+  background-position: 115% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: header-phone-wave-text 4s ease-in-out infinite;
 }
 
 .site-header .header-phone-direct:hover {
@@ -77,8 +75,7 @@
 
 @media (prefers-color-scheme: dark) {
   .site-header .header-phone-direct {
-    --header-phone-glow-blue: rgba(67, 91, 216, 0.4);
-    --header-phone-glow-cyan: rgba(67, 217, 255, 0.58);
+    --header-phone-base: #fff;
     color: #fff !important;
   }
 }
@@ -86,8 +83,7 @@
 html.theme-dark .site-header .header-phone-direct,
 html.theme-dark .site-header .header-phone-direct:hover,
 html.theme-dark .site-header .header-phone-direct:focus-visible {
-  --header-phone-glow-blue: rgba(67, 91, 216, 0.4);
-  --header-phone-glow-cyan: rgba(67, 217, 255, 0.58);
+  --header-phone-base: #fff;
   color: #fff !important;
 }
 
@@ -98,56 +94,22 @@ html.theme-dark .site-header .header-phone-direct:focus-visible {
   }
 }
 
-/* Une vague bleu-cyan traverse brièvement le numéro, puis revient régulièrement. */
-@keyframes header-phone-wave-glow {
-  0%, 36%, 100% {
-    text-shadow: 0 0 0 transparent;
+/* Le dégradé colore successivement les chiffres, puis laisse une courte pause. */
+@keyframes header-phone-wave-text {
+  0% {
+    background-position: 115% 50%;
   }
 
-  8% {
-    text-shadow:
-      -3px 0 7px var(--header-phone-glow-blue),
-      1px 0 11px var(--header-phone-glow-cyan);
-  }
-
-  18% {
-    text-shadow:
-      0 0 6px var(--header-phone-glow-blue),
-      0 0 15px var(--header-phone-glow-cyan);
-  }
-
-  28% {
-    text-shadow:
-      3px 0 6px var(--header-phone-glow-cyan),
-      -1px 0 9px var(--header-phone-glow-blue);
-  }
-}
-
-@keyframes header-phone-wave-line {
-  0%, 36%, 100% {
-    opacity: 0;
-    transform: translateX(-42%) scaleX(0.08);
-  }
-
-  9% {
-    opacity: 0.48;
-  }
-
-  19% {
-    opacity: 0.88;
-    transform: translateX(0) scaleX(1);
-  }
-
-  30% {
-    opacity: 0;
-    transform: translateX(42%) scaleX(0.12);
+  34%, 100% {
+    background-position: -15% 50%;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .site-header .header-phone-direct,
-  .site-header .header-phone-direct::after {
+  .site-header .header-phone-direct {
     animation: none;
+    background: none;
+    -webkit-text-fill-color: currentColor;
   }
 }
 
