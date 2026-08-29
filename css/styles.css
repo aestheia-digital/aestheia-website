@@ -4350,7 +4350,7 @@ html.theme-dark .sector-method-conclusion strong {
 #contenu > .home-hero ~ .location-section {
   --home-particle-cloud-x: calc(50% + 250px);
   --home-particle-cloud-y: 50%;
-  --home-particle-cloud-opacity: 0.72;
+  --home-particle-cloud-opacity: 0.94;
 }
 
 /* Neutralise uniquement les halos radiaux violets des sections de l’accueil. */
@@ -4390,7 +4390,7 @@ html.theme-dark .sector-method-conclusion strong {
   z-index: 0;
   top: var(--home-particle-cloud-y);
   left: var(--home-particle-cloud-x);
-  width: clamp(760px, 74vw, 1180px);
+  width: clamp(720px, 68vw, 1080px);
   aspect-ratio: 20 / 9;
   background: url("../assets/images/brand/halo-particles-blue.svg") center / contain no-repeat;
   opacity: var(--home-particle-cloud-opacity);
@@ -4408,7 +4408,7 @@ html.theme-dark .sector-method-conclusion strong {
 #contenu > .home-hero ~ .home-engagements,
 #contenu > .home-hero ~ .home-safety,
 #contenu > .home-hero ~ .faq-section {
-  --home-particle-cloud-opacity: 0.6;
+  --home-particle-cloud-opacity: 0.86;
 }
 
 html.theme-dark #contenu > .home-hero ~ .home-problems,
@@ -4433,7 +4433,7 @@ html.theme-dark #contenu > .home-hero ~ .home-safety,
 html.theme-dark #contenu > .home-hero ~ .behind-section,
 html.theme-dark #contenu > .home-hero ~ .faq-section,
 html.theme-dark #contenu > .home-hero ~ .location-section {
-  --home-particle-cloud-opacity: 0.48;
+  --home-particle-cloud-opacity: 0.72;
 }
 
 @media (max-width: 900px) {
@@ -4446,7 +4446,7 @@ html.theme-dark #contenu > .home-hero ~ .location-section {
   #contenu > .home-hero ~ .faq-section,
   #contenu > .home-hero ~ .location-section {
     --home-particle-cloud-x: calc(50% + 150px);
-    --home-particle-cloud-opacity: 0.58;
+    --home-particle-cloud-opacity: 0.84;
   }
 
   #contenu > .home-hero ~ .home-offers,
@@ -4467,7 +4467,7 @@ html.theme-dark #contenu > .home-hero ~ .location-section {
   #contenu > .home-hero ~ .faq-section,
   #contenu > .home-hero ~ .location-section {
     --home-particle-cloud-x: calc(50% + 105px);
-    --home-particle-cloud-opacity: 0.46;
+    --home-particle-cloud-opacity: 0.76;
   }
 
   #contenu > .home-hero ~ .home-offers,
@@ -4485,7 +4485,7 @@ html.theme-dark #contenu > .home-hero ~ .location-section {
   #contenu > .home-hero ~ .behind-section::after,
   #contenu > .home-hero ~ .faq-section::after,
   #contenu > .home-hero ~ .location-section::after {
-    width: 700px;
+    width: 660px;
     transform: translate(-50%, -50%) rotate(-8deg);
   }
 }
