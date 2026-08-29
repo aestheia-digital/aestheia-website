@@ -4490,3 +4490,35 @@ html.theme-dark #contenu > .home-hero ~ .location-section {
     transform: translate(-50%, -50%) rotate(-5deg);
   }
 }
+
+/* Test accueil sombre : halo violet secondaire, nuée navy au premier plan visuel. */
+html.theme-dark #contenu > .home-hero ~ .home-problems::before,
+html.theme-dark #contenu > .home-hero ~ .home-offers::before,
+html.theme-dark #contenu > .home-hero ~ .home-engagements::before,
+html.theme-dark #contenu > .home-hero ~ .home-method::before,
+html.theme-dark #contenu > .home-hero ~ .home-safety::before,
+html.theme-dark #contenu > .home-hero ~ .behind-section::before,
+html.theme-dark #contenu > .home-hero ~ .faq-section::before,
+html.theme-dark #contenu > .home-hero ~ .location-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 84% 24%, rgba(94, 23, 235, 0.08), transparent 42%),
+    radial-gradient(circle at 16% 78%, rgba(139, 92, 246, 0.05), transparent 46%);
+  pointer-events: none;
+}
+
+html.theme-dark #contenu > .home-hero ~ .home-problems::after,
+html.theme-dark #contenu > .home-hero ~ .home-offers::after,
+html.theme-dark #contenu > .home-hero ~ .home-engagements::after,
+html.theme-dark #contenu > .home-hero ~ .home-method::after,
+html.theme-dark #contenu > .home-hero ~ .home-safety::after,
+html.theme-dark #contenu > .home-hero ~ .behind-section::after,
+html.theme-dark #contenu > .home-hero ~ .faq-section::after,
+html.theme-dark #contenu > .home-hero ~ .location-section::after {
+  width: clamp(1180px, 122vw, 1840px);
+  opacity: 1;
+  filter: saturate(1.3) contrast(1.12) brightness(1.35);
+}
