@@ -4338,3 +4338,292 @@ html.theme-dark .sector-reality-conclusion strong,
 html.theme-dark .sector-method-conclusion strong {
   color: #fff;
 }
+
+/* Accueil : nuée de micro-particules navy, limitée au corps éditorial. */
+#contenu > .home-hero ~ .home-problems,
+#contenu > .home-hero ~ .home-offers,
+#contenu > .home-hero ~ .home-engagements,
+#contenu > .home-hero ~ .home-method,
+#contenu > .home-hero ~ .home-safety,
+#contenu > .home-hero ~ .behind-section,
+#contenu > .home-hero ~ .faq-section,
+#contenu > .home-hero ~ .location-section {
+  --home-particle-cloud-x: 50%;
+  --home-particle-cloud-y: 50%;
+  --home-particle-cloud-opacity: 0.98;
+}
+
+/* Neutralise uniquement les halos radiaux violets des sections de l’accueil. */
+#contenu > .home-hero ~ .home-problems {
+  background: linear-gradient(135deg, #f7f8fc 0%, #ffffff 52%, #eef4ff 100%);
+}
+
+#contenu > .home-hero ~ .section-soft {
+  background: var(--color-soft);
+}
+
+#contenu > .home-hero ~ .behind-section {
+  background: linear-gradient(135deg, #ffffff 0%, #fbfaff 52%, #f1f5ff 100%);
+}
+
+#contenu > .home-hero ~ .location-section {
+  background: linear-gradient(135deg, #ffffff 0%, #fbfcff 48%, #eef4ff 100%);
+}
+
+#contenu > .home-hero ~ .home-offers::before,
+#contenu > .home-hero ~ .home-engagements::before,
+#contenu > .home-hero ~ .home-safety::before,
+#contenu > .home-hero ~ .faq-section::before {
+  background: none;
+}
+
+#contenu > .home-hero ~ .home-problems::after,
+#contenu > .home-hero ~ .home-offers::after,
+#contenu > .home-hero ~ .home-engagements::after,
+#contenu > .home-hero ~ .home-method::after,
+#contenu > .home-hero ~ .home-safety::after,
+#contenu > .home-hero ~ .behind-section::after,
+#contenu > .home-hero ~ .faq-section::after,
+#contenu > .home-hero ~ .location-section::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: var(--home-particle-cloud-y);
+  left: var(--home-particle-cloud-x);
+  width: clamp(1100px, 116vw, 1760px);
+  aspect-ratio: 2 / 1;
+  background: url("../assets/images/brand/halo-particles-blue.svg") center / contain no-repeat;
+  opacity: var(--home-particle-cloud-opacity);
+  pointer-events: none;
+  filter: saturate(1.2) contrast(1.08);
+  transform: translate(-50%, -50%) rotate(-3deg);
+}
+
+#contenu > .home-hero ~ .home-offers,
+#contenu > .home-hero ~ .home-method,
+#contenu > .home-hero ~ .behind-section,
+#contenu > .home-hero ~ .location-section {
+  --home-particle-cloud-x: 50%;
+}
+
+#contenu > .home-hero ~ .home-engagements,
+#contenu > .home-hero ~ .home-safety,
+#contenu > .home-hero ~ .faq-section {
+  --home-particle-cloud-opacity: 0.98;
+}
+
+html.theme-dark #contenu > .home-hero ~ .home-problems,
+html.theme-dark #contenu > .home-hero ~ .home-method {
+  background: linear-gradient(135deg, #11183d 0%, #0d1330 52%, #151c46 100%);
+}
+
+html.theme-dark #contenu > .home-hero ~ .section-soft {
+  background: #11183d;
+}
+
+html.theme-dark #contenu > .home-hero ~ .behind-section,
+html.theme-dark #contenu > .home-hero ~ .location-section {
+  background: linear-gradient(135deg, #0b1028 0%, #11183d 48%, #151c46 100%);
+}
+
+html.theme-dark #contenu > .home-hero ~ .home-problems,
+html.theme-dark #contenu > .home-hero ~ .home-offers,
+html.theme-dark #contenu > .home-hero ~ .home-engagements,
+html.theme-dark #contenu > .home-hero ~ .home-method,
+html.theme-dark #contenu > .home-hero ~ .home-safety,
+html.theme-dark #contenu > .home-hero ~ .behind-section,
+html.theme-dark #contenu > .home-hero ~ .faq-section,
+html.theme-dark #contenu > .home-hero ~ .location-section {
+  --home-particle-cloud-opacity: 0.88;
+}
+
+@media (max-width: 900px) {
+  #contenu > .home-hero ~ .home-problems,
+  #contenu > .home-hero ~ .home-offers,
+  #contenu > .home-hero ~ .home-engagements,
+  #contenu > .home-hero ~ .home-method,
+  #contenu > .home-hero ~ .home-safety,
+  #contenu > .home-hero ~ .behind-section,
+  #contenu > .home-hero ~ .faq-section,
+  #contenu > .home-hero ~ .location-section {
+    --home-particle-cloud-x: 50%;
+    --home-particle-cloud-opacity: 0.96;
+  }
+
+  #contenu > .home-hero ~ .home-offers,
+  #contenu > .home-hero ~ .home-method,
+  #contenu > .home-hero ~ .behind-section,
+  #contenu > .home-hero ~ .location-section {
+    --home-particle-cloud-x: 50%;
+  }
+}
+
+@media (max-width: 560px) {
+  #contenu > .home-hero ~ .home-problems,
+  #contenu > .home-hero ~ .home-offers,
+  #contenu > .home-hero ~ .home-engagements,
+  #contenu > .home-hero ~ .home-method,
+  #contenu > .home-hero ~ .home-safety,
+  #contenu > .home-hero ~ .behind-section,
+  #contenu > .home-hero ~ .faq-section,
+  #contenu > .home-hero ~ .location-section {
+    --home-particle-cloud-x: 50%;
+    --home-particle-cloud-opacity: 0.92;
+  }
+
+  #contenu > .home-hero ~ .home-offers,
+  #contenu > .home-hero ~ .home-method,
+  #contenu > .home-hero ~ .behind-section,
+  #contenu > .home-hero ~ .location-section {
+    --home-particle-cloud-x: 50%;
+  }
+
+  #contenu > .home-hero ~ .home-problems::after,
+  #contenu > .home-hero ~ .home-offers::after,
+  #contenu > .home-hero ~ .home-engagements::after,
+  #contenu > .home-hero ~ .home-method::after,
+  #contenu > .home-hero ~ .home-safety::after,
+  #contenu > .home-hero ~ .behind-section::after,
+  #contenu > .home-hero ~ .faq-section::after,
+  #contenu > .home-hero ~ .location-section::after {
+    width: 980px;
+    transform: translate(-50%, -50%) rotate(-5deg);
+  }
+}
+
+/* Finitions dark : numéros doux et dégradés strictement alignés sur les CTA. */
+html.theme-dark .home-process .process-step::after,
+html.theme-dark .institutes-page .institutes-method-number,
+html.theme-dark .sector-method-number {
+  color: #fff !important;
+  opacity: 0.12 !important;
+}
+
+html.theme-dark .resource-category {
+  color: #fff;
+  border-color: transparent;
+  background: var(--gradient-ia);
+}
+
+html.theme-dark .site-footer .brand-ia {
+  color: #00b0ff;
+  background: var(--gradient-ia);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+html.theme-dark:has(.contact-cube-hero) .site-footer .brand-ia {
+  color: #00b0ff !important;
+  background-color: transparent !important;
+  background-image: var(--gradient-ia) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* Test accueil sombre : halo violet secondaire, nuée navy au premier plan visuel. */
+html.theme-dark #contenu > .home-hero ~ .home-problems::before,
+html.theme-dark #contenu > .home-hero ~ .home-offers::before,
+html.theme-dark #contenu > .home-hero ~ .home-engagements::before,
+html.theme-dark #contenu > .home-hero ~ .home-method::before,
+html.theme-dark #contenu > .home-hero ~ .home-safety::before,
+html.theme-dark #contenu > .home-hero ~ .behind-section::before,
+html.theme-dark #contenu > .home-hero ~ .faq-section::before,
+html.theme-dark #contenu > .home-hero ~ .location-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 84% 24%, rgba(94, 23, 235, 0.24), transparent 42%),
+    radial-gradient(circle at 16% 78%, rgba(139, 92, 246, 0.14), transparent 46%);
+  pointer-events: none;
+}
+
+html.theme-dark #contenu > .home-hero ~ .home-problems::after,
+html.theme-dark #contenu > .home-hero ~ .home-offers::after,
+html.theme-dark #contenu > .home-hero ~ .home-engagements::after,
+html.theme-dark #contenu > .home-hero ~ .home-method::after,
+html.theme-dark #contenu > .home-hero ~ .home-safety::after,
+html.theme-dark #contenu > .home-hero ~ .behind-section::after,
+html.theme-dark #contenu > .home-hero ~ .faq-section::after,
+html.theme-dark #contenu > .home-hero ~ .location-section::after {
+  width: clamp(1180px, 122vw, 1840px);
+  opacity: 1;
+  filter: saturate(1.3) contrast(1.12) brightness(1.35);
+}
+
+/* Corps des pages en mode sombre : généralisation du système validé sur l’accueil. */
+html.theme-dark {
+  --dark-body-cloud-width: clamp(1180px, 122vw, 1840px);
+  --dark-body-cloud-opacity: 1;
+  --dark-body-halo-primary: rgba(94, 23, 235, 0.24);
+  --dark-body-halo-secondary: rgba(139, 92, 246, 0.14);
+}
+
+html.theme-dark #contenu > .section:not(.conversion-band),
+html.theme-dark .article-page > .article-header,
+html.theme-dark .article-page > .article-content {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+html.theme-dark .article-page {
+  overflow: hidden;
+}
+
+html.theme-dark #contenu > .section:not(.conversion-band)::before,
+html.theme-dark .article-page > .article-header::before,
+html.theme-dark .article-page > .article-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 84% 24%, var(--dark-body-halo-primary), transparent 42%),
+    radial-gradient(circle at 16% 78%, var(--dark-body-halo-secondary), transparent 46%);
+  pointer-events: none;
+}
+
+html.theme-dark #contenu > .section:not(.conversion-band)::after,
+html.theme-dark .article-page > .article-header::after,
+html.theme-dark .article-page > .article-content::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 50%;
+  width: var(--dark-body-cloud-width);
+  aspect-ratio: 2 / 1;
+  background: url("../assets/images/brand/halo-particles-blue.svg") center / contain no-repeat;
+  opacity: var(--dark-body-cloud-opacity);
+  filter: saturate(1.3) contrast(1.12) brightness(1.35);
+  pointer-events: none;
+  transform: translate(-50%, -50%) rotate(-3deg);
+}
+
+html.theme-dark .article-page > .article-header > *,
+html.theme-dark .article-page > .article-content > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  html.theme-dark {
+    --dark-body-cloud-width: clamp(1120px, 138vw, 1500px);
+  }
+}
+
+@media (max-width: 560px) {
+  html.theme-dark {
+    --dark-body-cloud-width: 980px;
+  }
+
+  html.theme-dark #contenu > .section:not(.conversion-band)::after,
+  html.theme-dark .article-page > .article-header::after,
+  html.theme-dark .article-page > .article-content::after {
+    transform: translate(-50%, -50%) rotate(-5deg);
+  }
+}
