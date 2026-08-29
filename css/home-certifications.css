@@ -248,3 +248,94 @@
     opacity: 0.68;
   }
 }
+
+/* TEST 2026-08-29 — halo bleu visible uniquement sur le corps de la page d’accueil.
+   Le hero et le footer ne sont volontairement jamais ciblés. */
+:root {
+  --halo-blue-primary: rgba(0, 119, 221, 0.24);
+  --halo-blue-secondary: rgba(0, 176, 255, 0.16);
+}
+
+main > .section.section-soft {
+  background:
+    radial-gradient(ellipse at 90% 18%, var(--halo-blue-primary), transparent 42%),
+    radial-gradient(ellipse at 12% 82%, var(--halo-blue-secondary), transparent 46%),
+    var(--color-soft);
+}
+
+main > .section.section-mist {
+  background:
+    radial-gradient(ellipse at 12% 84%, var(--halo-blue-primary), transparent 42%),
+    radial-gradient(ellipse at 88% 16%, var(--halo-blue-secondary), transparent 46%),
+    linear-gradient(135deg, #f7f8fc 0%, #ffffff 52%, #eef4ff 100%);
+}
+
+main > .section:not(.conversion-band):not(.section-soft):not(.section-mist):not(.section-warm):not(.positioning-section):not(.location-section)::before {
+  background:
+    radial-gradient(ellipse at 88% 14%, var(--halo-blue-primary), transparent 42%),
+    radial-gradient(ellipse at 10% 86%, var(--halo-blue-secondary), transparent 48%);
+}
+
+main > .section.positioning-section,
+main > .section.location-section {
+  background:
+    radial-gradient(ellipse at 88% 16%, rgba(0, 119, 221, 0.27), transparent 42%),
+    radial-gradient(ellipse at 12% 82%, rgba(0, 176, 255, 0.18), transparent 46%),
+    linear-gradient(135deg, #ffffff 0%, #fbfcff 48%, #eef4ff 100%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --halo-blue-primary: rgba(0, 119, 221, 0.34);
+    --halo-blue-secondary: rgba(0, 176, 255, 0.24);
+  }
+
+  main > .section.section-soft {
+    background:
+      radial-gradient(ellipse at 90% 18%, var(--halo-blue-primary), transparent 42%),
+      radial-gradient(ellipse at 12% 82%, var(--halo-blue-secondary), transparent 48%),
+      #11183d;
+  }
+
+  main > .section.section-mist {
+    background:
+      radial-gradient(ellipse at 12% 84%, var(--halo-blue-primary), transparent 42%),
+      radial-gradient(ellipse at 88% 16%, var(--halo-blue-secondary), transparent 48%),
+      linear-gradient(135deg, #11183d 0%, #0d1330 52%, #151c46 100%);
+  }
+
+  main > .section.positioning-section,
+  main > .section.location-section {
+    background:
+      radial-gradient(ellipse at 88% 16%, rgba(0, 119, 221, 0.38), transparent 42%),
+      radial-gradient(ellipse at 12% 82%, rgba(0, 176, 255, 0.26), transparent 48%),
+      linear-gradient(135deg, #0b1028 0%, #11183d 48%, #151c46 100%);
+  }
+}
+
+html.theme-dark {
+  --halo-blue-primary: rgba(0, 119, 221, 0.34);
+  --halo-blue-secondary: rgba(0, 176, 255, 0.24);
+}
+
+html.theme-dark main > .section.section-soft {
+  background:
+    radial-gradient(ellipse at 90% 18%, var(--halo-blue-primary), transparent 42%),
+    radial-gradient(ellipse at 12% 82%, var(--halo-blue-secondary), transparent 48%),
+    #11183d;
+}
+
+html.theme-dark main > .section.section-mist {
+  background:
+    radial-gradient(ellipse at 12% 84%, var(--halo-blue-primary), transparent 42%),
+    radial-gradient(ellipse at 88% 16%, var(--halo-blue-secondary), transparent 48%),
+    linear-gradient(135deg, #11183d 0%, #0d1330 52%, #151c46 100%);
+}
+
+html.theme-dark main > .section.positioning-section,
+html.theme-dark main > .section.location-section {
+  background:
+    radial-gradient(ellipse at 88% 16%, rgba(0, 119, 221, 0.38), transparent 42%),
+    radial-gradient(ellipse at 12% 82%, rgba(0, 176, 255, 0.26), transparent 48%),
+    linear-gradient(135deg, #0b1028 0%, #11183d 48%, #151c46 100%);
+}
