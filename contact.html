@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css?v=mobile-cube-contact-display-20260824b">
+    <link rel="stylesheet" href="css/styles.css?v=contact-final-fix-20260829">
     <link rel="stylesheet" href="css/consent-manager.css">
     <style>
       .contact-option > h3 + p {
@@ -100,6 +100,74 @@
           max-width: none;
         }
       }
+
+      /* Correctif final Contact : le « IA » du footer reprend un dégradé exclusivement bleu. */
+      html.theme-dark:has(.contact-cube-hero) .site-footer .footer-logo .brand-ia {
+        display: inline-block;
+        color: #00b0ff !important;
+        background: linear-gradient(135deg, #0077dd 0%, #00b0ff 100%) !important;
+        -webkit-background-clip: text !important;
+        background-clip: text !important;
+        -webkit-text-fill-color: transparent !important;
+      }
+
+      /* Le téléphone reste blanc au repos ; seul un reflet bleu traverse temporairement les chiffres. */
+      html.theme-dark:has(.contact-cube-hero) .contact-phone-display,
+      html.theme-dark:has(.contact-cube-hero) .site-footer .footer-phone {
+        position: relative;
+        display: inline-block;
+        width: fit-content;
+        color: #ffffff !important;
+        background: none !important;
+        -webkit-text-fill-color: #ffffff !important;
+        isolation: isolate;
+      }
+
+      html.theme-dark:has(.contact-cube-hero) .contact-phone-display::after,
+      html.theme-dark:has(.contact-cube-hero) .site-footer .footer-phone::after {
+        content: attr(data-text);
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+        color: transparent;
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          transparent 37%,
+          #0077dd 45%,
+          #00b0ff 50%,
+          #4dc8ff 54%,
+          transparent 63%,
+          transparent 100%
+        );
+        background-size: 260% 100%;
+        background-position: 150% 0;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent !important;
+        animation: contact-phone-blue-sweep 4.8s ease-in-out infinite;
+      }
+
+      @keyframes contact-phone-blue-sweep {
+        0%, 18% {
+          background-position: 150% 0;
+        }
+        58% {
+          background-position: -150% 0;
+        }
+        59%, 100% {
+          background-position: -150% 0;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html.theme-dark:has(.contact-cube-hero) .contact-phone-display::after,
+        html.theme-dark:has(.contact-cube-hero) .site-footer .footer-phone::after {
+          animation: none;
+          opacity: 0;
+        }
+      }
     </style>
   </head>
   <body>
@@ -177,7 +245,7 @@
             </article>
             <article class="card">
               <h3>Téléphone</h3>
-              <a class="contact-phone-display" href="tel:+33642789057">06 42 78 90 57</a>
+              <a class="contact-phone-display" href="tel:+33642789057" data-text="06 42 78 90 57">06 42 78 90 57</a>
             </article>
           </div>
         </div>
@@ -219,7 +287,7 @@
             75017 Paris
           </address>
           <a href="mailto:contact@aestheia.fr">contact@aestheia.fr</a>
-          <a class="footer-phone" href="tel:+33642789057">06 42 78 90 57</a>
+          <a class="footer-phone" href="tel:+33642789057" data-text="06 42 78 90 57">06 42 78 90 57</a>
           <a class="footer-social" href="https://www.linkedin.com/in/magalie-stankovic/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Magalie Stankovic (nouvel onglet)">LinkedIn</a>
         </div>
       </div>
