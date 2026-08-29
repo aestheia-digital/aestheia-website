@@ -576,6 +576,14 @@ html.theme-dark:has(.contact-cube-hero) .contact-phone-display:focus-visible {
   animation: header-phone-wave-text 4s ease-in-out infinite;
 }
 
+html.theme-dark:has(.contact-cube-hero) .site-footer .footer-phone,
+html.theme-dark:has(.contact-cube-hero) .site-footer .footer-phone:hover,
+html.theme-dark:has(.contact-cube-hero) .site-footer .footer-phone:focus-visible {
+  --footer-phone-base: #fff;
+  color: #fff !important;
+  background-color: #fff !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html.theme-dark .site-footer .footer-phone,
   html.theme-dark .site-footer .footer-phone:hover,
@@ -585,5 +593,14 @@ html.theme-dark:has(.contact-cube-hero) .contact-phone-display:focus-visible {
   html.theme-dark:has(.contact-cube-hero) .contact-phone-display:focus-visible {
     background-position: 50% 50%;
     animation: none;
+  }
+
+  html.theme-dark:has(.contact-cube-hero) .site-footer .footer-phone,
+  html.theme-dark:has(.contact-cube-hero) .site-footer .footer-phone:hover,
+  html.theme-dark:has(.contact-cube-hero) .site-footer .footer-phone:focus-visible {
+    color: #fff !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    -webkit-text-fill-color: #fff;
   }
 }
