@@ -4491,6 +4491,28 @@ html.theme-dark #contenu > .home-hero ~ .location-section {
   }
 }
 
+/* Finitions dark : numéros doux et dégradés strictement alignés sur les CTA. */
+html.theme-dark .home-process .process-step::after,
+html.theme-dark .institutes-page .institutes-method-number,
+html.theme-dark .sector-method-number {
+  color: #fff !important;
+  opacity: 0.12 !important;
+}
+
+html.theme-dark .resource-category {
+  color: #fff;
+  border-color: transparent;
+  background: var(--gradient-ia);
+}
+
+html.theme-dark .site-footer .brand-ia {
+  color: #00b0ff;
+  background: var(--gradient-ia);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 /* Test accueil sombre : halo violet secondaire, nuée navy au premier plan visuel. */
 html.theme-dark #contenu > .home-hero ~ .home-problems::before,
 html.theme-dark #contenu > .home-hero ~ .home-offers::before,
