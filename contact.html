@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css?v=contact-final-fix-20260829b">
+    <link rel="stylesheet" href="css/styles.css?v=contact-footer-phone-fix-20260829">
     <link rel="stylesheet" href="css/consent-manager.css">
     <style>
       .contact-option > h3 + p { margin-top: 0.75rem; }
@@ -48,7 +48,7 @@
         -webkit-text-fill-color: transparent !important;
       }
 
-      /* Correctif final Contact : le « IA » du footer reprend un dégradé exclusivement bleu. */
+      /* Footer Contact : le « IA » conserve le dégradé bleu validé. */
       html.theme-dark:has(.contact-cube-hero) .site-footer .footer-logo .brand-ia {
         display: inline-block;
         color: #00b0ff !important;
@@ -58,9 +58,8 @@
         -webkit-text-fill-color: transparent !important;
       }
 
-      /* Le téléphone reste blanc au repos ; seul un reflet bleu traverse temporairement les chiffres. */
-      html.theme-dark:has(.contact-cube-hero) .contact-phone-display,
-      html.theme-dark:has(.contact-cube-hero) .site-footer .footer-phone {
+      /* Numéro dans “Informations de contact” : blanc au repos avec balayage bleu. */
+      html.theme-dark:has(.contact-cube-hero) .contact-phone-display {
         position: relative;
         display: inline-block;
         width: fit-content;
@@ -70,8 +69,7 @@
         isolation: isolate;
       }
 
-      html.theme-dark:has(.contact-cube-hero) .contact-phone-display::after,
-      html.theme-dark:has(.contact-cube-hero) .site-footer .footer-phone::after {
+      html.theme-dark:has(.contact-cube-hero) .contact-phone-display::after {
         content: attr(data-text);
         position: absolute;
         inset: 0;
@@ -87,6 +85,23 @@
         animation: contact-phone-blue-sweep 4.8s ease-in-out infinite;
       }
 
+      /* Numéro du footer : violet statique, sans balayage ni halo. */
+      html.theme-dark:has(.contact-cube-hero) .site-footer .footer-phone,
+      html.theme-dark:has(.contact-cube-hero) .site-footer .footer-phone:hover,
+      html.theme-dark:has(.contact-cube-hero) .site-footer .footer-phone:focus-visible {
+        color: #a788ff !important;
+        background: none !important;
+        background-image: none !important;
+        -webkit-text-fill-color: #a788ff !important;
+        animation: none !important;
+      }
+
+      html.theme-dark:has(.contact-cube-hero) .site-footer .footer-phone::after {
+        content: none !important;
+        display: none !important;
+        animation: none !important;
+      }
+
       @keyframes contact-phone-blue-sweep {
         0%, 18% { background-position: 150% 0; }
         58% { background-position: -150% 0; }
@@ -94,8 +109,7 @@
       }
 
       @media (prefers-reduced-motion: reduce) {
-        html.theme-dark:has(.contact-cube-hero) .contact-phone-display::after,
-        html.theme-dark:has(.contact-cube-hero) .site-footer .footer-phone::after { animation: none; opacity: 0; }
+        html.theme-dark:has(.contact-cube-hero) .contact-phone-display::after { animation: none; opacity: 0; }
       }
     </style>
   </head>
