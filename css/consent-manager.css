@@ -37,11 +37,29 @@
 
 /* Mise en valeur discrète des numéros de téléphone, sans modifier leur typographie. */
 .site-header .header-phone-direct {
-  --header-phone-glow-soft: rgba(94, 23, 235, 0.24);
-  --header-phone-glow-strong: rgba(94, 23, 235, 0.42);
+  --header-phone-glow-blue: rgba(67, 91, 216, 0.3);
+  --header-phone-glow-cyan: rgba(0, 176, 255, 0.48);
+  position: relative;
+  isolation: isolate;
   color: #5e17eb !important;
   font-family: var(--font-body) !important;
-  animation: header-phone-breath 7s ease-in-out infinite;
+  animation: header-phone-wave-glow 4s ease-in-out infinite;
+}
+
+.site-header .header-phone-direct::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -0.24rem;
+  left: 0;
+  z-index: -1;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent 0%, #435bd8 28%, #00b0ff 72%, transparent 100%);
+  filter: blur(0.45px);
+  opacity: 0;
+  pointer-events: none;
+  animation: header-phone-wave-line 4s ease-in-out infinite;
 }
 
 .site-header .header-phone-direct:hover {
@@ -59,8 +77,8 @@
 
 @media (prefers-color-scheme: dark) {
   .site-header .header-phone-direct {
-    --header-phone-glow-soft: rgba(155, 124, 255, 0.28);
-    --header-phone-glow-strong: rgba(255, 255, 255, 0.42);
+    --header-phone-glow-blue: rgba(67, 91, 216, 0.4);
+    --header-phone-glow-cyan: rgba(67, 217, 255, 0.58);
     color: #fff !important;
   }
 }
@@ -68,8 +86,8 @@
 html.theme-dark .site-header .header-phone-direct,
 html.theme-dark .site-header .header-phone-direct:hover,
 html.theme-dark .site-header .header-phone-direct:focus-visible {
-  --header-phone-glow-soft: rgba(155, 124, 255, 0.28);
-  --header-phone-glow-strong: rgba(255, 255, 255, 0.42);
+  --header-phone-glow-blue: rgba(67, 91, 216, 0.4);
+  --header-phone-glow-cyan: rgba(67, 217, 255, 0.58);
   color: #fff !important;
 }
 
@@ -80,25 +98,55 @@ html.theme-dark .site-header .header-phone-direct:focus-visible {
   }
 }
 
-/* Une respiration lumineuse brève attire l'œil sans faire clignoter le numéro. */
-@keyframes header-phone-breath {
-  0%, 18%, 100% {
+/* Une vague bleu-cyan traverse brièvement le numéro, puis revient régulièrement. */
+@keyframes header-phone-wave-glow {
+  0%, 36%, 100% {
     text-shadow: 0 0 0 transparent;
   }
 
-  7% {
+  8% {
     text-shadow:
-      0 0 6px var(--header-phone-glow-strong),
-      0 0 14px var(--header-phone-glow-soft);
+      -3px 0 7px var(--header-phone-glow-blue),
+      1px 0 11px var(--header-phone-glow-cyan);
   }
 
-  12% {
-    text-shadow: 0 0 5px var(--header-phone-glow-soft);
+  18% {
+    text-shadow:
+      0 0 6px var(--header-phone-glow-blue),
+      0 0 15px var(--header-phone-glow-cyan);
+  }
+
+  28% {
+    text-shadow:
+      3px 0 6px var(--header-phone-glow-cyan),
+      -1px 0 9px var(--header-phone-glow-blue);
+  }
+}
+
+@keyframes header-phone-wave-line {
+  0%, 36%, 100% {
+    opacity: 0;
+    transform: translateX(-42%) scaleX(0.08);
+  }
+
+  9% {
+    opacity: 0.48;
+  }
+
+  19% {
+    opacity: 0.88;
+    transform: translateX(0) scaleX(1);
+  }
+
+  30% {
+    opacity: 0;
+    transform: translateX(42%) scaleX(0.12);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .site-header .header-phone-direct {
+  .site-header .header-phone-direct,
+  .site-header .header-phone-direct::after {
     animation: none;
   }
 }
