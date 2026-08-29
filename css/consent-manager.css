@@ -115,6 +115,21 @@ html.theme-dark .site-header .header-phone-direct:focus-visible {
   }
 }
 
+/* En-tête tablette : numéro discret, aligné avec le nom de marque. */
+@media (min-width: 721px) and (max-width: 899px) {
+  .site-header .header-phone-direct {
+    font-size: 0.86rem !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
+    transform: translateY(0.12rem) !important;
+  }
+
+  .site-header .header-phone-direct:hover,
+  .site-header .header-phone-direct:focus-visible {
+    transform: translateY(0.12rem) !important;
+  }
+}
+
 /* En-tête mobile : numéro seul, sans pictogramme ni capsule décorative. */
 @media (max-width: 720px) {
   .site-header .header-phone-direct {
