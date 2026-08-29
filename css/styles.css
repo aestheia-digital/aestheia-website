@@ -4348,9 +4348,9 @@ html.theme-dark .sector-method-conclusion strong {
 #contenu > .home-hero ~ .behind-section,
 #contenu > .home-hero ~ .faq-section,
 #contenu > .home-hero ~ .location-section {
-  --home-particle-cloud-x: calc(50% + 250px);
+  --home-particle-cloud-x: 50%;
   --home-particle-cloud-y: 50%;
-  --home-particle-cloud-opacity: 0.94;
+  --home-particle-cloud-opacity: 0.98;
 }
 
 /* Neutralise uniquement les halos radiaux violets des sections de l’accueil. */
@@ -4390,25 +4390,26 @@ html.theme-dark .sector-method-conclusion strong {
   z-index: 0;
   top: var(--home-particle-cloud-y);
   left: var(--home-particle-cloud-x);
-  width: clamp(940px, 88vw, 1380px);
+  width: clamp(1100px, 116vw, 1760px);
   aspect-ratio: 2 / 1;
   background: url("../assets/images/brand/halo-particles-blue.svg") center / contain no-repeat;
   opacity: var(--home-particle-cloud-opacity);
   pointer-events: none;
-  transform: translate(-50%, -50%) rotate(-4deg);
+  filter: saturate(1.2) contrast(1.08);
+  transform: translate(-50%, -50%) rotate(-3deg);
 }
 
 #contenu > .home-hero ~ .home-offers,
 #contenu > .home-hero ~ .home-method,
 #contenu > .home-hero ~ .behind-section,
 #contenu > .home-hero ~ .location-section {
-  --home-particle-cloud-x: calc(50% - 280px);
+  --home-particle-cloud-x: 50%;
 }
 
 #contenu > .home-hero ~ .home-engagements,
 #contenu > .home-hero ~ .home-safety,
 #contenu > .home-hero ~ .faq-section {
-  --home-particle-cloud-opacity: 0.94;
+  --home-particle-cloud-opacity: 0.98;
 }
 
 html.theme-dark #contenu > .home-hero ~ .home-problems,
@@ -4433,7 +4434,7 @@ html.theme-dark #contenu > .home-hero ~ .home-safety,
 html.theme-dark #contenu > .home-hero ~ .behind-section,
 html.theme-dark #contenu > .home-hero ~ .faq-section,
 html.theme-dark #contenu > .home-hero ~ .location-section {
-  --home-particle-cloud-opacity: 0.82;
+  --home-particle-cloud-opacity: 0.88;
 }
 
 @media (max-width: 900px) {
@@ -4445,15 +4446,15 @@ html.theme-dark #contenu > .home-hero ~ .location-section {
   #contenu > .home-hero ~ .behind-section,
   #contenu > .home-hero ~ .faq-section,
   #contenu > .home-hero ~ .location-section {
-    --home-particle-cloud-x: calc(50% + 150px);
-    --home-particle-cloud-opacity: 0.90;
+    --home-particle-cloud-x: 50%;
+    --home-particle-cloud-opacity: 0.96;
   }
 
   #contenu > .home-hero ~ .home-offers,
   #contenu > .home-hero ~ .home-method,
   #contenu > .home-hero ~ .behind-section,
   #contenu > .home-hero ~ .location-section {
-    --home-particle-cloud-x: calc(50% - 150px);
+    --home-particle-cloud-x: 50%;
   }
 }
 
@@ -4466,15 +4467,15 @@ html.theme-dark #contenu > .home-hero ~ .location-section {
   #contenu > .home-hero ~ .behind-section,
   #contenu > .home-hero ~ .faq-section,
   #contenu > .home-hero ~ .location-section {
-    --home-particle-cloud-x: calc(50% + 105px);
-    --home-particle-cloud-opacity: 0.84;
+    --home-particle-cloud-x: 50%;
+    --home-particle-cloud-opacity: 0.92;
   }
 
   #contenu > .home-hero ~ .home-offers,
   #contenu > .home-hero ~ .home-method,
   #contenu > .home-hero ~ .behind-section,
   #contenu > .home-hero ~ .location-section {
-    --home-particle-cloud-x: calc(50% - 105px);
+    --home-particle-cloud-x: 50%;
   }
 
   #contenu > .home-hero ~ .home-problems::after,
@@ -4485,7 +4486,7 @@ html.theme-dark #contenu > .home-hero ~ .location-section {
   #contenu > .home-hero ~ .behind-section::after,
   #contenu > .home-hero ~ .faq-section::after,
   #contenu > .home-hero ~ .location-section::after {
-    width: 820px;
-    transform: translate(-50%, -50%) rotate(-8deg);
+    width: 980px;
+    transform: translate(-50%, -50%) rotate(-5deg);
   }
 }
