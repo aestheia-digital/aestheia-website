@@ -248,3 +248,8 @@
     opacity: 0.68;
   }
 }
+
+/* Accueil uniquement : ralentit la vague bleue qui traverse le numéro de téléphone. */
+.site-header .header-phone-direct {
+  animation-duration: 7s !important;
+}
