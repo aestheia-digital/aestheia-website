@@ -4380,6 +4380,37 @@ html.theme-dark .sector-crosslink-cta:hover {
   }
 }
 
+/* Le thème appliqué par le site reste la source de vérité, indépendamment du cache navigateur. */
+html[data-theme="light"] .transition-note,
+html[data-theme="light"] .institutes-page .institutes-reality-conclusion,
+html[data-theme="light"] .institutes-page .institutes-editorial-benefit,
+html[data-theme="light"] .sector-editorial-benefit,
+html[data-theme="light"] .sector-reality-conclusion,
+html[data-theme="light"] .sector-method-conclusion {
+  border: 1px solid rgba(0, 176, 255, 0.14) !important;
+  background: #eaf5ff !important;
+  color: #1e2a50 !important;
+  box-shadow: none !important;
+}
+
+html[data-theme="light"] .transition-note::before,
+html[data-theme="light"] .institutes-page .institutes-reality-conclusion::before,
+html[data-theme="light"] .institutes-page .institutes-editorial-benefit::before,
+html[data-theme="light"] .sector-editorial-benefit::before,
+html[data-theme="light"] .sector-reality-conclusion::before,
+html[data-theme="light"] .sector-method-conclusion::before {
+  width: 4px !important;
+  background: linear-gradient(180deg, #540ce4 0%, #00b0ff 100%) !important;
+}
+
+html[data-theme="light"] .institutes-page .institutes-reality-conclusion strong,
+html[data-theme="light"] .institutes-page .institutes-editorial-benefit strong,
+html[data-theme="light"] .sector-editorial-benefit strong,
+html[data-theme="light"] .sector-reality-conclusion strong,
+html[data-theme="light"] .sector-method-conclusion strong {
+  color: #1e2a50 !important;
+}
+
 /* Mode nuit : adoucir les blocs de bénéfices et de validation sans modifier leur structure. */
 @media (prefers-color-scheme: dark) {
   .medicine-page .medicine-card-benefit,
