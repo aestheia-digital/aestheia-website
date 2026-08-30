@@ -123,3 +123,134 @@ html.theme-dark .site-header .header-phone-direct:focus-visible {
     -webkit-text-fill-color: currentColor !important;
   }
 }
+
+/* --------------------------------------------------------------------------
+   BROUILLON — IDENTITÉ VISUELLE SECTORIELLE, MODE JOUR UNIQUEMENT
+   Cette couche remplace le halo violet générique dans le corps des pages
+   sectorielles sans modifier l'accueil ni le mode nuit.
+   -------------------------------------------------------------------------- */
+@media (prefers-color-scheme: light) {
+  /* Variables sectorielles. Les sélecteurs :has() permettent de distinguer
+     les pages qui n'ont pas encore de classe dédiée sur <body>. */
+  html:not(.theme-dark) body.spa-page {
+    --sector-bg: #f8fcfd;
+    --sector-soft: #f2fafb;
+    --sector-mist: #eef8fa;
+    --sector-halo-1: rgba(20, 150, 166, 0.13);
+    --sector-halo-2: rgba(80, 196, 205, 0.08);
+    --sector-line: rgba(25, 136, 151, 0.07);
+  }
+
+  html:not(.theme-dark) body:has(.page-hero[style*="cure-thermale"]) {
+    --sector-bg: #f7fcff;
+    --sector-soft: #eef9fd;
+    --sector-mist: #eaf6fb;
+    --sector-halo-1: rgba(0, 145, 205, 0.16);
+    --sector-halo-2: rgba(0, 176, 255, 0.10);
+    --sector-line: rgba(21, 128, 184, 0.09);
+  }
+
+  html:not(.theme-dark) body.medicine-page {
+    --sector-bg: #f8faff;
+    --sector-soft: #f2f6ff;
+    --sector-mist: #edf3ff;
+    --sector-halo-1: rgba(43, 89, 214, 0.13);
+    --sector-halo-2: rgba(94, 23, 235, 0.07);
+    --sector-line: rgba(43, 89, 214, 0.06);
+  }
+
+  html:not(.theme-dark) body.institutes-page {
+    --sector-bg: #fffafd;
+    --sector-soft: #fcf4fb;
+    --sector-mist: #f8f0fa;
+    --sector-halo-1: rgba(174, 91, 160, 0.12);
+    --sector-halo-2: rgba(128, 92, 190, 0.07);
+    --sector-line: rgba(174, 91, 160, 0.055);
+  }
+
+  html:not(.theme-dark) body:has(.page-hero[style*="pme"]),
+  html:not(.theme-dark) body:has(.page-hero[style*="entreprise"]),
+  html:not(.theme-dark) body:has(.page-hero[style*="automatisation"]) {
+    --sector-bg: #fafbff;
+    --sector-soft: #f4f7ff;
+    --sector-mist: #eef3ff;
+    --sector-halo-1: rgba(64, 88, 190, 0.12);
+    --sector-halo-2: rgba(0, 176, 255, 0.07);
+    --sector-line: rgba(64, 88, 190, 0.055);
+  }
+
+  /* Fond sectoriel commun : très clair, léger et lisible. */
+  html:not(.theme-dark) body:is(.spa-page, .medicine-page, .institutes-page) #contenu > .section:not(.conversion-band),
+  html:not(.theme-dark) body:has(.page-hero[style*="cure-thermale"]) #contenu > .section:not(.conversion-band),
+  html:not(.theme-dark) body:has(.page-hero[style*="pme"]) #contenu > .section:not(.conversion-band),
+  html:not(.theme-dark) body:has(.page-hero[style*="entreprise"]) #contenu > .section:not(.conversion-band),
+  html:not(.theme-dark) body:has(.page-hero[style*="automatisation"]) #contenu > .section:not(.conversion-band) {
+    background-color: var(--sector-bg) !important;
+  }
+
+  html:not(.theme-dark) body:is(.spa-page, .medicine-page, .institutes-page) #contenu > .section.section-soft,
+  html:not(.theme-dark) body:has(.page-hero[style*="cure-thermale"]) #contenu > .section.section-soft,
+  html:not(.theme-dark) body:has(.page-hero[style*="pme"]) #contenu > .section.section-soft,
+  html:not(.theme-dark) body:has(.page-hero[style*="entreprise"]) #contenu > .section.section-soft,
+  html:not(.theme-dark) body:has(.page-hero[style*="automatisation"]) #contenu > .section.section-soft {
+    background: var(--sector-soft) !important;
+  }
+
+  html:not(.theme-dark) body:is(.spa-page, .medicine-page, .institutes-page) #contenu > .section.section-mist,
+  html:not(.theme-dark) body:has(.page-hero[style*="cure-thermale"]) #contenu > .section.section-mist,
+  html:not(.theme-dark) body:has(.page-hero[style*="pme"]) #contenu > .section.section-mist,
+  html:not(.theme-dark) body:has(.page-hero[style*="entreprise"]) #contenu > .section.section-mist,
+  html:not(.theme-dark) body:has(.page-hero[style*="automatisation"]) #contenu > .section.section-mist {
+    background:
+      radial-gradient(ellipse at 14% 78%, var(--sector-halo-2), transparent 38%),
+      linear-gradient(135deg, var(--sector-soft) 0%, #ffffff 52%, var(--sector-mist) 100%) !important;
+  }
+
+  /* Remplacement du halo violet générique par le halo sectoriel. */
+  html:not(.theme-dark) body:is(.spa-page, .medicine-page, .institutes-page) #contenu > .section:not(.conversion-band)::before,
+  html:not(.theme-dark) body:has(.page-hero[style*="cure-thermale"]) #contenu > .section:not(.conversion-band)::before,
+  html:not(.theme-dark) body:has(.page-hero[style*="pme"]) #contenu > .section:not(.conversion-band)::before,
+  html:not(.theme-dark) body:has(.page-hero[style*="entreprise"]) #contenu > .section:not(.conversion-band)::before,
+  html:not(.theme-dark) body:has(.page-hero[style*="automatisation"]) #contenu > .section:not(.conversion-band)::before {
+    content: "" !important;
+    display: block !important;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 1 !important;
+    background:
+      radial-gradient(ellipse at 88% 18%, var(--sector-halo-1), transparent 34%),
+      radial-gradient(ellipse at 10% 82%, var(--sector-halo-2), transparent 40%) !important;
+  }
+
+  /* Spa hôtelier : lumière aquatique calme, raffinée, sans effet piscine. */
+  html:not(.theme-dark) body.spa-page #contenu > .section:not(.conversion-band)::before {
+    background:
+      radial-gradient(ellipse at 88% 18%, rgba(22, 146, 159, 0.14), transparent 34%),
+      radial-gradient(ellipse at 16% 82%, rgba(108, 204, 210, 0.08), transparent 42%),
+      repeating-radial-gradient(ellipse at 78% 30%, transparent 0 26px, rgba(31, 150, 163, 0.025) 27px 28px, transparent 29px 46px) !important;
+  }
+
+  /* Thalasso / thermal : impression de surface d'eau et de lumière marine. */
+  html:not(.theme-dark) body:has(.page-hero[style*="cure-thermale"]) #contenu > .section:not(.conversion-band)::before {
+    background:
+      radial-gradient(ellipse at 86% 20%, rgba(0, 153, 214, 0.17), transparent 33%),
+      radial-gradient(ellipse at 14% 80%, rgba(70, 196, 230, 0.10), transparent 42%),
+      repeating-radial-gradient(ellipse at 82% 24%, transparent 0 22px, rgba(15, 135, 190, 0.032) 23px 24px, transparent 25px 43px) !important;
+  }
+
+  /* Médecine & chirurgie esthétique : lumière froide, nette et technologique. */
+  html:not(.theme-dark) body.medicine-page #contenu > .section:not(.conversion-band)::before {
+    background:
+      radial-gradient(ellipse at 88% 18%, rgba(45, 91, 218, 0.14), transparent 34%),
+      radial-gradient(ellipse at 12% 82%, rgba(92, 116, 222, 0.06), transparent 40%) !important;
+  }
+
+  /* Instituts & indépendantes : tonalité lilas poudrée, sobre et professionnelle. */
+  html:not(.theme-dark) body.institutes-page #contenu > .section:not(.conversion-band)::before {
+    background:
+      radial-gradient(ellipse at 88% 18%, rgba(181, 105, 166, 0.13), transparent 35%),
+      radial-gradient(ellipse at 12% 82%, rgba(139, 107, 188, 0.065), transparent 42%) !important;
+  }
+}
