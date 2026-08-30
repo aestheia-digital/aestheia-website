@@ -330,6 +330,56 @@ main > .section:not(.conversion-band):not(.section-soft):not(.section-mist):not(
   background: linear-gradient(135deg, #ffffff 0%, #fbfaff 52%, #f1f5ff 100%);
 }
 
+/* Atmosphère aquatique claire, réservée au corps de la page Thalasso & thermal. */
+.thalasso-page main {
+  background-color: #f7fcfd;
+  background-image:
+    radial-gradient(ellipse 74% 18% at 8% 10%, rgba(255, 255, 255, 0.94) 0 31%, transparent 63%),
+    radial-gradient(ellipse 62% 16% at 92% 25%, rgba(68, 206, 218, 0.15) 0 28%, transparent 69%),
+    radial-gradient(ellipse 80% 20% at 2% 48%, rgba(0, 125, 174, 0.09) 0 25%, transparent 68%),
+    radial-gradient(ellipse 56% 14% at 88% 67%, rgba(255, 255, 255, 0.96) 0 30%, transparent 66%),
+    radial-gradient(ellipse 72% 18% at 18% 87%, rgba(25, 178, 199, 0.13) 0 24%, transparent 70%),
+    linear-gradient(145deg, rgba(236, 252, 252, 0.98), rgba(223, 246, 248, 0.72) 38%, rgba(246, 252, 253, 0.96) 72%, rgba(220, 242, 247, 0.78));
+  background-size: auto, auto, auto, auto, auto, auto;
+}
+
+.thalasso-page main > .section:not(.conversion-band) {
+  background: transparent;
+}
+
+.thalasso-page main > .section:not(.conversion-band)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    repeating-radial-gradient(ellipse 42% 20% at 14% 6%, transparent 0 24px, rgba(255, 255, 255, 0.46) 26px 28px, transparent 31px 52px),
+    repeating-radial-gradient(ellipse 36% 18% at 88% 78%, transparent 0 32px, rgba(31, 169, 194, 0.045) 35px 38px, transparent 42px 66px);
+  background-size: 760px 360px, 680px 420px;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.thalasso-page main > .section:nth-of-type(even):not(.conversion-band)::before {
+  background-position: 18% 12%, 76% 62%;
+  transform: scaleX(-1);
+}
+
+@media (max-width: 700px) {
+  .thalasso-page main {
+    background-image:
+      radial-gradient(ellipse 110% 14% at 12% 14%, rgba(255, 255, 255, 0.92) 0 32%, transparent 67%),
+      radial-gradient(ellipse 100% 15% at 90% 43%, rgba(56, 196, 211, 0.12) 0 24%, transparent 70%),
+      radial-gradient(ellipse 112% 16% at 8% 78%, rgba(0, 122, 166, 0.07) 0 23%, transparent 68%),
+      linear-gradient(150deg, #f5fcfd, #e3f6f8 48%, #f7fcfd);
+  }
+
+  .thalasso-page main > .section:not(.conversion-band)::before {
+    background-size: 520px 310px, 480px 350px;
+    opacity: 0.58;
+  }
+}
+
 .eyebrow {
   margin: 0 0 0.9rem;
   font-family: var(--font-structure);
