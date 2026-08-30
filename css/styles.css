@@ -4318,6 +4318,35 @@ html.theme-dark .sector-crosslink-cta:hover {
   }
 }
 
+/* Blocs d’information : cadre bleu pâle et liseré identiques à l’accueil. */
+.institutes-page .institutes-reality-conclusion,
+.institutes-page .institutes-editorial-benefit,
+.sector-editorial-benefit,
+.sector-reality-conclusion,
+.sector-method-conclusion {
+  border: 1px solid rgba(0, 176, 255, 0.14);
+  background: #eaf5ff;
+  color: var(--color-primary);
+  box-shadow: none;
+}
+
+.institutes-page .institutes-reality-conclusion::before,
+.institutes-page .institutes-editorial-benefit::before,
+.sector-editorial-benefit::before,
+.sector-reality-conclusion::before,
+.sector-method-conclusion::before {
+  width: 4px;
+  background: linear-gradient(180deg, rgba(94, 23, 235, 0.82), rgba(0, 176, 255, 0.76));
+}
+
+.institutes-page .institutes-reality-conclusion strong,
+.institutes-page .institutes-editorial-benefit strong,
+.sector-editorial-benefit strong,
+.sector-reality-conclusion strong,
+.sector-method-conclusion strong {
+  color: var(--color-primary);
+}
+
 /* Mode nuit : adoucir les blocs de bénéfices et de validation sans modifier leur structure. */
 @media (prefers-color-scheme: dark) {
   .medicine-page .medicine-card-benefit,
