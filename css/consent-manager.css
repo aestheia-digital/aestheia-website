@@ -254,3 +254,41 @@ html.theme-dark .site-header .header-phone-direct:focus-visible {
       radial-gradient(ellipse at 12% 82%, rgba(139, 107, 188, 0.065), transparent 42%) !important;
   }
 }
+
+/* --------------------------------------------------------------------------
+   THALASSO / THERMAL — PREVIEW OCÉAN RÉEL, MODE JOUR
+   Le corps de page affiche une vraie image de mer. Les halos sont neutralisés.
+   -------------------------------------------------------------------------- */
+@media (prefers-color-scheme: light) {
+  html:not(.theme-dark) body:has(.page-hero[style*="cure-thermale"]) #contenu {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0.46)),
+      url("../assets/images/metiers/thalasso-ocean-background.webp") !important;
+    background-position: center top !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+  }
+
+  html:not(.theme-dark) body:has(.page-hero[style*="cure-thermale"]) #contenu > .section:not(.hero):not(.conversion-band) {
+    background: rgba(255, 255, 255, 0.58) !important;
+  }
+
+  html:not(.theme-dark) body:has(.page-hero[style*="cure-thermale"]) #contenu > .section.section-soft,
+  html:not(.theme-dark) body:has(.page-hero[style*="cure-thermale"]) #contenu > .section.section-mist,
+  html:not(.theme-dark) body:has(.page-hero[style*="cure-thermale"]) #contenu > .section.section-warm {
+    background: rgba(255, 255, 255, 0.66) !important;
+  }
+
+  html:not(.theme-dark) body:has(.page-hero[style*="cure-thermale"]) #contenu > .section:not(.conversion-band)::before {
+    background: none !important;
+    opacity: 0 !important;
+  }
+}
+
+@media (max-width: 900px) and (prefers-color-scheme: light) {
+  html:not(.theme-dark) body:has(.page-hero[style*="cure-thermale"]) #contenu {
+    background-attachment: scroll !important;
+    background-position: 58% top !important;
+  }
+}
