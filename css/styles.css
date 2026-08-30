@@ -286,7 +286,7 @@ strong {
   position: relative;
   overflow: hidden;
   isolation: isolate;
-  padding: 3.25rem 0;
+  padding: 2.85rem 0;
 }
 
 .section > .container {
@@ -295,7 +295,7 @@ strong {
 }
 
 .section-tight {
-  padding: 2.6rem 0;
+  padding: 2.3rem 0;
 }
 
 .section-soft {
@@ -3089,11 +3089,11 @@ html.theme-dark .transition-note {
   }
 
   .section {
-    padding: 4.5rem 0;
+    padding: 4rem 0;
   }
 
   .section-tight {
-    padding: 3.2rem 0;
+    padding: 2.85rem 0;
   }
 
   h1,
@@ -3563,11 +3563,11 @@ html.theme-dark .transition-note {
   }
 
   .section {
-    padding: 5.5rem 0;
+    padding: 4.75rem 0;
   }
 
   .section-tight {
-    padding: 3.5rem 0;
+    padding: 3.1rem 0;
   }
 
   h1,
