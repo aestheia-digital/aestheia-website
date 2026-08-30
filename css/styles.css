@@ -959,6 +959,33 @@ h3 {
   margin-top: 1.55rem;
 }
 
+.home-hero .hero-specialties {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  max-width: 820px;
+  margin: 1rem 0 0;
+  color: rgba(217, 229, 255, 0.94);
+  font-size: clamp(0.78rem, 1.4vw, 0.9rem);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.home-hero .hero-specialties::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 3px;
+  height: 1.5em;
+  margin-top: 0.08em;
+  border-radius: 999px;
+  background: var(--gradient-ia);
+}
+
+.home-hero .hero-specialties strong {
+  color: #fff;
+  font-weight: 600;
+}
+
 .hero .hero-proof {
   display: inline-flex;
   width: fit-content;
