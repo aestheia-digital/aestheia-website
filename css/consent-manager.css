@@ -23,8 +23,8 @@
   }
 }
 
-/* Mobile jour : aucune nuée de particules sur le corps de l'accueil. */
-@media (max-width: 720px) and (prefers-color-scheme: light) {
+/* MODE JOUR, TOUS SUPPORTS : aucune nuée sur l'accueil et même halo violet que la version mobile validée. */
+@media (prefers-color-scheme: light) {
   html:not(.theme-dark) #contenu > .home-hero ~ .home-problems::after,
   html:not(.theme-dark) #contenu > .home-hero ~ .home-offers::after,
   html:not(.theme-dark) #contenu > .home-hero ~ .home-engagements::after,
@@ -38,10 +38,26 @@
     background: none !important;
     opacity: 0 !important;
   }
-}
 
-/* Mode jour : aucun fond de nuit ne doit déborder sur le corps des pages. */
-@media (prefers-color-scheme: light) {
+  html:not(.theme-dark) #contenu > .home-hero ~ .home-problems::before,
+  html:not(.theme-dark) #contenu > .home-hero ~ .home-offers::before,
+  html:not(.theme-dark) #contenu > .home-hero ~ .home-engagements::before,
+  html:not(.theme-dark) #contenu > .home-hero ~ .home-method::before,
+  html:not(.theme-dark) #contenu > .home-hero ~ .home-safety::before,
+  html:not(.theme-dark) #contenu > .home-hero ~ .behind-section::before,
+  html:not(.theme-dark) #contenu > .home-hero ~ .faq-section::before,
+  html:not(.theme-dark) #contenu > .home-hero ~ .location-section::before {
+    content: "" !important;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(circle at 84% 24%, rgba(94, 23, 235, 0.14), transparent 42%),
+      radial-gradient(circle at 16% 78%, rgba(139, 92, 246, 0.08), transparent 46%) !important;
+  }
+
+  /* Mode jour : aucun fond de nuit ne doit déborder sur le corps des pages. */
   html:not(.theme-dark) body {
     background: #ffffff !important;
     color: #1e2a50 !important;
