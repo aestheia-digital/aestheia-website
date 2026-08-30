@@ -4381,28 +4381,42 @@ html.theme-dark .sector-method-conclusion strong {
   --home-particle-cloud-opacity: 0.98;
 }
 
-/* Neutralise uniquement les halos radiaux violets des sections de l’accueil. */
+/* Accueil clair : halos violets harmonisés avec les autres pages. */
 #contenu > .home-hero ~ .home-problems {
-  background: linear-gradient(135deg, #f7f8fc 0%, #ffffff 52%, #eef4ff 100%);
+  background:
+    radial-gradient(circle at 12% 84%, var(--halo-violet-primary), transparent 40%),
+    radial-gradient(circle at 88% 16%, var(--halo-violet-secondary), transparent 42%),
+    linear-gradient(135deg, #f7f8fc 0%, #ffffff 52%, #eef4ff 100%);
 }
 
 #contenu > .home-hero ~ .section-soft {
-  background: var(--color-soft);
+  background:
+    radial-gradient(circle at 90% 18%, var(--halo-violet-primary), transparent 40%),
+    radial-gradient(circle at 12% 82%, var(--halo-violet-secondary), transparent 42%),
+    var(--color-soft);
 }
 
 #contenu > .home-hero ~ .behind-section {
-  background: linear-gradient(135deg, #ffffff 0%, #fbfaff 52%, #f1f5ff 100%);
+  background:
+    radial-gradient(circle at 88% 16%, var(--halo-violet-primary), transparent 40%),
+    radial-gradient(circle at 12% 82%, var(--halo-violet-secondary), transparent 42%),
+    linear-gradient(135deg, #ffffff 0%, #fbfaff 52%, #f1f5ff 100%);
 }
 
 #contenu > .home-hero ~ .location-section {
-  background: linear-gradient(135deg, #ffffff 0%, #fbfcff 48%, #eef4ff 100%);
+  background:
+    radial-gradient(circle at 88% 16%, var(--halo-violet-primary), transparent 40%),
+    radial-gradient(circle at 12% 82%, var(--halo-violet-secondary), transparent 42%),
+    linear-gradient(135deg, #ffffff 0%, #fbfcff 48%, #eef4ff 100%);
 }
 
 #contenu > .home-hero ~ .home-offers::before,
 #contenu > .home-hero ~ .home-engagements::before,
 #contenu > .home-hero ~ .home-safety::before,
 #contenu > .home-hero ~ .faq-section::before {
-  background: none;
+  background:
+    radial-gradient(circle at 88% 14%, var(--halo-violet-primary), transparent 40%),
+    radial-gradient(circle at 10% 86%, var(--halo-violet-secondary), transparent 44%);
 }
 
 #contenu > .home-hero ~ .home-problems::after,
@@ -4425,6 +4439,21 @@ html.theme-dark .sector-method-conclusion strong {
   pointer-events: none;
   filter: saturate(1.2) contrast(1.08);
   transform: translate(-50%, -50%) rotate(-3deg);
+}
+
+/* Mode jour : aucune nuée de particules, quel que soit le support. */
+@media (prefers-color-scheme: light) {
+  #contenu > .home-hero ~ .home-problems::after,
+  #contenu > .home-hero ~ .home-offers::after,
+  #contenu > .home-hero ~ .home-engagements::after,
+  #contenu > .home-hero ~ .home-method::after,
+  #contenu > .home-hero ~ .home-safety::after,
+  #contenu > .home-hero ~ .behind-section::after,
+  #contenu > .home-hero ~ .faq-section::after,
+  #contenu > .home-hero ~ .location-section::after {
+    content: none;
+    background: none;
+  }
 }
 
 #contenu > .home-hero ~ .home-offers,
