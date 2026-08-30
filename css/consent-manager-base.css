@@ -1,0 +1,612 @@
+.consent-banner, .consent-dialog-backdrop { position: fixed; inset: auto 0 0; z-index: 10000; }
+.consent-banner { padding: 1rem; background: #fff; border-top: 1px solid #d8ddec; box-shadow: 0 -12px 36px rgba(20, 29, 62, .16); color: #172043; }
+.consent-banner__content { width: min(1180px, 100%); margin: auto; display: grid; grid-template-columns: 1fr auto; gap: 1.25rem; align-items: center; }
+.consent-banner h2, .consent-dialog h2 { margin: 0 0 .5rem; font-size: 1.25rem; }
+.consent-banner p, .consent-dialog p { margin: 0 0 .55rem; line-height: 1.55; }
+.consent-actions { display: flex; flex-wrap: wrap; gap: .65rem; }
+.consent-button { min-height: 44px; padding: .7rem 1rem; border: 2px solid #293664; border-radius: 8px; background: #fff; color: #172043; font: 600 .95rem Inter, sans-serif; cursor: pointer; }
+.consent-button--primary { background: #172043; color: #fff; }
+.consent-button:hover { transform: translateY(-1px); }
+.consent-button:focus-visible, .consent-dialog__close:focus-visible, [data-manage-cookies]:focus-visible { outline: 3px solid #00b0ff; outline-offset: 3px; }
+.consent-dialog-backdrop { inset: 0; display: grid; place-items: center; padding: 1rem; background: rgba(5, 10, 28, .68); }
+.consent-dialog-backdrop[hidden], .consent-banner[hidden] { display: none; }
+.consent-dialog { width: min(620px, 100%); max-height: calc(100vh - 2rem); overflow: auto; padding: 1.35rem; border-radius: 14px; background: #fff; color: #172043; box-shadow: 0 24px 70px rgba(0,0,0,.28); }
+.consent-dialog__header { display: flex; justify-content: space-between; gap: 1rem; }
+.consent-dialog__close { width: 44px; height: 44px; border: 0; background: transparent; color: inherit; font-size: 2rem; cursor: pointer; }
+.consent-category { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin: .85rem 0; padding: 1rem; border: 1px solid #d8ddec; border-radius: 10px; }
+.consent-category span { display: block; }
+.consent-category span span, .consent-category div p { margin-top: .3rem; font-size: .9rem; }
+.consent-category input { flex: 0 0 auto; width: 1.35rem; height: 1.35rem; accent-color: #293664; }
+.consent-dialog-open { overflow: hidden; }
+.map-consent-placeholder { min-height: 100%; display: grid; align-content: center; justify-items: center; gap: .9rem; padding: 1.5rem; text-align: center; }
+.map-consent-placeholder[hidden] { display: none; }
+.map-consent-placeholder p { max-width: 34rem; margin: 0; }
+.map-consent-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: .65rem; }
+.footer-cookie-button { padding: 0; border: 0; background: transparent; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+.legal-table-wrapper { max-width: 100%; overflow-x: auto; margin: 1rem 0; }
+.legal-table-wrapper table { width: 100%; min-width: 620px; border-collapse: collapse; }
+.legal-table-wrapper th, .legal-table-wrapper td { padding: .75rem; border: 1px solid #d8ddec; text-align: left; vertical-align: top; }
+@media (max-width: 760px) { .consent-banner__content { grid-template-columns: 1fr; } .consent-actions { width: 100%; } .consent-actions .consent-button { flex: 1 1 9rem; } }
+@media (max-width: 420px) { .consent-banner { padding: .8rem; } .consent-banner p { font-size: .9rem; } .consent-button { width: 100%; } .consent-category { align-items: flex-start; } }
+@media (prefers-color-scheme: dark) {
+  .consent-banner, .consent-dialog { background: #101737; color: #eef2ff; border-color: #35416f; }
+  .consent-button { border-color: #b8c4ef; background: #101737; color: #fff; }
+  .consent-button--primary { background: #d6e3f3; color: #101737; }
+  .consent-category { border-color: #35416f; }
+}
+
+/* Une vague bleue traverse directement les chiffres, sans halo périphérique. */
+.site-header .header-phone-direct {
+  --header-phone-base: #5e17eb;
+  position: relative;
+  color: var(--header-phone-base) !important;
+  font-family: var(--font-body) !important;
+  background-color: var(--header-phone-base) !important;
+  background-image: linear-gradient(
+    105deg,
+    var(--header-phone-base) 0%,
+    var(--header-phone-base) 38%,
+    rgba(67, 91, 216, 0.34) 45%,
+    rgba(0, 176, 255, 0.42) 50%,
+    rgba(67, 91, 216, 0.34) 55%,
+    var(--header-phone-base) 62%,
+    var(--header-phone-base) 100%
+  ) !important;
+  background-repeat: no-repeat !important;
+  background-size: 260% 100% !important;
+  background-position: 115% 50%;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent;
+  animation: header-phone-wave-text 7s ease-in-out infinite;
+}
+
+.site-header .header-phone-direct:hover {
+  color: #5e17eb !important;
+  opacity: 0.82;
+}
+
+.site-footer .footer-phone {
+  color: #a788ff !important;
+}
+
+.site-footer .footer-phone:hover {
+  color: #c4b3ff !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  .site-header .header-phone-direct {
+    --header-phone-base: #fff;
+    color: #fff !important;
+  }
+}
+
+html.theme-dark .site-header .header-phone-direct,
+html.theme-dark .site-header .header-phone-direct:hover,
+html.theme-dark .site-header .header-phone-direct:focus-visible {
+  --header-phone-base: #fff;
+  color: #fff !important;
+}
+
+/* Ordinateur en mode jour uniquement : typographie éditoriale Playfair Display. */
+@media (min-width: 1051px) and (prefers-color-scheme: light) {
+  html:not(.theme-dark) .site-header .header-phone-direct {
+    font-family: var(--font-display) !important;
+  }
+}
+
+/* Le dégradé colore successivement les chiffres, puis laisse une courte pause. */
+@keyframes header-phone-wave-text {
+  0% {
+    background-position: 115% 50%;
+  }
+
+  34%, 100% {
+    background-position: -15% 50%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header .header-phone-direct {
+    animation: none;
+    background-color: transparent !important;
+    background-image: none !important;
+    -webkit-text-fill-color: currentColor;
+  }
+}
+
+/* En-tête tablette : numéro discret, aligné avec le nom de marque. */
+@media (min-width: 721px) and (max-width: 899px) {
+  .site-header .header-phone-direct {
+    font-size: 0.86rem !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
+    transform: translateY(0.12rem) !important;
+  }
+
+  .site-header .header-phone-direct:hover,
+  .site-header .header-phone-direct:focus-visible {
+    transform: translateY(0.12rem) !important;
+  }
+}
+
+/* En-tête mobile : numéro seul, sans pictogramme ni capsule décorative. */
+@media (max-width: 720px) {
+  .site-header .header-phone-direct {
+    gap: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background-color: var(--header-phone-base) !important;
+    box-shadow: none !important;
+    font-size: 0.8rem !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
+    transform: translateY(0.12rem) !important;
+  }
+
+  .site-header .header-phone-direct::before {
+    display: none !important;
+    content: none !important;
+  }
+
+  .site-header .header-phone-direct:hover,
+  .site-header .header-phone-direct:focus-visible {
+    background-color: var(--header-phone-base) !important;
+    box-shadow: none !important;
+    transform: translateY(0.12rem) !important;
+  }
+}
+
+/* Ajustements visuels validés : CTA Ressources, espacement des offres et numéros de méthode. */
+.resource-cta .btn-secondary,
+.resource-cta .btn-secondary:hover {
+  color: #fff !important;
+  border-color: transparent !important;
+  background: var(--gradient-ia) !important;
+  box-shadow: 0 16px 30px rgba(0, 176, 255, 0.18);
+}
+
+.home-offers .commercial-offer-proposal {
+  margin-top: 0.55rem !important;
+}
+
+/* Retour strict au rendu violet léger d’origine pour les numéros 01 à 04. */
+.home-process .process-step::after {
+  color: #5e17eb !important;
+  opacity: 0.08 !important;
+}
+
+/* Conseils & ressources : CTA alignés et accès téléphone direct. */
+.resource-cta .resource-cta-buttons {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+  width: 100%;
+  align-items: stretch;
+}
+
+.resource-cta .resource-cta-buttons > .btn {
+  width: 100%;
+  height: 62px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.resource-cta .resource-phone-cta,
+.resource-cta .resource-phone-cta:hover {
+  grid-column: 1 / -1;
+  gap: 0.65rem;
+  color: #fff !important;
+  border-color: transparent !important;
+  background: var(--gradient-ia) !important;
+  box-shadow: 0 16px 30px rgba(0, 176, 255, 0.18);
+}
+
+.resource-cta .resource-phone-label {
+  font-family: var(--font-body);
+  font-weight: 600;
+}
+
+.resource-cta .resource-phone-number {
+  font-family: var(--font-display);
+  font-size: 1.16rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 760px) {
+  .resource-cta .resource-cta-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .resource-cta .resource-phone-cta {
+    grid-column: auto;
+    min-height: 62px;
+    height: auto;
+    flex-wrap: wrap;
+  }
+}
+
+/* Pages secteurs : retour à des cartes verticales de même hauteur pour la partie Systèmes. */
+.sector-editorial-list,
+.institutes-page .institutes-editorial-list {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+  gap: 1.2rem !important;
+  align-items: stretch;
+  margin-top: 2rem !important;
+  border-top: 0 !important;
+}
+
+.sector-editorial-chapter,
+.institutes-page .institutes-editorial-chapter {
+  display: flex !important;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+  padding: 1.45rem !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius) !important;
+  background: var(--color-bg) !important;
+  box-shadow: var(--shadow-soft) !important;
+}
+
+.sector-editorial-heading,
+.institutes-page .institutes-editorial-heading {
+  min-width: 0;
+}
+
+.sector-editorial-heading h3,
+.institutes-page .institutes-editorial-heading h3 {
+  min-height: 4rem;
+  margin: 0;
+  font-size: 1.05rem !important;
+  line-height: 1.24 !important;
+}
+
+.sector-editorial-content,
+.institutes-page .institutes-editorial-content {
+  display: flex !important;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  margin-top: 0.5rem !important;
+  font-size: 0.97rem !important;
+}
+
+.sector-editorial-content > p,
+.institutes-page .institutes-editorial-content > p {
+  order: 1;
+  max-width: none !important;
+}
+
+.sector-editorial-benefit,
+.institutes-page .institutes-editorial-benefit {
+  order: 2;
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 0 !important;
+  margin-top: auto !important;
+  margin-bottom: 0 !important;
+  padding: 0.9rem 1rem !important;
+  border-left: 4px solid #00a9ee !important;
+  border-radius: 0 10px 10px 0 !important;
+  background: #dceeff !important;
+  color: #1e2a50 !important;
+  font-size: 0.92rem !important;
+  line-height: 1.5 !important;
+}
+
+.sector-editorial-benefit strong,
+.institutes-page .institutes-editorial-benefit strong {
+  color: #1e2a50 !important;
+}
+
+@media (max-width: 1049px) {
+  .sector-editorial-list,
+  .institutes-page .institutes-editorial-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sector-editorial-heading h3,
+  .institutes-page .institutes-editorial-heading h3 {
+    min-height: 3.6rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .sector-editorial-list,
+  .institutes-page .institutes-editorial-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .sector-editorial-heading h3,
+  .institutes-page .institutes-editorial-heading h3 {
+    min-height: 0;
+  }
+
+  .sector-editorial-content,
+  .institutes-page .institutes-editorial-content {
+    margin-top: 0.45rem !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .sector-editorial-chapter,
+  .institutes-page .institutes-editorial-chapter {
+    background: #141b3c !important;
+    border-color: #35416f !important;
+  }
+
+  .sector-editorial-benefit,
+  .institutes-page .institutes-editorial-benefit,
+  .sector-editorial-benefit strong,
+  .institutes-page .institutes-editorial-benefit strong {
+    color: #1e2a50 !important;
+  }
+}
+
+/* Conseils & ressources : même cube interactif que l'accueil, adapté au bandeau de la page. */
+.resources-hero.hero-cube-hero .hero-inner {
+  isolation: isolate;
+}
+
+@media (min-width: 1180px) {
+  .resources-hero.hero-cube-hero .hero-content {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1179px) {
+  .resources-hero.hero-cube-hero .hero-tech-backdrop {
+    display: block;
+    opacity: 0.58;
+  }
+
+  .resources-hero.hero-cube-hero .hero-cube-stage {
+    --cube-size: clamp(190px, 20vw, 216px);
+    --cube-zone: clamp(320px, 35vw, 375px);
+    display: grid;
+    top: 50%;
+    right: clamp(-76px, -5vw, -40px);
+    bottom: auto;
+    opacity: 0.78;
+    transform: translateY(-50%);
+  }
+
+  .resources-hero.hero-cube-hero .hero-content {
+    max-width: 68%;
+  }
+}
+
+@media (min-width: 721px) and (max-width: 899px) {
+  .resources-hero.hero-cube-hero .hero-tech-backdrop {
+    display: block;
+    opacity: 0.4;
+  }
+
+  .resources-hero.hero-cube-hero .hero-cube-stage {
+    --cube-size: clamp(172px, 23vw, 194px);
+    --cube-zone: clamp(285px, 39vw, 328px);
+    display: grid;
+    top: 52%;
+    right: clamp(-94px, -8vw, -64px);
+    bottom: auto;
+    opacity: 0.64;
+    transform: translateY(-50%);
+  }
+
+  .resources-hero.hero-cube-hero .hero-content {
+    max-width: 70%;
+  }
+}
+
+@media (max-width: 720px) {
+  .resources-hero.hero-cube-hero .hero-tech-backdrop {
+    display: block;
+    opacity: 0.26;
+  }
+
+  .resources-hero.hero-cube-hero .hero-cube-stage {
+    --cube-size: clamp(154px, 43vw, 180px);
+    --cube-zone: clamp(245px, 70vw, 292px);
+    display: grid;
+    top: auto;
+    right: clamp(-108px, -25vw, -82px);
+    bottom: 1%;
+    opacity: 0.34;
+    filter: saturate(1.08) contrast(1.04);
+    transform: none;
+  }
+
+  .resources-hero.hero-cube-hero .hero-cube-stage::before {
+    opacity: 0.38;
+  }
+
+  .resources-hero.hero-cube-hero .hero-cube-effects {
+    opacity: 0.5;
+  }
+
+  .resources-hero.hero-cube-hero .hero-content {
+    max-width: none;
+  }
+}
+
+/* Correction stricte : cartes Systèmes, bénéfices et bandeaux sectoriels. */
+.sector-editorial-chapter,
+.institutes-page .institutes-editorial-chapter {
+  gap: 0 !important;
+}
+
+.sector-editorial-heading h3,
+.institutes-page .institutes-editorial-heading h3 {
+  min-height: 3.2rem !important;
+}
+
+.sector-editorial-content,
+.institutes-page .institutes-editorial-content {
+  margin-top: 0.08rem !important;
+}
+
+.sector-editorial-content > :not(.sector-editorial-benefit),
+.institutes-page .institutes-editorial-content > :not(.institutes-editorial-benefit) {
+  order: 1 !important;
+}
+
+.sector-editorial-benefit,
+.institutes-page .institutes-editorial-benefit {
+  order: 99 !important;
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin-top: auto !important;
+  margin-bottom: 0 !important;
+  height: 12rem !important;
+  min-height: 12rem !important;
+  flex: 0 0 12rem !important;
+  padding: 0.9rem 1rem !important;
+  text-align: left !important;
+  background: #dceeff !important;
+  color: #1e2a50 !important;
+  border-left: 4px solid #00a9ee !important;
+  border-radius: 0 10px 10px 0 !important;
+  font-size: 0.92rem !important;
+  line-height: 1.5 !important;
+}
+
+.sector-editorial-benefit strong,
+.institutes-page .institutes-editorial-benefit strong {
+  display: inline !important;
+  color: #1e2a50 !important;
+  font-size: 0 !important;
+  white-space: nowrap !important;
+}
+
+.sector-editorial-benefit strong::after,
+.institutes-page .institutes-editorial-benefit strong::after {
+  content: "Bénéfice :";
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin-right: 0.28em;
+}
+
+.sector-reality-conclusion,
+.sector-method-conclusion,
+.institutes-page .institutes-reality-conclusion,
+.institutes-page .institutes-method-conclusion {
+  background: #dceeff !important;
+  color: #1e2a50 !important;
+  border-left: 4px solid #00a9ee !important;
+}
+
+.sector-reality-conclusion strong,
+.sector-method-conclusion strong,
+.institutes-page .institutes-reality-conclusion strong,
+.institutes-page .institutes-method-conclusion strong {
+  color: #1e2a50 !important;
+}
+
+@media (max-width: 1049px) and (min-width: 721px) {
+  .sector-editorial-heading h3,
+  .institutes-page .institutes-editorial-heading h3 {
+    min-height: 3rem !important;
+  }
+
+  .sector-editorial-benefit,
+  .institutes-page .institutes-editorial-benefit {
+    height: 11rem !important;
+    min-height: 11rem !important;
+    flex-basis: 11rem !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .sector-editorial-heading h3,
+  .institutes-page .institutes-editorial-heading h3 {
+    min-height: 0 !important;
+  }
+
+  .sector-editorial-content,
+  .institutes-page .institutes-editorial-content {
+    margin-top: 0.04rem !important;
+  }
+
+  .sector-editorial-benefit,
+  .institutes-page .institutes-editorial-benefit {
+    height: auto !important;
+    min-height: 0 !important;
+    flex-basis: auto !important;
+  }
+}
+
+html.theme-dark .consent-banner, html.theme-dark .consent-dialog { background: #101737; color: #eef2ff; border-color: #35416f; }
+html.theme-dark .consent-button { border-color: #b8c4ef; background: #101737; color: #fff; }
+html.theme-dark .consent-button--primary { background: #d6e3f3; color: #101737; }
+html.theme-dark .consent-category { border-color: #35416f; }
+
+/* Footer : même passage lumineux que le téléphone validé sur l’accueil. */
+html.theme-dark .site-footer .footer-phone,
+html.theme-dark .site-footer .footer-phone:hover,
+html.theme-dark .site-footer .footer-phone:focus-visible,
+html.theme-dark:has(.contact-cube-hero) .contact-phone-display,
+html.theme-dark:has(.contact-cube-hero) .contact-phone-display:hover,
+html.theme-dark:has(.contact-cube-hero) .contact-phone-display:focus-visible {
+  --footer-phone-base: #a788ff;
+  color: var(--footer-phone-base) !important;
+  background-color: var(--footer-phone-base) !important;
+  background-image: linear-gradient(
+    105deg,
+    var(--footer-phone-base) 0%,
+    var(--footer-phone-base) 36%,
+    #435bd8 44%,
+    #00b0ff 50%,
+    #435bd8 56%,
+    var(--footer-phone-base) 64%,
+    var(--footer-phone-base) 100%
+  ) !important;
+  background-repeat: no-repeat !important;
+  background-size: 260% 100% !important;
+  background-position: 115% 50%;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent;
+  animation: header-phone-wave-text 4s ease-in-out infinite;
+}
+
+html.theme-dark:has(.contact-cube-hero) .site-footer .footer-phone,
+html.theme-dark:has(.contact-cube-hero) .site-footer .footer-phone:hover,
+html.theme-dark:has(.contact-cube-hero) .site-footer .footer-phone:focus-visible {
+  --footer-phone-base: #fff;
+  color: #fff !important;
+  background-color: #fff !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.theme-dark .site-footer .footer-phone,
+  html.theme-dark .site-footer .footer-phone:hover,
+  html.theme-dark .site-footer .footer-phone:focus-visible,
+  html.theme-dark:has(.contact-cube-hero) .contact-phone-display,
+  html.theme-dark:has(.contact-cube-hero) .contact-phone-display:hover,
+  html.theme-dark:has(.contact-cube-hero) .contact-phone-display:focus-visible {
+    background-position: 50% 50%;
+    animation: none;
+  }
+
+  html.theme-dark:has(.contact-cube-hero) .site-footer .footer-phone,
+  html.theme-dark:has(.contact-cube-hero) .site-footer .footer-phone:hover,
+  html.theme-dark:has(.contact-cube-hero) .site-footer .footer-phone:focus-visible {
+    color: #fff !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    -webkit-text-fill-color: #fff;
+  }
+}
+
+/* Harmonisation globale du mode sombre : halos violets discrets sur tous les corps de page. */
+html.theme-dark {
+  --dark-body-halo-primary: rgba(94, 23, 235, 0.11);
+  --dark-body-halo-secondary: rgba(139, 92, 246, 0.06);
+}
