@@ -1702,14 +1702,15 @@ html.theme-dark .transition-note {
   font-weight: 500;
 }
 
-.pme-page .sector-method-card .card-title-with-icon,
-.spa-page .sector-method-card .card-title-with-icon {
+.sector-method-card .card-title-with-icon,
+.institutes-page .institutes-method-card .card-title-with-icon,
+.home-method .process-step h3 {
   color: var(--color-primary);
 }
 
-.pme-page .sector-method-card .card-title-with-icon strong,
-.spa-page .sector-method-card .card-title-with-icon strong {
-  color: var(--color-accent);
+.sector-method-card .card-title-with-icon strong,
+.institutes-page .institutes-method-card .card-title-with-icon strong {
+  color: inherit;
   font-weight: 600;
 }
 
