@@ -3,34 +3,46 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light">
     <title>Preview jour — Thalasso & thermal</title>
     <style>
-      html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #fff; }
+      html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #fff; color-scheme: light !important; }
       iframe { display: block; width: 100%; height: 100%; border: 0; background: #fff; }
     </style>
   </head>
   <body>
-    <iframe id="preview" src="./index.html" title="Prévisualisation jour de la page Thalasso & thermal"></iframe>
+    <iframe id="preview" src="./index.html?preview-light=20260830-bubbles" title="Prévisualisation jour de la page Thalasso & thermal"></iframe>
     <script>
       const frame = document.getElementById('preview');
-      frame.addEventListener('load', () => {
+      const keepLight = () => {
         try {
           const doc = frame.contentDocument;
+          if (!doc || !doc.documentElement || !doc.body) return;
           const root = doc.documentElement;
-          root.classList.add('theme-light');
           root.classList.remove('theme-dark');
-          root.style.colorScheme = 'light';
+          root.classList.add('theme-light');
+          root.style.setProperty('color-scheme', 'light', 'important');
+          doc.body.classList.remove('theme-dark');
           doc.body.classList.add('theme-light');
-          const style = doc.createElement('style');
-          style.textContent = `
-            :root { color-scheme: light !important; }
-            html, body { color-scheme: light !important; }
-          `;
-          doc.head.appendChild(style);
+          let style = doc.getElementById('preview-force-light-style');
+          if (!style) {
+            style = doc.createElement('style');
+            style.id = 'preview-force-light-style';
+            style.textContent = ':root,html,body{color-scheme:light!important;}';
+            doc.head.appendChild(style);
+          }
         } catch (e) {
-          console.warn('Impossible de forcer le mode jour dans la preview.', e);
+          console.warn('Impossible de maintenir le mode jour dans la preview.', e);
         }
+      };
+      frame.addEventListener('load', () => {
+        keepLight();
+        try {
+          const root = frame.contentDocument.documentElement;
+          new MutationObserver(keepLight).observe(root, { attributes: true, attributeFilter: ['class', 'style'] });
+        } catch (e) {}
       });
+      setInterval(keepLight, 300);
     </script>
   </body>
 </html>
