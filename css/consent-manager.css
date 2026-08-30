@@ -123,3 +123,75 @@ html.theme-dark .site-header .header-phone-direct:focus-visible {
     -webkit-text-fill-color: currentColor !important;
   }
 }
+
+/* Accueil — desktop nuit uniquement : restaure un passage bleu franc sur le téléphone. */
+@keyframes header-phone-night-blue-wave {
+  0%, 28%, 100% { background-position: 100% 50%; }
+  52% { background-position: 0% 50%; }
+}
+
+@media (min-width: 1100px) {
+  html.theme-dark body:has(.home-hero) .site-header .header-phone-direct,
+  html.theme-dark body:has(.home-hero) .site-header .header-phone-direct:hover,
+  html.theme-dark body:has(.home-hero) .site-header .header-phone-direct:focus-visible {
+    color: #ffffff !important;
+    background-color: #ffffff !important;
+    background-image: linear-gradient(
+      105deg,
+      #ffffff 0%,
+      #ffffff 31%,
+      #5d7cff 40%,
+      #00b0ff 48%,
+      #248cff 56%,
+      #ffffff 67%,
+      #ffffff 100%
+    ) !important;
+    background-repeat: no-repeat !important;
+    background-size: 280% 100% !important;
+    background-position: 100% 50%;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    text-shadow: 0 0 10px rgba(0, 176, 255, 0.10);
+    animation: header-phone-night-blue-wave 6s ease-in-out infinite !important;
+  }
+}
+
+@media (min-width: 1100px) and (prefers-color-scheme: dark) {
+  html:not(.theme-light) body:has(.home-hero) .site-header .header-phone-direct,
+  html:not(.theme-light) body:has(.home-hero) .site-header .header-phone-direct:hover,
+  html:not(.theme-light) body:has(.home-hero) .site-header .header-phone-direct:focus-visible {
+    color: #ffffff !important;
+    background-color: #ffffff !important;
+    background-image: linear-gradient(
+      105deg,
+      #ffffff 0%,
+      #ffffff 31%,
+      #5d7cff 40%,
+      #00b0ff 48%,
+      #248cff 56%,
+      #ffffff 67%,
+      #ffffff 100%
+    ) !important;
+    background-repeat: no-repeat !important;
+    background-size: 280% 100% !important;
+    background-position: 100% 50%;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    text-shadow: 0 0 10px rgba(0, 176, 255, 0.10);
+    animation: header-phone-night-blue-wave 6s ease-in-out infinite !important;
+  }
+}
+
+@media (min-width: 1100px) and (prefers-reduced-motion: reduce) {
+  html.theme-dark body:has(.home-hero) .site-header .header-phone-direct,
+  html:not(.theme-light) body:has(.home-hero) .site-header .header-phone-direct {
+    animation: none !important;
+    background-image: linear-gradient(105deg, #ffffff 0%, #ffffff 36%, #00b0ff 50%, #ffffff 64%, #ffffff 100%) !important;
+    background-size: 100% 100% !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+  }
+}
