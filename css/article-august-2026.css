@@ -18,6 +18,14 @@
   padding-top: 1.75rem;
 }
 
+/* Cartes de lecture associée : le tag secteur reprend toujours le gradient IA validé. */
+.related-resource-card .resource-sector {
+  color: #ffffff !important;
+  border-color: transparent !important;
+  background: var(--gradient-ia) !important;
+  box-shadow: 0 10px 22px rgba(0, 176, 255, 0.14);
+}
+
 @media (min-width: 721px) {
   .article-visual {
     width: min(980px, calc(100% - 40px));
