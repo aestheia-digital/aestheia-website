@@ -1108,11 +1108,39 @@ h3 {
 }
 
 .transition-note {
-  max-width: 900px;
-  margin: 1.5rem auto 0;
-  padding: 1rem 0 0;
-  border-top: 1px solid rgba(94, 23, 235, 0.22);
+  position: relative;
+  overflow: hidden;
+  max-width: none;
+  margin: 1.5rem 0 0;
+  padding: 1rem 1.2rem;
+  border: 1px solid rgba(0, 176, 255, 0.14);
+  border-radius: 0 12px 12px 0;
+  background: #eaf5ff;
+  color: var(--color-primary);
   font-weight: 500;
+  text-align: left;
+}
+
+.transition-note::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: linear-gradient(180deg, rgba(94, 23, 235, 0.82), rgba(0, 176, 255, 0.76));
+}
+
+@media (prefers-color-scheme: dark) {
+  .transition-note {
+    color: #f3f6ff;
+    border-color: rgba(139, 164, 220, 0.34);
+    background: linear-gradient(135deg, #26365f 0%, #2a3e68 52%, #304673 100%);
+  }
+}
+
+html.theme-dark .transition-note {
+  color: #f3f6ff;
+  border-color: rgba(139, 164, 220, 0.34);
+  background: linear-gradient(135deg, #26365f 0%, #2a3e68 52%, #304673 100%);
 }
 
 .offer-grid {
@@ -3201,7 +3229,7 @@ h3 {
 
   .transition-note {
     margin-top: 2rem;
-    text-align: center;
+    text-align: left;
   }
 
   .hero-inner {
@@ -4133,10 +4161,10 @@ html.theme-dark .faq-accordion-item summary:focus-visible {
 }
 
 
-/* Halos violets et cubes mobiles renforcés — validation 2026-08-28 */
+/* Halos violets harmonisés avec l’intensité de l’accueil. */
 :root {
-  --halo-violet-primary: rgba(94, 23, 235, 0.19);
-  --halo-violet-secondary: rgba(139, 92, 246, 0.12);
+  --halo-violet-primary: rgba(94, 23, 235, 0.12);
+  --halo-violet-secondary: rgba(139, 92, 246, 0.07);
 }
 
 .section-soft {
@@ -4162,8 +4190,8 @@ main > .section:not(.conversion-band):not(.section-soft):not(.section-mist):not(
 .positioning-section,
 .location-section {
   background:
-    radial-gradient(circle at 88% 16%, rgba(94, 23, 235, 0.21), transparent 40%),
-    radial-gradient(circle at 12% 82%, rgba(139, 92, 246, 0.14), transparent 42%),
+    radial-gradient(circle at 88% 16%, var(--halo-violet-primary), transparent 40%),
+    radial-gradient(circle at 12% 82%, var(--halo-violet-secondary), transparent 42%),
     linear-gradient(135deg, #ffffff 0%, #fbfcff 48%, #eef4ff 100%);
 }
 
