@@ -91,7 +91,7 @@
   }
 }
 
-/* Téléphone du header : passage bleu actif partout, sur toutes les pages et tous les supports. */
+/* Téléphone du header : passage bleu restauré et forcé partout, sur toutes les pages et tous les supports. */
 .site-header .header-phone-direct,
 .site-header .header-phone-direct:hover,
 .site-header .header-phone-direct:focus-visible {
@@ -101,19 +101,21 @@
   background-image: linear-gradient(
     105deg,
     var(--header-phone-base) 0%,
-    var(--header-phone-base) 38%,
-    rgba(67, 91, 216, 0.34) 45%,
-    rgba(0, 176, 255, 0.42) 50%,
-    rgba(67, 91, 216, 0.34) 55%,
-    var(--header-phone-base) 62%,
+    var(--header-phone-base) 36%,
+    rgba(67, 91, 216, 0.46) 44%,
+    rgba(0, 176, 255, 0.58) 50%,
+    rgba(67, 91, 216, 0.46) 56%,
+    var(--header-phone-base) 64%,
     var(--header-phone-base) 100%
   ) !important;
   background-repeat: no-repeat !important;
   background-size: 260% 100% !important;
+  background-position: 115% 50%;
   -webkit-background-clip: text !important;
   background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   animation: header-phone-wave-text 7s ease-in-out infinite !important;
+  opacity: 1 !important;
 }
 
 html.theme-dark .site-header .header-phone-direct,
@@ -127,6 +129,30 @@ html.theme-dark .site-header .header-phone-direct:focus-visible {
   html:not(.theme-light) .site-header .header-phone-direct:hover,
   html:not(.theme-light) .site-header .header-phone-direct:focus-visible {
     --header-phone-base: #ffffff;
+  }
+}
+
+/* Réaffirme explicitement l'animation sur mobile et tablette, y compris en mode jour. */
+@media (max-width: 1049px) {
+  .site-header .header-phone-direct,
+  .site-header .header-phone-direct:hover,
+  .site-header .header-phone-direct:focus-visible {
+    background-image: linear-gradient(
+      105deg,
+      var(--header-phone-base) 0%,
+      var(--header-phone-base) 36%,
+      rgba(67, 91, 216, 0.46) 44%,
+      rgba(0, 176, 255, 0.58) 50%,
+      rgba(67, 91, 216, 0.46) 56%,
+      var(--header-phone-base) 64%,
+      var(--header-phone-base) 100%
+    ) !important;
+    background-size: 260% 100% !important;
+    background-position: 115% 50%;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    animation: header-phone-wave-text 7s ease-in-out infinite !important;
   }
 }
 
