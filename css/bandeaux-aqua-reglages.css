@@ -1,0 +1,112 @@
+/* ==========================================================================
+   Bandeaux aquatiques - reglages complementaires
+   ==========================================================================
+   Feuille chargee UNIQUEMENT par thalasso-thermal/index.html,
+   APRES css/bandeaux-aqua.css dont elle reutilise la variable --aqua-image.
+   Ne contient aucune image : uniquement des reglages.
+
+   1. Voile allege : les bulles gagnent en presence.
+   2. Cartes legerement translucides : l'image se devine derriere.
+   3. Premier bandeau retourne horizontalement : la matiere passe a droite,
+      le titre retrouve un fond calme.
+   4. Mobile : l'image est cadree en bandeau haut au lieu d'etre zoomee.
+   5. Mode nuit : la nuee de particules est retiree sur ces deux bandeaux,
+      elle surchargeait l'image.
+
+   Les !important et les selecteurs longs sont necessaires : styles.css et
+   consent-manager.css imposent deja ces proprietes en !important.
+   ========================================================================== */
+
+/* 1. Voile allege ---------------------------------------------------------- */
+
+html:not(.theme-dark) #contenu > .section.section-aqua {
+  --aqua-veil: rgba(248, 250, 255, 0.74);
+}
+
+html.theme-dark #contenu > .section.section-aqua {
+  --aqua-veil: rgba(17, 24, 61, 0.82);
+}
+
+/* 2. Cartes translucides --------------------------------------------------- */
+
+html:not(.theme-dark) .section-aqua .sector-editorial-chapter {
+  background: rgba(255, 255, 255, 0.82) !important;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+html.theme-dark .section-aqua .sector-editorial-chapter {
+  background: rgba(17, 24, 61, 0.78) !important;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+/* 3. Premier bandeau retourne ---------------------------------------------- */
+/* Le premier bandeau est celui en .section-soft, le second en .section-mist.
+   Seul le premier est retourne : les deux ne doivent pas etre identiques. */
+
+html:not(.theme-dark) #contenu > .section.section-soft.section-aqua,
+html.theme-dark #contenu > .section.section-soft.section-aqua {
+  background: var(--color-soft) !important;
+}
+
+html:not(.theme-dark) #contenu > .section.section-soft.section-aqua::before,
+html.theme-dark #contenu > .section.section-soft.section-aqua::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  transform: scaleX(-1);
+  background:
+    linear-gradient(var(--aqua-veil), var(--aqua-veil)),
+    var(--aqua-image) center / cover no-repeat !important;
+}
+
+/* 4. Mobile ---------------------------------------------------------------- */
+/* Sur mobile la section devient tres haute et etroite : avec cover, l'image
+   est zoomee a l'extreme. On la cadre en bandeau haut, derriere le titre,
+   la ou aucune carte ne la masque. Point de rupture cale sur celui de
+   consent-manager.css (720px) pour eviter tout trou. */
+
+@media (max-width: 720px) {
+  html:not(.theme-dark) #contenu > .section.section-aqua,
+  html.theme-dark #contenu > .section.section-aqua {
+    background:
+      linear-gradient(var(--aqua-veil), var(--aqua-veil)),
+      linear-gradient(to bottom, transparent 0, transparent 58%, var(--aqua-veil) 100%),
+      var(--aqua-image) top center / 100% auto no-repeat,
+      var(--color-soft) !important;
+  }
+
+  html:not(.theme-dark) #contenu > .section.section-soft.section-aqua::before,
+  html.theme-dark #contenu > .section.section-soft.section-aqua::before {
+    /* Le titre passe sur la zone dense : voile renforce pour le contraste. */
+    --aqua-veil: rgba(248, 250, 255, 0.87);
+    background:
+      linear-gradient(var(--aqua-veil), var(--aqua-veil)),
+      linear-gradient(to bottom, transparent 0, transparent 58%, var(--aqua-veil) 100%),
+      var(--aqua-image) top center / 100% auto no-repeat,
+      var(--color-soft) !important;
+  }
+}
+
+@media (max-width: 720px) {
+  html.theme-dark #contenu > .section.section-soft.section-aqua::before {
+    --aqua-veil: rgba(17, 24, 61, 0.88);
+  }
+}
+
+/* 5. Mode nuit : suppression de la nuee de particules sur ces bandeaux ------ */
+
+html.theme-dark #contenu > .section:not(.conversion-band)::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  opacity: 0 !important;
+}
+
+/* 6. Mode nuit : suppression des halos violets */
+html.theme-dark #contenu > .section:not(.conversion-band)::before {
+  background: none !important;
+}
