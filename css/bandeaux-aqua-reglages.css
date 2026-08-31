@@ -99,9 +99,14 @@ html.theme-dark #contenu > .section.section-soft.section-aqua::before {
 
 /* 5. Mode nuit : suppression de la nuee de particules sur ces bandeaux ------ */
 
-html.theme-dark #contenu > .section.section-aqua::after {
+html.theme-dark #contenu > .section:not(.conversion-band)::after {
   content: none !important;
   display: none !important;
   background: none !important;
   opacity: 0 !important;
+}
+
+/* 6. Mode nuit : suppression des halos violets */
+html.theme-dark #contenu > .section:not(.conversion-band)::before {
+  background: none !important;
 }
