@@ -72,28 +72,32 @@ html.theme-dark #contenu > .section.section-soft.section-aqua::before {
 @media (max-width: 720px) {
   html:not(.theme-dark) #contenu > .section.section-aqua,
   html.theme-dark #contenu > .section.section-aqua {
+    /* Sur mobile la section est tres haute et etroite. Avec "cover" l'image
+       serait zoomee dix fois et deviendrait une bouillie. On la reprend donc
+       a 170% de la largeur d'ecran et on la repete verticalement : elle reste
+       nette et couvre toute la section, cartes comprises. */
     background:
-      linear-gradient(var(--aqua-veil), var(--aqua-veil)),
-      linear-gradient(to bottom, transparent 0, transparent 58%, var(--aqua-veil) 100%),
-      var(--aqua-image) top center / 100% auto no-repeat,
+      linear-gradient(var(--aqua-veil), var(--aqua-veil))
+        center / cover no-repeat,
+      var(--aqua-image) top center / 170vw auto repeat-y,
       var(--color-soft) !important;
   }
 
   html:not(.theme-dark) #contenu > .section.section-soft.section-aqua::before,
   html.theme-dark #contenu > .section.section-soft.section-aqua::before {
     /* Le titre passe sur la zone dense : voile renforce pour le contraste. */
-    --aqua-veil: rgba(248, 250, 255, 0.87);
+    --aqua-veil: rgba(248, 250, 255, 0.85);
     background:
-      linear-gradient(var(--aqua-veil), var(--aqua-veil)),
-      linear-gradient(to bottom, transparent 0, transparent 58%, var(--aqua-veil) 100%),
-      var(--aqua-image) top center / 100% auto no-repeat,
+      linear-gradient(var(--aqua-veil), var(--aqua-veil))
+        center / cover no-repeat,
+      var(--aqua-image) top center / 170vw auto repeat-y,
       var(--color-soft) !important;
   }
 }
 
 @media (max-width: 720px) {
   html.theme-dark #contenu > .section.section-soft.section-aqua::before {
-    --aqua-veil: rgba(17, 24, 61, 0.88);
+    --aqua-veil: rgba(17, 24, 61, 0.86);
   }
 }
 
@@ -105,8 +109,21 @@ html.theme-dark #contenu > .section:not(.conversion-band)::after {
   background: none !important;
   opacity: 0 !important;
 }
+/* 6. Mode nuit : suppression des halos violets ------------------------------ */
+/* styles.css et consent-manager.css peignent un halo violet sur le ::before de
+   chaque section. Combine au fond photographique, cela sature la page.
+   On le neutralise en nuit sur toute la page thalasso, ordinateur et mobile.
+   Le bandeau retourne conserve le sien : sa regle est plus specifique. */
 
-/* 6. Mode nuit : suppression des halos violets */
 html.theme-dark #contenu > .section:not(.conversion-band)::before {
   background: none !important;
+}
+
+/* 7. Titres des bandeaux sur mobile ---------------------------------------- */
+/* Sans cela, le point d'interrogation final se retrouve seul sur sa ligne. */
+
+@media (max-width: 720px) {
+  #contenu > .section.section-aqua h2 {
+    text-wrap: balance;
+  }
 }
