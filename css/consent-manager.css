@@ -1,50 +1,137 @@
 @import url("./consent-manager-original-draft.css");
 
-/* Brouillon Thalasso : remplace explicitement l'ancien fond base64 par l'image de bulles fournie par l'utilisatrice. */
+/* --------------------------------------------------------------------------
+   BROUILLON THALASSO — COMPOSITION PHOTO + VERRE DÉPOLI
+   La photo reste visible sur toute la page. Les sections ne portent plus
+   d'aplat plein écran : seule la zone de contenu reçoit un voile translucide.
+   -------------------------------------------------------------------------- */
+
+/* Le mode jour forcé de la preview doit rester réellement clair, même si
+   l'ordinateur est en mode sombre. */
+html.theme-light {
+  color-scheme: light !important;
+  --color-primary: #1e2a50 !important;
+  --color-bg: #ffffff !important;
+  --color-soft: #f7f8fc !important;
+  --color-border: #e6e8f2 !important;
+  --color-muted: #303866 !important;
+  --color-ink: #1e2a50 !important;
+  --color-mist: #f1f5ff !important;
+  --color-warm: #f8f6ff !important;
+}
+
+html.theme-light body {
+  color: #1e2a50 !important;
+  background: #ffffff !important;
+}
+
+html.theme-light .site-header {
+  background: rgba(255, 255, 255, 0.96) !important;
+  border-bottom-color: #e6e8f2 !important;
+}
+
+html.theme-light .site-header .brand-core,
+html.theme-light .main-nav a,
+html.theme-light .nav-dropdown-toggle,
+html.theme-light .nav-toggle {
+  color: #1e2a50 !important;
+}
+
+html.theme-light .main-nav,
+html.theme-light .nav-toggle {
+  background: #ffffff !important;
+}
+
+/* Vrai fond photo : l'image de bulles déjà fournie et présente sur la branche. */
 html:not(.theme-dark) body:has(.page-hero[style*="cure-thermale"]) #contenu,
 html.theme-light body:has(.page-hero[style*="cure-thermale"]) #contenu {
-  background-color: #0b3156 !important;
+  background-color: #082d50 !important;
   background-image:
-    linear-gradient(rgba(5, 26, 53, 0.10), rgba(4, 23, 50, 0.16)),
+    linear-gradient(180deg, rgba(3, 22, 44, 0.05) 0%, rgba(3, 22, 44, 0.13) 100%),
     url("../assets/images/metiers/thalasso-bubbles-background.webp") !important;
-  background-position: center 46% !important;
+  background-position: 50% 46% !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
   background-attachment: fixed !important;
 }
 
-@media (prefers-color-scheme: light) {
-  html:not(.theme-dark) body:has(.page-hero[style*="cure-thermale"]) #contenu > .section:not(.hero):not(.conversion-band) {
-    background: rgba(255, 255, 255, 0.50) !important;
-  }
-
-  html:not(.theme-dark) body:has(.page-hero[style*="cure-thermale"]) #contenu > .section.section-soft,
-  html:not(.theme-dark) body:has(.page-hero[style*="cure-thermale"]) #contenu > .section.section-mist,
-  html:not(.theme-dark) body:has(.page-hero[style*="cure-thermale"]) #contenu > .section.section-warm {
-    background: rgba(255, 255, 255, 0.58) !important;
-  }
-}
-
+/* Suppression des aplats pleine largeur qui masquaient complètement la photo. */
+html:not(.theme-dark) body:has(.page-hero[style*="cure-thermale"]) #contenu > .section:not(.hero):not(.conversion-band),
 html.theme-light body:has(.page-hero[style*="cure-thermale"]) #contenu > .section:not(.hero):not(.conversion-band) {
-  background: rgba(255, 255, 255, 0.50) !important;
-}
-
-html.theme-light body:has(.page-hero[style*="cure-thermale"]) #contenu > .section.section-soft,
-html.theme-light body:has(.page-hero[style*="cure-thermale"]) #contenu > .section.section-mist,
-html.theme-light body:has(.page-hero[style*="cure-thermale"]) #contenu > .section.section-warm {
-  background: rgba(255, 255, 255, 0.58) !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  padding-top: clamp(3.2rem, 5.5vw, 5rem);
+  padding-bottom: clamp(3.2rem, 5.5vw, 5rem);
 }
 
 html:not(.theme-dark) body:has(.page-hero[style*="cure-thermale"]) #contenu > .section:not(.conversion-band)::before,
 html.theme-light body:has(.page-hero[style*="cure-thermale"]) #contenu > .section:not(.conversion-band)::before {
+  content: none !important;
+  display: none !important;
   background: none !important;
   opacity: 0 !important;
+}
+
+/* Panneau éditorial translucide : la photo reste visible autour et légèrement
+   à travers le contenu, mais le contraste des textes reste confortable. */
+html:not(.theme-dark) body:has(.page-hero[style*="cure-thermale"]) #contenu > .section:not(.hero):not(.conversion-band) > .container,
+html.theme-light body:has(.page-hero[style*="cure-thermale"]) #contenu > .section:not(.hero):not(.conversion-band) > .container {
+  padding: clamp(1.6rem, 3vw, 3rem);
+  border: 1px solid rgba(255, 255, 255, 0.52);
+  border-radius: 24px;
+  background:
+    linear-gradient(118deg, rgba(255, 255, 255, 0.86) 0%, rgba(250, 253, 255, 0.76) 54%, rgba(244, 250, 255, 0.68) 100%) !important;
+  box-shadow: 0 22px 55px rgba(4, 27, 55, 0.16);
+  -webkit-backdrop-filter: blur(7px) saturate(112%);
+  backdrop-filter: blur(7px) saturate(112%);
+}
+
+/* Typographie jour : le bleu marine AesthéIA reste la couleur de lecture. */
+html:not(.theme-dark) body:has(.page-hero[style*="cure-thermale"]) #contenu > .section:not(.hero):not(.conversion-band) :is(h2, p, li, strong),
+html.theme-light body:has(.page-hero[style*="cure-thermale"]) #contenu > .section:not(.hero):not(.conversion-band) :is(h2, p, li, strong) {
+  color: #1e2a50 !important;
+}
+
+/* Les cartes restent franches et nettes : elles servent de points de repos
+   visuels au-dessus de l'image aquatique. */
+html:not(.theme-dark) body:has(.page-hero[style*="cure-thermale"]) .card,
+html:not(.theme-dark) body:has(.page-hero[style*="cure-thermale"]) .sector-editorial-chapter,
+html.theme-light body:has(.page-hero[style*="cure-thermale"]) .card,
+html.theme-light body:has(.page-hero[style*="cure-thermale"]) .sector-editorial-chapter {
+  background: rgba(255, 255, 255, 0.94) !important;
+  border-color: rgba(30, 42, 80, 0.12) !important;
+  box-shadow: 0 14px 32px rgba(4, 27, 55, 0.10);
+}
+
+/* Laisser davantage apparaître l'eau autour des blocs de réassurance et FAQ. */
+html:not(.theme-dark) body:has(.page-hero[style*="cure-thermale"]) #contenu > .section.section-mist > .container,
+html:not(.theme-dark) body:has(.page-hero[style*="cure-thermale"]) #contenu > .faq-section > .container,
+html.theme-light body:has(.page-hero[style*="cure-thermale"]) #contenu > .section.section-mist > .container,
+html.theme-light body:has(.page-hero[style*="cure-thermale"]) #contenu > .faq-section > .container {
+  background:
+    linear-gradient(112deg, rgba(255, 255, 255, 0.82) 0%, rgba(247, 252, 255, 0.68) 100%) !important;
 }
 
 @media (max-width: 900px) {
   html:not(.theme-dark) body:has(.page-hero[style*="cure-thermale"]) #contenu,
   html.theme-light body:has(.page-hero[style*="cure-thermale"]) #contenu {
     background-attachment: scroll !important;
-    background-position: 42% center !important;
+    background-position: 44% center !important;
+  }
+
+  html:not(.theme-dark) body:has(.page-hero[style*="cure-thermale"]) #contenu > .section:not(.hero):not(.conversion-band),
+  html.theme-light body:has(.page-hero[style*="cure-thermale"]) #contenu > .section:not(.hero):not(.conversion-band) {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  html:not(.theme-dark) body:has(.page-hero[style*="cure-thermale"]) #contenu > .section:not(.hero):not(.conversion-band) > .container,
+  html.theme-light body:has(.page-hero[style*="cure-thermale"]) #contenu > .section:not(.hero):not(.conversion-band) > .container {
+    width: min(100% - 24px, var(--container));
+    padding: 1.35rem;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.84) !important;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
   }
 }
