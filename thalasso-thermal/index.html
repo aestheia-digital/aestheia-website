@@ -17,6 +17,28 @@
     <link rel="stylesheet" href="../css/styles.css?v=hero-positioning-20260830a">
     <link rel="stylesheet" href="../css/consent-manager.css">
     <link rel="stylesheet" href="../css/bandeaux-aqua.css?v=20260831a">
+    <style>
+      :root {
+        --halo-violet-primary: rgba(94, 23, 235, 0.095);
+        --halo-violet-secondary: rgba(139, 92, 246, 0.055);
+      }
+
+      html.theme-dark {
+        --halo-violet-primary: rgba(139, 92, 246, 0.23);
+        --halo-violet-secondary: rgba(94, 23, 235, 0.16);
+        --dark-body-halo-primary: rgba(94, 23, 235, 0.20);
+        --dark-body-halo-secondary: rgba(139, 92, 246, 0.115);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        html:not(.theme-dark) {
+          --halo-violet-primary: rgba(139, 92, 246, 0.23);
+          --halo-violet-secondary: rgba(94, 23, 235, 0.16);
+          --dark-body-halo-primary: rgba(94, 23, 235, 0.20);
+          --dark-body-halo-secondary: rgba(139, 92, 246, 0.115);
+        }
+      }
+    </style>
   </head>
   <body>
     <a class="skip-link" href="#contenu">Aller au contenu</a>
