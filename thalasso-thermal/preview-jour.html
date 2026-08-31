@@ -11,38 +11,70 @@
     </style>
   </head>
   <body>
-    <iframe id="preview" src="./index.html?preview-light=20260830-bubbles" title="Prévisualisation jour de la page Thalasso & thermal"></iframe>
+    <iframe id="preview" src="./index.html?preview-light=20260831-glass" title="Prévisualisation jour de la page Thalasso & thermal"></iframe>
     <script>
       const frame = document.getElementById('preview');
-      const keepLight = () => {
+
+      function forceLightMode() {
         try {
           const doc = frame.contentDocument;
-          if (!doc || !doc.documentElement || !doc.body) return;
+          if (!doc || !doc.documentElement) return;
           const root = doc.documentElement;
-          root.classList.remove('theme-dark');
+          const body = doc.body;
+
           root.classList.add('theme-light');
+          root.classList.remove('theme-dark');
+          root.setAttribute('data-theme', 'light');
           root.style.setProperty('color-scheme', 'light', 'important');
-          doc.body.classList.remove('theme-dark');
-          doc.body.classList.add('theme-light');
-          let style = doc.getElementById('preview-force-light-style');
-          if (!style) {
-            style = doc.createElement('style');
+
+          if (body) {
+            body.classList.add('theme-light');
+            body.classList.remove('theme-dark');
+          }
+
+          if (!doc.getElementById('preview-force-light-style')) {
+            const style = doc.createElement('style');
             style.id = 'preview-force-light-style';
-            style.textContent = ':root,html,body{color-scheme:light!important;}';
+            style.textContent = `
+              :root,
+              html.theme-light {
+                color-scheme: light !important;
+                --color-primary: #1e2a50 !important;
+                --color-bg: #ffffff !important;
+                --color-soft: #f7f8fc !important;
+                --color-border: #e6e8f2 !important;
+                --color-muted: #303866 !important;
+                --color-ink: #1e2a50 !important;
+                --color-mist: #f1f5ff !important;
+                --color-warm: #f8f6ff !important;
+              }
+              html.theme-light body { color: #1e2a50 !important; }
+              html.theme-light .site-header { background: rgba(255,255,255,.96) !important; border-bottom-color: #e6e8f2 !important; }
+              html.theme-light .main-nav,
+              html.theme-light .nav-toggle { background: #fff !important; color: #1e2a50 !important; }
+              html.theme-light .brand-core,
+              html.theme-light .main-nav a,
+              html.theme-light .nav-dropdown-toggle { color: #1e2a50 !important; }
+            `;
             doc.head.appendChild(style);
           }
-        } catch (e) {
-          console.warn('Impossible de maintenir le mode jour dans la preview.', e);
+        } catch (error) {
+          console.warn('Impossible de forcer le mode jour dans la preview.', error);
         }
-      };
+      }
+
       frame.addEventListener('load', () => {
-        keepLight();
+        forceLightMode();
         try {
           const root = frame.contentDocument.documentElement;
-          new MutationObserver(keepLight).observe(root, { attributes: true, attributeFilter: ['class', 'style'] });
-        } catch (e) {}
+          const observer = new MutationObserver(forceLightMode);
+          observer.observe(root, { attributes: true, attributeFilter: ['class', 'data-theme', 'style'] });
+        } catch (error) {
+          console.warn('Impossible de surveiller le thème de la preview.', error);
+        }
       });
-      setInterval(keepLight, 300);
+
+      setInterval(forceLightMode, 500);
     </script>
   </body>
 </html>
