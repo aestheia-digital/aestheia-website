@@ -160,3 +160,11 @@ html:not(.theme-dark) body.thalasso-page #contenu > .section.section-aqua li {
 html:not(.theme-dark) body.thalasso-page #contenu > .section.section-aqua > .container > .eyebrow {
   font-weight: 700;
 }
+
+/* 10. Mobile jour : second bandeau légèrement éclairci. */
+/* Le voile seul est renforcé : l'image, son cadrage et sa netteté restent intacts. */
+@media (max-width: 720px) {
+  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-mist.section-aqua {
+    --aqua-veil: rgba(248, 250, 255, 0.79);
+  }
+}
