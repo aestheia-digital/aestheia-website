@@ -4816,3 +4816,19 @@ html.theme-dark .article-page > .article-content > * {
     transform: translate(-50%, -50%) rotate(-5deg);
   }
 }
+
+
+/* Intitules des sections sur les pages secteurs, tous supports. */
+html:not(.theme-dark) body.medicine-page #contenu > .section:not(.conversion-band) > .container > .eyebrow,
+html:not(.theme-dark) body.institutes-page #contenu > .section:not(.conversion-band) > .container > .eyebrow,
+html:not(.theme-dark) body.thalasso-page #contenu > .section:not(.conversion-band) > .container > .eyebrow,
+html:not(.theme-dark) body.pme-page #contenu > .section:not(.conversion-band) > .container > .eyebrow {
+  color: #5e17eb !important;
+}
+
+html.theme-dark body.medicine-page #contenu > .section:not(.conversion-band) > .container > .eyebrow,
+html.theme-dark body.institutes-page #contenu > .section:not(.conversion-band) > .container > .eyebrow,
+html.theme-dark body.thalasso-page #contenu > .section:not(.conversion-band) > .container > .eyebrow,
+html.theme-dark body.pme-page #contenu > .section:not(.conversion-band) > .container > .eyebrow {
+  color: #b69cff !important;
+}
