@@ -265,3 +265,8 @@ html:not(.theme-dark) body.spa-page #contenu > .section.section-soft.section-aqu
 html:not(.theme-dark) body.spa-page .spa-method-cta a {
   color: #5422b3 !important;
 }
+
+/* Mode nuit : grands titres des quatre bandeaux Spa, même violet que les titres de cartes. */
+html.theme-dark body.spa-page #contenu > .section:not(.faq-section):not(.conversion-band) > .container > h2 {
+  color: var(--color-accent) !important;
+}
