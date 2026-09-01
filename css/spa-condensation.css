@@ -255,3 +255,8 @@ html.theme-dark body.spa-page .sector-crosslink-cta:hover {
   background: #1e2a50 !important;
   box-shadow: 0 14px 28px rgba(30, 42, 80, 0.22);
 }
+
+/* Titres des quatre cartes Spa : même violet que les questions FAQ. */
+html:not(.theme-dark) body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-heading h3 {
+  color: #5422b3;
+}
