@@ -244,3 +244,14 @@ html:not(.theme-dark) body.spa-page #contenu > .section.section-aqua > .containe
 html:not(.theme-dark) body.spa-page .faq-accordion-item summary {
   color: #4a1d96;
 }
+
+/* CTA Spa vers Thalasso : aplat bleu identique au footer. */
+body.spa-page .sector-crosslink-cta,
+body.spa-page .sector-crosslink-cta:hover,
+html.theme-dark body.spa-page .sector-crosslink-cta,
+html.theme-dark body.spa-page .sector-crosslink-cta:hover {
+  color: #fff !important;
+  border-color: #1e2a50 !important;
+  background: #1e2a50 !important;
+  box-shadow: 0 14px 28px rgba(30, 42, 80, 0.22);
+}
