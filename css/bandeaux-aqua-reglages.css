@@ -165,7 +165,7 @@ html:not(.theme-dark) body.thalasso-page #contenu > .section.section-aqua > .con
 /* Le voile seul est renforcé : l'image, son cadrage et sa netteté restent intacts. */
 @media (max-width: 720px) {
   html:not(.theme-dark) body.thalasso-page #contenu > .section.section-mist.section-aqua {
-    --aqua-veil: rgba(248, 250, 255, 0.84);
+    --aqua-veil: rgba(248, 250, 255, 0.87);
   }
 }
 
@@ -180,5 +180,16 @@ html:not(.theme-dark) body.thalasso-page .faq-accordion-item summary {
 @media (max-width: 1050px) {
   html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-heading h3 {
     font-weight: 600;
+  }
+}
+
+/* 13. Lien de la quatrième carte et éclaircissement tablette. */
+html:not(.theme-dark) body.thalasso-page .thalasso-system-link {
+  color: #5422b3;
+}
+
+@media (min-width: 721px) and (max-width: 1050px) {
+  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-mist.section-aqua {
+    --aqua-veil: rgba(248, 250, 255, 0.79);
   }
 }
