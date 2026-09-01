@@ -6,7 +6,7 @@
 
 html:not(.theme-dark) #contenu > .section.section-institutes-texture {
   background:
-    linear-gradient(rgba(250, 248, 245, 0.68), rgba(250, 248, 245, 0.68)),
+    linear-gradient(rgba(250, 248, 245, 0.26), rgba(250, 248, 245, 0.26)),
     var(--institutes-texture-image) center / cover no-repeat !important;
 }
 
