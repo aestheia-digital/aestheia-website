@@ -213,3 +213,13 @@ html:not(.theme-dark) body.spa-page #contenu > .section:not(.conversion-band):no
     radial-gradient(circle at 88% 14%, var(--spa-halo-violet-primary), transparent 42%),
     radial-gradient(circle at 10% 86%, var(--spa-halo-violet-secondary), transparent 46%) !important;
 }
+
+
+/* Intitules des sections de la page spa hotelier en violet sur tous supports. */
+html:not(.theme-dark) body.spa-page #contenu > .section:not(.conversion-band) > .container > .eyebrow {
+  color: #5e17eb !important;
+}
+
+html.theme-dark body.spa-page #contenu > .section:not(.conversion-band) > .container > .eyebrow {
+  color: #b69cff !important;
+}
