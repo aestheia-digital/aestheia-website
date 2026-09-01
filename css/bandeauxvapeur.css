@@ -205,6 +205,6 @@ html:not(.theme-dark) body.spa-page #contenu > .section:not(.conversion-band):no
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(circle at 88% 16%, rgba(30, 42, 80, 0.045), transparent 44%),
-    radial-gradient(circle at 14% 84%, rgba(39, 52, 124, 0.025), transparent 48%) !important;
+    radial-gradient(circle at 88% 16%, rgba(30, 42, 80, 0.065), transparent 44%),
+    radial-gradient(circle at 14% 84%, rgba(39, 52, 124, 0.04), transparent 48%) !important;
 }
