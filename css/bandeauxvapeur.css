@@ -195,3 +195,16 @@ html:not(.theme-dark) #contenu > .section.section-soft.section-aqua::before {
       var(--color-soft) !important;
   }
 }
+
+
+/* Test halo jour : bleu nuit premium tres leger, limite a la page spa hotelier. */
+html:not(.theme-dark) body.spa-page #contenu > .section:not(.conversion-band):not(.section-aqua)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 88% 16%, rgba(30, 42, 80, 0.045), transparent 44%),
+    radial-gradient(circle at 14% 84%, rgba(39, 52, 124, 0.025), transparent 48%) !important;
+}
