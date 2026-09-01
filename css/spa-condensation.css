@@ -68,38 +68,52 @@ html.theme-dark body.spa-page .section-aqua .sector-editorial-chapter {
   -webkit-backdrop-filter: none !important;
 }
 
-/* Mobile : même image nette, sans répétition, avec éclaircissement plus étendu sur le second bandeau. */
+/* Mobile : image à sa largeur naturelle, répétée verticalement et adoucie par un voile léger. */
 @media (max-width: 720px) {
   html:not(.theme-dark) body.spa-page #contenu > .section.section-aqua,
   html.theme-dark body.spa-page #contenu > .section.section-aqua {
     background-image: var(--spa-condensation-image) !important;
-    background-position: center center !important;
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
+    background-position: center top !important;
+    background-size: 100% auto !important;
+    background-repeat: repeat-y !important;
   }
 
-  html:not(.theme-dark) body.spa-page #contenu > .section.section-mist.section-aqua {
-    background-image:
-      linear-gradient(90deg,
-        rgba(255, 255, 255, 0.34) 0%,
-        rgba(255, 255, 255, 0.24) 55%,
-        rgba(255, 255, 255, 0.10) 78%,
-        rgba(255, 255, 255, 0) 92%),
-      var(--spa-condensation-image) !important;
+  html:not(.theme-dark) body.spa-page #contenu > .section.section-aqua::before,
+  html.theme-dark body.spa-page #contenu > .section.section-aqua::before {
+    content: "" !important;
+    display: block !important;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background: rgba(255, 255, 255, 0.16) !important;
+    opacity: 1 !important;
   }
 
-  html.theme-dark body.spa-page #contenu > .section.section-mist.section-aqua {
-    background-image:
-      linear-gradient(90deg,
-        rgba(8, 14, 40, 0.34) 0%,
-        rgba(8, 14, 40, 0.24) 55%,
-        rgba(8, 14, 40, 0.10) 78%,
-        rgba(8, 14, 40, 0) 92%),
-      var(--spa-condensation-image) !important;
+  html.theme-dark body.spa-page #contenu > .section.section-aqua::before {
+    background: rgba(8, 14, 40, 0.16) !important;
+  }
+
+  html:not(.theme-dark) body.spa-page #contenu > .section.section-mist.section-aqua::before {
+    background: rgba(255, 255, 255, 0.32) !important;
+  }
+
+  html.theme-dark body.spa-page #contenu > .section.section-mist.section-aqua::before {
+    background: rgba(8, 14, 40, 0.26) !important;
   }
 
   body.spa-page #contenu > .section.section-aqua h2 {
     text-wrap: balance;
+  }
+
+  html:not(.theme-dark) body.spa-page #contenu > .section.section-mist.section-aqua h2 {
+    color: #212a59;
+    font-weight: 500;
+  }
+
+  html:not(.theme-dark) body.spa-page #contenu > .section.section-mist.section-aqua :is(p, li) {
+    color: #212a59;
+    font-weight: 500;
   }
 }
 
