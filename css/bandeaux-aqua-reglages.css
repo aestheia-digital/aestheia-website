@@ -127,3 +127,15 @@ html.theme-dark #contenu > .section:not(.conversion-band)::before {
     text-wrap: balance;
   }
 }
+
+/* 8. Mobile jour : aucun halo violet sur le bandeau Réassurance ------------ */
+/* Neutralise la règle mobile générale de consent-manager.css uniquement sur
+   le second bandeau aquatique, sans modifier son image ni son voile. */
+@media (max-width: 720px) {
+  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-mist.section-aqua::before {
+    content: none !important;
+    display: none !important;
+    background: none !important;
+    opacity: 0 !important;
+  }
+}
