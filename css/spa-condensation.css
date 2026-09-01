@@ -152,7 +152,7 @@ html:not(.theme-dark) body.spa-page #contenu > .section:not(.conversion-band) > 
 }
 
 html.theme-dark body.spa-page #contenu > .section:not(.conversion-band) > .container > .eyebrow {
-  color: #b69cff !important;
+  color: #9b7cff !important;
 }
 
 /* Réassurance : intitulé renforcé pour rester lisible sur le fond photographique. */
