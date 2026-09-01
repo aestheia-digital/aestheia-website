@@ -168,3 +168,10 @@ html:not(.theme-dark) body.thalasso-page #contenu > .section.section-aqua > .con
     --aqua-veil: rgba(248, 250, 255, 0.84);
   }
 }
+
+/* 11. Titres de cartes et questions FAQ en violet premium. */
+/* Les intitules de bandeaux conservent volontairement le violet electrique. */
+html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-heading h3,
+html:not(.theme-dark) body.thalasso-page .faq-accordion-item summary {
+  color: #5422b3;
+}
