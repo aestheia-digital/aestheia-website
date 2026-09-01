@@ -14,7 +14,7 @@ html.theme-dark {
 html:not(.theme-dark) body.spa-page #contenu > .section.section-aqua {
   background-color: transparent !important;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.28)),
+    linear-gradient(rgba(255, 255, 255, 0.33), rgba(255, 255, 255, 0.33)),
     var(--spa-condensation-image) !important;
   background-position: center center !important;
   background-size: cover !important;
@@ -34,10 +34,10 @@ html.theme-dark body.spa-page #contenu > .section.section-aqua {
 html:not(.theme-dark) body.spa-page #contenu > .section.section-mist.section-aqua {
   background-image:
     linear-gradient(90deg,
-      rgba(255, 255, 255, 0.56) 0%,
-      rgba(255, 255, 255, 0.46) 36%,
-      rgba(255, 255, 255, 0.32) 58%,
-      rgba(255, 255, 255, 0.22) 75%),
+      rgba(255, 255, 255, 0.61) 0%,
+      rgba(255, 255, 255, 0.51) 36%,
+      rgba(255, 255, 255, 0.37) 58%,
+      rgba(255, 255, 255, 0.27) 75%),
     var(--spa-condensation-image) !important;
 }
 
@@ -82,7 +82,7 @@ html.theme-dark body.spa-page .section-aqua .sector-editorial-chapter {
 @media (max-width: 720px) {
   html:not(.theme-dark) body.spa-page #contenu > .section.section-aqua {
     background-image:
-      linear-gradient(rgba(255, 255, 255, 0.30), rgba(255, 255, 255, 0.30)),
+      linear-gradient(rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.35)),
       var(--spa-condensation-image) !important;
     background-position: center center !important;
     background-size: cover !important;
@@ -99,10 +99,10 @@ html.theme-dark body.spa-page .section-aqua .sector-editorial-chapter {
   html:not(.theme-dark) body.spa-page #contenu > .section.section-mist.section-aqua {
     background-image:
       linear-gradient(90deg,
-        rgba(255, 255, 255, 0.58) 0%,
-        rgba(255, 255, 255, 0.48) 55%,
-        rgba(255, 255, 255, 0.34) 78%,
-        rgba(255, 255, 255, 0.24) 92%),
+        rgba(255, 255, 255, 0.63) 0%,
+        rgba(255, 255, 255, 0.53) 55%,
+        rgba(255, 255, 255, 0.39) 78%,
+        rgba(255, 255, 255, 0.29) 92%),
       var(--spa-condensation-image) !important;
   }
 
