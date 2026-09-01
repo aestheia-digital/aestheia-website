@@ -165,6 +165,6 @@ html:not(.theme-dark) body.thalasso-page #contenu > .section.section-aqua > .con
 /* Le voile seul est renforcé : l'image, son cadrage et sa netteté restent intacts. */
 @media (max-width: 720px) {
   html:not(.theme-dark) body.thalasso-page #contenu > .section.section-mist.section-aqua {
-    --aqua-veil: rgba(248, 250, 255, 0.79);
+    --aqua-veil: rgba(248, 250, 255, 0.84);
   }
 }
