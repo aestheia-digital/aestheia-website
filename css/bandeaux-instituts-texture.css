@@ -1,0 +1,40 @@
+/* Texture creme et huile — page Instituts & independantes uniquement */
+#contenu > .section.section-institutes-texture {
+  --institutes-texture-image: url("../assets/images/textures/texture-creme-huile-instituts.webp");
+  background-position: center;
+}
+
+html:not(.theme-dark) #contenu > .section.section-institutes-texture {
+  background:
+    linear-gradient(rgba(250, 248, 245, 0.68), rgba(250, 248, 245, 0.68)),
+    var(--institutes-texture-image) center / cover no-repeat !important;
+}
+
+html.theme-dark #contenu > .section.section-institutes-texture {
+  background:
+    linear-gradient(rgba(14, 20, 49, 0.82), rgba(14, 20, 49, 0.82)),
+    var(--institutes-texture-image) center / cover no-repeat !important;
+}
+
+@media (max-width: 767px) {
+  html:not(.theme-dark) #contenu > .section.section-institutes-texture,
+  html.theme-dark #contenu > .section.section-institutes-texture {
+    background-position: 72% top !important;
+    background-size: 170vw auto !important;
+    background-repeat: repeat-y !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1050px) {
+  html:not(.theme-dark) #contenu > .section.section-institutes-texture,
+  html.theme-dark #contenu > .section.section-institutes-texture {
+    background-position: 66% center !important;
+  }
+}
+
+@media (prefers-reduced-data: reduce) {
+  html:not(.theme-dark) #contenu > .section.section-institutes-texture,
+  html.theme-dark #contenu > .section.section-institutes-texture {
+    background: var(--color-soft) !important;
+  }
+}
