@@ -175,3 +175,10 @@ html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.sectio
 html:not(.theme-dark) body.thalasso-page .faq-accordion-item summary {
   color: #5422b3;
 }
+
+/* 12. Tablette et mobile : titres de cartes légèrement renforcés. */
+@media (max-width: 1050px) {
+  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-heading h3 {
+    font-weight: 600;
+  }
+}
