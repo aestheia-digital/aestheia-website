@@ -240,25 +240,7 @@ html:not(.theme-dark) body.spa-page #contenu > .section.section-aqua > .containe
   font-weight: 700;
 }
 
-/* FAQ Spa : hiérarchie premium en mode jour. */
-html:not(.theme-dark) body.spa-page .spa-faq-eyebrow {
-  color: #4a1d96 !important;
-  font-weight: 700;
-}
-
-html:not(.theme-dark) body.spa-page .faq-section h2 {
-  color: #1e2a50;
-}
-
+/* FAQ Spa : questions en violet profond, mode jour uniquement. */
 html:not(.theme-dark) body.spa-page .faq-accordion-item summary {
-  color: #1e2a50;
-  font-weight: 700;
-}
-
-html:not(.theme-dark) body.spa-page .faq-accordion-item summary::after {
   color: #4a1d96;
-}
-
-html:not(.theme-dark) body.spa-page .faq-answer p {
-  color: #4e5d7a;
 }
