@@ -218,3 +218,24 @@ html.theme-dark body.spa-page .spa-method-cta-icon {
     margin-top: 0.05rem;
   }
 }
+
+/* Mode jour : typographie renforcée sur les bandeaux photographiques Spa. */
+html:not(.theme-dark) body.spa-page #contenu > .section.section-aqua h2 {
+  color: #142044;
+  font-weight: 500;
+}
+
+html:not(.theme-dark) body.spa-page #contenu > .section.section-aqua h3,
+html:not(.theme-dark) body.spa-page #contenu > .section.section-aqua p:not(.eyebrow),
+html:not(.theme-dark) body.spa-page #contenu > .section.section-aqua li {
+  color: #172447;
+}
+
+html:not(.theme-dark) body.spa-page #contenu > .section.section-aqua p:not(.eyebrow),
+html:not(.theme-dark) body.spa-page #contenu > .section.section-aqua li {
+  font-weight: 500;
+}
+
+html:not(.theme-dark) body.spa-page #contenu > .section.section-aqua > .container > .eyebrow {
+  font-weight: 700;
+}
