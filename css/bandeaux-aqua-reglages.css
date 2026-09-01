@@ -193,3 +193,8 @@ html:not(.theme-dark) body.thalasso-page .thalasso-system-link {
     --aqua-veil: rgba(248, 250, 255, 0.79);
   }
 }
+
+/* 14. Mode nuit : intitulés des quatre bandeaux, même violet que sur la page Spa. */
+html.theme-dark body.thalasso-page #contenu > .section:not(.conversion-band) > .container > .eyebrow {
+  color: #9b7cff !important;
+}
