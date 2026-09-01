@@ -195,3 +195,16 @@ html:not(.theme-dark) #contenu > .section.section-soft.section-aqua::before {
       var(--color-soft) !important;
   }
 }
+
+
+/* Test halo jour : or champagne leger, limite a la page spa hotelier. */
+html:not(.theme-dark) body.spa-page #contenu > .section:not(.conversion-band):not(.section-aqua)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 88% 16%, rgba(196, 153, 79, 0.10), transparent 44%),
+    radial-gradient(circle at 14% 84%, rgba(232, 205, 153, 0.07), transparent 48%) !important;
+}
