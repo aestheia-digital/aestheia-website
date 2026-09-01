@@ -27,7 +27,7 @@ html.theme-dark {
 
 /* Mode jour (et etat par defaut avant execution du script de theme) */
 html:not(.theme-dark) #contenu > .section.section-aqua {
-  --aqua-veil: rgba(246, 248, 252, 0.22);
+  --aqua-veil: rgba(246, 248, 252, 0.28);
   background:
     linear-gradient(var(--aqua-veil), var(--aqua-veil)),
     var(--aqua-image) center / cover no-repeat !important;
@@ -52,7 +52,7 @@ html.theme-dark #contenu > .section.section-aqua {
 /* 1. Voile allege ---------------------------------------------------------- */
 
 html:not(.theme-dark) #contenu > .section.section-aqua {
-  --aqua-veil: rgba(246, 248, 252, 0.22);
+  --aqua-veil: rgba(246, 248, 252, 0.28);
 }
 
 html.theme-dark #contenu > .section.section-aqua {
@@ -118,7 +118,7 @@ html.theme-dark #contenu > .section.section-soft.section-aqua::before {
   html:not(.theme-dark) #contenu > .section.section-soft.section-aqua::before,
   html.theme-dark #contenu > .section.section-soft.section-aqua::before {
     /* Le titre passe sur la zone dense : voile renforce pour le contraste. */
-    --aqua-veil: rgba(246, 248, 252, 0.22);
+    --aqua-veil: rgba(246, 248, 252, 0.28);
     background:
       linear-gradient(var(--aqua-veil), var(--aqua-veil))
         center / cover no-repeat,
@@ -157,5 +157,41 @@ html.theme-dark #contenu > .section:not(.conversion-band)::before {
 @media (max-width: 720px) {
   #contenu > .section.section-aqua h2 {
     text-wrap: balance;
+  }
+}
+
+
+/* 8. Mode jour : adoucissement photographique sans flouter le contenu ------- */
+/* L'image est isolee sur le pseudo-element : le filtre ne touche donc ni les
+   textes ni les cartes. Le leger debord evite les bords du flou. */
+
+html:not(.theme-dark) #contenu > .section.section-aqua {
+  background: var(--color-soft) !important;
+}
+
+html:not(.theme-dark) #contenu > .section.section-aqua::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(var(--aqua-veil), var(--aqua-veil)),
+    var(--aqua-image) center / cover no-repeat !important;
+  filter: blur(2px);
+  transform: scale(1.01);
+}
+
+html:not(.theme-dark) #contenu > .section.section-soft.section-aqua::before {
+  transform: scaleX(-1) scale(1.01);
+}
+
+@media (max-width: 720px) {
+  html:not(.theme-dark) #contenu > .section.section-aqua::before {
+    background:
+      linear-gradient(var(--aqua-veil), var(--aqua-veil))
+        center / cover no-repeat,
+      var(--aqua-image) top center / 170vw auto repeat-y,
+      var(--color-soft) !important;
   }
 }
