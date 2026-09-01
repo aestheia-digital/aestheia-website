@@ -1,0 +1,102 @@
+/* ==========================================================================
+   Bandeaux condensation - page Spas & hotellerie
+   ==========================================================================
+   Feuille chargee UNIQUEMENT par spa-hotelier/index.html,
+   APRES consent-manager.css.
+
+   Elle s'appuie sur deux images placees dans assets/images/metiers/ :
+     condensation-jour.webp   (version claire, mode jour)
+     condensation-nuit.webp   (photo d'origine, mode nuit)
+
+   La zone calme de l'image est a GAUCHE : c'est la que se posent les titres.
+   Le second bandeau retourne l'image verticalement pour que les deux
+   bandeaux ne soient pas identiques.
+
+   Les selecteurs longs et les !important sont necessaires : styles.css et
+   consent-manager.css imposent deja ces proprietes en !important.
+
+   Pour doser la presence de l'image : --spa-veil.
+   Opacite basse = image plus visible.
+   ========================================================================== */
+
+:root {
+  --spa-image: url("../assets/images/metiers/condensation-jour.webp");
+  --spa-veil: rgba(250, 251, 254, 0.34);
+}
+
+html.theme-dark {
+  --spa-image: url("../assets/images/metiers/condensation-nuit.webp");
+  --spa-veil: rgba(11, 16, 40, 0.40);
+}
+
+/* --- Les deux bandeaux ---------------------------------------------------- */
+/* Le fond est porte par un ::before, ce qui permet de retourner l'image. */
+
+html:not(.theme-dark) body.spa-page #contenu > .section.section-aqua,
+html.theme-dark body.spa-page #contenu > .section.section-aqua {
+  background: var(--color-soft) !important;
+}
+
+html:not(.theme-dark) body.spa-page #contenu > .section.section-aqua::before,
+html.theme-dark body.spa-page #contenu > .section.section-aqua::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(var(--spa-veil), var(--spa-veil)),
+    var(--spa-image) left center / cover no-repeat !important;
+}
+
+/* Second bandeau : image retournee, la zone calme reste a gauche. */
+html:not(.theme-dark) body.spa-page #contenu > .section.section-mist.section-aqua::before,
+html.theme-dark body.spa-page #contenu > .section.section-mist.section-aqua::before {
+  transform: scaleY(-1);
+}
+
+/* --- Cartes legerement translucides --------------------------------------- */
+
+html:not(.theme-dark) body.spa-page .section-aqua .sector-editorial-chapter {
+  background: rgba(255, 255, 255, 0.86) !important;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+html.theme-dark body.spa-page .section-aqua .sector-editorial-chapter {
+  background: rgba(17, 24, 61, 0.82) !important;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+/* --- Mobile --------------------------------------------------------------- */
+/* La section devient tres haute et etroite : avec "cover" l'image serait
+   zoomee a l'extreme. On la reprend a 170% de la largeur d'ecran et on la
+   repete verticalement. Point de rupture cale sur consent-manager.css. */
+
+@media (max-width: 720px) {
+  html:not(.theme-dark) body.spa-page #contenu > .section.section-aqua::before,
+  html.theme-dark body.spa-page #contenu > .section.section-aqua::before {
+    background:
+      linear-gradient(var(--spa-veil), var(--spa-veil)),
+      var(--spa-image) top center / 170vw auto repeat-y,
+      var(--color-soft) !important;
+  }
+
+  body.spa-page #contenu > .section.section-aqua h2 {
+    text-wrap: balance;
+  }
+}
+
+/* --- Mode nuit : on retire nuee et halos violets --------------------------- */
+
+html.theme-dark body.spa-page #contenu > .section:not(.conversion-band)::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  opacity: 0 !important;
+}
+
+html.theme-dark body.spa-page #contenu > .section:not(.conversion-band):not(.section-aqua)::before {
+  background: none !important;
+}
