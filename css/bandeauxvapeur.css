@@ -27,7 +27,7 @@ html.theme-dark {
 
 /* Mode jour (et etat par defaut avant execution du script de theme) */
 html:not(.theme-dark) #contenu > .section.section-aqua {
-  --aqua-veil: rgba(255, 255, 255, 0.15);
+  --aqua-veil: rgba(246, 248, 252, 0.22);
   background:
     linear-gradient(var(--aqua-veil), var(--aqua-veil)),
     var(--aqua-image) center / cover no-repeat !important;
@@ -52,7 +52,7 @@ html.theme-dark #contenu > .section.section-aqua {
 /* 1. Voile allege ---------------------------------------------------------- */
 
 html:not(.theme-dark) #contenu > .section.section-aqua {
-  --aqua-veil: rgba(255, 255, 255, 0.15);
+  --aqua-veil: rgba(246, 248, 252, 0.22);
 }
 
 html.theme-dark #contenu > .section.section-aqua {
@@ -118,7 +118,7 @@ html.theme-dark #contenu > .section.section-soft.section-aqua::before {
   html:not(.theme-dark) #contenu > .section.section-soft.section-aqua::before,
   html.theme-dark #contenu > .section.section-soft.section-aqua::before {
     /* Le titre passe sur la zone dense : voile renforce pour le contraste. */
-    --aqua-veil: rgba(255, 255, 255, 0.15);
+    --aqua-veil: rgba(246, 248, 252, 0.22);
     background:
       linear-gradient(var(--aqua-veil), var(--aqua-veil))
         center / cover no-repeat,
