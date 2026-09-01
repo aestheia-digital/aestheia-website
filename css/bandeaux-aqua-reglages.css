@@ -139,3 +139,24 @@ html.theme-dark #contenu > .section:not(.conversion-band)::before {
     opacity: 0 !important;
   }
 }
+
+/* 9. Mode jour : typographie renforcée sur les bandeaux photographiques. */
+html:not(.theme-dark) body.thalasso-page #contenu > .section.section-aqua h2 {
+  color: #142044;
+  font-weight: 500;
+}
+
+html:not(.theme-dark) body.thalasso-page #contenu > .section.section-aqua h3,
+html:not(.theme-dark) body.thalasso-page #contenu > .section.section-aqua p:not(.eyebrow),
+html:not(.theme-dark) body.thalasso-page #contenu > .section.section-aqua li {
+  color: #172447;
+}
+
+html:not(.theme-dark) body.thalasso-page #contenu > .section.section-aqua p:not(.eyebrow),
+html:not(.theme-dark) body.thalasso-page #contenu > .section.section-aqua li {
+  font-weight: 500;
+}
+
+html:not(.theme-dark) body.thalasso-page #contenu > .section.section-aqua > .container > .eyebrow {
+  font-weight: 700;
+}
