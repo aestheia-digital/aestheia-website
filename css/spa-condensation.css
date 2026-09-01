@@ -240,9 +240,9 @@ html:not(.theme-dark) body.spa-page #contenu > .section.section-aqua > .containe
   font-weight: 700;
 }
 
-/* FAQ Spa : questions en violet profond, mode jour uniquement. */
+/* FAQ Spa : questions en violet profond légèrement rehaussé, mode jour uniquement. */
 html:not(.theme-dark) body.spa-page .faq-accordion-item summary {
-  color: #4a1d96;
+  color: #5422b3;
 }
 
 /* CTA Spa vers Thalasso : aplat bleu identique au footer. */
