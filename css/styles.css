@@ -4853,3 +4853,12 @@ html.theme-dark body.thalasso-page #contenu > .section:not(.conversion-band) > .
 html.theme-dark body.pme-page #contenu > .section:not(.conversion-band) > .container > .eyebrow {
   color: #b69cff !important;
 }
+
+/* Intitules des sections de l'accueil en violet, comme les pages secteurs. */
+html:not(.theme-dark) #contenu > .home-hero ~ .section:not(.conversion-band) > .container > .eyebrow {
+  color: #5e17eb !important;
+}
+
+html.theme-dark #contenu > .home-hero ~ .section:not(.conversion-band) > .container > .eyebrow {
+  color: #b69cff !important;
+}
