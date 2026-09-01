@@ -260,3 +260,8 @@ html.theme-dark body.spa-page .sector-crosslink-cta:hover {
 html:not(.theme-dark) body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-heading h3 {
   color: #5422b3;
 }
+
+/* CTA méthode Spa : texte aligné sur le violet premium de la FAQ. */
+html:not(.theme-dark) body.spa-page .spa-method-cta a {
+  color: #5422b3 !important;
+}
