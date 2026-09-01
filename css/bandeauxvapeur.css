@@ -1,10 +1,11 @@
 /* ==========================================================================
-   Bandeaux vapeur - page Thalasso & thermal
+   Bandeaux condensation - page Spa & hôtellerie
    ==========================================================================
    Feuille chargee UNIQUEMENT par spa-hotelier/index.html.
    A placer APRES consent-manager.css dans le <head>.
 
-   Images jour et nuit chargees depuis assets/images/metiers.
+   Un même visuel de condensation bleue est utilisé en jour et en nuit ;
+   les voiles existants adaptent ensuite son intensité au thème.
 
    Les selecteurs longs et les !important ne sont pas un caprice :
    consent-manager.css impose deja les fonds de section en !important en mode
@@ -12,16 +13,16 @@
    Il faut la meme specificite pour repasser devant. A nettoyer le jour ou
    cette dette sera reprise.
 
-   Pour doser la presence des bulles, une seule valeur : --aqua-veil.
+   Pour doser la presence du visuel, une seule valeur : --aqua-veil.
    Opacite basse = image plus visible.
    ========================================================================== */
 
 :root {
-  --aqua-image: url("../assets/images/metiers/vapeur-jour.webp");
+  --aqua-image: url("../assets/images/metiers/condensation-bleue-spa.webp");
 }
 
 html.theme-dark {
-  --aqua-image: url("../assets/images/metiers/vapeur-nuit.webp");
+  --aqua-image: url("../assets/images/metiers/condensation-bleue-spa.webp");
 }
 
 
@@ -144,7 +145,7 @@ html.theme-dark #contenu > .section:not(.conversion-band)::after {
 /* 6. Mode nuit : suppression des halos violets ------------------------------ */
 /* styles.css et consent-manager.css peignent un halo violet sur le ::before de
    chaque section. Combine au fond photographique, cela sature la page.
-   On le neutralise en nuit sur toute la page thalasso, ordinateur et mobile.
+   On le neutralise en nuit sur toute la page spa, ordinateur et mobile.
    Le bandeau retourne conserve le sien : sa regle est plus specifique. */
 
 html.theme-dark #contenu > .section:not(.conversion-band)::before {
