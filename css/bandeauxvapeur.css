@@ -195,3 +195,16 @@ html:not(.theme-dark) #contenu > .section.section-soft.section-aqua::before {
       var(--color-soft) !important;
   }
 }
+
+
+/* Test halo jour : degrade bleu tres leger, limite a la page spa hotelier. */
+html:not(.theme-dark) body.spa-page #contenu > .section:not(.conversion-band):not(.section-aqua)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 88% 16%, rgba(0, 176, 255, 0.04), transparent 44%),
+    radial-gradient(circle at 14% 84%, rgba(36, 107, 254, 0.025), transparent 48%) !important;
+}
