@@ -484,3 +484,38 @@ html[data-theme="dark"] body.institutes-page #contenu > .section.section-mist.se
     -webkit-text-fill-color: #b69cff !important;
   }
 }
+
+/* Mode nuit : le bandeau « Les systèmes que nous mettons en place » est légèrement plus sombre. */
+html.theme-dark body.institutes-page #contenu > .section.section-soft.section-aqua::before,
+html[data-theme="dark"] body.institutes-page #contenu > .section.section-soft.section-aqua::before {
+  background:
+    linear-gradient(rgba(6, 10, 30, 0.78), rgba(6, 10, 30, 0.78)),
+    var(--pal-image) left center / cover no-repeat !important;
+}
+
+@media (max-width: 720px) {
+  html.theme-dark body.institutes-page #contenu > .section.section-soft.section-aqua::before,
+  html[data-theme="dark"] body.institutes-page #contenu > .section.section-soft.section-aqua::before {
+    background:
+      linear-gradient(rgba(6, 10, 30, 0.78), rgba(6, 10, 30, 0.78)),
+      var(--pal-image) top center / 170vw auto repeat-y,
+      var(--color-soft) !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) body.institutes-page #contenu > .section.section-soft.section-aqua::before {
+    background:
+      linear-gradient(rgba(6, 10, 30, 0.78), rgba(6, 10, 30, 0.78)),
+      var(--pal-image) left center / cover no-repeat !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) and (max-width: 720px) {
+  html:not([data-theme="light"]) body.institutes-page #contenu > .section.section-soft.section-aqua::before {
+    background:
+      linear-gradient(rgba(6, 10, 30, 0.78), rgba(6, 10, 30, 0.78)),
+      var(--pal-image) top center / 170vw auto repeat-y,
+      var(--color-soft) !important;
+  }
+}
