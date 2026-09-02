@@ -121,8 +121,11 @@ html.theme-dark body.spa-page .section-aqua .sector-editorial-chapter {
   }
 }
 
-/* Mode nuit : aucune nuée de particules sur la page Spa & hôtellerie. */
-html.theme-dark body.spa-page #contenu > .section:not(.conversion-band)::after {
+/* Mode nuit : aucun halo violet ni nuée sur la page Spa & hôtellerie, tous supports. */
+html.theme-dark body.spa-page #contenu > .section:not(.conversion-band)::before,
+html[data-theme="dark"] body.spa-page #contenu > .section:not(.conversion-band)::before,
+html.theme-dark body.spa-page #contenu > .section:not(.conversion-band)::after,
+html[data-theme="dark"] body.spa-page #contenu > .section:not(.conversion-band)::after {
   content: none !important;
   display: none !important;
   background: none !important;
