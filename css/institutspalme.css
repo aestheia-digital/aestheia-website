@@ -193,3 +193,8 @@ html.theme-dark body.institutes-page #contenu > .section.section-mist.section-aq
   color: #b69cff !important;
   -webkit-text-fill-color: #b69cff !important;
 }
+
+/* --- Réalité métier : liseré 5 à 10 h en bleu marine du footer. --- */
+body.institutes-page .institutes-reality-metric {
+  border-left-color: #1e2a50 !important;
+}
