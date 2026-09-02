@@ -532,3 +532,36 @@ body.institutes-page .section-soft.section-aqua .institutes-editorial-heading .t
   height: 30px;
   flex: 0 0 30px;
 }
+
+/* Bandeau systèmes : blocs Bénéfice plus transparents et texte bleu renforcé sans gras. */
+html.theme-dark body.institutes-page .section-soft.section-aqua .institutes-editorial-benefit,
+html[data-theme="dark"] body.institutes-page .section-soft.section-aqua .institutes-editorial-benefit,
+html.theme-dark body.institutes-page .section-soft.section-aqua .institutes-onboarding-benefit,
+html[data-theme="dark"] body.institutes-page .section-soft.section-aqua .institutes-onboarding-benefit {
+  background: rgba(226, 216, 247, 0.55) !important;
+  color: #1e2a50 !important;
+  font-weight: 500;
+}
+
+html.theme-dark body.institutes-page .section-soft.section-aqua .institutes-editorial-benefit strong,
+html[data-theme="dark"] body.institutes-page .section-soft.section-aqua .institutes-editorial-benefit strong,
+html.theme-dark body.institutes-page .section-soft.section-aqua .institutes-onboarding-benefit strong,
+html[data-theme="dark"] body.institutes-page .section-soft.section-aqua .institutes-onboarding-benefit strong {
+  color: #1e2a50 !important;
+  font-weight: 500;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) body.institutes-page .section-soft.section-aqua .institutes-editorial-benefit,
+  html:not([data-theme="light"]) body.institutes-page .section-soft.section-aqua .institutes-onboarding-benefit {
+    background: rgba(226, 216, 247, 0.55) !important;
+    color: #1e2a50 !important;
+    font-weight: 500;
+  }
+
+  html:not([data-theme="light"]) body.institutes-page .section-soft.section-aqua .institutes-editorial-benefit strong,
+  html:not([data-theme="light"]) body.institutes-page .section-soft.section-aqua .institutes-onboarding-benefit strong {
+    color: #1e2a50 !important;
+    font-weight: 500;
+  }
+}
