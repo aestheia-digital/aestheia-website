@@ -198,3 +198,9 @@ html:not(.theme-dark) body.thalasso-page .thalasso-system-link {
 html.theme-dark body.thalasso-page #contenu > .section:not(.conversion-band) > .container > .eyebrow {
   color: #9b7cff !important;
 }
+
+/* 15. Mode jour : suppression des halos violets sur toute la page. */
+html:not(.theme-dark) body.thalasso-page {
+  --halo-violet-primary: transparent;
+  --halo-violet-secondary: transparent;
+}
