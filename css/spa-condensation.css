@@ -208,7 +208,111 @@ html.theme-dark body.spa-page .spa-method-cta-icon {
   background: rgba(182, 156, 255, 0.1);
 }
 
+/* Enjeu transversal turnover — page Spa & hôtellerie uniquement. */
+body.spa-page .spa-turnover-block {
+  display: grid;
+  grid-template-columns: minmax(190px, 0.75fr) minmax(280px, 1.35fr) minmax(230px, 0.9fr);
+  gap: 1.5rem;
+  align-items: center;
+  width: 100%;
+  margin-top: 2rem;
+  padding: 1.35rem 1.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  background: var(--color-bg);
+}
+
+body.spa-page .spa-turnover-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+body.spa-page .spa-turnover-pictogram {
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+}
+
+body.spa-page .spa-turnover-heading h3,
+body.spa-page .spa-turnover-copy,
+body.spa-page .spa-turnover-benefit {
+  margin: 0;
+}
+
+body.spa-page .spa-turnover-heading h3 {
+  color: var(--color-accent);
+  font-size: 1.18rem;
+  line-height: 1.25;
+}
+
+body.spa-page .spa-turnover-copy,
+body.spa-page .spa-turnover-benefit {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+body.spa-page .spa-turnover-benefit {
+  padding: 0.9rem 1rem;
+  border-left: 4px solid var(--color-accent);
+  border-radius: 0 10px 10px 0;
+  background: #eaf5ff;
+  color: var(--color-primary);
+}
+
+body.spa-page .spa-turnover-benefit strong {
+  color: var(--color-primary);
+}
+
+html.theme-dark body.spa-page .spa-turnover-benefit {
+  color: #f3f6ff;
+  border-color: #9b7cff;
+  background: linear-gradient(135deg, #26365f 0%, #2a3e68 52%, #304673 100%);
+}
+
+html.theme-dark body.spa-page .spa-turnover-benefit strong {
+  color: #fff;
+}
+
+@media (max-width: 960px) {
+  body.spa-page .spa-turnover-block {
+    grid-template-columns: minmax(190px, 0.8fr) minmax(0, 1.2fr);
+  }
+
+  body.spa-page .spa-turnover-benefit {
+    grid-column: 1 / -1;
+  }
+}
+
 @media (max-width: 720px) {
+  body.spa-page .spa-turnover-block {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    padding: 1.2rem;
+  }
+
+  body.spa-page .spa-turnover-heading {
+    display: contents;
+  }
+
+  body.spa-page .spa-turnover-pictogram {
+    order: 1;
+  }
+
+  body.spa-page .spa-turnover-heading h3 {
+    order: 2;
+  }
+
+  body.spa-page .spa-turnover-copy {
+    order: 3;
+  }
+
+  body.spa-page .spa-turnover-benefit {
+    order: 4;
+  }
+
   body.spa-page .spa-method-cta a {
     align-items: flex-start;
     font-size: 0.92rem;
