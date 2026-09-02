@@ -349,17 +349,27 @@ html:not(.theme-dark) body.institutes-page .institutes-team-issue h3 {
   color: #6b4bb3 !important;
 }
 
-/* --- Mode jour : équilibre visuel des problématiques principales. --- */
-html:not(.theme-dark) body.institutes-page .institutes-reality-list > li:nth-child(-n+5) {
-  color: #25325f !important;
-  font-weight: 500;
-}
-
-/* --- Mode nuit : même hiérarchie visuelle, avec contraste renforcé. --- */
+/* --- Problématiques : seul l'intitulé avant les deux-points est renforcé. --- */
+html:not(.theme-dark) body.institutes-page .institutes-reality-list > li:nth-child(-n+5),
 html.theme-dark body.institutes-page .institutes-reality-list > li:nth-child(-n+5),
 html[data-theme="dark"] body.institutes-page .institutes-reality-list > li:nth-child(-n+5) {
+  font-weight: 400 !important;
+}
+
+html:not(.theme-dark) body.institutes-page .institutes-reality-issue-label {
+  color: #25325f !important;
+  font-weight: 600 !important;
+}
+
+html.theme-dark body.institutes-page .institutes-reality-list > li:nth-child(-n+5),
+html[data-theme="dark"] body.institutes-page .institutes-reality-list > li:nth-child(-n+5) {
+  color: #d9e0f3 !important;
+}
+
+html.theme-dark body.institutes-page .institutes-reality-issue-label,
+html[data-theme="dark"] body.institutes-page .institutes-reality-issue-label {
   color: #eef2ff !important;
-  font-weight: 500;
+  font-weight: 600 !important;
 }
 
 html.theme-dark body.institutes-page .institutes-team-issue h3,
