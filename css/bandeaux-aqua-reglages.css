@@ -206,10 +206,10 @@ html:not(.theme-dark) body.thalasso-page {
 }
 
 /* 16. Backlink vers la page Spa en violet neutre, jour et nuit. */
-html:not(.theme-dark) body.thalasso-page #contenu > .section.section-mist.section-aqua a[href="../spa-hotelier/index.html"] {
+html:not(.theme-dark) body.thalasso-page #contenu > .section.section-mist.section-aqua .thalasso-spa-link {
   color: #5422b3 !important;
 }
 
-html.theme-dark body.thalasso-page #contenu > .section.section-mist.section-aqua a[href="../spa-hotelier/index.html"] {
+html.theme-dark body.thalasso-page #contenu > .section.section-mist.section-aqua .thalasso-spa-link {
   color: #9b7cff !important;
 }
