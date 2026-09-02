@@ -343,3 +343,8 @@ body.institutes-page .institutes-reality-metric::before {
   width: 3px;
   background: linear-gradient(180deg, #540ce4 0%, #5e17eb 52%, #00b0ff 100%);
 }
+
+/* --- Mode jour : titre turnover en violet neutre FAQ. --- */
+html:not(.theme-dark) body.institutes-page .institutes-team-issue h3 {
+  color: #6b4bb3 !important;
+}
