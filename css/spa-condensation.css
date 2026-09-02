@@ -508,3 +508,9 @@ html.theme-dark body.spa-page .spa-turnover-benefit strong,
 html[data-theme="dark"] body.spa-page .spa-turnover-benefit strong {
   color: #07112d !important;
 }
+
+/* Mode nuit : une seule teinte violette pour tous les intitulés de bandeau Spa. */
+html.theme-dark body.spa-page #contenu > .section:not(.conversion-band) > .container > .eyebrow,
+html[data-theme="dark"] body.spa-page #contenu > .section:not(.conversion-band) > .container > .eyebrow {
+  color: #8b6fe8 !important;
+}
