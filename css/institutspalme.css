@@ -340,7 +340,7 @@ html.theme-dark body.institutes-page .institutes-onboarding-block,
 html[data-theme="dark"] body.institutes-page .institutes-onboarding-block,
 html.theme-dark body.institutes-page .institutes-method-card,
 html[data-theme="dark"] body.institutes-page .institutes-method-card {
-  background: linear-gradient(135deg, rgba(17, 24, 61, 0.82) 0%, rgba(30, 42, 80, 0.82) 58%, rgba(39, 52, 124, 0.82) 100%) !important;
+  background: linear-gradient(135deg, rgba(17, 24, 61, 0.76) 0%, rgba(30, 42, 80, 0.76) 58%, rgba(39, 52, 124, 0.76) 100%) !important;
   border-color: rgba(255, 255, 255, 0.12) !important;
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
@@ -411,13 +411,13 @@ html[data-theme="dark"] body.institutes-page .institutes-onboarding-benefit stro
   color: #1e2a50 !important;
 }
 
-/* Tablette nuit : opacité réelle à 82 %, sans flou masquant la transparence. */
+/* Tablette nuit : opacité réelle à 76 %, sans flou masquant la transparence. */
 @media (min-width: 721px) and (max-width: 1440px) {
   html.theme-dark body.institutes-page .section-aqua .institutes-editorial-chapter,
   html[data-theme="dark"] body.institutes-page .section-aqua .institutes-editorial-chapter,
   html.theme-dark body.institutes-page .institutes-onboarding-block,
   html[data-theme="dark"] body.institutes-page .institutes-onboarding-block {
-    background: linear-gradient(135deg, rgba(17, 24, 61, 0.82) 0%, rgba(30, 42, 80, 0.82) 58%, rgba(39, 52, 124, 0.82) 100%) !important;
+    background: linear-gradient(135deg, rgba(17, 24, 61, 0.76) 0%, rgba(30, 42, 80, 0.76) 58%, rgba(39, 52, 124, 0.76) 100%) !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
   }
@@ -426,7 +426,7 @@ html[data-theme="dark"] body.institutes-page .institutes-onboarding-benefit stro
 @media (prefers-color-scheme: dark) and (min-width: 721px) and (max-width: 1440px) {
   html:not([data-theme="light"]) body.institutes-page .section-aqua .institutes-editorial-chapter,
   html:not([data-theme="light"]) body.institutes-page .institutes-onboarding-block {
-    background: linear-gradient(135deg, rgba(17, 24, 61, 0.82) 0%, rgba(30, 42, 80, 0.82) 58%, rgba(39, 52, 124, 0.82) 100%) !important;
+    background: linear-gradient(135deg, rgba(17, 24, 61, 0.76) 0%, rgba(30, 42, 80, 0.76) 58%, rgba(39, 52, 124, 0.76) 100%) !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
   }
