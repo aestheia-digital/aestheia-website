@@ -526,3 +526,9 @@ html[data-theme="dark"] body.spa-page #contenu > .section.section-mist.section-a
   color: #6f2cff !important;
   background-color: #6f2cff !important;
 }
+
+/* FAQ Spa en mode nuit : questions dans le même bleu clair que les blocs Bénéfice. */
+html.theme-dark body.spa-page .faq-accordion-item summary,
+html[data-theme="dark"] body.spa-page .faq-accordion-item summary {
+  color: #a9c0dc !important;
+}
