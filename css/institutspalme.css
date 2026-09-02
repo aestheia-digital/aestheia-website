@@ -407,7 +407,7 @@ html.theme-dark body.institutes-page .institutes-method-conclusion,
 html[data-theme="dark"] body.institutes-page .institutes-method-conclusion,
 html.theme-dark body.institutes-page .institutes-onboarding-benefit,
 html[data-theme="dark"] body.institutes-page .institutes-onboarding-benefit {
-  background: rgba(226, 216, 247, 0.72) !important;
+  background: rgba(226, 216, 247, 0.62) !important;
   color: #1e2a50 !important;
 }
 
@@ -416,7 +416,7 @@ html[data-theme="dark"] body.institutes-page .institutes-onboarding-benefit {
   html:not([data-theme="light"]) body.institutes-page .institutes-editorial-benefit,
   html:not([data-theme="light"]) body.institutes-page .institutes-method-conclusion,
   html:not([data-theme="light"]) body.institutes-page .institutes-onboarding-benefit {
-    background: rgba(226, 216, 247, 0.72) !important;
+    background: rgba(226, 216, 247, 0.62) !important;
     color: #1e2a50 !important;
   }
 }
