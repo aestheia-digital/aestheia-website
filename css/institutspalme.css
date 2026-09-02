@@ -1,0 +1,162 @@
+/* ==========================================================================
+   Bandeaux palme - page Instituts & independantes
+   ==========================================================================
+   Feuille chargee UNIQUEMENT par instituts-independantes/index.html,
+   APRES consent-manager.css.
+
+   Elle s'appuie sur deux images placees dans assets/images/metiers/ :
+     palmejour.webp   (taupe rose, mode jour)
+     palmenuit.webp   (marine chaud, mode nuit)
+
+   La zone calme de l'image est a GAUCHE : c'est la que se posent les titres.
+   Le second bandeau retourne l'image verticalement pour que les deux
+   bandeaux ne soient pas identiques.
+
+   Les selecteurs longs et les !important sont necessaires : styles.css et
+   consent-manager.css imposent deja ces proprietes en !important.
+
+   Pour doser la presence de l'image : --pal-veil.
+   Opacite basse = image plus visible.
+   ========================================================================== */
+
+:root {
+  --pal-image: url("../assets/images/metiers/palmejour.webp");
+  --pal-veil: rgba(252, 249, 246, 0.24);
+}
+
+html.theme-dark {
+  --pal-image: url("../assets/images/metiers/palmenuit.webp");
+  --pal-veil: rgba(16, 20, 46, 0.32);
+}
+
+/* --- Les deux bandeaux ---------------------------------------------------- */
+/* Le fond est porte par un ::before, ce qui permet de retourner l'image. */
+
+html:not(.theme-dark) body.institutes-page #contenu > .section.section-aqua,
+html.theme-dark body.institutes-page #contenu > .section.section-aqua {
+  background: var(--color-soft) !important;
+}
+
+html:not(.theme-dark) body.institutes-page #contenu > .section.section-aqua::before,
+html.theme-dark body.institutes-page #contenu > .section.section-aqua::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(var(--pal-veil), var(--pal-veil)),
+    var(--pal-image) left center / cover no-repeat !important;
+}
+
+/* Second bandeau : image retournee, la zone calme reste a gauche. */
+html:not(.theme-dark) body.institutes-page #contenu > .section.section-mist.section-aqua::before,
+html.theme-dark body.institutes-page #contenu > .section.section-mist.section-aqua::before {
+  transform: scaleY(-1);
+}
+
+/* --- Cartes legerement translucides --------------------------------------- */
+
+html:not(.theme-dark) body.institutes-page .section-aqua .card,
+html:not(.theme-dark) body.institutes-page .section-aqua .sector-editorial-chapter {
+  background: rgba(255, 255, 255, 0.88) !important;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+html.theme-dark body.institutes-page .section-aqua .card,
+html.theme-dark body.institutes-page .section-aqua .sector-editorial-chapter {
+  background: rgba(17, 24, 61, 0.84) !important;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+}
+
+/* --- Mobile --------------------------------------------------------------- */
+/* La section devient tres haute et etroite : avec "cover" l'image serait
+   zoomee a l'extreme. On la reprend a 170% de la largeur d'ecran et on la
+   repete verticalement. Point de rupture cale sur consent-manager.css. */
+
+@media (max-width: 720px) {
+  html:not(.theme-dark) body.institutes-page #contenu > .section.section-aqua::before,
+  html.theme-dark body.institutes-page #contenu > .section.section-aqua::before {
+    background:
+      linear-gradient(var(--pal-veil), var(--pal-veil)),
+      var(--pal-image) top center / 170vw auto repeat-y,
+      var(--color-soft) !important;
+  }
+
+  body.institutes-page #contenu > .section.section-aqua h2 {
+    text-wrap: balance;
+  }
+}
+
+/* --- Mode nuit : on retire nuee et halos violets --------------------------- */
+
+html.theme-dark body.institutes-page #contenu > .section:not(.conversion-band)::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  opacity: 0 !important;
+}
+
+html.theme-dark body.institutes-page #contenu > .section:not(.conversion-band):not(.section-aqua)::before {
+  background: none !important;
+}
+
+
+/* --- Demo harmonisation du mode jour ------------------------------------- */
+
+html:not(.theme-dark) body.institutes-page {
+  --institutes-day-lavender: #eee8fa;
+  --institutes-day-violet: #6b4bb3;
+  --institutes-day-violet-electric: #5e17eb;
+  --institutes-day-liseret: linear-gradient(180deg, #540ce4 0%, #5e17eb 52%, #00b0ff 100%);
+  --institutes-day-border: rgba(94, 23, 235, 0.22);
+}
+
+html:not(.theme-dark) body.institutes-page .institutes-reality-conclusion,
+html:not(.theme-dark) body.institutes-page .institutes-editorial-benefit,
+html:not(.theme-dark) body.institutes-page .institutes-method-conclusion {
+  position: relative;
+  overflow: hidden;
+  border-color: var(--institutes-day-border) !important;
+  background: var(--institutes-day-lavender) !important;
+  color: #1e2a50 !important;
+  box-shadow: none !important;
+}
+
+html:not(.theme-dark) body.institutes-page .institutes-reality-conclusion::before,
+html:not(.theme-dark) body.institutes-page .institutes-editorial-benefit::before,
+html:not(.theme-dark) body.institutes-page .institutes-method-conclusion::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px !important;
+  background: var(--institutes-day-liseret) !important;
+}
+
+html:not(.theme-dark) body.institutes-page .institutes-method-conclusion {
+  padding: 0.9rem 1.15rem !important;
+  border-left: 0 !important;
+  border-radius: 0 10px 10px 0;
+  line-height: 1.55;
+}
+
+html:not(.theme-dark) body.institutes-page .institutes-reality-conclusion strong,
+html:not(.theme-dark) body.institutes-page .institutes-editorial-benefit strong,
+html:not(.theme-dark) body.institutes-page .institutes-method-conclusion strong {
+  color: #1e2a50 !important;
+}
+
+html:not(.theme-dark) body.institutes-page #contenu > .section:not(.conversion-band) > .container > .eyebrow {
+  color: var(--institutes-day-violet-electric) !important;
+}
+
+html:not(.theme-dark) body.institutes-page .faq-accordion-item summary {
+  color: var(--institutes-day-violet) !important;
+}
+
+html:not(.theme-dark) body.institutes-page .faq-accordion,
+html:not(.theme-dark) body.institutes-page .faq-accordion-item {
+  border-color: rgba(107, 75, 179, 0.14);
+}
