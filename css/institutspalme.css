@@ -398,7 +398,7 @@ html[data-theme="dark"] body.institutes-page .institutes-method-conclusion {
   padding: 0.9rem 1.15rem !important;
 }
 
-/* Mode nuit : lavande légèrement plus violet, sans basculer vers un violet franc. */
+/* Mode nuit : blocs lavande légèrement transparents pour réduire leur luminosité. */
 html.theme-dark body.institutes-page .institutes-reality-conclusion,
 html[data-theme="dark"] body.institutes-page .institutes-reality-conclusion,
 html.theme-dark body.institutes-page .institutes-editorial-benefit,
@@ -407,8 +407,18 @@ html.theme-dark body.institutes-page .institutes-method-conclusion,
 html[data-theme="dark"] body.institutes-page .institutes-method-conclusion,
 html.theme-dark body.institutes-page .institutes-onboarding-benefit,
 html[data-theme="dark"] body.institutes-page .institutes-onboarding-benefit {
-  background: rgba(226, 216, 247, 0.92) !important;
+  background: rgba(226, 216, 247, 0.84) !important;
   color: #1e2a50 !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) body.institutes-page .institutes-reality-conclusion,
+  html:not([data-theme="light"]) body.institutes-page .institutes-editorial-benefit,
+  html:not([data-theme="light"]) body.institutes-page .institutes-method-conclusion,
+  html:not([data-theme="light"]) body.institutes-page .institutes-onboarding-benefit {
+    background: rgba(226, 216, 247, 0.84) !important;
+    color: #1e2a50 !important;
+  }
 }
 
 html.theme-dark body.institutes-page .institutes-reality-conclusion strong,
