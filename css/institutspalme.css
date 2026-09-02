@@ -102,3 +102,44 @@ html.theme-dark body.institutes-page #contenu > .section:not(.conversion-band)::
 html.theme-dark body.institutes-page #contenu > .section:not(.conversion-band):not(.section-aqua)::before {
   background: none !important;
 }
+
+
+/* --- Demo harmonisation du mode jour ------------------------------------- */
+
+html:not(.theme-dark) body.institutes-page {
+  --institutes-day-lavender: #f1eef6;
+  --institutes-day-violet: #6b4bb3;
+  --institutes-day-border: rgba(107, 75, 179, 0.18);
+}
+
+html:not(.theme-dark) body.institutes-page .institutes-reality-conclusion,
+html:not(.theme-dark) body.institutes-page .institutes-editorial-benefit,
+html:not(.theme-dark) body.institutes-page .institutes-method-conclusion {
+  border-color: var(--institutes-day-border) !important;
+  background: var(--institutes-day-lavender) !important;
+  color: #1e2a50 !important;
+  box-shadow: none !important;
+}
+
+html:not(.theme-dark) body.institutes-page .institutes-reality-conclusion::before,
+html:not(.theme-dark) body.institutes-page .institutes-editorial-benefit::before,
+html:not(.theme-dark) body.institutes-page .institutes-method-conclusion::before {
+  width: 4px !important;
+  background: var(--institutes-day-violet) !important;
+}
+
+html:not(.theme-dark) body.institutes-page .institutes-reality-conclusion strong,
+html:not(.theme-dark) body.institutes-page .institutes-editorial-benefit strong,
+html:not(.theme-dark) body.institutes-page .institutes-method-conclusion strong {
+  color: #1e2a50 !important;
+}
+
+html:not(.theme-dark) body.institutes-page #contenu > .section:not(.conversion-band) > .container > .eyebrow,
+html:not(.theme-dark) body.institutes-page .faq-accordion-item summary {
+  color: var(--institutes-day-violet) !important;
+}
+
+html:not(.theme-dark) body.institutes-page .faq-accordion,
+html:not(.theme-dark) body.institutes-page .faq-accordion-item {
+  border-color: rgba(107, 75, 179, 0.14);
+}
