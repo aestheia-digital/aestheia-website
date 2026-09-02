@@ -217,3 +217,13 @@ html.theme-dark body.thalasso-page #contenu > .section.section-mist.section-aqua
   color: #9b7cff !important;
   -webkit-text-fill-color: #9b7cff !important;
 }
+
+/* 17. Mobile jour : suppression du halo violet de la FAQ. */
+@media (max-width: 720px) {
+  html:not(.theme-dark) body.thalasso-page #contenu > .section.faq-section::before {
+    content: none !important;
+    display: none !important;
+    background: none !important;
+    opacity: 0 !important;
+  }
+}
