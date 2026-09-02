@@ -354,3 +354,15 @@ html:not(.theme-dark) body.institutes-page .institutes-reality-list > li:nth-chi
   color: #25325f !important;
   font-weight: 500;
 }
+
+/* --- Mode nuit : même hiérarchie visuelle, avec contraste renforcé. --- */
+html.theme-dark body.institutes-page .institutes-reality-list > li:nth-child(-n+5),
+html[data-theme="dark"] body.institutes-page .institutes-reality-list > li:nth-child(-n+5) {
+  color: #eef2ff !important;
+  font-weight: 500;
+}
+
+html.theme-dark body.institutes-page .institutes-team-issue h3,
+html[data-theme="dark"] body.institutes-page .institutes-team-issue h3 {
+  color: #b69cff !important;
+}
