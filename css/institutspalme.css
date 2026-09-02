@@ -340,10 +340,15 @@ html.theme-dark body.institutes-page .institutes-onboarding-block,
 html[data-theme="dark"] body.institutes-page .institutes-onboarding-block,
 html.theme-dark body.institutes-page .institutes-method-card,
 html[data-theme="dark"] body.institutes-page .institutes-method-card {
-  background: linear-gradient(135deg, rgba(17, 24, 61, 0.90) 0%, rgba(30, 42, 80, 0.90) 58%, rgba(39, 52, 124, 0.90) 100%) !important;
+  background: linear-gradient(135deg, rgba(17, 24, 61, 0.82) 0%, rgba(30, 42, 80, 0.82) 58%, rgba(39, 52, 124, 0.82) 100%) !important;
   border-color: rgba(255, 255, 255, 0.12) !important;
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
+}
+
+html.theme-dark body.institutes-page .institutes-method-card,
+html[data-theme="dark"] body.institutes-page .institutes-method-card {
+  background: linear-gradient(135deg, rgba(17, 24, 61, 0.90) 0%, rgba(30, 42, 80, 0.90) 58%, rgba(39, 52, 124, 0.90) 100%) !important;
 }
 
 html.theme-dark body.institutes-page .institutes-onboarding-benefit,
