@@ -194,7 +194,16 @@ html.theme-dark body.institutes-page #contenu > .section.section-mist.section-aq
   -webkit-text-fill-color: #b69cff !important;
 }
 
-/* --- Réalité métier : liseré 5 à 10 h en bleu marine du footer. --- */
+/* --- Réalité métier : liseré 5 à 10 h harmonisé avec les cartes. --- */
 body.institutes-page .institutes-reality-metric {
-  border-left-color: #1e2a50 !important;
+  position: relative;
+  border-left: 0 !important;
+}
+
+body.institutes-page .institutes-reality-metric::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: linear-gradient(180deg, #540ce4 0%, #5e17eb 52%, #00b0ff 100%);
 }
