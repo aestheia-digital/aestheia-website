@@ -414,3 +414,11 @@ html.theme-dark body.institutes-page .institutes-method-conclusion,
 html[data-theme="dark"] body.institutes-page .institutes-method-conclusion {
   padding: 0.9rem 1.15rem !important;
 }
+
+/* --- Mode nuit : légère transparence des blocs Bénéfice. --- */
+html.theme-dark body.institutes-page .institutes-editorial-benefit,
+html[data-theme="dark"] body.institutes-page .institutes-editorial-benefit,
+html.theme-dark body.institutes-page .institutes-onboarding-benefit,
+html[data-theme="dark"] body.institutes-page .institutes-onboarding-benefit {
+  background: rgba(169, 192, 220, 0.90) !important;
+}
