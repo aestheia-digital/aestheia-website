@@ -69,32 +69,18 @@ html[data-theme="dark"] body.institutes-page {
 
 html.theme-dark body.institutes-page #contenu > .section:not(.conversion-band)::after,
 html[data-theme="dark"] body.institutes-page #contenu > .section:not(.conversion-band)::after {
-  content: "" !important;
-  display: block !important;
-  visibility: visible !important;
-  position: absolute;
-  inset: 0;
-  width: auto !important;
-  height: auto !important;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 1 !important;
-  filter: none !important;
-  background:
-    radial-gradient(circle at 84% 22%, rgba(94, 23, 235, 0.20), transparent 34%),
-    radial-gradient(circle at 16% 78%, rgba(139, 92, 246, 0.12), transparent 40%) !important;
+  content: none !important;
+  display: none !important;
+  visibility: hidden !important;
+  background: none !important;
+  opacity: 0 !important;
 }
 
 html.theme-dark body.institutes-page #contenu > .section:not(.conversion-band):not(.section-aqua)::before,
 html[data-theme="dark"] body.institutes-page #contenu > .section:not(.conversion-band):not(.section-aqua)::before {
-  content: "" !important;
-  display: block !important;
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(circle at 88% 16%, rgba(94, 23, 235, 0.11), transparent 38%),
-    radial-gradient(circle at 14% 84%, rgba(139, 92, 246, 0.07), transparent 42%) !important;
+  content: none !important;
+  display: none !important;
+  background: none !important;
 }
 
 body.institutes-page .institutes-team-issue h3 {
@@ -354,9 +340,7 @@ html.theme-dark body.institutes-page .institutes-onboarding-block,
 html[data-theme="dark"] body.institutes-page .institutes-onboarding-block,
 html.theme-dark body.institutes-page .institutes-method-card,
 html[data-theme="dark"] body.institutes-page .institutes-method-card {
-  background:
-    radial-gradient(circle at 86% 22%, rgba(84, 12, 228, 0.08), transparent 36%),
-    linear-gradient(135deg, rgba(17, 24, 61, 0.90) 0%, rgba(30, 42, 80, 0.90) 58%, rgba(39, 52, 124, 0.90) 100%) !important;
+  background: linear-gradient(135deg, rgba(17, 24, 61, 0.90) 0%, rgba(30, 42, 80, 0.90) 58%, rgba(39, 52, 124, 0.90) 100%) !important;
   border-color: rgba(255, 255, 255, 0.12) !important;
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
