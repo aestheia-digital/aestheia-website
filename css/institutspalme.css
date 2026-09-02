@@ -29,9 +29,6 @@ html.theme-dark {
   --pal-veil: rgba(16, 20, 46, 0.32);
 }
 
-/* --- Les deux bandeaux ---------------------------------------------------- */
-/* Le fond est porte par un ::before, ce qui permet de retourner l'image. */
-
 html:not(.theme-dark) body.institutes-page #contenu > .section.section-aqua,
 html.theme-dark body.institutes-page #contenu > .section.section-aqua {
   background: var(--color-soft) !important;
@@ -49,13 +46,10 @@ html.theme-dark body.institutes-page #contenu > .section.section-aqua::before {
     var(--pal-image) left center / cover no-repeat !important;
 }
 
-/* Second bandeau : image retournee, la zone calme reste a gauche. */
 html:not(.theme-dark) body.institutes-page #contenu > .section.section-mist.section-aqua::before,
 html.theme-dark body.institutes-page #contenu > .section.section-mist.section-aqua::before {
   transform: scaleY(-1);
 }
-
-/* --- Cartes legerement translucides --------------------------------------- */
 
 html:not(.theme-dark) body.institutes-page .section-aqua .card,
 html:not(.theme-dark) body.institutes-page .section-aqua .sector-editorial-chapter {
@@ -71,11 +65,6 @@ html.theme-dark body.institutes-page .section-aqua .sector-editorial-chapter {
   -webkit-backdrop-filter: blur(3px);
 }
 
-/* --- Mobile --------------------------------------------------------------- */
-/* La section devient tres haute et etroite : avec "cover" l'image serait
-   zoomee a l'extreme. On la reprend a 170% de la largeur d'ecran et on la
-   repete verticalement. Point de rupture cale sur consent-manager.css. */
-
 @media (max-width: 720px) {
   html:not(.theme-dark) body.institutes-page #contenu > .section.section-aqua::before,
   html.theme-dark body.institutes-page #contenu > .section.section-aqua::before {
@@ -90,8 +79,7 @@ html.theme-dark body.institutes-page .section-aqua .sector-editorial-chapter {
   }
 }
 
-/* --- Mode nuit : on retire nuee et halos violets --------------------------- */
-
+/* --- Mode nuit : halos violets doux, sans nuée blanche. --- */
 html.theme-dark body.institutes-page,
 html[data-theme="dark"] body.institutes-page {
   --dark-body-cloud-opacity: 0;
@@ -109,11 +97,17 @@ html[data-theme="dark"] body.institutes-page #contenu > .section:not(.conversion
   filter: none !important;
 }
 
-html.theme-dark body.institutes-page #contenu > .section:not(.conversion-band):not(.section-aqua)::before {
-  background: none !important;
+html.theme-dark body.institutes-page #contenu > .section:not(.conversion-band):not(.section-aqua)::before,
+html[data-theme="dark"] body.institutes-page #contenu > .section:not(.conversion-band):not(.section-aqua)::before {
+  content: "" !important;
+  display: block !important;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 88% 16%, rgba(94, 23, 235, 0.11), transparent 38%),
+    radial-gradient(circle at 14% 84%, rgba(139, 92, 246, 0.07), transparent 42%) !important;
 }
-
-/* --- Transmission en équipe et onboarding ------------------------------- */
 
 body.institutes-page .institutes-team-issue h3 {
   margin: 0 0 0.75rem;
@@ -249,9 +243,6 @@ html.theme-dark body.institutes-page .institutes-onboarding-benefit strong {
   }
 }
 
-
-/* --- Demo harmonisation du mode jour ------------------------------------- */
-
 html:not(.theme-dark) body.institutes-page {
   --institutes-day-lavender: #eee8fa;
   --institutes-day-violet: #6b4bb3;
@@ -307,9 +298,6 @@ html:not(.theme-dark) body.institutes-page .faq-accordion-item {
   border-color: rgba(107, 75, 179, 0.14);
 }
 
-
-/* --- Mode jour : retrait des halos sur Methode et FAQ -------------------- */
-
 html:not(.theme-dark) body.institutes-page #contenu > .institutes-method-section::before,
 html:not(.theme-dark) body.institutes-page #contenu > .faq-section::before {
   content: none !important;
@@ -317,7 +305,6 @@ html:not(.theme-dark) body.institutes-page #contenu > .faq-section::before {
   background: none !important;
 }
 
-/* --- Backlink vers médecine esthétique : violet neutre et identifiable. --- */
 html:not(.theme-dark) body.institutes-page #contenu > .section.section-mist.section-aqua p > a,
 html:not(.theme-dark) body.institutes-page #contenu > .section.section-mist.section-aqua a[href$="medecine-esthetique/index.html"] {
   color: #6b4bb3 !important;
@@ -330,7 +317,6 @@ html.theme-dark body.institutes-page #contenu > .section.section-mist.section-aq
   -webkit-text-fill-color: #b69cff !important;
 }
 
-/* --- Réalité métier : liseré 5 à 10 h harmonisé avec les cartes. --- */
 body.institutes-page .institutes-reality-metric {
   position: relative;
   border-left: 0 !important;
@@ -344,12 +330,10 @@ body.institutes-page .institutes-reality-metric::before {
   background: linear-gradient(180deg, #540ce4 0%, #5e17eb 52%, #00b0ff 100%);
 }
 
-/* --- Mode jour : titre turnover en violet neutre FAQ. --- */
 html:not(.theme-dark) body.institutes-page .institutes-team-issue h3 {
   color: #6b4bb3 !important;
 }
 
-/* --- Problématiques : seul l'intitulé avant les deux-points est renforcé. --- */
 html:not(.theme-dark) body.institutes-page .institutes-reality-list > li:nth-child(-n+5),
 html.theme-dark body.institutes-page .institutes-reality-list > li:nth-child(-n+5),
 html[data-theme="dark"] body.institutes-page .institutes-reality-list > li:nth-child(-n+5) {
@@ -382,14 +366,17 @@ html.theme-dark body.institutes-page .section-aqua .institutes-editorial-chapter
 html[data-theme="dark"] body.institutes-page .section-aqua .institutes-editorial-chapter,
 html.theme-dark body.institutes-page .institutes-onboarding-block,
 html[data-theme="dark"] body.institutes-page .institutes-onboarding-block {
-  background: linear-gradient(135deg, #11183d 0%, #1e2a50 58%, #27347c 100%) !important;
+  background:
+    radial-gradient(circle at 86% 22%, rgba(84, 12, 228, 0.08), transparent 36%),
+    linear-gradient(135deg, #11183d 0%, #1e2a50 58%, #27347c 100%) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
 }
 
 html.theme-dark body.institutes-page .institutes-onboarding-benefit,
 html[data-theme="dark"] body.institutes-page .institutes-onboarding-benefit {
-  border: 1px solid rgba(0, 176, 255, 0.14) !important;
   background: #eaf5ff !important;
   color: #1e2a50 !important;
+  border-color: rgba(0, 176, 255, 0.14) !important;
 }
 
 html.theme-dark body.institutes-page .institutes-onboarding-benefit strong,
