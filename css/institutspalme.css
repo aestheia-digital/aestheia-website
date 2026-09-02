@@ -297,7 +297,7 @@ html[data-theme="dark"] body.institutes-page #contenu > .section.section-mist.se
 }
 html.theme-dark body.institutes-page #contenu > .section.section-mist.section-aqua .feature-list li::before,
 html[data-theme="dark"] body.institutes-page #contenu > .section.section-mist.section-aqua .feature-list li::before {
-  background: linear-gradient(135deg, #00b0ff, var(--color-accent)) !important;
+  background: linear-gradient(135deg, #008bd1, #4f46c7) !important;
 }
 
 body.institutes-page .institutes-reality-metric {
