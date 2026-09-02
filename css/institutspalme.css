@@ -160,3 +160,13 @@ html:not(.theme-dark) body.institutes-page .faq-accordion,
 html:not(.theme-dark) body.institutes-page .faq-accordion-item {
   border-color: rgba(107, 75, 179, 0.14);
 }
+
+
+/* --- Mode jour : retrait des halos sur Methode et FAQ -------------------- */
+
+html:not(.theme-dark) body.institutes-page #contenu > .institutes-method-section::before,
+html:not(.theme-dark) body.institutes-page #contenu > .faq-section::before {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+}
