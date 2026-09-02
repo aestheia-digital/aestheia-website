@@ -565,3 +565,38 @@ html[data-theme="dark"] body.institutes-page .section-soft.section-aqua .institu
     font-weight: 500;
   }
 }
+
+/* Mobile nuit : une seule palme agrandie, sans répétition verticale ni raccord visible. */
+@media (max-width: 720px) {
+  html.theme-dark body.institutes-page #contenu > .section.section-aqua::before,
+  html[data-theme="dark"] body.institutes-page #contenu > .section.section-aqua::before {
+    background:
+      linear-gradient(var(--pal-veil), var(--pal-veil)),
+      var(--pal-image) center center / cover no-repeat,
+      var(--color-soft) !important;
+  }
+
+  html.theme-dark body.institutes-page #contenu > .section.section-soft.section-aqua::before,
+  html[data-theme="dark"] body.institutes-page #contenu > .section.section-soft.section-aqua::before {
+    background:
+      linear-gradient(rgba(6, 10, 30, 0.78), rgba(6, 10, 30, 0.78)),
+      var(--pal-image) center center / cover no-repeat,
+      var(--color-soft) !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) and (max-width: 720px) {
+  html:not([data-theme="light"]) body.institutes-page #contenu > .section.section-aqua::before {
+    background:
+      linear-gradient(var(--pal-veil), var(--pal-veil)),
+      var(--pal-image) center center / cover no-repeat,
+      var(--color-soft) !important;
+  }
+
+  html:not([data-theme="light"]) body.institutes-page #contenu > .section.section-soft.section-aqua::before {
+    background:
+      linear-gradient(rgba(6, 10, 30, 0.78), rgba(6, 10, 30, 0.78)),
+      var(--pal-image) center center / cover no-repeat,
+      var(--color-soft) !important;
+  }
+}
