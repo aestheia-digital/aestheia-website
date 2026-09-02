@@ -137,6 +137,7 @@ html:not(.theme-dark) body.institutes-page .institutes-method-conclusion::before
 
 html:not(.theme-dark) body.institutes-page .institutes-method-conclusion {
   padding: 0.9rem 1.15rem !important;
+  border-left: 0 !important;
   border-radius: 0 10px 10px 0;
   line-height: 1.55;
 }
