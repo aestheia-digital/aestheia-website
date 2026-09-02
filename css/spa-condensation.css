@@ -362,20 +362,26 @@ html:not(.theme-dark) body.spa-page .faq-accordion-item summary {
   color: #5422b3;
 }
 
-/* CTA Spa vers Thalasso : forçage exact du bleu du footer (#1e2a50), sans gradient. */
+/* Lien interne Spa vers Thalasso : même violet que Réassurance, sans apparence de bouton. */
 body.spa-page #contenu .section.section-mist.section-aqua .sector-crosslink-cta,
 body.spa-page #contenu .section.section-mist.section-aqua .sector-crosslink-cta:hover,
 body.spa-page #contenu .section.section-mist.section-aqua .sector-crosslink-cta:focus-visible,
 html.theme-dark body.spa-page #contenu .section.section-mist.section-aqua .sector-crosslink-cta,
 html.theme-dark body.spa-page #contenu .section.section-mist.section-aqua .sector-crosslink-cta:hover,
-html.theme-dark body.spa-page #contenu .section.section-mist.section-aqua .sector-crosslink-cta:focus-visible {
-  color: #fff !important;
-  -webkit-text-fill-color: #fff !important;
-  border-color: #1e2a50 !important;
-  background-color: #1e2a50 !important;
-  background-image: none !important;
-  box-shadow: 0 10px 22px rgba(30, 42, 80, 0.16) !important;
+html.theme-dark body.spa-page #contenu .section.section-mist.section-aqua .sector-crosslink-cta:focus-visible,
+html[data-theme="dark"] body.spa-page #contenu .section.section-mist.section-aqua .sector-crosslink-cta,
+html[data-theme="dark"] body.spa-page #contenu .section.section-mist.section-aqua .sector-crosslink-cta:hover,
+html[data-theme="dark"] body.spa-page #contenu .section.section-mist.section-aqua .sector-crosslink-cta:focus-visible {
+  display: inline !important;
+  padding: 0 !important;
+  color: var(--color-accent) !important;
+  -webkit-text-fill-color: var(--color-accent) !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
   filter: none !important;
+  text-decoration: none !important;
 }
 
 /* Titres des quatre cartes Spa : même violet que les questions FAQ. */
