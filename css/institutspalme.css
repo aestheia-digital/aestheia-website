@@ -403,3 +403,14 @@ html[data-theme="dark"] body.institutes-page #contenu > .section.section-mist.se
   color: #5e17eb !important;
   -webkit-text-fill-color: #5e17eb !important;
 }
+
+/* --- Mode nuit : espace lisible entre le liseré et le texte. --- */
+html.theme-dark body.institutes-page .institutes-team-issue-benefit,
+html[data-theme="dark"] body.institutes-page .institutes-team-issue-benefit {
+  padding-left: 1rem !important;
+}
+
+html.theme-dark body.institutes-page .institutes-method-conclusion,
+html[data-theme="dark"] body.institutes-page .institutes-method-conclusion {
+  padding: 0.9rem 1.15rem !important;
+}
