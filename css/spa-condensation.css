@@ -176,9 +176,9 @@ body.spa-page .spa-method-cta a {
   align-items: center;
   gap: 0.65rem;
   color: #5e17eb !important;
-  font-family: var(--font-structure);
+  font-family: var(--font-body);
   font-size: 0.95rem;
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.4;
   text-decoration: none;
 }
