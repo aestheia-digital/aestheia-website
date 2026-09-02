@@ -431,3 +431,33 @@ html[data-theme="dark"] body.institutes-page .institutes-onboarding-benefit stro
     -webkit-backdrop-filter: none !important;
   }
 }
+
+
+/* Mode nuit : violet électrique uniforme pour les titres de section, de cartes et le lien sectoriel. */
+html.theme-dark body.institutes-page #contenu > .section:not(.conversion-band) > .container > .eyebrow,
+html[data-theme="dark"] body.institutes-page #contenu > .section:not(.conversion-band) > .container > .eyebrow,
+html.theme-dark body.institutes-page .institutes-team-issue h3,
+html[data-theme="dark"] body.institutes-page .institutes-team-issue h3,
+html.theme-dark body.institutes-page .institutes-editorial-heading h3,
+html[data-theme="dark"] body.institutes-page .institutes-editorial-heading h3,
+html.theme-dark body.institutes-page .institutes-onboarding-heading h3,
+html[data-theme="dark"] body.institutes-page .institutes-onboarding-heading h3,
+html.theme-dark body.institutes-page .institutes-method-card .card-title-with-icon,
+html[data-theme="dark"] body.institutes-page .institutes-method-card .card-title-with-icon,
+html.theme-dark body.institutes-page #contenu > .section.section-mist.section-aqua a[href$="medecine-esthetique/index.html"],
+html[data-theme="dark"] body.institutes-page #contenu > .section.section-mist.section-aqua a[href$="medecine-esthetique/index.html"] {
+  color: #5e17eb !important;
+  -webkit-text-fill-color: #5e17eb !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) body.institutes-page #contenu > .section:not(.conversion-band) > .container > .eyebrow,
+  html:not([data-theme="light"]) body.institutes-page .institutes-team-issue h3,
+  html:not([data-theme="light"]) body.institutes-page .institutes-editorial-heading h3,
+  html:not([data-theme="light"]) body.institutes-page .institutes-onboarding-heading h3,
+  html:not([data-theme="light"]) body.institutes-page .institutes-method-card .card-title-with-icon,
+  html:not([data-theme="light"]) body.institutes-page #contenu > .section.section-mist.section-aqua a[href$="medecine-esthetique/index.html"] {
+    color: #5e17eb !important;
+    -webkit-text-fill-color: #5e17eb !important;
+  }
+}
