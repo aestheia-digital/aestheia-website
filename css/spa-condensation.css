@@ -442,3 +442,41 @@ body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-he
   height: 30px !important;
   flex: 0 0 30px !important;
 }
+
+/* Blocs bleu clair : texte plus dense pour renforcer le contraste. */
+body.spa-page .sector-reality-conclusion,
+body.spa-page .sector-editorial-benefit {
+  color: #0b1738 !important;
+  font-weight: 600 !important;
+}
+
+body.spa-page .sector-reality-conclusion strong,
+body.spa-page .sector-editorial-benefit strong {
+  color: #07112d !important;
+}
+
+html:not(.theme-dark) body.spa-page .spa-turnover-benefit {
+  color: #0b1738 !important;
+  font-weight: 600 !important;
+}
+
+html:not(.theme-dark) body.spa-page .spa-turnover-benefit strong {
+  color: #07112d !important;
+}
+
+@media (max-width: 720px) {
+  html.theme-dark body.spa-page .spa-turnover-benefit,
+  html[data-theme="dark"] body.spa-page .spa-turnover-benefit,
+  html.theme-dark body.spa-page .sector-editorial-benefit,
+  html[data-theme="dark"] body.spa-page .sector-editorial-benefit {
+    color: #0b1738 !important;
+    font-weight: 600 !important;
+  }
+
+  html.theme-dark body.spa-page .spa-turnover-benefit strong,
+  html[data-theme="dark"] body.spa-page .spa-turnover-benefit strong,
+  html.theme-dark body.spa-page .sector-editorial-benefit strong,
+  html[data-theme="dark"] body.spa-page .sector-editorial-benefit strong {
+    color: #07112d !important;
+  }
+}
