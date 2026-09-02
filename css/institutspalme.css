@@ -421,21 +421,3 @@ html.theme-dark body.institutes-page .institutes-onboarding-benefit strong,
 html[data-theme="dark"] body.institutes-page .institutes-onboarding-benefit strong {
   color: #1e2a50 !important;
 }
-
-/* Mode nuit : ombres localisées pour préserver la lisibilité sur les palmes. */
-html.theme-dark body.institutes-page #contenu > .section.section-soft.section-aqua::after,
-html[data-theme="dark"] body.institutes-page #contenu > .section.section-soft.section-aqua::after {
-  background: linear-gradient(
-    180deg,
-    rgba(2, 5, 18, 0.68) 0,
-    rgba(2, 5, 18, 0.44) 150px,
-    transparent 330px
-  ) !important;
-}
-
-html.theme-dark body.institutes-page #contenu > .section.section-mist.section-aqua::after,
-html[data-theme="dark"] body.institutes-page #contenu > .section.section-mist.section-aqua::after {
-  background:
-    radial-gradient(ellipse 62% 230px at 0% 0%, rgba(2, 5, 18, 0.74) 0%, rgba(2, 5, 18, 0.48) 54%, transparent 100%),
-    linear-gradient(0deg, rgba(2, 5, 18, 0.72) 0, rgba(2, 5, 18, 0.46) 140px, transparent 320px) !important;
-}
