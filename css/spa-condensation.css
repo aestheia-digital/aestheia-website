@@ -427,3 +427,15 @@ body.spa-page .spa-turnover-benefit::before {
   width: 4px !important;
   background: linear-gradient(180deg, #540ce4 0%, #00b0ff 100%) !important;
 }
+
+/* Harmonisation des quatre titres de cartes avec le bloc Turnover. */
+body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-heading h3 {
+  font-size: 1.18rem !important;
+  line-height: 1.25 !important;
+}
+
+body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-heading .title-pictogram {
+  width: 30px !important;
+  height: 30px !important;
+  flex: 0 0 30px !important;
+}
