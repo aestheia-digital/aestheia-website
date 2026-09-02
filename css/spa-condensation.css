@@ -245,7 +245,9 @@ body.spa-page .spa-turnover-benefit {
 
 body.spa-page .spa-turnover-heading h3 {
   color: var(--color-accent);
+  font-family: var(--font-structure);
   font-size: 1.18rem;
+  font-weight: 500;
   line-height: 1.25;
 }
 
