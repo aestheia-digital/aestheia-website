@@ -10,13 +10,13 @@
 html.theme-dark,
 html[data-theme="dark"] {
   --pal-image: url("../assets/images/metiers/palmenuit.webp");
-  --pal-veil: rgba(6, 10, 30, 0.66);
+  --pal-veil: rgba(6, 10, 30, 0.72);
 }
 
 @media (prefers-color-scheme: dark) {
   html:not([data-theme="light"]) {
     --pal-image: url("../assets/images/metiers/palmenuit.webp");
-    --pal-veil: rgba(6, 10, 30, 0.66);
+    --pal-veil: rgba(6, 10, 30, 0.72);
   }
 }
 
