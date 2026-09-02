@@ -92,11 +92,21 @@ html.theme-dark body.institutes-page .section-aqua .sector-editorial-chapter {
 
 /* --- Mode nuit : on retire nuee et halos violets --------------------------- */
 
-html.theme-dark body.institutes-page #contenu > .section:not(.conversion-band)::after {
+html.theme-dark body.institutes-page,
+html[data-theme="dark"] body.institutes-page {
+  --dark-body-cloud-opacity: 0;
+}
+
+html.theme-dark body.institutes-page #contenu > .section:not(.conversion-band)::after,
+html[data-theme="dark"] body.institutes-page #contenu > .section:not(.conversion-band)::after {
   content: none !important;
   display: none !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
   background: none !important;
   opacity: 0 !important;
+  filter: none !important;
 }
 
 html.theme-dark body.institutes-page #contenu > .section:not(.conversion-band):not(.section-aqua)::before {
@@ -159,4 +169,14 @@ html:not(.theme-dark) body.institutes-page .faq-accordion-item summary {
 html:not(.theme-dark) body.institutes-page .faq-accordion,
 html:not(.theme-dark) body.institutes-page .faq-accordion-item {
   border-color: rgba(107, 75, 179, 0.14);
+}
+
+
+/* --- Mode jour : retrait des halos sur Methode et FAQ -------------------- */
+
+html:not(.theme-dark) body.institutes-page #contenu > .institutes-method-section::before,
+html:not(.theme-dark) body.institutes-page #contenu > .faq-section::before {
+  content: none !important;
+  display: none !important;
+  background: none !important;
 }
