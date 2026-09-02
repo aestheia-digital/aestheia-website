@@ -1,6 +1,6 @@
-/* ==========================================================================
+/* ========================================================================== 
    Bandeaux palme - page Instituts & independantes
-   ==========================================================================
+   ========================================================================== 
    Feuille chargee UNIQUEMENT par instituts-independantes/index.html,
    APRES consent-manager.css.
 
@@ -347,4 +347,10 @@ body.institutes-page .institutes-reality-metric::before {
 /* --- Mode jour : titre turnover en violet neutre FAQ. --- */
 html:not(.theme-dark) body.institutes-page .institutes-team-issue h3 {
   color: #6b4bb3 !important;
+}
+
+/* --- Mode jour : équilibre visuel des problématiques principales. --- */
+html:not(.theme-dark) body.institutes-page .institutes-reality-list > li:nth-child(-n+5) {
+  color: #25325f !important;
+  font-weight: 500;
 }
