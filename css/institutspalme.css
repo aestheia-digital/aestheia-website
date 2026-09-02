@@ -415,10 +415,26 @@ html[data-theme="dark"] body.institutes-page .institutes-method-conclusion {
   padding: 0.9rem 1.15rem !important;
 }
 
-/* --- Mode nuit : légère transparence des blocs Bénéfice. --- */
+/* --- Mode nuit : blocs clairs harmonisés sur le lavande du mode jour. --- */
+html.theme-dark body.institutes-page .institutes-reality-conclusion,
+html[data-theme="dark"] body.institutes-page .institutes-reality-conclusion,
 html.theme-dark body.institutes-page .institutes-editorial-benefit,
 html[data-theme="dark"] body.institutes-page .institutes-editorial-benefit,
+html.theme-dark body.institutes-page .institutes-method-conclusion,
+html[data-theme="dark"] body.institutes-page .institutes-method-conclusion,
 html.theme-dark body.institutes-page .institutes-onboarding-benefit,
 html[data-theme="dark"] body.institutes-page .institutes-onboarding-benefit {
-  background: rgba(169, 192, 220, 0.90) !important;
+  background: rgba(238, 232, 250, 0.90) !important;
+  color: #1e2a50 !important;
+}
+
+html.theme-dark body.institutes-page .institutes-reality-conclusion strong,
+html[data-theme="dark"] body.institutes-page .institutes-reality-conclusion strong,
+html.theme-dark body.institutes-page .institutes-editorial-benefit strong,
+html[data-theme="dark"] body.institutes-page .institutes-editorial-benefit strong,
+html.theme-dark body.institutes-page .institutes-method-conclusion strong,
+html[data-theme="dark"] body.institutes-page .institutes-method-conclusion strong,
+html.theme-dark body.institutes-page .institutes-onboarding-benefit strong,
+html[data-theme="dark"] body.institutes-page .institutes-onboarding-benefit strong {
+  color: #1e2a50 !important;
 }
