@@ -39,6 +39,130 @@
           --dark-body-halo-secondary: rgba(139, 92, 246, 0.115);
         }
       }
+
+      .thalasso-turnover-block {
+        display: grid;
+        grid-template-columns: minmax(190px, 0.75fr) minmax(280px, 1.35fr) minmax(230px, 0.9fr);
+        gap: 1.5rem;
+        align-items: center;
+        width: 100%;
+        margin-top: 2rem;
+        padding: 1.35rem 1.5rem;
+        border: 1px solid var(--color-border);
+        border-radius: 14px;
+        background: var(--color-bg);
+      }
+
+      .thalasso-turnover-heading {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+      }
+
+      .thalasso-turnover-pictogram {
+        width: 30px;
+        height: 30px;
+        flex: 0 0 30px;
+      }
+
+      .thalasso-turnover-heading h3,
+      .thalasso-turnover-copy,
+      .thalasso-turnover-benefit {
+        margin: 0;
+      }
+
+      .thalasso-turnover-heading h3 {
+        color: var(--color-accent);
+        font-size: 1.18rem;
+        line-height: 1.25;
+      }
+
+      .thalasso-turnover-copy,
+      .thalasso-turnover-benefit {
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      .thalasso-turnover-benefit {
+        position: relative;
+        overflow: hidden;
+        padding: 0.9rem 1rem;
+        border-radius: 0 10px 10px 0;
+        background: #eaf5ff;
+        color: var(--color-primary);
+      }
+
+      .thalasso-turnover-benefit::before {
+        content: "";
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: 4px;
+        background: linear-gradient(180deg, rgba(94, 23, 235, 0.82), rgba(0, 176, 255, 0.76));
+      }
+
+      .thalasso-turnover-benefit strong {
+        color: var(--color-primary);
+      }
+
+      html.theme-dark .thalasso-turnover-benefit {
+        color: #f3f6ff;
+        background: linear-gradient(135deg, #26365f 0%, #2a3e68 52%, #304673 100%);
+      }
+
+      html.theme-dark .thalasso-turnover-benefit strong {
+        color: #fff;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        html:not(.theme-dark) .thalasso-turnover-benefit {
+          color: #f3f6ff;
+          background: linear-gradient(135deg, #26365f 0%, #2a3e68 52%, #304673 100%);
+        }
+
+        html:not(.theme-dark) .thalasso-turnover-benefit strong {
+          color: #fff;
+        }
+      }
+
+      @media (max-width: 960px) {
+        .thalasso-turnover-block {
+          grid-template-columns: minmax(190px, 0.8fr) minmax(0, 1.2fr);
+        }
+
+        .thalasso-turnover-benefit {
+          grid-column: 1 / -1;
+        }
+      }
+
+      @media (max-width: 720px) {
+        .thalasso-turnover-block {
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+          gap: 1rem;
+          padding: 1.2rem;
+        }
+
+        .thalasso-turnover-heading {
+          display: contents;
+        }
+
+        .thalasso-turnover-pictogram {
+          order: 1;
+        }
+
+        .thalasso-turnover-heading h3 {
+          order: 2;
+        }
+
+        .thalasso-turnover-copy {
+          order: 3;
+        }
+
+        .thalasso-turnover-benefit {
+          order: 4;
+        }
+      }
     </style>
   </head>
   <body class="thalasso-page">
@@ -103,6 +227,7 @@
               <li>les plannings de soins se construisent et se modifient à la main, avec les erreurs que cela suppose ;</li>
               <li>l'information circule difficilement entre la réservation, les soins, l'hébergement et la restauration ;</li>
               <li>les périodes creuses se constatent au lieu de s'anticiper.</li>
+              <li><strong>Turnover et continuité opérationnelle.</strong> Dans un établissement thermal ou de thalassothérapie, l'arrivée de nouveaux collaborateurs implique souvent de retransmettre de nombreuses procédures : traitement des demandes de séjour, devis, réservations, informations clients, relances, coordination entre services ou utilisation des outils internes. Lorsque ces connaissances reposent principalement sur les équipes en place, chaque départ peut entraîner une nouvelle phase de transmission et mobiliser du temps d'encadrement.</li>
               </ul>
         </div>
       </section>
@@ -116,6 +241,11 @@
             <article class="sector-editorial-chapter"><div class="sector-editorial-heading"><h3 class="title-with-icon"><img class="title-pictogram" src="../assets/icons/complete-coordination.svg" alt="" aria-hidden="true"><span>Plannings de soins et coordination des équipes</span></h3></div><div class="sector-editorial-content"><p>Affectation des soins facilitée, modifications propagées automatiquement aux équipes concernées, fiches de journée générées pour chaque service. La réservation, les cabines de soins et l'accueil travaillent enfin sur la même information.</p><p class="sector-editorial-benefit"><strong>Bénéfice attendu :</strong> moins d'erreurs de planning, moins de temps passé en coordination, des équipes informées en temps réel.</p></div></article>
             <article class="sector-editorial-chapter"><div class="sector-editorial-heading"><h3 class="title-with-icon"><img class="title-pictogram" src="../assets/icons/acquisition-target.svg" alt="" aria-hidden="true"><span>Anticipation des périodes creuses</span></h3></div><div class="sector-editorial-content"><p>Le système suit le remplissage à venir et prépare les actions de réactivation : anciens curistes à recontacter, offres de mi-saison, relances des demandes non abouties des mois précédents, avec validation de vos équipes avant tout envoi.</p><p class="sector-editorial-benefit"><strong>Bénéfice attendu :</strong> des creux de saison anticipés plusieurs semaines à l'avance, une base de contacts qui travaille pour vous.</p><p><a class="thalasso-system-link" href="../index.html#services">le détail de nos systèmes de gestion des demandes et devis de séjours</a></p></div></article>
           </div>
+          <article class="thalasso-turnover-block">
+            <div class="thalasso-turnover-heading"><img class="thalasso-turnover-pictogram" src="../assets/icons/complete-coordination.svg" alt="" aria-hidden="true"><h3>Procédures, onboarding &amp; assistant interne</h3></div>
+            <p class="thalasso-turnover-copy">Structuration des procédures administratives et commerciales, centralisation des ressources internes, parcours d'intégration et automatisation des tâches répétitives. Un assistant interne connecté aux ressources validées de l'établissement peut également aider les collaborateurs à retrouver rapidement la bonne procédure.</p>
+            <p class="thalasso-turnover-benefit"><strong>Bénéfice :</strong> faciliter la prise de poste et permettre aux responsables de concentrer leur temps sur les situations qui nécessitent réellement leur expertise.</p>
+          </article>
         </div>
       </section>
       <section class="section sector-method-section">
