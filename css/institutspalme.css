@@ -87,14 +87,20 @@ html[data-theme="dark"] body.institutes-page {
 
 html.theme-dark body.institutes-page #contenu > .section:not(.conversion-band)::after,
 html[data-theme="dark"] body.institutes-page #contenu > .section:not(.conversion-band)::after {
-  content: none !important;
-  display: none !important;
-  visibility: hidden !important;
-  width: 0 !important;
-  height: 0 !important;
-  background: none !important;
-  opacity: 0 !important;
+  content: "" !important;
+  display: block !important;
+  visibility: visible !important;
+  position: absolute;
+  inset: 0;
+  width: auto !important;
+  height: auto !important;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 1 !important;
   filter: none !important;
+  background:
+    radial-gradient(circle at 84% 22%, rgba(94, 23, 235, 0.20), transparent 34%),
+    radial-gradient(circle at 16% 78%, rgba(139, 92, 246, 0.12), transparent 40%) !important;
 }
 
 html.theme-dark body.institutes-page #contenu > .section:not(.conversion-band):not(.section-aqua)::before,
@@ -374,12 +380,18 @@ html[data-theme="dark"] body.institutes-page .institutes-onboarding-block {
 
 html.theme-dark body.institutes-page .institutes-onboarding-benefit,
 html[data-theme="dark"] body.institutes-page .institutes-onboarding-benefit {
-  background: #eaf5ff !important;
-  color: #1e2a50 !important;
+  background: #a9c0dc !important;
+  color: #14244a !important;
   border-color: rgba(0, 176, 255, 0.14) !important;
+}
+
+html.theme-dark body.institutes-page .institutes-onboarding-benefit::before,
+html[data-theme="dark"] body.institutes-page .institutes-onboarding-benefit::before {
+  width: 4px !important;
+  background: linear-gradient(180deg, rgba(94, 23, 235, 0.82), rgba(0, 176, 255, 0.76)) !important;
 }
 
 html.theme-dark body.institutes-page .institutes-onboarding-benefit strong,
 html[data-theme="dark"] body.institutes-page .institutes-onboarding-benefit strong {
-  color: #1e2a50 !important;
+  color: #14244a !important;
 }
