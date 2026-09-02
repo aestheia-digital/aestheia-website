@@ -204,3 +204,8 @@ html:not(.theme-dark) body.thalasso-page {
   --halo-violet-primary: transparent;
   --halo-violet-secondary: transparent;
 }
+
+/* 16. Mode jour : backlink vers la page Spa en violet neutre. */
+html:not(.theme-dark) body.thalasso-page #contenu > .section.section-mist.section-aqua a[href="../spa-hotelier/index.html"] {
+  color: #5422b3 !important;
+}
