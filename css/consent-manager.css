@@ -207,3 +207,70 @@ html.theme-dark .site-header .header-phone-direct:focus-visible {
     -webkit-text-fill-color: transparent !important;
   }
 }
+
+/* Mode nuit — liseré unique violet → bleu sur tous les blocs bénéfice / conclusion. */
+html.theme-dark #contenu [class*="benefit"],
+html.theme-dark #contenu .sector-reality-conclusion,
+html.theme-dark #contenu .sector-method-conclusion,
+html.theme-dark #contenu .institutes-reality-conclusion,
+html.theme-dark #contenu .institutes-method-conclusion,
+html.theme-dark #contenu .medicine-reality-conclusion,
+html.theme-dark #contenu .medicine-method-conclusion,
+html[data-theme="dark"] #contenu [class*="benefit"],
+html[data-theme="dark"] #contenu .sector-reality-conclusion,
+html[data-theme="dark"] #contenu .sector-method-conclusion {
+  position: relative;
+  overflow: hidden;
+  border-left: 0 !important;
+}
+
+html.theme-dark #contenu [class*="benefit"]::before,
+html.theme-dark #contenu .sector-reality-conclusion::before,
+html.theme-dark #contenu .sector-method-conclusion::before,
+html.theme-dark #contenu .institutes-reality-conclusion::before,
+html.theme-dark #contenu .institutes-method-conclusion::before,
+html.theme-dark #contenu .medicine-reality-conclusion::before,
+html.theme-dark #contenu .medicine-method-conclusion::before,
+html[data-theme="dark"] #contenu [class*="benefit"]::before,
+html[data-theme="dark"] #contenu .sector-reality-conclusion::before,
+html[data-theme="dark"] #contenu .sector-method-conclusion::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 auto 0 0 !important;
+  width: 3px !important;
+  height: auto !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  background: linear-gradient(180deg, rgba(94, 23, 235, 0.82) 0%, rgba(0, 176, 255, 0.76) 100%) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-light) #contenu [class*="benefit"],
+  html:not(.theme-light) #contenu .sector-reality-conclusion,
+  html:not(.theme-light) #contenu .sector-method-conclusion,
+  html:not(.theme-light) #contenu .institutes-reality-conclusion,
+  html:not(.theme-light) #contenu .institutes-method-conclusion,
+  html:not(.theme-light) #contenu .medicine-reality-conclusion,
+  html:not(.theme-light) #contenu .medicine-method-conclusion {
+    position: relative;
+    overflow: hidden;
+    border-left: 0 !important;
+  }
+
+  html:not(.theme-light) #contenu [class*="benefit"]::before,
+  html:not(.theme-light) #contenu .sector-reality-conclusion::before,
+  html:not(.theme-light) #contenu .sector-method-conclusion::before,
+  html:not(.theme-light) #contenu .institutes-reality-conclusion::before,
+  html:not(.theme-light) #contenu .institutes-method-conclusion::before,
+  html:not(.theme-light) #contenu .medicine-reality-conclusion::before,
+  html:not(.theme-light) #contenu .medicine-method-conclusion::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 auto 0 0 !important;
+    width: 3px !important;
+    height: auto !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    background: linear-gradient(180deg, rgba(94, 23, 235, 0.82) 0%, rgba(0, 176, 255, 0.76) 100%) !important;
+  }
+}
