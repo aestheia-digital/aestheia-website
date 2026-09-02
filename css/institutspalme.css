@@ -600,3 +600,20 @@ html[data-theme="dark"] body.institutes-page .section-soft.section-aqua .institu
       var(--color-soft) !important;
   }
 }
+
+/* Tous supports : texte bleu des blocs lavande plus présent, sans passer en gras. */
+body.institutes-page .institutes-reality-conclusion,
+body.institutes-page .institutes-editorial-benefit,
+body.institutes-page .institutes-method-conclusion,
+body.institutes-page .institutes-onboarding-benefit {
+  color: #1e2a50 !important;
+  font-weight: 550;
+}
+
+body.institutes-page .institutes-reality-conclusion strong,
+body.institutes-page .institutes-editorial-benefit strong,
+body.institutes-page .institutes-method-conclusion strong,
+body.institutes-page .institutes-onboarding-benefit strong {
+  color: #1e2a50 !important;
+  font-weight: 550;
+}
