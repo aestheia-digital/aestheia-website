@@ -509,8 +509,20 @@ html[data-theme="dark"] body.spa-page .spa-turnover-benefit strong {
   color: #07112d !important;
 }
 
-/* Mode nuit : une seule teinte violette pour tous les intitulés de bandeau Spa. */
+/* Mode nuit : violet électrique uniforme pour les intitulés de bandeau Spa. */
 html.theme-dark body.spa-page #contenu > .section:not(.conversion-band) > .container > .eyebrow,
 html[data-theme="dark"] body.spa-page #contenu > .section:not(.conversion-band) > .container > .eyebrow {
-  color: #8b6fe8 !important;
+  color: #6f2cff !important;
+}
+
+/* Réassurance nuit : les trois puces reprennent le même violet électrique. */
+html.theme-dark body.spa-page #contenu > .section.section-mist.section-aqua .feature-list li::marker,
+html[data-theme="dark"] body.spa-page #contenu > .section.section-mist.section-aqua .feature-list li::marker {
+  color: #6f2cff !important;
+}
+
+html.theme-dark body.spa-page #contenu > .section.section-mist.section-aqua .feature-list li::before,
+html[data-theme="dark"] body.spa-page #contenu > .section.section-mist.section-aqua .feature-list li::before {
+  color: #6f2cff !important;
+  background-color: #6f2cff !important;
 }
