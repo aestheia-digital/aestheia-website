@@ -376,3 +376,23 @@ html.theme-dark body.institutes-page .institutes-team-issue h3,
 html[data-theme="dark"] body.institutes-page .institutes-team-issue h3 {
   color: #b69cff !important;
 }
+
+/* --- Preview : harmonisation des cartes avec le bandeau Premier échange, mode nuit uniquement. --- */
+html.theme-dark body.institutes-page .section-aqua .institutes-editorial-chapter,
+html[data-theme="dark"] body.institutes-page .section-aqua .institutes-editorial-chapter,
+html.theme-dark body.institutes-page .institutes-onboarding-block,
+html[data-theme="dark"] body.institutes-page .institutes-onboarding-block {
+  background: linear-gradient(135deg, #11183d 0%, #1e2a50 58%, #27347c 100%) !important;
+}
+
+html.theme-dark body.institutes-page .institutes-onboarding-benefit,
+html[data-theme="dark"] body.institutes-page .institutes-onboarding-benefit {
+  border: 1px solid rgba(0, 176, 255, 0.14) !important;
+  background: #eaf5ff !important;
+  color: #1e2a50 !important;
+}
+
+html.theme-dark body.institutes-page .institutes-onboarding-benefit strong,
+html[data-theme="dark"] body.institutes-page .institutes-onboarding-benefit strong {
+  color: #1e2a50 !important;
+}
