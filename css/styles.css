@@ -4862,3 +4862,16 @@ html:not(.theme-dark) #contenu > .home-hero ~ .section:not(.conversion-band) > .
 html.theme-dark #contenu > .home-hero ~ .section:not(.conversion-band) > .container > .eyebrow {
   color: #b69cff !important;
 }
+
+/* Mode nuit : aucune nuée de micro-particules sur les pages du site. */
+html.theme-dark #contenu > .section:not(.conversion-band)::after,
+html[data-theme="dark"] #contenu > .section:not(.conversion-band)::after,
+html.theme-dark .article-page > .article-header::after,
+html[data-theme="dark"] .article-page > .article-header::after,
+html.theme-dark .article-page > .article-content::after,
+html[data-theme="dark"] .article-page > .article-content::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  opacity: 0 !important;
+}
