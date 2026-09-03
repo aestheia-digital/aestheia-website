@@ -468,7 +468,6 @@ html[data-theme="dark"] body.institutes-page .institutes-onboarding-benefit stro
   }
 }
 
-
 /* Mode nuit : lavande uniforme pour les intitulés de section, les titres de cartes et le lien sectoriel. */
 html.theme-dark body.institutes-page #contenu > .section:not(.conversion-band) > .container > .eyebrow,
 html[data-theme="dark"] body.institutes-page #contenu > .section:not(.conversion-band) > .container > .eyebrow,
@@ -611,6 +610,25 @@ html[data-theme="dark"] body.institutes-page .section-soft.section-aqua .institu
   html:not([data-theme="light"]) body.institutes-page #contenu > .section.section-soft.section-aqua::before {
     background:
       linear-gradient(rgba(6, 10, 30, 0.78), rgba(6, 10, 30, 0.78)),
+      var(--pal-image) center center / cover no-repeat,
+      var(--color-soft) !important;
+  }
+}
+
+/* Mobile jour : une seule palme sur le bandeau « Pour qui ? », sans répétition ni raccord visible. */
+@media (max-width: 720px) {
+  html[data-theme="light"] body.institutes-page #contenu > .section.section-mist.section-aqua::before {
+    background:
+      linear-gradient(var(--pal-veil), var(--pal-veil)),
+      var(--pal-image) center center / cover no-repeat,
+      var(--color-soft) !important;
+  }
+}
+
+@media (prefers-color-scheme: light) and (max-width: 720px) {
+  html:not(.theme-dark):not([data-theme="dark"]) body.institutes-page #contenu > .section.section-mist.section-aqua::before {
+    background:
+      linear-gradient(var(--pal-veil), var(--pal-veil)),
       var(--pal-image) center center / cover no-repeat,
       var(--color-soft) !important;
   }
