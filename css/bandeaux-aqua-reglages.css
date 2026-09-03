@@ -281,3 +281,19 @@ html.theme-dark body.thalasso-page .faq-answer p {
     color: #a9c0dc !important;
   }
 }
+
+/* 20. Mode jour : cinq cartes systèmes, titres et pictogrammes harmonisés. */
+html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-heading h3,
+html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .thalasso-turnover-heading h3 {
+  color: #5422b3 !important;
+  font-size: 1.18rem !important;
+  line-height: 1.25 !important;
+  font-weight: 600 !important;
+}
+
+html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-heading .title-pictogram,
+html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .thalasso-turnover-pictogram {
+  width: 32px !important;
+  height: 32px !important;
+  flex: 0 0 32px !important;
+}
