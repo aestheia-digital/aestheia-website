@@ -641,3 +641,14 @@ html[data-theme="light"] body.institutes-page #contenu > .section.section-mist.s
     background: linear-gradient(135deg, #00b0ff, var(--color-accent)) !important;
   }
 }
+
+/* La réalité du métier — mode jour uniquement : halo violet légèrement adouci sur tous les supports. */
+html[data-theme="light"] body.institutes-page #contenu > .institutes-reality-section::before {
+  background: radial-gradient(circle at 88% 14%, rgba(94, 23, 235, 0.035), transparent 34%) !important;
+}
+
+@media (prefers-color-scheme: light) {
+  html:not(.theme-dark):not([data-theme="dark"]) body.institutes-page #contenu > .institutes-reality-section::before {
+    background: radial-gradient(circle at 88% 14%, rgba(94, 23, 235, 0.035), transparent 34%) !important;
+  }
+}
