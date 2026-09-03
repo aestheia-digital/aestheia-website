@@ -129,11 +129,11 @@
         color: transparent;
         background: linear-gradient(90deg, transparent 0%, transparent 37%, #0077dd 45%, #00b0ff 50%, #4dc8ff 54%, transparent 63%, transparent 100%);
         background-size: 260% 100%;
-        background-position: 150% 0;
+        background-position: 180% 0;
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent !important;
-        animation: contact-phone-blue-sweep 4.8s ease-in-out infinite;
+        animation: contact-phone-blue-sweep 6.4s linear infinite;
       }
 
       /* Numéro du footer : violet statique, sans balayage ni halo. */
@@ -154,9 +154,9 @@
       }
 
       @keyframes contact-phone-blue-sweep {
-        0%, 18% { background-position: 150% 0; }
-        58% { background-position: -150% 0; }
-        59%, 100% { background-position: -150% 0; }
+        0%, 15% { background-position: 180% 0; }
+        70% { background-position: -260% 0; }
+        70.01%, 100% { background-position: -260% 0; }
       }
 
       @media (prefers-reduced-motion: reduce) {
