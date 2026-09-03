@@ -1,13 +1,13 @@
-/* Page TPE-PME — FAQ en mode jour : même bleu intermédiaire que les blocs Bénéfice. */
+/* Page TPE-PME — FAQ en mode jour : bleu renforcé pour une meilleure lisibilité. */
 html[data-theme="light"] body.pme-page .faq-section .faq-accordion-item summary,
 html[data-theme="light"] body.pme-page .faq-section .faq-answer p {
-  color: #415b8f !important;
+  color: #314d86 !important;
 }
 
 @media (prefers-color-scheme: light) {
   html:not(.theme-dark):not([data-theme="dark"]) body.pme-page .faq-section .faq-accordion-item summary,
   html:not(.theme-dark):not([data-theme="dark"]) body.pme-page .faq-section .faq-answer p {
-    color: #415b8f !important;
+    color: #314d86 !important;
   }
 }
 
