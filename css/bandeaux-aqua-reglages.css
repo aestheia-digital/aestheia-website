@@ -342,3 +342,17 @@ html:not(.theme-dark) body.thalasso-page .sector-reality-list li:last-child stro
     font-weight: 500 !important;
   }
 }
+
+/* Mode jour desktop : textes bleu marine des cinq cartes légèrement affinés. */
+@media (min-width: 1051px) {
+  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-content > p,
+  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .thalasso-turnover-copy,
+  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .thalasso-turnover-benefit {
+    font-weight: 400 !important;
+  }
+
+  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-benefit strong,
+  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .thalasso-turnover-benefit strong {
+    font-weight: 600 !important;
+  }
+}
