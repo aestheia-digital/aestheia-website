@@ -84,7 +84,7 @@ html[data-theme="dark"] body.medicine-page .faq-accordion-item summary {
 
 html.theme-dark body.medicine-page .faq-accordion-item summary h3,
 html[data-theme="dark"] body.medicine-page .faq-accordion-item summary h3 {
-  color: #5bb6e2 !important;
+  color: #7fa6d8 !important;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -93,6 +93,6 @@ html[data-theme="dark"] body.medicine-page .faq-accordion-item summary h3 {
   }
 
   html:not(.theme-dark):not([data-theme="light"]) body.medicine-page .faq-accordion-item summary h3 {
-    color: #5bb6e2 !important;
+    color: #7fa6d8 !important;
   }
 }
