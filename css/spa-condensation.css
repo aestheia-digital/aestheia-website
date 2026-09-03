@@ -555,3 +555,14 @@ html.theme-dark body.spa-page .faq-accordion-item summary,
 html[data-theme="dark"] body.spa-page .faq-accordion-item summary {
   color: #a9c0dc !important;
 }
+
+/* Mobile : respiration supplémentaire entre les titres et les textes des cartes Systèmes. */
+@media (max-width: 720px) {
+  body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-content {
+    margin-top: 1.35rem;
+  }
+
+  body.spa-page #contenu > .section.section-soft.section-aqua .spa-turnover-heading {
+    margin-bottom: 0.35rem;
+  }
+}
