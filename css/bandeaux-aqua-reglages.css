@@ -289,3 +289,36 @@ html:not(.theme-dark) body.thalasso-page #contenu > .section.section-mist.sectio
     --aqua-veil: rgba(248, 250, 255, 0.56);
   }
 }
+
+/* Mode jour : bulles maintenues sombres mais repoussées en arrière-plan. */
+html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua::before {
+  --aqua-veil: rgba(248, 250, 255, 0.60);
+  opacity: 0.68;
+  filter: brightness(0.80) contrast(1.08) saturate(1.02);
+}
+
+html:not(.theme-dark) body.thalasso-page #contenu > .section.section-mist.section-aqua {
+  --aqua-veil: rgba(248, 250, 255, 0.70);
+}
+
+@media (min-width: 721px) and (max-width: 1050px) {
+  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua::before {
+    --aqua-veil: rgba(248, 250, 255, 0.64);
+    opacity: 0.64;
+  }
+
+  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-mist.section-aqua {
+    --aqua-veil: rgba(248, 250, 255, 0.73);
+  }
+}
+
+@media (max-width: 720px) {
+  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua::before {
+    --aqua-veil: rgba(248, 250, 255, 0.68);
+    opacity: 0.60;
+  }
+
+  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-mist.section-aqua {
+    --aqua-veil: rgba(248, 250, 255, 0.76);
+  }
+}
