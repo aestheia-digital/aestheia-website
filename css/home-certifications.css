@@ -364,3 +364,20 @@ html.theme-dark #contenu > .home-hero ~ .location-section::before {
     background: none !important;
   }
 }
+
+/* Accueil jour tablette + ordinateur : cartes légèrement plus présentes et plus dimensionnées visuellement. */
+@media (min-width: 721px) and (prefers-color-scheme: light) {
+  .home-problems .problem-card,
+  .home-offers .offer-card,
+  .home-engagements .engagement-card,
+  .home-safety .safety-grid .card {
+    border-color: rgba(94, 23, 235, 0.18);
+    box-shadow: 0 18px 42px rgba(30, 42, 80, 0.1);
+  }
+
+  .home-method .process-strip {
+    border-color: rgba(94, 23, 235, 0.2);
+    background: rgba(94, 23, 235, 0.2);
+    box-shadow: 0 18px 42px rgba(30, 42, 80, 0.08);
+  }
+}
