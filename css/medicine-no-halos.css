@@ -25,6 +25,16 @@ html[data-theme="dark"] body.medicine-page #contenu > .section:not(.conversion-b
   opacity: 0 !important;
 }
 
+
+/* Mobile jour et nuit : bandeau de conversion sans halo violet. */
+@media (max-width: 720px) {
+  body.medicine-page #contenu > .conversion-band {
+    background:
+      radial-gradient(circle at 12% 88%, rgba(0, 176, 255, 0.12), transparent 38%),
+      linear-gradient(135deg, #11183d 0%, #1e2a50 58%, #27347c 100%) !important;
+  }
+}
+
 /* Réalité du cabinet : seuls les segments explicitement balisés sont légèrement renforcés. */
 body.medicine-page .feature-list.sector-reality-list li {
   font-weight: 400;
