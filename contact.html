@@ -38,6 +38,23 @@
         }
       }
 
+
+      /* Contact — mode nuit : halo violet atténué dans « Coordonnées d’AesthéIA ». */
+      html.theme-dark #contenu > .contact-cube-hero + .section + .section-soft,
+      html[data-theme="dark"] #contenu > .contact-cube-hero + .section + .section-soft {
+        background:
+          radial-gradient(circle at 90% 18%, rgba(94, 23, 235, 0.09), transparent 34%),
+          #11183d;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        html:not(.theme-dark):not([data-theme="light"]) #contenu > .contact-cube-hero + .section + .section-soft {
+          background:
+            radial-gradient(circle at 90% 18%, rgba(94, 23, 235, 0.09), transparent 34%),
+            #11183d;
+        }
+      }
+
       @media (min-width: 900px) and (max-width: 1179px) {
         .contact-cube-hero .hero-tech-backdrop { display: block; opacity: 0.5; }
         .contact-cube-hero .hero-cube-stage { --cube-size: clamp(188px, 20vw, 214px); --cube-zone: clamp(315px, 35vw, 370px); display: grid; top: 50%; right: clamp(-78px, -5vw, -42px); bottom: auto; opacity: 0.68; transform: translateY(-50%); }
