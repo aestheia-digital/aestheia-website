@@ -28,7 +28,7 @@ html.theme-dark body.pme-page #contenu > .section.section-aqua::before {
 }
 html:not(.theme-dark) body.pme-page #contenu > .section.section-mist.section-aqua::before,
 html.theme-dark body.pme-page #contenu > .section.section-mist.section-aqua::before {
-  transform: scaleX(-1);
+  transform: none !important;
 }
 html.theme-dark body.pme-page #contenu > .section:not(.conversion-band)::after {
   content: none !important; display: none !important; background: none !important;
