@@ -25,8 +25,13 @@ html[data-theme="dark"] body.medicine-page #contenu > .section:not(.conversion-b
   opacity: 0 !important;
 }
 
-/* Réalité du cabinet : début de chaque point légèrement renforcé, en jour comme en nuit. */
-body.medicine-page .feature-list.sector-reality-list li::first-line {
+/* Réalité du cabinet : seuls les segments explicitement balisés sont légèrement renforcés. */
+body.medicine-page .feature-list.sector-reality-list li {
+  font-weight: 400;
+}
+
+body.medicine-page .feature-list.sector-reality-list li strong {
+  color: inherit;
   font-weight: 600;
 }
 
