@@ -40,13 +40,26 @@ body.medicine-page #contenu > .section.section-mist:has(.grid.grid-4) .card h3 {
   font-weight: 500;
 }
 
-/* FAQ médecine esthétique en mode jour : questions en violet neutre de la charte. */
-html[data-theme="light"] body.medicine-page .faq-section .faq-accordion-item summary h3 {
-  color: #5e17eb !important;
+/* Réassurance médecine en mode jour : même dégradé de puces que dans La réalité d'un cabinet esthétique. */
+html[data-theme="light"] body.medicine-page #contenu > .section.section-mist + .section.section-mist .feature-list li::before {
+  background: linear-gradient(135deg, #00b0ff, var(--color-accent)) !important;
 }
 
 @media (prefers-color-scheme: light) {
+  html:not(.theme-dark):not([data-theme="dark"]) body.medicine-page #contenu > .section.section-mist + .section.section-mist .feature-list li::before {
+    background: linear-gradient(135deg, #00b0ff, var(--color-accent)) !important;
+  }
+}
+
+/* FAQ médecine esthétique en mode jour : même violet neutre que la page Instituts & indépendantes. */
+html[data-theme="light"] body.medicine-page .faq-section .faq-accordion-item summary,
+html[data-theme="light"] body.medicine-page .faq-section .faq-accordion-item summary h3 {
+  color: #6b4bb3 !important;
+}
+
+@media (prefers-color-scheme: light) {
+  html:not(.theme-dark):not([data-theme="dark"]) body.medicine-page .faq-section .faq-accordion-item summary,
   html:not(.theme-dark):not([data-theme="dark"]) body.medicine-page .faq-section .faq-accordion-item summary h3 {
-    color: #5e17eb !important;
+    color: #6b4bb3 !important;
   }
 }
