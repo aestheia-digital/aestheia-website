@@ -396,17 +396,15 @@ html.theme-dark #contenu > .home-hero ~ .location-section::before {
   }
 }
 
-/* Accueil nuit tablette : questions FAQ en violet lavande, comme sur mobile. */
-@media (min-width: 721px) and (max-width: 1050px) and (prefers-color-scheme: dark) {
-  #contenu > .home-hero ~ .faq-section .faq-accordion-item summary h3 {
-    color: #9b7cff !important;
-  }
+/* Accueil nuit : questions FAQ en violet lavande clair sur tous les supports. */
+html.theme-dark #contenu > .home-hero ~ .faq-section .faq-accordion-item summary h3,
+html[data-theme="dark"] #contenu > .home-hero ~ .faq-section .faq-accordion-item summary h3 {
+  color: #b69cff !important;
 }
 
-@media (min-width: 721px) and (max-width: 1050px) {
-  html.theme-dark #contenu > .home-hero ~ .faq-section .faq-accordion-item summary h3,
-  html[data-theme="dark"] #contenu > .home-hero ~ .faq-section .faq-accordion-item summary h3 {
-    color: #9b7cff !important;
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-dark):not([data-theme="light"]) #contenu > .home-hero ~ .faq-section .faq-accordion-item summary h3 {
+    color: #b69cff !important;
   }
 }
 
