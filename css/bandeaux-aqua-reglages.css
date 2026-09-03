@@ -112,7 +112,7 @@ html:not(.theme-dark) body.thalasso-page #contenu > .section.section-aqua li {
 }
 
 html:not(.theme-dark) body.thalasso-page #contenu > .section.section-aqua > .container > .eyebrow {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 @media (max-width: 720px) {
