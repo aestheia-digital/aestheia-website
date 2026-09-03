@@ -99,6 +99,19 @@ body.pme-page #contenu > .section.section-soft.section-aqua .sector-editorial-be
   color: #ffffff !important;
 }
 
+/* TPE & PME — mode jour : conclusion Méthode dans le même bleu intermédiaire. */
+html[data-theme="light"] body.pme-page .sector-method-conclusion {
+  background: #415b8f !important;
+  color: #ffffff !important;
+}
+
+@media (prefers-color-scheme: light) {
+  html:not(.theme-dark):not([data-theme="dark"]) body.pme-page .sector-method-conclusion {
+    background: #415b8f !important;
+    color: #ffffff !important;
+  }
+}
+
 /* Mobile : bandeau « Pour qui ? » — afficher tout le portrait sans l'écraser ni le recadrer. */
 @media (max-width: 720px) {
   html:not(.theme-dark) body.pme-page #contenu > .section.section-mist.section-aqua::before,
