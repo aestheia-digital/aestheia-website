@@ -167,14 +167,15 @@ body.spa-page #contenu > .section.section-mist.section-aqua > .container > .eyeb
   letter-spacing: 0.02em;
 }
 
-/* Réassurance jour : puces violettes sur mobile, tablette et ordinateur. */
+/* Réassurance jour : puces bleues comme dans La réalité d'un spa premium, tous supports. */
 html:not(.theme-dark) body.spa-page #contenu > .section.section-mist.section-aqua .feature-list li::marker {
-  color: #5e17eb !important;
+  color: #00b0ff !important;
 }
 
 html:not(.theme-dark) body.spa-page #contenu > .section.section-mist.section-aqua .feature-list li::before {
-  color: #5e17eb !important;
-  background-color: #5e17eb !important;
+  color: #00b0ff !important;
+  background: #00b0ff !important;
+  background-color: #00b0ff !important;
 }
 
 /* Lien éditorial sous les quatre étapes : CTA discret et premium. */
