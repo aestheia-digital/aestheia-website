@@ -409,3 +409,28 @@ html.theme-dark #contenu > .home-hero ~ .location-section::before {
     color: #9b7cff !important;
   }
 }
+
+/* Accueil — Formats de mission — mode nuit : titres de cartes légèrement agrandis. */
+html.theme-dark .home-engagements .engagement-card h3,
+html[data-theme="dark"] .home-engagements .engagement-card h3 {
+  font-size: 1.14rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-dark):not([data-theme="light"]) .home-engagements .engagement-card h3 {
+    font-size: 1.14rem;
+  }
+}
+
+@media (max-width: 720px) {
+  html.theme-dark .home-engagements .engagement-card h3,
+  html[data-theme="dark"] .home-engagements .engagement-card h3 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 720px) and (prefers-color-scheme: dark) {
+  html:not(.theme-dark):not([data-theme="light"]) .home-engagements .engagement-card h3 {
+    font-size: 1.1rem;
+  }
+}
