@@ -352,3 +352,10 @@ html.theme-dark #contenu > .home-hero ~ .location-section::before {
     --halo-violet-secondary: rgba(139, 92, 246, 0.055);
   }
 }
+
+/* Accueil mobile en mode jour : suppression du halo violet du bandeau FAQ uniquement. */
+@media (max-width: 720px) and (prefers-color-scheme: light) {
+  #contenu > .home-hero ~ .faq-section::before {
+    background: none !important;
+  }
+}
