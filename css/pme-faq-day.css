@@ -27,3 +27,18 @@ html[data-theme="light"] body.pme-page #contenu > .section.section-mist.section-
     background: #415b8f !important;
   }
 }
+
+/* FAQ TPE-PME — mode nuit : questions en bleu clair, titre et réponses en blanc. */
+html.theme-dark body.pme-page .faq-accordion-item summary,
+html.theme-dark body.pme-page .faq-accordion-item summary h3,
+html[data-theme="dark"] body.pme-page .faq-accordion-item summary,
+html[data-theme="dark"] body.pme-page .faq-accordion-item summary h3 {
+  color: #a9c0dc !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-dark):not([data-theme="light"]) body.pme-page .faq-accordion-item summary,
+  html:not(.theme-dark):not([data-theme="light"]) body.pme-page .faq-accordion-item summary h3 {
+    color: #a9c0dc !important;
+  }
+}
