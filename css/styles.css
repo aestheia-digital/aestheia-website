@@ -4896,3 +4896,16 @@ body.pme-page #contenu > .section.section-mist,
 main.pme-page > .section.section-mist {
   background: var(--gradient-soft-blue) !important;
 }
+
+/* FAQ TPE-PME en mode jour : même bleu que le texte des blocs Bénéfice. */
+html[data-theme="light"] body.pme-page .faq-section .faq-accordion-item summary,
+html[data-theme="light"] body.pme-page .faq-section .faq-answer p {
+  color: #1e2a50 !important;
+}
+
+@media (prefers-color-scheme: light) {
+  html:not(.theme-dark):not([data-theme="dark"]) body.pme-page .faq-section .faq-accordion-item summary,
+  html:not(.theme-dark):not([data-theme="dark"]) body.pme-page .faq-section .faq-answer p {
+    color: #1e2a50 !important;
+  }
+}
