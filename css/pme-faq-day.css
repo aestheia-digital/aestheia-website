@@ -11,7 +11,13 @@ html[data-theme="light"] body.pme-page .faq-section .faq-answer p {
   }
 }
 
-/* Réassurance TPE-PME : les quatre puces passent du violet à un dégradé bleu sur tous les supports. */
-body.pme-page #contenu > .section.section-mist.section-aqua .feature-list li::before {
-  background: linear-gradient(135deg, #00b0ff 0%, #0077dd 100%) !important;
+/* Réassurance TPE-PME — mode jour : puces dans le même bleu intermédiaire. */
+html[data-theme="light"] body.pme-page #contenu > .section.section-mist.section-aqua .feature-list li::before {
+  background: #415b8f !important;
+}
+
+@media (prefers-color-scheme: light) {
+  html:not(.theme-dark):not([data-theme="dark"]) body.pme-page #contenu > .section.section-mist.section-aqua .feature-list li::before {
+    background: #415b8f !important;
+  }
 }
