@@ -40,6 +40,13 @@ body.medicine-page #contenu > .section.section-mist:has(.grid.grid-4) .card h3 {
   font-weight: 500;
 }
 
+
+/* Systèmes cabinets : blocs Bénéfice légèrement raccourcis sur tous les supports. */
+body.medicine-page .sector-editorial-benefit {
+  width: min(94%, 620px);
+  max-width: 620px;
+}
+
 /* Réassurance médecine en mode jour : même dégradé de puces que dans La réalité d'un cabinet esthétique. */
 html[data-theme="light"] body.medicine-page #contenu > .section.section-mist + .section.section-mist .feature-list li::before {
   background: linear-gradient(135deg, #00b0ff, var(--color-accent)) !important;
