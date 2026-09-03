@@ -1,12 +1,12 @@
-/* Page TPE-PME — FAQ en mode jour : bleu des cartes Bénéfice appliqué au texte. */
+/* Page TPE-PME — FAQ en mode jour : bleu clair soutenu repris de la palette des blocs Bénéfice. */
 html[data-theme="light"] body.pme-page .faq-section .faq-accordion-item summary,
 html[data-theme="light"] body.pme-page .faq-section .faq-answer p {
-  color: #26365f !important;
+  color: #304673 !important;
 }
 
 @media (prefers-color-scheme: light) {
   html:not(.theme-dark):not([data-theme="dark"]) body.pme-page .faq-section .faq-accordion-item summary,
   html:not(.theme-dark):not([data-theme="dark"]) body.pme-page .faq-section .faq-answer p {
-    color: #26365f !important;
+    color: #304673 !important;
   }
 }
