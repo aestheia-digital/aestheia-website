@@ -69,3 +69,22 @@ html.theme-dark body.pme-page #contenu > .section:not(.conversion-band):not(.sec
     -webkit-backdrop-filter: blur(4px);
   }
 }
+
+/* Mobile jour : abaisser le motif chiffré du bandeau « Les systèmes que nous concevons » pour dégager ses titres. */
+@media (max-width: 720px) and (prefers-color-scheme: light) {
+  html:not(.theme-dark):not([data-theme="dark"]) body.pme-page #contenu > .section.section-soft.section-aqua::before {
+    background:
+      linear-gradient(var(--pme-veil), var(--pme-veil)),
+      var(--pme-image) center calc(100% + 70px) / cover no-repeat,
+      var(--pme-fond) !important;
+  }
+}
+
+@media (max-width: 720px) {
+  html[data-theme="light"] body.pme-page #contenu > .section.section-soft.section-aqua::before {
+    background:
+      linear-gradient(var(--pme-veil), var(--pme-veil)),
+      var(--pme-image) center calc(100% + 70px) / cover no-repeat,
+      var(--pme-fond) !important;
+  }
+}
