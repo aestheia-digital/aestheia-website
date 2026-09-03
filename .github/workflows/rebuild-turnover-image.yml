@@ -1,0 +1,40 @@
+name: Rebuild turnover image
+
+on:
+  push:
+    branches:
+      - fix-turnover-image-github-actions-20260903
+    paths:
+      - .image-build/trigger.txt
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix-turnover-image-github-actions-20260903
+      - name: Rebuild WebP
+        shell: bash
+        run: |
+          cat .image-build/chunk1.txt .image-build/chunk2.txt .image-build/chunk3.txt .image-build/chunk4.txt | base64 -d > assets/images/ressources/turnover-spa-thalasso-automatisation.webp
+          test "$(stat -c%s assets/images/ressources/turnover-spa-thalasso-automatisation.webp)" -eq 50280
+          test "$(sha256sum assets/images/ressources/turnover-spa-thalasso-automatisation.webp | cut -d' ' -f1)" = "7fb4f33997a10ca0b53b990e8f7dbd1b68cdd65e02d510544c1b7648d92cd6ed"
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('assets/images/ressources/turnover-spa-thalasso-automatisation.webp')
+          b = p.read_bytes()
+          assert b[:4] == b'RIFF' and b[8:12] == b'WEBP'
+          print(len(b))
+          PY
+      - name: Commit rebuilt image
+        shell: bash
+        run: |
+          git config user.name "AesthéIA"
+          git config user.email "magalie.aestheia@gmail.com"
+          git add assets/images/ressources/turnover-spa-thalasso-automatisation.webp
+          git commit -m "Rétablit le visuel turnover complet" || exit 0
+          git push origin HEAD:fix-turnover-image-github-actions-20260903
