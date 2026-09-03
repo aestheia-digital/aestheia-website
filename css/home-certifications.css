@@ -434,3 +434,52 @@ html[data-theme="dark"] .home-engagements .engagement-card h3 {
     font-size: 1.1rem;
   }
 }
+
+/* Accueil — Méthode et Sécurité — mode nuit : titres légèrement agrandis sans changer graisse ni couleur. */
+html.theme-dark .home-method .process-step h3,
+html.theme-dark .home-safety .safety-grid .card h3,
+html[data-theme="dark"] .home-method .process-step h3,
+html[data-theme="dark"] .home-safety .safety-grid .card h3 {
+  font-size: 1.14rem;
+}
+
+html.theme-dark .home-method .step-label,
+html[data-theme="dark"] .home-method .step-label {
+  font-size: 0.88rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-dark):not([data-theme="light"]) .home-method .process-step h3,
+  html:not(.theme-dark):not([data-theme="light"]) .home-safety .safety-grid .card h3 {
+    font-size: 1.14rem;
+  }
+
+  html:not(.theme-dark):not([data-theme="light"]) .home-method .step-label {
+    font-size: 0.88rem;
+  }
+}
+
+@media (max-width: 720px) {
+  html.theme-dark .home-method .process-step h3,
+  html.theme-dark .home-safety .safety-grid .card h3,
+  html[data-theme="dark"] .home-method .process-step h3,
+  html[data-theme="dark"] .home-safety .safety-grid .card h3 {
+    font-size: 1.1rem;
+  }
+
+  html.theme-dark .home-method .step-label,
+  html[data-theme="dark"] .home-method .step-label {
+    font-size: 0.86rem;
+  }
+}
+
+@media (max-width: 720px) and (prefers-color-scheme: dark) {
+  html:not(.theme-dark):not([data-theme="light"]) .home-method .process-step h3,
+  html:not(.theme-dark):not([data-theme="light"]) .home-safety .safety-grid .card h3 {
+    font-size: 1.1rem;
+  }
+
+  html:not(.theme-dark):not([data-theme="light"]) .home-method .step-label {
+    font-size: 0.86rem;
+  }
+}
