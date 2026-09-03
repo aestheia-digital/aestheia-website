@@ -98,3 +98,24 @@ body.pme-page #contenu > .section.section-soft.section-aqua .sector-editorial-be
 body.pme-page #contenu > .section.section-soft.section-aqua .sector-editorial-benefit strong {
   color: #ffffff !important;
 }
+
+/* Mobile : bandeau « Pour qui ? » — afficher tout le portrait sans l'écraser ni le recadrer. */
+@media (max-width: 720px) {
+  html:not(.theme-dark) body.pme-page #contenu > .section.section-mist.section-aqua::before,
+  html.theme-dark body.pme-page #contenu > .section.section-mist.section-aqua::before,
+  html[data-theme="dark"] body.pme-page #contenu > .section.section-mist.section-aqua::before {
+    background:
+      linear-gradient(var(--pme-veil), var(--pme-veil)),
+      var(--pme-image) center center / auto 100% no-repeat,
+      var(--pme-fond) !important;
+  }
+}
+
+@media (prefers-color-scheme: dark) and (max-width: 720px) {
+  html:not([data-theme="light"]) body.pme-page #contenu > .section.section-mist.section-aqua::before {
+    background:
+      linear-gradient(var(--pme-veil), var(--pme-veil)),
+      var(--pme-image) center center / auto 100% no-repeat,
+      var(--pme-fond) !important;
+  }
+}
