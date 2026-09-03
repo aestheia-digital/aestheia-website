@@ -320,3 +320,9 @@ html:not(.theme-dark) body.thalasso-page #contenu > .section.section-mist.sectio
     background: linear-gradient(135deg, #00b0ff, var(--color-accent)) !important;
   }
 }
+
+@media (min-width: 721px) and (max-width: 1050px) {
+  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-mist.section-aqua .feature-list li::before {
+    background: linear-gradient(135deg, #00b0ff, var(--color-accent)) !important;
+  }
+}
