@@ -326,3 +326,17 @@ html:not(.theme-dark) body.thalasso-page #contenu > .section.section-mist.sectio
     background: linear-gradient(135deg, #00b0ff, var(--color-accent)) !important;
   }
 }
+
+/* Mobile jour : pictogramme et titre de la carte onboarding sur la même ligne. */
+@media (max-width: 720px) and (prefers-color-scheme: light) {
+  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .thalasso-turnover-heading {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 0.75rem !important;
+  }
+
+  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .thalasso-turnover-pictogram,
+  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .thalasso-turnover-heading h3 {
+    order: initial !important;
+  }
+}
