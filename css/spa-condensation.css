@@ -167,6 +167,16 @@ body.spa-page #contenu > .section.section-mist.section-aqua > .container > .eyeb
   letter-spacing: 0.02em;
 }
 
+/* Réassurance jour : puces violettes sur mobile, tablette et ordinateur. */
+html:not(.theme-dark) body.spa-page #contenu > .section.section-mist.section-aqua .feature-list li::marker {
+  color: #5e17eb !important;
+}
+
+html:not(.theme-dark) body.spa-page #contenu > .section.section-mist.section-aqua .feature-list li::before {
+  color: #5e17eb !important;
+  background-color: #5e17eb !important;
+}
+
 /* Lien éditorial sous les quatre étapes : CTA discret et premium. */
 body.spa-page .spa-method-cta {
   margin: 1.45rem 0 0;
