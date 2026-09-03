@@ -10,3 +10,8 @@ html[data-theme="light"] body.pme-page .faq-section .faq-answer p {
     color: #5b709b !important;
   }
 }
+
+/* Réassurance TPE-PME : les quatre puces passent du violet à un dégradé bleu sur tous les supports. */
+body.pme-page #contenu > .section.section-mist.section-aqua .feature-list li::before {
+  background: linear-gradient(135deg, #00b0ff 0%, #0077dd 100%) !important;
+}
