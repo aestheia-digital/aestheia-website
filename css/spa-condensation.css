@@ -132,21 +132,23 @@ html[data-theme="dark"] body.spa-page #contenu > .section:not(.conversion-band):
   opacity: 0 !important;
 }
 
-/* Halo violet doux sur les autres sections en mode jour. */
-html:not(.theme-dark) body.spa-page {
-  --spa-halo-violet-primary: rgba(94, 23, 235, 0.085);
-  --spa-halo-violet-secondary: rgba(139, 92, 246, 0.045);
+/* Mode jour : aucun halo violet ni nuée sur la page Spa & hôtellerie, tous supports. */
+html:not(.theme-dark) body.spa-page #contenu > .section:not(.conversion-band)::before,
+html:not(.theme-dark) body.spa-page #contenu > .section:not(.conversion-band)::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  opacity: 0 !important;
 }
 
-html:not(.theme-dark) body.spa-page #contenu > .section:not(.conversion-band):not(.section-aqua)::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(circle at 88% 14%, var(--spa-halo-violet-primary), transparent 42%),
-    radial-gradient(circle at 10% 86%, var(--spa-halo-violet-secondary), transparent 46%) !important;
+@media (prefers-color-scheme: light) {
+  html:not(.theme-dark):not([data-theme="dark"]) body.spa-page #contenu > .section:not(.conversion-band)::before,
+  html:not(.theme-dark):not([data-theme="dark"]) body.spa-page #contenu > .section:not(.conversion-band)::after {
+    content: none !important;
+    display: none !important;
+    background: none !important;
+    opacity: 0 !important;
+  }
 }
 
 /* Intitules de section violets sur tous supports. */
