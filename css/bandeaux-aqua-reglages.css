@@ -307,3 +307,16 @@ html:not(.theme-dark) body.thalasso-page #contenu > .section.section-mist.sectio
     --aqua-veil: rgba(248, 250, 255, 0.87);
   }
 }
+
+/* Mode jour : puces Réassurance harmonisées avec La réalité de vos établissements. */
+@media (min-width: 1051px) {
+  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-mist.section-aqua .feature-list li::before {
+    background: linear-gradient(135deg, #00b0ff, var(--color-accent)) !important;
+  }
+}
+
+@media (max-width: 720px) {
+  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-mist.section-aqua .feature-list li::before {
+    background: linear-gradient(135deg, #00b0ff, var(--color-accent)) !important;
+  }
+}
