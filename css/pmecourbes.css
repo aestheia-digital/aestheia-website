@@ -112,6 +112,20 @@ html[data-theme="light"] body.pme-page .sector-method-conclusion {
   }
 }
 
+/* TPE & PME — mode nuit : conclusion Méthode identique aux cartes Bénéfice. */
+html.theme-dark body.pme-page .sector-method-conclusion,
+html[data-theme="dark"] body.pme-page .sector-method-conclusion {
+  background: #415b8f !important;
+  color: #ffffff !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-dark):not([data-theme="light"]) body.pme-page .sector-method-conclusion {
+    background: #415b8f !important;
+    color: #ffffff !important;
+  }
+}
+
 /* Mobile : bandeau « Pour qui ? » — afficher tout le portrait sans l'écraser ni le recadrer. */
 @media (max-width: 720px) {
   html:not(.theme-dark) body.pme-page #contenu > .section.section-mist.section-aqua::before,
