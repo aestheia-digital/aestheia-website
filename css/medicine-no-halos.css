@@ -1,0 +1,26 @@
+/* Page Médecine et chirurgie esthétique : suppression de tous les halos violets sur tous les supports et dans les deux modes. */
+body.medicine-page #contenu > .section:not(.conversion-band)::before,
+html.theme-dark body.medicine-page #contenu > .section:not(.conversion-band)::before,
+html[data-theme="dark"] body.medicine-page #contenu > .section:not(.conversion-band)::before {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  opacity: 0 !important;
+}
+
+body.medicine-page #contenu > .section.section-soft {
+  background: var(--color-soft) !important;
+}
+
+body.medicine-page #contenu > .section.section-mist {
+  background: var(--gradient-soft-blue) !important;
+}
+
+body.medicine-page #contenu > .section:not(.conversion-band)::after,
+html.theme-dark body.medicine-page #contenu > .section:not(.conversion-band)::after,
+html[data-theme="dark"] body.medicine-page #contenu > .section:not(.conversion-band)::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  opacity: 0 !important;
+}
