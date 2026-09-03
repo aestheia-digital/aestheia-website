@@ -239,90 +239,6 @@ html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.sectio
   flex: 0 0 32px !important;
 }
 
-/* Image existante du bandeau Systèmes : plus présente, plus nette et légèrement plus sombre. */
-html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua::before {
-  --aqua-veil: rgba(248, 250, 255, 0.62);
-  filter: brightness(0.94) contrast(1.08) saturate(1.08);
-}
-
-html.theme-dark body.thalasso-page #contenu > .section.section-soft.section-aqua::before {
-  --aqua-veil: rgba(17, 24, 61, 0.72);
-  filter: brightness(0.88) contrast(1.10) saturate(1.08);
-}
-
-@media (max-width: 720px) {
-  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua::before {
-    --aqua-veil: rgba(248, 250, 255, 0.66);
-  }
-
-  html.theme-dark body.thalasso-page #contenu > .section.section-soft.section-aqua::before {
-    --aqua-veil: rgba(17, 24, 61, 0.74);
-  }
-}
-
-/* Mode jour : les deux bandeaux à bulles sont plus sombres tout en restant transparents. */
-html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua::before {
-  --aqua-veil: rgba(248, 250, 255, 0.46);
-  filter: brightness(0.88) contrast(1.10) saturate(1.10);
-}
-
-html:not(.theme-dark) body.thalasso-page #contenu > .section.section-mist.section-aqua {
-  --aqua-veil: rgba(248, 250, 255, 0.52);
-}
-
-@media (min-width: 721px) and (max-width: 1050px) {
-  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua::before {
-    --aqua-veil: rgba(248, 250, 255, 0.50);
-  }
-
-  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-mist.section-aqua {
-    --aqua-veil: rgba(248, 250, 255, 0.54);
-  }
-}
-
-@media (max-width: 720px) {
-  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua::before {
-    --aqua-veil: rgba(248, 250, 255, 0.50);
-  }
-
-  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-mist.section-aqua {
-    --aqua-veil: rgba(248, 250, 255, 0.56);
-  }
-}
-
-/* Mode jour : bulles maintenues sombres mais repoussées en arrière-plan. */
-html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua::before {
-  --aqua-veil: rgba(248, 250, 255, 0.60);
-  opacity: 0.68;
-  filter: brightness(0.80) contrast(1.08) saturate(1.02);
-}
-
-html:not(.theme-dark) body.thalasso-page #contenu > .section.section-mist.section-aqua {
-  --aqua-veil: rgba(248, 250, 255, 0.70);
-}
-
-@media (min-width: 721px) and (max-width: 1050px) {
-  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua::before {
-    --aqua-veil: rgba(248, 250, 255, 0.64);
-    opacity: 0.64;
-  }
-
-  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-mist.section-aqua {
-    --aqua-veil: rgba(248, 250, 255, 0.73);
-  }
-}
-
-@media (max-width: 720px) {
-  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua::before {
-    --aqua-veil: rgba(248, 250, 255, 0.68);
-    opacity: 0.60;
-  }
-
-  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-mist.section-aqua {
-    --aqua-veil: rgba(248, 250, 255, 0.76);
-  }
-}
-
 /* Mode jour : Turnover et continuité opérationnelle aligné sur les autres mots renforcés. */
 html:not(.theme-dark) body.thalasso-page .sector-reality-list li:last-child strong {
   font-weight: 600 !important;
@@ -354,5 +270,40 @@ html:not(.theme-dark) body.thalasso-page .sector-reality-list li:last-child stro
   html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-benefit strong,
   html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .thalasso-turnover-benefit strong {
     font-weight: 600 !important;
+  }
+}
+
+/* Mode jour : retour aux images à bulles claires d'origine. */
+html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua::before {
+  --aqua-veil: rgba(248, 250, 255, 0.74);
+  opacity: 1;
+  filter: none;
+}
+
+html:not(.theme-dark) body.thalasso-page #contenu > .section.section-mist.section-aqua {
+  --aqua-veil: rgba(248, 250, 255, 0.74);
+}
+
+@media (min-width: 721px) and (max-width: 1050px) {
+  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua::before {
+    --aqua-veil: rgba(248, 250, 255, 0.74);
+    opacity: 1;
+    filter: none;
+  }
+
+  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-mist.section-aqua {
+    --aqua-veil: rgba(248, 250, 255, 0.79);
+  }
+}
+
+@media (max-width: 720px) {
+  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua::before {
+    --aqua-veil: rgba(248, 250, 255, 0.85);
+    opacity: 1;
+    filter: none;
+  }
+
+  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-mist.section-aqua {
+    --aqua-veil: rgba(248, 250, 255, 0.87);
   }
 }
