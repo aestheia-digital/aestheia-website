@@ -1,0 +1,67 @@
+:root {
+  --pme-image: url("../assets/images/metiers/donneesjour.webp");
+  --pme-veil: rgba(240, 245, 253, 0.52);
+  --pme-fond: #eef3fb;
+}
+html.theme-dark {
+  --pme-image: url("../assets/images/metiers/donneesnuit.webp");
+  --pme-veil: rgba(11, 16, 42, 0.58);
+  --pme-fond: #0d1330;
+}
+html:not(.theme-dark) body.pme-page #contenu > .section.section-aqua,
+html.theme-dark body.pme-page #contenu > .section.section-aqua {
+  background: var(--color-soft) !important;
+}
+html:not(.theme-dark) body.pme-page #contenu > .section.section-aqua::before,
+html.theme-dark body.pme-page #contenu > .section.section-aqua::before {
+  content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    linear-gradient(var(--pme-veil), var(--pme-veil)) bottom center / 100% auto no-repeat,
+    var(--pme-image) bottom center / 100% auto no-repeat,
+    var(--pme-fond) !important;
+}
+html:not(.theme-dark) body.pme-page #contenu > .section.section-mist.section-aqua::before,
+html.theme-dark body.pme-page #contenu > .section.section-mist.section-aqua::before {
+  transform: scaleX(-1);
+}
+html.theme-dark body.pme-page #contenu > .section:not(.conversion-band)::after {
+  content: none !important; display: none !important; background: none !important;
+}
+html.theme-dark body.pme-page #contenu > .section:not(.conversion-band):not(.section-aqua)::before {
+  background: none !important;
+}
+
+/* Mobile et tablette etroite : composition verticale, plein cadre */
+@media (max-width: 900px) {
+  html:not(.theme-dark) body.pme-page {
+    --pme-image: url("../assets/images/metiers/donneesjourhaut.webp");
+  }
+  html.theme-dark body.pme-page {
+    --pme-image: url("../assets/images/metiers/donneesnuithaut.webp");
+  }
+  html:not(.theme-dark) body.pme-page #contenu > .section.section-aqua::before,
+  html.theme-dark body.pme-page #contenu > .section.section-aqua::before {
+    background:
+      linear-gradient(var(--pme-veil), var(--pme-veil)),
+      var(--pme-image) bottom center / cover no-repeat,
+      var(--pme-fond) !important;
+  }
+}
+
+/* Cartes legerement translucides sur mobile : les courbes se devinent au travers */
+@media (max-width: 900px) {
+  html:not(.theme-dark) body.pme-page .section-aqua .card,
+  html:not(.theme-dark) body.pme-page .section-aqua .offer-card,
+  html:not(.theme-dark) body.pme-page .section-aqua .sector-editorial-chapter {
+    background: rgba(255, 255, 255, 0.82) !important;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+  html.theme-dark body.pme-page .section-aqua .card,
+  html.theme-dark body.pme-page .section-aqua .offer-card,
+  html.theme-dark body.pme-page .section-aqua .sector-editorial-chapter {
+    background: rgba(13, 19, 48, 0.78) !important;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+}
