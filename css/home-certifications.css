@@ -344,3 +344,11 @@ html.theme-dark #contenu > .home-hero ~ .location-section::before {
     font-weight: 500;
   }
 }
+
+/* Accueil en mode jour uniquement : halos violets légèrement atténués sur tous les supports. */
+@media (prefers-color-scheme: light) {
+  #contenu:has(> .home-hero) {
+    --halo-violet-primary: rgba(94, 23, 235, 0.095);
+    --halo-violet-secondary: rgba(139, 92, 246, 0.055);
+  }
+}
