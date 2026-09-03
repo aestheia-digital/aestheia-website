@@ -24,3 +24,24 @@ html[data-theme="dark"] body.medicine-page #contenu > .section:not(.conversion-b
   background: none !important;
   opacity: 0 !important;
 }
+
+/* Réalité du cabinet : début de chaque point légèrement renforcé, en jour comme en nuit. */
+body.medicine-page .feature-list.sector-reality-list li::first-line {
+  font-weight: 600;
+}
+
+/* Résultats recherchés : titres de cartes dégraissés sans modifier taille ni couleur. */
+body.medicine-page #contenu > .section.section-mist:has(.grid.grid-4) .card h3 {
+  font-weight: 500;
+}
+
+/* FAQ médecine esthétique en mode jour : questions en violet neutre de la charte. */
+html[data-theme="light"] body.medicine-page .faq-section .faq-accordion-item summary h3 {
+  color: #5e17eb !important;
+}
+
+@media (prefers-color-scheme: light) {
+  html:not(.theme-dark):not([data-theme="dark"]) body.medicine-page .faq-section .faq-accordion-item summary h3 {
+    color: #5e17eb !important;
+  }
+}
