@@ -1,23 +1,10 @@
-/* ==========================================================================
-   Bandeaux aquatiques - reglages complementaires
-   ==========================================================================
-   Feuille chargee UNIQUEMENT par thalasso-thermal/index.html,
-   APRES css/bandeaux-aqua.css dont elle reutilise la variable --aqua-image.
-   Ne contient aucune image : uniquement des reglages.
-
-   1. Voile allege : les bulles gagnent en presence.
-   2. Cartes legerement translucides : l'image se devine derriere.
-   3. Premier bandeau retourne horizontalement : la matiere passe a droite,
-      le titre retrouve un fond calme.
-   4. Mobile : l'image est cadree en bandeau haut au lieu d'etre zoomee.
-   5. Mode nuit : la nuee de particules est retiree sur ces deux bandeaux,
-      elle surchargeait l'image.
-
-   Les !important et les selecteurs longs sont necessaires : styles.css et
-   consent-manager.css imposent deja ces proprietes en !important.
-   ========================================================================== */
-
-/* 1. Voile allege ---------------------------------------------------------- */
+/* ========================================================================== */
+/* Bandeaux aquatiques - reglages complementaires                            */
+/* ========================================================================== */
+/* Feuille chargee UNIQUEMENT par thalasso-thermal/index.html,               */
+/* APRES css/bandeaux-aqua.css dont elle reutilise la variable --aqua-image. */
+/* Ne contient aucune image : uniquement des reglages.                       */
+/* ========================================================================== */
 
 html:not(.theme-dark) #contenu > .section.section-aqua {
   --aqua-veil: rgba(248, 250, 255, 0.74);
@@ -26,8 +13,6 @@ html:not(.theme-dark) #contenu > .section.section-aqua {
 html.theme-dark #contenu > .section.section-aqua {
   --aqua-veil: rgba(17, 24, 61, 0.82);
 }
-
-/* 2. Cartes translucides --------------------------------------------------- */
 
 html:not(.theme-dark) .section-aqua .sector-editorial-chapter {
   background: rgba(255, 255, 255, 0.82) !important;
@@ -40,10 +25,6 @@ html.theme-dark .section-aqua .sector-editorial-chapter {
   backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
 }
-
-/* 3. Premier bandeau retourne ---------------------------------------------- */
-/* Le premier bandeau est celui en .section-soft, le second en .section-mist.
-   Seul le premier est retourne : les deux ne doivent pas etre identiques. */
 
 html:not(.theme-dark) #contenu > .section.section-soft.section-aqua,
 html.theme-dark #contenu > .section.section-soft.section-aqua {
@@ -63,33 +44,20 @@ html.theme-dark #contenu > .section.section-soft.section-aqua::before {
     var(--aqua-image) center / cover no-repeat !important;
 }
 
-/* 4. Mobile ---------------------------------------------------------------- */
-/* Sur mobile la section devient tres haute et etroite : avec cover, l'image
-   est zoomee a l'extreme. On la cadre en bandeau haut, derriere le titre,
-   la ou aucune carte ne la masque. Point de rupture cale sur celui de
-   consent-manager.css (720px) pour eviter tout trou. */
-
 @media (max-width: 720px) {
   html:not(.theme-dark) #contenu > .section.section-aqua,
   html.theme-dark #contenu > .section.section-aqua {
-    /* Sur mobile la section est tres haute et etroite. Avec "cover" l'image
-       serait zoomee dix fois et deviendrait une bouillie. On la reprend donc
-       a 170% de la largeur d'ecran et on la repete verticalement : elle reste
-       nette et couvre toute la section, cartes comprises. */
     background:
-      linear-gradient(var(--aqua-veil), var(--aqua-veil))
-        center / cover no-repeat,
+      linear-gradient(var(--aqua-veil), var(--aqua-veil)) center / cover no-repeat,
       var(--aqua-image) top center / 170vw auto repeat-y,
       var(--color-soft) !important;
   }
 
   html:not(.theme-dark) #contenu > .section.section-soft.section-aqua::before,
   html.theme-dark #contenu > .section.section-soft.section-aqua::before {
-    /* Le titre passe sur la zone dense : voile renforce pour le contraste. */
     --aqua-veil: rgba(248, 250, 255, 0.85);
     background:
-      linear-gradient(var(--aqua-veil), var(--aqua-veil))
-        center / cover no-repeat,
+      linear-gradient(var(--aqua-veil), var(--aqua-veil)) center / cover no-repeat,
       var(--aqua-image) top center / 170vw auto repeat-y,
       var(--color-soft) !important;
   }
@@ -101,26 +69,16 @@ html.theme-dark #contenu > .section.section-soft.section-aqua::before {
   }
 }
 
-/* 5. Mode nuit : suppression de la nuee de particules sur ces bandeaux ------ */
-
 html.theme-dark #contenu > .section:not(.conversion-band)::after {
   content: none !important;
   display: none !important;
   background: none !important;
   opacity: 0 !important;
 }
-/* 6. Mode nuit : suppression des halos violets ------------------------------ */
-/* styles.css et consent-manager.css peignent un halo violet sur le ::before de
-   chaque section. Combine au fond photographique, cela sature la page.
-   On le neutralise en nuit sur toute la page thalasso, ordinateur et mobile.
-   Le bandeau retourne conserve le sien : sa regle est plus specifique. */
 
 html.theme-dark #contenu > .section:not(.conversion-band)::before {
   background: none !important;
 }
-
-/* 7. Titres des bandeaux sur mobile ---------------------------------------- */
-/* Sans cela, le point d'interrogation final se retrouve seul sur sa ligne. */
 
 @media (max-width: 720px) {
   #contenu > .section.section-aqua h2 {
@@ -128,9 +86,6 @@ html.theme-dark #contenu > .section:not(.conversion-band)::before {
   }
 }
 
-/* 8. Mobile jour : aucun halo violet sur le bandeau Réassurance ------------ */
-/* Neutralise la règle mobile générale de consent-manager.css uniquement sur
-   le second bandeau aquatique, sans modifier son image ni son voile. */
 @media (max-width: 720px) {
   html:not(.theme-dark) body.thalasso-page #contenu > .section.section-mist.section-aqua::before {
     content: none !important;
@@ -140,7 +95,6 @@ html.theme-dark #contenu > .section:not(.conversion-band)::before {
   }
 }
 
-/* 9. Mode jour : typographie renforcée sur les bandeaux photographiques. */
 html:not(.theme-dark) body.thalasso-page #contenu > .section.section-aqua h2 {
   color: #142044;
   font-weight: 500;
@@ -161,29 +115,23 @@ html:not(.theme-dark) body.thalasso-page #contenu > .section.section-aqua > .con
   font-weight: 700;
 }
 
-/* 10. Mobile jour : second bandeau légèrement éclairci. */
-/* Le voile seul est renforcé : l'image, son cadrage et sa netteté restent intacts. */
 @media (max-width: 720px) {
   html:not(.theme-dark) body.thalasso-page #contenu > .section.section-mist.section-aqua {
     --aqua-veil: rgba(248, 250, 255, 0.87);
   }
 }
 
-/* 11. Titres de cartes et questions FAQ en violet premium. */
-/* Les intitules de bandeaux conservent volontairement le violet electrique. */
 html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-heading h3,
 html:not(.theme-dark) body.thalasso-page .faq-accordion-item summary {
   color: #5422b3;
 }
 
-/* 12. Tablette et mobile : titres de cartes légèrement renforcés. */
 @media (max-width: 1050px) {
   html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-heading h3 {
     font-weight: 600;
   }
 }
 
-/* 13. Lien de la quatrième carte et éclaircissement tablette. */
 html:not(.theme-dark) body.thalasso-page .thalasso-system-link {
   color: #5422b3;
 }
@@ -194,18 +142,15 @@ html:not(.theme-dark) body.thalasso-page .thalasso-system-link {
   }
 }
 
-/* 14. Mode nuit : intitulés des quatre bandeaux, même violet que sur la page Spa. */
 html.theme-dark body.thalasso-page #contenu > .section:not(.conversion-band) > .container > .eyebrow {
   color: #9b7cff !important;
 }
 
-/* 15. Mode jour : suppression des halos violets sur toute la page. */
 html:not(.theme-dark) body.thalasso-page {
   --halo-violet-primary: transparent;
   --halo-violet-secondary: transparent;
 }
 
-/* 16. Backlink vers la page Spa en violet neutre, jour et nuit. */
 html:not(.theme-dark) body.thalasso-page #contenu > .section.section-mist.section-aqua .thalasso-spa-link,
 html:not(.theme-dark) body.thalasso-page #contenu > .section.section-mist.section-aqua a[href*="spa-hotelier"] {
   color: #5422b3 !important;
@@ -218,7 +163,6 @@ html.theme-dark body.thalasso-page #contenu > .section.section-mist.section-aqua
   -webkit-text-fill-color: #9b7cff !important;
 }
 
-/* 17. Mobile jour : suppression du halo violet de la FAQ. */
 @media (max-width: 720px) {
   html:not(.theme-dark) body.thalasso-page #contenu > .section.faq-section::before {
     content: none !important;
@@ -228,7 +172,6 @@ html.theme-dark body.thalasso-page #contenu > .section.section-mist.section-aqua
   }
 }
 
-/* 18. Carte Procédures/onboarding : même transparence et même Bénéfice que les autres cartes. */
 html:not(.theme-dark) body.thalasso-page .section-aqua .thalasso-turnover-block {
   background: rgba(255, 255, 255, 0.82) !important;
   backdrop-filter: blur(3px);
@@ -265,7 +208,6 @@ html.theme-dark body.thalasso-page .thalasso-turnover-benefit strong {
   }
 }
 
-/* 19. FAQ Thalasso en mode nuit : même bleu clair que les blocs Bénéfice. */
 html.theme-dark body.thalasso-page .faq-section h2,
 html.theme-dark body.thalasso-page .faq-accordion-item summary,
 html.theme-dark body.thalasso-page .faq-answer,
@@ -282,7 +224,6 @@ html.theme-dark body.thalasso-page .faq-answer p {
   }
 }
 
-/* 20. Mode jour : cinq cartes systèmes, titres et pictogrammes harmonisés. */
 html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-heading h3,
 html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .thalasso-turnover-heading h3 {
   color: #5422b3 !important;
@@ -296,4 +237,25 @@ html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.sectio
   width: 32px !important;
   height: 32px !important;
   flex: 0 0 32px !important;
+}
+
+/* Image existante du bandeau Systèmes : plus présente, plus nette et légèrement plus sombre. */
+html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua::before {
+  --aqua-veil: rgba(248, 250, 255, 0.62);
+  filter: brightness(0.94) contrast(1.08) saturate(1.08);
+}
+
+html.theme-dark body.thalasso-page #contenu > .section.section-soft.section-aqua::before {
+  --aqua-veil: rgba(17, 24, 61, 0.72);
+  filter: brightness(0.88) contrast(1.10) saturate(1.08);
+}
+
+@media (max-width: 720px) {
+  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua::before {
+    --aqua-veil: rgba(248, 250, 255, 0.66);
+  }
+
+  html.theme-dark body.thalasso-page #contenu > .section.section-soft.section-aqua::before {
+    --aqua-veil: rgba(17, 24, 61, 0.74);
+  }
 }
