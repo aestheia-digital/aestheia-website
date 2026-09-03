@@ -309,3 +309,36 @@ html[data-theme="light"] body.institutes-page .section-soft.section-aqua .instit
     -webkit-text-fill-color: #6b4bb3 !important;
   }
 }
+
+/* Spa & Hôtellerie — mode jour uniquement : titre Turnover harmonisé et textes Bénéfice allégés. */
+html[data-theme="light"] body.spa-page #contenu > .section.section-soft.section-aqua .spa-turnover-heading h3 {
+  color: #5422b3 !important;
+  -webkit-text-fill-color: #5422b3 !important;
+}
+
+html[data-theme="light"] body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-benefit,
+html[data-theme="light"] body.spa-page #contenu > .section.section-soft.section-aqua .spa-turnover-benefit {
+  font-weight: 400 !important;
+}
+
+html[data-theme="light"] body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-benefit strong,
+html[data-theme="light"] body.spa-page #contenu > .section.section-soft.section-aqua .spa-turnover-benefit strong {
+  font-weight: 600 !important;
+}
+
+@media (prefers-color-scheme: light) {
+  html:not(.theme-dark):not([data-theme="dark"]) body.spa-page #contenu > .section.section-soft.section-aqua .spa-turnover-heading h3 {
+    color: #5422b3 !important;
+    -webkit-text-fill-color: #5422b3 !important;
+  }
+
+  html:not(.theme-dark):not([data-theme="dark"]) body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-benefit,
+  html:not(.theme-dark):not([data-theme="dark"]) body.spa-page #contenu > .section.section-soft.section-aqua .spa-turnover-benefit {
+    font-weight: 400 !important;
+  }
+
+  html:not(.theme-dark):not([data-theme="dark"]) body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-benefit strong,
+  html:not(.theme-dark):not([data-theme="dark"]) body.spa-page #contenu > .section.section-soft.section-aqua .spa-turnover-benefit strong {
+    font-weight: 600 !important;
+  }
+}
