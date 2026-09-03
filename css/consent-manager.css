@@ -274,3 +274,38 @@ html[data-theme="dark"] #contenu .sector-method-conclusion::before {
     background: linear-gradient(180deg, rgba(94, 23, 235, 0.82) 0%, rgba(0, 176, 255, 0.76) 100%) !important;
   }
 }
+
+/* Instituts & indépendantes — mode jour uniquement : textes de cartes allégés et lien interne violet lavande. */
+html[data-theme="light"] body.institutes-page .section-soft.section-aqua .institutes-editorial-content p,
+html[data-theme="light"] body.institutes-page .section-soft.section-aqua .institutes-onboarding-copy,
+html[data-theme="light"] body.institutes-page .section-soft.section-aqua .institutes-onboarding-benefit {
+  font-weight: 400 !important;
+}
+
+html[data-theme="light"] body.institutes-page .section-soft.section-aqua .institutes-editorial-benefit strong,
+html[data-theme="light"] body.institutes-page .section-soft.section-aqua .institutes-onboarding-benefit strong {
+  font-weight: 700 !important;
+}
+
+html[data-theme="light"] body.institutes-page .section-soft.section-aqua .institutes-editorial-content p > a {
+  color: #6b4bb3 !important;
+  -webkit-text-fill-color: #6b4bb3 !important;
+}
+
+@media (prefers-color-scheme: light) {
+  html:not(.theme-dark):not([data-theme="dark"]) body.institutes-page .section-soft.section-aqua .institutes-editorial-content p,
+  html:not(.theme-dark):not([data-theme="dark"]) body.institutes-page .section-soft.section-aqua .institutes-onboarding-copy,
+  html:not(.theme-dark):not([data-theme="dark"]) body.institutes-page .section-soft.section-aqua .institutes-onboarding-benefit {
+    font-weight: 400 !important;
+  }
+
+  html:not(.theme-dark):not([data-theme="dark"]) body.institutes-page .section-soft.section-aqua .institutes-editorial-benefit strong,
+  html:not(.theme-dark):not([data-theme="dark"]) body.institutes-page .section-soft.section-aqua .institutes-onboarding-benefit strong {
+    font-weight: 700 !important;
+  }
+
+  html:not(.theme-dark):not([data-theme="dark"]) body.institutes-page .section-soft.section-aqua .institutes-editorial-content p > a {
+    color: #6b4bb3 !important;
+    -webkit-text-fill-color: #6b4bb3 !important;
+  }
+}
