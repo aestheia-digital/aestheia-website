@@ -327,3 +327,18 @@ html:not(.theme-dark) body.thalasso-page #contenu > .section.section-mist.sectio
 html:not(.theme-dark) body.thalasso-page .sector-reality-list li:last-child strong {
   font-weight: 600 !important;
 }
+
+/* Mode jour : titres des cinq cartes affinés sur desktop/portable et mobile uniquement. */
+@media (min-width: 1051px) {
+  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-heading h3,
+  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .thalasso-turnover-heading h3 {
+    font-weight: 500 !important;
+  }
+}
+
+@media (max-width: 720px) {
+  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-heading h3,
+  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .thalasso-turnover-heading h3 {
+    font-weight: 500 !important;
+  }
+}
