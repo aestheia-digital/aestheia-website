@@ -89,9 +89,9 @@ html.theme-dark body.pme-page #contenu > .section:not(.conversion-band):not(.sec
   }
 }
 
-/* TPE & PME : cartes Bénéfice en bleu du footer, texte blanc ; liseré dégradé conservé. */
+/* TPE & PME : cartes Bénéfice en bleu intermédiaire, texte blanc ; liseré dégradé conservé. */
 body.pme-page #contenu > .section.section-soft.section-aqua .sector-editorial-benefit {
-  background: #1e2a50 !important;
+  background: #415b8f !important;
   color: #ffffff !important;
 }
 
