@@ -64,18 +64,15 @@ html[data-theme="light"] body.medicine-page .faq-section .faq-accordion-item sum
   }
 }
 
-/* FAQ médecine esthétique en mode nuit : titres en bleu clair, réponses en blanc. */
-html.theme-dark body.medicine-page .faq-section h2,
+/* FAQ médecine esthétique en mode nuit : questions en bleu clair, titre et réponses en blanc. */
 html.theme-dark body.medicine-page .faq-accordion-item summary,
 html.theme-dark body.medicine-page .faq-accordion-item summary h3,
-html[data-theme="dark"] body.medicine-page .faq-section h2,
 html[data-theme="dark"] body.medicine-page .faq-accordion-item summary,
 html[data-theme="dark"] body.medicine-page .faq-accordion-item summary h3 {
   color: #a9c0dc !important;
 }
 
 @media (prefers-color-scheme: dark) {
-  html:not(.theme-dark):not([data-theme="light"]) body.medicine-page .faq-section h2,
   html:not(.theme-dark):not([data-theme="light"]) body.medicine-page .faq-accordion-item summary,
   html:not(.theme-dark):not([data-theme="light"]) body.medicine-page .faq-accordion-item summary h3 {
     color: #a9c0dc !important;
