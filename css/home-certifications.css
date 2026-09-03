@@ -395,3 +395,16 @@ html.theme-dark #contenu > .home-hero ~ .location-section::before {
       radial-gradient(circle at 72% 100%, var(--halo-violet-secondary), transparent 44%) !important;
   }
 }
+
+/* Accueil nuit tablette + ordinateur : questions FAQ en violet lavande, comme sur mobile. */
+@media (min-width: 721px) and (prefers-color-scheme: dark) {
+  #contenu > .home-hero ~ .faq-section .faq-accordion-item summary {
+    color: #9b7cff !important;
+  }
+}
+
+@media (min-width: 721px) {
+  html.theme-dark #contenu > .home-hero ~ .faq-section .faq-accordion-item summary {
+    color: #9b7cff !important;
+  }
+}
