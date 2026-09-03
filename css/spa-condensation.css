@@ -311,7 +311,9 @@ html.theme-dark body.spa-page .spa-turnover-benefit strong {
   }
 
   body.spa-page .spa-turnover-heading {
-    display: contents;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
   }
 
   body.spa-page .spa-turnover-pictogram {
