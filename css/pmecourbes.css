@@ -1,11 +1,11 @@
 :root {
   --pme-image: url("../assets/images/metiers/donneesjour.webp");
-  --pme-veil: rgba(240, 245, 253, 0.52);
+  --pme-veil: rgba(240, 245, 253, 0.68);
   --pme-fond: #eef3fb;
 }
 html.theme-dark {
   --pme-image: url("../assets/images/metiers/donneesnuit.webp");
-  --pme-veil: rgba(11, 16, 42, 0.58);
+  --pme-veil: rgba(11, 16, 42, 0.70);
   --pme-fond: #0d1330;
 }
 html:not(.theme-dark) body.pme-page #contenu > .section.section-aqua,
