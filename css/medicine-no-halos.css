@@ -51,6 +51,18 @@ html[data-theme="light"] body.medicine-page #contenu > .section.section-mist + .
   }
 }
 
+/* Réassurance médecine en mode nuit : puces identiques à celles de La réalité du cabinet. */
+html.theme-dark body.medicine-page #contenu > .section.section-mist + .section.section-mist .feature-list li::before,
+html[data-theme="dark"] body.medicine-page #contenu > .section.section-mist + .section.section-mist .feature-list li::before {
+  background: linear-gradient(135deg, #00b0ff, var(--color-accent)) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-dark):not([data-theme="light"]) body.medicine-page #contenu > .section.section-mist + .section.section-mist .feature-list li::before {
+    background: linear-gradient(135deg, #00b0ff, var(--color-accent)) !important;
+  }
+}
+
 /* FAQ médecine esthétique en mode jour : même violet neutre que la page Instituts & indépendantes. */
 html[data-theme="light"] body.medicine-page .faq-section .faq-accordion-item summary,
 html[data-theme="light"] body.medicine-page .faq-section .faq-accordion-item summary h3 {
