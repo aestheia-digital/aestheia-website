@@ -1,13 +1,19 @@
-/* Page TPE-PME — FAQ en mode jour : bleu renforcé pour une meilleure lisibilité. */
-html[data-theme="light"] body.pme-page .faq-section .faq-accordion-item summary,
-html[data-theme="light"] body.pme-page .faq-section .faq-answer p {
+/* Page TPE-PME — FAQ en mode jour : questions bleues renforcées, réponses en bleu plus profond. */
+html[data-theme="light"] body.pme-page .faq-section .faq-accordion-item summary {
   color: #314d86 !important;
 }
 
+html[data-theme="light"] body.pme-page .faq-section .faq-answer p {
+  color: #1e2a50 !important;
+}
+
 @media (prefers-color-scheme: light) {
-  html:not(.theme-dark):not([data-theme="dark"]) body.pme-page .faq-section .faq-accordion-item summary,
-  html:not(.theme-dark):not([data-theme="dark"]) body.pme-page .faq-section .faq-answer p {
+  html:not(.theme-dark):not([data-theme="dark"]) body.pme-page .faq-section .faq-accordion-item summary {
     color: #314d86 !important;
+  }
+
+  html:not(.theme-dark):not([data-theme="dark"]) body.pme-page .faq-section .faq-answer p {
+    color: #1e2a50 !important;
   }
 }
 
