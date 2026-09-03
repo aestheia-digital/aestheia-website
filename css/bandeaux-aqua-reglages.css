@@ -322,3 +322,8 @@ html:not(.theme-dark) body.thalasso-page #contenu > .section.section-mist.sectio
     --aqua-veil: rgba(248, 250, 255, 0.76);
   }
 }
+
+/* Mode jour : Turnover et continuité opérationnelle aligné sur les autres mots renforcés. */
+html:not(.theme-dark) body.thalasso-page .sector-reality-list li:last-child strong {
+  font-weight: 600 !important;
+}
