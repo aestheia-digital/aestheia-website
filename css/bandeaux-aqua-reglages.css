@@ -264,3 +264,20 @@ html.theme-dark body.thalasso-page .thalasso-turnover-benefit strong {
     color: #07112d !important;
   }
 }
+
+/* 19. FAQ Thalasso en mode nuit : même bleu clair que les blocs Bénéfice. */
+html.theme-dark body.thalasso-page .faq-section h2,
+html.theme-dark body.thalasso-page .faq-accordion-item summary,
+html.theme-dark body.thalasso-page .faq-answer,
+html.theme-dark body.thalasso-page .faq-answer p {
+  color: #a9c0dc !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-dark) body.thalasso-page .faq-section h2,
+  html:not(.theme-dark) body.thalasso-page .faq-accordion-item summary,
+  html:not(.theme-dark) body.thalasso-page .faq-answer,
+  html:not(.theme-dark) body.thalasso-page .faq-answer p {
+    color: #a9c0dc !important;
+  }
+}
