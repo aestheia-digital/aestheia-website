@@ -386,3 +386,12 @@ html.theme-dark #contenu > .home-hero ~ .location-section::before {
 .sector-card h3 {
   font-size: 1.1rem;
 }
+
+/* Accueil en mode jour : halo du bandeau Sécurité et contrôle humain déplacé vers le bas à droite. */
+@media (prefers-color-scheme: light) {
+  #contenu > .home-hero ~ .home-safety::before {
+    background:
+      radial-gradient(circle at 88% 82%, var(--halo-violet-primary), transparent 40%),
+      radial-gradient(circle at 72% 100%, var(--halo-violet-secondary), transparent 44%) !important;
+  }
+}
