@@ -332,3 +332,15 @@ html.theme-dark #contenu > .home-hero ~ .location-section::before {
     flex-basis: 24px;
   }
 }
+
+/* Accueil en mode jour uniquement : titres de cartes légèrement dégraissés. */
+@media (prefers-color-scheme: light) {
+  .home-problems .problem-card h3,
+  .home-offers .offer-card h3,
+  .sector-card h3,
+  .home-engagements .engagement-card h3,
+  .home-method .process-step h3,
+  .home-safety .safety-grid .card h3 {
+    font-weight: 500;
+  }
+}
