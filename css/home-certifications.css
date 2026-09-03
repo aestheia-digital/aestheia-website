@@ -281,3 +281,54 @@ html.theme-dark #contenu > .home-hero ~ .location-section::before {
     radial-gradient(circle at 84% 24%, rgba(94, 23, 235, 0.14), transparent 42%),
     radial-gradient(circle at 16% 78%, rgba(139, 92, 246, 0.08), transparent 46%) !important;
 }
+
+/* Accueil : hiérarchie visuelle renforcée des titres et pictogrammes de cartes. */
+.home-problems .problem-card h3,
+.home-offers .offer-card h3,
+.home-engagements .engagement-card h3,
+.home-method .process-step h3,
+.home-safety .safety-grid .card h3 {
+  font-size: 1.08rem;
+}
+
+.home-offers .card-title-pictogram,
+.home-engagements .card-title-pictogram {
+  width: 25px;
+  height: 25px;
+}
+
+.home-method .step-label {
+  font-size: 0.84rem;
+}
+
+.home-safety .safety-grid .card h3::before {
+  width: 26px;
+  height: 26px;
+  flex-basis: 26px;
+}
+
+@media (max-width: 720px) {
+  .home-problems .problem-card h3,
+  .home-offers .offer-card h3,
+  .home-engagements .engagement-card h3,
+  .home-method .process-step h3,
+  .home-safety .safety-grid .card h3 {
+    font-size: 1.05rem;
+  }
+
+  .home-offers .card-title-pictogram,
+  .home-engagements .card-title-pictogram {
+    width: 24px;
+    height: 24px;
+  }
+
+  .home-method .step-label {
+    font-size: 0.82rem;
+  }
+
+  .home-safety .safety-grid .card h3::before {
+    width: 24px;
+    height: 24px;
+    flex-basis: 24px;
+  }
+}
