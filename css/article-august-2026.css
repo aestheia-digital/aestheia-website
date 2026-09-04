@@ -39,10 +39,11 @@
   }
 }
 
-/* Article turnover : visuel affiché en entier (16/9), sans recadrage vertical.
-   Le sélecteur d'attribut cible uniquement cette image et l'emporte par spécificité
-   sur la hauteur fixe de .article-visual img dans les trois paliers responsive. */
+/* Article turnover : bandeau un peu plus haut que le gabarit standard, avec un
+   recadrage ancré en haut pour préserver le schéma d'automatisation situé dans
+   la partie haute de l'image. Le ratio 49/22 tient à tous les paliers responsive. */
 .article-visual img[src*="turnover-spa-thalasso-automatisation"] {
   height: auto;
-  aspect-ratio: 1672 / 941;
+  aspect-ratio: 49 / 22;
+  object-position: center top;
 }
