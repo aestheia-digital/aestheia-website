@@ -378,7 +378,7 @@ if (homeProblems) {
   ];
 
   if (heading) {
-    heading.textContent = "Votre organisation vous fait perdre du temps et votre visibilité digitale reste difficile à maintenir.";
+    heading.textContent = "Votre organisation vous fait-elle perdre du temps et rend-elle votre visibilité digitale difficile à maintenir ?";
   }
 
   if (intro) {
