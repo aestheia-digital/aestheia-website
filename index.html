@@ -20,16 +20,98 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "AesthéIA",
-        "description": "Conception d’automatisations, d’assistants IA et de systèmes digitaux sur mesure pour simplifier les processus, mieux suivre les demandes, structurer les contenus et développer la visibilité.",
-        "areaServed": "France",
-        "serviceType": [
-          "Automatisation des processus",
-          "Assistants et agents IA sur mesure",
-          "Acquisition et suivi des demandes",
-          "Contenus et communication assistés par IA",
-          "Stratégie digitale, SEO et GEO"
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://aestheia.fr/#organization",
+            "name": "AesthéIA",
+            "legalName": "AesthéIA",
+            "url": "https://aestheia.fr/",
+            "logo": "https://aestheia.fr/assets/images/brand/logo.png",
+            "description": "AesthéIA conçoit des automatisations, assistants IA et systèmes digitaux sur mesure pour simplifier les processus, mieux suivre les demandes et développer la visibilité.",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "6 rue d’Armaillé",
+              "postalCode": "75017",
+              "addressLocality": "Paris",
+              "addressCountry": "FR"
+            },
+            "telephone": "+33642789057",
+            "email": "contact@aestheia.fr",
+            "areaServed": "FR",
+            "founder": {"@id": "https://aestheia.fr/#magalie"},
+            "sameAs": "https://www.linkedin.com/in/magalie-stankovic/"
+          },
+          {
+            "@type": "ProfessionalService",
+            "@id": "https://aestheia.fr/#service",
+            "name": "AesthéIA",
+            "url": "https://aestheia.fr/",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "6 rue d’Armaillé",
+              "postalCode": "75017",
+              "addressLocality": "Paris",
+              "addressCountry": "FR"
+            },
+            "telephone": "+33642789057",
+            "priceRange": "800 € - 6 000 € HT",
+            "areaServed": "FR",
+            "parentOrganization": {"@id": "https://aestheia.fr/#organization"}
+          },
+          {
+            "@type": "Person",
+            "@id": "https://aestheia.fr/#magalie",
+            "name": "Magalie Stankovic",
+            "jobTitle": "Consultante en stratégie digitale et automatisation par l'IA",
+            "worksFor": {"@id": "https://aestheia.fr/#organization"},
+            "sameAs": "https://www.linkedin.com/in/magalie-stankovic/"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://aestheia.fr/#website",
+            "name": "AesthéIA",
+            "url": "https://aestheia.fr/",
+            "publisher": {"@id": "https://aestheia.fr/#organization"},
+            "inLanguage": "fr-FR"
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Intervenez-vous uniquement en Île-de-France ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Non. AesthéIA accompagne les entreprises partout en France métropolitaine, principalement à distance. Des interventions sur site peuvent également être organisées selon la nature de la mission, la localisation et les conditions définies ensemble."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Combien coûte un accompagnement avec AesthéIA ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Le coût dépend du périmètre du projet. Un diagnostic ciblé démarre autour de 800 € HT, la mise en place d’une première automatisation se situe généralement entre 3 000 € et 6 000 € HT selon sa complexité, et les accompagnements plus complets sont chiffrés au cas par cas après un premier échange. Un échange initial, sans engagement, permet de cadrer précisément vos besoins et de vous proposer un chiffrage adapté."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Combien de temps faut-il pour voir des résultats ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Cela dépend du périmètre du projet. Un diagnostic initial prend généralement quelques jours, et une première solution concrète peut être mise en place en quelques semaines. Les accompagnements plus complets, impliquant plusieurs automatisations ou une refonte de la visibilité digitale, s’inscrivent sur un temps plus long, défini ensemble dès le départ."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Proposez-vous aussi la création de sites internet ?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Oui, lorsqu’elle s’inscrit dans une logique d’automatisation. Je conçois ou repense des sites capables d’intégrer directement des fonctionnalités utiles à votre activité : prise de rendez-vous automatisée, chatbot de qualification, formulaires connectés à votre suivi commercial ou autres parcours adaptés à vos besoins. L’objectif n’est pas de créer un simple site vitrine, mais un site conçu pour informer, orienter et faciliter les actions de vos prospects."
+                }
+              }
+            ]
+          }
         ]
       }
     </script>
@@ -359,46 +441,6 @@
               </div>
             </details>
           </div>
-          <script type="application/ld+json">
-            {
-              "@context": "https://schema.org",
-              "@type": "FAQPage",
-              "mainEntity": [
-                {
-                  "@type": "Question",
-                  "name": "Intervenez-vous uniquement en Île-de-France ?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Non. AesthéIA accompagne les entreprises partout en France métropolitaine, principalement à distance. Des interventions sur site peuvent également être organisées selon la nature de la mission, la localisation et les conditions définies ensemble."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Combien coûte un accompagnement avec AesthéIA ?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Le coût dépend du périmètre du projet. Un diagnostic ciblé démarre autour de 800 € HT, la mise en place d’une première automatisation se situe généralement entre 3 000 € et 6 000 € HT selon sa complexité, et les accompagnements plus complets sont chiffrés au cas par cas après un premier échange. Un échange initial, sans engagement, permet de cadrer précisément vos besoins et de vous proposer un chiffrage adapté."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Combien de temps faut-il pour voir des résultats ?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Cela dépend du périmètre du projet. Un diagnostic initial prend généralement quelques jours, et une première solution concrète peut être mise en place en quelques semaines. Les accompagnements plus complets, impliquant plusieurs automatisations ou une refonte de la visibilité digitale, s’inscrivent sur un temps plus long, défini ensemble dès le départ."
-                  }
-                },
-                {
-                  "@type": "Question",
-                  "name": "Proposez-vous aussi la création de sites internet ?",
-                  "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Oui, lorsqu’elle s’inscrit dans une logique d’automatisation. Je conçois ou repense des sites capables d’intégrer directement des fonctionnalités utiles à votre activité : prise de rendez-vous automatisée, chatbot de qualification, formulaires connectés à votre suivi commercial ou autres parcours adaptés à vos besoins. L’objectif n’est pas de créer un simple site vitrine, mais un site conçu pour informer, orienter et faciliter les actions de vos prospects."
-                  }
-                }
-              ]
-            }
-          </script>
         </div>
       </section>
 
