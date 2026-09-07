@@ -109,16 +109,23 @@
         -webkit-text-fill-color: transparent !important;
       }
 
-      /* Contact, ordinateur et mode jour : numéro plus léger avec halo violet discret. */
+      /* Contact, ordinateur et mode jour : halo violet léger sur le bandeau Coordonnées. */
       @media (min-width: 1180px) {
+        html:not(.theme-dark):not([data-theme="dark"]) #contenu > .contact-cube-hero + .section + .section-soft {
+          background:
+            radial-gradient(circle at 50% 52%,
+              rgba(94, 23, 235, 0.14) 0%,
+              rgba(94, 23, 235, 0.08) 24%,
+              rgba(94, 23, 235, 0.03) 44%,
+              transparent 68%),
+            var(--color-soft);
+        }
+
         html:not(.theme-dark):not([data-theme="dark"]) .contact-phone-display {
           font-size: 1.18rem;
           font-weight: 400 !important;
           letter-spacing: 0.02em;
-          text-shadow:
-            0 0 6px rgba(94, 23, 235, 0.38),
-            0 0 18px rgba(94, 23, 235, 0.26),
-            0 0 30px rgba(94, 23, 235, 0.14);
+          text-shadow: none;
         }
       }
 
