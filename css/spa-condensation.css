@@ -566,3 +566,11 @@ html[data-theme="dark"] body.spa-page .faq-accordion-item summary {
     margin-bottom: 0.35rem;
   }
 }
+
+/* Ordinateur, mode jour : corps de texte allégé dans les cartes Systèmes. */
+@media (min-width: 1051px) {
+  html:not(.theme-dark):not([data-theme="dark"]) body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-content > p:not(.sector-editorial-benefit),
+  html:not(.theme-dark):not([data-theme="dark"]) body.spa-page #contenu > .section.section-soft.section-aqua .spa-turnover-copy {
+    font-weight: 400 !important;
+  }
+}
