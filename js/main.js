@@ -314,6 +314,10 @@ if (!document.getElementById("commercial-alignment-rules")) {
       .home-offers .offer-result {
         margin-top: auto;
       }
+
+      .home-offers .commercial-offer-proposal + .offer-result {
+        margin-top: 0;
+      }
     }
 
     @media (max-width: 520px) {
@@ -446,7 +450,11 @@ if (homeOffers) {
       .map((card) => Array.from(card.children).find((child) => child.tagName === "P" && !child.classList.contains("commercial-offer-proposal") && !child.classList.contains("offer-result")))
       .filter(Boolean);
 
-    [...titles, ...descriptions].forEach((element) => {
+    const proposals = cards
+      .map((card) => card.querySelector(".commercial-offer-proposal"))
+      .filter(Boolean);
+
+    [...titles, ...descriptions, ...proposals].forEach((element) => {
       element.style.removeProperty("min-height");
     });
 
@@ -467,9 +475,13 @@ if (homeOffers) {
     if (descriptions.length) {
       setSharedMinHeight(descriptions);
     }
+    if (proposals.length) {
+      setSharedMinHeight(proposals);
+    }
   };
 
   window.requestAnimationFrame(alignHomeOfferRows);
+  document.fonts.ready.then(alignHomeOfferRows);
   window.addEventListener("resize", alignHomeOfferRows, { passive: true });
 }
 
