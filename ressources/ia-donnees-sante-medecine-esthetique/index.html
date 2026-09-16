@@ -28,7 +28,7 @@
         display: flex;
         flex-wrap: nowrap;
         align-items: center;
-        gap: 1.5rem;
+        gap: 1rem;
         margin-top: 2.5rem;
         padding-top: 1.2rem;
         border-top: 1px solid #d8dce7;
@@ -40,51 +40,37 @@
         opacity: .75;
         font-size: .95rem;
         white-space: nowrap;
+        margin-right: .5rem;
       }
 
       .ia-resume a {
         display: inline-flex;
-        flex-direction: column;
         align-items: center;
-        gap: .4rem;
-        min-height: auto;
+        justify-content: center;
+        width: 80px;
+        height: 80px;
         padding: 0;
-        border: none;
-        background: none;
-        color: #212a59;
+        border: 1px solid #d8dce7;
+        border-radius: 8px;
+        background: #fff;
         text-decoration: none;
         transition: all .2s;
       }
 
       .ia-resume a:hover {
-        border-color: transparent;
-        background: none;
-        transform: none;
-      }
-
-      .ia-resume a:hover img {
-        transform: scale(1.08);
+        border-color: #5e17eb;
+        background: rgba(94, 23, 235, .05);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(94, 23, 235, .1);
       }
 
       .ia-resume a:focus-visible {
-        outline: none;
-      }
-
-      .ia-resume a:focus-visible img {
         outline: 2px solid #5e17eb;
         outline-offset: 3px;
       }
 
-      .ia-resume a span {
-        font-size: 0.75rem;
-        font-weight: 400;
-        color: #5e17eb;
-        text-align: center;
-      }
-
       .ia-resume .ia-brand {
         display: block;
-        flex: 0 0 60px;
         width: 60px;
         height: 60px;
         object-fit: contain;
@@ -99,12 +85,15 @@
           color: #f1f5f9;
         }
 
-        .ia-resume a span {
-          color: #a78bfa;
+        .ia-resume a {
+          border-color: #475569;
+          background: rgba(30, 41, 59, .3);
         }
 
-        .ia-resume a:hover img {
-          filter: brightness(1.1);
+        .ia-resume a:hover {
+          border-color: #7c3aed;
+          background: rgba(124, 58, 237, .15);
+          box-shadow: 0 4px 12px rgba(124, 58, 237, .15);
         }
       }
     </style>
@@ -302,24 +291,21 @@
             <span class="ia-resume-label">Pas le temps de tout lire ? Résumez cet article avec :</span>
 
             <a href="https://chatgpt.com/?prompt=R%C3%A9sume%20l%27article%20suivant%20%3A%20https%3A%2F%2Faestheia.fr%2Fressources%2Fia-donnees-sante-medecine-esthetique%2F"
-               target="_blank" rel="noopener noreferrer nofollow">
+               target="_blank" rel="noopener noreferrer nofollow" title="Résumer avec ChatGPT">
               <img class="ia-brand" src="/assets/images/ia/chatgpt.svg"
-                   width="60" height="60" alt="">
-              <span>ChatGPT</span>
+                   width="60" height="60" alt="ChatGPT">
             </a>
 
             <a href="https://claude.ai/new?q=R%C3%A9sume%20l%27article%20suivant%20%3A%20https%3A%2F%2Faestheia.fr%2Fressources%2Fia-donnees-sante-medecine-esthetique%2F"
-               target="_blank" rel="noopener noreferrer nofollow">
+               target="_blank" rel="noopener noreferrer nofollow" title="Résumer avec Claude">
               <img class="ia-brand" src="/assets/images/ia/claude.svg"
-                   width="60" height="60" alt="">
-              <span>Claude</span>
+                   width="60" height="60" alt="Claude">
             </a>
 
             <a href="https://gemini.google.com/?q=R%C3%A9sume%20l%27article%20suivant%20%3A%20https%3A%2F%2Faestheia.fr%2Fressources%2Fia-donnees-sante-medecine-esthetique%2F"
-               target="_blank" rel="noopener noreferrer nofollow">
+               target="_blank" rel="noopener noreferrer nofollow" title="Résumer avec Gemini">
               <img class="ia-brand" src="/assets/images/ia/gemini.svg"
-                   width="60" height="60" alt="">
-              <span>Gemini</span>
+                   width="60" height="60" alt="Gemini">
             </a>
           </div>
         </div>
