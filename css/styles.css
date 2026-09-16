@@ -4909,3 +4909,75 @@ html[data-theme="light"] body.pme-page .faq-section .faq-answer p {
     color: #1e2a50 !important;
   }
 }
+
+.ia-resume {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .75rem;
+  margin-top: 2.5rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid #d8dce7;
+  font-family: Inter, sans-serif;
+  font-size: .9rem;
+}
+
+.ia-resume-label {
+  color: #212a59;
+  opacity: .75;
+}
+
+.ia-resume a {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  min-height: 44px;
+  padding: .55rem .85rem;
+  border: 1px solid #d8dce7;
+  border-radius: 6px;
+  background: #fff;
+  color: #212a59;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all .2s;
+}
+
+.ia-resume a:hover {
+  border-color: #5e17eb;
+  background: rgba(94, 23, 235, .05);
+  transform: translateY(-2px);
+}
+
+.ia-resume a:focus-visible {
+  outline: 2px solid #5e17eb;
+  outline-offset: 3px;
+}
+
+.ia-resume .ia-brand {
+  display: block;
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ia-resume {
+    border-color: #64748b;
+  }
+
+  .ia-resume-label {
+    color: #f1f5f9;
+  }
+
+  .ia-resume a {
+    border-color: #475569;
+    background: rgba(30, 41, 59, .5);
+    color: #f1f5f9;
+  }
+
+  .ia-resume a:hover {
+    border-color: #7c3aed;
+    background: rgba(124, 58, 237, .15);
+  }
+}
