@@ -76,3 +76,10 @@ html[data-theme="dark"] #contenu > .resources-hero + .section {
       linear-gradient(135deg, #11183d 0%, #172149 58%, #202d60 100%);
   }
 }
+
+/* Articles : les pastilles de secteur des ressources liées reprennent le dégradé AesthéIA. */
+.related-resource-card .resource-sector {
+  color: #fff;
+  border-color: transparent;
+  background: var(--gradient-ia);
+}
