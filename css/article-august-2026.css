@@ -54,3 +54,10 @@
   border-color: transparent;
   background: var(--gradient-ia);
 }
+
+/* Mode nuit : le texte au-dessus des boutons LLM reste blanc sur tous les supports. */
+html.theme-dark .ia-resume-label,
+html[data-theme="dark"] .ia-resume-label {
+  color: #fff !important;
+  opacity: 1;
+}
