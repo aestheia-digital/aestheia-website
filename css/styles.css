@@ -4909,3 +4909,12 @@ html[data-theme="light"] body.pme-page .faq-section .faq-answer p {
     color: #1e2a50 !important;
   }
 }
+
+.ia-resume{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;
+  margin:1.5rem 0 2rem;padding:.85rem 1.1rem;
+  border:1px solid rgba(33,42,89,.15);border-radius:8px;
+  font-family:'Inter',sans-serif;font-size:.9rem}
+.ia-resume-label{color:#212a59;opacity:.75}
+.ia-resume a{color:#5e17eb;text-decoration:none;font-weight:500;
+  padding:.25rem .7rem;border:1px solid rgba(94,23,235,.3);border-radius:999px}
+.ia-resume a:hover{background:#5e17eb;color:#fff}
