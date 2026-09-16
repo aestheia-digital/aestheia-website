@@ -4910,13 +4910,14 @@ html[data-theme="light"] body.pme-page .faq-section .faq-answer p {
   }
 }
 
-.ia-resume{display:flex;flex-wrap:wrap;align-items:center;gap:1rem;
-  margin:2.5rem 0 0;padding:1rem 0;
+.ia-resume{display:flex;flex-wrap:wrap;align-items:center;gap:1.2rem;
+  margin:2.5rem 0 0;padding:1.2rem 0;
   border-top:1px solid rgba(33,42,89,.1);
   font-family:'Inter',sans-serif;font-size:.9rem}
-.ia-resume-label{color:#212a59;opacity:.6;font-size:.85rem}
-.ia-resume a{display:flex;align-items:center;justify-content:center;
-  width:40px;height:40px;border-radius:8px;
-  background:rgba(33,42,89,.05);transition:all .2s}
-.ia-resume a:hover{background:rgba(33,42,89,.1);transform:scale(1.05)}
-.ia-logo{width:24px;height:24px}
+.ia-resume-label{color:#212a59;opacity:.6;font-size:.85rem;margin-right:.5rem}
+.ia-resume a{display:inline-flex;align-items:center;gap:.4rem;
+  padding:.6rem 1rem;border:1px solid rgba(94,23,235,.2);border-radius:6px;
+  color:#5e17eb;text-decoration:none;font-weight:500;
+  background:rgba(94,23,235,.02);transition:all .2s}
+.ia-resume a:hover{border-color:#5e17eb;background:rgba(94,23,235,.08);transform:translateY(-2px)}
+.ia-resume i{font-size:1rem}
