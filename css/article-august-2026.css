@@ -47,3 +47,10 @@
   aspect-ratio: 49 / 22;
   object-position: center top;
 }
+
+/* Articles : les pastilles de secteur des ressources liées reprennent le dégradé AesthéIA. */
+.related-resource-card .resource-sector {
+  color: #fff;
+  border-color: transparent;
+  background: var(--gradient-ia);
+}
