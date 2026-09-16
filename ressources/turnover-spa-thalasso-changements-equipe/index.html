@@ -24,14 +24,88 @@
     <link rel="stylesheet" href="../../css/consent-manager.css">
     <link rel="stylesheet" href="../../css/article-august-2026.css">
     <style>
+      .ia-resume {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 1.5rem;
+        margin-top: 2.5rem;
+        padding-top: 1.2rem;
+        border-top: 1px solid #d8dce7;
+        font-family: Inter, sans-serif;
+      }
+
+      .ia-resume-label {
+        color: #212a59;
+        opacity: .75;
+        font-size: .95rem;
+        white-space: nowrap;
+      }
+
       .ia-resume a {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        gap: .4rem;
+        min-height: auto;
+        padding: 0;
+        border: none;
+        background: none;
+        color: #212a59;
+        text-decoration: none;
+        transition: all .2s;
+      }
+
+      .ia-resume a:hover {
+        border-color: transparent;
+        background: none;
+        transform: none;
+      }
+
+      .ia-resume a:hover img {
+        transform: scale(1.08);
+      }
+
+      .ia-resume a:focus-visible {
+        outline: none;
+      }
+
+      .ia-resume a:focus-visible img {
+        outline: 2px solid #5e17eb;
+        outline-offset: 3px;
+      }
+
+      .ia-resume a span {
+        font-size: 0.75rem;
         font-weight: 400;
+        color: #5e17eb;
+        text-align: center;
       }
 
       .ia-resume .ia-brand {
-        flex: 0 0 40px;
-        width: 40px;
-        height: 40px;
+        display: block;
+        flex: 0 0 60px;
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .ia-resume {
+          border-color: #64748b;
+        }
+
+        .ia-resume-label {
+          color: #f1f5f9;
+        }
+
+        .ia-resume a span {
+          color: #a78bfa;
+        }
+
+        .ia-resume a:hover img {
+          filter: brightness(1.1);
+        }
       }
     </style>
     <script type="application/ld+json">
@@ -111,21 +185,21 @@
             <a href="https://chatgpt.com/?prompt=R%C3%A9sume%20l%27article%20suivant%20%3A%20https%3A%2F%2Faestheia.fr%2Fressources%2Fturnover-spa-thalasso-changements-equipe%2F"
                target="_blank" rel="noopener noreferrer nofollow">
               <img class="ia-brand" src="/assets/images/ia/chatgpt.svg"
-                   width="40" height="40" alt="">
+                   width="60" height="60" alt="">
               <span>ChatGPT</span>
             </a>
 
             <a href="https://claude.ai/new?q=R%C3%A9sume%20l%27article%20suivant%20%3A%20https%3A%2F%2Faestheia.fr%2Fressources%2Fturnover-spa-thalasso-changements-equipe%2F"
                target="_blank" rel="noopener noreferrer nofollow">
               <img class="ia-brand" src="/assets/images/ia/claude.svg"
-                   width="40" height="40" alt="">
+                   width="60" height="60" alt="">
               <span>Claude</span>
             </a>
 
             <a href="https://gemini.google.com/?q=R%C3%A9sume%20l%27article%20suivant%20%3A%20https%3A%2F%2Faestheia.fr%2Fressources%2Fturnover-spa-thalasso-changements-equipe%2F"
                target="_blank" rel="noopener noreferrer nofollow">
               <img class="ia-brand" src="/assets/images/ia/gemini.svg"
-                   width="40" height="40" alt="">
+                   width="60" height="60" alt="">
               <span>Gemini</span>
             </a>
           </div>
