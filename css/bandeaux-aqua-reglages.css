@@ -239,6 +239,11 @@ html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.sectio
   flex: 0 0 32px !important;
 }
 
+/* Turnover et continuité opérationnelle : contenu repliable dans la réalité de l'établissement. */
+body.thalasso-page .thalasso-reality-turnover-accordion > p {
+  margin: 0;
+}
+
 /* Mode jour : Turnover et continuité opérationnelle aligné sur les autres mots renforcés. */
 html:not(.theme-dark) body.thalasso-page .sector-reality-list li:last-child strong {
   font-weight: 600 !important;
