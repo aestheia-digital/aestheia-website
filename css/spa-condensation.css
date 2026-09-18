@@ -302,13 +302,22 @@ html.theme-dark body.spa-page .spa-turnover-benefit strong {
   color: #fff;
 }
 
-@media (max-width: 960px) {
+@media (min-width: 721px) and (max-width: 960px) {
   body.spa-page .spa-turnover-block {
-    grid-template-columns: minmax(190px, 0.8fr) minmax(0, 1.2fr);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
   }
 
-  body.spa-page .spa-turnover-benefit {
-    grid-column: 1 / -1;
+  body.spa-page .spa-turnover-block > summary {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  body.spa-page .spa-turnover-heading {
+    min-width: 0;
+    flex: 1 1 auto;
   }
 }
 
