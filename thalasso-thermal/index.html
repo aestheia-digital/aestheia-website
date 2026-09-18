@@ -136,17 +136,20 @@
 
       @media (max-width: 960px) {
         .thalasso-turnover-block {
-          grid-template-columns: minmax(190px, 0.8fr) minmax(0, 1.2fr);
-        }
-
-        .thalasso-turnover-block > summary,
-        .thalasso-turnover-copy,
-        .thalasso-turnover-benefit {
-          grid-column: 1 / -1;
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+          gap: 1rem;
         }
 
         .thalasso-turnover-block > summary {
           width: 100%;
+          box-sizing: border-box;
+        }
+
+        .thalasso-turnover-heading {
+          min-width: 0;
+          flex: 1 1 auto;
         }
       }
 
