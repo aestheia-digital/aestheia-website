@@ -5207,3 +5207,81 @@ html.theme-dark .sector-card-accordion > summary::after,
 html[data-theme="dark"] .sector-card-accordion > summary::after {
   border-color: #b69cff;
 }
+
+
+/* Mobile : blocs éditoriaux longs avec aperçu + « Lire la suite ». */
+.mobile-readmore-toggle {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  .editorial-mobile-readmore.mobile-readmore-active > summary {
+    margin-bottom: 0.65rem !important;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  .editorial-mobile-readmore.mobile-readmore-active > summary::after {
+    display: none !important;
+  }
+
+  .editorial-mobile-readmore.mobile-readmore-active > p:first-of-type {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+  }
+
+  .editorial-mobile-readmore.mobile-readmore-active > p:not(:first-of-type) {
+    display: none;
+  }
+
+  .editorial-mobile-readmore.mobile-readmore-active.is-expanded > p:first-of-type {
+    display: block;
+    overflow: visible;
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+  }
+
+  .editorial-mobile-readmore.mobile-readmore-active.is-expanded > p:not(:first-of-type) {
+    display: block;
+  }
+
+  .editorial-mobile-readmore.mobile-readmore-active > .mobile-readmore-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    width: fit-content;
+    margin-top: 0.8rem;
+    padding: 0;
+    border: 0;
+    color: var(--color-accent);
+    background: transparent;
+    font: inherit;
+    font-size: 0.92rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .editorial-mobile-readmore.mobile-readmore-active > .mobile-readmore-toggle::after {
+    content: "↓";
+    font-size: 0.95em;
+    transition: transform 0.2s ease;
+  }
+
+  .editorial-mobile-readmore.mobile-readmore-active.is-expanded > .mobile-readmore-toggle::after {
+    transform: rotate(180deg);
+  }
+
+  html.theme-dark .editorial-mobile-readmore.mobile-readmore-active > .mobile-readmore-toggle,
+  html[data-theme="dark"] .editorial-mobile-readmore.mobile-readmore-active > .mobile-readmore-toggle {
+    color: #b69cff;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    html:not([data-theme="light"]) .editorial-mobile-readmore.mobile-readmore-active > .mobile-readmore-toggle {
+      color: #b69cff;
+    }
+  }
+}
