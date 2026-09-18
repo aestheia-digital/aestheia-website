@@ -5068,19 +5068,19 @@ html.theme-dark .home-offers .home-card-accordion > summary::after {
   list-style: none;
 }
 
-.home-engagements .home-card-accordion > summary::-webkit-details-marker::-webkit-details-marker,
+.home-engagements .home-card-accordion > summary::-webkit-details-marker,
 .home-safety .home-card-accordion > summary::-webkit-details-marker,
 .conversion-band .home-card-accordion > summary::-webkit-details-marker {
   display: none;
 }
 
-.home-engagements .home-card-accordion > summary::marker::marker,
+.home-engagements .home-card-accordion > summary::marker,
 .home-safety .home-card-accordion > summary::marker,
 .conversion-band .home-card-accordion > summary::marker {
   content: "";
 }
 
-.home-engagements .home-card-accordion > summary::after::after,
+.home-engagements .home-card-accordion > summary::after,
 .home-safety .home-card-accordion > summary::after,
 .conversion-band .home-card-accordion > summary::after {
   content: "";
@@ -5100,7 +5100,7 @@ html.theme-dark .home-offers .home-card-accordion > summary::after {
   transform: rotate(225deg);
 }
 
-.home-engagements .home-card-accordion > summary h3 h3,
+.home-engagements .home-card-accordion > summary h3,
 .home-safety .home-card-accordion > summary h3,
 .conversion-band .home-card-accordion > summary h3 {
   margin: 0;
@@ -5113,7 +5113,7 @@ html.theme-dark .home-offers .home-card-accordion > summary::after {
   margin-bottom: 1rem;
 }
 
-.home-engagements .home-card-accordion > summary:focus-visible:focus-visible,
+.home-engagements .home-card-accordion > summary:focus-visible,
 .home-safety .home-card-accordion > summary:focus-visible,
 .conversion-band .home-card-accordion > summary:focus-visible {
   outline: 2px solid #5e17eb;
