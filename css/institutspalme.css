@@ -195,8 +195,14 @@ html.theme-dark body.institutes-page .institutes-onboarding-benefit strong {
     grid-template-columns: minmax(190px, 0.8fr) minmax(0, 1.2fr);
   }
 
+  body.institutes-page .institutes-onboarding-block > summary,
+  body.institutes-page .institutes-onboarding-copy,
   body.institutes-page .institutes-onboarding-benefit {
     grid-column: 1 / -1;
+  }
+
+  body.institutes-page .institutes-onboarding-block > summary {
+    width: 100%;
   }
 }
 
