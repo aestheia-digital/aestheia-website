@@ -365,8 +365,8 @@ html[data-theme="dark"] body.institutes-page .institutes-reality-issue-label {
 
 html.theme-dark body.institutes-page .institutes-team-issue h3,
 html[data-theme="dark"] body.institutes-page .institutes-team-issue h3 {
-  color: #b69cff !important;
-  -webkit-text-fill-color: #b69cff !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
 }
 
 html.theme-dark body.institutes-page .section-aqua .institutes-editorial-chapter,
@@ -528,8 +528,8 @@ html[data-theme="dark"] body.institutes-page #contenu > .section.section-mist.se
   }
 
   html:not([data-theme="light"]) body.institutes-page .institutes-team-issue h3 {
-    color: #b69cff !important;
-    -webkit-text-fill-color: #b69cff !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
   }
 }
 
