@@ -4347,23 +4347,25 @@ html.theme-dark .location-section {
   }
 }
 
-/* Mode nuit : tous les CTA de prise de rendez-vous conservent le dégradé IA. */
+/* Mode nuit : CTA prise de rendez-vous identique au CTA « Identifions vos besoins ». */
 @media (prefers-color-scheme: dark) {
   .btn[href="https://calendar.app.google/qx6dT7WJfTrsFe6j9"],
   .btn[href="https://calendar.app.google/qx6dT7WJfTrsFe6j9"]:hover {
     color: #fff !important;
     border-color: transparent !important;
-    background: var(--gradient-ia) !important;
-    box-shadow: 0 16px 30px rgba(0, 176, 255, 0.18);
+    background: linear-gradient(135deg, #4a5bdc 0%, #237fdf 48%, #00b0ff 100%) !important;
+    box-shadow: 0 16px 30px rgba(0, 119, 221, 0.22);
   }
 }
 
 html.theme-dark .btn[href="https://calendar.app.google/qx6dT7WJfTrsFe6j9"],
-html.theme-dark .btn[href="https://calendar.app.google/qx6dT7WJfTrsFe6j9"]:hover {
+html.theme-dark .btn[href="https://calendar.app.google/qx6dT7WJfTrsFe6j9"]:hover,
+html[data-theme="dark"] .btn[href="https://calendar.app.google/qx6dT7WJfTrsFe6j9"],
+html[data-theme="dark"] .btn[href="https://calendar.app.google/qx6dT7WJfTrsFe6j9"]:hover {
   color: #fff !important;
   border-color: transparent !important;
-  background: var(--gradient-ia) !important;
-  box-shadow: 0 16px 30px rgba(0, 176, 255, 0.18);
+  background: linear-gradient(135deg, #4a5bdc 0%, #237fdf 48%, #00b0ff 100%) !important;
+  box-shadow: 0 16px 30px rgba(0, 119, 221, 0.22);
 }
 
 /* Lien intersectoriel Spa vers Thalasso : dégradé constant, y compris en mode nuit. */
