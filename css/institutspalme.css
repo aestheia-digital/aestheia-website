@@ -192,17 +192,20 @@ html.theme-dark body.institutes-page .institutes-onboarding-benefit strong {
 
 @media (max-width: 960px) {
   body.institutes-page .institutes-onboarding-block {
-    grid-template-columns: minmax(190px, 0.8fr) minmax(0, 1.2fr);
-  }
-
-  body.institutes-page .institutes-onboarding-block > summary,
-  body.institutes-page .institutes-onboarding-copy,
-  body.institutes-page .institutes-onboarding-benefit {
-    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
   }
 
   body.institutes-page .institutes-onboarding-block > summary {
     width: 100%;
+    box-sizing: border-box;
+  }
+
+  body.institutes-page .institutes-onboarding-heading {
+    min-width: 0;
+    flex: 1 1 auto;
   }
 }
 
