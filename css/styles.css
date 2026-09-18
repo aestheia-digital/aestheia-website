@@ -5175,3 +5175,15 @@ html.theme-dark .sector-card-accordion > summary::after,
 html[data-theme="dark"] .sector-card-accordion > summary::after {
   border-color: #b69cff;
 }
+
+
+/* Test home : hiérarchie de titres raccourcie. */
+.home-hero .hero-subtitle {
+  max-width: 760px;
+  margin-top: 0.85rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.18rem, 2vw, 1.55rem);
+  font-weight: 400;
+  line-height: 1.25;
+  color: #fff;
+}
