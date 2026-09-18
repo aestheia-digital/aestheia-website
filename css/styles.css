@@ -4981,3 +4981,197 @@ html[data-theme="light"] body.pme-page .faq-section .faq-answer p {
     background: rgba(124, 58, 237, .15);
   }
 }
+
+
+/* Test accueil : cartes repliables sur le modèle de la FAQ. */
+.home-problems .home-card-accordion,
+.home-offers .home-card-accordion {
+  align-self: start;
+}
+
+.home-problems .home-card-accordion > summary,
+.home-offers .home-card-accordion > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.home-problems .home-card-accordion > summary::-webkit-details-marker,
+.home-offers .home-card-accordion > summary::-webkit-details-marker {
+  display: none;
+}
+
+.home-problems .home-card-accordion > summary::marker,
+.home-offers .home-card-accordion > summary::marker {
+  content: "";
+}
+
+.home-problems .home-card-accordion > summary::after,
+.home-offers .home-card-accordion > summary::after {
+  content: "";
+  flex: 0 0 auto;
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-left: auto;
+  border-right: 2px solid #5e17eb;
+  border-bottom: 2px solid #5e17eb;
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+.home-problems .home-card-accordion[open] > summary::after,
+.home-offers .home-card-accordion[open] > summary::after {
+  transform: rotate(225deg);
+}
+
+.home-problems .home-card-accordion > summary h3,
+.home-offers .home-card-accordion > summary h3 {
+  margin: 0;
+}
+
+.home-problems .home-card-accordion[open] > summary,
+.home-offers .home-card-accordion[open] > summary {
+  margin-bottom: 1rem;
+}
+
+.home-problems .home-card-accordion > summary:focus-visible,
+.home-offers .home-card-accordion > summary:focus-visible {
+  outline: 2px solid #5e17eb;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+html.theme-dark .home-problems .home-card-accordion > summary::after,
+html.theme-dark .home-offers .home-card-accordion > summary::after {
+  border-color: #b69cff;
+}
+
+
+/* Extension du test : toutes les cartes de la home hors cartes secteur. */
+.home-engagements .home-card-accordion,
+.home-safety .home-card-accordion {
+  align-self: start;
+}
+
+.home-engagements .home-card-accordion > summary,
+.home-safety .home-card-accordion > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.home-engagements .home-card-accordion > summary::-webkit-details-marker,
+.home-safety .home-card-accordion > summary::-webkit-details-marker {
+  display: none;
+}
+
+.home-engagements .home-card-accordion > summary::marker,
+.home-safety .home-card-accordion > summary::marker {
+  content: "";
+}
+
+.home-engagements .home-card-accordion > summary::after,
+.home-safety .home-card-accordion > summary::after {
+  content: "";
+  flex: 0 0 auto;
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-left: auto;
+  border-right: 2px solid #5e17eb;
+  border-bottom: 2px solid #5e17eb;
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+.home-engagements .home-card-accordion[open] > summary::after,
+.home-safety .home-card-accordion[open] > summary::after {
+  transform: rotate(225deg);
+}
+
+.home-engagements .home-card-accordion > summary h3,
+.home-safety .home-card-accordion > summary h3 {
+  margin: 0;
+}
+
+.home-engagements .home-card-accordion[open] > summary,
+.home-safety .home-card-accordion[open] > summary {
+  margin-bottom: 1rem;
+}
+
+.home-engagements .home-card-accordion > summary:focus-visible,
+.home-safety .home-card-accordion > summary:focus-visible {
+  outline: 2px solid #5e17eb;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+html.theme-dark .home-engagements .home-card-accordion > summary::after,
+html.theme-dark .home-safety .home-card-accordion > summary::after {
+  border-color: #b69cff;
+}
+
+
+/* Pages secteur : cartes de contenu repliables, hors méthode et cartes de navigation. */
+.sector-card-accordion {
+  align-self: start;
+}
+
+.sector-card-accordion > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  cursor: pointer;
+  list-style: none;
+}
+
+.sector-card-accordion > summary::-webkit-details-marker {
+  display: none;
+}
+
+.sector-card-accordion > summary::marker {
+  content: "";
+}
+
+.sector-card-accordion > summary::after {
+  content: "";
+  flex: 0 0 auto;
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-left: auto;
+  border-right: 2px solid #5e17eb;
+  border-bottom: 2px solid #5e17eb;
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+.sector-card-accordion[open] > summary::after {
+  transform: rotate(225deg);
+}
+
+.sector-card-accordion > summary h3,
+.sector-card-accordion > summary .sector-editorial-heading,
+.sector-card-accordion > summary .institutes-editorial-heading {
+  margin: 0;
+}
+
+.sector-card-accordion[open] > summary {
+  margin-bottom: 1rem;
+}
+
+.sector-card-accordion > summary:focus-visible {
+  outline: 2px solid #5e17eb;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+html.theme-dark .sector-card-accordion > summary::after,
+html[data-theme="dark"] .sector-card-accordion > summary::after {
+  border-color: #b69cff;
+}
