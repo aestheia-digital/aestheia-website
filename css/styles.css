@@ -5057,7 +5057,7 @@ html.theme-dark .home-offers .home-card-accordion > summary::after {
 }
 
 .home-engagements .home-card-accordion > summary,
-.home-safety .home-card-accordion > summary > summary {
+.home-safety .home-card-accordion > summary {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -5067,17 +5067,17 @@ html.theme-dark .home-offers .home-card-accordion > summary::after {
 }
 
 .home-engagements .home-card-accordion > summary::-webkit-details-marker,
-.home-safety .home-card-accordion > summary::-webkit-details-marker > summary::-webkit-details-marker {
+.home-safety .home-card-accordion > summary::-webkit-details-marker {
   display: none;
 }
 
 .home-engagements .home-card-accordion > summary::marker,
-.home-safety .home-card-accordion > summary::marker > summary::marker {
+.home-safety .home-card-accordion > summary::marker {
   content: "";
 }
 
 .home-engagements .home-card-accordion > summary::after,
-.home-safety .home-card-accordion > summary::after > summary::after {
+.home-safety .home-card-accordion > summary::after {
   content: "";
   flex: 0 0 auto;
   width: 0.75rem;
@@ -5090,23 +5090,22 @@ html.theme-dark .home-offers .home-card-accordion > summary::after {
 }
 
 .home-engagements .home-card-accordion[open] > summary::after,
-.home-safety .home-card-accordion[open] > summary::after[open] > summary::after {
+.home-safety .home-card-accordion[open] > summary::after {
   transform: rotate(225deg);
 }
 
 .home-engagements .home-card-accordion > summary h3,
-.home-safety .home-card-accordion > summary h3 > summary h3 {
+.home-safety .home-card-accordion > summary h3 {
   margin: 0;
 }
 
-
 .home-engagements .home-card-accordion[open] > summary,
-.home-safety .home-card-accordion[open] > summary[open] > summary {
+.home-safety .home-card-accordion[open] > summary {
   margin-bottom: 1rem;
 }
 
 .home-engagements .home-card-accordion > summary:focus-visible,
-.home-safety .home-card-accordion > summary:focus-visible > summary:focus-visible {
+.home-safety .home-card-accordion > summary:focus-visible {
   outline: 2px solid #5e17eb;
   outline-offset: 4px;
   border-radius: 4px;
