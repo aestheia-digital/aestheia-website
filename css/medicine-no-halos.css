@@ -121,12 +121,12 @@ html.theme-dark body.medicine-page .sector-editorial-list .sector-editorial-head
 html[data-theme="dark"] body.medicine-page .sector-editorial-list .sector-editorial-heading h3,
 html.theme-dark body.medicine-page #contenu > .section.section-mist:has(.grid.grid-4) .card h3,
 html[data-theme="dark"] body.medicine-page #contenu > .section.section-mist:has(.grid.grid-4) .card h3 {
-  color: #7fa6d8 !important;
+  color: #a9cfff !important;
 }
 
 @media (prefers-color-scheme: dark) {
   html:not(.theme-dark):not([data-theme="light"]) body.medicine-page .sector-editorial-list .sector-editorial-heading h3,
   html:not(.theme-dark):not([data-theme="light"]) body.medicine-page #contenu > .section.section-mist:has(.grid.grid-4) .card h3 {
-    color: #7fa6d8 !important;
+    color: #a9cfff !important;
   }
 }
