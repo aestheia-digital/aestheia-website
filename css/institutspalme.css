@@ -144,6 +144,7 @@ body.institutes-page .institutes-onboarding-benefit {
 body.institutes-page .institutes-onboarding-heading h3 {
   color: var(--color-accent);
   font-size: 1.18rem;
+  font-weight: 500;
   line-height: 1.25;
 }
 
