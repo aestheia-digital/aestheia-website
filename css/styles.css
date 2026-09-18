@@ -2180,7 +2180,7 @@ html.theme-dark .transition-note {
   color: var(--color-accent);
   font-family: var(--font-structure);
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.35;
   cursor: pointer;
   list-style: none;
