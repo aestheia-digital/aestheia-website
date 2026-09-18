@@ -469,6 +469,23 @@ html[data-theme="dark"] body.institutes-page .institutes-onboarding-benefit stro
   }
 }
 
+/* Mode nuit : FAQ harmonisée avec le violet des titres de bandeaux et des cartes systèmes. */
+html.theme-dark body.institutes-page .faq-section h2,
+html[data-theme="dark"] body.institutes-page .faq-section h2,
+html.theme-dark body.institutes-page .faq-accordion-item summary,
+html[data-theme="dark"] body.institutes-page .faq-accordion-item summary {
+  color: #b69cff !important;
+  -webkit-text-fill-color: #b69cff !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) body.institutes-page .faq-section h2,
+  html:not([data-theme="light"]) body.institutes-page .faq-accordion-item summary {
+    color: #b69cff !important;
+    -webkit-text-fill-color: #b69cff !important;
+  }
+}
+
 /* Mode nuit : lavande uniforme pour les intitulés de section, les titres de cartes et le lien sectoriel. */
 html.theme-dark body.institutes-page #contenu > .section:not(.conversion-band) > .container > .eyebrow,
 html[data-theme="dark"] body.institutes-page #contenu > .section:not(.conversion-band) > .container > .eyebrow,
