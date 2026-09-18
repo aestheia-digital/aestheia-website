@@ -197,13 +197,6 @@ cubeHeroes.forEach((cubeHero) => {
 
 const homeHero = document.querySelector(".home-hero");
 
-if (homeHero) {
-  const heroLead = homeHero.querySelector(".hero-content > p");
-  if (heroLead) {
-    heroLead.textContent = "AesthéIA conçoit des automatisations, des assistants IA et des systèmes digitaux sur mesure pour simplifier votre organisation, mieux suivre vos prospects et renforcer votre visibilité digitale sur Google et les moteurs de réponse utilisant l’IA.";
-  }
-}
-
 if (
   homeHero &&
   "IntersectionObserver" in window &&
@@ -382,11 +375,11 @@ if (homeProblems) {
   ];
 
   if (heading) {
-    heading.textContent = "Votre organisation vous fait-elle perdre du temps et rend-elle votre visibilité digitale difficile à maintenir ?";
+    heading.textContent = "Une organisation plus simple, une visibilité plus forte";
   }
 
   if (intro) {
-    intro.textContent = "De nombreuses entreprises cumulent tâches répétitives, informations dispersées, suivis irréguliers et présence digitale difficile à maintenir. Les demandes se perdent, les contenus sont préparés dans l’urgence et le site, Google ou les moteurs de réponse utilisant l’IA ne reflètent pas toujours clairement l’activité.";
+    intro.textContent = "Simplifiez votre organisation et maintenez votre visibilité plus facilement.";
   }
 
   problemCards.forEach((card, index) => {
@@ -490,12 +483,12 @@ const homeEngagements = document.querySelector(".home-engagements");
 if (homeEngagements) {
   const eyebrow = homeEngagements.querySelector(".eyebrow");
   if (eyebrow) {
-    eyebrow.textContent = "Les formats de mission";
+    eyebrow.textContent = "Les accompagnements";
   }
 
   const headingText = homeEngagements.querySelector("h2 span");
   if (headingText) {
-    headingText.textContent = "Choisir le bon format selon vos priorités.";
+    headingText.textContent = "Un accompagnement à votre mesure";
   }
 
   const cards = homeEngagements.querySelectorAll(".engagement-card");
