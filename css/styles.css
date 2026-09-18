@@ -5052,14 +5052,12 @@ html.theme-dark .home-offers .home-card-accordion > summary::after {
 
 /* Extension du test : toutes les cartes de la home hors cartes secteur. */
 .home-engagements .home-card-accordion,
-.home-method .home-card-accordion,
 .home-safety .home-card-accordion,
 .conversion-band .home-card-accordion {
   align-self: start;
 }
 
 .home-engagements .home-card-accordion > summary,
-.home-method .home-card-accordion > summary,
 .home-safety .home-card-accordion > summary,
 .conversion-band .home-card-accordion > summary {
   display: flex;
@@ -5070,22 +5068,19 @@ html.theme-dark .home-offers .home-card-accordion > summary::after {
   list-style: none;
 }
 
-.home-engagements .home-card-accordion > summary::-webkit-details-marker,
-.home-method .home-card-accordion > summary::-webkit-details-marker,
+.home-engagements .home-card-accordion > summary::-webkit-details-marker::-webkit-details-marker,
 .home-safety .home-card-accordion > summary::-webkit-details-marker,
 .conversion-band .home-card-accordion > summary::-webkit-details-marker {
   display: none;
 }
 
-.home-engagements .home-card-accordion > summary::marker,
-.home-method .home-card-accordion > summary::marker,
+.home-engagements .home-card-accordion > summary::marker::marker,
 .home-safety .home-card-accordion > summary::marker,
 .conversion-band .home-card-accordion > summary::marker {
   content: "";
 }
 
-.home-engagements .home-card-accordion > summary::after,
-.home-method .home-card-accordion > summary::after,
+.home-engagements .home-card-accordion > summary::after::after,
 .home-safety .home-card-accordion > summary::after,
 .conversion-band .home-card-accordion > summary::after {
   content: "";
@@ -5100,40 +5095,25 @@ html.theme-dark .home-offers .home-card-accordion > summary::after {
 }
 
 .home-engagements .home-card-accordion[open] > summary::after,
-.home-method .home-card-accordion[open] > summary::after,
 .home-safety .home-card-accordion[open] > summary::after,
 .conversion-band .home-card-accordion[open] > summary::after {
   transform: rotate(225deg);
 }
 
-.home-engagements .home-card-accordion > summary h3,
-.home-method .home-card-accordion > summary h3,
+.home-engagements .home-card-accordion > summary h3 h3,
 .home-safety .home-card-accordion > summary h3,
 .conversion-band .home-card-accordion > summary h3 {
   margin: 0;
 }
 
-.home-method .home-card-accordion > summary {
-  align-items: flex-start;
-}
-
-.home-method .home-card-accordion > summary .step-label {
-  flex: 0 0 auto;
-}
-
-.home-method .home-card-accordion > summary h3 {
-  flex: 1 1 auto;
-}
 
 .home-engagements .home-card-accordion[open] > summary,
-.home-method .home-card-accordion[open] > summary,
 .home-safety .home-card-accordion[open] > summary,
 .conversion-band .home-card-accordion[open] > summary {
   margin-bottom: 1rem;
 }
 
-.home-engagements .home-card-accordion > summary:focus-visible,
-.home-method .home-card-accordion > summary:focus-visible,
+.home-engagements .home-card-accordion > summary:focus-visible:focus-visible,
 .home-safety .home-card-accordion > summary:focus-visible,
 .conversion-band .home-card-accordion > summary:focus-visible {
   outline: 2px solid #5e17eb;
@@ -5142,7 +5122,6 @@ html.theme-dark .home-offers .home-card-accordion > summary::after {
 }
 
 html.theme-dark .home-engagements .home-card-accordion > summary::after,
-html.theme-dark .home-method .home-card-accordion > summary::after,
 html.theme-dark .home-safety .home-card-accordion > summary::after,
 html.theme-dark .conversion-band .home-card-accordion > summary::after {
   border-color: #b69cff;
