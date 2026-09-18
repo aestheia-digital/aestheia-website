@@ -239,6 +239,29 @@ html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.sectio
   flex: 0 0 32px !important;
 }
 
+/* Réalité de l'établissement : seuls les mots-clés d'ouverture sont légèrement renforcés. */
+body.thalasso-page .sector-reality-list .thalasso-reality-key {
+  font-weight: 600;
+}
+
+/* Turnover et continuité opérationnelle : contenu repliable dans la réalité de l'établissement. */
+body.thalasso-page .thalasso-reality-turnover-accordion > p {
+  margin: 0;
+}
+
+html.theme-dark body.thalasso-page .thalasso-reality-turnover-accordion > summary strong,
+html[data-theme="dark"] body.thalasso-page .thalasso-reality-turnover-accordion > summary strong {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-dark):not([data-theme="light"]) body.thalasso-page .thalasso-reality-turnover-accordion > summary strong {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+  }
+}
+
 /* Mode jour : Turnover et continuité opérationnelle aligné sur les autres mots renforcés. */
 html:not(.theme-dark) body.thalasso-page .sector-reality-list li:last-child strong {
   font-weight: 600 !important;
