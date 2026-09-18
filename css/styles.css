@@ -2186,6 +2186,10 @@ html.theme-dark .transition-note {
   list-style: none;
 }
 
+.faq-accordion-item summary h3 {
+  font-weight: 500;
+}
+
 .faq-accordion-item summary::-webkit-details-marker {
   display: none;
 }
