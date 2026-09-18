@@ -176,6 +176,21 @@
         color: var(--color-primary);
         font-weight: 600;
       }
+
+      /* Mode nuit : titres des cartes du bandeau Systèmes dans le même bleu lumineux que Médecine et Spa. */
+      html.theme-dark body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-heading h3,
+      html[data-theme="dark"] body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-heading h3,
+      html.theme-dark body.thalasso-page #contenu > .section.section-soft.section-aqua .thalasso-turnover-heading h3,
+      html[data-theme="dark"] body.thalasso-page #contenu > .section.section-soft.section-aqua .thalasso-turnover-heading h3 {
+        color: #a9cfff !important;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        html:not(.theme-dark):not([data-theme="light"]) body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-heading h3,
+        html:not(.theme-dark):not([data-theme="light"]) body.thalasso-page #contenu > .section.section-soft.section-aqua .thalasso-turnover-heading h3 {
+          color: #a9cfff !important;
+        }
+      }
     </style>
     <script type="application/ld+json">
       {
