@@ -151,6 +151,12 @@ html:not(.theme-dark) body.thalasso-page {
   --halo-violet-secondary: transparent;
 }
 
+html:not(.theme-dark) body.thalasso-page #contenu > .hero.page-hero + .section,
+html:not(.theme-dark) body.thalasso-page #contenu > .section.sector-method-section {
+  --halo-violet-primary: rgba(94, 23, 235, 0.04);
+  --halo-violet-secondary: rgba(139, 92, 246, 0.025);
+}
+
 html:not(.theme-dark) body.thalasso-page #contenu > .section.section-mist.section-aqua .thalasso-spa-link,
 html:not(.theme-dark) body.thalasso-page #contenu > .section.section-mist.section-aqua a[href*="spa-hotelier"] {
   color: #5422b3 !important;
