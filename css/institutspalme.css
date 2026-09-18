@@ -98,6 +98,10 @@ body.institutes-page .institutes-team-issue h3 {
   line-height: 1.25;
 }
 
+body.institutes-page .institutes-team-issue-accordion > summary h3 {
+  margin: 0;
+}
+
 body.institutes-page .institutes-team-issue p {
   margin: 0;
 }
