@@ -115,3 +115,18 @@ html[data-theme="dark"] body.medicine-page .faq-accordion-item summary h3 {
     font-size: 1.06rem;
   }
 }
+
+/* Mode nuit : titres des cartes Systèmes cabinets et Résultats recherchés dans le bleu de la FAQ. */
+html.theme-dark body.medicine-page .sector-editorial-list .sector-editorial-heading h3,
+html[data-theme="dark"] body.medicine-page .sector-editorial-list .sector-editorial-heading h3,
+html.theme-dark body.medicine-page #contenu > .section.section-mist:has(.grid.grid-4) .card h3,
+html[data-theme="dark"] body.medicine-page #contenu > .section.section-mist:has(.grid.grid-4) .card h3 {
+  color: #7fa6d8 !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-dark):not([data-theme="light"]) body.medicine-page .sector-editorial-list .sector-editorial-heading h3,
+  html:not(.theme-dark):not([data-theme="light"]) body.medicine-page #contenu > .section.section-mist:has(.grid.grid-4) .card h3 {
+    color: #7fa6d8 !important;
+  }
+}
