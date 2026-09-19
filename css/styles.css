@@ -5169,6 +5169,139 @@ html[data-theme="dark"] .home-safety .home-card-accordion > summary::after {
 }
 
 
+/* Accordeons premium de section sur la page d'accueil. */
+.home-section-accordion {
+  width: 100%;
+  margin-top: 1.6rem;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-bg);
+  box-shadow: var(--shadow-soft);
+}
+
+.home-section-accordion > summary {
+  display: flex;
+  min-height: 72px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  padding: 1.2rem 1.4rem;
+  color: var(--color-accent);
+  cursor: pointer;
+  list-style: none;
+}
+
+.home-section-accordion > summary::-webkit-details-marker {
+  display: none;
+}
+
+.home-section-accordion > summary::marker {
+  content: "";
+}
+
+.home-section-accordion > summary h3 {
+  min-width: 0;
+  margin: 0;
+  color: inherit;
+  font-family: var(--font-structure);
+  font-size: 1.08rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.home-section-accordion > summary::after {
+  content: "";
+  width: 0.78rem;
+  height: 0.78rem;
+  flex: 0 0 0.78rem;
+  margin-left: auto;
+  border-right: 2px solid var(--color-accent);
+  border-bottom: 2px solid var(--color-accent);
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+.home-section-accordion[open] > summary::after {
+  transform: rotate(225deg);
+}
+
+.home-section-accordion[open] > summary {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.home-section-accordion > summary:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: -4px;
+  border-radius: var(--radius);
+}
+
+.home-section-accordion-body {
+  padding: 1.35rem 1.4rem 1.5rem;
+}
+
+.home-section-accordion-body .engagement-grid,
+.home-section-accordion-body .home-process {
+  margin-top: 0;
+}
+
+.home-section-safety {
+  margin-top: 1.25rem;
+}
+
+html.theme-dark .home-section-accordion,
+html[data-theme="dark"] .home-section-accordion {
+  background: rgba(20, 27, 78, 0.58);
+  border-color: rgba(255, 255, 255, 0.17);
+  box-shadow: none;
+}
+
+html.theme-dark .home-section-accordion > summary,
+html[data-theme="dark"] .home-section-accordion > summary {
+  color: #a78bfa;
+}
+
+html.theme-dark .home-section-accordion > summary::after,
+html[data-theme="dark"] .home-section-accordion > summary::after {
+  border-color: #fff;
+}
+
+html.theme-dark .home-section-accordion[open] > summary,
+html[data-theme="dark"] .home-section-accordion[open] > summary {
+  border-bottom-color: rgba(255, 255, 255, 0.14);
+}
+
+@media (max-width: 720px) {
+  .home-section-accordion {
+    margin-top: 1.25rem;
+    border-radius: 14px;
+  }
+
+  .home-section-accordion > summary {
+    min-height: 64px;
+    gap: 1rem;
+    padding: 1rem 1.1rem;
+  }
+
+  .home-section-accordion > summary h3 {
+    font-size: 1rem;
+    line-height: 1.25;
+  }
+
+  .home-section-accordion > summary::after {
+    width: 0.7rem;
+    height: 0.7rem;
+    flex-basis: 0.7rem;
+    border-width: 0 2px 2px 0;
+  }
+
+  .home-section-accordion-body {
+    padding: 1.1rem;
+  }
+}
+
+
 /* Pages secteur : cartes de contenu repliables, hors méthode et cartes de navigation. */
 .sector-card-accordion {
   align-self: start;
