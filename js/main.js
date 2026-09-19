@@ -1,23 +1,12 @@
-const siteThemeMedia = window.matchMedia("(prefers-color-scheme: dark)");
 const siteThemeRoot = document.documentElement;
 
+// Mode nuit temporairement forcé sur tout le site public pendant la refonte du mode jour.
 const applyAutomaticSiteTheme = () => {
-  const currentHour = new Date().getHours();
-  const isNightTime = currentHour >= 19 || currentHour < 7;
-  const shouldUseDarkTheme = siteThemeMedia.matches || isNightTime;
-
-  siteThemeRoot.classList.toggle("theme-dark", shouldUseDarkTheme);
-  siteThemeRoot.dataset.theme = shouldUseDarkTheme ? "dark" : "light";
+  siteThemeRoot.classList.add("theme-dark");
+  siteThemeRoot.dataset.theme = "dark";
 };
 
 applyAutomaticSiteTheme();
-siteThemeMedia.addEventListener?.("change", applyAutomaticSiteTheme);
-window.setInterval(applyAutomaticSiteTheme, 60000);
-document.addEventListener("visibilitychange", () => {
-  if (!document.hidden) {
-    applyAutomaticSiteTheme();
-  }
-});
 
 const navToggle = document.querySelector(".nav-toggle");
 const nav = document.querySelector(".main-nav");
