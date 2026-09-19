@@ -735,3 +735,43 @@ html[data-theme="light"] body.institutes-page .institutes-team-issue h3 {
     -webkit-text-fill-color: #25325f !important;
   }
 }
+
+/* Harmonisation jour/nuit : même hiérarchie typographique, avec équivalents plus foncés en mode jour. */
+html[data-theme="light"] body.institutes-page .faq-section > .container > h2,
+html:not(.theme-dark):not([data-theme="dark"]) body.institutes-page .faq-section > .container > h2 {
+  color: #1e2a50 !important;
+  -webkit-text-fill-color: #1e2a50 !important;
+}
+
+html[data-theme="light"] body.institutes-page .faq-accordion-item summary,
+html:not(.theme-dark):not([data-theme="dark"]) body.institutes-page .faq-accordion-item summary {
+  color: #6b4bb3 !important;
+  -webkit-text-fill-color: #6b4bb3 !important;
+  font-weight: 500;
+}
+
+html[data-theme="light"] body.institutes-page .institutes-editorial-heading h3,
+html[data-theme="light"] body.institutes-page .institutes-onboarding-heading h3,
+html[data-theme="light"] body.institutes-page .institutes-method-card .card-title-with-icon,
+html:not(.theme-dark):not([data-theme="dark"]) body.institutes-page .institutes-editorial-heading h3,
+html:not(.theme-dark):not([data-theme="dark"]) body.institutes-page .institutes-onboarding-heading h3,
+html:not(.theme-dark):not([data-theme="dark"]) body.institutes-page .institutes-method-card .card-title-with-icon {
+  color: #6b4bb3 !important;
+  -webkit-text-fill-color: #6b4bb3 !important;
+  font-weight: 500 !important;
+}
+
+html[data-theme="light"] body.institutes-page .institutes-team-issue h3,
+html:not(.theme-dark):not([data-theme="dark"]) body.institutes-page .institutes-team-issue h3 {
+  color: #25325f !important;
+  -webkit-text-fill-color: #25325f !important;
+  font-weight: 600 !important;
+}
+
+html[data-theme="light"] body.institutes-page .section-soft.section-aqua .institutes-editorial-benefit,
+html[data-theme="light"] body.institutes-page .section-soft.section-aqua .institutes-onboarding-benefit,
+html:not(.theme-dark):not([data-theme="dark"]) body.institutes-page .section-soft.section-aqua .institutes-editorial-benefit,
+html:not(.theme-dark):not([data-theme="dark"]) body.institutes-page .section-soft.section-aqua .institutes-onboarding-benefit {
+  font-weight: 500 !important;
+}
+

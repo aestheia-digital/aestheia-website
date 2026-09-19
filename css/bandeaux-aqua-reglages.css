@@ -363,3 +363,45 @@ html:not(.theme-dark) body.thalasso-page #contenu > .section.section-mist.sectio
     order: initial !important;
   }
 }
+
+/* Harmonisation jour/nuit : mêmes poids et hiérarchie que la version nuit, avec teintes profondes en mode jour. */
+html[data-theme="light"] body.thalasso-page .faq-section > .container > h2,
+html:not(.theme-dark):not([data-theme="dark"]) body.thalasso-page .faq-section > .container > h2 {
+  color: #1e2a50 !important;
+}
+
+html[data-theme="light"] body.thalasso-page .faq-accordion-item summary,
+html:not(.theme-dark):not([data-theme="dark"]) body.thalasso-page .faq-accordion-item summary {
+  color: #355b8a !important;
+  font-weight: 500;
+}
+
+html[data-theme="light"] body.thalasso-page .faq-answer,
+html[data-theme="light"] body.thalasso-page .faq-answer p,
+html:not(.theme-dark):not([data-theme="dark"]) body.thalasso-page .faq-answer,
+html:not(.theme-dark):not([data-theme="dark"]) body.thalasso-page .faq-answer p {
+  color: #1e2a50 !important;
+}
+
+html[data-theme="light"] body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-heading h3,
+html[data-theme="light"] body.thalasso-page #contenu > .section.section-soft.section-aqua .thalasso-turnover-heading h3,
+html:not(.theme-dark):not([data-theme="dark"]) body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-heading h3,
+html:not(.theme-dark):not([data-theme="dark"]) body.thalasso-page #contenu > .section.section-soft.section-aqua .thalasso-turnover-heading h3 {
+  color: #355b8a !important;
+  font-weight: 500 !important;
+}
+
+html[data-theme="light"] body.thalasso-page .thalasso-reality-turnover-accordion > summary strong,
+html:not(.theme-dark):not([data-theme="dark"]) body.thalasso-page .thalasso-reality-turnover-accordion > summary strong {
+  color: #1e2a50 !important;
+  -webkit-text-fill-color: #1e2a50 !important;
+  font-weight: 600 !important;
+}
+
+html[data-theme="light"] body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-content > p,
+html[data-theme="light"] body.thalasso-page #contenu > .section.section-soft.section-aqua .thalasso-turnover-copy,
+html:not(.theme-dark):not([data-theme="dark"]) body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-content > p,
+html:not(.theme-dark):not([data-theme="dark"]) body.thalasso-page #contenu > .section.section-soft.section-aqua .thalasso-turnover-copy {
+  font-weight: 400 !important;
+}
+

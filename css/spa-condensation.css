@@ -599,3 +599,26 @@ html[data-theme="dark"] body.spa-page #contenu > .section.section-soft.section-a
     color: #a9cfff !important;
   }
 }
+
+/* Harmonisation jour/nuit : mêmes poids et hiérarchie que la version nuit, avec bleu profond en mode jour. */
+html[data-theme="light"] body.spa-page .faq-accordion-item summary,
+html:not(.theme-dark):not([data-theme="dark"]) body.spa-page .faq-accordion-item summary {
+  color: #355b8a !important;
+  font-weight: 500;
+}
+
+html[data-theme="light"] body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-heading h3,
+html[data-theme="light"] body.spa-page #contenu > .section.section-soft.section-aqua .spa-turnover-heading h3,
+html:not(.theme-dark):not([data-theme="dark"]) body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-heading h3,
+html:not(.theme-dark):not([data-theme="dark"]) body.spa-page #contenu > .section.section-soft.section-aqua .spa-turnover-heading h3 {
+  color: #355b8a !important;
+  font-weight: 500 !important;
+}
+
+html[data-theme="light"] body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-content > p:not(.sector-editorial-benefit),
+html[data-theme="light"] body.spa-page #contenu > .section.section-soft.section-aqua .spa-turnover-copy,
+html:not(.theme-dark):not([data-theme="dark"]) body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-content > p:not(.sector-editorial-benefit),
+html:not(.theme-dark):not([data-theme="dark"]) body.spa-page #contenu > .section.section-soft.section-aqua .spa-turnover-copy {
+  font-weight: 400 !important;
+}
+
