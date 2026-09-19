@@ -130,3 +130,27 @@ html[data-theme="dark"] body.medicine-page #contenu > .section.section-mist:has(
     color: #a9cfff !important;
   }
 }
+
+/* Harmonisation jour/nuit : même hiérarchie typographique, avec teintes plus foncées en mode jour pour préserver le contraste. */
+html[data-theme="light"] body.medicine-page .faq-section > .container > h2,
+html:not(.theme-dark):not([data-theme="dark"]) body.medicine-page .faq-section > .container > h2 {
+  color: #1e2a50 !important;
+}
+
+html[data-theme="light"] body.medicine-page .faq-accordion-item summary,
+html[data-theme="light"] body.medicine-page .faq-accordion-item summary h3,
+html:not(.theme-dark):not([data-theme="dark"]) body.medicine-page .faq-accordion-item summary,
+html:not(.theme-dark):not([data-theme="dark"]) body.medicine-page .faq-accordion-item summary h3 {
+  color: #355b8a !important;
+  font-size: 1.06rem;
+  font-weight: 500;
+}
+
+html[data-theme="light"] body.medicine-page .sector-editorial-list .sector-editorial-heading h3,
+html[data-theme="light"] body.medicine-page #contenu > .section.section-mist:has(.grid.grid-4) .card h3,
+html:not(.theme-dark):not([data-theme="dark"]) body.medicine-page .sector-editorial-list .sector-editorial-heading h3,
+html:not(.theme-dark):not([data-theme="dark"]) body.medicine-page #contenu > .section.section-mist:has(.grid.grid-4) .card h3 {
+  color: #355b8a !important;
+  font-weight: 500 !important;
+}
+
