@@ -996,6 +996,16 @@ h3 {
   font-weight: 600;
 }
 
+
+.home-hero .hero-reassurance {
+  max-width: 820px;
+  margin: 0.85rem 0 0;
+  color: rgba(217, 229, 255, 0.9);
+  font-size: clamp(0.78rem, 1.3vw, 0.9rem);
+  font-weight: 400;
+  line-height: 1.5;
+}
+
 .hero .hero-proof {
   display: inline-flex;
   width: fit-content;
@@ -2223,6 +2233,12 @@ html.theme-dark .transition-note {
 
 .faq-accordion-item[open] summary::after {
   transform: rotate(-135deg);
+}
+
+
+html.theme-dark .faq-accordion-item summary::after,
+html[data-theme="dark"] .faq-accordion-item summary::after {
+  border-color: #fff;
 }
 
 .faq-answer {
@@ -5077,8 +5093,10 @@ html[data-theme="light"] body.pme-page .faq-section .faq-answer p {
 }
 
 html.theme-dark .home-problems .home-card-accordion > summary::after,
-html.theme-dark .home-offers .home-card-accordion > summary::after {
-  border-color: #b69cff;
+html.theme-dark .home-offers .home-card-accordion > summary::after,
+html[data-theme="dark"] .home-problems .home-card-accordion > summary::after,
+html[data-theme="dark"] .home-offers .home-card-accordion > summary::after {
+  border-color: #fff;
 }
 
 
@@ -5144,8 +5162,10 @@ html.theme-dark .home-offers .home-card-accordion > summary::after {
 }
 
 html.theme-dark .home-engagements .home-card-accordion > summary::after,
-html.theme-dark .home-safety .home-card-accordion > summary::after {
-  border-color: #b69cff;
+html.theme-dark .home-safety .home-card-accordion > summary::after,
+html[data-theme="dark"] .home-engagements .home-card-accordion > summary::after,
+html[data-theme="dark"] .home-safety .home-card-accordion > summary::after {
+  border-color: #fff;
 }
 
 
@@ -5205,7 +5225,17 @@ html.theme-dark .home-safety .home-card-accordion > summary::after {
 
 html.theme-dark .sector-card-accordion > summary::after,
 html[data-theme="dark"] .sector-card-accordion > summary::after {
-  border-color: #b69cff;
+  border-color: #fff;
+}
+
+/* Mode nuit : flèches d’accordéon blanches sur tout le site. */
+html.theme-dark .faq-accordion-item summary::after,
+html[data-theme="dark"] .faq-accordion-item summary::after,
+html.theme-dark .home-card-accordion > summary::after,
+html[data-theme="dark"] .home-card-accordion > summary::after,
+html.theme-dark .sector-card-accordion > summary::after,
+html[data-theme="dark"] .sector-card-accordion > summary::after {
+  border-color: #fff;
 }
 
 
