@@ -5218,6 +5218,16 @@ html[data-theme="dark"] .sector-card-accordion > summary::after {
   border-color: #b69cff;
 }
 
+/* Mode nuit : flèches d’accordéon blanches sur tout le site. */
+html.theme-dark .faq-accordion-item summary::after,
+html[data-theme="dark"] .faq-accordion-item summary::after,
+html.theme-dark .home-card-accordion > summary::after,
+html[data-theme="dark"] .home-card-accordion > summary::after,
+html.theme-dark .sector-card-accordion > summary::after,
+html[data-theme="dark"] .sector-card-accordion > summary::after {
+  border-color: #fff;
+}
+
 
 /* Mobile : blocs éditoriaux longs avec aperçu + « Lire la suite ». */
 .mobile-readmore-toggle {
