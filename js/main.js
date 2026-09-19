@@ -1,6 +1,6 @@
 const siteThemeRoot = document.documentElement;
 
-// Mode nuit temporairement forcé sur tout le site public pendant la refonte du mode jour — redéploiement production.
+// Mode nuit temporairement forcé sur tout le site public pendant la refonte du mode jour — production sombre forcée.
 const applyAutomaticSiteTheme = () => {
   siteThemeRoot.classList.add("theme-dark");
   siteThemeRoot.dataset.theme = "dark";
