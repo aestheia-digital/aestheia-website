@@ -224,8 +224,61 @@ html.theme-dark body.spa-page .spa-method-cta-icon {
   background: rgba(182, 156, 255, 0.1);
 }
 
+/* Mode nuit : fonds Spa légèrement éclaircis, sans modifier la FAQ. */
+html.theme-dark body.spa-page #contenu > .spa-reality-section,
+html[data-theme="dark"] body.spa-page #contenu > .spa-reality-section,
+html.theme-dark body.spa-page #contenu > .sector-method-section,
+html[data-theme="dark"] body.spa-page #contenu > .sector-method-section,
+html.theme-dark body.spa-page .site-footer,
+html[data-theme="dark"] body.spa-page .site-footer {
+  background: #11183d !important;
+}
+
 /* Desktop : six systèmes Spa organisés en trois rangées de deux cartes. */
 @media (min-width: 1050px) {
+  body.spa-page .spa-reality-title {
+    max-width: 1000px;
+  }
+
+  html.theme-dark body.spa-page #contenu > .conversion-band,
+  html[data-theme="dark"] body.spa-page #contenu > .conversion-band {
+    background:
+      radial-gradient(circle at 12% 88%, rgba(0, 176, 255, 0.12), transparent 38%),
+      linear-gradient(135deg, #11183d 0%, #1e2a50 58%, #27347c 100%);
+  }
+
+  html.theme-dark body.spa-page #contenu > .conversion-band .eyebrow,
+  html[data-theme="dark"] body.spa-page #contenu > .conversion-band .eyebrow {
+    color: var(--color-accent) !important;
+  }
+
+  body.spa-page #contenu > .conversion-band .btn-primary,
+  body.spa-page #contenu > .conversion-band .btn-secondary,
+  body.spa-page #contenu > .conversion-band .btn-primary:hover,
+  body.spa-page #contenu > .conversion-band .btn-secondary:hover {
+    color: #fff !important;
+    border-color: #00b0ff !important;
+    background: #00b0ff !important;
+    background-image: none !important;
+    box-shadow: 0 14px 30px rgba(0, 176, 255, 0.24);
+  }
+
+  body.spa-page .sector-method-card .card-title-with-icon {
+    font-weight: 400;
+    line-height: 1.42;
+  }
+
+  body.spa-page .sector-method-card .card-title-with-icon strong {
+    font-weight: 400;
+  }
+
+  body.spa-page .sector-method-card .sector-method-detail {
+    display: block;
+    margin-top: 0.55rem;
+    font-weight: 400;
+    line-height: 1.55;
+  }
+
   body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-list {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
