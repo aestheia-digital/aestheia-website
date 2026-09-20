@@ -516,3 +516,63 @@ body.home-page .site-header .brand-mark {
     transform: scale(1.08);
   }
 }
+
+
+/* ==========================================================================
+   Parité mode jour avec les ajustements typographiques validés en mode nuit.
+   Halos violets volontairement inchangés.
+   ========================================================================== */
+
+html[data-theme="light"] .home-engagements .engagement-card h3,
+html[data-theme="light"] .home-method .process-step h3,
+html[data-theme="light"] .home-safety .safety-grid .card h3 {
+  font-size: 1.14rem;
+}
+
+html[data-theme="light"] .home-method .step-label {
+  font-size: 0.88rem;
+}
+
+html[data-theme="light"] #contenu > .home-hero ~ .faq-section .faq-accordion-item summary h3 {
+  font-size: 1.06rem;
+}
+
+@media (prefers-color-scheme: light) {
+  html:not(.theme-dark):not([data-theme="dark"]) .home-engagements .engagement-card h3,
+  html:not(.theme-dark):not([data-theme="dark"]) .home-method .process-step h3,
+  html:not(.theme-dark):not([data-theme="dark"]) .home-safety .safety-grid .card h3 {
+    font-size: 1.14rem;
+  }
+
+  html:not(.theme-dark):not([data-theme="dark"]) .home-method .step-label {
+    font-size: 0.88rem;
+  }
+
+  html:not(.theme-dark):not([data-theme="dark"]) #contenu > .home-hero ~ .faq-section .faq-accordion-item summary h3 {
+    font-size: 1.06rem;
+  }
+}
+
+@media (max-width: 720px) {
+  html[data-theme="light"] .home-engagements .engagement-card h3,
+  html[data-theme="light"] .home-method .process-step h3,
+  html[data-theme="light"] .home-safety .safety-grid .card h3 {
+    font-size: 1.10rem;
+  }
+
+  html[data-theme="light"] .home-method .step-label {
+    font-size: 0.86rem;
+  }
+}
+
+@media (max-width: 720px) and (prefers-color-scheme: light) {
+  html:not(.theme-dark):not([data-theme="dark"]) .home-engagements .engagement-card h3,
+  html:not(.theme-dark):not([data-theme="dark"]) .home-method .process-step h3,
+  html:not(.theme-dark):not([data-theme="dark"]) .home-safety .safety-grid .card h3 {
+    font-size: 1.10rem;
+  }
+
+  html:not(.theme-dark):not([data-theme="dark"]) .home-method .step-label {
+    font-size: 0.86rem;
+  }
+}
