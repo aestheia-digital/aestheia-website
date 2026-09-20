@@ -546,8 +546,8 @@ body.home-page .site-header .brand-mark {
     width: 0.72rem !important;
     height: 0.72rem !important;
     margin-left: auto !important;
-    border-right: 2px solid #ffffff !important;
-    border-bottom: 2px solid #ffffff !important;
+    border-right: 2px solid currentColor !important;
+    border-bottom: 2px solid currentColor !important;
     transform: rotate(45deg) !important;
     transition: transform 0.2s ease !important;
   }
