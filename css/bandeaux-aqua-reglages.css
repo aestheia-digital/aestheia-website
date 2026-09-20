@@ -626,3 +626,16 @@ html[data-theme="dark"] body.thalasso-page #contenu > .section.section-mist.sect
   color: #ffffff !important;
   -webkit-text-fill-color: #ffffff !important;
 }
+
+
+/* Méthode Thalasso nuit : typographie plus légère et plus aérée. */
+html.theme-dark body.thalasso-page .sector-method-card .card-title-with-icon,
+html[data-theme="dark"] body.thalasso-page .sector-method-card .card-title-with-icon {
+  font-weight: 400 !important;
+  line-height: 1.36 !important;
+}
+
+html.theme-dark body.thalasso-page .sector-method-card .card-title-with-icon strong,
+html[data-theme="dark"] body.thalasso-page .sector-method-card .card-title-with-icon strong {
+  font-weight: 400 !important;
+}
