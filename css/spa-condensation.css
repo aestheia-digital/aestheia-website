@@ -229,6 +229,16 @@ html.theme-dark body.spa-page .spa-method-cta-icon {
   body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-list {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
+
+  body.spa-page #contenu > .section.section-soft.section-aqua .sector-card-accordion > summary {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-heading {
+    min-width: 0;
+    flex: 1 1 auto;
+  }
 }
 
 /* Enjeu transversal turnover — page Spa & hôtellerie uniquement. */
