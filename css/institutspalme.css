@@ -818,15 +818,6 @@ html[data-theme="dark"] body.institutes-page #contenu > .section.section-soft.se
       var(--pal-image) left center / cover no-repeat !important;
   }
 
-  @media (max-width: 720px) {
-    html:not(.theme-dark):not([data-theme="light"]) body.institutes-page #contenu > .section.section-soft.section-aqua::before,
-    html:not(.theme-dark):not([data-theme="light"]) body.institutes-page #contenu > .section.section-mist.section-aqua::before {
-      background-position: center center !important;
-      background-size: cover !important;
-      background-repeat: no-repeat !important;
-    }
-  }
-
   html:not(.theme-dark):not([data-theme="light"]) body.institutes-page #contenu > .section.section-soft.section-aqua .institutes-editorial-heading h3,
   html:not(.theme-dark):not([data-theme="light"]) body.institutes-page #contenu > .section.section-soft.section-aqua .institutes-onboarding-heading h3 {
     color: #ffffff !important;
@@ -835,5 +826,16 @@ html[data-theme="dark"] body.institutes-page #contenu > .section.section-soft.se
 
   html:not(.theme-dark):not([data-theme="light"]) body.institutes-page #contenu > .section.section-soft.section-aqua .sector-card-accordion > summary::after {
     border-color: #9b7cff !important;
+  }
+}
+
+
+/* Mobile sombre automatique : cadrage conservé. */
+@media (prefers-color-scheme: dark) and (max-width: 720px) {
+  html:not(.theme-dark):not([data-theme="light"]) body.institutes-page #contenu > .section.section-soft.section-aqua::before,
+  html:not(.theme-dark):not([data-theme="light"]) body.institutes-page #contenu > .section.section-mist.section-aqua::before {
+    background-position: center center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
   }
 }
