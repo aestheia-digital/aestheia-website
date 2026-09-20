@@ -239,15 +239,33 @@ html.theme-dark body.spa-page .spa-method-cta-icon {
 
   html.theme-dark body.spa-page #contenu > .conversion-band .eyebrow,
   html[data-theme="dark"] body.spa-page #contenu > .conversion-band .eyebrow {
-    color: #6f2cff !important;
+    color: var(--color-accent) !important;
+  }
+
+  body.spa-page #contenu > .conversion-band .btn-primary,
+  body.spa-page #contenu > .conversion-band .btn-secondary,
+  body.spa-page #contenu > .conversion-band .btn-primary:hover,
+  body.spa-page #contenu > .conversion-band .btn-secondary:hover {
+    color: #07112d;
+    border-color: #00b0ff;
+    background: #00b0ff;
+    box-shadow: 0 14px 30px rgba(0, 176, 255, 0.24);
   }
 
   body.spa-page .sector-method-card .card-title-with-icon {
     font-weight: 400;
+    line-height: 1.42;
   }
 
   body.spa-page .sector-method-card .card-title-with-icon strong {
-    font-weight: 500;
+    font-weight: 400;
+  }
+
+  body.spa-page .sector-method-card .sector-method-detail {
+    display: block;
+    margin-top: 0.55rem;
+    font-weight: 400;
+    line-height: 1.55;
   }
 
   body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-list {
