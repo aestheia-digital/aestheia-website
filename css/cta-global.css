@@ -1,0 +1,65 @@
+/* AesthéIA — verrouillage global des CTA
+   Chargé en dernier sur toutes les pages pour neutraliser les anciennes surcharges. */
+
+html body #contenu .btn,
+html body #contenu .btn:hover,
+html body #contenu .btn:active,
+html body #contenu .btn:focus,
+html body #contenu .btn:focus-visible,
+html body .site-header .btn,
+html body .site-header .btn:hover,
+html body .site-header .btn:active,
+html body .site-header .btn:focus,
+html body .site-header .btn:focus-visible,
+html body .site-footer .btn,
+html body .site-footer .btn:hover,
+html body .site-footer .btn:active,
+html body .site-footer .btn:focus,
+html body .site-footer .btn:focus-visible {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  border-color: #00b0ff !important;
+  background-color: #00b0ff !important;
+  background: #00b0ff !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+/* CTA intersectoriels présentés comme boutons. */
+html body #contenu .sector-crosslink-cta,
+html body #contenu .sector-crosslink-cta:hover,
+html body #contenu .sector-crosslink-cta:active,
+html body #contenu .sector-crosslink-cta:focus,
+html body #contenu .sector-crosslink-cta:focus-visible {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  border-color: #00b0ff !important;
+  background-color: #00b0ff !important;
+  background: #00b0ff !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  filter: none !important;
+}
+
+/* Les deux CTA commerciaux restent strictement identiques partout. */
+html body a.btn[href="https://forms.gle/W7JrgaJ6yDSuwgFe7"],
+html body a.btn[href="https://calendar.app.google/qx6dT7WJfTrsFe6j9"],
+html body a.btn[href="https://forms.gle/W7JrgaJ6yDSuwgFe7"]:hover,
+html body a.btn[href="https://calendar.app.google/qx6dT7WJfTrsFe6j9"]:hover,
+html body a.btn[href="https://forms.gle/W7JrgaJ6yDSuwgFe7"]:active,
+html body a.btn[href="https://calendar.app.google/qx6dT7WJfTrsFe6j9"]:active,
+html body a.btn[href="https://forms.gle/W7JrgaJ6yDSuwgFe7"]:focus-visible,
+html body a.btn[href="https://calendar.app.google/qx6dT7WJfTrsFe6j9"]:focus-visible {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  border-color: #00b0ff !important;
+  background-color: #00b0ff !important;
+  background: #00b0ff !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  filter: none !important;
+}
