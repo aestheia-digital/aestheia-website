@@ -363,3 +363,266 @@ html:not(.theme-dark) body.thalasso-page #contenu > .section.section-mist.sectio
     order: initial !important;
   }
 }
+
+/* ========================================================================== */
+/* Harmonisation nocturne avec la page Spa & hôtellerie                      */
+/* ========================================================================== */
+
+/* Supprime les halos violets de cette page sans modifier le mode jour. */
+html.theme-dark body.thalasso-page,
+html[data-theme="dark"] body.thalasso-page {
+  --halo-violet-primary: transparent;
+  --halo-violet-secondary: transparent;
+  --dark-body-halo-primary: transparent;
+  --dark-body-halo-secondary: transparent;
+}
+
+/* Fonds bleu nuit légèrement éclaircis, identiques à la page Spa. */
+html.theme-dark body.thalasso-page .site-header,
+html[data-theme="dark"] body.thalasso-page .site-header,
+html.theme-dark body.thalasso-page #contenu > .thalasso-reality-section,
+html[data-theme="dark"] body.thalasso-page #contenu > .thalasso-reality-section,
+html.theme-dark body.thalasso-page #contenu > .sector-method-section,
+html[data-theme="dark"] body.thalasso-page #contenu > .sector-method-section,
+html.theme-dark body.thalasso-page #contenu > .faq-section,
+html[data-theme="dark"] body.thalasso-page #contenu > .faq-section,
+html.theme-dark body.thalasso-page .site-footer,
+html[data-theme="dark"] body.thalasso-page .site-footer {
+  background: #11183d !important;
+  background-image: none !important;
+}
+
+/* Les deux bandeaux photographiques conservent l'image, sans voile violet. */
+html.theme-dark body.thalasso-page #contenu > .section.section-soft.section-aqua,
+html[data-theme="dark"] body.thalasso-page #contenu > .section.section-soft.section-aqua {
+  background-color: #11183d !important;
+  background-image:
+    linear-gradient(rgba(17, 24, 61, 0.68), rgba(17, 24, 61, 0.68)),
+    var(--aqua-image) !important;
+  background-position: center center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+
+html.theme-dark body.thalasso-page #contenu > .section.section-mist.section-aqua,
+html[data-theme="dark"] body.thalasso-page #contenu > .section.section-mist.section-aqua {
+  background-color: #11183d !important;
+  background-image:
+    linear-gradient(rgba(17, 24, 61, 0.52), rgba(17, 24, 61, 0.52)),
+    var(--aqua-image) !important;
+  background-position: center center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+
+html.theme-dark body.thalasso-page #contenu > .section.section-aqua::before,
+html[data-theme="dark"] body.thalasso-page #contenu > .section.section-aqua::before,
+html.theme-dark body.thalasso-page #contenu > .section.section-aqua::after,
+html[data-theme="dark"] body.thalasso-page #contenu > .section.section-aqua::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  opacity: 0 !important;
+}
+
+/* Premier échange : uniquement un relief bleu, sans halo violet. */
+html.theme-dark body.thalasso-page #contenu > .conversion-band,
+html[data-theme="dark"] body.thalasso-page #contenu > .conversion-band {
+  background:
+    radial-gradient(circle at 12% 88%, rgba(0, 176, 255, 0.12), transparent 38%),
+    linear-gradient(135deg, #11183d 0%, #1e2a50 58%, #27347c 100%) !important;
+}
+
+html.theme-dark body.thalasso-page #contenu > .conversion-band .eyebrow,
+html[data-theme="dark"] body.thalasso-page #contenu > .conversion-band .eyebrow {
+  color: var(--color-accent) !important;
+}
+
+/* CTA du hero et du dernier bandeau : turquoise uni, texte blanc. */
+html.theme-dark body.thalasso-page .page-hero .hero-actions .btn-primary,
+html.theme-dark body.thalasso-page .page-hero .hero-actions .btn-ghost,
+html[data-theme="dark"] body.thalasso-page .page-hero .hero-actions .btn-primary,
+html[data-theme="dark"] body.thalasso-page .page-hero .hero-actions .btn-ghost,
+html.theme-dark body.thalasso-page #contenu > .conversion-band .btn-primary,
+html.theme-dark body.thalasso-page #contenu > .conversion-band .btn-secondary,
+html[data-theme="dark"] body.thalasso-page #contenu > .conversion-band .btn-primary,
+html[data-theme="dark"] body.thalasso-page #contenu > .conversion-band .btn-secondary,
+html.theme-dark body.thalasso-page .page-hero .hero-actions .btn:hover,
+html[data-theme="dark"] body.thalasso-page .page-hero .hero-actions .btn:hover,
+html.theme-dark body.thalasso-page #contenu > .conversion-band .btn:hover,
+html[data-theme="dark"] body.thalasso-page #contenu > .conversion-band .btn:hover {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  border-color: #00b0ff !important;
+  background: #00b0ff !important;
+  background-image: none !important;
+  box-shadow: 0 14px 30px rgba(0, 176, 255, 0.24);
+}
+
+/* Une seule grille nocturne pour les six cartes, turnover compris. */
+html.theme-dark body.thalasso-page .thalasso-systems-grid,
+html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+
+html.theme-dark body.thalasso-page .thalasso-systems-grid > .sector-editorial-list,
+html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list {
+  display: contents;
+}
+
+html.theme-dark body.thalasso-page .thalasso-systems-grid .sector-editorial-chapter,
+html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid .sector-editorial-chapter,
+html.theme-dark body.thalasso-page .thalasso-systems-grid .thalasso-turnover-block,
+html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid .thalasso-turnover-block {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  box-sizing: border-box;
+  background: rgba(17, 24, 61, 0.78) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+html.theme-dark body.thalasso-page .thalasso-systems-grid .thalasso-turnover-block,
+html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid .thalasso-turnover-block {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1rem;
+}
+
+html.theme-dark body.thalasso-page .thalasso-turnover-block > summary,
+html[data-theme="dark"] body.thalasso-page .thalasso-turnover-block > summary {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+html.theme-dark body.thalasso-page .thalasso-turnover-heading,
+html[data-theme="dark"] body.thalasso-page .thalasso-turnover-heading {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+@media (min-width: 1050px) {
+  html.theme-dark body.thalasso-page .thalasso-systems-grid,
+  html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* Conserve le fallback sans image quand le navigateur demande une économie de données. */
+@media (prefers-reduced-data: reduce) {
+  html.theme-dark body.thalasso-page #contenu > .section.section-aqua,
+  html[data-theme="dark"] body.thalasso-page #contenu > .section.section-aqua {
+    background-color: #11183d !important;
+    background-image: none !important;
+  }
+}
+
+
+/* ==========================================================================
+   Correctif grille Systèmes Thalasso — parité stricte avec Spa Hôtellerie
+   Le mode jour conserve la carte onboarding historique.
+   ========================================================================== */
+
+body.thalasso-page .thalasso-dark-grid-card {
+  display: none !important;
+}
+
+html.theme-dark body.thalasso-page .thalasso-systems-grid,
+html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid {
+  display: block !important;
+  margin-top: 0 !important;
+}
+
+html.theme-dark body.thalasso-page .thalasso-systems-grid > .sector-editorial-list,
+html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  grid-auto-rows: auto;
+  gap: 1.2rem !important;
+  margin-top: 2rem !important;
+  border-top: 0 !important;
+}
+
+html.theme-dark body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .sector-editorial-chapter,
+html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .sector-editorial-chapter {
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 118px;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 1.35rem 1.5rem !important;
+  box-sizing: border-box !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: 14px !important;
+  background: rgba(17, 24, 61, 0.78) !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  align-self: stretch !important;
+}
+
+html.theme-dark body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .sector-editorial-chapter > summary,
+html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .sector-editorial-chapter > summary {
+  width: 100% !important;
+  min-height: 72px;
+  box-sizing: border-box !important;
+  align-items: center !important;
+}
+
+html.theme-dark body.thalasso-page .thalasso-systems-grid > .sector-editorial-list .sector-editorial-heading,
+html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list .sector-editorial-heading {
+  min-width: 0 !important;
+  flex: 1 1 auto !important;
+  padding-bottom: 0 !important;
+}
+
+html.theme-dark body.thalasso-page .thalasso-systems-grid > .sector-editorial-list .sector-editorial-heading h3,
+html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list .sector-editorial-heading h3 {
+  margin: 0 !important;
+}
+
+html.theme-dark body.thalasso-page .thalasso-dark-grid-card,
+html[data-theme="dark"] body.thalasso-page .thalasso-dark-grid-card {
+  display: block !important;
+}
+
+html.theme-dark body.thalasso-page .thalasso-systems-grid > .thalasso-turnover-block,
+html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid > .thalasso-turnover-block {
+  display: none !important;
+}
+
+@media (min-width: 1050px) {
+  html.theme-dark body.thalasso-page .thalasso-systems-grid > .sector-editorial-list,
+  html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-auto-rows: 1fr;
+  }
+}
+
+@media (max-width: 1049px) {
+  html.theme-dark body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .sector-editorial-chapter,
+  html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .sector-editorial-chapter {
+    min-height: 0;
+  }
+}
+
+
+/* Réassurance Thalasso nuit : titre et contenus en blanc pur. */
+html.theme-dark body.thalasso-page #contenu > .section.section-mist.section-aqua h2,
+html.theme-dark body.thalasso-page #contenu > .section.section-mist.section-aqua .feature-list li,
+html.theme-dark body.thalasso-page #contenu > .section.section-mist.section-aqua p:not(.eyebrow),
+html[data-theme="dark"] body.thalasso-page #contenu > .section.section-mist.section-aqua h2,
+html[data-theme="dark"] body.thalasso-page #contenu > .section.section-mist.section-aqua .feature-list li,
+html[data-theme="dark"] body.thalasso-page #contenu > .section.section-mist.section-aqua p:not(.eyebrow) {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
