@@ -232,6 +232,11 @@
   }
 }
 
+/* Accueil : numéro de téléphone du footer dégraissé sur tous les supports. */
+.site-footer .footer-phone {
+  font-weight: 400;
+}
+
 @media (max-width: 720px) {
   html.theme-dark .home-hero .hero-cube-stage {
     bottom: 24%;
