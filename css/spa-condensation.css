@@ -224,6 +224,13 @@ html.theme-dark body.spa-page .spa-method-cta-icon {
   background: rgba(182, 156, 255, 0.1);
 }
 
+/* Desktop : six systèmes Spa organisés en trois rangées de deux cartes. */
+@media (min-width: 1050px) {
+  body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
 /* Enjeu transversal turnover — page Spa & hôtellerie uniquement. */
 body.spa-page .spa-turnover-block {
   display: grid;
