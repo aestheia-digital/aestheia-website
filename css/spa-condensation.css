@@ -246,9 +246,10 @@ html.theme-dark body.spa-page .spa-method-cta-icon {
   body.spa-page #contenu > .conversion-band .btn-secondary,
   body.spa-page #contenu > .conversion-band .btn-primary:hover,
   body.spa-page #contenu > .conversion-band .btn-secondary:hover {
-    color: #07112d;
-    border-color: #00b0ff;
-    background: #00b0ff;
+    color: #07112d !important;
+    border-color: #00b0ff !important;
+    background: #00b0ff !important;
+    background-image: none !important;
     box-shadow: 0 14px 30px rgba(0, 176, 255, 0.24);
   }
 
