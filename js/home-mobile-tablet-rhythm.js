@@ -1,13 +1,8 @@
 (() => {
   const compact = window.matchMedia("(max-width: 1050px)");
 
-  const isDark = () => {
-    const root = document.documentElement;
-    return root.classList.contains("theme-dark") || root.dataset.theme === "dark";
-  };
-
   const setupOffers = () => {
-    const active = compact.matches && isDark();
+    const active = compact.matches;
     document.querySelectorAll("body.home-page .home-offers .offer-card").forEach((card) => {
       const heading = card.querySelector(":scope > h3");
       if (!heading) return;
@@ -46,7 +41,7 @@
     const details = document.querySelector("body.home-page .home-method details.home-section-accordion");
     if (!details) return;
 
-    const active = compact.matches && isDark();
+    const active = compact.matches;
 
     if (active) {
       details.classList.add("home-method-direct");
