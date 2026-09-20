@@ -104,3 +104,42 @@
     content: none !important;
   }
 }
+
+
+/* --------------------------------------------------------------------------
+   Médecine — desktop nuit : aligner tous les blocs Bénéfice au même niveau.
+   Règle structurelle robuste : chaque carte devient une colonne flexible et
+   le bloc Bénéfice est poussé en bas de la carte, quelle que soit la longueur
+   du texte descriptif.
+   -------------------------------------------------------------------------- */
+@media (min-width: 1051px) {
+  html.theme-dark body.medicine-page #contenu > .medicine-systems-section .sector-editorial-list,
+  html[data-theme="dark"] body.medicine-page #contenu > .medicine-systems-section .sector-editorial-list {
+    align-items: stretch !important;
+  }
+
+  html.theme-dark body.medicine-page #contenu > .medicine-systems-section details.sector-card-accordion,
+  html[data-theme="dark"] body.medicine-page #contenu > .medicine-systems-section details.sector-card-accordion {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+  }
+
+  html.theme-dark body.medicine-page #contenu > .medicine-systems-section details.sector-card-accordion > summary,
+  html[data-theme="dark"] body.medicine-page #contenu > .medicine-systems-section details.sector-card-accordion > summary {
+    flex: 0 0 auto !important;
+  }
+
+  html.theme-dark body.medicine-page #contenu > .medicine-systems-section .sector-editorial-content,
+  html[data-theme="dark"] body.medicine-page #contenu > .medicine-systems-section .sector-editorial-content {
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 1 1 auto !important;
+    height: 100% !important;
+  }
+
+  html.theme-dark body.medicine-page #contenu > .medicine-systems-section .sector-editorial-benefit,
+  html[data-theme="dark"] body.medicine-page #contenu > .medicine-systems-section .sector-editorial-benefit {
+    margin-top: auto !important;
+  }
+}
