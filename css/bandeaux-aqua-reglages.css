@@ -667,3 +667,87 @@ html.theme-dark body.thalasso-page #contenu > .section.section-soft.section-aqua
 html[data-theme="dark"] body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-card-accordion > summary::after {
   border-color: #9b7cff !important;
 }
+
+
+/* Mobile nuit Thalasso : suppression stricte de tous les halos violets. */
+@media (max-width: 720px) {
+  html.theme-dark body.thalasso-page,
+  html[data-theme="dark"] body.thalasso-page {
+    --halo-violet-primary: transparent !important;
+    --halo-violet-secondary: transparent !important;
+    --dark-body-halo-primary: transparent !important;
+    --dark-body-halo-secondary: transparent !important;
+    --dark-body-cloud-opacity: 0 !important;
+  }
+
+  html.theme-dark body.thalasso-page #contenu > .section:not(.conversion-band)::before,
+  html.theme-dark body.thalasso-page #contenu > .section:not(.conversion-band)::after,
+  html[data-theme="dark"] body.thalasso-page #contenu > .section:not(.conversion-band)::before,
+  html[data-theme="dark"] body.thalasso-page #contenu > .section:not(.conversion-band)::after {
+    content: none !important;
+    display: none !important;
+    background: none !important;
+    background-image: none !important;
+    opacity: 0 !important;
+  }
+
+  html.theme-dark body.thalasso-page #contenu > .thalasso-reality-section,
+  html.theme-dark body.thalasso-page #contenu > .sector-method-section,
+  html.theme-dark body.thalasso-page #contenu > .faq-section,
+  html[data-theme="dark"] body.thalasso-page #contenu > .thalasso-reality-section,
+  html[data-theme="dark"] body.thalasso-page #contenu > .sector-method-section,
+  html[data-theme="dark"] body.thalasso-page #contenu > .faq-section {
+    background: #11183d !important;
+    background-image: none !important;
+  }
+
+  html.theme-dark body.thalasso-page #contenu > .conversion-band,
+  html[data-theme="dark"] body.thalasso-page #contenu > .conversion-band {
+    background: linear-gradient(135deg, #11183d 0%, #1e2a50 58%, #24506f 100%) !important;
+    background-image: linear-gradient(135deg, #11183d 0%, #1e2a50 58%, #24506f 100%) !important;
+  }
+
+  html.theme-dark body.thalasso-page #contenu > .conversion-band::before,
+  html[data-theme="dark"] body.thalasso-page #contenu > .conversion-band::before {
+    background:
+      linear-gradient(90deg, rgba(12, 18, 48, 0.90), rgba(18, 40, 64, 0.70), rgba(24, 73, 100, 0.34)),
+      linear-gradient(0deg, rgba(15, 20, 47, 0.50), rgba(15, 20, 47, 0.08)) !important;
+  }
+}
+
+@media (max-width: 720px) and (prefers-color-scheme: dark) {
+  html:not(.theme-dark):not([data-theme="light"]) body.thalasso-page {
+    --halo-violet-primary: transparent !important;
+    --halo-violet-secondary: transparent !important;
+    --dark-body-halo-primary: transparent !important;
+    --dark-body-halo-secondary: transparent !important;
+    --dark-body-cloud-opacity: 0 !important;
+  }
+
+  html:not(.theme-dark):not([data-theme="light"]) body.thalasso-page #contenu > .section:not(.conversion-band)::before,
+  html:not(.theme-dark):not([data-theme="light"]) body.thalasso-page #contenu > .section:not(.conversion-band)::after {
+    content: none !important;
+    display: none !important;
+    background: none !important;
+    background-image: none !important;
+    opacity: 0 !important;
+  }
+
+  html:not(.theme-dark):not([data-theme="light"]) body.thalasso-page #contenu > .thalasso-reality-section,
+  html:not(.theme-dark):not([data-theme="light"]) body.thalasso-page #contenu > .sector-method-section,
+  html:not(.theme-dark):not([data-theme="light"]) body.thalasso-page #contenu > .faq-section {
+    background: #11183d !important;
+    background-image: none !important;
+  }
+
+  html:not(.theme-dark):not([data-theme="light"]) body.thalasso-page #contenu > .conversion-band {
+    background: linear-gradient(135deg, #11183d 0%, #1e2a50 58%, #24506f 100%) !important;
+    background-image: linear-gradient(135deg, #11183d 0%, #1e2a50 58%, #24506f 100%) !important;
+  }
+
+  html:not(.theme-dark):not([data-theme="light"]) body.thalasso-page #contenu > .conversion-band::before {
+    background:
+      linear-gradient(90deg, rgba(12, 18, 48, 0.90), rgba(18, 40, 64, 0.70), rgba(24, 73, 100, 0.34)),
+      linear-gradient(0deg, rgba(15, 20, 47, 0.50), rgba(15, 20, 47, 0.08)) !important;
+  }
+}
