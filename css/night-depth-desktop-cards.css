@@ -275,3 +275,20 @@
     margin: 0 !important;
   }
 }
+
+
+/* --------------------------------------------------------------------------
+   Thalasso & Thermal — desktop nuit : harmoniser la carte onboarding finale.
+   -------------------------------------------------------------------------- */
+@media (min-width: 1051px) {
+  html.theme-dark body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .thalasso-dark-grid-card:last-child,
+  html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .thalasso-dark-grid-card:last-child {
+    margin-top: 0.55rem !important;
+  }
+
+  html.theme-dark body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .thalasso-dark-grid-card:last-child .sector-editorial-heading h3,
+  html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .thalasso-dark-grid-card:last-child .sector-editorial-heading h3 {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+  }
+}
