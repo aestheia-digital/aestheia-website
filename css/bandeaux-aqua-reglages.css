@@ -684,3 +684,155 @@ body.thalasso-page #contenu > .conversion-band .btn:focus-visible {
   box-shadow: none !important;
   filter: none !important;
 }
+
+
+/* ==========================================================================
+   Thalasso & Thermal — parité structurelle du mode jour avec le mode nuit.
+   Les couleurs claires et les halos violets du mode jour restent inchangés.
+   ========================================================================== */
+
+/* Méthode : même finesse typographique que le mode nuit. */
+html[data-theme="light"] body.thalasso-page .sector-method-card .card-title-with-icon,
+html[data-theme="light"] body.thalasso-page .sector-method-card .card-title-with-icon strong {
+  font-weight: 400 !important;
+  line-height: 1.36 !important;
+}
+
+/* Systèmes : même grille de six cartes que le mode nuit, avec habillage clair existant. */
+html[data-theme="light"] body.thalasso-page .thalasso-systems-grid {
+  display: block !important;
+  margin-top: 0 !important;
+}
+
+html[data-theme="light"] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  grid-auto-rows: auto;
+  gap: 1.2rem !important;
+  margin-top: 2rem !important;
+  border-top: 0 !important;
+}
+
+html[data-theme="light"] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .sector-editorial-chapter {
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 118px;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 1.35rem 1.5rem !important;
+  box-sizing: border-box !important;
+  border-radius: 14px !important;
+  align-self: stretch !important;
+}
+
+html[data-theme="light"] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .sector-editorial-chapter > summary {
+  width: 100% !important;
+  min-height: 72px;
+  box-sizing: border-box !important;
+  align-items: center !important;
+}
+
+html[data-theme="light"] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list .sector-editorial-heading {
+  min-width: 0 !important;
+  flex: 1 1 auto !important;
+  padding-bottom: 0 !important;
+}
+
+html[data-theme="light"] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list .sector-editorial-heading h3 {
+  margin: 0 !important;
+}
+
+html[data-theme="light"] body.thalasso-page .thalasso-dark-grid-card {
+  display: block !important;
+}
+
+html[data-theme="light"] body.thalasso-page .thalasso-systems-grid > .thalasso-turnover-block {
+  display: none !important;
+}
+
+@media (min-width: 1050px) {
+  html[data-theme="light"] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-auto-rows: 1fr;
+  }
+}
+
+@media (max-width: 1049px) {
+  html[data-theme="light"] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .sector-editorial-chapter {
+    min-height: 0;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  html:not(.theme-dark):not([data-theme="dark"]) body.thalasso-page .sector-method-card .card-title-with-icon,
+  html:not(.theme-dark):not([data-theme="dark"]) body.thalasso-page .sector-method-card .card-title-with-icon strong {
+    font-weight: 400 !important;
+    line-height: 1.36 !important;
+  }
+
+  html:not(.theme-dark):not([data-theme="dark"]) body.thalasso-page .thalasso-systems-grid {
+    display: block !important;
+    margin-top: 0 !important;
+  }
+
+  html:not(.theme-dark):not([data-theme="dark"]) body.thalasso-page .thalasso-systems-grid > .sector-editorial-list {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-auto-rows: auto;
+    gap: 1.2rem !important;
+    margin-top: 2rem !important;
+    border-top: 0 !important;
+  }
+
+  html:not(.theme-dark):not([data-theme="dark"]) body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .sector-editorial-chapter {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 118px;
+    height: 100% !important;
+    margin: 0 !important;
+    padding: 1.35rem 1.5rem !important;
+    box-sizing: border-box !important;
+    border-radius: 14px !important;
+    align-self: stretch !important;
+  }
+
+  html:not(.theme-dark):not([data-theme="dark"]) body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .sector-editorial-chapter > summary {
+    width: 100% !important;
+    min-height: 72px;
+    box-sizing: border-box !important;
+    align-items: center !important;
+  }
+
+  html:not(.theme-dark):not([data-theme="dark"]) body.thalasso-page .thalasso-systems-grid > .sector-editorial-list .sector-editorial-heading {
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+    padding-bottom: 0 !important;
+  }
+
+  html:not(.theme-dark):not([data-theme="dark"]) body.thalasso-page .thalasso-systems-grid > .sector-editorial-list .sector-editorial-heading h3 {
+    margin: 0 !important;
+  }
+
+  html:not(.theme-dark):not([data-theme="dark"]) body.thalasso-page .thalasso-dark-grid-card {
+    display: block !important;
+  }
+
+  html:not(.theme-dark):not([data-theme="dark"]) body.thalasso-page .thalasso-systems-grid > .thalasso-turnover-block {
+    display: none !important;
+  }
+}
+
+@media (prefers-color-scheme: light) and (min-width: 1050px) {
+  html:not(.theme-dark):not([data-theme="dark"]) body.thalasso-page .thalasso-systems-grid > .sector-editorial-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-auto-rows: 1fr;
+  }
+}
+
+@media (prefers-color-scheme: light) and (max-width: 1049px) {
+  html:not(.theme-dark):not([data-theme="dark"]) body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .sector-editorial-chapter {
+    min-height: 0;
+  }
+}
