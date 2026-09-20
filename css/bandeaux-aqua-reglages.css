@@ -626,3 +626,44 @@ html[data-theme="dark"] body.thalasso-page #contenu > .section.section-mist.sect
   color: #ffffff !important;
   -webkit-text-fill-color: #ffffff !important;
 }
+
+
+/* Méthode Thalasso nuit : typographie plus légère et plus aérée. */
+html.theme-dark body.thalasso-page .sector-method-card .card-title-with-icon,
+html[data-theme="dark"] body.thalasso-page .sector-method-card .card-title-with-icon {
+  font-weight: 400 !important;
+  line-height: 1.36 !important;
+}
+
+html.theme-dark body.thalasso-page .sector-method-card .card-title-with-icon strong,
+html[data-theme="dark"] body.thalasso-page .sector-method-card .card-title-with-icon strong {
+  font-weight: 400 !important;
+}
+
+
+/* Premier échange Thalasso nuit : dominante bleue, sans reflet violet perceptible. */
+html.theme-dark body.thalasso-page #contenu > .conversion-band,
+html[data-theme="dark"] body.thalasso-page #contenu > .conversion-band {
+  background:
+    radial-gradient(circle at 12% 88%, rgba(0, 176, 255, 0.10), transparent 38%),
+    linear-gradient(135deg, #11183d 0%, #1e2a50 58%, #24506f 100%) !important;
+}
+
+html.theme-dark body.thalasso-page #contenu > .conversion-band::before,
+html[data-theme="dark"] body.thalasso-page #contenu > .conversion-band::before {
+  background:
+    linear-gradient(90deg, rgba(12, 18, 48, 0.90), rgba(18, 40, 64, 0.70), rgba(24, 73, 100, 0.34)),
+    linear-gradient(0deg, rgba(15, 20, 47, 0.50), rgba(15, 20, 47, 0.08)) !important;
+}
+
+/* Systèmes Thalasso nuit : titres blancs, flèches violettes comme les intitulés de section. */
+html.theme-dark body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-heading h3,
+html[data-theme="dark"] body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-heading h3 {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+html.theme-dark body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-card-accordion > summary::after,
+html[data-theme="dark"] body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-card-accordion > summary::after {
+  border-color: #9b7cff !important;
+}
