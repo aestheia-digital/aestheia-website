@@ -524,3 +524,93 @@ html[data-theme="dark"] body.thalasso-page .thalasso-turnover-heading {
     background-image: none !important;
   }
 }
+
+
+/* ==========================================================================
+   Correctif grille Systèmes Thalasso — parité stricte avec Spa Hôtellerie
+   Le mode jour conserve la carte onboarding historique.
+   ========================================================================== */
+
+body.thalasso-page .thalasso-dark-grid-card {
+  display: none !important;
+}
+
+html.theme-dark body.thalasso-page .thalasso-systems-grid,
+html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid {
+  display: block !important;
+  margin-top: 0 !important;
+}
+
+html.theme-dark body.thalasso-page .thalasso-systems-grid > .sector-editorial-list,
+html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  grid-auto-rows: auto;
+  gap: 1.2rem !important;
+  margin-top: 2rem !important;
+  border-top: 0 !important;
+}
+
+html.theme-dark body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .sector-editorial-chapter,
+html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .sector-editorial-chapter {
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 118px;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 1.35rem 1.5rem !important;
+  box-sizing: border-box !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: 14px !important;
+  background: rgba(17, 24, 61, 0.78) !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  align-self: stretch !important;
+}
+
+html.theme-dark body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .sector-editorial-chapter > summary,
+html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .sector-editorial-chapter > summary {
+  width: 100% !important;
+  min-height: 72px;
+  box-sizing: border-box !important;
+  align-items: center !important;
+}
+
+html.theme-dark body.thalasso-page .thalasso-systems-grid > .sector-editorial-list .sector-editorial-heading,
+html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list .sector-editorial-heading {
+  min-width: 0 !important;
+  flex: 1 1 auto !important;
+  padding-bottom: 0 !important;
+}
+
+html.theme-dark body.thalasso-page .thalasso-systems-grid > .sector-editorial-list .sector-editorial-heading h3,
+html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list .sector-editorial-heading h3 {
+  margin: 0 !important;
+}
+
+html.theme-dark body.thalasso-page .thalasso-dark-grid-card,
+html[data-theme="dark"] body.thalasso-page .thalasso-dark-grid-card {
+  display: block !important;
+}
+
+html.theme-dark body.thalasso-page .thalasso-systems-grid > .thalasso-turnover-block,
+html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid > .thalasso-turnover-block {
+  display: none !important;
+}
+
+@media (min-width: 1050px) {
+  html.theme-dark body.thalasso-page .thalasso-systems-grid > .sector-editorial-list,
+  html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-auto-rows: 1fr;
+  }
+}
+
+@media (max-width: 1049px) {
+  html.theme-dark body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .sector-editorial-chapter,
+  html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .sector-editorial-chapter {
+    min-height: 0;
+  }
+}
