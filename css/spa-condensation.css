@@ -692,3 +692,20 @@ html[data-theme="dark"] body.spa-page #contenu > .section.section-soft.section-a
     color: #a9cfff !important;
   }
 }
+
+
+/* CTA Spa : alignement global turquoise uni, sans halo, tous thèmes et supports. */
+body.spa-page .page-hero .hero-actions .btn,
+body.spa-page #contenu > .conversion-band .btn,
+body.spa-page .page-hero .hero-actions .btn:hover,
+body.spa-page #contenu > .conversion-band .btn:hover,
+body.spa-page .page-hero .hero-actions .btn:focus-visible,
+body.spa-page #contenu > .conversion-band .btn:focus-visible {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  border-color: #00b0ff !important;
+  background: #00b0ff !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
