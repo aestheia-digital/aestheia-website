@@ -148,3 +148,51 @@
     margin: 0 !important;
   }
 }
+
+
+/* --------------------------------------------------------------------------
+   Thalasso & Thermal — desktop nuit : « Lire la suite » en lien texte,
+   identique à l'intention mobile, sans apparence de bouton.
+   -------------------------------------------------------------------------- */
+@media (min-width: 1051px) {
+  html.theme-dark body.thalasso-page .thalasso-reality-turnover-accordion > .mobile-readmore-toggle,
+  html[data-theme="dark"] body.thalasso-page .thalasso-reality-turnover-accordion > .mobile-readmore-toggle {
+    display: inline-flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: fit-content !important;
+    margin-top: 0.7rem !important;
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    color: #b69cff !important;
+    -webkit-text-fill-color: #b69cff !important;
+    font: inherit !important;
+    font-size: 0.92rem !important;
+    font-weight: 600 !important;
+    line-height: 1.15 !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+  }
+
+  html.theme-dark body.thalasso-page .thalasso-reality-turnover-accordion > .mobile-readmore-toggle::after,
+  html[data-theme="dark"] body.thalasso-page .thalasso-reality-turnover-accordion > .mobile-readmore-toggle::after {
+    content: "↓" !important;
+    display: block !important;
+    margin-top: 0.12rem !important;
+    color: currentColor !important;
+    font-size: 0.95em !important;
+    line-height: 1 !important;
+  }
+
+  html.theme-dark body.thalasso-page .thalasso-reality-turnover-accordion.is-expanded > .mobile-readmore-toggle::after,
+  html[data-theme="dark"] body.thalasso-page .thalasso-reality-turnover-accordion.is-expanded > .mobile-readmore-toggle::after {
+    transform: rotate(180deg) !important;
+  }
+}
