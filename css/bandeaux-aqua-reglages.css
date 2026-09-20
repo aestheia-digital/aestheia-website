@@ -667,3 +667,20 @@ html.theme-dark body.thalasso-page #contenu > .section.section-soft.section-aqua
 html[data-theme="dark"] body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-card-accordion > summary::after {
   border-color: #9b7cff !important;
 }
+
+
+/* CTA Thalasso : alignement global turquoise uni, sans halo, tous thèmes et supports. */
+body.thalasso-page .page-hero .hero-actions .btn,
+body.thalasso-page #contenu > .conversion-band .btn,
+body.thalasso-page .page-hero .hero-actions .btn:hover,
+body.thalasso-page #contenu > .conversion-band .btn:hover,
+body.thalasso-page .page-hero .hero-actions .btn:focus-visible,
+body.thalasso-page #contenu > .conversion-band .btn:focus-visible {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  border-color: #00b0ff !important;
+  background: #00b0ff !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
