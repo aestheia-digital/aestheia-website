@@ -224,6 +224,16 @@ html.theme-dark body.spa-page .spa-method-cta-icon {
   background: rgba(182, 156, 255, 0.1);
 }
 
+/* Mode nuit : fonds Spa légèrement éclaircis, sans modifier la FAQ. */
+html.theme-dark body.spa-page #contenu > .spa-reality-section,
+html[data-theme="dark"] body.spa-page #contenu > .spa-reality-section,
+html.theme-dark body.spa-page #contenu > .sector-method-section,
+html[data-theme="dark"] body.spa-page #contenu > .sector-method-section,
+html.theme-dark body.spa-page .site-footer,
+html[data-theme="dark"] body.spa-page .site-footer {
+  background: #11183d !important;
+}
+
 /* Desktop : six systèmes Spa organisés en trois rangées de deux cartes. */
 @media (min-width: 1050px) {
   body.spa-page .spa-reality-title {
@@ -246,7 +256,7 @@ html.theme-dark body.spa-page .spa-method-cta-icon {
   body.spa-page #contenu > .conversion-band .btn-secondary,
   body.spa-page #contenu > .conversion-band .btn-primary:hover,
   body.spa-page #contenu > .conversion-band .btn-secondary:hover {
-    color: #07112d !important;
+    color: #fff !important;
     border-color: #00b0ff !important;
     background: #00b0ff !important;
     background-image: none !important;
