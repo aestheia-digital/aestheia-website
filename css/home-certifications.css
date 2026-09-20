@@ -485,7 +485,7 @@ html[data-theme="dark"] .home-method .step-label {
 }
 
 /* Accueil desktop : masquer toute entrée de navigation « À propos » sans supprimer la section. */
-@media (min-width: 960px) {
+@media (min-width: 1051px) {
   body.home-page nav a[href="#derriere-aestheia"],
   body.home-page nav a[href="/#derriere-aestheia"],
   body.home-page aside a[href="#derriere-aestheia"],
@@ -510,7 +510,7 @@ body.home-page .site-header .brand-mark {
   flex: 0 0 50px;
 }
 
-@media (min-width: 721px) and (max-width: 959px) {
+@media (min-width: 721px) and (max-width: 1050px) {
   body.home-page .site-header .brand-mark {
     width: 56px;
     height: 56px;
@@ -519,7 +519,7 @@ body.home-page .site-header .brand-mark {
   }
 }
 
-@media (min-width: 960px) {
+@media (min-width: 1051px) {
   body.home-page .site-header .brand-mark {
     width: 60px;
     height: 60px;
