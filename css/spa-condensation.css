@@ -191,7 +191,7 @@ body.spa-page .spa-method-cta a {
   color: #5e17eb !important;
   font-family: var(--font-body);
   font-size: 0.95rem;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.4;
   text-decoration: none;
 }
@@ -265,7 +265,7 @@ html[data-theme="dark"] body.spa-page .site-footer {
 
   body.spa-page .sector-method-card .card-title-with-icon {
     font-weight: 400;
-    line-height: 1.42;
+    line-height: 1.36;
   }
 
   body.spa-page .sector-method-card .card-title-with-icon strong {
@@ -274,9 +274,9 @@ html[data-theme="dark"] body.spa-page .site-footer {
 
   body.spa-page .sector-method-card .sector-method-detail {
     display: block;
-    margin-top: 0.55rem;
+    margin-top: 0.38rem;
     font-weight: 400;
-    line-height: 1.55;
+    line-height: 1.44;
   }
 
   body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-list {
@@ -468,7 +468,10 @@ html.theme-dark body.spa-page #contenu .section.section-mist.section-aqua .secto
 html[data-theme="dark"] body.spa-page #contenu .section.section-mist.section-aqua .sector-crosslink-cta,
 html[data-theme="dark"] body.spa-page #contenu .section.section-mist.section-aqua .sector-crosslink-cta:hover,
 html[data-theme="dark"] body.spa-page #contenu .section.section-mist.section-aqua .sector-crosslink-cta:focus-visible {
-  display: inline !important;
+  display: inline-flex !important;
+  max-width: 100%;
+  align-items: center;
+  gap: 0.65rem;
   padding: 0 !important;
   color: var(--color-accent) !important;
   -webkit-text-fill-color: var(--color-accent) !important;
@@ -478,6 +481,26 @@ html[data-theme="dark"] body.spa-page #contenu .section.section-mist.section-aqu
   box-shadow: none !important;
   filter: none !important;
   text-decoration: none !important;
+}
+
+body.spa-page #contenu .section.section-mist.section-aqua .sector-crosslink-cta:hover .spa-method-cta-icon {
+  background: rgba(94, 23, 235, 0.13);
+  transform: translateX(3px);
+}
+
+/* Hero Spa : CTA turquoise lumineux, sans dégradé, texte blanc. */
+body.spa-page .page-hero .hero-actions .btn-primary,
+body.spa-page .page-hero .hero-actions .btn-ghost,
+body.spa-page .page-hero .hero-actions .btn-primary:hover,
+body.spa-page .page-hero .hero-actions .btn-ghost:hover,
+body.spa-page .page-hero .hero-actions .btn-primary:focus-visible,
+body.spa-page .page-hero .hero-actions .btn-ghost:focus-visible {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  border-color: #00b0ff !important;
+  background: #00b0ff !important;
+  background-image: none !important;
+  box-shadow: 0 14px 30px rgba(0, 176, 255, 0.24);
 }
 
 /* Titres des quatre cartes Spa : même violet que les questions FAQ. */
