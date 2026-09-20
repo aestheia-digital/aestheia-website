@@ -130,3 +130,69 @@ html[data-theme="dark"] body.medicine-page #contenu > .section.section-mist:has(
     color: #a9cfff !important;
   }
 }
+
+
+/* ==========================================================================
+   Médecine & chirurgie esthétique — parité nocturne avec Spa / Thalasso
+   Tous supports, mode nuit uniquement.
+   ========================================================================== */
+
+/* Bandeaux principaux et footer : bleu nuit légèrement éclairci. */
+html.theme-dark body.medicine-page #contenu > .medicine-reality-section,
+html[data-theme="dark"] body.medicine-page #contenu > .medicine-reality-section,
+html.theme-dark body.medicine-page #contenu > .sector-method-section,
+html[data-theme="dark"] body.medicine-page #contenu > .sector-method-section,
+html.theme-dark body.medicine-page #contenu > .faq-section,
+html[data-theme="dark"] body.medicine-page #contenu > .faq-section,
+html.theme-dark body.medicine-page .site-footer,
+html[data-theme="dark"] body.medicine-page .site-footer {
+  background: #11183d !important;
+  background-image: none !important;
+}
+
+/* Cartes « Les systèmes que nous concevons » : légèrement plus claires. */
+html.theme-dark body.medicine-page #contenu > .medicine-systems-section .sector-editorial-chapter,
+html[data-theme="dark"] body.medicine-page #contenu > .medicine-systems-section .sector-editorial-chapter {
+  background: #151c46 !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Cadre médical : typographie des cartes plus légère et plus respirante. */
+html.theme-dark body.medicine-page #contenu > .sector-method-section .sector-method-card .card-title-with-icon,
+html[data-theme="dark"] body.medicine-page #contenu > .sector-method-section .sector-method-card .card-title-with-icon {
+  font-weight: 400 !important;
+  line-height: 1.36 !important;
+}
+
+html.theme-dark body.medicine-page #contenu > .sector-method-section .sector-method-card .card-title-with-icon strong,
+html[data-theme="dark"] body.medicine-page #contenu > .sector-method-section .sector-method-card .card-title-with-icon strong {
+  font-weight: 400 !important;
+}
+
+/* Thème sombre automatique lorsque l'utilisateur n'a pas forcé le mode jour. */
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-dark):not([data-theme="light"]) body.medicine-page #contenu > .medicine-reality-section,
+  html:not(.theme-dark):not([data-theme="light"]) body.medicine-page #contenu > .sector-method-section,
+  html:not(.theme-dark):not([data-theme="light"]) body.medicine-page #contenu > .faq-section,
+  html:not(.theme-dark):not([data-theme="light"]) body.medicine-page .site-footer {
+    background: #11183d !important;
+    background-image: none !important;
+  }
+
+  html:not(.theme-dark):not([data-theme="light"]) body.medicine-page #contenu > .medicine-systems-section .sector-editorial-chapter {
+    background: #151c46 !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  html:not(.theme-dark):not([data-theme="light"]) body.medicine-page #contenu > .sector-method-section .sector-method-card .card-title-with-icon,
+  html:not(.theme-dark):not([data-theme="light"]) body.medicine-page #contenu > .sector-method-section .sector-method-card .card-title-with-icon strong {
+    font-weight: 400 !important;
+    line-height: 1.36 !important;
+  }
+}
