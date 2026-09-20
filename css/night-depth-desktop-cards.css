@@ -122,6 +122,7 @@
   html[data-theme="dark"] body.medicine-page #contenu > .medicine-systems-section details.sector-card-accordion {
     display: flex !important;
     flex-direction: column !important;
+    align-self: stretch !important;
     height: 100% !important;
   }
 
