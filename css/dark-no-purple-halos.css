@@ -132,3 +132,36 @@ html[data-theme="dark"] body #contenu > .resources-hero + .section {
       linear-gradient(135deg, #11183d 0%, #172149 58%, #202d60 100%) !important;
   }
 }
+
+
+/* ==========================================================================
+   Derniers bandeaux secteur — halo bleu validé sur Thalasso & Thermal
+   Mode nuit uniquement, tous supports.
+   ========================================================================== */
+
+html.theme-dark body.medicine-page #contenu > .conversion-band::before,
+html[data-theme="dark"] body.medicine-page #contenu > .conversion-band::before,
+html.theme-dark body.spa-page #contenu > .conversion-band::before,
+html[data-theme="dark"] body.spa-page #contenu > .conversion-band::before,
+html.theme-dark body.thalasso-page #contenu > .conversion-band::before,
+html[data-theme="dark"] body.thalasso-page #contenu > .conversion-band::before,
+html.theme-dark body.institutes-page #contenu > .conversion-band::before,
+html[data-theme="dark"] body.institutes-page #contenu > .conversion-band::before,
+html.theme-dark body.pme-page #contenu > .conversion-band::before,
+html[data-theme="dark"] body.pme-page #contenu > .conversion-band::before {
+  background:
+    linear-gradient(90deg, rgba(12, 18, 48, 0.90), rgba(18, 40, 64, 0.70), rgba(24, 73, 100, 0.34)),
+    linear-gradient(0deg, rgba(15, 20, 47, 0.50), rgba(15, 20, 47, 0.08)) !important;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-dark):not([data-theme="light"]) body.medicine-page #contenu > .conversion-band::before,
+  html:not(.theme-dark):not([data-theme="light"]) body.spa-page #contenu > .conversion-band::before,
+  html:not(.theme-dark):not([data-theme="light"]) body.thalasso-page #contenu > .conversion-band::before,
+  html:not(.theme-dark):not([data-theme="light"]) body.institutes-page #contenu > .conversion-band::before,
+  html:not(.theme-dark):not([data-theme="light"]) body.pme-page #contenu > .conversion-band::before {
+    background:
+      linear-gradient(90deg, rgba(12, 18, 48, 0.90), rgba(18, 40, 64, 0.70), rgba(24, 73, 100, 0.34)),
+      linear-gradient(0deg, rgba(15, 20, 47, 0.50), rgba(15, 20, 47, 0.08)) !important;
+  }
+}
