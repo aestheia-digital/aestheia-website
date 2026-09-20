@@ -78,24 +78,32 @@
         }
       }
 
+      /* Contact — desktop : cube décoratif recalibré. */
+      @media (min-width: 1180px) {
+        .contact-cube-hero .hero-tech-backdrop { display: block; opacity: 0.42; }
+        .contact-cube-hero .hero-cube-stage { --cube-size: clamp(220px, 17vw, 258px); --cube-zone: clamp(360px, 29vw, 430px); display: grid; top: 50%; right: clamp(-110px, -6vw, -72px); bottom: auto; opacity: 0.52; transform: translateY(-50%); }
+        .contact-cube-hero .hero-content { position: relative; z-index: 2; max-width: 62%; }
+      }
+
       @media (min-width: 900px) and (max-width: 1179px) {
-        .contact-cube-hero .hero-tech-backdrop { display: block; opacity: 0.5; }
-        .contact-cube-hero .hero-cube-stage { --cube-size: clamp(188px, 20vw, 214px); --cube-zone: clamp(315px, 35vw, 370px); display: grid; top: 50%; right: clamp(-78px, -5vw, -42px); bottom: auto; opacity: 0.68; transform: translateY(-50%); }
-        .contact-cube-hero .hero-content { position: relative; z-index: 2; max-width: 70%; }
+        .contact-cube-hero .hero-tech-backdrop { display: block; opacity: 0.40; }
+        .contact-cube-hero .hero-cube-stage { --cube-size: clamp(160px, 17vw, 184px); --cube-zone: clamp(276px, 31vw, 320px); display: grid; top: 50%; right: clamp(-88px, -6vw, -56px); bottom: auto; opacity: 0.50; transform: translateY(-50%); }
+        .contact-cube-hero .hero-content { position: relative; z-index: 2; max-width: 64%; }
       }
 
       @media (min-width: 721px) and (max-width: 899px) {
-        .contact-cube-hero .hero-tech-backdrop { display: block; opacity: 0.38; }
-        .contact-cube-hero .hero-cube-stage { --cube-size: clamp(170px, 23vw, 192px); --cube-zone: clamp(282px, 39vw, 324px); display: grid; top: 52%; right: clamp(-94px, -8vw, -64px); bottom: auto; opacity: 0.56; transform: translateY(-50%); }
-        .contact-cube-hero .hero-content { position: relative; z-index: 2; max-width: 72%; }
+        .contact-cube-hero .hero-tech-backdrop { display: block; opacity: 0.34; }
+        .contact-cube-hero .hero-cube-stage { --cube-size: clamp(142px, 20vw, 162px); --cube-zone: clamp(242px, 34vw, 278px); display: grid; top: 51%; right: clamp(-92px, -9vw, -66px); bottom: auto; opacity: 0.45; transform: translateY(-50%); }
+        .contact-cube-hero .hero-content { position: relative; z-index: 2; max-width: 66%; }
       }
 
       @media (max-width: 720px) {
-        .contact-cube-hero .hero-tech-backdrop { display: block; opacity: 0.28; }
-        .contact-cube-hero .hero-cube-stage { --cube-size: clamp(116px, 34vw, 136px); --cube-zone: clamp(186px, 53vw, 218px); display: grid; top: auto; right: clamp(-82px, -19vw, -60px); bottom: 8%; opacity: 0.34; filter: saturate(1.12) contrast(1.05) brightness(1.04); transform: none; }
-        .contact-cube-hero .hero-cube-stage::before { opacity: 0.38; }
-        .contact-cube-hero .hero-cube-effects { opacity: 0.48; }
-        .contact-cube-hero .hero-content { position: relative; z-index: 2; max-width: 72%; }
+        .contact-cube-hero .hero-tech-backdrop { display: block; opacity: 0.24; }
+        .contact-cube-hero .hero-cube-stage { --cube-size: clamp(82px, 24vw, 102px); --cube-zone: clamp(142px, 41vw, 170px); display: grid; top: 47%; right: clamp(-62px, -14vw, -44px); bottom: auto; opacity: 0.28; filter: saturate(1.08) contrast(1.04) brightness(1.03); transform: translateY(-50%); }
+        .contact-cube-hero .hero-cube-stage::before { opacity: 0.32; }
+        .contact-cube-hero .hero-cube-effects { opacity: 0.40; }
+        .contact-cube-hero .hero-content { position: relative; z-index: 2; max-width: 74%; }
+        .contact-cube-hero .contact-hero-intro { max-width: 92%; font-size: 1rem; line-height: 1.55; }
       }
 
       /* Contact : les lettres IA de “Coordonnées d’AesthéIA” reprennent le dégradé bleu validé. */
@@ -244,6 +252,7 @@
           <div class="hero-content">
             <p class="eyebrow">Contact</p>
             <h1>Parlons de votre projet</h1>
+            <p class="contact-hero-intro">Présentez votre contexte, vos priorités et vos objectifs. Nous définirons ensemble la suite la plus adaptée.</p>
           </div>
         </div>
       </section>
