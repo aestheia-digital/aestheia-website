@@ -5448,3 +5448,50 @@ html[data-theme="dark"] .sector-card-accordion > summary::after {
     }
   }
 }
+
+
+/* ==========================================================================
+   CTA globaux AesthéIA — turquoise uni, texte blanc, sans halo
+   ========================================================================== */
+.hero-actions .btn,
+.conversion-band .btn,
+.conversion-card .btn,
+.resource-cta .btn,
+.article-cta .btn,
+.contact-choice-button,
+a.btn[href="https://forms.gle/W7JrgaJ6yDSuwgFe7"],
+a.btn[href="https://calendar.app.google/qx6dT7WJfTrsFe6j9"],
+.hero-actions .btn:hover,
+.conversion-band .btn:hover,
+.conversion-card .btn:hover,
+.resource-cta .btn:hover,
+.article-cta .btn:hover,
+.contact-choice-button:hover,
+a.btn[href="https://forms.gle/W7JrgaJ6yDSuwgFe7"]:hover,
+a.btn[href="https://calendar.app.google/qx6dT7WJfTrsFe6j9"]:hover,
+.hero-actions .btn:focus-visible,
+.conversion-band .btn:focus-visible,
+.conversion-card .btn:focus-visible,
+.resource-cta .btn:focus-visible,
+.article-cta .btn:focus-visible,
+.contact-choice-button:focus-visible,
+a.btn[href="https://forms.gle/W7JrgaJ6yDSuwgFe7"]:focus-visible,
+a.btn[href="https://calendar.app.google/qx6dT7WJfTrsFe6j9"]:focus-visible {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  border-color: #00b0ff !important;
+  background: #00b0ff !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+}
+
+/* Même mention discrète sous les CTA de tous les headers secteur. */
+.page-hero .hero-reassurance {
+  max-width: 820px;
+  margin: 0.85rem 0 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(0.78rem, 1.3vw, 0.9rem);
+  font-weight: 400;
+  line-height: 1.5;
+}
