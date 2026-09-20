@@ -107,9 +107,9 @@
 
 
 /* --------------------------------------------------------------------------
-   Médecine — desktop nuit : ligne de départ commune des blocs Bénéfice.
-   Le contenu descriptif au-dessus du bénéfice occupe une hauteur commune :
-   les quatre blocs Bénéfice commencent donc exactement au même niveau.
+   Médecine — desktop nuit : alignement strict des blocs Bénéfice.
+   Les quatre cartes partagent une hauteur et une position de bénéfice communes,
+   sans modifier le contenu descriptif.
    -------------------------------------------------------------------------- */
 @media (min-width: 1051px) {
   html.theme-dark body.medicine-page #contenu > .medicine-systems-section .sector-editorial-list,
@@ -119,43 +119,32 @@
 
   html.theme-dark body.medicine-page #contenu > .medicine-systems-section details.sector-card-accordion,
   html[data-theme="dark"] body.medicine-page #contenu > .medicine-systems-section details.sector-card-accordion {
+    position: relative !important;
     align-self: stretch !important;
+    min-height: 52rem !important;
     height: 100% !important;
+    padding-bottom: 15rem !important;
   }
 
-  /* Les titres gardent eux aussi une zone commune. */
   html.theme-dark body.medicine-page #contenu > .medicine-systems-section .sector-editorial-heading h3,
   html[data-theme="dark"] body.medicine-page #contenu > .medicine-systems-section .sector-editorial-heading h3 {
     min-height: 4.8rem !important;
   }
 
-  /* Zone descriptive commune avant le bloc Bénéfice.
-     27rem correspond au contenu le plus long des quatre cartes au breakpoint desktop. */
   html.theme-dark body.medicine-page #contenu > .medicine-systems-section .sector-editorial-content,
   html[data-theme="dark"] body.medicine-page #contenu > .medicine-systems-section .sector-editorial-content {
-    display: grid !important;
-    grid-template-rows: 27rem auto !important;
-    align-content: start !important;
+    display: block !important;
     height: auto !important;
-  }
-
-  html.theme-dark body.medicine-page #contenu > .medicine-systems-section .sector-editorial-content > p:not(.sector-editorial-benefit),
-  html[data-theme="dark"] body.medicine-page #contenu > .medicine-systems-section .sector-editorial-content > p:not(.sector-editorial-benefit) {
-    grid-row: 1;
-    align-self: start;
-  }
-
-  /* Les cartes qui ont deux paragraphes descriptifs doivent rester empilées
-     dans la même zone avant le bénéfice. */
-  html.theme-dark body.medicine-page #contenu > .medicine-systems-section .sector-editorial-content > p:not(.sector-editorial-benefit) + p:not(.sector-editorial-benefit),
-  html[data-theme="dark"] body.medicine-page #contenu > .medicine-systems-section .sector-editorial-content > p:not(.sector-editorial-benefit) + p:not(.sector-editorial-benefit) {
-    margin-top: 0.9rem;
   }
 
   html.theme-dark body.medicine-page #contenu > .medicine-systems-section .sector-editorial-benefit,
   html[data-theme="dark"] body.medicine-page #contenu > .medicine-systems-section .sector-editorial-benefit {
-    grid-row: 2;
-    align-self: start !important;
-    margin-top: 0 !important;
+    position: absolute !important;
+    top: 34.2rem !important;
+    left: 1.45rem !important;
+    right: 1.45rem !important;
+    width: auto !important;
+    max-width: none !important;
+    margin: 0 !important;
   }
 }
