@@ -516,3 +516,82 @@ body.home-page .site-header .brand-mark {
     transform: scale(1.08);
   }
 }
+
+
+/* ==========================================================================
+   Accueil mobile + tablette — rythme visuel identique en jour et nuit :
+   Solutions en accordéons compacts, Méthode visible directement.
+   ========================================================================== */
+@media (max-width: 1050px) {
+  body.home-page .home-offers .offer-card.home-offer-collapsible {
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 1.1rem 1.2rem !important;
+  }
+
+  body.home-page .home-offers .offer-card.home-offer-collapsible > h3 {
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    min-height: 3.4rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    cursor: pointer !important;
+  }
+
+  body.home-page .home-offers .offer-card.home-offer-collapsible > h3::after {
+    content: "" !important;
+    display: block !important;
+    flex: 0 0 auto !important;
+    width: 0.72rem !important;
+    height: 0.72rem !important;
+    margin-left: auto !important;
+    border-right: 2px solid currentColor !important;
+    border-bottom: 2px solid currentColor !important;
+    transform: rotate(45deg) !important;
+    transition: transform 0.2s ease !important;
+  }
+
+  body.home-page .home-offers .offer-card.home-offer-collapsible.home-offer-expanded > h3::after {
+    transform: rotate(225deg) !important;
+  }
+
+  body.home-page .home-offers .offer-card.home-offer-collapsible:not(.home-offer-expanded) > p {
+    display: none !important;
+  }
+
+  body.home-page .home-offers .offer-card.home-offer-collapsible.home-offer-expanded > p {
+    display: block !important;
+  }
+
+  body.home-page .home-offers .offer-card.home-offer-collapsible.home-offer-expanded > p:first-of-type {
+    margin-top: 1rem !important;
+  }
+
+  body.home-page .home-offers .offer-card.home-offer-collapsible.home-offer-expanded .offer-result {
+    margin-top: 1rem !important;
+  }
+
+  /* La Méthode n'est plus présentée comme un second gros accordéon. */
+  body.home-page .home-method details.home-section-accordion.home-method-direct {
+    margin-top: 1.4rem !important;
+    overflow: visible !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  body.home-page .home-method details.home-section-accordion.home-method-direct > summary {
+    display: none !important;
+  }
+
+  body.home-page .home-method details.home-section-accordion.home-method-direct > .home-section-accordion-body {
+    display: block !important;
+    padding: 0 !important;
+  }
+
+  body.home-page .home-method details.home-section-accordion.home-method-direct .home-process {
+    margin-top: 0 !important;
+  }
+}
