@@ -483,3 +483,13 @@ html[data-theme="dark"] .home-method .step-label {
     font-size: 0.86rem;
   }
 }
+
+/* Accueil desktop : masquer toute entrée de navigation « À propos » sans supprimer la section. */
+@media (min-width: 960px) {
+  body.home-page nav a[href="#derriere-aestheia"],
+  body.home-page nav a[href="/#derriere-aestheia"],
+  body.home-page aside a[href="#derriere-aestheia"],
+  body.home-page aside a[href="/#derriere-aestheia"] {
+    display: none !important;
+  }
+}
