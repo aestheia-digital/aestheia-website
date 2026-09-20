@@ -226,6 +226,10 @@ html.theme-dark body.spa-page .spa-method-cta-icon {
 
 /* Desktop : six systèmes Spa organisés en trois rangées de deux cartes. */
 @media (min-width: 1050px) {
+  body.spa-page .spa-reality-title {
+    max-width: 1000px;
+  }
+
   body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-list {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
