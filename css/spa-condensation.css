@@ -230,6 +230,26 @@ html.theme-dark body.spa-page .spa-method-cta-icon {
     max-width: 1000px;
   }
 
+  html.theme-dark body.spa-page #contenu > .conversion-band,
+  html[data-theme="dark"] body.spa-page #contenu > .conversion-band {
+    background:
+      radial-gradient(circle at 12% 88%, rgba(0, 176, 255, 0.12), transparent 38%),
+      linear-gradient(135deg, #11183d 0%, #1e2a50 58%, #27347c 100%);
+  }
+
+  html.theme-dark body.spa-page #contenu > .conversion-band .eyebrow,
+  html[data-theme="dark"] body.spa-page #contenu > .conversion-band .eyebrow {
+    color: #6f2cff !important;
+  }
+
+  body.spa-page .sector-method-card .card-title-with-icon {
+    font-weight: 400;
+  }
+
+  body.spa-page .sector-method-card .card-title-with-icon strong {
+    font-weight: 500;
+  }
+
   body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-list {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
