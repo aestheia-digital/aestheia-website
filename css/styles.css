@@ -5453,6 +5453,15 @@ html[data-theme="dark"] .sector-card-accordion > summary::after {
 /* ==========================================================================
    CTA globaux AesthéIA — turquoise uni, texte blanc, sans halo
    ========================================================================== */
+.btn-primary,
+.btn-secondary,
+.btn-ghost,
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-ghost:hover,
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible,
+.btn-ghost:focus-visible,
 .hero-actions .btn,
 .conversion-band .btn,
 .conversion-card .btn,
