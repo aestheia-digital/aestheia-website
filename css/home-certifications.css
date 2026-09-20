@@ -493,3 +493,37 @@ html[data-theme="dark"] .home-method .step-label {
     display: none !important;
   }
 }
+
+
+/* Accueil — logo du header : même visuel, présence renforcée selon le support. */
+body.home-page .site-header .brand-link {
+  gap: 0.85rem;
+}
+
+body.home-page .site-header .brand-mark {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.10);
+  transform-origin: center;
+  flex: 0 0 50px;
+}
+
+@media (min-width: 721px) and (max-width: 959px) {
+  body.home-page .site-header .brand-mark {
+    width: 56px;
+    height: 56px;
+    flex-basis: 56px;
+    transform: scale(1.08);
+  }
+}
+
+@media (min-width: 960px) {
+  body.home-page .site-header .brand-mark {
+    width: 60px;
+    height: 60px;
+    flex-basis: 60px;
+    transform: scale(1.08);
+  }
+}
