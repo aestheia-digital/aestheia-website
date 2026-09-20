@@ -196,3 +196,31 @@ html[data-theme="dark"] body.medicine-page #contenu > .sector-method-section .se
     line-height: 1.36 !important;
   }
 }
+
+
+/* ==========================================================================
+   Médecine — parité typographique du mode jour avec le mode nuit.
+   Aucune modification des halos violets.
+   ========================================================================== */
+
+html[data-theme="light"] body.medicine-page #contenu > .sector-method-section .sector-method-card .card-title-with-icon,
+html[data-theme="light"] body.medicine-page #contenu > .sector-method-section .sector-method-card .card-title-with-icon strong {
+  font-weight: 400 !important;
+  line-height: 1.36 !important;
+}
+
+html[data-theme="light"] body.medicine-page .faq-section .faq-accordion-item summary h3 {
+  font-size: 1.06rem !important;
+}
+
+@media (prefers-color-scheme: light) {
+  html:not(.theme-dark):not([data-theme="dark"]) body.medicine-page #contenu > .sector-method-section .sector-method-card .card-title-with-icon,
+  html:not(.theme-dark):not([data-theme="dark"]) body.medicine-page #contenu > .sector-method-section .sector-method-card .card-title-with-icon strong {
+    font-weight: 400 !important;
+    line-height: 1.36 !important;
+  }
+
+  html:not(.theme-dark):not([data-theme="dark"]) body.medicine-page .faq-section .faq-accordion-item summary h3 {
+    font-size: 1.06rem !important;
+  }
+}
