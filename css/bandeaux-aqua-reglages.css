@@ -514,3 +514,13 @@ html[data-theme="dark"] body.thalasso-page .thalasso-turnover-heading {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+
+/* Conserve le fallback sans image quand le navigateur demande une économie de données. */
+@media (prefers-reduced-data: reduce) {
+  html.theme-dark body.thalasso-page #contenu > .section.section-aqua,
+  html[data-theme="dark"] body.thalasso-page #contenu > .section.section-aqua {
+    background-color: #11183d !important;
+    background-image: none !important;
+  }
+}
