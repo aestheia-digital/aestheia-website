@@ -839,3 +839,21 @@ html[data-theme="dark"] body.institutes-page #contenu > .section.section-soft.se
     background-repeat: no-repeat !important;
   }
 }
+
+
+/* Méthode Instituts : typographie plus légère et premium. */
+body.institutes-page #contenu > .institutes-method-section .institutes-method-card .card-title-with-icon {
+  font-weight: 400 !important;
+  line-height: 1.36 !important;
+}
+
+body.institutes-page #contenu > .institutes-method-section .institutes-method-card .card-title-with-icon span,
+body.institutes-page #contenu > .institutes-method-section .institutes-method-card .card-title-with-icon strong {
+  font-weight: 400 !important;
+}
+
+@media (min-width: 1050px) {
+  body.institutes-page #contenu > .institutes-method-section .institutes-method-card .card-title-with-icon {
+    line-height: 1.40 !important;
+  }
+}
