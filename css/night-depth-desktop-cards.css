@@ -1,0 +1,106 @@
+/* AesthéIA — mode nuit : relief sectoriel discret + contenus desktop ouverts.
+   Portée volontairement limitée :
+   - halos : tablette + ordinateur, pages secteurs uniquement, nuit uniquement
+   - cartes/contenus : ordinateur uniquement, nuit uniquement, accueil + pages secteurs
+   - aucun changement mobile ni mode jour
+*/
+
+/* --------------------------------------------------------------------------
+   1. Pages secteurs — restaurer un halo violet très discret en mode nuit.
+   -------------------------------------------------------------------------- */
+@media (min-width: 721px) {
+  html.theme-dark body.medicine-page #contenu > .section:not(.conversion-band):not(.section-aqua)::before,
+  html[data-theme="dark"] body.medicine-page #contenu > .section:not(.conversion-band):not(.section-aqua)::before,
+  html.theme-dark body.spa-page #contenu > .section:not(.conversion-band):not(.section-aqua)::before,
+  html[data-theme="dark"] body.spa-page #contenu > .section:not(.conversion-band):not(.section-aqua)::before,
+  html.theme-dark body.thalasso-page #contenu > .section:not(.conversion-band):not(.section-aqua)::before,
+  html[data-theme="dark"] body.thalasso-page #contenu > .section:not(.conversion-band):not(.section-aqua)::before,
+  html.theme-dark body.institutes-page #contenu > .section:not(.conversion-band):not(.section-aqua)::before,
+  html[data-theme="dark"] body.institutes-page #contenu > .section:not(.conversion-band):not(.section-aqua)::before,
+  html.theme-dark body.pme-page #contenu > .section:not(.conversion-band):not(.section-aqua)::before,
+  html[data-theme="dark"] body.pme-page #contenu > .section:not(.conversion-band):not(.section-aqua)::before {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 0 !important;
+    pointer-events: none !important;
+    opacity: 1 !important;
+    background:
+      radial-gradient(circle at 84% 20%, rgba(94, 23, 235, 0.060), transparent 42%),
+      radial-gradient(circle at 14% 82%, rgba(139, 92, 246, 0.032), transparent 46%) !important;
+  }
+
+  html.theme-dark body.medicine-page #contenu > .section:not(.conversion-band):not(.section-aqua) > .container,
+  html[data-theme="dark"] body.medicine-page #contenu > .section:not(.conversion-band):not(.section-aqua) > .container,
+  html.theme-dark body.spa-page #contenu > .section:not(.conversion-band):not(.section-aqua) > .container,
+  html[data-theme="dark"] body.spa-page #contenu > .section:not(.conversion-band):not(.section-aqua) > .container,
+  html.theme-dark body.thalasso-page #contenu > .section:not(.conversion-band):not(.section-aqua) > .container,
+  html[data-theme="dark"] body.thalasso-page #contenu > .section:not(.conversion-band):not(.section-aqua) > .container,
+  html.theme-dark body.institutes-page #contenu > .section:not(.conversion-band):not(.section-aqua) > .container,
+  html[data-theme="dark"] body.institutes-page #contenu > .section:not(.conversion-band):not(.section-aqua) > .container,
+  html.theme-dark body.pme-page #contenu > .section:not(.conversion-band):not(.section-aqua) > .container,
+  html[data-theme="dark"] body.pme-page #contenu > .section:not(.conversion-band):not(.section-aqua) > .container {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. Desktop nuit — accueil : afficher directement les contenus
+      « Voir les accompagnements » et « Voir la méthode ».
+   -------------------------------------------------------------------------- */
+@media (min-width: 1051px) {
+  html.theme-dark body.home-page details.home-section-accordion > summary,
+  html[data-theme="dark"] body.home-page details.home-section-accordion > summary {
+    display: none !important;
+  }
+
+  html.theme-dark body.home-page details.home-section-accordion > .home-section-accordion-body,
+  html[data-theme="dark"] body.home-page details.home-section-accordion > .home-section-accordion-body {
+    display: block !important;
+  }
+
+  /* Pages secteurs : les cartes accordéon restent des cartes,
+     mais leur contenu est directement visible sur ordinateur. */
+  html.theme-dark body.medicine-page details.sector-card-accordion > *:not(summary),
+  html[data-theme="dark"] body.medicine-page details.sector-card-accordion > *:not(summary),
+  html.theme-dark body.spa-page details.sector-card-accordion > *:not(summary),
+  html[data-theme="dark"] body.spa-page details.sector-card-accordion > *:not(summary),
+  html.theme-dark body.thalasso-page details.sector-card-accordion > *:not(summary),
+  html[data-theme="dark"] body.thalasso-page details.sector-card-accordion > *:not(summary),
+  html.theme-dark body.institutes-page details.sector-card-accordion > *:not(summary),
+  html[data-theme="dark"] body.institutes-page details.sector-card-accordion > *:not(summary),
+  html.theme-dark body.pme-page details.sector-card-accordion > *:not(summary),
+  html[data-theme="dark"] body.pme-page details.sector-card-accordion > *:not(summary) {
+    display: block !important;
+  }
+
+  html.theme-dark body.medicine-page details.sector-card-accordion > summary,
+  html[data-theme="dark"] body.medicine-page details.sector-card-accordion > summary,
+  html.theme-dark body.spa-page details.sector-card-accordion > summary,
+  html[data-theme="dark"] body.spa-page details.sector-card-accordion > summary,
+  html.theme-dark body.thalasso-page details.sector-card-accordion > summary,
+  html[data-theme="dark"] body.thalasso-page details.sector-card-accordion > summary,
+  html.theme-dark body.institutes-page details.sector-card-accordion > summary,
+  html[data-theme="dark"] body.institutes-page details.sector-card-accordion > summary,
+  html.theme-dark body.pme-page details.sector-card-accordion > summary,
+  html[data-theme="dark"] body.pme-page details.sector-card-accordion > summary {
+    cursor: default !important;
+    pointer-events: none !important;
+  }
+
+  html.theme-dark body.medicine-page details.sector-card-accordion > summary::after,
+  html[data-theme="dark"] body.medicine-page details.sector-card-accordion > summary::after,
+  html.theme-dark body.spa-page details.sector-card-accordion > summary::after,
+  html[data-theme="dark"] body.spa-page details.sector-card-accordion > summary::after,
+  html.theme-dark body.thalasso-page details.sector-card-accordion > summary::after,
+  html[data-theme="dark"] body.thalasso-page details.sector-card-accordion > summary::after,
+  html.theme-dark body.institutes-page details.sector-card-accordion > summary::after,
+  html[data-theme="dark"] body.institutes-page details.sector-card-accordion > summary::after,
+  html.theme-dark body.pme-page details.sector-card-accordion > summary::after,
+  html[data-theme="dark"] body.pme-page details.sector-card-accordion > summary::after {
+    display: none !important;
+    content: none !important;
+  }
+}
