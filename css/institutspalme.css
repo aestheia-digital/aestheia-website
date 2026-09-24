@@ -114,6 +114,14 @@ body.institutes-page .institutes-team-issue-benefit {
   font-weight: 500;
 }
 
+/* Ordinateur : garder « Lire la suite » discret, comme sur mobile. */
+@media (min-width: 1051px) {
+  body.institutes-page .institutes-team-issue-accordion.mobile-readmore-active > .mobile-readmore-toggle {
+    flex-direction: column;
+    gap: 0.12rem;
+  }
+}
+
 body.institutes-page .institutes-onboarding-block {
   display: grid;
   grid-template-columns: minmax(190px, 0.75fr) minmax(280px, 1.35fr) minmax(230px, 0.9fr);

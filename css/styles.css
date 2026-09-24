@@ -5382,12 +5382,12 @@ html[data-theme="dark"] .sector-card-accordion > summary::after {
 }
 
 
-/* Mobile : blocs éditoriaux longs avec aperçu + « Lire la suite ». */
+/* Blocs éditoriaux longs : aperçu mobile, et turnover des instituts sur ordinateur. */
 .mobile-readmore-toggle {
   display: none;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 720px), (min-width: 1051px) {
   .editorial-mobile-readmore.mobile-readmore-active > summary {
     margin-bottom: 0.65rem !important;
     cursor: default;

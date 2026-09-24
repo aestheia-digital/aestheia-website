@@ -69,8 +69,8 @@
   html[data-theme="dark"] body.spa-page details.sector-card-accordion > *:not(summary):not(.sector-editorial-content),
   html.theme-dark body.thalasso-page details.sector-card-accordion > *:not(summary):not(.sector-editorial-content),
   html[data-theme="dark"] body.thalasso-page details.sector-card-accordion > *:not(summary):not(.sector-editorial-content),
-  html.theme-dark body.institutes-page details.sector-card-accordion > *:not(summary):not(.institutes-editorial-content),
-  html[data-theme="dark"] body.institutes-page details.sector-card-accordion > *:not(summary):not(.institutes-editorial-content),
+  html.theme-dark body.institutes-page details.sector-card-accordion:not(.institutes-team-issue-accordion) > *:not(summary):not(.institutes-editorial-content),
+  html[data-theme="dark"] body.institutes-page details.sector-card-accordion:not(.institutes-team-issue-accordion) > *:not(summary):not(.institutes-editorial-content),
   html.theme-dark body.pme-page details.sector-card-accordion > *:not(summary),
   html[data-theme="dark"] body.pme-page details.sector-card-accordion > *:not(summary) {
     display: block !important;
