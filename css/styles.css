@@ -5562,3 +5562,11 @@ a.btn[href="https://calendar.app.google/qx6dT7WJfTrsFe6j9"]:focus-visible {
     margin-top: auto;
   }
 }
+
+
+/* Correctif global définitif : tout bloc de bénéfice est rectangulaire. */
+[class*="benefit"],
+[class*="benefit"]::before,
+[class*="benefit"]::after {
+  border-radius: 0 !important;
+}
