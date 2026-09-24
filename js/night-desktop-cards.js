@@ -15,7 +15,7 @@
       "body.institutes-page details.sector-card-accordion, " +
       "body.pme-page details.sector-card-accordion"
     )
-  ];
+  ].filter((details) => !details.closest("body.thalasso-page .thalasso-systems-grid"));
 
   const sync = () => {
     const forceOpen = desktop.matches && isDark();
