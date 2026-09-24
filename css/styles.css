@@ -5576,6 +5576,14 @@ a.btn[href="https://calendar.app.google/qx6dT7WJfTrsFe6j9"]:focus-visible {
 @media (min-width: 1051px) {
   .sector-editorial-list { align-items: stretch; }
   .sector-card-accordion { display: flex !important; flex-direction: column; height: 100%; }
+  /* <details> place son contenu dans ::details-content. Ce conteneur doit
+     grandir avec la carte pour que margin-top:auto atteigne le bas de la rangée. */
+  .sector-editorial-list > .sector-card-accordion::details-content,
+  .institutes-editorial-list > .sector-card-accordion::details-content {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+  }
   .sector-card-accordion > .sector-editorial-content { display: flex !important; flex: 1 1 auto; flex-direction: column; height: auto; }
   .sector-card-accordion > .sector-editorial-content > .sector-editorial-benefit { margin-top: auto !important; }
 }
