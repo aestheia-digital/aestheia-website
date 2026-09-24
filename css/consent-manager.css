@@ -1,4 +1,4 @@
-@import url("./consent-manager-base.css");
+@import url("./consent-manager-base.css?v=square-sector-cards-20260924");
 
 /* Harmonisation mobile stricte : même halo violet sur toutes les pages, jour et nuit. */
 @media (max-width: 720px) {
