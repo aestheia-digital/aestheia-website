@@ -684,3 +684,9 @@ body.thalasso-page #contenu > .conversion-band .btn:focus-visible {
   box-shadow: none !important;
   filter: none !important;
 }
+
+
+/* Géométrie AesthéIA : blocs bénéfices à angles droits sur tous les supports. */
+[class*="benefit"] {
+  border-radius: 0 !important;
+}
