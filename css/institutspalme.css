@@ -888,3 +888,11 @@ body.institutes-page #contenu > .institutes-method-section .institutes-method-ca
     grid-column: 3 / 4;
   }
 }
+
+
+/* Géométrie AesthéIA : tous les blocs bénéfices Instituts à angles droits. */
+body.institutes-page [class*="benefit"],
+body.institutes-page [class*="benefit"]::before,
+body.institutes-page [class*="benefit"]::after {
+  border-radius: 0 !important;
+}
