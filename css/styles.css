@@ -1177,7 +1177,7 @@ a.btn[href="https://calendar.app.google/qx6dT7WJfTrsFe6j9"]:hover {
   margin: 1.5rem 0 0;
   padding: 1rem 1.2rem;
   border: 1px solid rgba(0, 176, 255, 0.14);
-  border-radius: 0 12px 12px 0;
+  border-radius: 0;
   background: #eaf5ff;
   color: var(--color-primary);
   font-weight: 500;
@@ -1585,7 +1585,7 @@ html.theme-dark .transition-note {
   overflow: hidden;
   margin: 2rem 0 0;
   padding: 1.1rem 1.25rem;
-  border-radius: 0 12px 12px 0;
+  border-radius: 0;
   background: #26365f;
   color: #fff;
   font-weight: 500;
@@ -1641,7 +1641,7 @@ html.theme-dark .transition-note {
   max-width: 760px;
   margin: 1.5rem 0 0;
   padding: 1rem 1.2rem;
-  border-radius: 0 12px 12px 0;
+  border-radius: 0;
   background: #26365f;
   color: #fff;
 }
@@ -1708,7 +1708,7 @@ html.theme-dark .transition-note {
   max-width: 760px;
   margin: 1.5rem 0 0;
   padding: 1rem 1.2rem;
-  border-radius: 0 12px 12px 0;
+  border-radius: 0;
   background: #26365f;
   color: #fff;
   font-style: normal;
@@ -4024,7 +4024,7 @@ html[data-theme="dark"] .faq-accordion-item summary::after {
   min-height: 0;
   margin-top: 1rem;
   padding: 0.85rem 1rem;
-  border-radius: 0 10px 10px 0;
+  border-radius: 0;
   font-size: 0.95rem;
   line-height: 1.55;
 }
@@ -4403,6 +4403,16 @@ html.theme-dark .sector-crosslink-cta:hover {
     background: var(--gradient-ia) !important;
     box-shadow: 0 16px 30px rgba(0, 176, 255, 0.18);
   }
+}
+
+/* Blocs d’information bleus : angles droits sur tous les supports et thèmes. */
+.transition-note,
+.institutes-page .institutes-reality-conclusion,
+.institutes-page .institutes-editorial-benefit,
+.sector-editorial-benefit,
+.sector-reality-conclusion,
+.sector-method-conclusion {
+  border-radius: 0 !important;
 }
 
 /* Blocs d’information : cadre bleu pâle et liseré identiques à l’accueil. */
