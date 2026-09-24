@@ -202,3 +202,54 @@
 [class*="benefit"] {
   border-radius: 0 !important;
 }
+
+
+/* Correctif final desktop : alignement réel des blocs bénéfices.
+   Placé en fin de feuille pour neutraliser les anciens overrides desktop nuit. */
+@media (min-width: 1051px) {
+  body.medicine-page .medicine-systems-section .sector-editorial-list,
+  body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-list,
+  body.thalasso-page .thalasso-systems-grid > .sector-editorial-list,
+  body.institutes-page .sector-editorial-list {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    align-items: stretch !important;
+    grid-auto-rows: auto;
+  }
+
+  body.medicine-page .medicine-systems-section details.sector-card-accordion,
+  body.spa-page #contenu > .section.section-soft.section-aqua details.sector-card-accordion,
+  body.thalasso-page .thalasso-systems-grid details.sector-card-accordion,
+  body.institutes-page details.sector-card-accordion {
+    display: flex !important;
+    flex-direction: column !important;
+    align-self: stretch !important;
+    height: 100% !important;
+    min-height: 0 !important;
+  }
+
+  body.medicine-page .medicine-systems-section details.sector-card-accordion {
+    padding-bottom: 1.35rem !important;
+  }
+
+  body.medicine-page .medicine-systems-section .sector-editorial-content,
+  body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-content,
+  body.thalasso-page .thalasso-systems-grid .sector-editorial-content,
+  body.institutes-page .sector-editorial-content {
+    display: flex !important;
+    flex: 1 1 auto !important;
+    flex-direction: column !important;
+    height: auto !important;
+  }
+
+  body.medicine-page .medicine-systems-section .sector-editorial-benefit,
+  body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-benefit,
+  body.thalasso-page .thalasso-systems-grid .sector-editorial-benefit,
+  body.institutes-page .sector-editorial-benefit {
+    position: static !important;
+    inset: auto !important;
+    width: auto !important;
+    max-width: none !important;
+    margin-top: auto !important;
+  }
+}
