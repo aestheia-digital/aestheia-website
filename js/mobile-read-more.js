@@ -1,4 +1,5 @@
 const mobileReadMoreMedia = window.matchMedia("(max-width: 720px)");
+const institutesDesktopReadMoreMedia = window.matchMedia("(min-width: 1051px)");
 const mobileReadMoreBlocks = Array.from(document.querySelectorAll(".editorial-mobile-readmore"));
 
 const configureMobileReadMore = () => {
@@ -29,7 +30,8 @@ const configureMobileReadMore = () => {
       });
     }
 
-    if (mobileReadMoreMedia.matches) {
+    if (mobileReadMoreMedia.matches ||
+        (institutesDesktopReadMoreMedia.matches && block.matches("body.institutes-page .institutes-team-issue-accordion"))) {
       block.open = true;
       block.classList.add("mobile-readmore-active");
       block.classList.remove("is-expanded");
@@ -46,3 +48,4 @@ const configureMobileReadMore = () => {
 
 configureMobileReadMore();
 mobileReadMoreMedia.addEventListener?.("change", configureMobileReadMore);
+institutesDesktopReadMoreMedia.addEventListener?.("change", configureMobileReadMore);
