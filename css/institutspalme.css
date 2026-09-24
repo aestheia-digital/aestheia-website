@@ -161,6 +161,7 @@ body.institutes-page .institutes-onboarding-benefit {
 body.institutes-page .institutes-onboarding-benefit {
   position: relative;
   overflow: hidden;
+  margin-top: 0.75rem;
   padding: 0.9rem 1rem;
   border-left: 0;
   border-radius: 0 10px 10px 0;
