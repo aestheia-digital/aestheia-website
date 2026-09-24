@@ -5514,3 +5514,51 @@ a.btn[href="https://calendar.app.google/qx6dT7WJfTrsFe6j9"]:focus-visible {
   font-weight: 400;
   line-height: 1.5;
 }
+
+
+/* Géométrie globale : CTA et cartes de contenu à angles droits. */
+.btn,
+.btn-primary,
+.btn-secondary,
+.btn-ghost,
+.hero-actions .btn,
+.conversion-band .btn,
+.conversion-card .btn,
+.resource-cta .btn,
+.article-cta .btn,
+.contact-choice-button,
+.sector-card,
+.sector-card-accordion,
+.sector-editorial-benefit,
+.sector-reality-conclusion,
+.sector-method-conclusion,
+.medicine-page .medicine-card-benefit,
+.institutes-page .institutes-card-benefit,
+.institutes-page .institutes-reality-conclusion,
+.institutes-page .institutes-editorial-benefit,
+.transition-note {
+  border-radius: 0 !important;
+}
+
+/* Desktop : les blocs éditoriaux ouverts gardent leurs bénéfices alignés en bas. */
+@media (min-width: 721px) {
+  .sector-card-accordion {
+    align-self: stretch;
+    height: 100%;
+  }
+
+  .sector-card-accordion[open] {
+    display: grid;
+    grid-template-rows: auto 1fr;
+  }
+
+  .sector-card-accordion[open] > .sector-editorial-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .sector-card-accordion[open] > .sector-editorial-content > .sector-editorial-benefit {
+    margin-top: auto;
+  }
+}
