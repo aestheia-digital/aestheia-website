@@ -253,3 +253,38 @@
     margin-top: auto !important;
   }
 }
+
+
+/* Alignement visuel strict des bénéfices — desktop uniquement.
+   Les cartes gardent leur hauteur naturelle ; le bénéfice est ancré à une ligne commune par rangée. */
+@media (min-width: 1051px) {
+  body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-list,
+  body.medicine-page .medicine-systems-section .sector-editorial-list,
+  body.thalasso-page .thalasso-systems-grid > .sector-editorial-list {
+    grid-auto-rows: 1fr !important;
+  }
+
+  body.institutes-page .institutes-editorial-list {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    grid-auto-rows: 1fr !important;
+    gap: 1.2rem !important;
+    align-items: stretch !important;
+  }
+
+  body.institutes-page .institutes-editorial-chapter {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+  }
+
+  body.institutes-page .institutes-editorial-content {
+    display: flex !important;
+    flex: 1 1 auto !important;
+    flex-direction: column !important;
+  }
+
+  body.institutes-page .institutes-editorial-benefit {
+    margin-top: auto !important;
+  }
+}
