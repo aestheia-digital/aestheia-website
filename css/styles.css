@@ -3572,6 +3572,7 @@ html[data-theme="dark"] .faq-accordion-item summary::after {
     box-shadow: none;
     transform: none;
     transition: none;
+    font-weight: 500;
   }
 
   .main-nav a {

@@ -270,6 +270,12 @@ if (!document.getElementById("commercial-alignment-rules")) {
       color: var(--color-accent);
     }
 
+    @media (min-width: 1051px) {
+      .site-header .header-phone-direct {
+        font-weight: 300;
+      }
+    }
+
     .site-header .brand-ia {
       color: #1fa4dd;
       background: linear-gradient(135deg, #3923b8 0%, #435bd8 50%, #1fa4dd 100%);
