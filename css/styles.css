@@ -5570,3 +5570,12 @@ a.btn[href="https://calendar.app.google/qx6dT7WJfTrsFe6j9"]:focus-visible {
 [class*="benefit"]::after {
   border-radius: 0 !important;
 }
+
+
+/* Desktop uniquement : alignement horizontal des blocs bénéfices dans les cartes secteurs. */
+@media (min-width: 1051px) {
+  .sector-editorial-list { align-items: stretch; }
+  .sector-card-accordion { display: flex !important; flex-direction: column; height: 100%; }
+  .sector-card-accordion > .sector-editorial-content { display: flex !important; flex: 1 1 auto; flex-direction: column; height: auto; }
+  .sector-card-accordion > .sector-editorial-content > .sector-editorial-benefit { margin-top: auto !important; }
+}
