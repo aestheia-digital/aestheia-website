@@ -163,7 +163,7 @@ html.theme-dark body.spa-page #contenu > .section:not(.conversion-band) > .conta
 /* Réassurance : intitulé renforcé pour rester lisible sur le fond photographique. */
 body.spa-page #contenu > .section.section-mist.section-aqua > .container > .eyebrow {
   font-size: 0.84rem;
-  font-weight: 700;
+  font-weight: 500;
   letter-spacing: 0.02em;
 }
 
@@ -450,7 +450,7 @@ html:not(.theme-dark) body.spa-page #contenu > .section.section-aqua li {
 }
 
 html:not(.theme-dark) body.spa-page #contenu > .section.section-aqua > .container > .eyebrow {
-  font-weight: 700;
+  font-weight: 500;
 }
 
 /* FAQ Spa : questions en violet profond légèrement rehaussé, mode jour uniquement. */

@@ -112,7 +112,7 @@ html:not(.theme-dark) body.thalasso-page #contenu > .section.section-aqua li {
 }
 
 html:not(.theme-dark) body.thalasso-page #contenu > .section.section-aqua > .container > .eyebrow {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 @media (max-width: 720px) {
@@ -128,7 +128,7 @@ html:not(.theme-dark) body.thalasso-page .faq-accordion-item summary {
 
 @media (max-width: 1050px) {
   html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-heading h3 {
-    font-weight: 600;
+    font-weight: 500;
   }
 }
 
@@ -229,7 +229,7 @@ html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.sectio
   color: #5422b3 !important;
   font-size: 1.18rem !important;
   line-height: 1.25 !important;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
 }
 
 html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-heading .title-pictogram,

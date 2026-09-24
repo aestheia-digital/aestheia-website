@@ -334,7 +334,7 @@ main > .section:not(.conversion-band):not(.section-soft):not(.section-mist):not(
   margin: 0 0 0.9rem;
   font-family: var(--font-structure);
   font-size: 0.77rem;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0;
   text-transform: uppercase;
   color: var(--color-accent);
@@ -366,7 +366,7 @@ h2 {
 h3 {
   font-family: var(--font-structure);
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--color-accent);
 }
 
@@ -2150,7 +2150,7 @@ html.theme-dark .transition-note {
   color: var(--color-accent);
   font-family: var(--font-structure);
   font-size: 0.78rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .process-step h3 {
@@ -2575,7 +2575,7 @@ html[data-theme="dark"] .faq-accordion-item summary::after {
   color: var(--color-accent);
   font-family: var(--font-structure);
   font-size: 0.78rem;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
 }
 
@@ -5218,7 +5218,7 @@ html[data-theme="dark"] .home-safety .home-card-accordion > summary::after {
   color: inherit;
   font-family: var(--font-structure);
   font-size: 1.08rem;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.3;
 }
 
