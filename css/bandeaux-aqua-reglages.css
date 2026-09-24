@@ -608,6 +608,16 @@ html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid > .thalasso-tu
   }
 }
 
+/* Sur ordinateur, les cartes ouvertes doivent rester flex pour que leurs
+   blocs Bénéfice s'appuient sur le bas commun de chaque rangée. */
+@media (min-width: 1051px) {
+  html.theme-dark body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .sector-editorial-chapter,
+  html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .sector-editorial-chapter {
+    display: flex !important;
+    flex-direction: column;
+  }
+}
+
 @media (max-width: 1049px) {
   html.theme-dark body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .sector-editorial-chapter,
   html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .sector-editorial-chapter {

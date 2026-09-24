@@ -63,14 +63,14 @@
 
   /* Pages secteurs : les cartes accordéon restent des cartes,
      mais leur contenu est directement visible sur ordinateur. */
-  html.theme-dark body.medicine-page details.sector-card-accordion > *:not(summary),
-  html[data-theme="dark"] body.medicine-page details.sector-card-accordion > *:not(summary),
-  html.theme-dark body.spa-page details.sector-card-accordion > *:not(summary),
-  html[data-theme="dark"] body.spa-page details.sector-card-accordion > *:not(summary),
-  html.theme-dark body.thalasso-page details.sector-card-accordion > *:not(summary),
-  html[data-theme="dark"] body.thalasso-page details.sector-card-accordion > *:not(summary),
-  html.theme-dark body.institutes-page details.sector-card-accordion > *:not(summary),
-  html[data-theme="dark"] body.institutes-page details.sector-card-accordion > *:not(summary),
+  html.theme-dark body.medicine-page details.sector-card-accordion > *:not(summary):not(.sector-editorial-content),
+  html[data-theme="dark"] body.medicine-page details.sector-card-accordion > *:not(summary):not(.sector-editorial-content),
+  html.theme-dark body.spa-page details.sector-card-accordion > *:not(summary):not(.sector-editorial-content),
+  html[data-theme="dark"] body.spa-page details.sector-card-accordion > *:not(summary):not(.sector-editorial-content),
+  html.theme-dark body.thalasso-page details.sector-card-accordion > *:not(summary):not(.sector-editorial-content),
+  html[data-theme="dark"] body.thalasso-page details.sector-card-accordion > *:not(summary):not(.sector-editorial-content),
+  html.theme-dark body.institutes-page details.sector-card-accordion > *:not(summary):not(.institutes-editorial-content),
+  html[data-theme="dark"] body.institutes-page details.sector-card-accordion > *:not(summary):not(.institutes-editorial-content),
   html.theme-dark body.pme-page details.sector-card-accordion > *:not(summary),
   html[data-theme="dark"] body.pme-page details.sector-card-accordion > *:not(summary) {
     display: block !important;
@@ -102,50 +102,6 @@
   html[data-theme="dark"] body.pme-page details.sector-card-accordion > summary::after {
     display: none !important;
     content: none !important;
-  }
-}
-
-
-/* --------------------------------------------------------------------------
-   Médecine — desktop nuit : alignement strict des blocs Bénéfice.
-   Les quatre cartes partagent une hauteur et une position de bénéfice communes,
-   sans modifier le contenu descriptif.
-   -------------------------------------------------------------------------- */
-@media (min-width: 1051px) {
-  html.theme-dark body.medicine-page #contenu > .medicine-systems-section .sector-editorial-list,
-  html[data-theme="dark"] body.medicine-page #contenu > .medicine-systems-section .sector-editorial-list {
-    align-items: stretch !important;
-  }
-
-  html.theme-dark body.medicine-page #contenu > .medicine-systems-section details.sector-card-accordion,
-  html[data-theme="dark"] body.medicine-page #contenu > .medicine-systems-section details.sector-card-accordion {
-    position: relative !important;
-    align-self: stretch !important;
-    min-height: 52rem !important;
-    height: 100% !important;
-    padding-bottom: 15rem !important;
-  }
-
-  html.theme-dark body.medicine-page #contenu > .medicine-systems-section .sector-editorial-heading h3,
-  html[data-theme="dark"] body.medicine-page #contenu > .medicine-systems-section .sector-editorial-heading h3 {
-    min-height: 4.8rem !important;
-  }
-
-  html.theme-dark body.medicine-page #contenu > .medicine-systems-section .sector-editorial-content,
-  html[data-theme="dark"] body.medicine-page #contenu > .medicine-systems-section .sector-editorial-content {
-    display: block !important;
-    height: auto !important;
-  }
-
-  html.theme-dark body.medicine-page #contenu > .medicine-systems-section .sector-editorial-benefit,
-  html[data-theme="dark"] body.medicine-page #contenu > .medicine-systems-section .sector-editorial-benefit {
-    position: absolute !important;
-    top: 34.2rem !important;
-    left: 1.45rem !important;
-    right: 1.45rem !important;
-    width: auto !important;
-    max-width: none !important;
-    margin: 0 !important;
   }
 }
 
