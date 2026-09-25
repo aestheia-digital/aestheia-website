@@ -5607,3 +5607,42 @@ a.btn[href="https://calendar.app.google/qx6dT7WJfTrsFe6j9"]:focus-visible {
   .sector-card-accordion > .sector-editorial-content { display: flex !important; flex: 1 1 auto; flex-direction: column; height: auto; }
   .sector-card-accordion > .sector-editorial-content > .sector-editorial-benefit { margin-top: auto !important; }
 }
+
+/* Hero accueil : typographie plus fine et secteurs jamais coupés */
+.home-hero h1,
+.home-hero .hero-subtitle,
+.home-hero .hero-specialties {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.home-hero h1 {
+  font-family: var(--font-display);
+  font-weight: 400;
+}
+
+.home-hero .hero-subtitle {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: clamp(1.02rem, 1.5vw, 1.18rem);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.home-hero .hero-specialty {
+  white-space: nowrap;
+}
+
+@media (min-width: 721px) {
+  .home-hero h1 {
+    font-size: 2.35rem;
+    letter-spacing: 0.005em;
+  }
+}
+
+@media (min-width: 1051px) {
+  .home-hero h1 {
+    font-size: 2.7rem;
+    line-height: 1.1;
+  }
+}
