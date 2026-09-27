@@ -3146,6 +3146,19 @@ html[data-theme="dark"] .faq-accordion-item summary::after {
   font-style: normal;
 }
 
+.footer-social-links {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  width: fit-content;
+}
+
+.footer-social-links img {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
 .footer-social {
   margin-top: 0.25rem;
 }
