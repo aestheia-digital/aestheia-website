@@ -275,3 +275,24 @@ html[data-theme="dark"] body.pme-page #contenu > .section.section-soft:not(.sect
     background: linear-gradient(135deg, #11183d 0%, #172149 58%, #202d60 100%) !important;
   }
 }
+
+/* Cartes méthode : pictogramme au-dessus du titre, aucun mot coupé */
+body.pme-page .sector-method-card {
+  padding-left: 1.35rem;
+  padding-right: 1.35rem;
+}
+body.pme-page .sector-method-card .card-title-with-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.7rem;
+}
+body.pme-page .sector-method-card .card-title-with-icon,
+body.pme-page .sector-method-card .card-title-with-icon span,
+body.pme-page .sector-method-card .card-title-with-icon strong,
+body.pme-page .sector-method-card .sector-method-detail {
+  overflow-wrap: normal;
+  word-break: normal;
+  hyphens: manual;
+  -webkit-hyphens: manual;
+}
