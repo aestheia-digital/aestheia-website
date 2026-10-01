@@ -146,3 +146,32 @@ html[data-theme="dark"] body.pme-page .sector-method-conclusion {
       var(--pme-fond) !important;
   }
 }
+
+/* TPE et PME : six systèmes et bénéfices à hauteur naturelle */
+@media (min-width: 721px) {
+  body.pme-page #contenu > .section.section-soft.section-aqua .sector-editorial-benefit {
+    height: auto !important;
+    min-height: 0 !important;
+    flex: 0 0 auto !important;
+    margin-top: auto !important;
+  }
+}
+
+@media (min-width: 721px) and (max-width: 1050px) {
+  body.pme-page #contenu > .section.section-soft.section-aqua .sector-editorial-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1051px) {
+  body.pme-page #contenu > .section.section-soft.section-aqua .sector-editorial-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  body.pme-page #contenu > .section.section-soft.section-aqua .sector-card-accordion > .sector-editorial-content {
+    display: flex !important;
+    flex-direction: column;
+  }
+}
