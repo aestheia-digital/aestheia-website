@@ -244,3 +244,34 @@ html.theme-dark body.pme-page .pme-tariff-reading,
 html[data-theme="dark"] body.pme-page .pme-tariff-reading {
   background: rgba(13, 19, 48, 0.78);
 }
+
+/* Cartes méthode : titre et explication empilés */
+body.pme-page .sector-method-card {
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+body.pme-page .sector-method-card .card-title-with-icon,
+body.pme-page .sector-method-card .sector-method-detail {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+/* Mode nuit : alternance visible des fonds de sections */
+html.theme-dark body.pme-page #contenu > .section:not(.section-aqua):not(.section-soft):not(.conversion-band),
+html[data-theme="dark"] body.pme-page #contenu > .section:not(.section-aqua):not(.section-soft):not(.conversion-band) {
+  background: #0b1028 !important;
+}
+html.theme-dark body.pme-page #contenu > .section.section-soft:not(.section-aqua),
+html[data-theme="dark"] body.pme-page #contenu > .section.section-soft:not(.section-aqua) {
+  background: linear-gradient(135deg, #11183d 0%, #172149 58%, #202d60 100%) !important;
+}
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-dark):not([data-theme="light"]) body.pme-page #contenu > .section:not(.section-aqua):not(.section-soft):not(.conversion-band) {
+    background: #0b1028 !important;
+  }
+  html:not(.theme-dark):not([data-theme="light"]) body.pme-page #contenu > .section.section-soft:not(.section-aqua) {
+    background: linear-gradient(135deg, #11183d 0%, #172149 58%, #202d60 100%) !important;
+  }
+}
