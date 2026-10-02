@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Preview mode jour — AesthéIA</title>
+  <style>
+    html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #fff; }
+    iframe { display: block; width: 100%; height: 100%; border: 0; }
+  </style>
+</head>
+<body>
+  <iframe id="day-preview" src="/" title="Aperçu AesthéIA en mode jour"></iframe>
+  <script>
+    const frame = document.getElementById('day-preview');
+    const forceLight = () => {
+      try {
+        const root = frame.contentDocument.documentElement;
+        root.classList.remove('theme-dark');
+        root.dataset.theme = 'light';
+      } catch (error) {
+        console.error('Impossible d’appliquer le mode jour au preview.', error);
+      }
+    };
+    frame.addEventListener('load', () => {
+      forceLight();
+      setTimeout(forceLight, 50);
+      setTimeout(forceLight, 250);
+    });
+  </script>
+</body>
+</html>
