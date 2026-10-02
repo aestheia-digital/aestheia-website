@@ -5697,7 +5697,7 @@ a.btn[href="https://calendar.app.google/qx6dT7WJfTrsFe6j9"]:focus-visible {
 /* Cube du header : taille réduite d'environ 15 % (réglable via la valeur scale) */
 @media (min-width: 721px) {
   .hero-cube-tilt {
-    scale: 0.86;
+    scale: 0.76;
   }
 }
 
