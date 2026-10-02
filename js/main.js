@@ -80,22 +80,22 @@ const heroCubeStageMarkup = `
     <div class="hero-cube-tilt">
       <div class="hero-cube">
         <div class="hero-cube-face hero-cube-face-front">
-          <span class="hero-cube-brand">Aesthé<span>IA</span></span>
+          <img class="hero-cube-logo" data-cube-face="front" alt="" width="472" height="472">
         </div>
         <div class="hero-cube-face hero-cube-face-back">
-          <span class="hero-cube-brand">Aesthé<span>IA</span></span>
+          <img class="hero-cube-logo" data-cube-face="back" alt="" width="472" height="472">
         </div>
         <div class="hero-cube-face hero-cube-face-right">
-          <span class="hero-cube-brand">Aesthé<span>IA</span></span>
+          <img class="hero-cube-logo" data-cube-face="right" alt="" width="472" height="472">
         </div>
         <div class="hero-cube-face hero-cube-face-left">
-          <span class="hero-cube-monogram">IA</span>
+          <img class="hero-cube-logo" data-cube-face="left" alt="" width="472" height="472">
         </div>
         <div class="hero-cube-face hero-cube-face-top">
-          <span class="hero-cube-monogram">IA</span>
+          <span class="hero-cube-brand">Aesthé<span>IA</span></span>
         </div>
         <div class="hero-cube-face hero-cube-face-bottom">
-          <span class="hero-cube-monogram">IA</span>
+          <span class="hero-cube-brand">Aesthé<span>IA</span></span>
         </div>
       </div>
     </div>
@@ -115,6 +115,14 @@ cubeHeroes.forEach((cubeHero) => {
     heroInner.insertAdjacentHTML("beforeend", heroCubeStageMarkup);
   }
 });
+
+if (cubeHeroes.length > 0) {
+  import("./cube-images.js").then(({ cubeImages }) => {
+    document.querySelectorAll(".hero-cube-logo[data-cube-face]").forEach((image) => {
+      image.src = cubeImages[image.dataset.cubeFace];
+    });
+  });
+}
 
 cubeHeroes.forEach((cubeHero) => {
   const cubeStage = cubeHero.querySelector(".hero-cube-stage");
