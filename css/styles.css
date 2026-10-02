@@ -843,18 +843,47 @@ h3 {
   transform: rotateY(-90deg) translateZ(var(--cube-half));
 }
 
+.hero-cube-face-front,
+.hero-cube-face-back,
+.hero-cube-face-right,
+.hero-cube-face-left {
+  isolation: isolate;
+}
+
 .hero-cube-face-front::before,
-.hero-cube-face-front::after,
 .hero-cube-face-back::before,
-.hero-cube-face-back::after,
 .hero-cube-face-right::before,
+.hero-cube-face-left::before {
+  content: "" !important;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(0, 176, 255, 0.55), transparent 52%),
+    url("../assets/images/brand/circuit-face.svg") center / cover no-repeat;
+  filter: none;
+  opacity: 1;
+}
+
+.hero-cube-face-front::after,
+.hero-cube-face-back::after,
 .hero-cube-face-right::after,
-.hero-cube-face-left::before,
 .hero-cube-face-left::after {
-  content: none;
+  content: "" !important;
+  position: absolute;
+  inset: 0;
+  border: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: rgba(2, 5, 28, 0.3);
+  filter: none;
 }
 
 .hero-cube-logo {
+  position: relative;
+  z-index: 1;
+  mix-blend-mode: screen;
   display: block;
   width: 100%;
   height: 100%;
