@@ -5693,3 +5693,17 @@ a.btn[href="https://calendar.app.google/qx6dT7WJfTrsFe6j9"]:focus-visible {
 .home-hero .hero-nowrap {
   white-space: nowrap;
 }
+
+/* Cube du header : taille réduite d'environ 15 % (réglable via la valeur scale) */
+@media (min-width: 721px) {
+  .hero-cube-tilt {
+    scale: 0.86;
+  }
+}
+
+@media (max-width: 720px) {
+  .home-hero .hero-cube-tilt,
+  .resources-hero .hero-cube-tilt {
+    scale: 0.84;
+  }
+}
