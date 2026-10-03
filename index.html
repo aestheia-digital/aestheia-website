@@ -411,7 +411,7 @@
 <rect x="40" y="84" width="240" height="44" rx="10" style="fill:var(--color-accent)"/>
 <text x="160" y="111" text-anchor="middle" style="fill:var(--color-bg);font-size:15px;font-weight:600">Agent superviseur</text>
 </g>
-<rect class="as-fr" x="1" y="146" width="318" height="124" rx="12" style="fill:none;stroke:var(--color-accent);stroke-width:1.25;stroke-dasharray:4 4"/>
+<rect class="as-fr" x="1" y="146" width="318" height="124" rx="12" style="fill:none;stroke:var(--as-dash);stroke-width:1.25;stroke-dasharray:4 4"/>
 <text x="160" y="166" text-anchor="middle" style="fill:var(--color-muted);font-size:12px;font-weight:500">Agents spécialisés</text>
 <g class="as-node">
 <rect x="12" y="176" width="141" height="38" rx="8" style="fill:var(--color-mist);stroke:var(--color-border);stroke-width:1.5"/>
@@ -456,7 +456,7 @@
 <rect x="218" y="93" width="150" height="44" rx="10" style="fill:var(--color-accent)"/>
 <text x="293" y="120" text-anchor="middle" style="fill:var(--color-bg);font-size:15px;font-weight:600">Agent superviseur</text>
 </g>
-<rect class="as-fr" x="396" y="53" width="338" height="124" rx="12" style="fill:none;stroke:var(--color-accent);stroke-width:1.25;stroke-dasharray:4 4"/>
+<rect class="as-fr" x="396" y="53" width="338" height="124" rx="12" style="fill:none;stroke:var(--as-dash);stroke-width:1.25;stroke-dasharray:4 4"/>
 <text x="565" y="73" text-anchor="middle" style="fill:var(--color-muted);font-size:12px;font-weight:500">Agents spécialisés</text>
 <g class="as-node">
 <rect x="408" y="83" width="150" height="38" rx="8" style="fill:var(--color-mist);stroke:var(--color-border);stroke-width:1.5"/>
@@ -488,14 +488,17 @@
 <style>
 .agents-schema { max-width: 360px; margin: 2.25rem auto 0; text-align: center; }
 .agents-schema .as-node { transform-box: fill-box; transition: transform 0.25s ease; }
-.agents-schema .as-ar { fill: none; stroke: var(--color-accent); stroke-width: 1.25; stroke-dasharray: 4 4; }
+.agents-schema { --as-dash: #237fdf; }
+html.theme-dark .agents-schema { --as-dash: #00b0ff; }
+@media (prefers-color-scheme: dark) { html:not([data-theme="light"]) .agents-schema { --as-dash: #00b0ff; } }
+.agents-schema .as-ar { fill: none; stroke: var(--as-dash); stroke-width: 1.25; stroke-dasharray: 4 4; }
 @media (min-width: 1024px) {
 .agents-schema { max-width: none; }
 .agents-schema .as-v { display: none !important; }
 .agents-schema .as-h { display: block !important; }
 }
 @media (prefers-reduced-motion: no-preference) {
-.agents-schema.is-running .as-fr, .agents-schema.is-running .as-ar { animation: as-dash 3s linear infinite; }
+.agents-schema.is-running .as-fr, .agents-schema.is-running .as-ar { animation: as-dash 1.2s linear infinite; }
 @keyframes as-dash { to { stroke-dashoffset: -8; } }
 @media (hover: hover) and (pointer: fine) {
 .agents-schema .as-node:hover { transform: translateY(-2px); }
