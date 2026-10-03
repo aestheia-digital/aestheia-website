@@ -48,3 +48,34 @@ html.theme-dark body.pme-page .site-footer,
 html[data-theme="dark"] body.pme-page .site-footer {
   background: #11183d !important;
 }
+
+/* TPE-PME — corrections mobiles uniquement, identiques en mode jour et nuit. */
+@media (max-width: 720px) {
+  /* Les pictogrammes de la méthode restent systématiquement à gauche du titre. */
+  body.pme-page .sector-method-card .card-title-with-icon {
+    display: grid !important;
+    grid-template-columns: auto minmax(0, 1fr) !important;
+    align-items: start !important;
+    column-gap: 0.85rem !important;
+    row-gap: 0 !important;
+    flex-direction: row !important;
+  }
+
+  body.pme-page .sector-method-card .card-title-pictogram {
+    margin-top: 0.08em !important;
+  }
+
+  /* Le point focal du hero est déplacé vers la zone humaine pour éviter le sujet coupé à droite. */
+  body.pme-page .pme-hero::before {
+    background-position: 76% center !important;
+    background-size: cover !important;
+  }
+
+  /* Le motif du bandeau Tarifs couvre toute la largeur mobile au lieu d'être contenu en colonne centrale. */
+  html body.pme-page #contenu > .section.section-mist.section-aqua:has(.pme-tariff-reading)::before {
+    background:
+      linear-gradient(var(--pme-veil), var(--pme-veil)),
+      var(--pme-image) center center / cover no-repeat,
+      var(--pme-fond) !important;
+  }
+}
