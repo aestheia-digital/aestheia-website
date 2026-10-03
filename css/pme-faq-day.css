@@ -42,3 +42,9 @@ html[data-theme="dark"] body.pme-page .faq-accordion-item summary h3 {
     color: #a9c0dc !important;
   }
 }
+
+/* TPE-PME — footer harmonisé avec les autres pages secteur en mode nuit. */
+html.theme-dark body.pme-page .site-footer,
+html[data-theme="dark"] body.pme-page .site-footer {
+  background: #11183d !important;
+}
