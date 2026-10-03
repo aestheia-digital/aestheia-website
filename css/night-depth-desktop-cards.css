@@ -158,3 +158,64 @@
 [class*="benefit"] {
   border-radius: 0 !important;
 }
+
+/* Cartes agents ajoutées : alignement des bénéfices sur tablette et ordinateur. */
+@media (min-width: 721px) {
+  body.spa-page #contenu > .section.section-mist .grid.grid-3 > details.card.sector-card-accordion,
+  body.thalasso-page #contenu > .section.section-mist .grid.grid-3 > details.card.sector-card-accordion,
+  body.pme-page #contenu > .section.section-mist .grid.grid-3 > details.card.sector-card-accordion {
+    align-self: stretch !important;
+    height: 100% !important;
+  }
+
+  body.spa-page #contenu > .section.section-mist .grid.grid-3 > details.card.sector-card-accordion[open],
+  body.thalasso-page #contenu > .section.section-mist .grid.grid-3 > details.card.sector-card-accordion[open],
+  body.pme-page #contenu > .section.section-mist .grid.grid-3 > details.card.sector-card-accordion[open] {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  body.spa-page #contenu > .section.section-mist .grid.grid-3 > details.card.sector-card-accordion > .sector-editorial-content,
+  body.thalasso-page #contenu > .section.section-mist .grid.grid-3 > details.card.sector-card-accordion > .sector-editorial-content,
+  body.pme-page #contenu > .section.section-mist .grid.grid-3 > details.card.sector-card-accordion > .sector-editorial-content {
+    display: flex !important;
+    flex: 1 1 auto !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    min-height: 0 !important;
+  }
+
+  body.spa-page #contenu > .section.section-mist .grid.grid-3 > details.card.sector-card-accordion > .sector-editorial-content > .sector-editorial-benefit,
+  body.thalasso-page #contenu > .section.section-mist .grid.grid-3 > details.card.sector-card-accordion > .sector-editorial-content > .sector-editorial-benefit,
+  body.pme-page #contenu > .section.section-mist .grid.grid-3 > details.card.sector-card-accordion > .sector-editorial-content > .sector-editorial-benefit {
+    flex: 0 0 auto !important;
+    min-height: 8rem !important;
+    height: auto !important;
+    margin-top: auto !important;
+  }
+}
+
+/* Sur ordinateur en mode nuit, le contenu des cartes est affiché sans ouvrir <details>.
+   On étire donc aussi le conteneur interne natif de <details>. */
+@media (min-width: 1051px) {
+  html.theme-dark body.spa-page #contenu > .section.section-mist .grid.grid-3 > details.card.sector-card-accordion,
+  html[data-theme="dark"] body.spa-page #contenu > .section.section-mist .grid.grid-3 > details.card.sector-card-accordion,
+  html.theme-dark body.thalasso-page #contenu > .section.section-mist .grid.grid-3 > details.card.sector-card-accordion,
+  html[data-theme="dark"] body.thalasso-page #contenu > .section.section-mist .grid.grid-3 > details.card.sector-card-accordion,
+  html.theme-dark body.pme-page #contenu > .section.section-mist .grid.grid-3 > details.card.sector-card-accordion,
+  html[data-theme="dark"] body.pme-page #contenu > .section.section-mist .grid.grid-3 > details.card.sector-card-accordion {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  html.theme-dark body.spa-page #contenu > .section.section-mist .grid.grid-3 > details.card.sector-card-accordion::details-content,
+  html[data-theme="dark"] body.spa-page #contenu > .section.section-mist .grid.grid-3 > details.card.sector-card-accordion::details-content,
+  html.theme-dark body.thalasso-page #contenu > .section.section-mist .grid.grid-3 > details.card.sector-card-accordion::details-content,
+  html[data-theme="dark"] body.thalasso-page #contenu > .section.section-mist .grid.grid-3 > details.card.sector-card-accordion::details-content,
+  html.theme-dark body.pme-page #contenu > .section.section-mist .grid.grid-3 > details.card.sector-card-accordion::details-content,
+  html[data-theme="dark"] body.pme-page #contenu > .section.section-mist .grid.grid-3 > details.card.sector-card-accordion::details-content {
+    display: flex !important;
+    flex: 1 1 auto !important;
+    flex-direction: column !important;
+  }
+}
