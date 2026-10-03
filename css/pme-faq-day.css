@@ -71,11 +71,13 @@ html[data-theme="dark"] body.pme-page .site-footer {
     background-size: cover !important;
   }
 
-  /* Le bandeau Tarifs utilise toute la largeur et toute la hauteur disponibles sur mobile. */
-  html body.pme-page #contenu > .section.section-mist.section-aqua:has(.pme-tariff-reading)::before {
+  /* Le bandeau Tarifs couvre toute la largeur sur mobile. La règle « Pour qui ? » de pmecourbes.css
+     (auto 100%, image portrait) lui était appliquée et laissait des bandes de chaque côté ;
+     le doublement de .pme-page porte la spécificité au-dessus de cette règle, chargée après ce fichier. */
+  html body.pme-page.pme-page #contenu > .section.section-mist.section-aqua:has(.pme-tariff-reading)::before {
     background:
       linear-gradient(var(--pme-veil), var(--pme-veil)),
-      var(--pme-image) center center / 100% 100% no-repeat,
+      var(--pme-image) bottom center / cover no-repeat,
       var(--pme-fond) !important;
   }
 }
