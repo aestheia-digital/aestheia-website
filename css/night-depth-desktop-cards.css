@@ -219,3 +219,65 @@
     flex-direction: column !important;
   }
 }
+
+/* TPE-PME — palette nuit plus lumineuse, limitée à cette page. */
+html.theme-dark body.pme-page,
+html[data-theme="dark"] body.pme-page {
+  --pme-veil: rgba(18, 28, 63, 0.66);
+  --pme-fond: #121a42;
+}
+
+html.theme-dark body.pme-page #contenu > .section:not(.conversion-band):not(.section-aqua):not(.section-soft):not(.section-mist),
+html[data-theme="dark"] body.pme-page #contenu > .section:not(.conversion-band):not(.section-aqua):not(.section-soft):not(.section-mist) {
+  background: linear-gradient(135deg, #11183d 0%, #172149 58%, #202d60 100%) !important;
+}
+
+html.theme-dark body.pme-page #contenu > .section.section-soft:not(.section-aqua),
+html[data-theme="dark"] body.pme-page #contenu > .section.section-soft:not(.section-aqua) {
+  background: linear-gradient(135deg, #172149 0%, #202d60 58%, #26365f 100%) !important;
+}
+
+html.theme-dark body.pme-page #contenu > .section.section-mist:not(.section-aqua),
+html[data-theme="dark"] body.pme-page #contenu > .section.section-mist:not(.section-aqua) {
+  background: linear-gradient(135deg, #121a42 0%, #172149 52%, #27347c 100%) !important;
+}
+
+html.theme-dark body.pme-page #contenu > .section .sector-editorial-chapter,
+html[data-theme="dark"] body.pme-page #contenu > .section .sector-editorial-chapter,
+html.theme-dark body.pme-page #contenu > .section .card,
+html[data-theme="dark"] body.pme-page #contenu > .section .card,
+html.theme-dark body.pme-page #contenu > .section .sector-method-card,
+html[data-theme="dark"] body.pme-page #contenu > .section .sector-method-card,
+html.theme-dark body.pme-page #contenu > .section .offer-card,
+html[data-theme="dark"] body.pme-page #contenu > .section .offer-card {
+  background: linear-gradient(135deg, #172149 0%, #1e2a50 58%, #202d60 100%) !important;
+  border-color: #3a4779 !important;
+}
+
+html.theme-dark body.pme-page #contenu > .section.section-soft:not(.section-aqua) .sector-editorial-chapter,
+html[data-theme="dark"] body.pme-page #contenu > .section.section-soft:not(.section-aqua) .sector-editorial-chapter,
+html.theme-dark body.pme-page #contenu > .section.section-soft:not(.section-aqua) .card,
+html[data-theme="dark"] body.pme-page #contenu > .section.section-soft:not(.section-aqua) .card,
+html.theme-dark body.pme-page #contenu > .section.section-soft:not(.section-aqua) .sector-method-card,
+html[data-theme="dark"] body.pme-page #contenu > .section.section-soft:not(.section-aqua) .sector-method-card {
+  background: linear-gradient(135deg, #151c46 0%, #1a2752 58%, #213263 100%) !important;
+}
+
+html.theme-dark body.pme-page #contenu > .section.section-mist:not(.section-aqua) .card,
+html[data-theme="dark"] body.pme-page #contenu > .section.section-mist:not(.section-aqua) .card,
+html.theme-dark body.pme-page #contenu > .section.section-mist:not(.section-aqua) .sector-editorial-chapter,
+html[data-theme="dark"] body.pme-page #contenu > .section.section-mist:not(.section-aqua) .sector-editorial-chapter {
+  background: linear-gradient(135deg, #16214a 0%, #1c2c59 58%, #24396a 100%) !important;
+}
+
+html.theme-dark body.pme-page #contenu > .section.section-aqua .sector-editorial-chapter,
+html[data-theme="dark"] body.pme-page #contenu > .section.section-aqua .sector-editorial-chapter,
+html.theme-dark body.pme-page #contenu > .section.section-aqua .card,
+html[data-theme="dark"] body.pme-page #contenu > .section.section-aqua .card {
+  background: linear-gradient(135deg, rgba(21, 32, 73, 0.94) 0%, rgba(29, 45, 88, 0.96) 100%) !important;
+}
+
+html.theme-dark body.pme-page .pme-tariff-reading,
+html[data-theme="dark"] body.pme-page .pme-tariff-reading {
+  background: rgba(30, 42, 80, 0.88) !important;
+}
