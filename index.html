@@ -392,37 +392,137 @@
               <p>Les décisions sensibles, les messages clients et les actions à impact restent soumis au contrôle de vos équipes.</p>
             </article>
           </div>
-          <figure class="agents-schema" style="max-width:360px;margin:2.25rem auto 0;text-align:center">
-            <svg viewBox="0 0 320 410" width="100%" role="img" aria-label="Schéma du fonctionnement d’un système multi-agents" aria-describedby="agents-schema-desc" style="display:block;width:100%;height:auto;font-family:var(--font-body)" focusable="false">
-              <desc id="agents-schema-desc">Lecture de haut en bas : les demandes et informations reçues par le site, l’e-mail et les formulaires sont confiées à un agent superviseur. Il coordonne quatre agents spécialisés : relation client, réservations, suivi commercial et pilotage. Leurs propositions passent par une validation humaine avant l’action.</desc>
-              <g style="fill:none;stroke:var(--color-muted);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round">
-                <path d="M160 58V80M154 74L160 80L166 74"/>
-                <path d="M160 128V142M154 136L160 142L166 136"/>
-                <path d="M160 270V290M154 284L160 290L166 284"/>
-                <path d="M160 338V358M154 352L160 358L166 352"/>
-              </g>
-              <rect x="40" y="4" width="240" height="54" rx="10" style="fill:var(--color-mist);stroke:var(--color-border);stroke-width:1.5"/>
-              <text x="160" y="27" text-anchor="middle" style="fill:var(--color-ink);font-size:14px;font-weight:600">Demandes et informations</text>
-              <text x="160" y="45" text-anchor="middle" style="fill:var(--color-muted);font-size:12.5px">site, e-mail, formulaires</text>
-              <rect x="40" y="84" width="240" height="44" rx="10" style="fill:var(--color-accent)"/>
-              <text x="160" y="111" text-anchor="middle" style="fill:var(--color-bg);font-size:15px;font-weight:600">Agent superviseur</text>
-              <rect x="1" y="146" width="318" height="124" rx="12" style="fill:none;stroke:var(--color-accent);stroke-width:1.25;stroke-dasharray:4 4"/>
-              <text x="160" y="166" text-anchor="middle" style="fill:var(--color-muted);font-size:12px;font-weight:500">Agents spécialisés</text>
-              <rect x="12" y="176" width="141" height="38" rx="8" style="fill:var(--color-mist);stroke:var(--color-border);stroke-width:1.5"/>
-              <text x="82.5" y="200" text-anchor="middle" style="fill:var(--color-ink);font-size:13px;font-weight:500">Relation client</text>
-              <rect x="167" y="176" width="141" height="38" rx="8" style="fill:var(--color-mist);stroke:var(--color-border);stroke-width:1.5"/>
-              <text x="237.5" y="200" text-anchor="middle" style="fill:var(--color-ink);font-size:13px;font-weight:500">Réservations</text>
-              <rect x="12" y="222" width="141" height="38" rx="8" style="fill:var(--color-mist);stroke:var(--color-border);stroke-width:1.5"/>
-              <text x="82.5" y="246" text-anchor="middle" style="fill:var(--color-ink);font-size:13px;font-weight:500">Suivi commercial</text>
-              <rect x="167" y="222" width="141" height="38" rx="8" style="fill:var(--color-mist);stroke:var(--color-border);stroke-width:1.5"/>
-              <text x="237.5" y="246" text-anchor="middle" style="fill:var(--color-ink);font-size:13px;font-weight:500">Pilotage</text>
-              <rect x="40" y="294" width="240" height="44" rx="10" style="fill:var(--color-bg);stroke:var(--color-accent);stroke-width:2"/>
-              <text x="160" y="321" text-anchor="middle" style="fill:var(--color-ink);font-size:15px;font-weight:600">Validation humaine</text>
-              <rect x="40" y="362" width="240" height="40" rx="10" style="fill:var(--color-primary)"/>
-              <text x="160" y="387" text-anchor="middle" style="fill:var(--color-bg);font-size:15px;font-weight:600">Action</text>
-            </svg>
-            <figcaption style="margin-top:0.9rem;font-size:0.95rem;line-height:1.5;color:var(--color-muted)">Un agent superviseur coordonne des agents spécialisés. Les décisions sensibles restent entre vos mains.</figcaption>
-          </figure>
+          <figure class="agents-schema">
+<svg class="as-v" viewBox="0 0 320 410" width="100%" role="img" aria-label="Schéma du fonctionnement d’un système multi-agents" aria-describedby="agents-schema-desc" style="display:block;width:100%;height:auto;font-family:var(--font-body)" focusable="false">
+<desc id="agents-schema-desc">Lecture de haut en bas : les demandes et informations reçues par le site, l’e-mail et les formulaires sont confiées à un agent superviseur. Il coordonne quatre agents spécialisés : relation client, réservations, suivi commercial et pilotage. Leurs propositions passent par une validation humaine avant l’action.</desc>
+<g style="fill:none;stroke:var(--color-muted);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round">
+<path d="M154 74L160 80L166 74"/>
+<path d="M154 136L160 142L166 136"/>
+<path d="M154 284L160 290L166 284"/>
+<path d="M154 352L160 358L166 352"/>
+</g>
+<g><path class="as-ar" d="M160 58V80"/><path class="as-ar" d="M160 128V142"/><path class="as-ar" d="M160 270V290"/><path class="as-ar" d="M160 338V358"/></g>
+<g class="as-node">
+<rect x="40" y="4" width="240" height="54" rx="10" style="fill:var(--color-mist);stroke:var(--color-border);stroke-width:1.5"/>
+<text x="160" y="27" text-anchor="middle" style="fill:var(--color-ink);font-size:14px;font-weight:600">Demandes et informations</text>
+</g>
+<text x="160" y="45" text-anchor="middle" style="fill:var(--color-muted);font-size:12.5px">site, e-mail, formulaires</text>
+<g class="as-node">
+<rect x="40" y="84" width="240" height="44" rx="10" style="fill:var(--color-accent)"/>
+<text x="160" y="111" text-anchor="middle" style="fill:var(--color-bg);font-size:15px;font-weight:600">Agent superviseur</text>
+</g>
+<rect class="as-fr" x="1" y="146" width="318" height="124" rx="12" style="fill:none;stroke:var(--color-accent);stroke-width:1.25;stroke-dasharray:4 4"/>
+<text x="160" y="166" text-anchor="middle" style="fill:var(--color-muted);font-size:12px;font-weight:500">Agents spécialisés</text>
+<g class="as-node">
+<rect x="12" y="176" width="141" height="38" rx="8" style="fill:var(--color-mist);stroke:var(--color-border);stroke-width:1.5"/>
+<text x="82.5" y="200" text-anchor="middle" style="fill:var(--color-ink);font-size:13px;font-weight:500">Relation client</text>
+</g>
+<g class="as-node">
+<rect x="167" y="176" width="141" height="38" rx="8" style="fill:var(--color-mist);stroke:var(--color-border);stroke-width:1.5"/>
+<text x="237.5" y="200" text-anchor="middle" style="fill:var(--color-ink);font-size:13px;font-weight:500">Réservations</text>
+</g>
+<g class="as-node">
+<rect x="12" y="222" width="141" height="38" rx="8" style="fill:var(--color-mist);stroke:var(--color-border);stroke-width:1.5"/>
+<text x="82.5" y="246" text-anchor="middle" style="fill:var(--color-ink);font-size:13px;font-weight:500">Suivi commercial</text>
+</g>
+<g class="as-node">
+<rect x="167" y="222" width="141" height="38" rx="8" style="fill:var(--color-mist);stroke:var(--color-border);stroke-width:1.5"/>
+<text x="237.5" y="246" text-anchor="middle" style="fill:var(--color-ink);font-size:13px;font-weight:500">Pilotage</text>
+</g>
+<g class="as-node">
+<rect x="40" y="294" width="240" height="44" rx="10" style="fill:var(--color-bg);stroke:var(--color-accent);stroke-width:2"/>
+<text x="160" y="321" text-anchor="middle" style="fill:var(--color-ink);font-size:15px;font-weight:600">Validation humaine</text>
+</g>
+<g class="as-node">
+<rect x="40" y="362" width="240" height="40" rx="10" style="fill:var(--color-primary)"/>
+<text x="160" y="387" text-anchor="middle" style="fill:var(--color-bg);font-size:15px;font-weight:600">Action</text>
+</g>
+</svg>
+<svg class="as-h" viewBox="0 0 1060 230" width="100%" role="img" aria-label="Schéma du fonctionnement d’un système multi-agents" aria-describedby="agents-schema-desc-h" style="display:none;width:100%;height:auto;font-family:var(--font-body)" focusable="false">
+<desc id="agents-schema-desc-h">Lecture de haut en bas : les demandes et informations reçues par le site, l’e-mail et les formulaires sont confiées à un agent superviseur. Il coordonne quatre agents spécialisés : relation client, réservations, suivi commercial et pilotage. Leurs propositions passent par une validation humaine avant l’action.</desc>
+<g style="fill:none;stroke:var(--color-muted);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round">
+<path d="M208 109L214 115L208 121"/>
+<path d="M386 109L392 115L386 121"/>
+<path d="M752 109L758 115L752 121"/>
+<path d="M945 109L951 115L945 121"/>
+</g>
+<g><path class="as-ar" d="M190 115H214"/><path class="as-ar" d="M368 115H392"/><path class="as-ar" d="M734 115H758"/><path class="as-ar" d="M927 115H951"/></g>
+<g class="as-node">
+<rect x="2" y="88" width="188" height="54" rx="10" style="fill:var(--color-mist);stroke:var(--color-border);stroke-width:1.5"/>
+<text x="96" y="111" text-anchor="middle" style="fill:var(--color-ink);font-size:14px;font-weight:600">Demandes et informations</text>
+<text x="96" y="129" text-anchor="middle" style="fill:var(--color-muted);font-size:12.5px">site, e-mail, formulaires</text>
+</g>
+<g class="as-node">
+<rect x="218" y="93" width="150" height="44" rx="10" style="fill:var(--color-accent)"/>
+<text x="293" y="120" text-anchor="middle" style="fill:var(--color-bg);font-size:15px;font-weight:600">Agent superviseur</text>
+</g>
+<rect class="as-fr" x="396" y="53" width="338" height="124" rx="12" style="fill:none;stroke:var(--color-accent);stroke-width:1.25;stroke-dasharray:4 4"/>
+<text x="565" y="73" text-anchor="middle" style="fill:var(--color-muted);font-size:12px;font-weight:500">Agents spécialisés</text>
+<g class="as-node">
+<rect x="408" y="83" width="150" height="38" rx="8" style="fill:var(--color-mist);stroke:var(--color-border);stroke-width:1.5"/>
+<text x="483" y="107" text-anchor="middle" style="fill:var(--color-ink);font-size:13px;font-weight:500">Relation client</text>
+</g>
+<g class="as-node">
+<rect x="572" y="83" width="150" height="38" rx="8" style="fill:var(--color-mist);stroke:var(--color-border);stroke-width:1.5"/>
+<text x="647" y="107" text-anchor="middle" style="fill:var(--color-ink);font-size:13px;font-weight:500">Réservations</text>
+</g>
+<g class="as-node">
+<rect x="408" y="129" width="150" height="38" rx="8" style="fill:var(--color-mist);stroke:var(--color-border);stroke-width:1.5"/>
+<text x="483" y="153" text-anchor="middle" style="fill:var(--color-ink);font-size:13px;font-weight:500">Suivi commercial</text>
+</g>
+<g class="as-node">
+<rect x="572" y="129" width="150" height="38" rx="8" style="fill:var(--color-mist);stroke:var(--color-border);stroke-width:1.5"/>
+<text x="647" y="153" text-anchor="middle" style="fill:var(--color-ink);font-size:13px;font-weight:500">Pilotage</text>
+</g>
+<g class="as-node">
+<rect x="762" y="93" width="165" height="44" rx="10" style="fill:var(--color-bg);stroke:var(--color-accent);stroke-width:2"/>
+<text x="844.5" y="120" text-anchor="middle" style="fill:var(--color-ink);font-size:15px;font-weight:600">Validation humaine</text>
+</g>
+<g class="as-node">
+<rect x="955" y="95" width="103" height="40" rx="10" style="fill:var(--color-primary)"/>
+<text x="1006.5" y="120" text-anchor="middle" style="fill:var(--color-bg);font-size:15px;font-weight:600">Action</text>
+</g>
+</svg>
+<figcaption style="margin-top:0.9rem;font-size:0.95rem;line-height:1.5;color:var(--color-muted)">Un agent superviseur coordonne des agents spécialisés. Les décisions sensibles restent entre vos mains.</figcaption>
+</figure>
+<style>
+.agents-schema { max-width: 360px; margin: 2.25rem auto 0; text-align: center; }
+.agents-schema .as-node { transform-box: fill-box; transition: transform 0.25s ease; }
+.agents-schema .as-ar { fill: none; stroke: var(--color-accent); stroke-width: 1.25; stroke-dasharray: 4 4; }
+@media (min-width: 1024px) {
+.agents-schema { max-width: none; }
+.agents-schema .as-v { display: none !important; }
+.agents-schema .as-h { display: block !important; }
+}
+@media (prefers-reduced-motion: no-preference) {
+.agents-schema.is-running .as-fr, .agents-schema.is-running .as-ar { animation: as-dash 3s linear infinite; }
+@keyframes as-dash { to { stroke-dashoffset: -8; } }
+@media (hover: hover) and (pointer: fine) {
+.agents-schema .as-node:hover { transform: translateY(-2px); }
+}
+@media (hover: none), (pointer: coarse) {
+.agents-schema .as-node:active { transform: translateY(1px); }
+}
+}
+</style>
+<script type="module">
+(function () {
+var fig = document.querySelector(".agents-schema");
+if (!fig || !("IntersectionObserver" in window)) return;
+var reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+var seen = false;
+function sync() {
+fig.classList.toggle("is-running", seen && !document.hidden && !reduced.matches);
+}
+new IntersectionObserver(function (entries) {
+seen = entries[entries.length - 1].isIntersecting;
+sync();
+}, { threshold: 0.25 }).observe(fig);
+document.addEventListener("visibilitychange", sync);
+if (reduced.addEventListener) reduced.addEventListener("change", sync);
+fig.addEventListener("touchstart", function () {}, { passive: true });
+})();
+</script>
           <p class="transition-note"><strong>Pour les groupes et réseaux multi-sites :</strong> l’agent superviseur coordonne les agents spécialisés, croise leurs informations et prépare la prochaine étape sans remplacer la décision humaine.</p>
         </div>
       </section>
