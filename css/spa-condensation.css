@@ -715,3 +715,56 @@ body.spa-page #contenu > .conversion-band .btn:focus-visible {
 [class*="benefit"] {
   border-radius: 0 !important;
 }
+
+/* Cartes des systèmes : fond plus opaque pour atténuer la photo derrière le texte. */
+body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-chapter {
+  background: rgba(255, 255, 255, 0.94) !important;
+}
+html.theme-dark body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-chapter,
+html[data-theme="dark"] body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-chapter {
+  background: rgba(17, 24, 61, 0.94) !important;
+}
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-dark):not([data-theme="light"]) body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-chapter {
+    background: rgba(17, 24, 61, 0.94) !important;
+  }
+}
+
+/* Mon approche : titres des quatre étapes en violet. */
+body.spa-page .sector-method-section .sector-method-card .card-title-with-icon strong {
+  color: var(--color-accent) !important;
+}
+
+/* Systèmes : titres rapprochés du texte et bénéfices sans étirement. */
+html body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-list {
+  grid-auto-rows: auto !important;
+}
+html body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-list > .sector-editorial-chapter > summary {
+  min-height: 0 !important;
+  margin-bottom: 0 !important;
+}
+html body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-heading {
+  padding-bottom: 0 !important;
+}
+html body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-content {
+  margin-top: 0.65rem !important;
+  min-height: 0 !important;
+  height: auto !important;
+}
+html body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-content > p:first-child {
+  margin-top: 0 !important;
+}
+html body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-benefit {
+  flex: 0 0 auto !important;
+  min-height: 0 !important;
+  height: auto !important;
+  padding: 0.65rem 0.9rem !important;
+}
+@media (min-width: 1051px) {
+  html body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-benefit {
+    margin-top: auto !important;
+  }
+  html body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-content > p:not(.sector-editorial-benefit):last-of-type {
+    margin-bottom: 0.75rem !important;
+  }
+}

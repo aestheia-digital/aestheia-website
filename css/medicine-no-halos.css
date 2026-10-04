@@ -202,3 +202,21 @@ html[data-theme="dark"] body.medicine-page #contenu > .sector-method-section .se
 [class*="benefit"] {
   border-radius: 0 !important;
 }
+
+/* Médecine : ressources plus douces et catégories en bleu uni. */
+body.medicine-page .related-resources .resource-category {
+  color: #fff;
+  background: #00b0ff;
+  border-color: transparent;
+  box-shadow: none;
+  text-shadow: none;
+}
+html.theme-dark body.medicine-page .related-resources .related-resource-card,
+html[data-theme="dark"] body.medicine-page .related-resources .related-resource-card {
+  background: #141c3b;
+}
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-dark):not([data-theme="light"]) body.medicine-page .related-resources .related-resource-card {
+    background: #141c3b;
+  }
+}
