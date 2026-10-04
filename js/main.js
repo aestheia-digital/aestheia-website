@@ -371,7 +371,7 @@ if (homeProblems) {
   const intro = homeProblems.querySelector(".section-intro");
   const problemCards = Array.from(homeProblems.querySelectorAll(".problem-card"));
   const problemIcons = [
-    "assets/icons/acquisition-target.svg",
+    "assets/icons/stopwatch.svg",
     "assets/icons/content-spark.svg",
     "assets/icons/systems-cog.svg",
     "assets/icons/seo-search.svg",

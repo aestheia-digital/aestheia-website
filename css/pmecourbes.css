@@ -296,3 +296,10 @@ body.pme-page .sector-method-card .sector-method-detail {
   hyphens: manual;
   -webkit-hyphens: manual;
 }
+
+/* TPE-PME : titres de la méthode en violet, sans pictogrammes */
+body.pme-page .sector-method-section .sector-method-card h3,
+body.pme-page .sector-method-section .sector-method-card h3 span,
+body.pme-page .sector-method-section .sector-method-card h3 strong {
+  color: var(--color-accent);
+}
