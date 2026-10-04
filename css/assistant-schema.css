@@ -1,12 +1,12 @@
 /* Assistant IA : disposition approuvée, horizontale sur ordinateur. */
-.assistant-schema { font-family: Inter, Arial, sans-serif; color: var(--color-ink); margin: 2rem 0 0; }
+.assistant-schema { font-family: Inter, Arial, sans-serif; color: var(--color-ink); margin: clamp(3rem, 5vw, 4rem) 0 0; }
     .assistant-schema .flow { display:grid; grid-template-columns:1fr 1fr 2.1fr 1fr .7fr; gap:20px; align-items:center; }
     .assistant-schema .step { position:relative; text-align:center; font-size:clamp(12px, 1.1vw, 15px); line-height:1.4; }
     .assistant-schema .step:not(:last-child)::after { content:'→'; color:#00b0ff; position:absolute; left:calc(100% + 3px); top:50%; transform:translateY(-50%); font-size:20px; }
     .assistant-schema .node { border:1px solid var(--color-border); background:var(--color-mist); border-radius:9px; padding:14px 6px; font-weight:500; }
     .assistant-schema .sub { display:block; color:var(--color-muted); font-size:clamp(11px, 1vw, 13px); margin-top:4px; font-weight:400; }
     .assistant-schema .assistant { background:var(--color-accent); border-color:var(--color-accent); color:var(--color-bg); }
-    .assistant-schema .validation { background:#007eae; border-color:#007eae; color:#fff; }
+    .assistant-schema .validation { background:#00b0ff; background:color-mix(in srgb, #00b0ff 90%, #000); border-color:transparent; color:#fff; box-shadow:none; }
     .assistant-schema .action { background:#fff; border-color:#fff; color:#1e2a50; }
     .assistant-schema .tasks { border:1px dashed #00b0ff; padding:10px; border-radius:10px; }
     .assistant-schema .tasks-title { color:var(--color-muted); margin-bottom:9px; font-size:clamp(11px, 1vw, 13px); }
@@ -19,3 +19,32 @@
       .assistant-schema .step { font-size:14px; }
       .assistant-schema .task-grid .node { font-size:clamp(12px, 1.1vw, 15px); }
     }
+
+/* Flux animé : rythme, survol et visibilité identiques au schéma de la home. */
+.assistant-schema.has-motion-decor .step::after { content: none; }
+.assistant-schema.has-motion-decor .tasks { border-color: transparent; }
+.assistant-schema .assistant-schema-connector { position:absolute; left:calc(100% + 3px); top:50%; width:20px; height:14px; transform:translateY(-50%); pointer-events:none; }
+.assistant-schema .assistant-schema-connector svg { display:block; width:100%; height:100%; overflow:visible; }
+.assistant-schema .assistant-schema-line,
+.assistant-schema .assistant-schema-head,
+.assistant-schema .assistant-schema-frame rect { fill:none; stroke:#00b0ff; stroke-width:1.25; }
+.assistant-schema .assistant-schema-line,
+.assistant-schema .assistant-schema-frame rect { stroke-dasharray:4 4; }
+.assistant-schema .assistant-schema-head { stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
+.assistant-schema .assistant-schema-frame { position:absolute; inset:0; width:100%; height:100%; overflow:visible; pointer-events:none; }
+@media (max-width:649px) {
+  .assistant-schema .assistant-schema-connector { left:50%; top:calc(100% + 5px); transform:translateX(-50%) rotate(90deg); }
+}
+@media (prefers-reduced-motion:no-preference) {
+  .assistant-schema .node { transition:transform 0.25s ease; }
+  .assistant-schema.is-running .assistant-schema-line,
+  .assistant-schema.is-running .assistant-schema-frame rect { animation:assistant-schema-dash 1.2s linear infinite; }
+  .assistant-schema.is-running .assistant-schema-head { animation:assistant-schema-head 1.2s ease-in-out infinite; }
+  .assistant-schema .step:nth-child(2) .assistant-schema-head { animation-delay:0.15s; }
+  .assistant-schema .step:nth-child(3) .assistant-schema-head { animation-delay:0.3s; }
+  .assistant-schema .step:nth-child(4) .assistant-schema-head { animation-delay:0.45s; }
+  @keyframes assistant-schema-dash { to { stroke-dashoffset:-8; } }
+  @keyframes assistant-schema-head { 0%,100% { transform:translateX(0); } 50% { transform:translateX(2px); } }
+  @media (hover:hover) and (pointer:fine) { .assistant-schema .node:hover { transform:translateY(-2px); } }
+  @media (hover:none), (pointer:coarse) { .assistant-schema .node:active { transform:translateY(1px); } }
+}
