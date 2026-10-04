@@ -220,3 +220,29 @@ html[data-theme="dark"] body.medicine-page .related-resources .related-resource-
     background: #141c3b;
   }
 }
+
+/* Assistant IA : bleu nuit légèrement éclairci, tous supports. */
+html.theme-dark body.medicine-page #contenu > .section.medicine-assistant-section,
+html[data-theme="dark"] body.medicine-page #contenu > .section.medicine-assistant-section {
+  background-color: #141c3b !important;
+}
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-dark):not([data-theme="light"]) body.medicine-page #contenu > .section.medicine-assistant-section {
+    background-color: #141c3b !important;
+  }
+}
+
+/* Assistant du cabinet : titre plus discret et contenu mieux espacé. */
+body.medicine-page #contenu > .medicine-assistant-section h2.section-title-with-icon {
+  font-size: clamp(1.65rem, 3.2vw, 2.6rem);
+  line-height: 1.2;
+  margin-bottom: 0;
+}
+body.medicine-page #contenu > .medicine-assistant-section .section-intro {
+  margin-top: clamp(1.5rem, 2.5vw, 2rem);
+  margin-bottom: 0;
+}
+body.medicine-page #contenu > .medicine-assistant-section .feature-list {
+  margin-top: clamp(1.5rem, 2.5vw, 2rem);
+  margin-bottom: 1.75rem;
+}

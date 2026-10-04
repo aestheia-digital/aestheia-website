@@ -905,3 +905,29 @@ body.institutes-page [class*="benefit"]::before,
 body.institutes-page [class*="benefit"]::after {
   border-radius: 0 !important;
 }
+
+/* Assistant IA : bleu nuit légèrement éclairci, tous supports. */
+html.theme-dark body.institutes-page #contenu > .section.institutes-assistant-section,
+html[data-theme="dark"] body.institutes-page #contenu > .section.institutes-assistant-section {
+  background-color: #141c3b !important;
+}
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-dark):not([data-theme="light"]) body.institutes-page #contenu > .section.institutes-assistant-section {
+    background-color: #141c3b !important;
+  }
+}
+
+/* Assistant de l’institut : titre plus discret et contenu mieux espacé. */
+body.institutes-page #contenu > .institutes-assistant-section h2.section-title-with-icon {
+  font-size: clamp(1.65rem, 3.2vw, 2.6rem);
+  line-height: 1.2;
+  margin-bottom: 0;
+}
+body.institutes-page #contenu > .institutes-assistant-section .section-intro {
+  margin-top: clamp(1.5rem, 2.5vw, 2rem);
+  margin-bottom: 0;
+}
+body.institutes-page #contenu > .institutes-assistant-section .feature-list {
+  margin-top: clamp(1.5rem, 2.5vw, 2rem);
+  margin-bottom: 1.75rem;
+}
