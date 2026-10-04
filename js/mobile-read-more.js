@@ -30,7 +30,8 @@ const configureMobileReadMore = () => {
       });
     }
 
-    if (mobileReadMoreMedia.matches ||
+    if (block.matches("body.thalasso-page .thalasso-reality-turnover-accordion") ||
+        mobileReadMoreMedia.matches ||
         (institutesDesktopReadMoreMedia.matches && block.matches("body.institutes-page .institutes-team-issue-accordion"))) {
       block.open = true;
       block.classList.add("mobile-readmore-active");

@@ -700,3 +700,92 @@ body.thalasso-page #contenu > .conversion-band .btn:focus-visible {
 [class*="benefit"] {
   border-radius: 0 !important;
 }
+
+/* Systèmes : titres rapprochés du texte et bénéfices sans étirement. */
+html body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-list {
+  grid-auto-rows: auto !important;
+}
+html body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-list > .sector-editorial-chapter > summary {
+  min-height: 0 !important;
+  margin-bottom: 0 !important;
+}
+html body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-heading {
+  padding-bottom: 0 !important;
+}
+html body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-content {
+  margin-top: 0.65rem !important;
+  min-height: 0 !important;
+  height: auto !important;
+}
+html body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-content > p:first-child {
+  margin-top: 0 !important;
+}
+html body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-benefit {
+  flex: 0 0 auto !important;
+  min-height: 0 !important;
+  height: auto !important;
+  padding: 0.65rem 0.9rem !important;
+}
+@media (min-width: 1051px) {
+  html body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-benefit {
+    margin-top: auto !important;
+  }
+  html body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-content > p:not(.sector-editorial-benefit):last-of-type {
+    margin-bottom: 0.75rem !important;
+  }
+}
+
+/* Agents : pictogramme toujours placé à côté du titre. */
+body.thalasso-page #contenu > .section.section-mist .grid.grid-3 .card-title-with-icon {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start !important;
+  gap: 0.65rem;
+}
+body.thalasso-page #contenu > .section.section-mist .grid.grid-3 .card-title-pictogram {
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+}
+body.thalasso-page #contenu > .section.section-mist .grid.grid-3 .card-title-with-icon > span {
+  min-width: 0;
+}
+
+/* Turnover : aperçu replié et flèche à côté du libellé, tous supports. */
+html body.thalasso-page #contenu .thalasso-reality-turnover-accordion.mobile-readmore-active > p:first-of-type {
+  display: -webkit-box !important;
+  overflow: hidden !important;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}
+html body.thalasso-page #contenu .thalasso-reality-turnover-accordion.mobile-readmore-active.is-expanded > p:first-of-type {
+  display: block !important;
+  overflow: visible !important;
+  -webkit-line-clamp: unset;
+  line-clamp: unset;
+}
+html body.thalasso-page #contenu .thalasso-reality-turnover-accordion.mobile-readmore-active > .mobile-readmore-toggle {
+  display: inline-flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 0.35rem !important;
+  width: fit-content;
+  margin-top: 0.7rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-accent);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+html body.thalasso-page #contenu .thalasso-reality-turnover-accordion.mobile-readmore-active > .mobile-readmore-toggle::after {
+  content: "↓" !important;
+  display: inline-block !important;
+  margin: 0 !important;
+  line-height: 1 !important;
+}
+html body.thalasso-page #contenu .thalasso-reality-turnover-accordion.mobile-readmore-active.is-expanded > .mobile-readmore-toggle::after {
+  transform: rotate(180deg) !important;
+}
