@@ -1,0 +1,101 @@
+/* Légende alignée à gauche sur toute la largeur du schéma, en modes jour et nuit. */
+body.medicine-page .assistant-schema > figcaption.caption {
+  width: 100%;
+  max-width: none;
+  text-align: left;
+}
+
+/* Médecine esthétique : alternance des bleus avec jonctions fondues, tous supports. */
+html:is(.theme-dark, [data-theme="dark"]) body.medicine-page #contenu > .section[class]:not(.page-hero) {
+  --medicine-band-bg: #13213B;
+  --medicine-band-previous: #1C2E4D;
+  background: linear-gradient(to bottom, var(--medicine-band-previous), var(--medicine-band-bg) clamp(0.75rem, 1.2vw, 1.25rem)) !important;
+  box-shadow: none !important;
+}
+html:is(.theme-dark, [data-theme="dark"]) body.medicine-page #contenu > .section[class]:not(.page-hero):nth-child(even of .section) { --medicine-band-bg: #1C2E4D; --medicine-band-previous: #13213B; }
+html:is(.theme-dark, [data-theme="dark"]) body.medicine-page #contenu > .section[class]:not(.page-hero)::before, html:is(.theme-dark, [data-theme="dark"]) body.medicine-page #contenu > .section[class]:not(.page-hero)::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+}
+html:is(.theme-dark, [data-theme="dark"]) body.medicine-page #contenu > .section[class]:not(.page-hero).faq-section :is(summary, summary h3, .faq-answer, .faq-answer p) {
+  color: #EDF0FF !important;
+  -webkit-text-fill-color: #EDF0FF !important;
+}
+html:is(.theme-dark, [data-theme="dark"]) body.medicine-page #contenu > .section[class]:not(.page-hero).faq-section summary::after { color: #EDF0FF !important; }
+@media (prefers-color-scheme: dark) {
+html:not(.theme-dark):not([data-theme="light"]) body.medicine-page #contenu > .section[class]:not(.page-hero) {
+  --medicine-band-bg: #13213B;
+  --medicine-band-previous: #1C2E4D;
+  background: linear-gradient(to bottom, var(--medicine-band-previous), var(--medicine-band-bg) clamp(0.75rem, 1.2vw, 1.25rem)) !important;
+  box-shadow: none !important;
+}
+html:not(.theme-dark):not([data-theme="light"]) body.medicine-page #contenu > .section[class]:not(.page-hero):nth-child(even of .section) { --medicine-band-bg: #1C2E4D; --medicine-band-previous: #13213B; }
+html:not(.theme-dark):not([data-theme="light"]) body.medicine-page #contenu > .section[class]:not(.page-hero)::before, html:not(.theme-dark):not([data-theme="light"]) body.medicine-page #contenu > .section[class]:not(.page-hero)::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+}
+html:not(.theme-dark):not([data-theme="light"]) body.medicine-page #contenu > .section[class]:not(.page-hero).faq-section :is(summary, summary h3, .faq-answer, .faq-answer p) {
+  color: #EDF0FF !important;
+  -webkit-text-fill-color: #EDF0FF !important;
+}
+html:not(.theme-dark):not([data-theme="light"]) body.medicine-page #contenu > .section[class]:not(.page-hero).faq-section summary::after { color: #EDF0FF !important; }
+}
+
+/* Le premier bandeau suit le hero sans introduire un troisième fond. */
+html:is(.theme-dark, [data-theme="dark"]) body.medicine-page #contenu > .section[class]:not(.page-hero):nth-child(1 of .section) { --medicine-band-previous: #13213B; }
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-dark):not([data-theme="light"]) body.medicine-page #contenu > .section[class]:not(.page-hero):nth-child(1 of .section) { --medicine-band-previous: #13213B; }
+}
+
+/* Palette commune aux cartes, encadrés et schéma de cette page uniquement. */
+body.medicine-page {
+  --medicine-surface: #F3F6FA;
+  --medicine-line: #D6DFEA;
+  --medicine-copy: #13213B;
+  --medicine-title: #6B4BB3;
+}
+html:is(.theme-dark, [data-theme="dark"]) body.medicine-page {
+  --medicine-surface: #1C2E4D;
+  --medicine-line: #34475F;
+  --medicine-copy: #EDF0FF;
+  --medicine-title: #B69CFF;
+}
+@media (prefers-color-scheme: dark) {
+  html:not(.theme-dark):not([data-theme="light"]) body.medicine-page {
+    --medicine-surface: #1C2E4D;
+    --medicine-line: #34475F;
+    --medicine-copy: #EDF0FF;
+    --medicine-title: #B69CFF;
+  }
+}
+html body.medicine-page #contenu > .section[class]:not(.page-hero) :is(.card, .sector-editorial-chapter, .related-resource-card, .faq-accordion-item, .assistant-schema .node:not(.validation), .sector-editorial-benefit, .sector-reality-conclusion, .sector-method-conclusion) {
+  background: var(--medicine-surface) !important;
+  border-color: var(--medicine-line) !important;
+  color: var(--medicine-copy) !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  backdrop-filter: none !important;
+}
+html body.medicine-page #contenu > .section[class]:not(.page-hero) :is(.sector-editorial-benefit, .sector-reality-conclusion, .sector-method-conclusion) {
+  border-left: 3px solid #00B0FF !important;
+}
+html body.medicine-page #contenu > .section[class]:not(.page-hero) :is(.sector-editorial-benefit, .sector-reality-conclusion, .sector-method-conclusion)::before {
+  content: none !important;
+  background: none !important;
+}
+html body.medicine-page #contenu > .section[class]:not(.page-hero) :is(.sector-editorial-benefit, .sector-reality-conclusion, .sector-method-conclusion) strong {
+  color: inherit !important;
+}
+html body.medicine-page #contenu > .section[class]:not(.page-hero) :is(.card.sector-card-accordion h3, .sector-editorial-list .sector-editorial-heading h3, .sector-method-card h3, .eyebrow) {
+  color: var(--medicine-title) !important;
+  -webkit-text-fill-color: var(--medicine-title) !important;
+}
+html body.medicine-page #contenu > .section[class]:not(.page-hero) .assistant-schema :is(.sub, .tasks-title, .caption) {
+  color: var(--medicine-copy) !important;
+}
+html body.medicine-page #contenu > .section[class]:not(.page-hero) .feature-list li::before {
+  background: #00B0FF !important;
+  box-shadow: none !important;
+}
