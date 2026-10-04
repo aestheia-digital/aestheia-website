@@ -48,3 +48,44 @@
   @media (hover:hover) and (pointer:fine) { .assistant-schema .node:hover { transform:translateY(-2px); } }
   @media (hover:none), (pointer:coarse) { .assistant-schema .node:active { transform:translateY(1px); } }
 }
+
+/* Robot discret au début des légendes, même présentation sur les deux pages. */
+body:is(.medicine-page, .institutes-page) .assistant-schema > figcaption.caption {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: none;
+  margin-top: 48px;
+  font-size: inherit;
+  font-weight: 400;
+  line-height: inherit;
+  text-align: left;
+}
+body:is(.medicine-page, .institutes-page) .assistant-schema .caption-pictogram {
+  display: block;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  object-fit: contain;
+}
+body:is(.medicine-page, .institutes-page) .assistant-schema .caption-copy {
+  flex: 1;
+  min-width: 0;
+}
+body:is(.medicine-page, .institutes-page) .assistant-schema .caption-arrow {
+  display: inline-block;
+  font-size: 1.25em;
+  line-height: 1;
+  margin: 0 0.25em;
+  vertical-align: baseline;
+}
+
+/* Bandeau assistant médecine : contraste de graisse discret entre libellé et texte. */
+body.medicine-page #contenu > .medicine-assistant-section :is(p, .feature-list li) {
+  font-weight: 400;
+}
+body.medicine-page #contenu > .medicine-assistant-section strong,
+body.medicine-page #contenu > .medicine-assistant-section .eyebrow {
+  font-weight: 500;
+}
