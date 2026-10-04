@@ -300,23 +300,31 @@
           <p class="section-intro">Un système AesthéIA peut relier les étapes qui, aujourd’hui, dépendent encore de manipulations manuelles ou de la mémoire de l’équipe.</p>
           <div class="process-strip home-process">
             <article class="process-step">
-              <span class="step-label">01</span>
-              <h3>Une demande arrive</h3>
+              <div class="process-step-heading">
+                <span class="step-label">01</span>
+                <h3>Une demande arrive</h3>
+              </div>
               <p>Depuis votre site, un formulaire, un e-mail ou un autre canal de contact.</p>
             </article>
             <article class="process-step">
-              <span class="step-label">02</span>
-              <h3>Les informations sont structurées</h3>
+              <div class="process-step-heading">
+                <span class="step-label">02</span>
+                <h3>Les informations sont structurées</h3>
+              </div>
               <p>Les éléments utiles sont regroupés dans un suivi clair au lieu de rester dispersés.</p>
             </article>
             <article class="process-step">
-              <span class="step-label">03</span>
-              <h3>La prochaine action est préparée</h3>
+              <div class="process-step-heading">
+                <span class="step-label">03</span>
+                <h3>La prochaine action est préparée</h3>
+              </div>
               <p>Qualification, priorité, rappel ou brouillon peuvent être préparés selon vos règles.</p>
             </article>
             <article class="process-step">
-              <span class="step-label">04</span>
-              <h3>Vous gardez le contrôle</h3>
+              <div class="process-step-heading">
+                <span class="step-label">04</span>
+                <h3>Vous gardez le contrôle</h3>
+              </div>
               <p>Les actions sensibles restent soumises à une validation humaine lorsqu’elle est nécessaire.</p>
             </article>
           </div>
@@ -430,7 +438,7 @@
 <text x="237.5" y="246" text-anchor="middle" style="fill:var(--color-ink);font-size:13px;font-weight:500">Pilotage</text>
 </g>
 <g class="as-node">
-<rect x="40" y="294" width="240" height="44" rx="10" style="fill:#00b0ff;stroke:none"/>
+<rect x="40" y="294" width="240" height="44" rx="10" style="fill:#00b0ff;filter:brightness(0.7);stroke:none"/>
 <text x="160" y="321" text-anchor="middle" style="fill:#ffffff;font-size:15px;font-weight:600">Validation humaine</text>
 </g>
 <g class="as-node">
@@ -475,7 +483,7 @@
 <text x="647" y="153" text-anchor="middle" style="fill:var(--color-ink);font-size:13px;font-weight:500">Pilotage</text>
 </g>
 <g class="as-node">
-<rect x="762" y="93" width="165" height="44" rx="10" style="fill:#00b0ff;stroke:none"/>
+<rect x="762" y="93" width="165" height="44" rx="10" style="fill:#00b0ff;filter:brightness(0.7);stroke:none"/>
 <text x="844.5" y="120" text-anchor="middle" style="fill:#ffffff;font-size:15px;font-weight:600">Validation humaine</text>
 </g>
 <g class="as-node">
@@ -486,6 +494,10 @@
 <figcaption style="margin-top:0.9rem;font-size:0.95rem;line-height:1.5;color:var(--color-muted)">Un agent superviseur coordonne des agents spécialisés. Les décisions sensibles restent entre vos mains.</figcaption>
 </figure>
 <style>
+body.home-page .home-demo .process-step-heading { display: flex; align-items: center; gap: 0.65rem; margin-bottom: 0.55rem; }
+body.home-page .home-demo .process-step-heading .step-label { flex: 0 0 auto; margin: 0; }
+body.home-page .home-demo .process-step-heading h3 { flex: 1; min-width: 0; margin: 0; }
+
 body.home-page .agent-card-title { display: flex; align-items: center; gap: 0.65rem; }
 body.home-page .agent-card-title span { min-width: 0; }
 body.home-page .agent-card-icon { width: 26px; height: 26px; flex: 0 0 26px; }
