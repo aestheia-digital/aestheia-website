@@ -1,0 +1,21 @@
+/* Assistant IA : disposition approuvée, horizontale sur ordinateur. */
+.assistant-schema { font-family: Inter, Arial, sans-serif; color: var(--color-ink); margin: 2rem 0 0; }
+    .assistant-schema .flow { display:grid; grid-template-columns:1fr 1fr 2.1fr 1fr .7fr; gap:20px; align-items:center; }
+    .assistant-schema .step { position:relative; text-align:center; font-size:clamp(12px, 1.1vw, 15px); line-height:1.4; }
+    .assistant-schema .step:not(:last-child)::after { content:'→'; color:#00b0ff; position:absolute; left:calc(100% + 3px); top:50%; transform:translateY(-50%); font-size:20px; }
+    .assistant-schema .node { border:1px solid var(--color-border); background:var(--color-mist); border-radius:9px; padding:14px 6px; font-weight:500; }
+    .assistant-schema .sub { display:block; color:var(--color-muted); font-size:clamp(11px, 1vw, 13px); margin-top:4px; font-weight:400; }
+    .assistant-schema .assistant { background:var(--color-accent); border-color:var(--color-accent); color:var(--color-bg); }
+    .assistant-schema .validation { background:#007eae; border-color:#007eae; color:#fff; }
+    .assistant-schema .action { background:#fff; border-color:#fff; color:#1e2a50; }
+    .assistant-schema .tasks { border:1px dashed #00b0ff; padding:10px; border-radius:10px; }
+    .assistant-schema .tasks-title { color:var(--color-muted); margin-bottom:9px; font-size:clamp(11px, 1vw, 13px); }
+    .assistant-schema .task-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+    .assistant-schema .task-grid .node { padding:10px 4px; min-height:38px; display:flex; align-items:center; justify-content:center; font-size:clamp(11px, 1vw, 13px); }
+    .assistant-schema .caption { margin:24px auto 0; color:var(--color-muted); font-size:13px; line-height:1.6; text-align:center; max-width:640px; }
+    @media(max-width:649px) {
+      .assistant-schema .flow { grid-template-columns:1fr; gap:24px; max-width:300px; margin:auto; }
+      .assistant-schema .step:not(:last-child)::after { content:'↓'; left:50%; top:100%; transform:translateX(-50%); }
+      .assistant-schema .step { font-size:14px; }
+      .assistant-schema .task-grid .node { font-size:clamp(12px, 1.1vw, 15px); }
+    }
