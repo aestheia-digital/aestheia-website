@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+  <defs>
+    <linearGradient id="aestheiaGradient" x1="4" y1="3" x2="20" y2="21" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5e17eb"/>
+      <stop offset=".55" stop-color="#0077dd"/>
+      <stop offset="1" stop-color="#00b0ff"/>
+    </linearGradient>
+  </defs>
+  <g stroke="url(#aestheiaGradient)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 2V1M4.5 14v-1M19.5 14v-1"/>
+    <rect x="7" y="3" width="10" height="7" rx="1.8"/>
+    <rect x="1" y="15" width="8" height="7" rx="1.5"/>
+    <rect x="15" y="15" width="8" height="7" rx="1.5"/>
+    <path d="M10 6h.1M14 6h.1M10.5 8h3M3.5 18h.1M6.5 18h.1M3.5 20h3M17.5 18h.1M20.5 18h.1M17.5 20h3M9 11l-2 2M15 11l2 2"/>
+  </g>
+</svg>
