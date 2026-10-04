@@ -931,3 +931,22 @@ body.institutes-page #contenu > .institutes-assistant-section .feature-list {
   margin-top: clamp(1.5rem, 2.5vw, 2rem);
   margin-bottom: 1.75rem;
 }
+
+/* Encadrés Institut : violet aubergine, modes jour et nuit, tous supports. */
+html body.institutes-page #contenu > .section :is(.institutes-reality-conclusion, .institutes-editorial-benefit, .institutes-method-conclusion, .institutes-onboarding-benefit) {
+  background: #49365F !important;
+  color: #F3F0F7 !important;
+  border-color: transparent !important;
+  border-left: 0 !important;
+  box-shadow: none !important;
+}
+html body.institutes-page #contenu > .section :is(.institutes-reality-conclusion, .institutes-editorial-benefit, .institutes-method-conclusion, .institutes-onboarding-benefit) strong {
+  color: #F3F0F7 !important;
+}
+html body.institutes-page #contenu > .section :is(.institutes-reality-conclusion, .institutes-editorial-benefit, .institutes-method-conclusion, .institutes-onboarding-benefit)::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px !important;
+  background: #9B7CFF !important;
+}
