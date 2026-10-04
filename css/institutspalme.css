@@ -932,16 +932,16 @@ body.institutes-page #contenu > .institutes-assistant-section .feature-list {
   margin-bottom: 1.75rem;
 }
 
-/* Encadrés Institut : violet aubergine, modes jour et nuit, tous supports. */
+/* Encadrés Institut : même violet que l’agent assistant, tous supports. */
 html body.institutes-page #contenu > .section :is(.institutes-reality-conclusion, .institutes-editorial-benefit, .institutes-method-conclusion, .institutes-onboarding-benefit) {
-  background: #49365F !important;
-  color: #F3F0F7 !important;
+  background: var(--color-accent) !important;
+  color: #13213B !important;
   border-color: transparent !important;
   border-left: 0 !important;
   box-shadow: none !important;
 }
 html body.institutes-page #contenu > .section :is(.institutes-reality-conclusion, .institutes-editorial-benefit, .institutes-method-conclusion, .institutes-onboarding-benefit) strong {
-  color: #F3F0F7 !important;
+  color: #13213B !important;
 }
 html body.institutes-page #contenu > .section :is(.institutes-reality-conclusion, .institutes-editorial-benefit, .institutes-method-conclusion, .institutes-onboarding-benefit)::before {
   content: "";
@@ -949,4 +949,39 @@ html body.institutes-page #contenu > .section :is(.institutes-reality-conclusion
   inset: 0 auto 0 0;
   width: 3px !important;
   background: #9B7CFF !important;
+}
+
+/* Encadrés violets : texte plus léger, sans changer la palette. */
+html body.institutes-page #contenu > .section :is(.institutes-reality-conclusion, .institutes-editorial-benefit, .institutes-method-conclusion, .institutes-onboarding-benefit) {
+  font-weight: 400 !important;
+}
+html body.institutes-page #contenu > .section :is(.institutes-reality-conclusion, .institutes-editorial-benefit, .institutes-method-conclusion, .institutes-onboarding-benefit) strong,
+html body.institutes-page #contenu > .section :is(.institutes-editorial-benefit, .institutes-onboarding-benefit) strong::after {
+  font-weight: 500 !important;
+}
+body.institutes-page .assistant-schema .node.assistant {
+  font-weight: 400;
+}
+
+/* Schéma : légende à gauche et libellés de validation allégés. */
+body.institutes-page .assistant-schema > figcaption.caption {
+  width: 100%;
+  max-width: none;
+  text-align: left;
+  margin-top: 32px;
+}
+body.institutes-page .assistant-schema .node.assistant {
+  color: #13213B;
+  font-weight: 400;
+}
+body.institutes-page .assistant-schema .node.validation {
+  font-weight: 400;
+}
+
+body.institutes-page .assistant-schema > figcaption.caption .caption-arrow {
+  display: inline-block;
+  font-size: 1.25em;
+  line-height: 1;
+  margin: 0 0.25em;
+  vertical-align: baseline;
 }
