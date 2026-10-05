@@ -67,7 +67,9 @@
       <link rel="stylesheet" href="../css/cta-global.css?v=20260920-cta-lock">
       <link rel="stylesheet" href="../css/dark-no-purple-halos.css?v=20260920-sector-final-blue-halo">
     <link rel="stylesheet" href="../css/night-depth-desktop-cards.css?v=20261003">
-  </head>
+    <link rel="stylesheet" href="../css/assistant-schema.css?v=20261005">
+  <link rel="stylesheet" href="../css/multi-agent-schema.css?v=20261005">
+</head>
   <body class="spa-page">
     <a class="skip-link" href="#contenu">Aller au contenu</a>
     <header class="site-header">
@@ -198,6 +200,26 @@
             </details>
           </div>
           <p class="sector-reality-conclusion"><strong>Agent superviseur :</strong> il analyse la situation, sollicite les agents concernés, croise leurs réponses et prépare la prochaine étape. Il coordonne le système sans remplacer la décision du spa manager ou de la direction.</p>
+          <figure class="assistant-schema multi-agent-schema" aria-label="Fonctionnement du système multi-agents pour les spas hôteliers">
+            <div class="flow">
+              <div class="step node">Demandes et informations<span class="sub">Spa, hôtel, e-mails, formulaires</span></div>
+              <div class="step node assistant">Agent superviseur<span class="sub">Analyse et délégation</span></div>
+              <div class="step tasks">
+                <div class="tasks-title">Agents sollicités selon la demande</div>
+                <div class="task-grid">
+<div class="node agent-role"><img src="../assets/icons/robot-customer.svg" alt="" aria-hidden="true" width="20" height="20"><span>Agent relation client</span></div>
+<div class="node agent-role"><img src="../assets/icons/robot-reservations.svg" alt="" aria-hidden="true" width="20" height="20"><span>Agent réservations</span></div>
+<div class="node agent-role"><img src="../assets/icons/robot-sales.svg" alt="" aria-hidden="true" width="20" height="20"><span>Agent crm et fidélisation</span></div>
+<div class="node agent-role"><img src="../assets/icons/robot-reporting.svg" alt="" aria-hidden="true" width="20" height="20"><span>Agent direction</span></div>
+<div class="node agent-role"><img src="../assets/icons/robot-operations.svg" alt="" aria-hidden="true" width="20" height="20"><span>Agent opérations</span></div>
+<div class="node agent-role"><img src="../assets/icons/robot-quality.svg" alt="" aria-hidden="true" width="20" height="20"><span>Agent qualité</span></div>
+                </div>
+              </div>
+              <div class="step node validation">Validation humaine<span class="sub">Si nécessaire</span></div>
+              <div class="step node action">Action</div>
+            </div>
+            <figcaption class="multi-agent-caption"><img class="caption-pictogram" src="../assets/icons/agent-assistant.svg" alt="" aria-hidden="true" width="30" height="30"><span class="caption-copy">Un agent superviseur coordonne des agents spécialisés <span class="caption-arrow" aria-hidden="true">→</span> Les décisions sensibles restent entre vos mains.</span></figcaption>
+          </figure>
         </div>
       </section>
 
@@ -352,5 +374,6 @@
     <script src="../js/consent-manager.js"></script>
     <script src="../js/main.js?v=header-type-20260924"></script>
     <script src="../js/night-desktop-cards.js?v=20260920b"></script>
-  </body>
+    <script src="../js/assistant-schema.js?v=20261005" defer></script>
+</body>
 </html>
