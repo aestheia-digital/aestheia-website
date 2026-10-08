@@ -1,5 +1,5 @@
 /* Assistant IA : disposition approuvée, horizontale sur ordinateur. */
-.assistant-schema { font-family: Inter, Arial, sans-serif; color: var(--color-ink); margin: clamp(3rem, 5vw, 4rem) 0 0; }
+.assistant-schema { font-family: "DM Sans", Arial, sans-serif; color: var(--color-ink); margin: clamp(3rem, 5vw, 4rem) 0 0; }
     .assistant-schema .flow { display:grid; grid-template-columns:1fr 1fr 2.1fr 1fr .7fr; gap:20px; align-items:center; }
     .assistant-schema .step { position:relative; text-align:center; font-size:clamp(12px, 1.1vw, 15px); line-height:1.4; }
     .assistant-schema .step:not(:last-child)::after { content:'→'; color:#00b0ff; position:absolute; left:calc(100% + 3px); top:50%; transform:translateY(-50%); font-size:20px; }
@@ -88,4 +88,11 @@ body.medicine-page #contenu > .medicine-assistant-section :is(p, .feature-list l
 body.medicine-page #contenu > .medicine-assistant-section strong,
 body.medicine-page #contenu > .medicine-assistant-section .eyebrow {
   font-weight: 500;
+}
+
+/* Même palette sur les quatre schémas assistants et les deux flux multi-agents. */
+@layer refonte {
+  html[data-theme="light"] .assistant-schema .node { background: #F3F0FF !important; border-color: #CBBFF7 !important; color: #1B2A6B !important; }
+  html[data-theme="light"] .assistant-schema .node .sub { color: #1B2A6B !important; }
+  .assistant-schema .action, html[data-theme="light"] .assistant-schema .action { background: #1E2B70 !important; border: 1px solid #5B6CC9 !important; color: #FFFFFF !important; }
 }

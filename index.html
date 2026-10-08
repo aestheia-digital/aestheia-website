@@ -1,7 +1,9 @@
 <!doctype html>
-<html lang="fr" class="theme-dark" data-theme="dark">
+<html lang="fr">
   <head>
     <meta charset="utf-8">
+    <script src="js/theme.js"></script>
+    <link rel="preload" href="assets/fonts/dm-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Agents IA et automatisation pour les métiers de l’esthétique | AesthéIA</title>
     <meta name="description" content="Agents IA, systèmes multi-agents et automatisations pour spas, thalasso, médecine esthétique et instituts, avec validation humaine.">
@@ -19,9 +21,9 @@
     <meta name="twitter:description" content="Agents IA, systèmes multi-agents et automatisations pour spas, thalasso, médecine esthétique et instituts, avec validation humaine.">
     <meta name="twitter:image" content="https://aestheia.fr/assets/images/partage/partage_accueil.jpg">
     <link rel="icon" href="assets/images/brand/logo.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+
+
+
     <link rel="stylesheet" href="css/styles.css?v=hero-finesse-20260925d">
     <link rel="stylesheet" href="css/consent-manager.css">
     <link rel="stylesheet" href="css/home-certifications.css?v=unified-header-logo-20260924">
@@ -216,7 +218,6 @@
             <p class="hero-subtitle">Plus de temps pour diriger, moins de temps à gérer</p>
             <p class="hero-specialties"><span><strong>Expertise sectorielle :</strong> <span class="hero-specialty">Médecine &amp; chirurgie esthétiques</span> · <span class="hero-specialty">Spas &amp; hôtellerie</span> · <span class="hero-specialty">Thalasso &amp; thermal</span> · <span class="hero-specialty">Instituts &amp; indépendantes</span></span></p>
             <div class="hero-actions">
-              <a class="btn btn-primary" href="https://forms.gle/W7JrgaJ6yDSuwgFe7" target="_blank" rel="noopener noreferrer">Identifions vos besoins</a>
               <a class="btn btn-ghost" href="https://calendar.app.google/qx6dT7WJfTrsFe6j9" target="_blank" rel="noopener noreferrer">Réservez un échange de 30 minutes</a>
             </div>
             <p class="hero-reassurance">Premier rendez-vous gratuit et sans engagement.</p>
@@ -232,19 +233,19 @@
           <p class="section-intro">AesthéIA intervient là où votre organisation perd du temps, où vos demandes perdent en suivi et où votre visibilité peut mieux soutenir votre activité.</p>
           <div class="grid grid-4 home-problem-grid">
             <article class="card problem-card">
-              <h3>Du temps récupéré</h3>
+              <h3 class="card-title">Du temps récupéré</h3>
               <p>Moins de ressaisies, de recherches d’informations et de tâches répétitives à traiter manuellement.</p>
             </article>
             <article class="card problem-card">
-              <h3>Des opportunités mieux suivies</h3>
+              <h3 class="card-title">Des opportunités mieux suivies</h3>
               <p>Les demandes, devis et relances sont plus faciles à identifier, à prioriser et à traiter au bon moment.</p>
             </article>
             <article class="card problem-card">
-              <h3>Une visibilité plus forte</h3>
+              <h3 class="card-title">Une visibilité plus forte</h3>
               <p>Votre site, votre présence locale et vos contenus sont structurés pour être mieux compris et faciliter la prise de contact.</p>
             </article>
             <article class="card problem-card">
-              <h3>Une organisation plus lisible</h3>
+              <h3 class="card-title">Une organisation plus lisible</h3>
               <p>Les informations utiles sont regroupées et les étapes clés deviennent plus simples à suivre pour vous comme pour votre équipe.</p>
             </article>
           </div>
@@ -260,7 +261,7 @@
             <a class="sector-card" href="/medecine-esthetique/">
               <img src="assets/images/metiers/chirurgien-esthetique-marketing-digital.webp" alt="Chirurgien esthétique en intervention illustrant la précision, l'expertise médicale et la qualité des soins." title="Chirurgien et médecin esthétique - stratégie digitale AesthéIA" width="933" height="1400" loading="lazy" decoding="async">
               <div class="sector-card-content">
-                <h3>Médecins et chirurgiens esthétiques</h3>
+                <h3 class="card-title">Médecins et chirurgiens esthétiques</h3>
                 <p>AesthéIA aide les cabinets à structurer leur présence digitale, mieux organiser les demandes de consultation et fluidifier les tâches non médicales liées au suivi patient, dans le respect de la confidentialité et du contrôle humain.</p>
                 <span class="text-link">Découvrir l’expertise dédiée</span>
               </div>
@@ -268,7 +269,7 @@
             <a class="sector-card" href="/spa-hotelier/">
               <img src="assets/images/metiers/spa-hotelier-marketing-digital.webp" alt="Piscine intérieure d'un spa hôtelier illustrant un univers de bien-être, d'excellence et d'expérience client premium." title="Spa hôtelier - stratégie digitale et présence en ligne" width="1400" height="1400" loading="lazy" decoding="async">
               <div class="sector-card-content">
-                <h3>Spas hôteliers et spas haut de gamme</h3>
+                <h3 class="card-title card-title-long">Spas hôteliers et spas haut de gamme</h3>
                 <p>AesthéIA aide les spas à mieux organiser leurs campagnes saisonnières, leurs contenus, leurs demandes de réservation et le suivi des clients, tout en facilitant la circulation des informations entre les équipes.</p>
                 <span class="text-link">Découvrir l’expertise dédiée</span>
               </div>
@@ -276,7 +277,7 @@
             <a class="sector-card" href="/thalasso-thermal/">
               <img src="assets/images/metiers/cure-thermale-presence-digitale.webp" alt="Bain thermal en extérieur illustrant la détente, la sérénité et la qualité d'expérience des établissements wellness." title="Centres aquatiques, thalassothérapie et cures thermales - stratégie digitale AesthéIA" width="1050" height="1400" loading="lazy" decoding="async">
               <div class="sector-card-content">
-                <h3>Centres thermaux, thalassothérapies et centres aquatiques</h3>
+                <h3 class="card-title card-title-long">Centres thermaux, thalassothérapies et centres aquatiques</h3>
                 <p>AesthéIA aide les établissements à rendre leurs offres plus lisibles, anticiper leurs temps forts, centraliser leurs informations et simplifier le suivi des demandes sur des parcours souvent complexes.</p>
                 <span class="text-link">Découvrir l’expertise dédiée</span>
               </div>
@@ -284,7 +285,7 @@
             <a class="sector-card" href="/instituts-independantes/">
               <img src="assets/images/metiers/institut-beaute-marketing-digital.webp" alt="Soin du visage en institut de beauté illustrant un environnement professionnel, apaisant et dédié au bien-être des clients." title="Institut de beauté et indépendants - stratégie digitale AesthéIA" width="933" height="1400" loading="lazy" decoding="async">
               <div class="sector-card-content">
-                <h3>Instituts de beauté et indépendants</h3>
+                <h3 class="card-title card-title-long">Instituts de beauté et indépendants</h3>
                 <p>AesthéIA aide les instituts à mieux organiser leur communication, leurs demandes, leurs relances et certaines tâches administratives afin de réduire la charge quotidienne.</p>
                 <span class="text-link">Découvrir l’expertise dédiée</span>
               </div>
@@ -303,28 +304,28 @@
             <article class="process-step">
               <div class="process-step-heading">
                 <span class="step-label">01</span>
-                <h3>Une demande arrive</h3>
+                <h3 class="card-title card-title-long">Une demande arrive</h3>
               </div>
               <p>Depuis votre site, un formulaire, un e-mail ou un autre canal de contact.</p>
             </article>
             <article class="process-step">
               <div class="process-step-heading">
                 <span class="step-label">02</span>
-                <h3>Les informations sont structurées</h3>
+                <h3 class="card-title card-title-long">Les informations sont structurées</h3>
               </div>
               <p>Les éléments utiles sont regroupés dans un suivi clair au lieu de rester dispersés.</p>
             </article>
             <article class="process-step">
               <div class="process-step-heading">
                 <span class="step-label">03</span>
-                <h3>La prochaine action est préparée</h3>
+                <h3 class="card-title card-title-long">La prochaine action est préparée</h3>
               </div>
               <p>Qualification, priorité, rappel ou brouillon peuvent être préparés selon vos règles.</p>
             </article>
             <article class="process-step">
               <div class="process-step-heading">
                 <span class="step-label">04</span>
-                <h3>Vous gardez le contrôle</h3>
+                <h3 class="card-title card-title-long">Vous gardez le contrôle</h3>
               </div>
               <p>Les actions sensibles restent soumises à une validation humaine lorsqu’elle est nécessaire.</p>
             </article>
@@ -343,7 +344,7 @@
           </h2>
           <div class="offer-grid">
             <article class="offer-card">
-              <h3 class="title-with-icon card-title-with-icon">
+              <h3 class="title-with-icon card-title-with-icon card-title card-title-long">
                 <img class="title-pictogram card-title-pictogram" src="assets/icons/automation-network.svg" alt="" aria-hidden="true">
                 <span>Automatiser ce qui vous fait perdre du temps</span>
               </h3>
@@ -351,7 +352,7 @@
               <p class="offer-result"><strong>Ce que cela apporte :</strong> moins de manipulations, d’oublis et de temps consacré aux tâches à faible valeur.</p>
             </article>
             <article class="offer-card">
-              <h3 class="title-with-icon card-title-with-icon">
+              <h3 class="title-with-icon card-title-with-icon card-title card-title-long">
                 <img class="title-pictogram card-title-pictogram" src="assets/icons/acquisition-target.svg" alt="" aria-hidden="true">
                 <span>Mieux suivre chaque demande et chaque relance</span>
               </h3>
@@ -359,7 +360,7 @@
               <p class="offer-result"><strong>Ce que cela apporte :</strong> un suivi commercial plus régulier et moins d’opportunités laissées sans suite.</p>
             </article>
             <article class="offer-card">
-              <h3 class="title-with-icon card-title-with-icon">
+              <h3 class="title-with-icon card-title-with-icon card-title card-title-long">
                 <img class="title-pictogram card-title-pictogram" src="assets/icons/seo-search.svg" alt="" aria-hidden="true">
                 <span>Renforcer votre visibilité et vos parcours de conversion</span>
               </h3>
@@ -367,7 +368,7 @@
               <p class="offer-result"><strong>Ce que cela apporte :</strong> une présence digitale plus cohérente, mieux comprise par les moteurs de recherche et orientée vers la prise de contact.</p>
             </article>
             <article class="offer-card">
-              <h3 class="title-with-icon card-title-with-icon">
+              <h3 class="title-with-icon card-title-with-icon card-title card-title-long">
                 <img class="title-pictogram card-title-pictogram" src="assets/icons/complete-coordination.svg" alt="" aria-hidden="true">
                 <span>Piloter avec des indicateurs utiles</span>
               </h3>
@@ -385,19 +386,23 @@
           <p class="section-intro">Une automatisation exécute des règles définies. Un agent IA peut analyser une situation, utiliser plusieurs outils et préparer l’action adaptée. Pour les organisations plus complexes, plusieurs agents spécialisés peuvent travailler ensemble sous la coordination d’un agent superviseur.</p>
           <div class="grid grid-4">
             <article class="card">
-              <h3 class="agent-card-title"><img class="agent-card-icon" src="assets/icons/systems-cog.svg" alt="" aria-hidden="true"><span>Automatisation</span></h3>
+              <h3 class="agent-card-title card-title"><img class="agent-card-icon" src="assets/icons/systems-cog.svg" alt="" aria-hidden="true"><span>Automatisation</span></h3>
               <p>Elle prend en charge les tâches prévisibles et répétitives avec un fonctionnement stable et mesurable.</p>
             </article>
             <article class="card">
-              <h3 class="agent-card-title"><img class="agent-card-icon" src="assets/icons/agent-robot.svg" alt="" aria-hidden="true"><span>Agent IA spécialisé</span></h3>
+              <h3 class="agent-card-title card-title"><img class="agent-card-icon" src="assets/icons/agent-robot.svg" alt="" aria-hidden="true"><span>Agent IA spécialisé</span></h3>
               <p>Il analyse un contexte précis, consulte les informations autorisées et prépare une action dans les limites définies.</p>
             </article>
             <article class="card">
-              <h3 class="agent-card-title"><img class="agent-card-icon" src="assets/icons/agents-triangle.svg" alt="" aria-hidden="true"><span>Système multi-agents</span></h3>
+              <h3 class="agent-card-title card-title"><img class="agent-card-icon" src="assets/icons/agents-triangle.svg" alt="" aria-hidden="true"><span>Système multi-agents</span></h3>
               <p>Plusieurs agents spécialisés collaborent sur la relation client, les réservations, le CRM, la qualité, les opérations ou le pilotage.</p>
             </article>
-            <article class="card">
-              <h3 class="agent-card-title"><img class="agent-card-icon" src="assets/icons/human-stop.svg" alt="" aria-hidden="true"><span>Validation humaine</span></h3>
+            <article class="card target-control-card target-control-card-existing">
+              <svg class="control-pictogram" viewBox="0 0 24 24" aria-hidden="true" focusable="false" style="--control-stroke:url(#control-gradient-1)"><defs><linearGradient id="control-gradient-1" x1="4" y1="3" x2="20" y2="21" gradientUnits="userSpaceOnUse"><stop stop-color="#5e17eb"/><stop offset=".55" stop-color="#0077dd"/><stop offset="1" stop-color="#00b0ff"/></linearGradient></defs><path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2" />
+  <path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2" />
+  <path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8" />
+  <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15" /></svg>
+              <h3 class="agent-card-title card-title"><span>Validation humaine</span></h3>
               <p>Les décisions sensibles, les messages clients et les actions à impact restent soumis au contrôle de vos équipes.</p>
             </article>
           </div>
@@ -442,7 +447,7 @@
 <rect x="40" y="294" width="240" height="44" rx="10" style="fill:#00b0ff;filter:brightness(0.7);stroke:none"/>
 <text x="160" y="321" text-anchor="middle" style="fill:#ffffff;font-size:15px;font-weight:500">Validation humaine</text>
 </g>
-<g class="as-node">
+<g class="as-node as-action">
 <rect x="40" y="362" width="240" height="40" rx="10" style="fill:#ffffff"/>
 <text x="160" y="387" text-anchor="middle" style="fill:#1e2a50;font-size:15px;font-weight:500">Action</text>
 </g>
@@ -487,7 +492,7 @@
 <rect x="762" y="93" width="165" height="44" rx="10" style="fill:#00b0ff;filter:brightness(0.7);stroke:none"/>
 <text x="844.5" y="120" text-anchor="middle" style="fill:#ffffff;font-size:15px;font-weight:500">Validation humaine</text>
 </g>
-<g class="as-node">
+<g class="as-node as-action">
 <rect x="955" y="95" width="103" height="40" rx="10" style="fill:#ffffff"/>
 <text x="1006.5" y="120" text-anchor="middle" style="fill:#1e2a50;font-size:15px;font-weight:500">Action</text>
 </g>
@@ -507,7 +512,7 @@ body.home-page .agent-card-icon { width: 26px; height: 26px; flex: 0 0 26px; }
 .agents-schema .as-node { transform-box: fill-box; transition: transform 0.25s ease; }
 .agents-schema { --as-dash: #237fdf; }
 html.theme-dark .agents-schema { --as-dash: #00b0ff; }
-@media (prefers-color-scheme: dark) { html:not([data-theme="light"]) .agents-schema { --as-dash: #00b0ff; } }
+html:where([data-theme="dark"]):not([data-theme="light"]) .agents-schema { --as-dash: #00b0ff; }
 .agents-schema .as-ar { fill: none; stroke: var(--as-dash); stroke-width: 1.25; stroke-dasharray: 4 4; }
 @media (min-width: 1024px) {
 .agents-schema { max-width: none; }
@@ -562,19 +567,19 @@ fig.addEventListener("touchstart", function () {}, { passive: true });
           <p class="section-intro">L’objectif n’est pas d’ajouter des outils. Il est de corriger les points de friction qui freinent votre organisation, votre suivi ou votre visibilité.</p>
           <div class="grid grid-4">
             <article class="card">
-              <h3>Une connaissance métier réelle</h3>
+              <h3 class="card-title">Une connaissance métier réelle</h3>
               <p>Plus de vingt ans de terrain dans l’esthétique, le spa et la médecine esthétique pour comprendre les contraintes avant de proposer une solution.</p>
             </article>
             <article class="card">
-              <h3>Visibilité et automatisation pensées ensemble</h3>
+              <h3 class="card-title card-title-long">Visibilité et automatisation pensées ensemble</h3>
               <p>Le parcours prospect, la présence digitale et les processus internes sont regardés comme un ensemble, pas comme des sujets séparés.</p>
             </article>
             <article class="card">
-              <h3>Des systèmes adaptés à l’existant</h3>
+              <h3 class="card-title card-title-long">Des systèmes adaptés à l’existant</h3>
               <p>Les outils déjà en place sont conservés lorsqu’ils restent pertinents, afin d’éviter les changements inutiles.</p>
             </article>
             <article class="card">
-              <h3>Des données maîtrisées</h3>
+              <h3 class="card-title">Des données maîtrisées</h3>
               <p>Hébergement certifié HDS pour les données de santé, hébergement en France et validation humaine avant chaque envoi automatisé. L’IA libère du temps, sans remplacer votre équipe.</p>
             </article>
           </div>
@@ -594,22 +599,22 @@ fig.addEventListener("touchstart", function () {}, { passive: true });
             <div class="home-section-accordion-body">
               <div class="grid grid-4 engagement-grid">
               <article class="card engagement-card">
-                <h3>Diagnostic stratégique</h3>
+                <h3 class="card-title">Diagnostic stratégique</h3>
                 <p>Analyse des freins, priorités et opportunités.</p>
                 <p class="deliverable"><strong>Livrable :</strong> plan d’action priorisé.</p>
               </article>
               <article class="card engagement-card">
-                <h3>Première solution</h3>
+                <h3 class="card-title">Première solution</h3>
                 <p>Un besoin ciblé traité par une automatisation ou un agent IA spécialisé, testés en conditions réelles.</p>
                 <p class="deliverable"><strong>Livrable :</strong> solution fonctionnelle et documentation.</p>
               </article>
               <article class="card engagement-card">
-                <h3>Intervention complète</h3>
+                <h3 class="card-title">Intervention complète</h3>
                 <p>Acquisition, suivi, automatisation, visibilité et pilotage reliés selon vos besoins. Pour les structures multi-sites, un système multi-agents peut être mis en place selon les besoins.</p>
                 <p class="deliverable"><strong>Livrable :</strong> systèmes, mise en route et documentation.</p>
               </article>
               <article class="card engagement-card">
-                <h3>3 mois de suivi inclus</h3>
+                <h3 class="card-title card-title-long">3 mois de suivi inclus</h3>
                 <p>Après le déploiement, je vérifie le bon fonctionnement du système et j’effectue les ajustements nécessaires pendant 3 mois.</p>
                 <p class="deliverable"><strong>Ensuite :</strong> vous restez autonome, sans abonnement ni contrat de maintenance imposé.</p>
               </article>
@@ -630,36 +635,44 @@ fig.addEventListener("touchstart", function () {}, { passive: true });
               <div class="process-strip home-process">
               <article class="process-step">
                 <span class="step-label">Étape 1</span>
-                <h3>Analyser</h3>
+                <h3 class="card-title">Analyser</h3>
                 <p>Comprendre les objectifs, les points de friction et les outils déjà en place.</p>
               </article>
               <article class="process-step">
                 <span class="step-label">Étape 2</span>
-                <h3>Prioriser</h3>
+                <h3 class="card-title">Prioriser</h3>
                 <p>Choisir les actions qui apportent le plus de clarté, de temps gagné ou de suivi.</p>
               </article>
               <article class="process-step">
                 <span class="step-label">Étape 3</span>
-                <h3>Concevoir et tester</h3>
+                <h3 class="card-title card-title-long">Concevoir et tester</h3>
                 <p>Mettre en place une première solution et la vérifier dans les conditions réelles.</p>
               </article>
               <article class="process-step">
                 <span class="step-label">Étape 4</span>
-                <h3>Déployer et faire évoluer</h3>
+                <h3 class="card-title card-title-long">Déployer et faire évoluer</h3>
                 <p>Documenter, faciliter la prise en main et améliorer selon les usages.</p>
               </article>
             </div>
               <div class="grid grid-3 safety-grid home-section-safety">
-              <article class="card">
-                <h3>Validation humaine</h3>
+              <article class="card target-control-card">
+                <svg class="control-pictogram" viewBox="0 0 24 24" aria-hidden="true" focusable="false" style="--control-stroke:url(#control-gradient-2)"><defs><linearGradient id="control-gradient-2" x1="4" y1="3" x2="20" y2="21" gradientUnits="userSpaceOnUse"><stop stop-color="#5e17eb"/><stop offset=".55" stop-color="#0077dd"/><stop offset="1" stop-color="#00b0ff"/></linearGradient></defs><path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2" />
+  <path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2" />
+  <path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8" />
+  <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15" /></svg>
+                <h3 class="card-title">Validation humaine</h3>
                 <p>Les actions sensibles peuvent conserver une étape de contrôle avant envoi ou exécution.</p>
               </article>
-              <article class="card">
-                <h3>Tests et données maîtrisées</h3>
+              <article class="card target-control-card">
+                <svg class="control-pictogram" viewBox="0 0 24 24" aria-hidden="true" focusable="false" style="--control-stroke:url(#control-gradient-3)"><defs><linearGradient id="control-gradient-3" x1="4" y1="3" x2="20" y2="21" gradientUnits="userSpaceOnUse"><stop stop-color="#5e17eb"/><stop offset=".55" stop-color="#0077dd"/><stop offset="1" stop-color="#00b0ff"/></linearGradient></defs><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+  <path d="m9 12 2 2 4-4" /></svg>
+                <h3 class="card-title">Tests et données maîtrisées</h3>
                 <p>Les systèmes sont vérifiés avant déploiement et adaptés à la nature des informations traitées.</p>
               </article>
-              <article class="card">
-                <h3>Évolution progressive</h3>
+              <article class="card target-control-card">
+                <svg class="control-pictogram" viewBox="0 0 24 24" aria-hidden="true" focusable="false" style="--control-stroke:url(#control-gradient-4)"><defs><linearGradient id="control-gradient-4" x1="4" y1="3" x2="20" y2="21" gradientUnits="userSpaceOnUse"><stop stop-color="#5e17eb"/><stop offset=".55" stop-color="#0077dd"/><stop offset="1" stop-color="#00b0ff"/></linearGradient></defs><polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+  <polyline points="16 7 22 7 22 13" /></svg>
+                <h3 class="card-title">Évolution progressive</h3>
                 <p>Les outils existants sont conservés lorsqu’ils restent pertinents.</p>
               </article>
               </div>
@@ -769,11 +782,11 @@ fig.addEventListener("touchstart", function () {}, { passive: true });
           <div>
             <p class="eyebrow">Premier pas</p>
             <h2>Parlons de vos priorités</h2>
-            <p>En 30 minutes, identifions ce qui peut être simplifié, mieux suivi ou renforcé en priorité dans votre activité.</p>
+            <p>Parlez-moi de votre activité, de vos besoins et de vos priorités pour préparer un premier échange.</p>
           </div>
-          <div class="button-row">
-            <a class="btn btn-primary" href="https://forms.gle/W7JrgaJ6yDSuwgFe7" target="_blank" rel="noopener noreferrer">Identifions vos besoins</a>
-            <a class="btn btn-secondary" href="https://calendar.app.google/qx6dT7WJfTrsFe6j9" target="_blank" rel="noopener noreferrer">Réservez un échange de 30 minutes</a>
+          <div class="conversion-action">
+            <a class="btn btn-primary" href="https://forms.gle/W7JrgaJ6yDSuwgFe7" target="_blank" rel="noopener noreferrer">Parlez-moi de votre projet</a>
+            <p class="conversion-note">Quelques questions pour préparer notre premier échange. Sans engagement.</p>
           </div>
         </div>
       </section>
@@ -807,42 +820,21 @@ fig.addEventListener("touchstart", function () {}, { passive: true });
     </main>
 
     <footer class="site-footer">
-      <div class="container footer-grid">
-        <div class="footer-column footer-brand">
-          <a class="footer-logo" href="/" aria-label="Accueil AesthéIA">
-            <span class="brand-core">Aesthé</span><span class="brand-ia">IA</span>
-          </a>
-          <p>Agents IA, systèmes multi-agents et automatisations pour les entreprises, de l’esthétique aux réseaux multi-sites.</p>
-          <p class="footer-signature">Le digital et l’IA au service de votre développement.</p>
-          <p class="footer-copyright">© 2026 AesthéIA<br>Tous droits réservés.</p>
+      <div class="container">
+        <div class="footer-top">
+          <div class="footer-identity">
+            <a class="footer-logo" href="/" aria-label="Accueil AesthéIA"><span class="brand-core">Aesthé</span><span class="brand-ia">IA</span></a>
+            <p class="footer-tagline">Le digital et l'IA au service de votre développement.</p>
+          </div>
+          <div class="footer-icons" aria-label="Contacter et suivre AesthéIA"><a href="https://www.linkedin.com/in/magalie-stankovic/" aria-label="LinkedIn de Magalie Stankovic" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor" stroke="none"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a><a href="https://share.google/1qsqoiA7MmCKgN2aT" aria-label="Fiche Google d’AesthéIA" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor" stroke="none"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg></a><a href="mailto:contact@aestheia.fr" aria-label="Envoyer un e-mail à AesthéIA"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 5 10 8L22 5"/></svg></a><a href="tel:+33642789057" aria-label="Appeler AesthéIA"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h3l2 5-3 2a15 15 0 0 0 6 6l2-3 5 2v3a3 3 0 0 1-3 3A18 18 0 0 1 3 6a3 3 0 0 1 3-3z"/></svg></a></div>
         </div>
-        <nav class="footer-column footer-links" aria-label="Secteurs d'expertise">
-          <h2 class="footer-title">Secteurs d'expertise</h2>
-          <a href="/medecine-esthetique/">Médecine et chirurgie esthétiques</a>
-          <a href="/spa-hotelier/">Spas & hôtellerie</a>
-          <a href="/thalasso-thermal/">Thalasso & thermal</a>
-          <a href="/instituts-independantes/">Instituts & indépendantes</a>
-          <a href="/automatisation-pme/">Automatisation pour TPE et PME</a>
-        </nav>
-        <nav class="footer-column footer-links" aria-label="Informations légales">
-          <h2 class="footer-title">Informations légales</h2>
-          <a href="/ressources/">Conseils &amp; ressources</a>
-          <a href="/mentions-legales">Mentions légales</a>
-          <a href="/politique-confidentialite">Politique de confidentialité</a>
-          <a href="/gestion-cookies">Gestion des cookies</a>
-          <button class="footer-cookie-button" type="button" data-manage-cookies>Gérer mes cookies</button>
-          <a href="/conditions-utilisation">Conditions d'utilisation</a>
-          <a href="/plan-du-site">Plan du site</a>
-        </nav>
-        <div class="footer-column footer-contact">
-          <h2 class="footer-title">Contact</h2>
-          <address>
-            6 rue d'Armaillé<br>
-            75017 Paris
-          </address>
-          <a href="mailto:contact@aestheia.fr">contact@aestheia.fr</a>
-          <a class="footer-phone" href="tel:+33642789057">06 42 78 90 57</a>
-          <span class="footer-social-links"><a class="footer-social" href="https://www.linkedin.com/in/magalie-stankovic/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de Magalie Stankovic (nouvel onglet)">LinkedIn</a><a class="footer-social" href="https://share.google/1qsqoiA7MmCKgN2aT" target="_blank" rel="noopener noreferrer" aria-label="Fiche Google d’AesthéIA (nouvel onglet)">Google</a></span>
+        <div class="footer-bottom">
+          <p class="footer-copyright">© 2026 AesthéIA Tous droits réservés</p>
+          <nav class="footer-legal" aria-label="Informations légales">
+            <a href="/mentions-legales">Mentions légales</a>
+            <a href="/politique-confidentialite">Politique de confidentialité</a>
+            <button class="footer-cookie-button" type="button" data-manage-cookies>Gérer mes cookies</button>
+          </nav>
         </div>
       </div>
     </footer>

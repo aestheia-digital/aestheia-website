@@ -36,56 +36,46 @@
 }
 
 /* Mobile jour : aucune nuée de particules sur le corps de l'accueil. */
-@media (max-width: 720px) and (prefers-color-scheme: light) {
-  html:not(.theme-dark) #contenu > .home-hero ~ .home-problems::after,
-  html:not(.theme-dark) #contenu > .home-hero ~ .home-offers::after,
-  html:not(.theme-dark) #contenu > .home-hero ~ .home-engagements::after,
-  html:not(.theme-dark) #contenu > .home-hero ~ .home-method::after,
-  html:not(.theme-dark) #contenu > .home-hero ~ .home-safety::after,
-  html:not(.theme-dark) #contenu > .home-hero ~ .behind-section::after,
-  html:not(.theme-dark) #contenu > .home-hero ~ .faq-section::after,
-  html:not(.theme-dark) #contenu > .home-hero ~ .location-section::after {
-    content: none !important;
-    display: none !important;
+@media (max-width: 720px) {
+  html:where([data-theme="light"]):not(.theme-dark) #contenu > .home-hero ~ .home-problems::after,
+  html:where([data-theme="light"]):not(.theme-dark) #contenu > .home-hero ~ .home-offers::after,
+  html:where([data-theme="light"]):not(.theme-dark) #contenu > .home-hero ~ .home-engagements::after,
+  html:where([data-theme="light"]):not(.theme-dark) #contenu > .home-hero ~ .home-method::after,
+  html:where([data-theme="light"]):not(.theme-dark) #contenu > .home-hero ~ .home-safety::after,
+  html:where([data-theme="light"]):not(.theme-dark) #contenu > .home-hero ~ .behind-section::after,
+  html:where([data-theme="light"]):not(.theme-dark) #contenu > .home-hero ~ .faq-section::after,
+  html:where([data-theme="light"]):not(.theme-dark) #contenu > .home-hero ~ .location-section::after {
     background: none !important;
     opacity: 0 !important;
   }
 }
 
 /* Mode jour : aucun fond de nuit ne doit déborder sur le corps des pages. */
-@media (prefers-color-scheme: light) {
-  html:not(.theme-dark) body {
+html:where([data-theme="light"]):not(.theme-dark) body {
     background: #ffffff !important;
     color: #1e2a50 !important;
   }
-
-  html:not(.theme-dark) #contenu > .section:not(.conversion-band) {
+html:where([data-theme="light"]):not(.theme-dark) #contenu > .section:not(.conversion-band) {
     color: #1e2a50;
   }
-
-  html:not(.theme-dark) #contenu > .section:not(.conversion-band):not(.section-soft):not(.section-mist):not(.section-warm):not(.positioning-section) {
+html:where([data-theme="light"]):not(.theme-dark) #contenu > .section:not(.conversion-band):not(.section-soft):not(.section-mist):not(.section-warm):not(.positioning-section) {
     background-color: #ffffff !important;
   }
-
-  html:not(.theme-dark) #contenu > .section.section-soft {
+html:where([data-theme="light"]):not(.theme-dark) #contenu > .section.section-soft {
     background: #f7f8fc !important;
   }
-
-  html:not(.theme-dark) #contenu > .section.section-mist {
+html:where([data-theme="light"]):not(.theme-dark) #contenu > .section.section-mist {
     background: linear-gradient(135deg, #f7f8fc 0%, #ffffff 52%, #eef4ff 100%) !important;
   }
-
-  html:not(.theme-dark) #contenu > .section.section-warm {
+html:where([data-theme="light"]):not(.theme-dark) #contenu > .section.section-warm {
     background: linear-gradient(135deg, #ffffff 0%, #fbfaff 52%, #f1f5ff 100%) !important;
   }
-
-  html:not(.theme-dark) #contenu > .section:not(.conversion-band) p,
-  html:not(.theme-dark) #contenu > .section:not(.conversion-band) strong,
-  html:not(.theme-dark) #contenu > .section:not(.conversion-band) h1,
-  html:not(.theme-dark) #contenu > .section:not(.conversion-band) h2 {
+html:where([data-theme="light"]):not(.theme-dark) #contenu > .section:not(.conversion-band) p,
+  html:where([data-theme="light"]):not(.theme-dark) #contenu > .section:not(.conversion-band) strong,
+  html:where([data-theme="light"]):not(.theme-dark) #contenu > .section:not(.conversion-band) h1,
+  html:where([data-theme="light"]):not(.theme-dark) #contenu > .section:not(.conversion-band) h2 {
     color: #1e2a50;
   }
-}
 
 /* Téléphone du header : passage bleu actif partout, sur toutes les pages et tous les supports. */
 .site-header .header-phone-direct,
@@ -118,13 +108,11 @@ html.theme-dark .site-header .header-phone-direct:focus-visible {
   --header-phone-base: #ffffff;
 }
 
-@media (prefers-color-scheme: dark) {
-  html:not(.theme-light) .site-header .header-phone-direct,
-  html:not(.theme-light) .site-header .header-phone-direct:hover,
-  html:not(.theme-light) .site-header .header-phone-direct:focus-visible {
+html:where([data-theme="dark"]):not(.theme-light) .site-header .header-phone-direct,
+  html:where([data-theme="dark"]):not(.theme-light) .site-header .header-phone-direct:hover,
+  html:where([data-theme="dark"]):not(.theme-light) .site-header .header-phone-direct:focus-visible {
     --header-phone-base: #ffffff;
   }
-}
 
 @media (prefers-reduced-motion: reduce) {
   .site-header .header-phone-direct,
@@ -143,6 +131,14 @@ html.theme-dark .site-header .header-phone-direct:focus-visible {
 }
 
 @media (min-width: 1100px) {
+  html:is(.theme-dark,.theme-light) body:has(.home-hero) .site-header .header-phone-direct,
+html:is(.theme-dark,.theme-light) body:has(.home-hero) .site-header .header-phone-direct:hover,
+html:is(.theme-dark,.theme-light) body:has(.home-hero) .site-header .header-phone-direct:focus-visible {
+    background-repeat: no-repeat !important;
+    background-size: 280% 100% !important;
+    background-position: 100% 50%;
+    animation: header-phone-night-blue-wave 6s ease-in-out infinite !important;
+  }
   html.theme-dark body:has(.home-hero) .site-header .header-phone-direct,
   html.theme-dark body:has(.home-hero) .site-header .header-phone-direct:hover,
   html.theme-dark body:has(.home-hero) .site-header .header-phone-direct:focus-visible {
@@ -169,10 +165,18 @@ html.theme-dark .site-header .header-phone-direct:focus-visible {
   }
 }
 
-@media (min-width: 1100px) and (prefers-color-scheme: dark) {
-  html:not(.theme-light) body:has(.home-hero) .site-header .header-phone-direct,
-  html:not(.theme-light) body:has(.home-hero) .site-header .header-phone-direct:hover,
-  html:not(.theme-light) body:has(.home-hero) .site-header .header-phone-direct:focus-visible {
+@media (min-width: 1100px) {
+  html:where([data-theme]):is(:is(.theme-dark,.theme-light),.theme-light) body:has(.home-hero) .site-header .header-phone-direct,
+html:where([data-theme]):is(:is(.theme-dark,.theme-light),.theme-light) body:has(.home-hero) .site-header .header-phone-direct:hover,
+html:where([data-theme]):is(:is(.theme-dark,.theme-light),.theme-light) body:has(.home-hero) .site-header .header-phone-direct:focus-visible {
+    background-repeat: no-repeat !important;
+    background-size: 280% 100% !important;
+    background-position: 100% 50%;
+    animation: header-phone-night-blue-wave 6s ease-in-out infinite !important;
+  }
+  html:where([data-theme="dark"]):not(.theme-light) body:has(.home-hero) .site-header .header-phone-direct,
+  html:where([data-theme="dark"]):not(.theme-light) body:has(.home-hero) .site-header .header-phone-direct:hover,
+  html:where([data-theme="dark"]):not(.theme-light) body:has(.home-hero) .site-header .header-phone-direct:focus-visible {
     color: #ffffff !important;
     background-color: #ffffff !important;
     background-image: linear-gradient(
@@ -197,6 +201,11 @@ html.theme-dark .site-header .header-phone-direct:focus-visible {
 }
 
 @media (min-width: 1100px) and (prefers-reduced-motion: reduce) {
+  html:is(.theme-dark,.theme-light) body:has(.home-hero) .site-header .header-phone-direct,
+html:is(:is(.theme-dark,.theme-light),.theme-light) body:has(.home-hero) .site-header .header-phone-direct {
+    animation: none !important;
+    background-size: 100% 100% !important;
+  }
   html.theme-dark body:has(.home-hero) .site-header .header-phone-direct,
   html:not(.theme-light) body:has(.home-hero) .site-header .header-phone-direct {
     animation: none !important;
@@ -209,6 +218,21 @@ html.theme-dark .site-header .header-phone-direct:focus-visible {
 }
 
 /* Mode nuit — liseré unique violet → bleu sur tous les blocs bénéfice / conclusion. */
+html:is(.theme-dark,.theme-light) #contenu [class*="benefit"],
+html:is(.theme-dark,.theme-light) #contenu .sector-reality-conclusion,
+html:is(.theme-dark,.theme-light) #contenu .sector-method-conclusion,
+html:is(.theme-dark,.theme-light) #contenu .institutes-reality-conclusion,
+html:is(.theme-dark,.theme-light) #contenu .institutes-method-conclusion,
+html:is(.theme-dark,.theme-light) #contenu .medicine-reality-conclusion,
+html:is(.theme-dark,.theme-light) #contenu .medicine-method-conclusion,
+html[data-theme] #contenu [class*="benefit"],
+html[data-theme] #contenu .sector-reality-conclusion,
+html[data-theme] #contenu .sector-method-conclusion {
+  position: relative;
+  overflow: hidden;
+  border-left-width: 0 !important;
+  border-left-style: none !important;
+}
 html.theme-dark #contenu [class*="benefit"],
 html.theme-dark #contenu .sector-reality-conclusion,
 html.theme-dark #contenu .sector-method-conclusion,
@@ -222,6 +246,25 @@ html[data-theme="dark"] #contenu .sector-method-conclusion {
   position: relative;
   overflow: hidden;
   border-left: 0 !important;
+}
+
+html:is(.theme-dark,.theme-light) #contenu [class*="benefit"]::before,
+html:is(.theme-dark,.theme-light) #contenu .sector-reality-conclusion::before,
+html:is(.theme-dark,.theme-light) #contenu .sector-method-conclusion::before,
+html:is(.theme-dark,.theme-light) #contenu .institutes-reality-conclusion::before,
+html:is(.theme-dark,.theme-light) #contenu .institutes-method-conclusion::before,
+html:is(.theme-dark,.theme-light) #contenu .medicine-reality-conclusion::before,
+html:is(.theme-dark,.theme-light) #contenu .medicine-method-conclusion::before,
+html[data-theme] #contenu [class*="benefit"]::before,
+html[data-theme] #contenu .sector-reality-conclusion::before,
+html[data-theme] #contenu .sector-method-conclusion::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 auto 0 0 !important;
+  width: 3px !important;
+  height: auto !important;
+  border-width: 0 !important;
+  border-style: none !important;
 }
 
 html.theme-dark #contenu [class*="benefit"]::before,
@@ -244,26 +287,54 @@ html[data-theme="dark"] #contenu .sector-method-conclusion::before {
   background: linear-gradient(180deg, rgba(94, 23, 235, 0.82) 0%, rgba(0, 176, 255, 0.76) 100%) !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  html:not(.theme-light) #contenu [class*="benefit"],
-  html:not(.theme-light) #contenu .sector-reality-conclusion,
-  html:not(.theme-light) #contenu .sector-method-conclusion,
-  html:not(.theme-light) #contenu .institutes-reality-conclusion,
-  html:not(.theme-light) #contenu .institutes-method-conclusion,
-  html:not(.theme-light) #contenu .medicine-reality-conclusion,
-  html:not(.theme-light) #contenu .medicine-method-conclusion {
+html:where([data-theme]):is(:is(.theme-dark,.theme-light),.theme-light) #contenu [class*="benefit"],
+html:where([data-theme]):is(:is(.theme-dark,.theme-light),.theme-light) #contenu .sector-reality-conclusion,
+html:where([data-theme]):is(:is(.theme-dark,.theme-light),.theme-light) #contenu .sector-method-conclusion,
+html:where([data-theme]):is(:is(.theme-dark,.theme-light),.theme-light) #contenu .institutes-reality-conclusion,
+html:where([data-theme]):is(:is(.theme-dark,.theme-light),.theme-light) #contenu .institutes-method-conclusion,
+html:where([data-theme]):is(:is(.theme-dark,.theme-light),.theme-light) #contenu .medicine-reality-conclusion,
+html:where([data-theme]):is(:is(.theme-dark,.theme-light),.theme-light) #contenu .medicine-method-conclusion {
+    position: relative;
+    overflow: hidden;
+    border-left-width: 0 !important;
+    border-left-style: none !important;
+  }
+
+html:where([data-theme="dark"]):not(.theme-light) #contenu [class*="benefit"],
+  html:where([data-theme="dark"]):not(.theme-light) #contenu .sector-reality-conclusion,
+  html:where([data-theme="dark"]):not(.theme-light) #contenu .sector-method-conclusion,
+  html:where([data-theme="dark"]):not(.theme-light) #contenu .institutes-reality-conclusion,
+  html:where([data-theme="dark"]):not(.theme-light) #contenu .institutes-method-conclusion,
+  html:where([data-theme="dark"]):not(.theme-light) #contenu .medicine-reality-conclusion,
+  html:where([data-theme="dark"]):not(.theme-light) #contenu .medicine-method-conclusion {
     position: relative;
     overflow: hidden;
     border-left: 0 !important;
   }
 
-  html:not(.theme-light) #contenu [class*="benefit"]::before,
-  html:not(.theme-light) #contenu .sector-reality-conclusion::before,
-  html:not(.theme-light) #contenu .sector-method-conclusion::before,
-  html:not(.theme-light) #contenu .institutes-reality-conclusion::before,
-  html:not(.theme-light) #contenu .institutes-method-conclusion::before,
-  html:not(.theme-light) #contenu .medicine-reality-conclusion::before,
-  html:not(.theme-light) #contenu .medicine-method-conclusion::before {
+html:where([data-theme]):is(:is(.theme-dark,.theme-light),.theme-light) #contenu [class*="benefit"]::before,
+html:where([data-theme]):is(:is(.theme-dark,.theme-light),.theme-light) #contenu .sector-reality-conclusion::before,
+html:where([data-theme]):is(:is(.theme-dark,.theme-light),.theme-light) #contenu .sector-method-conclusion::before,
+html:where([data-theme]):is(:is(.theme-dark,.theme-light),.theme-light) #contenu .institutes-reality-conclusion::before,
+html:where([data-theme]):is(:is(.theme-dark,.theme-light),.theme-light) #contenu .institutes-method-conclusion::before,
+html:where([data-theme]):is(:is(.theme-dark,.theme-light),.theme-light) #contenu .medicine-reality-conclusion::before,
+html:where([data-theme]):is(:is(.theme-dark,.theme-light),.theme-light) #contenu .medicine-method-conclusion::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 auto 0 0 !important;
+    width: 3px !important;
+    height: auto !important;
+    border-width: 0 !important;
+    border-style: none !important;
+  }
+
+html:where([data-theme="dark"]):not(.theme-light) #contenu [class*="benefit"]::before,
+  html:where([data-theme="dark"]):not(.theme-light) #contenu .sector-reality-conclusion::before,
+  html:where([data-theme="dark"]):not(.theme-light) #contenu .sector-method-conclusion::before,
+  html:where([data-theme="dark"]):not(.theme-light) #contenu .institutes-reality-conclusion::before,
+  html:where([data-theme="dark"]):not(.theme-light) #contenu .institutes-method-conclusion::before,
+  html:where([data-theme="dark"]):not(.theme-light) #contenu .medicine-reality-conclusion::before,
+  html:where([data-theme="dark"]):not(.theme-light) #contenu .medicine-method-conclusion::before {
     content: "" !important;
     position: absolute !important;
     inset: 0 auto 0 0 !important;
@@ -273,42 +344,18 @@ html[data-theme="dark"] #contenu .sector-method-conclusion::before {
     box-shadow: none !important;
     background: linear-gradient(180deg, rgba(94, 23, 235, 0.82) 0%, rgba(0, 176, 255, 0.76) 100%) !important;
   }
-}
 
 /* Instituts & indépendantes — mode jour uniquement : textes de cartes allégés et lien interne violet lavande. */
-html[data-theme="light"] body.institutes-page .section-soft.section-aqua .institutes-editorial-content p,
-html[data-theme="light"] body.institutes-page .section-soft.section-aqua .institutes-onboarding-copy,
-html[data-theme="light"] body.institutes-page .section-soft.section-aqua .institutes-onboarding-benefit {
-  font-weight: 400 !important;
-}
-
-html[data-theme="light"] body.institutes-page .section-soft.section-aqua .institutes-editorial-benefit strong,
-html[data-theme="light"] body.institutes-page .section-soft.section-aqua .institutes-onboarding-benefit strong {
-  font-weight: 700 !important;
-}
 
 html[data-theme="light"] body.institutes-page .section-soft.section-aqua .institutes-editorial-content p > a {
   color: #6b4bb3 !important;
   -webkit-text-fill-color: #6b4bb3 !important;
 }
 
-@media (prefers-color-scheme: light) {
-  html:not(.theme-dark):not([data-theme="dark"]) body.institutes-page .section-soft.section-aqua .institutes-editorial-content p,
-  html:not(.theme-dark):not([data-theme="dark"]) body.institutes-page .section-soft.section-aqua .institutes-onboarding-copy,
-  html:not(.theme-dark):not([data-theme="dark"]) body.institutes-page .section-soft.section-aqua .institutes-onboarding-benefit {
-    font-weight: 400 !important;
-  }
-
-  html:not(.theme-dark):not([data-theme="dark"]) body.institutes-page .section-soft.section-aqua .institutes-editorial-benefit strong,
-  html:not(.theme-dark):not([data-theme="dark"]) body.institutes-page .section-soft.section-aqua .institutes-onboarding-benefit strong {
-    font-weight: 700 !important;
-  }
-
-  html:not(.theme-dark):not([data-theme="dark"]) body.institutes-page .section-soft.section-aqua .institutes-editorial-content p > a {
+html:where([data-theme="light"]):not(.theme-dark):not([data-theme="dark"]) body.institutes-page .section-soft.section-aqua .institutes-editorial-content p > a {
     color: #6b4bb3 !important;
     -webkit-text-fill-color: #6b4bb3 !important;
   }
-}
 
 /* Spa & Hôtellerie — mode jour uniquement : titre Turnover harmonisé et textes Bénéfice allégés. */
 html[data-theme="light"] body.spa-page #contenu > .section.section-soft.section-aqua .spa-turnover-heading h3 {
@@ -316,29 +363,30 @@ html[data-theme="light"] body.spa-page #contenu > .section.section-soft.section-
   -webkit-text-fill-color: #5422b3 !important;
 }
 
-html[data-theme="light"] body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-benefit,
-html[data-theme="light"] body.spa-page #contenu > .section.section-soft.section-aqua .spa-turnover-benefit {
-  font-weight: 400 !important;
-}
-
-html[data-theme="light"] body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-benefit strong,
-html[data-theme="light"] body.spa-page #contenu > .section.section-soft.section-aqua .spa-turnover-benefit strong {
-  font-weight: 600 !important;
-}
-
-@media (prefers-color-scheme: light) {
-  html:not(.theme-dark):not([data-theme="dark"]) body.spa-page #contenu > .section.section-soft.section-aqua .spa-turnover-heading h3 {
+html:where([data-theme="light"]):not(.theme-dark):not([data-theme="dark"]) body.spa-page #contenu > .section.section-soft.section-aqua .spa-turnover-heading h3 {
     color: #5422b3 !important;
     -webkit-text-fill-color: #5422b3 !important;
   }
 
-  html:not(.theme-dark):not([data-theme="dark"]) body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-benefit,
-  html:not(.theme-dark):not([data-theme="dark"]) body.spa-page #contenu > .section.section-soft.section-aqua .spa-turnover-benefit {
-    font-weight: 400 !important;
+/* Header jour : surface blanche opaque, sans altérer le dégradé de .brand-ia. */
+@layer refonte {
+  html[data-theme="light"] .site-header {
+    background: #FFFFFF !important;
+    background-image: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: none !important;
+    border-bottom-color: #E2DBFA !important;
   }
-
-  html:not(.theme-dark):not([data-theme="dark"]) body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-benefit strong,
-  html:not(.theme-dark):not([data-theme="dark"]) body.spa-page #contenu > .section.section-soft.section-aqua .spa-turnover-benefit strong {
-    font-weight: 600 !important;
+  html[data-theme="light"] .site-header :is(.brand-core,.main-nav a,.nav-dropdown-toggle,.nav-toggle,.header-phone-direct) {
+    color: #1B2A6B !important;
+    -webkit-text-fill-color: #1B2A6B !important;
   }
+  html[data-theme="light"] .site-header .header-phone-direct {
+    background: none !important;
+    box-shadow: none !important;
+  }
+  html[data-theme="light"] .site-header :is(.main-nav,.nav-dropdown-menu,.nav-toggle) { background: #FFFFFF !important; background-image: none !important; box-shadow: none !important; }
+  html[data-theme="light"] .site-header .nav-toggle { border-color: #CFC3FA !important; }
+  html[data-theme="light"] .site-header .nav-toggle span { background: #1B2A6B !important; }
 }

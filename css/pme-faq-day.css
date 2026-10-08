@@ -1,32 +1,28 @@
 /* Page TPE-PME — FAQ en mode jour : questions bleues renforcées, réponses en bleu plus profond. */
 html[data-theme="light"] body.pme-page .faq-section .faq-accordion-item summary {
-  color: #314d86 !important;
+  color: #1B2A6B !important;
 }
 
 html[data-theme="light"] body.pme-page .faq-section .faq-answer p {
-  color: #1e2a50 !important;
+  color: #3B4880 !important;
 }
 
-@media (prefers-color-scheme: light) {
-  html:not(.theme-dark):not([data-theme="dark"]) body.pme-page .faq-section .faq-accordion-item summary {
-    color: #314d86 !important;
+html:where([data-theme="light"]):not(.theme-dark):not([data-theme="dark"]) body.pme-page .faq-section .faq-accordion-item summary {
+    color: #1B2A6B !important;
   }
 
-  html:not(.theme-dark):not([data-theme="dark"]) body.pme-page .faq-section .faq-answer p {
-    color: #1e2a50 !important;
+html:where([data-theme="light"]):not(.theme-dark):not([data-theme="dark"]) body.pme-page .faq-section .faq-answer p {
+    color: #3B4880 !important;
   }
-}
 
 /* Réassurance TPE-PME — mode jour : puces dans le même bleu intermédiaire. */
 html[data-theme="light"] body.pme-page #contenu > .section.section-mist.section-aqua .feature-list li::before {
   background: #415b8f !important;
 }
 
-@media (prefers-color-scheme: light) {
-  html:not(.theme-dark):not([data-theme="dark"]) body.pme-page #contenu > .section.section-mist.section-aqua .feature-list li::before {
+html:where([data-theme="light"]):not(.theme-dark):not([data-theme="dark"]) body.pme-page #contenu > .section.section-mist.section-aqua .feature-list li::before {
     background: #415b8f !important;
   }
-}
 
 /* FAQ TPE-PME — mode nuit : questions en bleu clair, titre et réponses en blanc. */
 html.theme-dark body.pme-page .faq-accordion-item summary,
@@ -36,17 +32,15 @@ html[data-theme="dark"] body.pme-page .faq-accordion-item summary h3 {
   color: #a9c0dc !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  html:not(.theme-dark):not([data-theme="light"]) body.pme-page .faq-accordion-item summary,
-  html:not(.theme-dark):not([data-theme="light"]) body.pme-page .faq-accordion-item summary h3 {
+html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.pme-page .faq-accordion-item summary,
+  html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.pme-page .faq-accordion-item summary h3 {
     color: #a9c0dc !important;
   }
-}
 
 /* TPE-PME — footer harmonisé avec les autres pages secteur en mode nuit. */
 html.theme-dark body.pme-page .site-footer,
 html[data-theme="dark"] body.pme-page .site-footer {
-  background: #11183d !important;
+  background: #080D22 !important;
 }
 
 /* TPE-PME — corrections mobiles uniquement, identiques en mode jour et nuit. */

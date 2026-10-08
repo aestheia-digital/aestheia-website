@@ -122,17 +122,17 @@
   }
 }
 
-@media (min-width: 721px) and (max-width: 899px) and (prefers-color-scheme: dark) {
-  .home-hero .hero-cube-stage {
+@media (min-width: 721px) and (max-width: 899px) {
+  :where(html[data-theme="dark"]) .home-hero .hero-cube-stage {
     opacity: 0.58;
     filter: saturate(1.3) contrast(1.2) brightness(1.1);
   }
 
-  .home-hero .hero-cube-stage::before {
+  :where(html[data-theme="dark"]) .home-hero .hero-cube-stage::before {
     opacity: 0.66;
   }
 
-  .home-hero .hero-cube-effects {
+  :where(html[data-theme="dark"]) .home-hero .hero-cube-effects {
     opacity: 0.7;
   }
 }
@@ -215,24 +215,30 @@
 
 /* Mobile en mode nuit : le cube remonte derrière le texte et gagne en netteté,
    sans modifier l'espace occupé par le bandeau ni la version tablette/desktop. */
-@media (max-width: 720px) and (prefers-color-scheme: dark) {
-  .home-hero .hero-cube-stage {
+@media (max-width: 720px) {
+  :where(html[data-theme]) .home-hero .hero-cube-stage {
+    bottom: 24%;
+  }
+  :where(html[data-theme="dark"]) .home-hero .hero-cube-stage {
     bottom: 24%;
     opacity: 0.56;
     filter: saturate(1.3) contrast(1.2) brightness(1.12);
   }
 
-  .home-hero .hero-cube-stage::before {
+  :where(html[data-theme="dark"]) .home-hero .hero-cube-stage::before {
     opacity: 0.62;
   }
 
-  .home-hero .hero-cube-stage::after,
-  .home-hero .hero-cube-effects {
+  :where(html[data-theme="dark"]) .home-hero .hero-cube-stage::after,
+  :where(html[data-theme="dark"]) .home-hero .hero-cube-effects {
     opacity: 0.68;
   }
 }
 
 @media (max-width: 720px) {
+  html:is(.theme-dark,.theme-light) .home-hero .hero-cube-stage {
+    bottom: 24%;
+  }
   html.theme-dark .home-hero .hero-cube-stage {
     bottom: 24%;
     opacity: 0.56;
@@ -334,48 +340,39 @@ html.theme-dark #contenu > .home-hero ~ .location-section::before {
 }
 
 /* Accueil en mode jour uniquement : titres de cartes légèrement dégraissés. */
-@media (prefers-color-scheme: light) {
-  .home-problems .problem-card h3,
-  .home-offers .offer-card h3,
-  .sector-card h3,
-  .home-engagements .engagement-card h3,
-  .home-method .process-step h3,
-  .home-safety .safety-grid .card h3 {
-    font-weight: 500;
-  }
-}
 
 /* Accueil en mode jour uniquement : halos violets légèrement atténués sur tous les supports. */
-@media (prefers-color-scheme: light) {
-  #contenu:has(> .home-hero) {
+:where(html[data-theme="light"]) #contenu:has(> .home-hero) {
     --halo-violet-primary: rgba(94, 23, 235, 0.095);
     --halo-violet-secondary: rgba(139, 92, 246, 0.055);
   }
-}
 
 /* Accueil mobile en mode jour : halo violet légèrement atténué, FAQ sans halo. */
-@media (max-width: 720px) and (prefers-color-scheme: light) {
-  #contenu:has(> .home-hero) {
+@media (max-width: 720px) {
+  :where(html[data-theme="light"]) #contenu:has(> .home-hero) {
     --halo-violet-primary: rgba(94, 23, 235, 0.026);
     --halo-violet-secondary: rgba(139, 92, 246, 0.013);
   }
 
-  #contenu > .home-hero ~ .faq-section::before {
+  :where(html[data-theme="light"]) #contenu > .home-hero ~ .faq-section::before {
     background: none !important;
   }
 }
 
+html[data-theme="light"] .home-problems .problem-card {
+  border-color: rgba(27, 42, 107, 0.20) !important;
+}
+
 /* Accueil jour tablette + ordinateur : cartes légèrement plus présentes et plus dimensionnées visuellement. */
-@media (min-width: 721px) and (prefers-color-scheme: light) {
-  .home-problems .problem-card,
-  .home-offers .offer-card,
-  .home-engagements .engagement-card,
-  .home-safety .safety-grid .card {
+@media (min-width: 721px) {
+  :where(html[data-theme="light"]) .home-offers .offer-card,
+  :where(html[data-theme="light"]) .home-engagements .engagement-card,
+  :where(html[data-theme="light"]) .home-safety .safety-grid .card {
     border-color: rgba(94, 23, 235, 0.18);
     box-shadow: 0 18px 42px rgba(30, 42, 80, 0.1);
   }
 
-  .home-method .process-strip {
+  :where(html[data-theme="light"]) .home-method .process-strip {
     border-color: rgba(94, 23, 235, 0.2);
     background: rgba(94, 23, 235, 0.2);
     box-shadow: 0 18px 42px rgba(30, 42, 80, 0.08);
@@ -388,54 +385,66 @@ html.theme-dark #contenu > .home-hero ~ .location-section::before {
 }
 
 /* Accueil en mode jour : halo du bandeau Sécurité et contrôle humain déplacé vers le bas à droite. */
-@media (prefers-color-scheme: light) {
-  #contenu > .home-hero ~ .home-safety::before {
+:where(html[data-theme="light"]) #contenu > .home-hero ~ .home-safety::before {
     background:
       radial-gradient(circle at 88% 82%, var(--halo-violet-primary), transparent 40%),
       radial-gradient(circle at 72% 100%, var(--halo-violet-secondary), transparent 44%) !important;
   }
-}
 
 /* Accueil nuit : questions FAQ en violet lavande clair et légèrement agrandies sur tous les supports. */
+html:is(.theme-dark,.theme-light) #contenu > .home-hero ~ .faq-section .faq-accordion-item summary h3,
+html[data-theme] #contenu > .home-hero ~ .faq-section .faq-accordion-item summary h3 {
+  font-size: 1.06rem;
+}
 html.theme-dark #contenu > .home-hero ~ .faq-section .faq-accordion-item summary h3,
 html[data-theme="dark"] #contenu > .home-hero ~ .faq-section .faq-accordion-item summary h3 {
   color: #b69cff !important;
   font-size: 1.06rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  html:not(.theme-dark):not([data-theme="light"]) #contenu > .home-hero ~ .faq-section .faq-accordion-item summary h3 {
+html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) #contenu > .home-hero ~ .faq-section .faq-accordion-item summary h3 {
     color: #b69cff !important;
     font-size: 1.06rem;
   }
-}
 
 /* Accueil — Formats de mission — mode nuit : titres de cartes légèrement agrandis. */
+html:is(.theme-dark,.theme-light) .home-engagements .engagement-card h3,
+html[data-theme] .home-engagements .engagement-card h3 {
+  font-size: 1.14rem;
+}
 html.theme-dark .home-engagements .engagement-card h3,
 html[data-theme="dark"] .home-engagements .engagement-card h3 {
   font-size: 1.14rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  html:not(.theme-dark):not([data-theme="light"]) .home-engagements .engagement-card h3 {
+html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) .home-engagements .engagement-card h3 {
     font-size: 1.14rem;
   }
-}
 
 @media (max-width: 720px) {
+  html:is(.theme-dark,.theme-light) .home-engagements .engagement-card h3,
+html[data-theme] .home-engagements .engagement-card h3 {
+    font-size: 1.1rem;
+  }
   html.theme-dark .home-engagements .engagement-card h3,
   html[data-theme="dark"] .home-engagements .engagement-card h3 {
     font-size: 1.1rem;
   }
 }
 
-@media (max-width: 720px) and (prefers-color-scheme: dark) {
-  html:not(.theme-dark):not([data-theme="light"]) .home-engagements .engagement-card h3 {
+@media (max-width: 720px) {
+  html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) .home-engagements .engagement-card h3 {
     font-size: 1.1rem;
   }
 }
 
 /* Accueil — Méthode et Sécurité — mode nuit : titres légèrement agrandis sans changer graisse ni couleur. */
+html:is(.theme-dark,.theme-light) .home-method .process-step h3,
+html:is(.theme-dark,.theme-light) .home-safety .safety-grid .card h3,
+html[data-theme] .home-method .process-step h3,
+html[data-theme] .home-safety .safety-grid .card h3 {
+  font-size: 1.14rem;
+}
 html.theme-dark .home-method .process-step h3,
 html.theme-dark .home-safety .safety-grid .card h3,
 html[data-theme="dark"] .home-method .process-step h3,
@@ -443,28 +452,42 @@ html[data-theme="dark"] .home-safety .safety-grid .card h3 {
   font-size: 1.14rem;
 }
 
+html:is(.theme-dark,.theme-light) .home-method .step-label,
+html[data-theme] .home-method .step-label {
+  font-size: 0.88rem;
+}
+
 html.theme-dark .home-method .step-label,
 html[data-theme="dark"] .home-method .step-label {
   font-size: 0.88rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  html:not(.theme-dark):not([data-theme="light"]) .home-method .process-step h3,
-  html:not(.theme-dark):not([data-theme="light"]) .home-safety .safety-grid .card h3 {
+html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) .home-method .process-step h3,
+  html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) .home-safety .safety-grid .card h3 {
     font-size: 1.14rem;
   }
 
-  html:not(.theme-dark):not([data-theme="light"]) .home-method .step-label {
+html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) .home-method .step-label {
     font-size: 0.88rem;
   }
-}
 
 @media (max-width: 720px) {
+  html:is(.theme-dark,.theme-light) .home-method .process-step h3,
+html:is(.theme-dark,.theme-light) .home-safety .safety-grid .card h3,
+html[data-theme] .home-method .process-step h3,
+html[data-theme] .home-safety .safety-grid .card h3 {
+    font-size: 1.1rem;
+  }
   html.theme-dark .home-method .process-step h3,
   html.theme-dark .home-safety .safety-grid .card h3,
   html[data-theme="dark"] .home-method .process-step h3,
   html[data-theme="dark"] .home-safety .safety-grid .card h3 {
     font-size: 1.1rem;
+  }
+
+  html:is(.theme-dark,.theme-light) .home-method .step-label,
+html[data-theme] .home-method .step-label {
+    font-size: 0.86rem;
   }
 
   html.theme-dark .home-method .step-label,
@@ -473,13 +496,13 @@ html[data-theme="dark"] .home-method .step-label {
   }
 }
 
-@media (max-width: 720px) and (prefers-color-scheme: dark) {
-  html:not(.theme-dark):not([data-theme="light"]) .home-method .process-step h3,
-  html:not(.theme-dark):not([data-theme="light"]) .home-safety .safety-grid .card h3 {
+@media (max-width: 720px) {
+  html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) .home-method .process-step h3,
+  html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) .home-safety .safety-grid .card h3 {
     font-size: 1.1rem;
   }
 
-  html:not(.theme-dark):not([data-theme="light"]) .home-method .step-label {
+  html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) .home-method .step-label {
     font-size: 0.86rem;
   }
 }

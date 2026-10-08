@@ -53,6 +53,15 @@ html[data-theme="dark"] body .location-section {
 }
 
 /* Les pseudo-éléments de halo sont supprimés, mais pas les images dédiées des bandeaux aqua. */
+html:is(.theme-dark,.theme-light) body #contenu > .section:not(.conversion-band):not(.section-aqua)::before,
+html[data-theme] body #contenu > .section:not(.conversion-band):not(.section-aqua)::before,
+html:is(.theme-dark,.theme-light) body .article-page > .article-header::before,
+html:is(.theme-dark,.theme-light) body .article-page > .article-content::before,
+html[data-theme] body .article-page > .article-header::before,
+html[data-theme] body .article-page > .article-content::before {
+  content: none !important;
+  display: none !important;
+}
 html.theme-dark body #contenu > .section:not(.conversion-band):not(.section-aqua)::before,
 html[data-theme="dark"] body #contenu > .section:not(.conversion-band):not(.section-aqua)::before,
 html.theme-dark body .article-page > .article-header::before,
@@ -75,63 +84,53 @@ html[data-theme="dark"] body #contenu > .resources-hero + .section {
 }
 
 /* Mode nuit automatique, lorsque le mode jour n'est pas forcé. */
-@media (prefers-color-scheme: dark) {
-  html:not(.theme-dark):not([data-theme="light"]) {
+html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) {
     --halo-violet-primary: transparent !important;
     --halo-violet-secondary: transparent !important;
     --dark-body-halo-primary: transparent !important;
     --dark-body-halo-secondary: transparent !important;
   }
-
-  html:not(.theme-dark):not([data-theme="light"]) body .hero {
+html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body .hero {
     background:
       radial-gradient(circle at 12% 88%, rgba(0, 176, 255, 0.12), transparent 38%),
       linear-gradient(135deg, #11183d 0%, #1e2a50 58%, #27347c 100%) !important;
   }
-
-  html:not(.theme-dark):not([data-theme="light"]) body .hero-tech-backdrop::before {
+html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body .hero-tech-backdrop::before {
     background:
       radial-gradient(ellipse at 82% 68%, rgba(0, 176, 255, 0.12), transparent 27%) !important;
   }
-
-  html:not(.theme-dark):not([data-theme="light"]) body .conversion-band {
+html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body .conversion-band {
     background:
       radial-gradient(circle at 12% 88%, rgba(0, 176, 255, 0.12), transparent 38%),
       linear-gradient(135deg, #11183d 0%, #1e2a50 58%, #27347c 100%) !important;
   }
-
-  html:not(.theme-dark):not([data-theme="light"]) body .section-soft:not(.section-aqua) {
+html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body .section-soft:not(.section-aqua) {
     background: #11183d !important;
     background-image: none !important;
   }
-
-  html:not(.theme-dark):not([data-theme="light"]) body .section-mist:not(.section-aqua) {
+html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body .section-mist:not(.section-aqua) {
     background: linear-gradient(135deg, #11183d 0%, #0d1330 52%, #151c46 100%) !important;
   }
-
-  html:not(.theme-dark):not([data-theme="light"]) body .positioning-section,
-  html:not(.theme-dark):not([data-theme="light"]) body .location-section {
+html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body .positioning-section,
+  html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body .location-section {
     background:
       radial-gradient(circle at 12% 82%, rgba(0, 176, 255, 0.10), transparent 36%),
       linear-gradient(135deg, #0b1028 0%, #11183d 48%, #151c46 100%) !important;
   }
-
-  html:not(.theme-dark):not([data-theme="light"]) body #contenu > .section:not(.conversion-band):not(.section-aqua)::before,
-  html:not(.theme-dark):not([data-theme="light"]) body .article-page > .article-header::before,
-  html:not(.theme-dark):not([data-theme="light"]) body .article-page > .article-content::before {
+html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body #contenu > .section:not(.conversion-band):not(.section-aqua)::before,
+  html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body .article-page > .article-header::before,
+  html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body .article-page > .article-content::before {
     content: none !important;
     display: none !important;
     background: none !important;
     background-image: none !important;
     opacity: 0 !important;
   }
-
-  html:not(.theme-dark):not([data-theme="light"]) body #contenu > .resources-hero + .section {
+html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body #contenu > .resources-hero + .section {
     background:
       radial-gradient(circle at 12% 88%, rgba(0, 176, 255, 0.09), transparent 42%),
       linear-gradient(135deg, #11183d 0%, #172149 58%, #202d60 100%) !important;
   }
-}
 
 
 /* ==========================================================================
@@ -154,14 +153,30 @@ html[data-theme="dark"] body.pme-page #contenu > .conversion-band::before {
     linear-gradient(0deg, rgba(15, 20, 47, 0.50), rgba(15, 20, 47, 0.08)) !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  html:not(.theme-dark):not([data-theme="light"]) body.medicine-page #contenu > .conversion-band::before,
-  html:not(.theme-dark):not([data-theme="light"]) body.spa-page #contenu > .conversion-band::before,
-  html:not(.theme-dark):not([data-theme="light"]) body.thalasso-page #contenu > .conversion-band::before,
-  html:not(.theme-dark):not([data-theme="light"]) body.institutes-page #contenu > .conversion-band::before,
-  html:not(.theme-dark):not([data-theme="light"]) body.pme-page #contenu > .conversion-band::before {
+html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.medicine-page #contenu > .conversion-band::before,
+  html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.spa-page #contenu > .conversion-band::before,
+  html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.thalasso-page #contenu > .conversion-band::before,
+  html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.institutes-page #contenu > .conversion-band::before,
+  html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.pme-page #contenu > .conversion-band::before {
     background:
       linear-gradient(90deg, rgba(12, 18, 48, 0.90), rgba(18, 40, 64, 0.70), rgba(24, 73, 100, 0.34)),
       linear-gradient(0deg, rgba(15, 20, 47, 0.50), rgba(15, 20, 47, 0.08)) !important;
+  }
+
+/* Retrait des particules : les halos radiaux restent des éléments indépendants. */
+@layer refonte {
+  html { --home-particle-cloud-opacity: 0 !important; --dark-body-cloud-opacity: 0 !important; }
+  html:is(.theme-dark,.theme-light) #contenu > .section:not(.conversion-band)::after,
+html:is(.theme-dark,.theme-light) .article-page > :is(.article-header,.article-content)::after {
+    display: none !important;
+    content: none !important;
+  }
+  #contenu > :is(.home-problems,.home-offers,.home-engagements,.home-method,.home-safety,.behind-section,.faq-section,.location-section)::after,
+  html.theme-dark #contenu > .section:not(.conversion-band)::after,
+  html.theme-dark .article-page > :is(.article-header,.article-content)::after {
+    display: none !important;
+    content: none !important;
+    background: none !important;
+    opacity: 0 !important;
   }
 }

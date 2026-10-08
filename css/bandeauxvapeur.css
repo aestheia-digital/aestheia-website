@@ -8,6 +8,11 @@ html.theme-dark {
 }
 
 /* Les deux bandeaux utilisent directement l'image, sans voile ni flou. */
+html:is(.theme-dark,.theme-light) body.spa-page #contenu > .section.section-aqua {
+  background-position: center center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
 html:not(.theme-dark) body.spa-page #contenu > .section.section-aqua,
 html.theme-dark body.spa-page #contenu > .section.section-aqua {
   background-color: transparent !important;
@@ -18,6 +23,12 @@ html.theme-dark body.spa-page #contenu > .section.section-aqua {
 }
 
 /* Aucun pseudo-element ne doit recouvrir ou flouter l'image. */
+html:is(.theme-dark,.theme-light) body.spa-page #contenu > .section.section-aqua::before,
+html:is(.theme-dark,.theme-light) body.spa-page #contenu > .section.section-aqua::after {
+  content: none !important;
+  display: none !important;
+  transform: none !important;
+}
 html:not(.theme-dark) body.spa-page #contenu > .section.section-aqua::before,
 html.theme-dark body.spa-page #contenu > .section.section-aqua::before,
 html:not(.theme-dark) body.spa-page #contenu > .section.section-aqua::after,
@@ -45,6 +56,11 @@ html.theme-dark body.spa-page .section-aqua .sector-editorial-chapter {
 
 /* Mobile : même image nette, sans répétition, sans voile. */
 @media (max-width: 720px) {
+  html:is(.theme-dark,.theme-light) body.spa-page #contenu > .section.section-aqua {
+    background-position: center center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+  }
   html:not(.theme-dark) body.spa-page #contenu > .section.section-aqua,
   html.theme-dark body.spa-page #contenu > .section.section-aqua {
     background-image: var(--spa-condensation-image) !important;
@@ -59,6 +75,10 @@ html.theme-dark body.spa-page .section-aqua .sector-editorial-chapter {
 }
 
 /* Mode nuit : aucune nuée de particules sur la page Spa & hôtellerie. */
+html:is(.theme-dark,.theme-light) body.spa-page #contenu > .section:not(.conversion-band)::after {
+  content: none !important;
+  display: none !important;
+}
 html.theme-dark body.spa-page #contenu > .section:not(.conversion-band)::after {
   content: none !important;
   display: none !important;
@@ -73,11 +93,6 @@ html:not(.theme-dark) body.spa-page {
 }
 
 html:not(.theme-dark) body.spa-page #contenu > .section:not(.conversion-band):not(.section-aqua)::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
   background:
     radial-gradient(circle at 88% 14%, var(--spa-halo-violet-primary), transparent 42%),
     radial-gradient(circle at 10% 86%, var(--spa-halo-violet-secondary), transparent 46%) !important;

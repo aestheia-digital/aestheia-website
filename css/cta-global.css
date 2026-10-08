@@ -1,65 +1,58 @@
-/* AesthéIA — verrouillage global des CTA
-   Chargé en dernier sur toutes les pages pour neutraliser les anciennes surcharges. */
-
-html body #contenu .btn,
-html body #contenu .btn:hover,
-html body #contenu .btn:active,
-html body #contenu .btn:focus,
-html body #contenu .btn:focus-visible,
-html body .site-header .btn,
-html body .site-header .btn:hover,
-html body .site-header .btn:active,
-html body .site-header .btn:focus,
-html body .site-header .btn:focus-visible,
-html body .site-footer .btn,
-html body .site-footer .btn:hover,
-html body .site-footer .btn:active,
-html body .site-footer .btn:focus,
-html body .site-footer .btn:focus-visible {
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
-  border-color: #00b0ff !important;
-  background-color: #00b0ff !important;
-  background: #00b0ff !important;
-  background-image: none !important;
-  box-shadow: none !important;
-  text-shadow: none !important;
-  filter: none !important;
-}
-
-/* CTA intersectoriels présentés comme boutons. */
-html body #contenu .sector-crosslink-cta,
-html body #contenu .sector-crosslink-cta:hover,
-html body #contenu .sector-crosslink-cta:active,
-html body #contenu .sector-crosslink-cta:focus,
-html body #contenu .sector-crosslink-cta:focus-visible {
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
-  border-color: #00b0ff !important;
-  background-color: #00b0ff !important;
-  background: #00b0ff !important;
-  background-image: none !important;
-  box-shadow: none !important;
-  text-shadow: none !important;
-  filter: none !important;
-}
-
-/* Les deux CTA commerciaux restent strictement identiques partout. */
-html body a.btn[href="https://forms.gle/W7JrgaJ6yDSuwgFe7"],
-html body a.btn[href="https://calendar.app.google/qx6dT7WJfTrsFe6j9"],
-html body a.btn[href="https://forms.gle/W7JrgaJ6yDSuwgFe7"]:hover,
-html body a.btn[href="https://calendar.app.google/qx6dT7WJfTrsFe6j9"]:hover,
-html body a.btn[href="https://forms.gle/W7JrgaJ6yDSuwgFe7"]:active,
-html body a.btn[href="https://calendar.app.google/qx6dT7WJfTrsFe6j9"]:active,
-html body a.btn[href="https://forms.gle/W7JrgaJ6yDSuwgFe7"]:focus-visible,
-html body a.btn[href="https://calendar.app.google/qx6dT7WJfTrsFe6j9"]:focus-visible {
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
-  border-color: #00b0ff !important;
-  background-color: #00b0ff !important;
-  background: #00b0ff !important;
-  background-image: none !important;
-  box-shadow: none !important;
-  text-shadow: none !important;
-  filter: none !important;
+/* CTA commerciaux : une règle par surface, avec la couleur de remplissage du texte. */
+@layer refonte {
+  .hero .hero-actions .btn,
+  html[data-theme="light"] .hero .hero-actions .btn {
+    background: #EEF2FF !important;
+    color: #0B1028 !important;
+    -webkit-text-fill-color: #0B1028 !important;
+    font-weight: 600 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    filter: none !important;
+  }
+  .conversion-band {
+    background: #11183D !important;
+    color: #EEF2FF !important;
+  }
+  .conversion-band::before, .conversion-band::after { content: none !important; display: none !important; }
+  html[data-theme="light"] .conversion-band { background: #EEE9FF !important; }
+  .conversion-band h2 { color: #EEF2FF !important; }
+  html[data-theme="light"] .conversion-band h2 { color: #1B2A6B !important; }
+  .conversion-band .eyebrow { color: #9B7CFF !important; }
+  html[data-theme="light"] .conversion-band .eyebrow { color: #6C4DE6 !important; }
+  .conversion-action { display: flex; flex-direction: column; align-items: center; flex: 0 1 390px; text-align: center; }
+  .conversion-band .btn {
+    background: #EEF2FF !important;
+    color: #0B1028 !important;
+    -webkit-text-fill-color: #0B1028 !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    filter: none !important;
+    font-weight: 600 !important;
+  }
+  html[data-theme="light"] .conversion-band .btn {
+    background: #1B2A6B !important;
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+  }
+  html[data-theme="light"] :is(.btn-primary,.sector-crosslink-cta,.map-consent-actions .btn):not(.hero *) {
+    background: #1B2A6B !important;
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+  }
+  html[data-theme="light"] :is(.btn-primary,.sector-crosslink-cta,.map-consent-actions .btn):not(.hero *):hover {
+    background: #25388A !important;
+  }
+  .conversion-band .conversion-note {
+    margin: 0.75rem 0 0 !important;
+    font-size: 0.85rem !important;
+    text-align: center !important;
+    color: #C7CEE9 !important;
+  }
+  html[data-theme="light"] .conversion-band .conversion-note { color: #3B4880 !important; }
+  .contact-option > .contact-project-note { color: #C7CEE9 !important; }
+  html[data-theme="light"] .contact-option > .contact-project-note { color: #3B4880 !important; }
+  @media (max-width: 720px) { .conversion-action { flex-basis: auto; width: 100%; } }
 }

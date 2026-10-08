@@ -1,13 +1,3 @@
-const siteThemeRoot = document.documentElement;
-
-// Mode nuit temporairement forcé sur tout le site public pendant la refonte du mode jour — publication production.
-const applyAutomaticSiteTheme = () => {
-  siteThemeRoot.classList.add("theme-dark");
-  siteThemeRoot.dataset.theme = "dark";
-};
-
-applyAutomaticSiteTheme();
-
 const navToggle = document.querySelector(".nav-toggle");
 const nav = document.querySelector(".main-nav");
 const navDropdown = document.querySelector(".nav-dropdown");
@@ -280,7 +270,7 @@ if (!document.getElementById("commercial-alignment-rules")) {
 
     @media (min-width: 1051px) {
       .site-header .header-phone-direct {
-        font-weight: 300;
+        font-weight: 400;
       }
     }
 
@@ -591,3 +581,78 @@ if (sectorPath) {
     methodHeading.insertAdjacentElement("afterend", auditIntro);
   }
 }
+
+// Le panneau photo suit les textes sans modifier leur disposition.
+const aquaticSections = document.querySelectorAll("body.thalasso-page #contenu > .section-aqua");
+if (aquaticSections.length) {
+  const updateAquaticPanels = () => {
+    aquaticSections.forEach((section) => {
+      const bounds = section.getBoundingClientRect();
+      const textBlocks = [...section.querySelectorAll(".container > .eyebrow, .container > h2, .container > p, .container > .feature-list")];
+      const rectangles = textBlocks.map((element) => element.getBoundingClientRect());
+      const top = Math.min(...rectangles.map((rect) => rect.top));
+      const bottom = Math.max(...rectangles.map((rect) => rect.bottom));
+      const left = Math.min(...rectangles.map((rect) => rect.left));
+      const right = Math.max(...rectangles.map((rect) => rect.right));
+      const panel = {
+        "--aqua-panel-top": top - bounds.top,
+        "--aqua-panel-left": left - bounds.left,
+        "--aqua-panel-width": right - left,
+        "--aqua-panel-height": bottom - top,
+      };
+      Object.entries(panel).forEach(([property, value]) => section.style.setProperty(property, `${value}px`));
+    });
+  };
+  const aquaticResizeObserver = new ResizeObserver(updateAquaticPanels);
+  aquaticSections.forEach((section) => aquaticResizeObserver.observe(section.querySelector(".container")));
+  updateAquaticPanels();
+  document.fonts.ready.then(updateAquaticPanels);
+}
+
+// Système typographique commun aux pages et aux composants partagés.
+(() => {
+ const roleOf = e => {
+  if(e.closest('.brand-link,.brand-name,.footer-logo,.hero-cube-logo,.hero-cube-brand,.consent-signature,.consent-brand')) return 'logo';
+  if(e.closest('svg[aria-hidden="true"],.caption-arrow,.chevron,.consent-dialog__close,.nav-toggle')) return 'icon';
+  if(e.matches('.sector-editorial-benefit strong,.institutes-editorial-benefit strong')) return 'hidden-label';
+  if(e.matches('.sector-method-number,.institutes-method-number')) return 'decoration';
+  if(e.matches('.institutes-reality-metric-value')) return 'metric-value';
+  const matches=selector=>e.closest(selector);
+  if(matches('.faq-accordion-item summary,#faq h3'))return 'faq-question';
+  if(matches('.faq-answer,#faq>p'))return 'faq-answer';
+  if(matches('.footer-title'))return 'navigation';
+  if(matches('.sector-method-detail'))return 'body';
+  if(matches('.consent-banner h2,.consent-dialog h2'))return 'consent-title';
+  if(matches('h1'))return 'h1';
+  if(matches('h2'))return 'h2';
+  if(matches('.eyebrow'))return 'eyebrow';
+  if(e.matches('strong,b') && !matches('h3,h4,h5,h6')) return 'emphasis';
+  if(matches('h3,h4,h5,h6,.card-title,.thalasso-reality-key,.institutes-reality-issue-label'))return 'card-title';
+  if(matches('.main-nav,.footer-links,.footer-legal,.nav-toggle'))return 'navigation';
+  if(matches('button,.btn,.text-link,.sector-crosslink-cta,.header-phone-direct,.footer-phone,a[href^="mailto:"],a[href^="tel:"],.footer-social-links a,.skip-link'))return 'action';
+  if(matches('.assistant-schema .sub,.assistant-schema .tasks-title,.assistant-schema .node,.assistant-schema figcaption,.multi-agent-caption'))return 'secondary';
+  if(e.tagName.toLowerCase()==='text') {
+   return 'secondary';
+  }
+  if(matches('.conversion-note,.contact-project-note,.resource-meta,.resource-card-meta,.resource-category,.resource-sector,.article-meta,.ia-resume-label,.step-label,.footer-copyright,.footer-tagline,.founder-signature__role,.institutes-reality-metric-note,.institutes-reality-metric-label,.sector-method-number,.institutes-method-number,.resource-card-tags,.breadcrumb,.breadcrumbs,small,figcaption,.hero-specialties,.sector-card-toggle,.mobile-readmore-toggle'))return 'secondary';
+  const paragraph=e.closest('p');
+  if(paragraph && (paragraph.matches('.hero-subtitle,.hero-intro,.hero-description,.contact-hero-intro,.section-intro,.sector-audit-intro,.lead,.article-lead') || paragraph.previousElementSibling?.matches('h2')))return 'introduction';
+  return 'body';
+ };
+ const assignTypographyRoles = (root) => {
+  const elements = root.matches?.('body') ? [root, ...root.querySelectorAll('*')] : [root, ...root.querySelectorAll?.('*') || []];
+  elements.forEach((element) => {
+   if (!element.matches?.('body,h1,h2,h3,h4,h5,h6,p,li,span,strong,b,em,a,button,summary,small,figcaption,label,time,td,th,address,div,text,tspan')) return;
+   const role = roleOf(element);
+   if (element.dataset.typoRole !== role) element.dataset.typoRole = role;
+  });
+ };
+ assignTypographyRoles(document.body);
+ // Les composants ajoutés après le chargement reçoivent les mêmes rôles.
+ const typographyObserver = new MutationObserver((mutations) => {
+  mutations.forEach((mutation) => mutation.addedNodes.forEach((node) => {
+   if (node.nodeType === Node.ELEMENT_NODE) assignTypographyRoles(node);
+  }));
+ });
+ typographyObserver.observe(document.body, { childList: true, subtree: true });
+})();
