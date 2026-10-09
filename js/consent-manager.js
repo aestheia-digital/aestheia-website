@@ -27,53 +27,51 @@
       box-shadow: 0 8px 20px rgba(0, 176, 255, 0.12);
     }
 
-    @media (prefers-color-scheme: dark) {
-      .medicine-card-benefit,
-      .institutes-card-benefit,
-      .institutes-reality-conclusion,
-      .institutes-editorial-benefit,
-      .institutes-method-conclusion,
-      .sector-editorial-benefit,
-      .sector-reality-conclusion,
-      .sector-method-conclusion {
+    :where(html[data-theme="dark"]) .medicine-card-benefit,
+      :where(html[data-theme="dark"]) .institutes-card-benefit,
+      :where(html[data-theme="dark"]) .institutes-reality-conclusion,
+      :where(html[data-theme="dark"]) .institutes-editorial-benefit,
+      :where(html[data-theme="dark"]) .institutes-method-conclusion,
+      :where(html[data-theme="dark"]) .sector-editorial-benefit,
+      :where(html[data-theme="dark"]) .sector-reality-conclusion,
+      :where(html[data-theme="dark"]) .sector-method-conclusion {
         background: #a9bfdc !important;
         color: #14244a !important;
         border-color: rgba(49, 96, 160, 0.56) !important;
       }
 
-      .medicine-card-benefit strong,
-      .institutes-card-benefit strong,
-      .institutes-reality-conclusion strong,
-      .institutes-editorial-benefit strong,
-      .institutes-method-conclusion strong,
-      .sector-editorial-benefit strong,
-      .sector-reality-conclusion strong,
-      .sector-method-conclusion strong {
+    :where(html[data-theme="dark"]) .medicine-card-benefit strong,
+      :where(html[data-theme="dark"]) .institutes-card-benefit strong,
+      :where(html[data-theme="dark"]) .institutes-reality-conclusion strong,
+      :where(html[data-theme="dark"]) .institutes-editorial-benefit strong,
+      :where(html[data-theme="dark"]) .institutes-method-conclusion strong,
+      :where(html[data-theme="dark"]) .sector-editorial-benefit strong,
+      :where(html[data-theme="dark"]) .sector-reality-conclusion strong,
+      :where(html[data-theme="dark"]) .sector-method-conclusion strong {
         color: #14244a !important;
       }
 
-      .site-header {
+    :where(html[data-theme="dark"]) .site-header {
         background: rgba(16, 24, 57, 0.98) !important;
         border-bottom-color: rgba(92, 111, 174, 0.38) !important;
       }
 
-      .home-hero,
-      .resources-hero,
-      .contact-cube-hero {
+    :where(html[data-theme="dark"]) .home-hero,
+      :where(html[data-theme="dark"]) .resources-hero,
+      :where(html[data-theme="dark"]) .contact-cube-hero {
         background:
           radial-gradient(circle at 86% 22%, rgba(84, 12, 228, 0.10), transparent 34%),
           radial-gradient(circle at 12% 88%, rgba(0, 176, 255, 0.08), transparent 38%),
           linear-gradient(135deg, #080d22 0%, #0a1028 58%, #131b40 100%) !important;
       }
 
-      .home-hero::after,
-      .resources-hero::after,
-      .contact-cube-hero::after {
+    :where(html[data-theme="dark"]) .home-hero::after,
+      :where(html[data-theme="dark"]) .resources-hero::after,
+      :where(html[data-theme="dark"]) .contact-cube-hero::after {
         background:
           linear-gradient(90deg, rgba(7, 12, 30, 0.94), rgba(10, 16, 40, 0.80), rgba(16, 24, 58, 0.50)),
           linear-gradient(0deg, rgba(6, 10, 25, 0.62), rgba(6, 10, 25, 0.16)) !important;
       }
-    }
 
     html.theme-dark .medicine-card-benefit,
     html.theme-dark .institutes-card-benefit,
@@ -122,11 +120,9 @@
     }
 
     @media (min-width: 1051px) {
-      @media (prefers-color-scheme: dark) {
-        .site-header .main-nav {
+        :where(html[data-theme="dark"]) .site-header .main-nav {
           background: transparent !important;
         }
-      }
 
       html.theme-dark .site-header .main-nav {
         background: transparent !important;

@@ -31,6 +31,15 @@ html.theme-dark #contenu > .section.section-soft.section-aqua {
   background: var(--color-soft) !important;
 }
 
+html:is(.theme-dark,.theme-light) #contenu > .section.section-soft.section-aqua::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  transform: scaleX(-1);
+}
+
 html:not(.theme-dark) #contenu > .section.section-soft.section-aqua::before,
 html.theme-dark #contenu > .section.section-soft.section-aqua::before {
   content: "";
@@ -69,6 +78,11 @@ html.theme-dark #contenu > .section.section-soft.section-aqua::before {
   }
 }
 
+html:is(.theme-dark,.theme-light) #contenu > .section:not(.conversion-band)::after {
+  content: none !important;
+  display: none !important;
+}
+
 html.theme-dark #contenu > .section:not(.conversion-band)::after {
   content: none !important;
   display: none !important;
@@ -88,8 +102,6 @@ html.theme-dark #contenu > .section:not(.conversion-band)::before {
 
 @media (max-width: 720px) {
   html:not(.theme-dark) body.thalasso-page #contenu > .section.section-mist.section-aqua::before {
-    content: none !important;
-    display: none !important;
     background: none !important;
     opacity: 0 !important;
   }
@@ -97,22 +109,12 @@ html.theme-dark #contenu > .section:not(.conversion-band)::before {
 
 html:not(.theme-dark) body.thalasso-page #contenu > .section.section-aqua h2 {
   color: #142044;
-  font-weight: 500;
 }
 
 html:not(.theme-dark) body.thalasso-page #contenu > .section.section-aqua h3,
 html:not(.theme-dark) body.thalasso-page #contenu > .section.section-aqua p:not(.eyebrow),
 html:not(.theme-dark) body.thalasso-page #contenu > .section.section-aqua li {
   color: #172447;
-}
-
-html:not(.theme-dark) body.thalasso-page #contenu > .section.section-aqua p:not(.eyebrow),
-html:not(.theme-dark) body.thalasso-page #contenu > .section.section-aqua li {
-  font-weight: 500;
-}
-
-html:not(.theme-dark) body.thalasso-page #contenu > .section.section-aqua > .container > .eyebrow {
-  font-weight: 500;
 }
 
 @media (max-width: 720px) {
@@ -127,9 +129,6 @@ html:not(.theme-dark) body.thalasso-page .faq-accordion-item summary {
 }
 
 @media (max-width: 1050px) {
-  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-heading h3 {
-    font-weight: 500;
-  }
 }
 
 html:not(.theme-dark) body.thalasso-page .thalasso-system-link {
@@ -165,8 +164,6 @@ html.theme-dark body.thalasso-page #contenu > .section.section-mist.section-aqua
 
 @media (max-width: 720px) {
   html:not(.theme-dark) body.thalasso-page #contenu > .section.faq-section::before {
-    content: none !important;
-    display: none !important;
     background: none !important;
     opacity: 0 !important;
   }
@@ -193,20 +190,18 @@ html.theme-dark body.thalasso-page .thalasso-turnover-benefit strong {
   color: #07112d !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  html:not(.theme-dark) body.thalasso-page .section-aqua .thalasso-turnover-block {
+html:where([data-theme="dark"]):not(.theme-dark) body.thalasso-page .section-aqua .thalasso-turnover-block {
     background: rgba(17, 24, 61, 0.78) !important;
   }
 
-  html:not(.theme-dark) body.thalasso-page .thalasso-turnover-benefit {
+html:where([data-theme="dark"]):not(.theme-dark) body.thalasso-page .thalasso-turnover-benefit {
     background: #a9c0dc !important;
     color: #0b1738 !important;
   }
 
-  html:not(.theme-dark) body.thalasso-page .thalasso-turnover-benefit strong {
+html:where([data-theme="dark"]):not(.theme-dark) body.thalasso-page .thalasso-turnover-benefit strong {
     color: #07112d !important;
   }
-}
 
 html.theme-dark body.thalasso-page .faq-section h2,
 html.theme-dark body.thalasso-page .faq-accordion-item summary,
@@ -215,28 +210,16 @@ html.theme-dark body.thalasso-page .faq-answer p {
   color: #a9c0dc !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  html:not(.theme-dark) body.thalasso-page .faq-section h2,
-  html:not(.theme-dark) body.thalasso-page .faq-accordion-item summary,
-  html:not(.theme-dark) body.thalasso-page .faq-answer,
-  html:not(.theme-dark) body.thalasso-page .faq-answer p {
+html:where([data-theme="dark"]):not(.theme-dark) body.thalasso-page .faq-section h2,
+  html:where([data-theme="dark"]):not(.theme-dark) body.thalasso-page .faq-accordion-item summary,
+  html:where([data-theme="dark"]):not(.theme-dark) body.thalasso-page .faq-answer,
+  html:where([data-theme="dark"]):not(.theme-dark) body.thalasso-page .faq-answer p {
     color: #a9c0dc !important;
   }
-}
 
 html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-heading h3,
 html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .thalasso-turnover-heading h3 {
   color: #5422b3 !important;
-  font-size: 1.18rem !important;
-  line-height: 1.25 !important;
-  font-weight: 500 !important;
-}
-
-html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-heading .title-pictogram,
-html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .thalasso-turnover-pictogram {
-  width: 32px !important;
-  height: 32px !important;
-  flex: 0 0 32px !important;
 }
 
 /* Réalité de l'établissement : seuls les mots-clés d'ouverture sont légèrement renforcés. */
@@ -255,45 +238,22 @@ html[data-theme="dark"] body.thalasso-page .thalasso-reality-turnover-accordion 
   -webkit-text-fill-color: #ffffff !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  html:not(.theme-dark):not([data-theme="light"]) body.thalasso-page .thalasso-reality-turnover-accordion > summary strong {
+html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.thalasso-page .thalasso-reality-turnover-accordion > summary strong {
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
   }
-}
 
 /* Mode jour : Turnover et continuité opérationnelle aligné sur les autres mots renforcés. */
-html:not(.theme-dark) body.thalasso-page .sector-reality-list li:last-child strong {
-  font-weight: 600 !important;
-}
 
 /* Mode jour : titres des cinq cartes affinés sur desktop/portable et mobile uniquement. */
 @media (min-width: 1051px) {
-  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-heading h3,
-  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .thalasso-turnover-heading h3 {
-    font-weight: 500 !important;
-  }
 }
 
 @media (max-width: 720px) {
-  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-heading h3,
-  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .thalasso-turnover-heading h3 {
-    font-weight: 500 !important;
-  }
 }
 
 /* Mode jour desktop : textes bleu marine des cinq cartes légèrement affinés. */
 @media (min-width: 1051px) {
-  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-content > p,
-  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .thalasso-turnover-copy,
-  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .thalasso-turnover-benefit {
-    font-weight: 400 !important;
-  }
-
-  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-benefit strong,
-  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .thalasso-turnover-benefit strong {
-    font-weight: 600 !important;
-  }
 }
 
 /* Mode jour : retour aux images à bulles claires d'origine. */
@@ -351,17 +311,7 @@ html:not(.theme-dark) body.thalasso-page #contenu > .section.section-mist.sectio
 }
 
 /* Mobile jour : pictogramme et titre de la carte onboarding sur la même ligne. */
-@media (max-width: 720px) and (prefers-color-scheme: light) {
-  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .thalasso-turnover-heading {
-    display: flex !important;
-    align-items: flex-start !important;
-    gap: 0.75rem !important;
-  }
-
-  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .thalasso-turnover-pictogram,
-  html:not(.theme-dark) body.thalasso-page #contenu > .section.section-soft.section-aqua .thalasso-turnover-heading h3 {
-    order: initial !important;
-  }
+@media (max-width: 720px) {
 }
 
 /* ========================================================================== */
@@ -393,12 +343,25 @@ html[data-theme="dark"] body.thalasso-page .site-footer {
 }
 
 /* Les deux bandeaux photographiques conservent l'image, sans voile violet. */
+html:is(.theme-dark,.theme-light) body.thalasso-page #contenu > .section.section-soft.section-aqua,
+html[data-theme] body.thalasso-page #contenu > .section.section-soft.section-aqua {
+  background-position: center center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
 html.theme-dark body.thalasso-page #contenu > .section.section-soft.section-aqua,
 html[data-theme="dark"] body.thalasso-page #contenu > .section.section-soft.section-aqua {
   background-color: #11183d !important;
   background-image:
     linear-gradient(rgba(17, 24, 61, 0.68), rgba(17, 24, 61, 0.68)),
     var(--aqua-image) !important;
+  background-position: center center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+
+html:is(.theme-dark,.theme-light) body.thalasso-page #contenu > .section.section-mist.section-aqua,
+html[data-theme] body.thalasso-page #contenu > .section.section-mist.section-aqua {
   background-position: center center !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
@@ -413,6 +376,14 @@ html[data-theme="dark"] body.thalasso-page #contenu > .section.section-mist.sect
   background-position: center center !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
+}
+
+html:is(.theme-dark,.theme-light) body.thalasso-page #contenu > .section.section-aqua::before,
+html[data-theme] body.thalasso-page #contenu > .section.section-aqua::before,
+html:is(.theme-dark,.theme-light) body.thalasso-page #contenu > .section.section-aqua::after,
+html[data-theme] body.thalasso-page #contenu > .section.section-aqua::after {
+  content: none !important;
+  display: none !important;
 }
 
 html.theme-dark body.thalasso-page #contenu > .section.section-aqua::before,
@@ -460,6 +431,13 @@ html[data-theme="dark"] body.thalasso-page #contenu > .conversion-band .btn:hove
 }
 
 /* Une seule grille nocturne pour les six cartes, turnover compris. */
+html:is(.theme-dark,.theme-light) body.thalasso-page .thalasso-systems-grid,
+html[data-theme] body.thalasso-page .thalasso-systems-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
 html.theme-dark body.thalasso-page .thalasso-systems-grid,
 html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid {
   display: grid;
@@ -468,9 +446,24 @@ html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid {
   margin-top: 2rem;
 }
 
+html:is(.theme-dark,.theme-light) body.thalasso-page .thalasso-systems-grid > .sector-editorial-list,
+html[data-theme] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list {
+  display: contents;
+}
+
 html.theme-dark body.thalasso-page .thalasso-systems-grid > .sector-editorial-list,
 html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list {
   display: contents;
+}
+
+html:is(.theme-dark,.theme-light) body.thalasso-page .thalasso-systems-grid .sector-editorial-chapter,
+html[data-theme] body.thalasso-page .thalasso-systems-grid .sector-editorial-chapter,
+html:is(.theme-dark,.theme-light) body.thalasso-page .thalasso-systems-grid .thalasso-turnover-block,
+html[data-theme] body.thalasso-page .thalasso-systems-grid .thalasso-turnover-block {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 html.theme-dark body.thalasso-page .thalasso-systems-grid .sector-editorial-chapter,
@@ -486,12 +479,28 @@ html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid .thalasso-turn
   -webkit-backdrop-filter: none !important;
 }
 
+html:is(.theme-dark,.theme-light) body.thalasso-page .thalasso-systems-grid .thalasso-turnover-block,
+html[data-theme] body.thalasso-page .thalasso-systems-grid .thalasso-turnover-block {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1rem;
+}
+
 html.theme-dark body.thalasso-page .thalasso-systems-grid .thalasso-turnover-block,
 html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid .thalasso-turnover-block {
   display: flex;
   flex-direction: column;
   align-items: stretch;
   gap: 1rem;
+}
+
+html:is(.theme-dark,.theme-light) body.thalasso-page .thalasso-turnover-block > summary,
+html[data-theme] body.thalasso-page .thalasso-turnover-block > summary {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  align-items: center;
 }
 
 html.theme-dark body.thalasso-page .thalasso-turnover-block > summary,
@@ -502,6 +511,12 @@ html[data-theme="dark"] body.thalasso-page .thalasso-turnover-block > summary {
   align-items: center;
 }
 
+html:is(.theme-dark,.theme-light) body.thalasso-page .thalasso-turnover-heading,
+html[data-theme] body.thalasso-page .thalasso-turnover-heading {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
 html.theme-dark body.thalasso-page .thalasso-turnover-heading,
 html[data-theme="dark"] body.thalasso-page .thalasso-turnover-heading {
   min-width: 0;
@@ -509,6 +524,10 @@ html[data-theme="dark"] body.thalasso-page .thalasso-turnover-heading {
 }
 
 @media (min-width: 1050px) {
+  html:is(.theme-dark,.theme-light) body.thalasso-page .thalasso-systems-grid,
+html[data-theme] body.thalasso-page .thalasso-systems-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   html.theme-dark body.thalasso-page .thalasso-systems-grid,
   html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -535,10 +554,27 @@ body.thalasso-page .thalasso-dark-grid-card {
   display: none !important;
 }
 
+html:is(.theme-dark,.theme-light) body.thalasso-page .thalasso-systems-grid,
+html[data-theme] body.thalasso-page .thalasso-systems-grid {
+  display: block !important;
+  margin-top: 0 !important;
+}
+
 html.theme-dark body.thalasso-page .thalasso-systems-grid,
 html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid {
   display: block !important;
   margin-top: 0 !important;
+}
+
+html:is(.theme-dark,.theme-light) body.thalasso-page .thalasso-systems-grid > .sector-editorial-list,
+html[data-theme] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  grid-auto-rows: auto;
+  gap: 1.2rem !important;
+  margin-top: 2rem !important;
+  border-top-width: 0 !important;
+  border-top-style: none !important;
 }
 
 html.theme-dark body.thalasso-page .thalasso-systems-grid > .sector-editorial-list,
@@ -549,6 +585,22 @@ html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid > .sector-edit
   gap: 1.2rem !important;
   margin-top: 2rem !important;
   border-top: 0 !important;
+}
+
+html:is(.theme-dark,.theme-light) body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .sector-editorial-chapter,
+html[data-theme] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .sector-editorial-chapter {
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 118px;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 1.35rem 1.5rem !important;
+  box-sizing: border-box !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-radius: 0 !important;
+  align-self: stretch !important;
 }
 
 html.theme-dark body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .sector-editorial-chapter,
@@ -570,12 +622,27 @@ html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid > .sector-edit
   align-self: stretch !important;
 }
 
+html:is(.theme-dark,.theme-light) body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .sector-editorial-chapter > summary,
+html[data-theme] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .sector-editorial-chapter > summary {
+  width: 100% !important;
+  min-height: 72px;
+  box-sizing: border-box !important;
+  align-items: center !important;
+}
+
 html.theme-dark body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .sector-editorial-chapter > summary,
 html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .sector-editorial-chapter > summary {
   width: 100% !important;
   min-height: 72px;
   box-sizing: border-box !important;
   align-items: center !important;
+}
+
+html:is(.theme-dark,.theme-light) body.thalasso-page .thalasso-systems-grid > .sector-editorial-list .sector-editorial-heading,
+html[data-theme] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list .sector-editorial-heading {
+  min-width: 0 !important;
+  flex: 1 1 auto !important;
+  padding-bottom: 0 !important;
 }
 
 html.theme-dark body.thalasso-page .thalasso-systems-grid > .sector-editorial-list .sector-editorial-heading,
@@ -585,14 +652,29 @@ html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid > .sector-edit
   padding-bottom: 0 !important;
 }
 
+html:is(.theme-dark,.theme-light) body.thalasso-page .thalasso-systems-grid > .sector-editorial-list .sector-editorial-heading h3,
+html[data-theme] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list .sector-editorial-heading h3 {
+  margin: 0 !important;
+}
+
 html.theme-dark body.thalasso-page .thalasso-systems-grid > .sector-editorial-list .sector-editorial-heading h3,
 html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list .sector-editorial-heading h3 {
   margin: 0 !important;
 }
 
+html:is(.theme-dark,.theme-light) body.thalasso-page .thalasso-dark-grid-card,
+html[data-theme] body.thalasso-page .thalasso-dark-grid-card {
+  display: block !important;
+}
+
 html.theme-dark body.thalasso-page .thalasso-dark-grid-card,
 html[data-theme="dark"] body.thalasso-page .thalasso-dark-grid-card {
   display: block !important;
+}
+
+html:is(.theme-dark,.theme-light) body.thalasso-page .thalasso-systems-grid > .thalasso-turnover-block,
+html[data-theme] body.thalasso-page .thalasso-systems-grid > .thalasso-turnover-block {
+  display: none !important;
 }
 
 html.theme-dark body.thalasso-page .thalasso-systems-grid > .thalasso-turnover-block,
@@ -601,6 +683,11 @@ html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid > .thalasso-tu
 }
 
 @media (min-width: 1050px) {
+  html:is(.theme-dark,.theme-light) body.thalasso-page .thalasso-systems-grid > .sector-editorial-list,
+html[data-theme] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-auto-rows: 1fr;
+  }
   html.theme-dark body.thalasso-page .thalasso-systems-grid > .sector-editorial-list,
   html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
@@ -611,6 +698,11 @@ html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid > .thalasso-tu
 /* Sur ordinateur, les cartes ouvertes doivent rester flex pour que leurs
    blocs Bénéfice s'appuient sur le bas commun de chaque rangée. */
 @media (min-width: 1051px) {
+  html:is(.theme-dark,.theme-light) body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .sector-editorial-chapter,
+html[data-theme] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .sector-editorial-chapter {
+    display: flex !important;
+    flex-direction: column;
+  }
   html.theme-dark body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .sector-editorial-chapter,
   html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .sector-editorial-chapter {
     display: flex !important;
@@ -619,6 +711,10 @@ html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid > .thalasso-tu
 }
 
 @media (max-width: 1049px) {
+  html:is(.theme-dark,.theme-light) body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .sector-editorial-chapter,
+html[data-theme] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .sector-editorial-chapter {
+    min-height: 0;
+  }
   html.theme-dark body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .sector-editorial-chapter,
   html[data-theme="dark"] body.thalasso-page .thalasso-systems-grid > .sector-editorial-list > .sector-editorial-chapter {
     min-height: 0;
@@ -639,10 +735,20 @@ html[data-theme="dark"] body.thalasso-page #contenu > .section.section-mist.sect
 
 
 /* Méthode Thalasso nuit : typographie plus légère et plus aérée. */
+html:is(.theme-dark,.theme-light) body.thalasso-page .sector-method-card .card-title-with-icon,
+html[data-theme] body.thalasso-page .sector-method-card .card-title-with-icon {
+  font-weight: 400 !important;
+  line-height: 1.36 !important;
+}
 html.theme-dark body.thalasso-page .sector-method-card .card-title-with-icon,
 html[data-theme="dark"] body.thalasso-page .sector-method-card .card-title-with-icon {
   font-weight: 400 !important;
   line-height: 1.36 !important;
+}
+
+html:is(.theme-dark,.theme-light) body.thalasso-page .sector-method-card .card-title-with-icon strong,
+html[data-theme] body.thalasso-page .sector-method-card .card-title-with-icon strong {
+  font-weight: 400 !important;
 }
 
 html.theme-dark body.thalasso-page .sector-method-card .card-title-with-icon strong,

@@ -1,11 +1,6 @@
 (() => {
   const desktop = window.matchMedia("(min-width: 1051px)");
 
-  const isDark = () => {
-    const root = document.documentElement;
-    return root.classList.contains("theme-dark") || root.dataset.theme === "dark";
-  };
-
   const targets = () => [
     ...document.querySelectorAll(
       "body.home-page details.home-section-accordion, " +
@@ -18,7 +13,8 @@
   ];
 
   const sync = () => {
-    const forceOpen = desktop.matches && isDark();
+    // La construction de page est identique dans les deux thèmes.
+    const forceOpen = desktop.matches;
 
     targets().forEach((details) => {
       if (forceOpen) {

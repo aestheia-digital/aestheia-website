@@ -42,3 +42,11 @@ body:is(.home-page, .spa-page, .thalasso-page) .multi-agent-caption {
   .multi-agent-schema .step:not(:last-child)::after { content: '↓'; left: 50%; top: 100%; transform: translateX(-50%); }
   .multi-agent-schema.has-motion-decor .step::after { content: none; }
 }
+
+/* Couleurs des nœuds du schéma SVG, sans filtre sur la validation en jour. */
+@layer refonte {
+  html[data-theme="light"] .agents-schema .as-node rect { fill: #F3F0FF !important; stroke: #CBBFF7 !important; filter: none !important; }
+  html[data-theme="light"] .agents-schema .as-node text { fill: #1B2A6B !important; }
+  .agents-schema .as-action rect, html[data-theme="light"] .agents-schema .as-action rect { fill: #1E2B70 !important; stroke: #5B6CC9 !important; }
+  .agents-schema .as-action text, html[data-theme="light"] .agents-schema .as-action text { fill: #FFFFFF !important; }
+}

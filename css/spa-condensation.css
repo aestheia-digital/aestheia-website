@@ -16,12 +16,14 @@ html:not(.theme-dark) body.spa-page #contenu > .section.section-aqua {
   background-image:
     linear-gradient(rgba(255, 255, 255, 0.33), rgba(255, 255, 255, 0.33)),
     var(--spa-condensation-image) !important;
+}
+
+/* Mode nuit inchangé. */
+html:is(.theme-dark,.theme-light) body.spa-page #contenu > .section.section-aqua {
   background-position: center center !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
 }
-
-/* Mode nuit inchangé. */
 html.theme-dark body.spa-page #contenu > .section.section-aqua {
   background-color: transparent !important;
   background-image: var(--spa-condensation-image) !important;
@@ -53,6 +55,12 @@ html.theme-dark body.spa-page #contenu > .section.section-mist.section-aqua {
 }
 
 /* Aucun pseudo-element ne doit recouvrir ou flouter l'image. */
+html:is(.theme-dark,.theme-light) body.spa-page #contenu > .section.section-aqua::before,
+html:is(.theme-dark,.theme-light) body.spa-page #contenu > .section.section-aqua::after {
+  content: none !important;
+  display: none !important;
+  transform: none !important;
+}
 html:not(.theme-dark) body.spa-page #contenu > .section.section-aqua::before,
 html.theme-dark body.spa-page #contenu > .section.section-aqua::before,
 html:not(.theme-dark) body.spa-page #contenu > .section.section-aqua::after,
@@ -84,6 +92,9 @@ html.theme-dark body.spa-page .section-aqua .sector-editorial-chapter {
     background-image:
       linear-gradient(rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0.35)),
       var(--spa-condensation-image) !important;
+  }
+
+  html:is(.theme-dark,.theme-light) body.spa-page #contenu > .section.section-aqua {
     background-position: center center !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
@@ -122,6 +133,13 @@ html.theme-dark body.spa-page .section-aqua .sector-editorial-chapter {
 }
 
 /* Mode nuit : aucun halo violet ni nuée sur la page Spa & hôtellerie, tous supports. */
+html:is(.theme-dark,.theme-light) body.spa-page #contenu > .section:not(.conversion-band)::before,
+html[data-theme] body.spa-page #contenu > .section:not(.conversion-band)::before,
+html:is(.theme-dark,.theme-light) body.spa-page #contenu > .section:not(.conversion-band)::after,
+html[data-theme] body.spa-page #contenu > .section:not(.conversion-band)::after {
+  content: none !important;
+  display: none !important;
+}
 html.theme-dark body.spa-page #contenu > .section:not(.conversion-band)::before,
 html[data-theme="dark"] body.spa-page #contenu > .section:not(.conversion-band)::before,
 html.theme-dark body.spa-page #contenu > .section:not(.conversion-band)::after,
@@ -135,21 +153,15 @@ html[data-theme="dark"] body.spa-page #contenu > .section:not(.conversion-band):
 /* Mode jour : aucun halo violet ni nuée sur la page Spa & hôtellerie, tous supports. */
 html:not(.theme-dark) body.spa-page #contenu > .section:not(.conversion-band)::before,
 html:not(.theme-dark) body.spa-page #contenu > .section:not(.conversion-band)::after {
-  content: none !important;
-  display: none !important;
   background: none !important;
   opacity: 0 !important;
 }
 
-@media (prefers-color-scheme: light) {
-  html:not(.theme-dark):not([data-theme="dark"]) body.spa-page #contenu > .section:not(.conversion-band)::before,
-  html:not(.theme-dark):not([data-theme="dark"]) body.spa-page #contenu > .section:not(.conversion-band)::after {
-    content: none !important;
-    display: none !important;
+html:where([data-theme="light"]):not(.theme-dark):not([data-theme="dark"]) body.spa-page #contenu > .section:not(.conversion-band)::before,
+  html:where([data-theme="light"]):not(.theme-dark):not([data-theme="dark"]) body.spa-page #contenu > .section:not(.conversion-band)::after {
     background: none !important;
     opacity: 0 !important;
   }
-}
 
 /* Intitules de section violets sur tous supports. */
 html:not(.theme-dark) body.spa-page #contenu > .section:not(.conversion-band) > .container > .eyebrow {
@@ -435,7 +447,6 @@ html.theme-dark body.spa-page .spa-turnover-benefit strong {
 /* Mode jour : typographie renforcée sur les bandeaux photographiques Spa. */
 html:not(.theme-dark) body.spa-page #contenu > .section.section-aqua h2 {
   color: #142044;
-  font-weight: 500;
 }
 
 html:not(.theme-dark) body.spa-page #contenu > .section.section-aqua h3,
@@ -444,21 +455,28 @@ html:not(.theme-dark) body.spa-page #contenu > .section.section-aqua li {
   color: #172447;
 }
 
-html:not(.theme-dark) body.spa-page #contenu > .section.section-aqua p:not(.eyebrow),
-html:not(.theme-dark) body.spa-page #contenu > .section.section-aqua li {
-  font-weight: 500;
-}
-
-html:not(.theme-dark) body.spa-page #contenu > .section.section-aqua > .container > .eyebrow {
-  font-weight: 500;
-}
-
 /* FAQ Spa : questions en violet profond légèrement rehaussé, mode jour uniquement. */
 html:not(.theme-dark) body.spa-page .faq-accordion-item summary {
   color: #5422b3;
 }
 
 /* Lien interne Spa vers Thalasso : même violet que Réassurance, sans apparence de bouton. */
+html:is(.theme-dark,.theme-light) body.spa-page #contenu .section.section-mist.section-aqua .sector-crosslink-cta,
+html:is(.theme-dark,.theme-light) body.spa-page #contenu .section.section-mist.section-aqua .sector-crosslink-cta:hover,
+html:is(.theme-dark,.theme-light) body.spa-page #contenu .section.section-mist.section-aqua .sector-crosslink-cta:focus-visible,
+html[data-theme] body.spa-page #contenu .section.section-mist.section-aqua .sector-crosslink-cta,
+html[data-theme] body.spa-page #contenu .section.section-mist.section-aqua .sector-crosslink-cta:hover,
+html[data-theme] body.spa-page #contenu .section.section-mist.section-aqua .sector-crosslink-cta:focus-visible {
+  display: inline-flex !important;
+  max-width: 100%;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0 !important;
+  border-width: 0 !important;
+  border-style: none !important;
+  border-radius: 0 !important;
+  text-decoration: none !important;
+}
 body.spa-page #contenu .section.section-mist.section-aqua .sector-crosslink-cta,
 body.spa-page #contenu .section.section-mist.section-aqua .sector-crosslink-cta:hover,
 body.spa-page #contenu .section.section-mist.section-aqua .sector-crosslink-cta:focus-visible,
@@ -523,6 +541,14 @@ html:not(.theme-dark) body.spa-page .spa-method-cta a {
     -webkit-backdrop-filter: none !important;
   }
 
+  html:is(.theme-dark,.theme-light) body.spa-page .spa-turnover-benefit,
+html[data-theme] body.spa-page .spa-turnover-benefit,
+html:is(.theme-dark,.theme-light) body.spa-page .sector-editorial-benefit,
+html[data-theme] body.spa-page .sector-editorial-benefit {
+    border-left-width: 0 !important;
+    border-left-style: none !important;
+  }
+
   html.theme-dark body.spa-page .spa-turnover-benefit,
   html[data-theme="dark"] body.spa-page .spa-turnover-benefit,
   html.theme-dark body.spa-page .sector-editorial-benefit,
@@ -582,7 +608,6 @@ body.spa-page .sector-editorial-benefit strong {
 
 html:not(.theme-dark) body.spa-page .spa-turnover-benefit {
   color: #0b1738 !important;
-  font-weight: 600 !important;
 }
 
 html:not(.theme-dark) body.spa-page .spa-turnover-benefit strong {
@@ -590,6 +615,12 @@ html:not(.theme-dark) body.spa-page .spa-turnover-benefit strong {
 }
 
 @media (max-width: 720px) {
+  html:is(.theme-dark,.theme-light) body.spa-page .spa-turnover-benefit,
+html[data-theme] body.spa-page .spa-turnover-benefit,
+html:is(.theme-dark,.theme-light) body.spa-page .sector-editorial-benefit,
+html[data-theme] body.spa-page .sector-editorial-benefit {
+    font-weight: 600 !important;
+  }
   html.theme-dark body.spa-page .spa-turnover-benefit,
   html[data-theme="dark"] body.spa-page .spa-turnover-benefit,
   html.theme-dark body.spa-page .sector-editorial-benefit,
@@ -619,6 +650,13 @@ html[data-theme="dark"] body.spa-page .section-aqua .spa-turnover-block {
   border-color: var(--color-border) !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
+}
+
+html:is(.theme-dark,.theme-light) body.spa-page .spa-turnover-benefit,
+html[data-theme] body.spa-page .spa-turnover-benefit {
+  font-weight: 600 !important;
+  border-left-width: 0 !important;
+  border-left-style: none !important;
 }
 
 html.theme-dark body.spa-page .spa-turnover-benefit,
@@ -671,10 +709,6 @@ html[data-theme="dark"] body.spa-page .faq-accordion-item summary {
 
 /* Ordinateur, mode jour : corps de texte allégé dans les cartes Systèmes. */
 @media (min-width: 1051px) {
-  html:not(.theme-dark):not([data-theme="dark"]) body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-content > p:not(.sector-editorial-benefit),
-  html:not(.theme-dark):not([data-theme="dark"]) body.spa-page #contenu > .section.section-soft.section-aqua .spa-turnover-copy {
-    font-weight: 400 !important;
-  }
 }
 
 
@@ -686,12 +720,10 @@ html[data-theme="dark"] body.spa-page #contenu > .section.section-soft.section-a
   color: #a9cfff !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  html:not(.theme-dark):not([data-theme="light"]) body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-heading h3,
-  html:not(.theme-dark):not([data-theme="light"]) body.spa-page #contenu > .section.section-soft.section-aqua .spa-turnover-heading h3 {
+html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-heading h3,
+  html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.spa-page #contenu > .section.section-soft.section-aqua .spa-turnover-heading h3 {
     color: #a9cfff !important;
   }
-}
 
 
 /* CTA Spa : alignement global turquoise uni, sans halo, tous thèmes et supports. */
@@ -724,11 +756,9 @@ html.theme-dark body.spa-page #contenu > .section.section-soft.section-aqua .sec
 html[data-theme="dark"] body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-chapter {
   background: rgba(17, 24, 61, 0.94) !important;
 }
-@media (prefers-color-scheme: dark) {
-  html:not(.theme-dark):not([data-theme="light"]) body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-chapter {
+html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.spa-page #contenu > .section.section-soft.section-aqua .sector-editorial-chapter {
     background: rgba(17, 24, 61, 0.94) !important;
   }
-}
 
 /* Mon approche : titres des quatre étapes en violet. */
 body.spa-page .sector-method-section .sector-method-card .card-title-with-icon strong {

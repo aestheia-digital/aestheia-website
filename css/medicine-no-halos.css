@@ -1,4 +1,9 @@
 /* Page Médecine et chirurgie esthétique : suppression de tous les halos violets sur tous les supports et dans les deux modes. */
+html:is(.theme-dark,.theme-light) body.medicine-page #contenu > .section:not(.conversion-band)::before,
+html[data-theme] body.medicine-page #contenu > .section:not(.conversion-band)::before {
+  content: none !important;
+  display: none !important;
+}
 body.medicine-page #contenu > .section:not(.conversion-band)::before,
 html.theme-dark body.medicine-page #contenu > .section:not(.conversion-band)::before,
 html[data-theme="dark"] body.medicine-page #contenu > .section:not(.conversion-band)::before {
@@ -14,6 +19,12 @@ body.medicine-page #contenu > .section.section-soft {
 
 body.medicine-page #contenu > .section.section-mist {
   background: var(--gradient-soft-blue) !important;
+}
+
+html:is(.theme-dark,.theme-light) body.medicine-page #contenu > .section:not(.conversion-band)::after,
+html[data-theme] body.medicine-page #contenu > .section:not(.conversion-band)::after {
+  content: none !important;
+  display: none !important;
 }
 
 body.medicine-page #contenu > .section:not(.conversion-band)::after,
@@ -62,11 +73,9 @@ html[data-theme="light"] body.medicine-page #contenu > .section.section-mist + .
   background: linear-gradient(135deg, #00b0ff, var(--color-accent)) !important;
 }
 
-@media (prefers-color-scheme: light) {
-  html:not(.theme-dark):not([data-theme="dark"]) body.medicine-page #contenu > .section.section-mist + .section.section-mist .feature-list li::before {
+html:where([data-theme="light"]):not(.theme-dark):not([data-theme="dark"]) body.medicine-page #contenu > .section.section-mist + .section.section-mist .feature-list li::before {
     background: linear-gradient(135deg, #00b0ff, var(--color-accent)) !important;
   }
-}
 
 /* Réassurance médecine en mode nuit : puces identiques à celles de La réalité du cabinet. */
 html.theme-dark body.medicine-page #contenu > .section.section-mist + .section.section-mist .feature-list li::before,
@@ -74,11 +83,9 @@ html[data-theme="dark"] body.medicine-page #contenu > .section.section-mist + .s
   background: linear-gradient(135deg, #00b0ff, var(--color-accent)) !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  html:not(.theme-dark):not([data-theme="light"]) body.medicine-page #contenu > .section.section-mist + .section.section-mist .feature-list li::before {
+html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.medicine-page #contenu > .section.section-mist + .section.section-mist .feature-list li::before {
     background: linear-gradient(135deg, #00b0ff, var(--color-accent)) !important;
   }
-}
 
 /* FAQ médecine esthétique en mode jour : même violet neutre que la page Instituts & indépendantes. */
 html[data-theme="light"] body.medicine-page .faq-section .faq-accordion-item summary,
@@ -86,17 +93,20 @@ html[data-theme="light"] body.medicine-page .faq-section .faq-accordion-item sum
   color: #6b4bb3 !important;
 }
 
-@media (prefers-color-scheme: light) {
-  html:not(.theme-dark):not([data-theme="dark"]) body.medicine-page .faq-section .faq-accordion-item summary,
-  html:not(.theme-dark):not([data-theme="dark"]) body.medicine-page .faq-section .faq-accordion-item summary h3 {
+html:where([data-theme="light"]):not(.theme-dark):not([data-theme="dark"]) body.medicine-page .faq-section .faq-accordion-item summary,
+  html:where([data-theme="light"]):not(.theme-dark):not([data-theme="dark"]) body.medicine-page .faq-section .faq-accordion-item summary h3 {
     color: #6b4bb3 !important;
   }
-}
 
 /* FAQ médecine esthétique en mode nuit : questions dans le bleu des puces, titre et réponses en blanc. */
 html.theme-dark body.medicine-page .faq-accordion-item summary,
 html[data-theme="dark"] body.medicine-page .faq-accordion-item summary {
   color: #a9c0dc !important;
+}
+
+html:is(.theme-dark,.theme-light) body.medicine-page .faq-accordion-item summary h3,
+html[data-theme] body.medicine-page .faq-accordion-item summary h3 {
+  font-size: 1.06rem;
 }
 
 html.theme-dark body.medicine-page .faq-accordion-item summary h3,
@@ -105,16 +115,14 @@ html[data-theme="dark"] body.medicine-page .faq-accordion-item summary h3 {
   font-size: 1.06rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  html:not(.theme-dark):not([data-theme="light"]) body.medicine-page .faq-accordion-item summary {
+html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.medicine-page .faq-accordion-item summary {
     color: #a9c0dc !important;
   }
 
-  html:not(.theme-dark):not([data-theme="light"]) body.medicine-page .faq-accordion-item summary h3 {
+html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.medicine-page .faq-accordion-item summary h3 {
     color: #7fa6d8 !important;
     font-size: 1.06rem;
   }
-}
 
 /* Mode nuit : titres des cartes Systèmes cabinets et Résultats recherchés dans le bleu de la FAQ. */
 html.theme-dark body.medicine-page .sector-editorial-list .sector-editorial-heading h3,
@@ -124,12 +132,10 @@ html[data-theme="dark"] body.medicine-page #contenu > .section.section-mist:has(
   color: #a9cfff !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  html:not(.theme-dark):not([data-theme="light"]) body.medicine-page .sector-editorial-list .sector-editorial-heading h3,
-  html:not(.theme-dark):not([data-theme="light"]) body.medicine-page #contenu > .section.section-mist:has(.grid.grid-4) .card h3 {
+html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.medicine-page .sector-editorial-list .sector-editorial-heading h3,
+  html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.medicine-page #contenu > .section.section-mist:has(.grid.grid-4) .card h3 {
     color: #a9cfff !important;
   }
-}
 
 
 /* ==========================================================================
@@ -161,10 +167,20 @@ html[data-theme="dark"] body.medicine-page #contenu > .medicine-systems-section 
 }
 
 /* Cadre médical : typographie des cartes plus légère et plus respirante. */
+html:is(.theme-dark,.theme-light) body.medicine-page #contenu > .sector-method-section .sector-method-card .card-title-with-icon,
+html[data-theme] body.medicine-page #contenu > .sector-method-section .sector-method-card .card-title-with-icon {
+  font-weight: 400 !important;
+  line-height: 1.36 !important;
+}
 html.theme-dark body.medicine-page #contenu > .sector-method-section .sector-method-card .card-title-with-icon,
 html[data-theme="dark"] body.medicine-page #contenu > .sector-method-section .sector-method-card .card-title-with-icon {
   font-weight: 400 !important;
   line-height: 1.36 !important;
+}
+
+html:is(.theme-dark,.theme-light) body.medicine-page #contenu > .sector-method-section .sector-method-card .card-title-with-icon strong,
+html[data-theme] body.medicine-page #contenu > .sector-method-section .sector-method-card .card-title-with-icon strong {
+  font-weight: 400 !important;
 }
 
 html.theme-dark body.medicine-page #contenu > .sector-method-section .sector-method-card .card-title-with-icon strong,
@@ -173,29 +189,25 @@ html[data-theme="dark"] body.medicine-page #contenu > .sector-method-section .se
 }
 
 /* Thème sombre automatique lorsque l'utilisateur n'a pas forcé le mode jour. */
-@media (prefers-color-scheme: dark) {
-  html:not(.theme-dark):not([data-theme="light"]) body.medicine-page #contenu > .medicine-reality-section,
-  html:not(.theme-dark):not([data-theme="light"]) body.medicine-page #contenu > .sector-method-section,
-  html:not(.theme-dark):not([data-theme="light"]) body.medicine-page #contenu > .faq-section,
-  html:not(.theme-dark):not([data-theme="light"]) body.medicine-page .site-footer {
+html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.medicine-page #contenu > .medicine-reality-section,
+  html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.medicine-page #contenu > .sector-method-section,
+  html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.medicine-page #contenu > .faq-section,
+  html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.medicine-page .site-footer {
     background: #11183d !important;
     background-image: none !important;
   }
-
-  html:not(.theme-dark):not([data-theme="light"]) body.medicine-page #contenu > .medicine-systems-section .sector-editorial-chapter {
+html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.medicine-page #contenu > .medicine-systems-section .sector-editorial-chapter {
     background: #151c46 !important;
     background-image: none !important;
     box-shadow: none !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
   }
-
-  html:not(.theme-dark):not([data-theme="light"]) body.medicine-page #contenu > .sector-method-section .sector-method-card .card-title-with-icon,
-  html:not(.theme-dark):not([data-theme="light"]) body.medicine-page #contenu > .sector-method-section .sector-method-card .card-title-with-icon strong {
+html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.medicine-page #contenu > .sector-method-section .sector-method-card .card-title-with-icon,
+  html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.medicine-page #contenu > .sector-method-section .sector-method-card .card-title-with-icon strong {
     font-weight: 400 !important;
     line-height: 1.36 !important;
   }
-}
 
 
 /* Géométrie AesthéIA : blocs bénéfices à angles droits sur tous les supports. */
@@ -215,22 +227,18 @@ html.theme-dark body.medicine-page .related-resources .related-resource-card,
 html[data-theme="dark"] body.medicine-page .related-resources .related-resource-card {
   background: #141c3b;
 }
-@media (prefers-color-scheme: dark) {
-  html:not(.theme-dark):not([data-theme="light"]) body.medicine-page .related-resources .related-resource-card {
+html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.medicine-page .related-resources .related-resource-card {
     background: #141c3b;
   }
-}
 
 /* Assistant IA : bleu nuit légèrement éclairci, tous supports. */
 html.theme-dark body.medicine-page #contenu > .section.medicine-assistant-section,
 html[data-theme="dark"] body.medicine-page #contenu > .section.medicine-assistant-section {
   background-color: #141c3b !important;
 }
-@media (prefers-color-scheme: dark) {
-  html:not(.theme-dark):not([data-theme="light"]) body.medicine-page #contenu > .section.medicine-assistant-section {
+html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.medicine-page #contenu > .section.medicine-assistant-section {
     background-color: #141c3b !important;
   }
-}
 
 /* Assistant du cabinet : titre plus discret et contenu mieux espacé. */
 body.medicine-page #contenu > .medicine-assistant-section h2.section-title-with-icon {

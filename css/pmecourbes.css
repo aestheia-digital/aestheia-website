@@ -12,6 +12,14 @@ html:not(.theme-dark) body.pme-page #contenu > .section.section-aqua,
 html.theme-dark body.pme-page #contenu > .section.section-aqua {
   background: var(--color-soft) !important;
 }
+html:is(.theme-dark,.theme-light) body.pme-page #contenu > .section.section-aqua::before {
+  content: "" !important;
+  display: block !important;
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
 html:not(.theme-dark) body.pme-page #contenu > .section.section-aqua::before,
 html.theme-dark body.pme-page #contenu > .section.section-aqua::before {
   content: "" !important;
@@ -26,9 +34,15 @@ html.theme-dark body.pme-page #contenu > .section.section-aqua::before {
     var(--pme-image) bottom center / 100% auto no-repeat,
     var(--pme-fond) !important;
 }
+html:is(.theme-dark,.theme-light) body.pme-page #contenu > .section.section-mist.section-aqua::before {
+  transform: none !important;
+}
 html:not(.theme-dark) body.pme-page #contenu > .section.section-mist.section-aqua::before,
 html.theme-dark body.pme-page #contenu > .section.section-mist.section-aqua::before {
   transform: none !important;
+}
+html:is(.theme-dark,.theme-light) body.pme-page #contenu > .section:not(.conversion-band)::after {
+  content: none !important; display: none !important;
 }
 html.theme-dark body.pme-page #contenu > .section:not(.conversion-band)::after {
   content: none !important; display: none !important; background: none !important;
@@ -71,8 +85,8 @@ html.theme-dark body.pme-page #contenu > .section:not(.conversion-band):not(.sec
 }
 
 /* Mobile jour : abaisser le motif chiffré du bandeau « Les systèmes que nous concevons » pour dégager ses titres. */
-@media (max-width: 720px) and (prefers-color-scheme: light) {
-  html:not(.theme-dark):not([data-theme="dark"]) body.pme-page #contenu > .section.section-soft.section-aqua::before {
+@media (max-width: 720px) {
+  html:where([data-theme="light"]):not(.theme-dark):not([data-theme="dark"]) body.pme-page #contenu > .section.section-soft.section-aqua::before {
     background:
       linear-gradient(var(--pme-veil), var(--pme-veil)),
       var(--pme-image) center calc(100% + 70px) / cover no-repeat,
@@ -105,12 +119,10 @@ html[data-theme="light"] body.pme-page .sector-method-conclusion {
   color: #ffffff !important;
 }
 
-@media (prefers-color-scheme: light) {
-  html:not(.theme-dark):not([data-theme="dark"]) body.pme-page .sector-method-conclusion {
+html:where([data-theme="light"]):not(.theme-dark):not([data-theme="dark"]) body.pme-page .sector-method-conclusion {
     background: #415b8f !important;
     color: #ffffff !important;
   }
-}
 
 /* TPE & PME — mode nuit : conclusion Méthode identique aux cartes Bénéfice. */
 html.theme-dark body.pme-page .sector-method-conclusion,
@@ -119,12 +131,10 @@ html[data-theme="dark"] body.pme-page .sector-method-conclusion {
   color: #ffffff !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  html:not(.theme-dark):not([data-theme="light"]) body.pme-page .sector-method-conclusion {
+html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.pme-page .sector-method-conclusion {
     background: #415b8f !important;
     color: #ffffff !important;
   }
-}
 
 /* Mobile : bandeau « Pour qui ? » — afficher tout le portrait sans l'écraser ni le recadrer. */
 @media (max-width: 720px) {
@@ -138,8 +148,8 @@ html[data-theme="dark"] body.pme-page .sector-method-conclusion {
   }
 }
 
-@media (prefers-color-scheme: dark) and (max-width: 720px) {
-  html:not([data-theme="light"]) body.pme-page #contenu > .section.section-mist.section-aqua::before {
+@media (max-width: 720px) {
+  html:where([data-theme="dark"]):not([data-theme="light"]) body.pme-page #contenu > .section.section-mist.section-aqua::before {
     background:
       linear-gradient(var(--pme-veil), var(--pme-veil)),
       var(--pme-image) center center / auto 100% no-repeat,
@@ -267,14 +277,12 @@ html.theme-dark body.pme-page #contenu > .section.section-soft:not(.section-aqua
 html[data-theme="dark"] body.pme-page #contenu > .section.section-soft:not(.section-aqua) {
   background: linear-gradient(135deg, #11183d 0%, #172149 58%, #202d60 100%) !important;
 }
-@media (prefers-color-scheme: dark) {
-  html:not(.theme-dark):not([data-theme="light"]) body.pme-page #contenu > .section:not(.section-aqua):not(.section-soft):not(.conversion-band) {
+html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.pme-page #contenu > .section:not(.section-aqua):not(.section-soft):not(.conversion-band) {
     background: #0b1028 !important;
   }
-  html:not(.theme-dark):not([data-theme="light"]) body.pme-page #contenu > .section.section-soft:not(.section-aqua) {
+html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.pme-page #contenu > .section.section-soft:not(.section-aqua) {
     background: linear-gradient(135deg, #11183d 0%, #172149 58%, #202d60 100%) !important;
   }
-}
 
 /* Cartes méthode : pictogramme au-dessus du titre, aucun mot coupé */
 body.pme-page .sector-method-card {

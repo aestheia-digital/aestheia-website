@@ -1,7 +1,9 @@
 <!doctype html>
-<html lang="fr" class="theme-dark" data-theme="dark">
+<html lang="fr">
   <head>
     <meta charset="utf-8">
+    <script src="../../js/theme.js"></script>
+    <link rel="preload" href="../../assets/fonts/dm-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>IA en institut de beauté : que déléguer au quotidien ?</title>
     <meta name="description" content="Relances, suivi après un soin, chiffres, stocks : ce que l'IA et l'automatisation peuvent vraiment prendre en charge dans un institut de beauté.">
@@ -20,21 +22,24 @@
     <meta name="twitter:description" content="Relances, suivi après un soin, chiffres, stocks : ce que l'IA et l'automatisation peuvent vraiment prendre en charge dans un institut de beauté.">
     <meta name="twitter:image" content="https://aestheia.fr/assets/images/ressources/ia-automatisation-institut-de-beaute.webp">
     <link rel="icon" href="../../assets/images/brand/logo.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+
+
+
     <link rel="stylesheet" href="../../css/styles.css?v=unified-header-logo-20260924">
     <link rel="stylesheet" href="../../css/consent-manager.css">
     <link rel="stylesheet" href="../../css/article-august-2026.css">
     <style>
-      .ia-resume {display:flex;flex-wrap:nowrap;align-items:center;gap:1rem;margin-top:2.5rem;padding-top:1.2rem;border-top:1px solid #d8dce7;font-family:Inter,sans-serif}
-      .ia-resume-label {color:#212a59;opacity:.75;font-size:.95rem;white-space:nowrap;margin-right:.5rem}
+      .ia-resume {display:flex;flex-wrap:nowrap;align-items:center;gap:1rem;margin-top:2.5rem;padding-top:1.2rem;border-top:1px solid #d8dce7}
+      .ia-resume-label {color:#212a59;opacity:.75;white-space:nowrap;margin-right:.5rem}
       .ia-resume a {display:inline-flex;align-items:center;justify-content:center;width:80px;height:80px;padding:0;border:1px solid #d8dce7;border-radius:8px;background:#fff;text-decoration:none;transition:all .2s}
       .ia-resume a:hover {border-color:#5e17eb;background:rgba(94,23,235,.05);transform:translateY(-2px);box-shadow:0 4px 12px rgba(94,23,235,.1)}
       .ia-resume a:focus-visible {outline:2px solid #5e17eb;outline-offset:3px}
       .ia-resume .ia-brand {display:block;width:60px;height:60px;object-fit:contain}
-      @media (max-width:600px){.ia-resume{flex-wrap:wrap;gap:.75rem}.ia-resume-label{flex:0 0 100%;width:100%;font-size:.85rem;white-space:normal;margin-right:0}.ia-resume a{flex:0 0 60px;width:60px;height:60px}.ia-resume .ia-brand{width:50px;height:50px}}
-      @media (prefers-color-scheme:dark){.ia-resume{border-color:#64748b}.ia-resume-label{color:#f1f5f9}.ia-resume a{border-color:#475569;background:rgba(30,41,59,.3)}.ia-resume a:hover{border-color:#7c3aed;background:rgba(124,58,237,.15);box-shadow:0 4px 12px rgba(124,58,237,.15)}}
+      @media (max-width:600px){.ia-resume{flex-wrap:wrap;gap:.75rem}.ia-resume-label{flex:0 0 100%;width:100%;white-space:normal;margin-right:0}.ia-resume a{flex:0 0 60px;width:60px;height:60px}.ia-resume .ia-brand{width:50px;height:50px}}
+      :where(html[data-theme="dark"])  .ia-resume{border-color:#64748b}
+      :where(html[data-theme="dark"])  .ia-resume-label{color:#f1f5f9}
+      :where(html[data-theme="dark"])  .ia-resume a{border-color:#475569;background:rgba(30,41,59,.3)}
+      :where(html[data-theme="dark"])  .ia-resume a:hover{border-color:#7c3aed;background:rgba(124,58,237,.15);box-shadow:0 4px 12px rgba(124,58,237,.15)}
     </style>
     <script type="application/ld+json">
       {
