@@ -6605,3 +6605,33 @@ html[data-theme="dark"] .theme-toggle-moon { display: none; }
 @media (min-width: 721px) and (max-width: 1050px) {
   .theme-toggle { right: calc(20px + 44px + 1rem + 4px); }
 }
+
+@media (max-width: 1050px) {
+  .site-header .brand-name {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+  }
+  .site-header a.header-phone-direct {
+    order: 1;
+    flex-shrink: 0;
+    margin-right: 0 !important;
+    transform: none !important;
+  }
+  .site-header .theme-toggle {
+    position: static;
+    order: 2;
+    margin: 0;
+  }
+  .site-header .nav-toggle {
+    order: 3;
+    flex-shrink: 0;
+  }
+}
