@@ -6662,7 +6662,7 @@ html[data-theme="dark"] .theme-toggle-moon { display: none; }
 @layer typography {
   @media (max-width: 720px) {
     html[data-theme] .site-header a.header-phone-direct {
-      --header-phone-base: #EEF2FF;
+      --header-phone-base: #EEF2FF !important;
       color: var(--header-phone-base) !important;
       background-color: var(--header-phone-base) !important;
       background-image: linear-gradient(
@@ -6677,14 +6677,14 @@ html[data-theme="dark"] .theme-toggle-moon { display: none; }
       ) !important;
       background-repeat: no-repeat !important;
       background-size: 260% 100% !important;
-      background-position: 100% 50%;
+      background-position: var(--mobile-phone-sweep-position) 50% !important;
       -webkit-background-clip: text !important;
       background-clip: text !important;
       -webkit-text-fill-color: transparent !important;
       animation: mobile-phone-blue-sweep 16s linear infinite !important;
     }
     html[data-theme="light"] .site-header a.header-phone-direct {
-      --header-phone-base: #24457F;
+      --header-phone-base: #24457F !important;
     }
   }
   @media (max-width: 720px) and (prefers-reduced-motion: reduce) {
@@ -6695,7 +6695,12 @@ html[data-theme="dark"] .theme-toggle-moon { display: none; }
     }
   }
 }
+@property --mobile-phone-sweep-position {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
 @keyframes mobile-phone-blue-sweep {
-  0%, 82% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0%, 82% { --mobile-phone-sweep-position: 100%; }
+  100% { --mobile-phone-sweep-position: 0%; }
 }
