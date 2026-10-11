@@ -6635,3 +6635,23 @@ html[data-theme="dark"] .theme-toggle-moon { display: none; }
     flex-shrink: 0;
   }
 }
+
+/* Finesse mobile en mode jour : halo de l'accueil et menu déroulant. */
+@layer refonte {
+  @media (max-width: 720px) {
+    html[data-theme="light"] body.home-page #contenu > section.section:not(.hero):not(.section-aqua):not(.conversion-band)::before {
+      background: radial-gradient(circle at var(--halo-side) 15%, rgba(108, 77, 230, 0.10), transparent 55%) !important;
+    }
+  }
+}
+@layer typography {
+  @media (max-width: 720px) {
+    html[data-theme="light"] .main-nav {
+      --fw-navigation: 500;
+      font-weight: 500 !important;
+    }
+    html[data-theme="light"] .main-nav :is(a, button) {
+      font-weight: var(--fw-navigation) !important;
+    }
+  }
+}
