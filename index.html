@@ -296,13 +296,15 @@
       </section>
 
 
-      <section class="section time-simulator-section" id="simulateur" aria-labelledby="time-title" tabindex="-1">
-        <div class="container time-simulator" data-time-simulator>
-          <p class="eyebrow">VOTRE TEMPS COMPTE</p>
-          <h2 class="time-title" id="time-title">Combien d’heures pourriez-vous retrouver</h2>
-          <p class="time-intro">Choisissez votre activité, puis déplacez les curseurs : le résultat se met à jour tout de suite.</p>
-          <noscript>Activez JavaScript pour utiliser ce simulateur dans votre navigateur.</noscript>
-          <div data-time-component></div>
+      <section class="time-banner" aria-labelledby="time-banner-title">
+        <div class="container">
+          <div class="time-banner-inner">
+            <div>
+              <h3 id="time-banner-title">Combien d’heures pourriez-vous retrouver</h3>
+              <p>Estimez en 30 secondes le temps que l’automatisation pourrait libérer.</p>
+            </div>
+            <a class="time-banner-link" href="/simulateur-gain-de-temps/">Estimer mon gain de temps <span aria-hidden="true">→</span></a>
+          </div>
         </div>
       </section>
 
@@ -353,39 +355,59 @@
             <img class="title-pictogram section-title-pictogram" src="assets/icons/systems-cog.svg" alt="" aria-hidden="true">
             <span>Ce que je mets en place pour obtenir ces résultats</span>
           </h2>
-          <div class="offer-grid">
-            <article class="offer-card">
-              <h3 class="title-with-icon card-title-with-icon card-title card-title-long">
+          <div class="solutions-accordion">
+            <details class="solution-item">
+              <summary>
+                <h3 class="title-with-icon card-title-with-icon card-title card-title-long">
                 <img class="title-pictogram card-title-pictogram" src="assets/icons/automation-network.svg" alt="" aria-hidden="true">
                 <span>Automatiser ce qui vous fait perdre du temps</span>
               </h3>
-              <p>Documents, rappels, transferts d’informations, préparation de réponses ou tâches répétitives : les étapes utiles sont reliées et assistées. Lorsque la situation l’exige, des agents IA spécialisés, coordonnés par un agent superviseur, prennent le relais sous validation humaine.</p>
+                <span class="solution-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="solution-content">
+                <p>Documents, rappels, transferts d’informations, préparation de réponses ou tâches répétitives : les étapes utiles sont reliées et assistées. Lorsque la situation l’exige, des agents IA spécialisés, coordonnés par un agent superviseur, prennent le relais sous validation humaine.</p>
               <p class="offer-result"><strong>Ce que cela apporte :</strong> moins de manipulations, d’oublis et de temps consacré aux tâches à faible valeur.</p>
-            </article>
-            <article class="offer-card">
-              <h3 class="title-with-icon card-title-with-icon card-title card-title-long">
+              </div>
+            </details>
+            <details class="solution-item">
+              <summary>
+                <h3 class="title-with-icon card-title-with-icon card-title card-title-long">
                 <img class="title-pictogram card-title-pictogram" src="assets/icons/acquisition-target.svg" alt="" aria-hidden="true">
                 <span>Mieux suivre chaque demande et chaque relance</span>
               </h3>
-              <p>Les demandes entrantes peuvent être centralisées, qualifiées et suivies avec des prochaines actions clairement identifiées.</p>
+                <span class="solution-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="solution-content">
+                <p>Les demandes entrantes peuvent être centralisées, qualifiées et suivies avec des prochaines actions clairement identifiées.</p>
               <p class="offer-result"><strong>Ce que cela apporte :</strong> un suivi commercial plus régulier et moins d’opportunités laissées sans suite.</p>
-            </article>
-            <article class="offer-card">
-              <h3 class="title-with-icon card-title-with-icon card-title card-title-long">
+              </div>
+            </details>
+            <details class="solution-item">
+              <summary>
+                <h3 class="title-with-icon card-title-with-icon card-title card-title-long">
                 <img class="title-pictogram card-title-pictogram" src="assets/icons/seo-search.svg" alt="" aria-hidden="true">
                 <span>Renforcer votre visibilité et vos parcours de conversion</span>
               </h3>
-              <p>Site, fiche Google, pages prestations, contenus et parcours de contact sont pensés ensemble pour rendre votre offre plus claire et plus facile à trouver.</p>
+                <span class="solution-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="solution-content">
+                <p>Site, fiche Google, pages prestations, contenus et parcours de contact sont pensés ensemble pour rendre votre offre plus claire et plus facile à trouver.</p>
               <p class="offer-result"><strong>Ce que cela apporte :</strong> une présence digitale plus cohérente, mieux comprise par les moteurs de recherche et orientée vers la prise de contact.</p>
-            </article>
-            <article class="offer-card">
-              <h3 class="title-with-icon card-title-with-icon card-title card-title-long">
+              </div>
+            </details>
+            <details class="solution-item">
+              <summary>
+                <h3 class="title-with-icon card-title-with-icon card-title card-title-long">
                 <img class="title-pictogram card-title-pictogram" src="assets/icons/complete-coordination.svg" alt="" aria-hidden="true">
                 <span>Piloter avec des indicateurs utiles</span>
               </h3>
-              <p>Les données importantes peuvent être rassemblées dans des tableaux de suivi adaptés à vos objectifs : demandes, rendez-vous, devis, conversions ou activité.</p>
+                <span class="solution-toggle" aria-hidden="true"></span>
+              </summary>
+              <div class="solution-content">
+                <p>Les données importantes peuvent être rassemblées dans des tableaux de suivi adaptés à vos objectifs : demandes, rendez-vous, devis, conversions ou activité.</p>
               <p class="offer-result"><strong>Ce que cela apporte :</strong> une lecture plus simple de ce qui fonctionne et des priorités à ajuster.</p>
-            </article>
+              </div>
+            </details>
           </div>
         </div>
       </section>
@@ -853,7 +875,6 @@ fig.addEventListener("touchstart", function () {}, { passive: true });
     <script src="js/main.js?v=header-type-20260924"></script>
     <script src="js/home-mobile-tablet-rhythm.js?v=20260920"></script>
     <script src="js/night-desktop-cards.js?v=20260920b"></script>
-    <script src="/js/time-simulator.js" defer></script>
     <script src="/js/time-entry.js" defer></script>
   </body>
 </html>

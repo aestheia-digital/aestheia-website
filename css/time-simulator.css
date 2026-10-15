@@ -1,32 +1,15 @@
 /* Styles réservés au simulateur et à ses points d’entrée. */
-.time-teaser .container { max-width: 900px; }
-.time-teaser p { max-width: 65ch; }
-.time-simulator {
+.time-simulator, .time-banner, .solutions-accordion {
   /* Couleurs déjà présentes dans la charte, stables dans les deux thèmes. */
   --time-night: #1B2A6B;
   --time-deep: #0B1028;
   --time-white: #FFFFFF;
   --time-cyan: #00b0ff;
-  max-width: var(--container);
 }
+.time-simulator { max-width: var(--container); }
 .time-simulator-section { scroll-margin-top: 100px; }
 .time-simulator .time-title { max-width: 24ch; }
 .time-intro { max-width: 65ch; }
-.time-profiles { display: flex; flex-wrap: wrap; gap: .75rem; margin: 1.75rem 0; }
-.time-profiles button {
-  appearance: none;
-  font: inherit;
-  font-weight: 600;
-  min-height: 44px;
-  padding: .65rem 1rem;
-  border: 1px solid var(--time-night);
-  border-radius: 999px;
-  background: var(--time-white);
-  color: var(--time-night);
-  cursor: pointer;
-  text-align: center;
-}
-.time-profiles button[aria-pressed="true"] { background: var(--time-night); color: var(--time-white); }
 .time-columns { display: grid; gap: 1.5rem; align-items: stretch; }
 .time-inputs, .time-results { min-width: 0; border-radius: var(--radius); padding: clamp(1.25rem, 3vw, 2rem); }
 .time-inputs { background: var(--time-white); color: var(--time-night); border: 1px solid var(--color-border); }
@@ -67,26 +50,18 @@
 .time-floating { position: fixed; right: max(1rem, env(safe-area-inset-right)); bottom: max(.75rem, env(safe-area-inset-bottom)); z-index: 40; max-width: calc(100vw - 2rem); font-size: .875rem; padding: .65rem 1rem; min-height: 44px; text-align: center; white-space: normal; }
 .time-floating-space { height: calc(80px + env(safe-area-inset-bottom)); }
 .time-simulator [hidden], .time-floating[hidden] { display: none !important; }
-.time-simulator :is(a, button, input):focus-visible, .time-teaser a:focus-visible, .time-floating:focus-visible { outline: 3px solid var(--color-ink); outline-offset: 4px; }
+.time-simulator :is(a, button, input):focus-visible, .time-banner a:focus-visible, .time-floating:focus-visible { outline: 3px solid var(--color-ink); outline-offset: 4px; }
 .time-results a:focus-visible { outline-color: var(--time-white); }
 .time-inputs input:focus-visible { outline-color: var(--time-night); }
 @media (min-width: 900px) { .time-columns { grid-template-columns: 1fr 1fr; } }
 @media (prefers-reduced-motion: reduce) {
-  .time-floating, .time-simulator *, .time-teaser .btn { animation: none !important; transition: none !important; }
+  .time-floating, .time-simulator *, .time-banner-link { animation: none !important; transition: none !important; }
 }
 /* Respecter les rôles typographiques existants et leurs règles prioritaires. */
 @layer typography {
   html[data-theme] .time-simulator .time-title {
     color: var(--color-primary) !important;
     -webkit-text-fill-color: var(--color-primary) !important;
-  }
-  html[data-theme] .time-simulator .time-profiles button {
-    color: var(--time-night) !important;
-    -webkit-text-fill-color: var(--time-night) !important;
-  }
-  html[data-theme] .time-simulator .time-profiles button[aria-pressed="true"] {
-    color: var(--time-white) !important;
-    -webkit-text-fill-color: var(--time-white) !important;
   }
   html[data-theme] .time-simulator .time-inputs :is(legend, label, output) {
     color: var(--time-night) !important;
@@ -112,5 +87,86 @@
   html[data-theme] .time-simulator .time-disclaimer {
     font-size: var(--fs-secondary) !important;
     line-height: var(--lh-secondary) !important;
+  }
+}
+
+/* Bandeau commun aux cinq points d’entrée. */
+.time-banner { margin: .75rem 0; }
+.time-banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1rem 1.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: #EEE9FF;
+  color: var(--time-night);
+}
+.time-banner-inner > div { min-width: 0; }
+.time-banner-inner p { margin: .25rem 0 0; }
+.time-banner-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  flex-shrink: 0;
+  min-height: 44px;
+  padding: .75rem 1rem;
+  border-radius: var(--radius);
+  background: var(--time-cyan);
+  color: var(--time-deep);
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  text-decoration: none;
+}
+.time-banner-link:hover { text-decoration: underline; text-underline-offset: .2em; }
+.time-banner .time-banner-link:focus-visible { outline: 3px solid var(--time-night); outline-offset: 3px; }
+/* Les solutions gardent leurs textes dans des accordéons natifs. */
+.solutions-accordion { display: grid; gap: .75rem; margin-top: 1.5rem; }
+.solution-item { border: 1px solid var(--color-border); border-radius: var(--radius); background: var(--color-soft); }
+.solution-item > summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 72px; padding: .75rem 1rem; cursor: pointer; list-style: none; }
+.solution-item > summary::-webkit-details-marker { display: none; }
+.solution-item > summary::marker { content: ''; }
+.solution-item > summary h3 { margin: 0; min-width: 0; }
+.solution-toggle { display: grid; place-items: center; flex: 0 0 36px; width: 36px; height: 36px; border: 1px solid var(--time-night); border-radius: 50%; background: var(--time-white); color: var(--time-night); font-size: 1.5rem; line-height: 1; }
+.solution-toggle::before { content: '+'; }
+.solution-item[open] .solution-toggle::before { content: '−'; }
+.solution-item > summary:focus-visible { outline: 3px solid var(--color-ink); outline-offset: 3px; border-radius: var(--radius); }
+.solution-content { padding: 0 1rem 1rem; }
+.solution-content p { margin: .5rem 0 0; }
+.solution-content .offer-result { padding-top: .5rem; }
+@media (max-width: 700px) {
+  .time-banner-inner { flex-direction: column; align-items: stretch; gap: .5rem; padding: .625rem; }
+  .time-banner-link { width: 100%; }
+}
+@layer typography {
+  html[data-theme] body .time-banner h3 {
+    font-size: var(--fs-card-title) !important;
+    line-height: var(--lh-card-title) !important;
+    color: var(--time-night) !important;
+    -webkit-text-fill-color: var(--time-night) !important;
+  }
+  html[data-theme] body .time-banner p {
+    font-size: var(--fs-secondary) !important;
+    line-height: 1.4 !important;
+    color: var(--time-night) !important;
+    -webkit-text-fill-color: var(--time-night) !important;
+  }
+  html[data-theme] body .time-banner .time-banner-link {
+    font-size: var(--fs-action) !important;
+    color: var(--time-deep) !important;
+    -webkit-text-fill-color: var(--time-deep) !important;
+  }
+  html[data-theme] body .solutions-accordion summary h3 {
+    font-size: var(--fs-card-title) !important;
+    line-height: var(--lh-card-title) !important;
+    color: var(--color-primary) !important;
+    -webkit-text-fill-color: var(--color-primary) !important;
+  }
+  html[data-theme] body .solutions-accordion .solution-content :is(p, strong) {
+    color: var(--color-ink) !important;
+    -webkit-text-fill-color: var(--color-ink) !important;
   }
 }

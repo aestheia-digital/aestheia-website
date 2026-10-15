@@ -54,7 +54,6 @@ const TIME_CONFIG = {
     const host = root.querySelector('[data-time-component]');
     const prefix = `time-${index}`;
     host.innerHTML = `
-      <div class="time-profiles" role="group" aria-label="Choisissez votre activité"></div>
       <div class="time-columns">
         <form class="time-inputs">
           <fieldset>
@@ -80,21 +79,10 @@ const TIME_CONFIG = {
           <p class="time-disclaimer">Estimation indicative, selon vos processus actuels. Aucun résultat n’est garanti.</p>
         </section>
       </div>`;
-    const group = host.querySelector('.time-profiles');
     const tasks = host.querySelector('.time-tasks');
     const email = host.querySelector('.time-email');
     const requested = new URLSearchParams(location.search).get('profil');
-    let profile = profiles.find(item => item.id === requested) || profiles[0];
-
-    const buttons = profiles.map(item => {
-      const button = document.createElement('button');
-      button.type = 'button';
-      button.textContent = item.label;
-      button.dataset.profile = item.id;
-      button.addEventListener('click', () => { profile = item; update(); });
-      group.append(button);
-      return button;
-    });
+    const profile = profiles.find(item => item.id === requested) || { id: 'neutre', label: 'Non précisé' };
 
     const fields = TIME_CONFIG.tasks.filter(task => task.enabled).map(task => {
       const row = document.createElement('div');
@@ -123,7 +111,6 @@ const TIME_CONFIG = {
 
     function update() {
       const medical = profile.id === 'medecine-esthetique';
-      buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.profile === profile.id)));
       fields.forEach(({ task, label, input, value }) => {
         label.textContent = medical && task.medical ? task.medical : task.label;
         const hours = `${format.format(input.valueAsNumber)} h`;
@@ -132,7 +119,9 @@ const TIME_CONFIG = {
       });
       host.querySelector('.time-benefit').textContent = medical
         ? 'Du temps pour se consacrer à l’accueil, au soin et à l’expérience des patients.'
-        : 'Du temps pour se consacrer à l’accueil, au soin et à l’expérience client.';
+        : profile.id === 'neutre'
+          ? 'Du temps pour se consacrer à l’accueil, au soin et à l’expérience des clients ou patients.'
+          : 'Du temps pour se consacrer à l’accueil, au soin et à l’expérience client.';
       const { total, weekly, annual } = calculate(fields);
       host.querySelector('.time-invite').hidden = total > 0;
       host.querySelector('.time-calculated').hidden = total === 0;
