@@ -240,7 +240,7 @@
               {"@type": "Question", "name": "Une meilleure présence en ligne peut-elle aider à générer plus de demandes qualifiées ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui, si elle est reliée à un parcours clair. Les contenus doivent expliquer les offres, rassurer, répondre aux questions fréquentes et faciliter la prise de contact. Ensuite, les demandes doivent être centralisées, suivies et relancées pour ne pas perdre d’opportunités."}},
               {"@type": "Question", "name": "Comment rendre les différentes offres de séjour faciles à comprendre en ligne ?", "acceptedAnswer": {"@type": "Answer", "text": "Chaque offre doit préciser simplement sa durée, son objectif, le public concerné, ce qui est inclus et les informations pratiques. Des pages bien structurées et reliées entre elles permettent aux visiteurs de comparer les formules sans transformer la page principale en catalogue."}},
               {"@type": "Question", "name": "Comment éviter qu’une demande de séjour reste sans suite ?", "acceptedAnswer": {"@type": "Answer", "text": "Les demandes peuvent être centralisées avec un statut clair, un responsable identifié et un délai de réponse suivi. Des rappels internes et des relances préparées au bon moment réduisent les oublis, tout en laissant aux équipes la validation des propositions et des messages envoyés."}},
-              {"@type": "Question", "name": "Comment suivre les cures en plusieurs séances et les forfaits déjà réglés ?", "acceptedAnswer": {"@type": "Answer", "text": "Le système peut suivre les séances réalisées et restantes, signaler les cures interrompues et préparer les rappels utiles au curiste. Vos équipes valident les messages avant l’envoi : l’automatisation soulage l’organisation sans remplacer le contact humain."}},
+              {"@type": "Question", "name": "Comment suivre les cures en plusieurs séances et les forfaits déjà réglés ?", "acceptedAnswer": {"@type": "Answer", "text": "Le système peut suivre les séances réalisées et restantes, signaler les cures interrompues et préparer les rappels utiles au curiste. Vos équipes valident les messages avant l'envoi : l'automatisation soulage l'organisation et laisse toute la place au contact humain."}},
               {"@type": "Question", "name": "Les données des curistes sont-elles protégées ?", "acceptedAnswer": {"@type": "Answer", "text": "Oui. Seules les informations nécessaires circulent entre vos outils et l’hébergement est situé en France. Lorsque des données de santé sont concernées, notamment pour les cures thermales, elles sont hébergées dans un environnement certifié HDS."}},
               {"@type": "Question", "name": "Un système multi-agents est-il utile pour une thalasso ou un centre thermal ?", "acceptedAnswer": {"@type": "Answer", "text": "Les parcours de soins impliquent beaucoup d’informations à coordonner : demandes, devis, plannings, relances. Un agent IA spécialisé peut déjà préparer le suivi des demandes et des devis. Un système multi-agents est surtout pertinent pour un groupe ou plusieurs établissements, afin de coordonner la relation client, le suivi commercial et le pilotage. Les décisions et les messages sensibles restent validés par vos équipes."}}
             ]
@@ -261,6 +261,7 @@
     <link rel="stylesheet" href="../css/night-depth-desktop-cards.css?v=20261003">
     <link rel="stylesheet" href="../css/assistant-schema.css?v=20261005">
   <link rel="stylesheet" href="../css/multi-agent-schema.css?v=20261005">
+  <link rel="stylesheet" href="/css/time-simulator.css">
 </head>
   <body class="thalasso-page">
     <a class="skip-link" href="#contenu">Aller au contenu</a>
@@ -500,7 +501,7 @@
             <details class="faq-accordion-item">
               <summary>Comment suivre les cures en plusieurs séances et les forfaits déjà réglés ?</summary>
               <div class="faq-answer">
-                <p>Le système peut suivre les séances réalisées et restantes, signaler les cures interrompues et préparer les rappels utiles au curiste. Vos équipes valident les messages avant l’envoi : l’automatisation soulage l’organisation sans remplacer le contact humain.</p>
+                <p>Le système peut suivre les séances réalisées et restantes, signaler les cures interrompues et préparer les rappels utiles au curiste. Vos équipes valident les messages avant l'envoi : l'automatisation soulage l'organisation et laisse toute la place au contact humain.</p>
               </div>
             </details>
             <details class="faq-accordion-item">
@@ -516,6 +517,16 @@
               </div>
             </details>
           </div>
+        </div>
+      </section>
+
+      <section class="section time-teaser" aria-labelledby="time-teaser-title">
+        <div class="container">
+          <p class="eyebrow">Votre temps compte</p>
+          <h2 id="time-teaser-title">Combien d'heures pourriez-vous retrouver</h2>
+          <p>Estimez le temps que l'automatisation pourrait libérer à partir des heures consacrées à vos tâches chaque semaine.</p>
+          <p>Exemple illustratif : entre <strong>4</strong> et 7 h par semaine, selon les tâches et les processus.</p>
+          <a class="btn btn-primary" href="/simulateur-gain-de-temps/?profil=thalasso-thermal">Estimer mon gain de temps</a>
         </div>
       </section>
 
@@ -558,5 +569,6 @@
     <script src="../js/night-desktop-cards.js?v=20260920b"></script>
     <script src="../js/mobile-read-more.js?v=20260919"></script>
     <script src="../js/assistant-schema.js?v=20261005" defer></script>
+  <script src="/js/time-entry.js" defer></script>
 </body>
 </html>

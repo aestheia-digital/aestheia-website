@@ -1,0 +1,30 @@
+/* Styles réservés au simulateur et à ses points d'entrée. */
+.time-teaser .container { max-width: 900px; }
+.time-teaser p { max-width: 65ch; }
+.time-simulator { max-width: 900px; }
+.time-simulator h1 { max-width: 24ch; }
+.time-simulator form, .time-results, .time-method { margin-top: 2rem; }
+.time-profile-grid { display: grid; gap: 1.25rem; }
+.time-simulator label, .time-simulator legend { display: block; font-weight: 600; margin-bottom: .5rem; }
+.time-simulator fieldset { min-width: 0; padding: 1.25rem; margin: 1.5rem 0; border: 1px solid var(--color-border); border-radius: var(--radius); }
+.time-simulator input, .time-simulator select { font: inherit; background: var(--color-soft); color: var(--color-ink); border: 1px solid var(--color-muted); border-radius: var(--radius); padding: .7rem; min-height: 44px; width: 100%; max-width: 100%; }
+.time-simulator input { max-width: 10rem; }
+.time-simulator input[aria-invalid="true"] { outline: 2px solid var(--color-ink); outline-offset: 2px; }
+.time-task { display: grid; gap: .5rem; padding: 1rem 0; border-bottom: 1px solid var(--color-border); }
+.time-task small { display: block; color: var(--color-muted); }
+.time-results { background: var(--color-mist); border: 1px solid var(--color-border); border-radius: var(--radius); padding: clamp(1rem, 4vw, 2rem); }
+#time-result { font-size: clamp(1.15rem, 3vw, 1.5rem); }
+#time-result strong { font-weight: 700; }
+.time-actions { display: flex; flex-wrap: wrap; gap: 1rem; }
+.time-actions .btn { white-space: normal; text-align: center; }
+.time-floating { position: fixed; right: max(1rem, env(safe-area-inset-right)); bottom: max(.75rem, env(safe-area-inset-bottom)); z-index: 40; max-width: calc(100vw - 2rem); font-size: .875rem; padding: .65rem 1rem; min-height: 44px; text-align: center; white-space: normal; }
+.time-floating-space { height: calc(80px + env(safe-area-inset-bottom)); }
+.time-simulator [hidden], .time-floating[hidden] { display: none !important; }
+.time-simulator :is(a, input, select):focus-visible, .time-teaser a:focus-visible, .time-floating:focus-visible { outline: 3px solid var(--color-ink); outline-offset: 4px; }
+@media (min-width: 640px) {
+  .time-profile-grid { grid-template-columns: 1fr 1fr; }
+  .time-task { grid-template-columns: 1fr 8rem; align-items: center; gap: 1rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .time-floating, .time-simulator .btn, .time-teaser .btn { animation: none !important; transition: none !important; }
+}

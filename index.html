@@ -148,7 +148,7 @@
                 "name": "L’IA va-t-elle remplacer une partie de mon équipe ?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Non. Les automatisations prennent en charge les tâches répétitives : ressaisies, rappels, relances, préparation de réponses. Elles libèrent du temps sans remplacer l’humain dans la relation avec vos clientes ou vos patients."
+                  "text": "Non. Les automatisations prennent en charge les tâches répétitives : ressaisies, rappels, relances, préparation de réponses. Votre équipe peut ainsi se consacrer à l'accueil, au soin et à l'expérience de vos clientes ou de vos patients."
                 }
               },
               {
@@ -176,6 +176,7 @@
       <link rel="stylesheet" href="css/dark-no-purple-halos.css?v=20260920-dark-no-purple">
     <link rel="stylesheet" href="css/night-depth-desktop-cards.css?v=20261003">
     <link rel="stylesheet" href="css/multi-agent-schema.css?v=20261005">
+  <link rel="stylesheet" href="/css/time-simulator.css">
 </head>
   <body class="home-page">
     <a class="skip-link" href="#contenu">Aller au contenu</a>
@@ -249,6 +250,16 @@
               <p>Les informations utiles sont regroupées et les étapes clés deviennent plus simples à suivre pour vous comme pour votre équipe.</p>
             </article>
           </div>
+        </div>
+      </section>
+
+      <section class="section time-teaser" aria-labelledby="time-teaser-title">
+        <div class="container">
+          <p class="eyebrow">Votre temps compte</p>
+          <h2 id="time-teaser-title">Combien d'heures pourriez-vous retrouver</h2>
+          <p>Estimez le temps que l'automatisation pourrait libérer à partir des heures consacrées à vos tâches chaque semaine.</p>
+          <p>Exemple illustratif : entre <strong>4</strong> et 7 h par semaine, selon les tâches et les processus.</p>
+          <a class="btn btn-primary" href="/simulateur-gain-de-temps/">Estimer mon gain de temps</a>
         </div>
       </section>
 
@@ -580,7 +591,7 @@ fig.addEventListener("touchstart", function () {}, { passive: true });
             </article>
             <article class="card">
               <h3 class="card-title">Des données maîtrisées</h3>
-              <p>Hébergement certifié HDS pour les données de santé, hébergement en France et validation humaine avant chaque envoi automatisé. L’IA libère du temps, sans remplacer votre équipe.</p>
+              <p>Hébergement certifié HDS pour les données de santé, hébergement en France et validation humaine avant chaque envoi automatisé. Votre équipe retrouve du temps pour l'accueil, le soin et l'expérience client.</p>
             </article>
           </div>
         </div>
@@ -758,7 +769,7 @@ fig.addEventListener("touchstart", function () {}, { passive: true });
             <details class="faq-accordion-item">
               <summary><h3>L’IA va-t-elle remplacer une partie de mon équipe ?</h3></summary>
               <div class="faq-answer">
-                <p>Non. Les automatisations prennent en charge les tâches répétitives : ressaisies, rappels, relances, préparation de réponses. Elles libèrent du temps sans remplacer l’humain dans la relation avec vos clientes ou vos patients.</p>
+                <p>Non. Les automatisations prennent en charge les tâches répétitives : ressaisies, rappels, relances, préparation de réponses. Votre équipe peut ainsi se consacrer à l'accueil, au soin et à l'expérience de vos clientes ou de vos patients.</p>
               </div>
             </details>
             <details class="faq-accordion-item">
@@ -842,5 +853,6 @@ fig.addEventListener("touchstart", function () {}, { passive: true });
     <script src="js/main.js?v=header-type-20260924"></script>
     <script src="js/home-mobile-tablet-rhythm.js?v=20260920"></script>
     <script src="js/night-desktop-cards.js?v=20260920b"></script>
+    <script src="/js/time-entry.js" defer></script>
   </body>
 </html>
