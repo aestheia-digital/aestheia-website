@@ -49,50 +49,18 @@
       </div>
     </header>
     <main id="contenu">
-      <section class="section">
-        <div class="container time-simulator">
-          <p class="eyebrow">Votre temps compte</p>
-          <h1>Combien d'heures pourriez-vous retrouver chaque semaine</h1>
-          <p>Indiquez le temps consacré à chaque tâche pour toute votre équipe. Le calcul reste dans votre navigateur : aucune saisie n'est stockée ni envoyée automatiquement.</p>
+      <section class="section time-simulator-section" id="simulateur" aria-labelledby="time-title" tabindex="-1">
+        <div class="container time-simulator" data-time-simulator>
+          <p class="eyebrow">VOTRE TEMPS COMPTE</p>
+          <h1 class="time-title" id="time-title">Combien d’heures pourriez-vous retrouver</h1>
+          <p class="time-intro">Choisissez votre activité, puis déplacez les curseurs : le résultat se met à jour tout de suite.</p>
           <noscript>Activez JavaScript pour utiliser ce simulateur dans votre navigateur.</noscript>
-          <form id="time-form">
-            <div class="time-profile-grid">
-              <div><label for="time-profile">Profil</label><select id="time-profile" name="profil">
-                <option value="instituts-independantes">Institut ou indépendante</option>
-                <option value="spa-hotelier">Spa hôtelier ou spa haut de gamme</option>
-                <option value="thalasso-thermal">Thalasso et thermal</option>
-                <option value="medecine-esthetique">Médecine et chirurgie esthétiques</option>
-              </select></div>
-              <div><label for="time-team">Taille de l'équipe</label><select id="time-team" name="equipe" aria-describedby="time-team-help">
-                <option>1</option><option>2 à 5</option><option>6 à 15</option><option>plus de 15</option>
-              </select><p id="time-team-help">Information reprise dans le récapitulatif, sans effet sur le calcul.</p></div>
-            </div>
-            <fieldset><legend>Heures par semaine pour toute l'équipe</legend>
-              <p id="time-hours-help">De 0 à 40 h par tâche, par pas de 0,5 h. Laissez vides les tâches non concernées et évitez de compter deux fois le même temps.</p>
-              <div id="time-tasks"></div>
-            </fieldset>
-            <label for="time-rate">Valeur d'une heure de travail en euros (facultatif)</label>
-            <input id="time-rate" type="number" min="0" step="0.01" inputmode="decimal" aria-describedby="time-rate-help">
-            <p id="time-rate-help">Cette valeur sert uniquement à convertir le temps annuel estimé en euros.</p>
-          </form>
-          <section class="time-results" aria-labelledby="time-results-title">
-            <h2 id="time-results-title">Votre estimation</h2>
-            <div id="time-result" aria-live="polite" aria-atomic="true"></div>
-            <p id="time-benefit">Du temps pour se consacrer à l'accueil, au soin et à l'expérience client.</p>
-            <p>Estimation indicative, hors temps de mise en place, selon vos processus actuels. Aucun résultat n'est garanti.</p>
-            <div class="time-actions">
-              <a id="time-email" class="btn btn-primary" hidden>Recevoir mon estimation détaillée</a>
-              <a class="btn btn-ghost" href="https://calendar.app.google/qx6dT7WJfTrsFe6j9" target="_blank" rel="noopener noreferrer">Réserver un échange de 30 minutes</a>
-            </div>
-            <p>Le bouton d'estimation ouvre votre messagerie avec un récapitulatif que vous pouvez modifier avant de l'envoyer.</p>
-          </section>
-          <aside class="time-method" aria-labelledby="time-method-title">
-            <h2 id="time-method-title">Comment lire cette estimation</h2>
-            <p>Les taux affichés sont des hypothèses de travail modifiables, pas des statistiques. Chaque fourchette de gain est plafonnée à 50 % du total des heures déclarées. L'année représente 46 semaines.</p>
-            <p>Les résultats sont arrondis à 0,5 h par semaine, à 5 h par an et à 50 €. Le plafond hebdomadaire est arrondi vers le bas si nécessaire pour ne jamais dépasser 50 % des heures déclarées. Les montants annuels sont calculés avant arrondi des heures affichées.</p>
-          </aside>
+          <div data-time-component></div>
         </div>
       </section>
+      <div class="container time-method">
+        <p>Les taux utilisés sont des hypothèses prudentes, pas des statistiques. Le gain annoncé ne dépasse jamais la moitié des heures que vous déclarez, et l’année compte 46 semaines. Les résultats sont arrondis : il s’agit d’une estimation, pas d’une promesse.</p>
+      </div>
     </main>
     <footer class="site-footer">
       <div class="container">

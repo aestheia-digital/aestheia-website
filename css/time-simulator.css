@@ -1,30 +1,116 @@
-/* Styles réservés au simulateur et à ses points d'entrée. */
+/* Styles réservés au simulateur et à ses points d’entrée. */
 .time-teaser .container { max-width: 900px; }
 .time-teaser p { max-width: 65ch; }
-.time-simulator { max-width: 900px; }
-.time-simulator h1 { max-width: 24ch; }
-.time-simulator form, .time-results, .time-method { margin-top: 2rem; }
-.time-profile-grid { display: grid; gap: 1.25rem; }
-.time-simulator label, .time-simulator legend { display: block; font-weight: 600; margin-bottom: .5rem; }
-.time-simulator fieldset { min-width: 0; padding: 1.25rem; margin: 1.5rem 0; border: 1px solid var(--color-border); border-radius: var(--radius); }
-.time-simulator input, .time-simulator select { font: inherit; background: var(--color-soft); color: var(--color-ink); border: 1px solid var(--color-muted); border-radius: var(--radius); padding: .7rem; min-height: 44px; width: 100%; max-width: 100%; }
-.time-simulator input { max-width: 10rem; }
-.time-simulator input[aria-invalid="true"] { outline: 2px solid var(--color-ink); outline-offset: 2px; }
-.time-task { display: grid; gap: .5rem; padding: 1rem 0; border-bottom: 1px solid var(--color-border); }
-.time-task small { display: block; color: var(--color-muted); }
-.time-results { background: var(--color-mist); border: 1px solid var(--color-border); border-radius: var(--radius); padding: clamp(1rem, 4vw, 2rem); }
-#time-result { font-size: clamp(1.15rem, 3vw, 1.5rem); }
-#time-result strong { font-weight: 700; }
-.time-actions { display: flex; flex-wrap: wrap; gap: 1rem; }
-.time-actions .btn { white-space: normal; text-align: center; }
+.time-simulator {
+  /* Couleurs déjà présentes dans la charte, stables dans les deux thèmes. */
+  --time-night: #1B2A6B;
+  --time-deep: #0B1028;
+  --time-white: #FFFFFF;
+  --time-cyan: #00b0ff;
+  max-width: var(--container);
+}
+.time-simulator-section { scroll-margin-top: 100px; }
+.time-simulator .time-title { max-width: 24ch; }
+.time-intro { max-width: 65ch; }
+.time-profiles { display: flex; flex-wrap: wrap; gap: .75rem; margin: 1.75rem 0; }
+.time-profiles button {
+  appearance: none;
+  font: inherit;
+  font-weight: 600;
+  min-height: 44px;
+  padding: .65rem 1rem;
+  border: 1px solid var(--time-night);
+  border-radius: 999px;
+  background: var(--time-white);
+  color: var(--time-night);
+  cursor: pointer;
+  text-align: center;
+}
+.time-profiles button[aria-pressed="true"] { background: var(--time-night); color: var(--time-white); }
+.time-columns { display: grid; gap: 1.5rem; align-items: stretch; }
+.time-inputs, .time-results { min-width: 0; border-radius: var(--radius); padding: clamp(1.25rem, 3vw, 2rem); }
+.time-inputs { background: var(--time-white); color: var(--time-night); border: 1px solid var(--color-border); }
+.time-inputs fieldset { min-width: 0; padding: 0; margin: 0; border: 0; }
+.time-inputs legend { font-weight: 600; padding: 0; margin-bottom: .75rem; }
+.time-task { padding-top: 1.25rem; }
+.time-task-heading { display: flex; align-items: baseline; gap: .75rem; justify-content: space-between; }
+.time-task label { font-weight: 500; line-height: 1.4; }
+.time-task output { flex-shrink: 0; font-weight: 600; font-variant-numeric: tabular-nums; }
+.time-task input[type="range"] { display: block; width: 100%; min-height: 44px; margin: .25rem 0 0; padding: 0; accent-color: var(--time-night); color-scheme: light; cursor: pointer; }
+.time-results { background: var(--time-night); color: var(--time-white); }
+.time-results > .eyebrow { margin-top: 0; }
+.time-result { margin: 1rem 0 1.25rem; }
+.time-result-value { margin: 0; line-height: 1.1; }
+.time-week-unit { margin: .35rem 0 .75rem; }
+.time-annual { margin: 0; }
+.time-invite { margin: 1rem 0; }
+.time-actions { display: flex; flex-direction: column; gap: .75rem; margin-top: 1.5rem; }
+.time-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: .8rem 1rem;
+  border: 1px solid var(--time-white);
+  border-radius: var(--radius);
+  text-align: center;
+  font-weight: 600;
+  line-height: 1.4;
+  text-decoration: none;
+}
+.time-email { background: var(--time-cyan); color: var(--time-deep); border-color: var(--time-cyan); }
+.time-email[aria-disabled="true"] { cursor: default; }
+.time-booking { background: transparent; color: var(--time-white); }
+.time-action:not([aria-disabled="true"]):hover { text-decoration: underline; text-underline-offset: .2em; }
+.time-disclaimer { margin: 1rem 0 0; }
+.time-method { max-width: var(--container); padding-bottom: 2rem; }
 .time-floating { position: fixed; right: max(1rem, env(safe-area-inset-right)); bottom: max(.75rem, env(safe-area-inset-bottom)); z-index: 40; max-width: calc(100vw - 2rem); font-size: .875rem; padding: .65rem 1rem; min-height: 44px; text-align: center; white-space: normal; }
 .time-floating-space { height: calc(80px + env(safe-area-inset-bottom)); }
 .time-simulator [hidden], .time-floating[hidden] { display: none !important; }
-.time-simulator :is(a, input, select):focus-visible, .time-teaser a:focus-visible, .time-floating:focus-visible { outline: 3px solid var(--color-ink); outline-offset: 4px; }
-@media (min-width: 640px) {
-  .time-profile-grid { grid-template-columns: 1fr 1fr; }
-  .time-task { grid-template-columns: 1fr 8rem; align-items: center; gap: 1rem; }
-}
+.time-simulator :is(a, button, input):focus-visible, .time-teaser a:focus-visible, .time-floating:focus-visible { outline: 3px solid var(--color-ink); outline-offset: 4px; }
+.time-results a:focus-visible { outline-color: var(--time-white); }
+.time-inputs input:focus-visible { outline-color: var(--time-night); }
+@media (min-width: 900px) { .time-columns { grid-template-columns: 1fr 1fr; } }
 @media (prefers-reduced-motion: reduce) {
-  .time-floating, .time-simulator .btn, .time-teaser .btn { animation: none !important; transition: none !important; }
+  .time-floating, .time-simulator *, .time-teaser .btn { animation: none !important; transition: none !important; }
+}
+/* Respecter les rôles typographiques existants et leurs règles prioritaires. */
+@layer typography {
+  html[data-theme] .time-simulator .time-title {
+    color: var(--color-primary) !important;
+    -webkit-text-fill-color: var(--color-primary) !important;
+  }
+  html[data-theme] .time-simulator .time-profiles button {
+    color: var(--time-night) !important;
+    -webkit-text-fill-color: var(--time-night) !important;
+  }
+  html[data-theme] .time-simulator .time-profiles button[aria-pressed="true"] {
+    color: var(--time-white) !important;
+    -webkit-text-fill-color: var(--time-white) !important;
+  }
+  html[data-theme] .time-simulator .time-inputs :is(legend, label, output) {
+    color: var(--time-night) !important;
+    -webkit-text-fill-color: var(--time-night) !important;
+  }
+  html[data-theme] .time-simulator .time-results p, html[data-theme] .time-simulator .time-booking {
+    color: var(--time-white) !important;
+    -webkit-text-fill-color: var(--time-white) !important;
+  }
+  html[data-theme] .time-simulator .time-results .time-annual {
+    color: var(--time-cyan) !important;
+    -webkit-text-fill-color: var(--time-cyan) !important;
+  }
+  html[data-theme] .time-simulator .time-email {
+    color: var(--time-deep) !important;
+    -webkit-text-fill-color: var(--time-deep) !important;
+  }
+  html[data-theme] body .time-simulator .time-results .time-result .time-result-value {
+    font-family: var(--font-display) !important;
+    font-size: clamp(2.25rem, 5vw, 3.5rem) !important;
+    line-height: 1.1 !important;
+  }
+  html[data-theme] .time-simulator .time-disclaimer {
+    font-size: var(--fs-secondary) !important;
+    line-height: var(--lh-secondary) !important;
+  }
 }

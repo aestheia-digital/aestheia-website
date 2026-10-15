@@ -1,89 +1,39 @@
-// Hypothèses de travail, modifiables ici. Ce ne sont pas des statistiques.
+// Hypothèses de travail modifiables, pas des statistiques.
 const TIME_CONFIG = {
   weeks: 46,
   cap: 0.5,
   tasks: [
-    { id: 'rappels', label: 'Rappels de rendez-vous et suivi après soin', medical: 'Rappels de rendez-vous et consignes post-acte', low: 0.40, high: 0.70 },
-    { id: 'devis', label: 'Relances de devis et de paiements', low: 0.35, high: 0.65 },
-    { id: 'reporting', label: "Reporting et indicateurs (remplissage, absences, chiffre d'affaires)", low: 0.40, high: 0.70 },
-    { id: 'avis', label: 'Réponses aux avis Google (brouillons à valider)', low: 0.35, high: 0.60 },
-    { id: 'facturation', label: 'Facturation et saisie administrative', low: 0.25, high: 0.55 },
-    { id: 'newsletters', label: 'Newsletters et emails clients', medical: 'Newsletters et emails patients', low: 0.30, high: 0.55 },
-    { id: 'rendezvous', label: 'Prise de rendez-vous, appels et messages', low: 0.20, high: 0.50 },
-    { id: 'reseaux', label: 'Contenus pour les réseaux sociaux', low: 0.25, high: 0.45 },
-    { id: 'planning', label: "Agenda et planning de l'équipe", low: 0.15, high: 0.35 },
-    { id: 'dormantes', label: 'Relance des clientes dormantes', low: 0.30, high: 0.55, excludeMedical: true }
+    { id: 'rappels', label: 'Rappels de rendez-vous et suivi après soin', medical: 'Rappels de rendez-vous et consignes post-acte', low: 0.40, high: 0.70, enabled: true },
+    { id: 'devis', label: 'Relances de devis et de paiements', low: 0.35, high: 0.65, enabled: true },
+    { id: 'reporting', label: 'Reporting et indicateurs (remplissage, absences, chiffre d’affaires)', low: 0.40, high: 0.70, enabled: false },
+    { id: 'avis', label: 'Réponses aux avis Google', low: 0.35, high: 0.60, enabled: true },
+    { id: 'facturation', label: 'Facturation et saisie administrative', low: 0.25, high: 0.55, enabled: false },
+    { id: 'newsletters', label: 'Newsletters et emails clients', medical: 'Newsletters et emails patients', low: 0.30, high: 0.55, enabled: false },
+    { id: 'rendezvous', label: 'Prise de rendez-vous, appels et messages', low: 0.20, high: 0.50, enabled: false },
+    { id: 'reseaux', label: 'Contenus pour les réseaux sociaux', low: 0.25, high: 0.45, enabled: true },
+    { id: 'planning', label: 'Agenda et planning de l’équipe', low: 0.15, high: 0.35, enabled: false },
+    { id: 'dormantes', label: 'Relance des clientes dormantes', low: 0.30, high: 0.55, excludeMedical: true, enabled: false }
   ]
 };
 
 (() => {
-  const form = document.getElementById('time-form');
-  const profile = document.getElementById('time-profile');
-  const team = document.getElementById('time-team');
-  const rate = document.getElementById('time-rate');
-  const result = document.getElementById('time-result');
-  const email = document.getElementById('time-email');
-  const tasks = document.getElementById('time-tasks');
+  const profiles = [
+    { id: 'instituts-independantes', label: 'Institut ou indépendante' },
+    { id: 'spa-hotelier', label: 'Spa hôtelier' },
+    { id: 'thalasso-thermal', label: 'Thalasso et thermal' },
+    { id: 'medecine-esthetique', label: 'Médecine et chirurgie esthétiques' }
+  ];
   const format = new Intl.NumberFormat('fr-FR', { maximumFractionDigits: 1 });
   const round = (value, step) => Math.round(value / step) * step;
-  const selected = new URLSearchParams(location.search).get('profil');
-  if (Array.from(profile.options).some(option => option.value === selected)) profile.value = selected;
 
-  const fields = TIME_CONFIG.tasks.map(task => {
-    const row = document.createElement('div');
-    row.className = 'time-task';
-    const label = document.createElement('label');
-    label.htmlFor = `time-${task.id}`;
-    const hint = document.createElement('small');
-    hint.id = `hint-${task.id}`;
-    hint.textContent = `Hypothèse de gain : ${task.low * 100} % à ${task.high * 100} %`;
-    const input = document.createElement('input');
-    input.id = label.htmlFor;
-    input.type = 'number';
-    input.min = '0';
-    input.max = '40';
-    input.step = '0.5';
-    input.inputMode = 'decimal';
-    input.setAttribute('aria-describedby', `time-hours-help ${hint.id}`);
-    const description = document.createElement('div');
-    description.append(label, hint);
-    row.append(description, input);
-    tasks.append(row);
-    return { task, row, label, input };
-  });
-
-  function update() {
-    const medical = profile.value === 'medecine-esthetique';
-    for (const { task, row, label, input } of fields) {
-      row.hidden = medical && Boolean(task.excludeMedical);
-      input.disabled = row.hidden;
-      label.textContent = medical && task.medical ? task.medical : task.label;
-    }
-    document.getElementById('time-benefit').textContent = medical
-      ? "Du temps pour se consacrer à l'accueil, au soin et à l'expérience des patients."
-      : "Du temps pour se consacrer à l'accueil, au soin et à l'expérience client.";
-    email.hidden = true;
-    email.removeAttribute('href');
-    const active = fields.filter(field => !field.input.disabled);
-    const invalid = [...active.map(field => field.input), rate].filter(input => !input.validity.valid);
-    for (const input of [...fields.map(field => field.input), rate]) {
-      input.setAttribute('aria-invalid', String(!input.disabled && !input.validity.valid));
-    }
-    if (invalid.length) {
-      result.textContent = "Vérifiez les saisies : de 0 à 40 h par tâche, par pas de 0,5 h, et une valeur horaire positive ou nulle avec au plus deux décimales.";
-      return;
-    }
+  // Même calcul que la version détaillée : plafond avant arrondis, année sur le gain brut.
+  function calculate(fields) {
     let total = 0, low = 0, high = 0;
-    const recap = active.map(({ task, label, input }) => {
-      const hours = input.value === '' ? 0 : input.valueAsNumber;
+    for (const { task, input } of fields) {
+      const hours = input.valueAsNumber;
       total += hours;
       low += hours * task.low;
       high += hours * task.high;
-      return `${label.textContent} : ${input.value === '' ? 'non renseigné' : format.format(hours) + ' h/semaine'}`;
-    });
-    if (!total) {
-      result.textContent = 'Renseignez au moins une tâche avec un temps supérieur à zéro pour obtenir votre estimation.';
-      return;
     }
     const cap = total * TIME_CONFIG.cap;
     low = Math.min(low, cap);
@@ -91,52 +41,123 @@ const TIME_CONFIG = {
     const displayedCap = Math.floor(cap / 0.5) * 0.5;
     const weekly = [low, high].map(value => Math.min(round(value, 0.5), displayedCap));
     const annual = [low, high].map(value => round(value * TIME_CONFIG.weeks, 5));
-    const lines = [
-      { values: weekly, unit: 'h par semaine' },
-      { values: annual, unit: 'h par an' }
-    ];
-    if (rate.value !== '') {
-      const euros = [low, high].map(value => round(value * TIME_CONFIG.weeks * rate.valueAsNumber, 50));
-      if (!euros.every(Number.isFinite)) {
-        result.textContent = "La valeur horaire saisie est trop élevée pour calculer un montant. Réduisez-la.";
+    return { total, weekly, annual };
+  }
+
+  function describe(values, weekly = false) {
+    if (weekly && values[1] === 0) return 'moins de 0,5 h';
+    if (values[0] === values[1]) return `environ ${format.format(values[0])} h`;
+    return `${format.format(values[0])} à ${format.format(values[1])} h`;
+  }
+
+  document.querySelectorAll('[data-time-simulator]').forEach((root, index) => {
+    const host = root.querySelector('[data-time-component]');
+    const prefix = `time-${index}`;
+    host.innerHTML = `
+      <div class="time-profiles" role="group" aria-label="Choisissez votre activité"></div>
+      <div class="time-columns">
+        <form class="time-inputs">
+          <fieldset>
+            <legend>Heures par semaine, pour toute l’équipe</legend>
+            <div class="time-tasks"></div>
+          </fieldset>
+        </form>
+        <section class="time-results" aria-labelledby="${prefix}-estimate">
+          <p class="eyebrow" id="${prefix}-estimate">VOTRE ESTIMATION</p>
+          <div class="time-result" role="status" aria-live="polite" aria-atomic="true">
+            <p class="time-invite">Déplacez un curseur pour voir votre gain</p>
+            <div class="time-calculated" hidden>
+              <p class="time-result-value"></p>
+              <p class="time-week-unit">par semaine</p>
+              <p class="time-annual"></p>
+            </div>
+          </div>
+          <p class="time-benefit">Du temps pour se consacrer à l’accueil, au soin et à l’expérience client.</p>
+          <div class="time-actions">
+            <a class="time-action time-email" aria-disabled="true" tabindex="-1">Recevoir mon estimation détaillée</a>
+            <a class="time-action time-booking" href="https://calendar.app.google/qx6dT7WJfTrsFe6j9" target="_blank" rel="noopener noreferrer">Réserver un échange de 30 minutes</a>
+          </div>
+          <p class="time-disclaimer">Estimation indicative, selon vos processus actuels. Aucun résultat n’est garanti.</p>
+        </section>
+      </div>`;
+    const group = host.querySelector('.time-profiles');
+    const tasks = host.querySelector('.time-tasks');
+    const email = host.querySelector('.time-email');
+    const requested = new URLSearchParams(location.search).get('profil');
+    let profile = profiles.find(item => item.id === requested) || profiles[0];
+
+    const buttons = profiles.map(item => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.textContent = item.label;
+      button.dataset.profile = item.id;
+      button.addEventListener('click', () => { profile = item; update(); });
+      group.append(button);
+      return button;
+    });
+
+    const fields = TIME_CONFIG.tasks.filter(task => task.enabled).map(task => {
+      const row = document.createElement('div');
+      row.className = 'time-task';
+      const labelRow = document.createElement('div');
+      labelRow.className = 'time-task-heading';
+      const label = document.createElement('label');
+      label.htmlFor = `${prefix}-${task.id}`;
+      const value = document.createElement('output');
+      value.htmlFor = label.htmlFor;
+      // The native slider already announces its value through aria-valuetext.
+      value.setAttribute('aria-hidden', 'true');
+      const input = document.createElement('input');
+      input.id = label.htmlFor;
+      input.dataset.task = task.id;
+      input.type = 'range';
+      input.min = '0';
+      input.max = '20';
+      input.step = '0.5';
+      input.value = '0';
+      labelRow.append(label, value);
+      row.append(labelRow, input);
+      tasks.append(row);
+      return { task, label, input, value };
+    });
+
+    function update() {
+      const medical = profile.id === 'medecine-esthetique';
+      buttons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.profile === profile.id)));
+      fields.forEach(({ task, label, input, value }) => {
+        label.textContent = medical && task.medical ? task.medical : task.label;
+        const hours = `${format.format(input.valueAsNumber)} h`;
+        value.textContent = hours;
+        input.setAttribute('aria-valuetext', `${hours} par semaine, pour toute l’équipe`);
+      });
+      host.querySelector('.time-benefit').textContent = medical
+        ? 'Du temps pour se consacrer à l’accueil, au soin et à l’expérience des patients.'
+        : 'Du temps pour se consacrer à l’accueil, au soin et à l’expérience client.';
+      const { total, weekly, annual } = calculate(fields);
+      host.querySelector('.time-invite').hidden = total > 0;
+      host.querySelector('.time-calculated').hidden = total === 0;
+      email.setAttribute('aria-disabled', String(total === 0));
+      if (!total) {
+        email.removeAttribute('href');
+        email.tabIndex = -1;
         return;
       }
-      lines.push({ values: euros, unit: '€ par an' });
+      const weekText = describe(weekly, true);
+      const yearText = describe(annual);
+      host.querySelector('.time-result-value').textContent = weekText;
+      host.querySelector('.time-annual').textContent = `soit ${yearText} par an`;
+      const body = [
+        `Profil : ${profile.label}`,
+        ...fields.map(({ label, input }) => `${label.textContent} : ${format.format(input.valueAsNumber)} h par semaine`),
+        '', `${weekText} par semaine`, `${yearText} par an`, '',
+        'Estimation indicative, selon vos processus actuels. Aucun résultat n’est garanti.'
+      ].join('\n');
+      email.href = `mailto:contact@aestheia.fr?subject=${encodeURIComponent('Estimation simulateur')}&body=${encodeURIComponent(body)}`;
+      email.removeAttribute('tabindex');
     }
-    const describe = ({ values, unit }) => {
-      if (unit === 'h par semaine' && values[1] === 0) return 'Moins de 0,5 h par semaine';
-      if (values[0] === values[1]) return `Environ ${format.format(values[0])} ${unit}`;
-      return `Entre ${format.format(values[0])} et ${format.format(values[1])} ${unit}`;
-    };
-    result.replaceChildren();
-    for (const line of lines) {
-      const p = document.createElement('p');
-      const strong = document.createElement('strong');
-      if (line.unit === 'h par semaine' && line.values[1] === 0) {
-        p.textContent = describe(line);
-      } else {
-        strong.textContent = format.format(line.values[0]);
-        const equal = line.values[0] === line.values[1];
-        p.append(equal ? 'Environ ' : 'Entre ', strong,
-          equal ? ` ${line.unit}` : ` et ${format.format(line.values[1])} ${line.unit}`);
-      }
-      result.append(p);
-    }
-    const summary = lines.map(describe);
-    const body = [
-      `Profil : ${profile.selectedOptions[0].textContent}`,
-      `Taille de l'équipe : ${team.value}`,
-      ...recap,
-      ...(rate.value !== '' ? [`Valeur horaire : ${format.format(rate.valueAsNumber)} €`] : []),
-      '', ...summary, '',
-      `Hypothèses de travail, plafond de ${TIME_CONFIG.cap * 100} % et ${TIME_CONFIG.weeks} semaines par an.`,
-      'Estimation indicative, hors temps de mise en place, selon vos processus actuels. Aucun résultat n\'est garanti.'
-    ].join('\n');
-    email.href = `mailto:contact@aestheia.fr?subject=${encodeURIComponent('Estimation simulateur')}&body=${encodeURIComponent(body)}`;
-    email.hidden = false;
-  }
-  form.addEventListener('submit', event => event.preventDefault());
-  form.addEventListener('input', update);
-  form.addEventListener('change', update);
-  update();
+    host.querySelector('form').addEventListener('submit', event => event.preventDefault());
+    host.querySelector('form').addEventListener('input', update);
+    host.querySelector('form').addEventListener('change', update);
+    update();
+  });
 })();

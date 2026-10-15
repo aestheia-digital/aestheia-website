@@ -2,7 +2,18 @@
   if (/^\/(simulateur-gain-de-temps|contact)(\/|\.html)?$/.test(location.pathname)) return;
   const link = document.createElement('a');
   link.className = 'btn btn-primary time-floating';
-  link.href = '/simulateur-gain-de-temps/';
+  const homeSimulator = document.querySelector('body.home-page #simulateur');
+  link.href = homeSimulator ? '#simulateur' : '/simulateur-gain-de-temps/';
+  if (homeSimulator) {
+    link.addEventListener('click', event => {
+      if (event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey ||
+          !window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      event.preventDefault();
+      if (location.hash !== '#simulateur') history.pushState(null, '', '#simulateur');
+      homeSimulator.focus({ preventScroll: true });
+      homeSimulator.scrollIntoView({ behavior: 'instant', block: 'start' });
+    });
+  }
   link.textContent = 'Estimer mon gain de temps';
   link.hidden = true;
   // Reserve an empty strip, including on mobile, instead of covering useful content.
@@ -13,6 +24,7 @@
   const sections = Array.from(document.querySelectorAll('section')).filter(section =>
     Array.from(section.querySelectorAll('.eyebrow')).some(label => label.textContent.trim() === 'Premier pas')
   );
+  if (homeSimulator) sections.push(homeSimulator);
   const visibleSections = new Set();
   let requested = false;
   function refresh() {

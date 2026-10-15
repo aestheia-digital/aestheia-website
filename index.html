@@ -253,16 +253,6 @@
         </div>
       </section>
 
-      <section class="section time-teaser" aria-labelledby="time-teaser-title">
-        <div class="container">
-          <p class="eyebrow">Votre temps compte</p>
-          <h2 id="time-teaser-title">Combien d'heures pourriez-vous retrouver</h2>
-          <p>Estimez le temps que l'automatisation pourrait libérer à partir des heures consacrées à vos tâches chaque semaine.</p>
-          <p>Exemple illustratif : entre <strong>4</strong> et 7 h par semaine, selon les tâches et les processus.</p>
-          <a class="btn btn-primary" href="/simulateur-gain-de-temps/">Estimer mon gain de temps</a>
-        </div>
-      </section>
-
       <section class="section section-soft">
         <div class="container">
           <p class="eyebrow">Secteurs</p>
@@ -305,6 +295,16 @@
         </div>
       </section>
 
+
+      <section class="section time-simulator-section" id="simulateur" aria-labelledby="time-title" tabindex="-1">
+        <div class="container time-simulator" data-time-simulator>
+          <p class="eyebrow">VOTRE TEMPS COMPTE</p>
+          <h2 class="time-title" id="time-title">Combien d’heures pourriez-vous retrouver</h2>
+          <p class="time-intro">Choisissez votre activité, puis déplacez les curseurs : le résultat se met à jour tout de suite.</p>
+          <noscript>Activez JavaScript pour utiliser ce simulateur dans votre navigateur.</noscript>
+          <div data-time-component></div>
+        </div>
+      </section>
 
       <section class="section home-demo">
         <div class="container">
@@ -853,6 +853,7 @@ fig.addEventListener("touchstart", function () {}, { passive: true });
     <script src="js/main.js?v=header-type-20260924"></script>
     <script src="js/home-mobile-tablet-rhythm.js?v=20260920"></script>
     <script src="js/night-desktop-cards.js?v=20260920b"></script>
+    <script src="/js/time-simulator.js" defer></script>
     <script src="/js/time-entry.js" defer></script>
   </body>
 </html>
