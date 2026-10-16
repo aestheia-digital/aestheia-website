@@ -6356,7 +6356,7 @@ body.home-page .target-control-card-existing > p {
     border-color: #BCD0F0 !important;
   }
   html[data-theme="light"] body:is(.spa-page, .thalasso-page) :is(.sector-editorial-benefit, .sector-reality-conclusion, .sector-method-conclusion, .spa-turnover-benefit, .thalasso-turnover-benefit)::before {
-    background: #2F5FB8 !important;
+    background: var(--gradient-encadre) !important;
   }
   html[data-theme="light"] body:is(.spa-page, .thalasso-page) .multi-agent-schema .node:not(.action) {
     background: #E3ECFA !important;
@@ -6401,7 +6401,7 @@ body.home-page .target-control-card-existing > p {
     border-color: #BCD0F0 !important;
   }
   html[data-theme="light"] body:is(.home-page, .medicine-page) :is(.transition-note, .sector-editorial-benefit, .sector-reality-conclusion, .sector-method-conclusion)::before {
-    background: #2F5FB8 !important;
+    background: var(--gradient-encadre) !important;
   }
   html[data-theme="light"] body.medicine-page .assistant-schema .node:not(.action) {
     background: #E3ECFA !important;
@@ -6488,7 +6488,7 @@ body.home-page .target-control-card-existing > p {
     border-color: #BCD0F0 !important;
   }
   html[data-theme="light"] body.pme-page :is(.sector-editorial-benefit, .sector-method-conclusion)::before {
-    background: #2F5FB8 !important;
+    background: var(--gradient-encadre) !important;
   }
   html[data-theme="light"] body.pme-page #contenu > section.section:not(.section-aqua):not(.conversion-band)::before {
     background-image: none !important;
@@ -6716,21 +6716,33 @@ html[data-theme="dark"] .theme-toggle-moon { display: none; }
   }
 }
 
-/* Liseré partagé des encadrés bleus, identique en mode jour et nuit.
-   La couche et la spécificité préservent le dégradé face aux variantes de thème.
-   Les dimensions et le rognage restent ceux de chaque composant. */
+/* Source commune des liserés, avec des couleurs distinctes selon le thème. */
 @layer refonte {
   :root {
-    --gradient-encadre: linear-gradient(180deg, #3E3EC1 0%, #377FD7 100%);
+    --gradient-encadre: linear-gradient(180deg, #5B3FD8 0%, #38BDF8 100%);
   }
-
+  html[data-theme="dark"], html.theme-dark {
+    --gradient-encadre: linear-gradient(180deg, #8B7BFF 0%, #38BDF8 100%);
+  }
   html body #contenu :is(
     .transition-note,
     .sector-editorial-benefit,
     .sector-reality-conclusion,
     .sector-method-conclusion,
-    .thalasso-turnover-benefit
+    .thalasso-turnover-benefit,
+    .time-benefit
+  ) {
+    padding-left: 1.2rem !important;
+  }
+  html body #contenu :is(
+    .transition-note,
+    .sector-editorial-benefit,
+    .sector-reality-conclusion,
+    .sector-method-conclusion,
+    .thalasso-turnover-benefit,
+    .time-benefit
   )::before {
+    width: 6px !important;
     background: var(--gradient-encadre) !important;
   }
 }

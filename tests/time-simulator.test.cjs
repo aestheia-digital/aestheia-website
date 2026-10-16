@@ -59,3 +59,19 @@ test('Format français et exclusion des tâches désactivées', () => {
   assert.equal(describeTimeGain([1000, 2000]), '1\u202f000 à 2\u202f000 h');
   assert.deepEqual(calculateTimeGains([{ id: 'disabled', low: 1, high: 1, enabled: false }], { disabled: 20 }).weekly, [0, 0]);
 });
+
+const { interpolateTimeCount } = require('../js/time-count.js');
+for (const [id, hours] of examples) {
+  test(`${id} : l’animation termine sur les valeurs calculées, avec les mêmes pas`, () => {
+    const result = calculateTimeGains(getTimeProfile(id).tasks, hours);
+    for (const [to, step] of [[result.weekly, .5], [result.annual, 5]]) {
+      for (const from of [to.map(() => 0), [100, 200]]) {
+        for (const progress of [0, .1, .35, .75, 1, 2]) {
+          const values = interpolateTimeCount(from, to, progress, step);
+          assert(values.every(value => Number.isInteger(value / step)));
+          if (progress >= 1) assert.deepEqual(values, to);
+        }
+      }
+    }
+  });
+}

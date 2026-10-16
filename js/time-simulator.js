@@ -329,12 +329,17 @@ if (typeof module !== 'undefined' && module.exports) {
       if (!total) {
         email.removeAttribute('href');
         email.tabIndex = -1;
+        host.querySelectorAll('.time-result-value, .time-annual').forEach(element => window.TimeCount.reset(element));
         return;
       }
       const weekText = describeTimeGain(weekly, true);
       const yearText = describeTimeGain(annual);
-      host.querySelector('.time-result-value').textContent = weekText;
-      host.querySelector('.time-annual').textContent = `soit ${yearText} par an`;
+      window.TimeCount.animate(host.querySelector('.time-result-value'), weekly, {
+        format: values => describeTimeGain(values, true)
+      });
+      window.TimeCount.animate(host.querySelector('.time-annual'), annual, {
+        step: 5, format: values => `soit ${describeTimeGain(values)} par an`
+      });
       const body = [
         `Secteur : ${profile.label}`,
         ...fields.map(({ label, input }) => `${label.textContent} : ${format.format(input.valueAsNumber)} h par semaine`),

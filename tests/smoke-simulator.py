@@ -61,7 +61,7 @@ with sync_playwright() as pw:
             assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
             for note in page.locator('.transition-note').all():
                 bg = note.evaluate("e=>getComputedStyle(e,'::before').backgroundImage")
-                assert 'rgb(62, 62, 193)' in bg and 'rgb(55, 127, 215)' in bg, bg
+                assert ('rgb(91, 63, 216)' if theme == 'light' else 'rgb(139, 123, 255)') in bg and 'rgb(56, 189, 248)' in bg, bg
             banner = page.locator('.time-banner')
             report['banner'].append({'theme': theme, 'width': width, 'height': round(banner.bounding_box()['height'])})
             bg = banner.locator('.time-banner-inner').evaluate('(e)=>({color:getComputedStyle(e).backgroundColor,image:getComputedStyle(e).backgroundImage})')
@@ -124,8 +124,8 @@ with sync_playwright() as pw:
                 assert page.locator('.time-invite').is_visible()
                 for task, hours in values.items():
                     page.locator(f'[data-task="{task}"]').fill(str(hours))
-                assert page.locator('.time-result-value').inner_text() == week
-                assert page.locator('.time-annual').inner_text() == annual
+                assert page.locator('.time-result-value [data-time-final]').inner_text() == week
+                assert page.locator('.time-annual [data-time-final]').inner_text() == annual
                 assert page.locator('.time-benefit').evaluate('(e)=>parseFloat(getComputedStyle(e).paddingLeft)') >= 19
                 assert page.locator('.time-result').get_attribute('aria-live') == 'polite'
                 body = parse_qs(urlparse(page.locator('.time-email').get_attribute('href')).query)['body'][0]
@@ -152,7 +152,7 @@ with sync_playwright() as pw:
     page.locator('.time-task input').first.focus()
     page.keyboard.press('ArrowRight')
     assert page.locator('.time-task input').first.input_value() == '0.5'
-    assert page.locator('.time-result-value').inner_text() == 'moins de 0,5 h'
+    assert page.locator('.time-result-value [data-time-final]').inner_text() == 'moins de 0,5 h'
     assert page.evaluate('JSON.stringify({local:{...localStorage},session:{...sessionStorage},cookies:document.cookie})') == stored
     assert not requests
     # Exercise the fallback with subgrid disabled only in this test page.
@@ -180,6 +180,142 @@ with sync_playwright() as pw:
     assert fallback.locator('.offer-card').first.bounding_box()['height'] < expanded_height
     report['fallback'] = True
     assert all(item['AA'] for item in report['contrast']), report['contrast']
+    assert not errors, errors
+    # New presentation checks, with real pixel samples of the shared ribbon.
+    from io import BytesIO
+    from PIL import Image
+    report['ribbons'] = []
+    report['weights'] = []
+    for theme in ['light', 'dark']:
+        for width in [1440, 390, 320]:
+            page.set_viewport_size({'width': width, 'height': 1000})
+            page.goto(base + '/?theme=' + theme)
+            page.evaluate('document.fonts.ready')
+            for selector in ['.time-banner-inner', '.time-banner-sectors', '.time-banner-link', '.time-floating']:
+                assert page.locator(selector).evaluate('e=>getComputedStyle(e).borderRadius') == '0px', selector
+            weights = page.evaluate('''()=>Object.fromEntries(['.time-banner h3','.time-banner-name','.time-banner-weekly','.time-banner-annual','.time-banner-link','.time-floating'].map(s=>[s,Number(getComputedStyle(document.querySelector(s)).fontWeight)]))''')
+            assert weights['.time-banner-link'] == weights['.time-floating'] == 500, weights
+            assert max(weights.values()) <= 600, weights
+            if width == 1440:
+                report['weights'].append({'theme': theme, 'home': weights})
+                note = page.locator('.transition-note').filter(has_text='Résultat recherché')
+                style = note.evaluate("e=>({image:getComputedStyle(e,'::before').backgroundImage,width:getComputedStyle(e,'::before').width,padding:getComputedStyle(e).paddingLeft})")
+                assert style['width'] == '6px' and float(style['padding'][:-2]) >= 19
+                pixels = Image.open(BytesIO(note.screenshot())).convert('RGB')
+                samples = []
+                for at in [.05, .95]:
+                    y = min(pixels.height - 1, int(pixels.height * at))
+                    color = pixels.getpixel((3, y))
+                    adjacent = pixels.getpixel((10, y))
+                    samples.append({'height': at, 'color': '#%02X%02X%02X' % color, 'contrast': round(contrast(color, adjacent), 2)})
+                assert samples[0]['color'] != samples[1]['color'], samples
+                report['ribbons'].append({'theme': theme, 'computed': style, 'samples': samples})
+            page.goto(base + '/simulateur-gain-de-temps/?theme=' + theme)
+            for selector in ['.time-inputs', '.time-results', '.time-profiles button', '.time-action']:
+                for element in page.locator(selector).all():
+                    assert element.evaluate('e=>getComputedStyle(e).borderRadius') == '0px', selector
+            excessive = page.locator('[data-time-simulator]').evaluate('''root=>[...root.querySelectorAll('*')].filter(e=>e.childNodes.length && [...e.childNodes].some(n=>n.nodeType===3 && n.textContent.trim()) && !e.closest('.time-result-value') && Number(getComputedStyle(e).fontWeight)>500).map(e=>e.outerHTML)''')
+            assert not excessive, excessive
+            invite = page.locator('.time-invite')
+            assert invite.evaluate('e=>getComputedStyle(e).fontWeight') == '400'
+            email = page.locator('.time-email')
+            colors = email.evaluate('e=>({fg:getComputedStyle(e).color,bg:getComputedStyle(e).backgroundColor,border:getComputedStyle(e).borderTopColor})')
+            assert colors == {'fg': 'rgb(31, 43, 79)', 'bg': 'rgb(255, 255, 255)', 'border': 'rgb(31, 43, 79)'}, colors
+            page.locator('.time-task input').first.fill('10')
+            email.hover()
+            assert email.evaluate('e=>getComputedStyle(e).backgroundColor') == 'rgb(237, 242, 251)'
+            email.focus()
+            # Keyboard focus must remain visible independently of hover.
+            page.keyboard.press('Tab')
+            page.keyboard.press('Shift+Tab')
+            assert email.evaluate('e=>getComputedStyle(e).outlineWidth') == '2px'
+            assert contrast([31, 43, 79], [255, 255, 255]) >= 4.5
+            assert page.locator('.time-booking').evaluate('e=>getComputedStyle(e).color') == 'rgb(255, 255, 255)'
+            assert page.locator('.time-booking').evaluate('e=>getComputedStyle(e).borderTopColor') == 'rgb(255, 255, 255)'
+            assert page.locator('.time-benefit').evaluate("e=>getComputedStyle(e,'::before').width") == '6px'
+            assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
+
+    # Exercise actual animation, including interrupted slider input and reduced motion.
+    animated = browser.new_page(viewport={'width': 1440, 'height': 1000}, reduced_motion='no-preference')
+    animated.on('pageerror', lambda error: errors.append(str(error)))
+    animated.on('console', lambda message: errors.append(message.text) if message.type == 'error' else None)
+    animated.goto(base + '/?theme=light')
+    if animated.get_by_role('button', name='Tout refuser', exact=True).is_visible():
+        animated.get_by_role('button', name='Tout refuser', exact=True).click()
+    animated.evaluate('document.fonts.ready')
+    banner = animated.locator('.time-banner')
+    texts = banner.locator('.time-banner-weekly, .time-banner-annual').all_text_contents()
+    initial_height = banner.bounding_box()['height']
+    animated.evaluate("document.querySelector('.time-banner').scrollIntoView({block:'center',behavior:'instant'})")
+    animated.wait_for_function("document.querySelector('.time-banner [data-time-visual]') !== null")
+    assert banner.locator('[data-time-final]').all_text_contents() == texts
+    assert all(text in banner.aria_snapshot() for text in texts)
+    first = banner.locator('[data-time-visual]').all_text_contents()
+    assert first != texts, first
+    animated.wait_for_timeout(450)
+    middle = banner.locator('[data-time-visual]').all_text_contents()
+    assert middle != first and middle != texts, middle
+    assert abs(banner.bounding_box()['height'] - initial_height) < 1
+    animated.wait_for_timeout(850)
+    assert banner.locator('[data-time-visual]').all_text_contents() == texts
+    assert banner.locator('[aria-live]').count() == 0
+    assert banner.locator('[data-time-visual][aria-hidden=true]').count() == 8
+    animated.evaluate('scrollTo({top:0,behavior:"instant"})')
+    animated.wait_for_timeout(80)
+    animated.evaluate("document.querySelector('.time-banner').scrollIntoView({block:'center',behavior:'instant'})")
+    animated.wait_for_timeout(100)
+    assert banner.locator('[data-time-visual]').all_text_contents() == texts
+    for profile, values, week, annual in examples:
+        animated.goto(base + '/simulateur-gain-de-temps/?profil=' + profile)
+        for task, hours in values.items():
+            animated.locator(f'[data-task="{task}"]').fill(str(hours))
+        assert animated.locator('.time-result-value [data-time-final]').text_content() == week
+        assert animated.locator('.time-annual [data-time-final]').text_content() == annual
+        animated.wait_for_timeout(450)
+        assert animated.locator('.time-result-value [data-time-visual]').text_content() == week
+        assert animated.locator('.time-annual [data-time-visual]').text_content() == annual
+        slider = animated.locator('.time-task input').first
+        slider.fill('20')
+        animated.wait_for_timeout(100)
+        slider.fill('2')
+        animated.wait_for_timeout(100)
+        slider.fill('15')
+        animated.wait_for_timeout(450)
+        for selector in ['.time-result-value', '.time-annual']:
+            assert animated.locator(selector + ' [data-time-visual]').text_content() == animated.locator(selector + ' [data-time-final]').text_content()
+        slider.fill('8')
+        animated.emulate_media(reduced_motion='reduce')
+        animated.wait_for_function("[...document.querySelectorAll('.time-result-value, .time-annual')].every(e=>e.querySelector('[data-time-visual]').textContent===e.querySelector('[data-time-final]').textContent)")
+        for selector in ['.time-result-value', '.time-annual']:
+            assert animated.locator(selector + ' [data-time-visual]').text_content() == animated.locator(selector + ' [data-time-final]').text_content()
+        animated.emulate_media(reduced_motion='no-preference')
+    for theme in ['light', 'dark']:
+        for width in [1440, 390, 320]:
+            animated.set_viewport_size({'width': width, 'height': 1000})
+            animated.goto(base + '/?theme=' + theme)
+            animated.evaluate('document.fonts.ready')
+            banner = animated.locator('.time-banner')
+            height = banner.bounding_box()['height']
+            animated.evaluate("document.querySelector('.time-banner').scrollIntoView({block:'center',behavior:'instant'})")
+            animated.wait_for_function("document.querySelector('.time-banner [data-time-visual]') !== null")
+            for delay in [200, 400, 700]:
+                animated.wait_for_timeout(delay)
+                assert abs(banner.bounding_box()['height'] - height) < 1
+                assert animated.evaluate('document.documentElement.scrollWidth <= innerWidth')
+            assert banner.locator('[data-time-visual]').all_text_contents() == texts
+            animated.goto(base + '/simulateur-gain-de-temps/?theme=' + theme)
+            animated.locator('.time-task input').first.fill('10')
+            animated.wait_for_timeout(150)
+            assert animated.evaluate('document.documentElement.scrollWidth <= innerWidth')
+            animated.wait_for_timeout(300)
+            for selector in ['.time-result-value', '.time-annual']:
+                assert animated.locator(selector + ' [data-time-visual]').text_content() == animated.locator(selector + ' [data-time-final]').text_content()
+    # Without JavaScript the HTML still contains every final banner value.
+    plain = browser.new_page(java_script_enabled=False)
+    plain.goto(base + '/')
+    assert plain.locator('.time-banner-weekly, .time-banner-annual').all_text_contents() == texts
+    report['animation'] = 'PASS: final values, interruptions, reduced motion, one run, no layout jump, no JavaScript'
+    report['white_button_contrast'] = round(contrast([31, 43, 79], [255, 255, 255]), 2)
     assert not errors, errors
     browser.close()
 if args.report:

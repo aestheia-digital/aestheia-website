@@ -4,6 +4,8 @@
   --time-night: #1B2A6B;
   --time-deep: #0B1028;
   --time-white: #FFFFFF;
+  --time-ink: #1F2B4F;
+  --time-pale: #EDF2FB;
   --time-cyan: #00b0ff;
 }
 .time-simulator { max-width: var(--container); }
@@ -11,14 +13,14 @@
 .time-simulator .time-title { max-width: 24ch; }
 .time-intro { max-width: 65ch; }
 .time-columns { display: grid; gap: 1.5rem; align-items: stretch; }
-.time-inputs, .time-results { min-width: 0; border-radius: var(--radius); padding: clamp(1.25rem, 3vw, 2rem); }
+.time-inputs, .time-results { min-width: 0; border-radius: 0; padding: clamp(1.25rem, 3vw, 2rem); }
 .time-inputs { background: var(--time-white); color: var(--time-night); border: 1px solid var(--color-border); }
 .time-inputs fieldset { min-width: 0; padding: 0; margin: 0; border: 0; }
-.time-inputs legend { font-weight: 600; padding: 0; margin-bottom: .75rem; }
+.time-inputs legend { font-weight: 500; padding: 0; margin-bottom: .75rem; }
 .time-task { padding-top: 1.25rem; }
 .time-task-heading { display: flex; align-items: baseline; gap: .75rem; justify-content: space-between; }
 .time-task label { font-weight: 500; line-height: 1.4; }
-.time-task output { flex-shrink: 0; font-weight: 600; font-variant-numeric: tabular-nums; }
+.time-task output { flex-shrink: 0; font-weight: 500; font-variant-numeric: tabular-nums; }
 .time-task input[type="range"] { display: block; width: 100%; min-height: 44px; margin: .25rem 0 0; padding: 0; accent-color: var(--time-night); color-scheme: light; cursor: pointer; }
 .time-results { background: var(--time-night); color: var(--time-white); }
 .time-results > .eyebrow { margin-top: 0; }
@@ -35,13 +37,14 @@
   min-height: 44px;
   padding: .8rem 1rem;
   border: 1px solid var(--time-white);
-  border-radius: var(--radius);
+  border-radius: 0;
   text-align: center;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.4;
   text-decoration: none;
 }
-.time-email { background: var(--time-cyan); color: var(--time-deep); border-color: var(--time-cyan); }
+.time-email { background: var(--time-white); color: var(--time-ink); border-color: var(--time-ink); }
+.time-email:hover { background: var(--time-pale); }
 .time-email[aria-disabled="true"] { cursor: default; }
 .time-booking { background: transparent; color: var(--time-white); }
 .time-action:not([aria-disabled="true"]):hover { text-decoration: underline; text-underline-offset: .2em; }
@@ -76,8 +79,8 @@
     -webkit-text-fill-color: var(--time-cyan) !important;
   }
   html[data-theme] .time-simulator .time-email {
-    color: var(--time-deep) !important;
-    -webkit-text-fill-color: var(--time-deep) !important;
+    color: var(--time-ink) !important;
+    -webkit-text-fill-color: var(--time-ink) !important;
   }
   html[data-theme] body .time-simulator .time-results .time-result .time-result-value {
     font-family: var(--font-display) !important;
@@ -232,7 +235,7 @@ html[data-theme="dark"] body.home-page .time-banner {
 body.home-page .time-banner-sectors { background: var(--banner-table-bg); }
 body.home-page .time-banner-link { background: var(--banner-button-bg); }
 .time-profiles { display: flex; flex-wrap: wrap; gap: .75rem; margin: 1.75rem 0; }
-.time-profiles button { appearance: none; min-height: 44px; padding: .65rem 1rem; border: 1px solid var(--time-night); border-radius: 999px; background: var(--time-white); color: var(--time-night); cursor: pointer; text-align: center; }
+.time-profiles button { appearance: none; min-height: 44px; padding: .65rem 1rem; border: 1px solid var(--time-night); border-radius: 0; background: var(--time-white); color: var(--time-night); cursor: pointer; text-align: center; }
 .time-profiles button[aria-pressed="true"] { background: var(--time-night); color: var(--time-white); }
 .time-simulator .time-benefit { padding-left: 1.2rem; }
 .time-input-hint { margin: 1rem 0 0; }
@@ -243,7 +246,7 @@ body.home-page .time-banner-link { background: var(--banner-button-bg); }
   }
   html[data-theme] body .time-simulator .time-profiles button {
     font-size: var(--fs-action) !important;
-    font-weight: 600 !important;
+    font-weight: 500 !important;
     color: var(--time-night) !important;
     -webkit-text-fill-color: var(--time-night) !important;
   }
@@ -255,5 +258,31 @@ body.home-page .time-banner-link { background: var(--banner-button-bg); }
     font-size: var(--fs-secondary) !important;
     color: var(--time-night) !important;
     -webkit-text-fill-color: var(--time-night) !important;
+  }
+}
+
+/* Ajustements limités au bandeau de l’accueil et au simulateur. */
+body.home-page :is(.time-banner-inner, .time-banner-sectors, .time-banner-link),
+.time-simulator :is(.time-inputs, .time-results, .time-profiles button, .time-action) {
+  border-radius: 0 !important;
+}
+.time-simulator .time-email:focus-visible { outline: 2px solid var(--time-white); outline-offset: 3px; box-shadow: 0 0 0 2px var(--time-ink); }
+.time-count { position: relative; font-variant-numeric: tabular-nums; }
+.time-count [data-time-final] { opacity: 0; }
+.time-count [data-time-visual] { position: absolute; inset: 0; pointer-events: none; }
+@layer typography {
+  html[data-theme] body.home-page .time-banner :is(h3, .time-banner-name, .time-banner-weekly, .time-banner-annual) {
+    font-weight: 600 !important;
+  }
+  html[data-theme] body.home-page .time-banner .time-banner-link,
+  html[data-theme] body .time-floating { font-weight: 500 !important; }
+  html[data-theme] body .time-simulator :is(h1, h2, h3, p, label, output, legend, button, a, strong, span) {
+    font-weight: 400 !important;
+  }
+  html[data-theme] body .time-simulator :is(output, legend, button) { font-weight: 500 !important; }
+  html[data-theme] body :is(.time-banner, .time-simulator) .time-count > span {
+    font: inherit !important;
+    color: inherit !important;
+    -webkit-text-fill-color: inherit !important;
   }
 }
