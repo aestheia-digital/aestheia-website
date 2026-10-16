@@ -528,22 +528,7 @@ html[data-theme] .home-method .step-label {
     cursor: pointer !important;
   }
 
-  body.home-page .home-offers .offer-card.home-offer-collapsible > h3::after {
-    content: "" !important;
-    display: block !important;
-    flex: 0 0 auto !important;
-    width: 0.72rem !important;
-    height: 0.72rem !important;
-    margin-left: auto !important;
-    border-right: 2px solid currentColor !important;
-    border-bottom: 2px solid currentColor !important;
-    transform: rotate(45deg) !important;
-    transition: transform 0.2s ease !important;
-  }
 
-  body.home-page .home-offers .offer-card.home-offer-collapsible.home-offer-expanded > h3::after {
-    transform: rotate(225deg) !important;
-  }
 
   body.home-page .home-offers .offer-card.home-offer-collapsible:not(.home-offer-expanded) > p {
     display: none !important;
@@ -582,5 +567,69 @@ html[data-theme] .home-method .step-label {
 
   body.home-page .home-method details.home-section-accordion.home-method-direct .home-process {
     margin-top: 0 !important;
+  }
+}
+
+/* Le même chevron et la même commande sont disponibles sur ordinateur. */
+body.home-page .home-offers .offer-grid { align-items: start !important; }
+body.home-page .home-offers .offer-card.home-offer-collapsible { height: auto !important; align-self: start; }
+body.home-page .home-offers .offer-card .offer-disclosure {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  column-gap: inherit;
+  align-items: inherit;
+  min-width: 0;
+  min-height: inherit;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  text-align: inherit;
+  cursor: pointer;
+}
+  body.home-page .home-offers .offer-card.home-offer-collapsible > h3 > .offer-disclosure::after {
+    content: "" !important;
+    display: block !important;
+    flex: 0 0 auto !important;
+    width: 0.72rem !important;
+    height: 0.72rem !important;
+    margin-left: auto !important;
+    border-right: 2px solid currentColor !important;
+    border-bottom: 2px solid currentColor !important;
+    transform: rotate(45deg) !important;
+    transition: transform 0.2s ease !important;
+  }
+
+  body.home-page .home-offers .offer-card.home-offer-collapsible.home-offer-expanded > h3 > .offer-disclosure::after {
+    transform: rotate(225deg) !important;
+  }
+body.home-page .home-offers .offer-card:not(.home-offer-expanded) > p[data-offer-content] { display: none !important; }
+body.home-page .home-offers .offer-disclosure:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 4px; }
+@layer typography {
+  html[data-theme] body.home-page .home-offers .offer-card h3 > button.offer-disclosure {
+    font: inherit !important;
+    letter-spacing: inherit !important;
+    color: inherit !important;
+    -webkit-text-fill-color: inherit !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.home-page .home-offers .offer-card.home-offer-collapsible > h3 > .offer-disclosure::after { transition: none !important; }
+}
+
+/* Le chevron occupe la marge de la carte sans réduire la largeur du titre. */
+@media (min-width: 1051px) {
+  body.home-page .home-offers .offer-card .offer-disclosure {
+    position: relative;
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+  body.home-page .home-offers .offer-card.home-offer-collapsible > h3 > .offer-disclosure::after {
+    position: absolute;
+    right: -1rem;
+    top: calc(50% - .36rem);
   }
 }

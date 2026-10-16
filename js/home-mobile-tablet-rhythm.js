@@ -2,38 +2,17 @@
   const compact = window.matchMedia("(max-width: 1050px)");
 
   const setupOffers = () => {
-    const active = compact.matches;
     document.querySelectorAll("body.home-page .home-offers .offer-card").forEach((card) => {
-      const heading = card.querySelector(":scope > h3");
-      if (!heading) return;
-
-      if (active) {
-        card.classList.add("home-offer-collapsible");
-        if (!heading.dataset.homeOfferBound) {
-          heading.dataset.homeOfferBound = "true";
-          heading.setAttribute("role", "button");
-          heading.setAttribute("tabindex", "0");
-          heading.setAttribute("aria-expanded", "false");
-
-          const toggle = () => {
-            const expanded = card.classList.toggle("home-offer-expanded");
-            heading.setAttribute("aria-expanded", expanded ? "true" : "false");
-          };
-
-          heading.addEventListener("click", toggle);
-          heading.addEventListener("keydown", (event) => {
-            if (event.key === "Enter" || event.key === " ") {
-              event.preventDefault();
-              toggle();
-            }
-          });
-        }
-      } else {
-        card.classList.remove("home-offer-collapsible", "home-offer-expanded");
-        heading.removeAttribute("role");
-        heading.removeAttribute("tabindex");
-        heading.removeAttribute("aria-expanded");
-      }
+      const button = card.querySelector(".offer-disclosure");
+      if (!button || button.dataset.homeOfferBound) return;
+      button.dataset.homeOfferBound = "true";
+      button.addEventListener("click", () => {
+        const expanded = card.classList.toggle("home-offer-expanded");
+        button.setAttribute("aria-expanded", String(expanded));
+        card.querySelectorAll("[data-offer-content]").forEach((paragraph) => {
+          paragraph.hidden = !expanded;
+        });
+      });
     });
   };
 
