@@ -633,3 +633,27 @@ body.home-page .home-offers .offer-disclosure:focus-visible { outline: 2px solid
     top: calc(50% - .36rem);
   }
 }
+
+/* Sur ordinateur, les cartes partagent leurs quatre lignes de contenu. */
+@media (min-width: 1051px) {
+  body.home-page .home-offers .offer-grid { align-items: stretch !important; row-gap: 0; }
+  body.home-page .home-offers .offer-card.home-offer-collapsible {
+    display: grid !important;
+    align-self: stretch;
+    height: 100% !important;
+    row-gap: 0;
+  }
+  body.home-page .home-offers .offer-card > h3 { grid-row: 1; }
+  body.home-page .home-offers .offer-card > p[data-offer-content]:not(.commercial-offer-proposal):not(.offer-result) { grid-row: 2; }
+  body.home-page .home-offers .offer-card > .commercial-offer-proposal { grid-row: 3; }
+  body.home-page .home-offers .offer-card > .offer-result { grid-row: 4; }
+  @supports (grid-template-rows: subgrid) {
+    body.home-page .home-offers .offer-card.home-offer-collapsible { grid-row: span 4; grid-template-rows: subgrid; }
+  }
+  @supports not (grid-template-rows: subgrid) {
+    body.home-page .home-offers .offer-card > :is(h3, p) { align-self: start; }
+    body.home-page .home-offers .offer-card.home-offer-collapsible {
+      grid-template-rows: var(--offer-title-row, auto) var(--offer-description-row, auto) var(--offer-proposal-row, auto) minmax(var(--offer-benefit-row, 0px), 1fr);
+    }
+  }
+}

@@ -444,7 +444,9 @@ if (homeOffers) {
       element.style.removeProperty("min-height");
     });
 
-    if (!window.matchMedia("(min-width: 960px)").matches) {
+    // Sur ordinateur, subgrid ou son repli partage les hauteurs des lignes.
+    if (window.matchMedia("(min-width: 1051px)").matches ||
+        !window.matchMedia("(min-width: 960px)").matches) {
       return;
     }
 

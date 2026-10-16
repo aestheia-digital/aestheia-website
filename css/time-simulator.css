@@ -209,3 +209,51 @@
   }
   html[data-theme] body .time-banner .time-banner-note { font-size: 12px !important; line-height: 1.45 !important; }
 }
+
+/* L’accueil utilise le mécanisme de thème commun du site. */
+html[data-theme="light"] body.home-page .time-banner {
+  --banner-bg: linear-gradient(135deg, #EFEBFC 0%, #E3ECFC 100%);
+  --banner-border: #D3D6F4;
+  --banner-table-bg: rgba(255, 255, 255, .8);
+  --banner-button-bg: #1F2B4F;
+  --banner-button-text: #FFFFFF;
+}
+html[data-theme="dark"] body.home-page .time-banner {
+  --banner-bg: #18214F;
+  --banner-border: #2C377F;
+  --banner-table-bg: #10173F;
+  --banner-title: #FFFFFF;
+  --banner-text: #C3D2EA;
+  --banner-number: #8FB4FF;
+  --banner-annual: #B9B3FF;
+  --banner-button-bg: #FFFFFF;
+  --banner-button-text: #1F2B4F;
+}
+body.home-page .time-banner-sectors { background: var(--banner-table-bg); }
+body.home-page .time-banner-link { background: var(--banner-button-bg); }
+.time-profiles { display: flex; flex-wrap: wrap; gap: .75rem; margin: 1.75rem 0; }
+.time-profiles button { appearance: none; min-height: 44px; padding: .65rem 1rem; border: 1px solid var(--time-night); border-radius: 999px; background: var(--time-white); color: var(--time-night); cursor: pointer; text-align: center; }
+.time-profiles button[aria-pressed="true"] { background: var(--time-night); color: var(--time-white); }
+.time-simulator .time-benefit { padding-left: 1.2rem; }
+.time-input-hint { margin: 1rem 0 0; }
+@layer typography {
+  html[data-theme] body.home-page .time-banner .time-banner-link {
+    color: var(--banner-button-text) !important;
+    -webkit-text-fill-color: var(--banner-button-text) !important;
+  }
+  html[data-theme] body .time-simulator .time-profiles button {
+    font-size: var(--fs-action) !important;
+    font-weight: 600 !important;
+    color: var(--time-night) !important;
+    -webkit-text-fill-color: var(--time-night) !important;
+  }
+  html[data-theme] body .time-simulator .time-profiles button[aria-pressed="true"] {
+    color: var(--time-white) !important;
+    -webkit-text-fill-color: var(--time-white) !important;
+  }
+  html[data-theme] body .time-simulator .time-input-hint {
+    font-size: var(--fs-secondary) !important;
+    color: var(--time-night) !important;
+    -webkit-text-fill-color: var(--time-night) !important;
+  }
+}
