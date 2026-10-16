@@ -238,6 +238,51 @@ with sync_playwright() as pw:
             assert page.locator('.time-benefit').evaluate("e=>getComputedStyle(e,'::before').width") == '3px'
             assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
 
+    report['start_action'] = []
+    for theme in ['light', 'dark']:
+        for width in [1440, 390, 320]:
+            page.set_viewport_size({'width': width, 'height': 1000})
+            page.goto(base + '/simulateur-gain-de-temps/?theme=' + theme)
+            page.evaluate('document.fonts.ready')
+            start = page.locator('.time-start')
+            booking = page.locator('.time-booking')
+            assert start.is_hidden() and booking.is_visible()
+            assert page.locator('.time-invite').inner_text() == 'Déplacez un curseur pour voir votre gain'
+            page.locator('.time-task input').first.fill('5')
+            assert start.is_visible()
+            assert page.locator('.time-actions a').all_text_contents() == ['Savoir par où commencer', 'Réserver un échange de 30 minutes']
+            assert start.get_attribute('href') == '/#premier-pas' and start.get_attribute('target') is None
+            assert booking.get_attribute('href') == 'https://calendar.app.google/qx6dT7WJfTrsFe6j9'
+            a,b = start.bounding_box(),booking.bounding_box()
+            assert abs(a['width']-b['width']) < 1 and abs(a['height']-b['height']) < 1, (theme,width,a,b)
+            assert abs(b['y']-a['y']-a['height']-12) < 1
+            style = start.evaluate('e=>({bg:getComputedStyle(e).backgroundColor,color:getComputedStyle(e).color,border:getComputedStyle(e).borderTopColor,radius:getComputedStyle(e).borderRadius,weight:getComputedStyle(e).fontWeight,size:getComputedStyle(e).fontSize})')
+            assert style['bg'] == 'rgb(91, 63, 216)' and style['color'] == 'rgb(255, 255, 255)',style
+            assert style['border'] == 'rgba(0, 0, 0, 0)' and style['radius'] == '0px' and style['weight'] == '500',style
+            assert style['size'] == booking.evaluate('e=>getComputedStyle(e).fontSize')
+            ratio = contrast(rgb(style['color']),rgb(style['bg']))
+            assert ratio >= 4.5
+            start.hover()
+            assert start.evaluate('e=>getComputedStyle(e).backgroundColor') == 'rgb(108, 77, 230)'
+            assert contrast([255,255,255],[108,77,230]) >= 4.5
+            start.focus()
+            page.keyboard.press('Tab')
+            assert booking.evaluate('e=>e===document.activeElement')
+            page.keyboard.press('Shift+Tab')
+            assert start.evaluate('e=>e===document.activeElement && getComputedStyle(e).outlineWidth==="2px"')
+            page.locator('.time-task input').first.fill('0')
+            assert start.is_hidden() and booking.is_visible() and page.locator('.time-invite').is_visible()
+            page.locator('.time-task input').first.fill('5')
+            start.click()
+            page.wait_for_url(base + '/#premier-pas')
+            page.evaluate('document.fonts.ready')
+            page.wait_for_function('''()=>{const top=document.querySelector("#premier-pas").getBoundingClientRect().top;return top>=Math.max(0,document.querySelector(".site-header").getBoundingClientRect().bottom) && top<innerHeight/2}''')
+            target = page.locator('#premier-pas')
+            assert target.locator('.eyebrow').text_content().strip() == 'Premier pas', (theme,width,repr(target.locator('.eyebrow').text_content()),page.url)
+            assert target.get_by_role('link',name='Parlez-moi de votre projet',exact=True).get_attribute('href') == 'https://forms.gle/W7JrgaJ6yDSuwgFe7'
+            assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
+            report['start_action'].append({'theme':theme,'width':width,'contrast':round(ratio,2),'height':round(a['height'],2),'anchor':page.url})
+
     # Long duration labels, declared total, and the retained booking action.
     report['minute_layouts'] = []
     for theme in ['light', 'dark']:
