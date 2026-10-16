@@ -3,7 +3,8 @@
   const link = document.createElement('a');
   link.className = 'btn btn-primary time-floating';
   const homeBanner = document.querySelector('body.home-page .time-banner');
-  link.href = '/simulateur-gain-de-temps/';
+  const sector = location.pathname.match(/^\/(medecine-esthetique|spa-hotelier|thalasso-thermal|instituts-independantes)(?:\/(?:index\.html)?)?$/)?.[1];
+  link.href = '/simulateur-gain-de-temps/' + (sector ? `?profil=${sector}` : '');
   link.textContent = 'Estimer mon gain de temps';
   link.hidden = true;
   // Reserve an empty strip, including on mobile, instead of covering useful content.

@@ -278,19 +278,51 @@ with sync_playwright() as pw:
             assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
             report['minute_layouts'].append({'theme': theme, 'width': width, 'passed': True})
 
+    # Sector banners are removed; floating entry links keep their existing safeguards.
+    report['sector_entries'] = []
     for theme in ['light', 'dark']:
-        for width in [1440, 390, 352, 351, 320]:
+        for width in [1440, 1024, 768, 390, 320]:
             page.set_viewport_size({'width': width, 'height': 1000})
-            for sector, _, _, _ in examples:
-                page.goto(base + '/' + sector + '/?theme=' + theme)
+            for sector in [None, *[item[0] for item in examples]]:
+                page.goto(base + '/' + (sector + '/' if sector else '') + '?theme=' + theme)
                 page.evaluate('document.fonts.ready')
+                if page.get_by_role('button', name='Tout refuser', exact=True).is_visible():
+                    page.get_by_role('button', name='Tout refuser', exact=True).click()
+                assert page.locator('.time-floating').count() == page.locator('.time-floating-space').count() == 1
+                floating = page.locator('.time-floating')
+                expected = '/simulateur-gain-de-temps/' + ('?profil=' + sector if sector else '')
+                assert floating.get_attribute('href') == expected
+                if sector:
+                    assert page.locator('.time-banner,#time-banner-title').count() == 0
+                    assert not page.locator('a[href*="#time-banner"]').count()
+                    join = page.locator('.conversion-band').evaluate("""e=>{
+                        const previous=e.previousElementSibling;
+                        return {gap:e.getBoundingClientRect().top-previous.getBoundingClientRect().bottom,
+                          previousMargin:getComputedStyle(previous).marginBottom,margin:getComputedStyle(e).marginTop};
+                    }""")
+                    assert abs(join['gap']) < 1 and join['previousMargin'] == join['margin'] == '0px', (sector,theme,width,join)
+                else:
+                    assert page.locator('.time-banner').count() == 1
                 assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
-                assert page.locator('.time-banner-sector').evaluate_all("""es=>es.every(e=>{
-                    const n=e.querySelector('.time-banner-name'),v=e.querySelector('.time-banner-weekly');
-                    const r=document.createRange();r.selectNodeContents(n);const b=v.getBoundingClientRect();
-                    return [...r.getClientRects()].every(a=>a.right<=b.left||a.left>=b.right||a.top>=b.bottom||a.bottom<=b.top);
-                })""")
-                assert not re.search(r'\d+,\d+\s*h', ' '.join(page.locator('.time-banner-weekly').all_text_contents()))
+                visible_at = None
+                max_scroll = page.evaluate('document.documentElement.scrollHeight-innerHeight')
+                # Fine scroll samples find genuine gaps without disabling collision protection.
+                for y in range(0, int(max_scroll) + 1, 25):
+                    page.evaluate('y=>scrollTo({top:y,behavior:"instant"})', y)
+                    page.wait_for_timeout(40)
+                    if floating.is_visible():
+                        visible_at = y
+                        break
+                assert visible_at is not None, (sector,theme,width)
+                box = floating.bounding_box()
+                assert box['x'] >= 0 and box['x'] + box['width'] <= width
+                assert floating.evaluate('e=>getComputedStyle(e).borderRadius') == '0px'
+                if sector:
+                    floating.click()
+                    assert page.locator('.time-profiles [aria-pressed=true]').get_attribute('data-profile') == sector
+                    assert page.locator('.time-invite').is_visible()
+                    assert all(field.input_value() == '0' for field in page.locator('.time-task input').all())
+                report['sector_entries'].append({'page':sector or 'home','theme':theme,'width':width,'visible_at':visible_at,'href':expected})
 
     # The desktop sweep retains its 6 s cycle and 1.44 s forward passage, with no return.
     halo = browser.new_page(viewport={'width': 1440, 'height': 1000}, reduced_motion='no-preference')

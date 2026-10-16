@@ -189,14 +189,6 @@
   body.home-page .time-banner :is(.time-banner-weekly, .time-banner-unit) { text-align: left; }
 
 }
-@media (max-width: 351px) {
-  body:is(.medicine-page, .spa-page, .thalasso-page, .institutes-page) .time-banner-sector {
-    grid-template-areas: "name" "weekly" "unit" "annual";
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: auto auto auto auto;
-  }
-  body:is(.medicine-page, .spa-page, .thalasso-page, .institutes-page) .time-banner :is(.time-banner-weekly, .time-banner-unit) { text-align: left; }
-}
 @layer typography {
   html[data-theme] body .time-banner h3 {
     font-size: 1.3rem !important;
