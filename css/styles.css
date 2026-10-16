@@ -6742,7 +6742,7 @@ html[data-theme="dark"] .theme-toggle-moon { display: none; }
     .thalasso-turnover-benefit,
     .time-benefit
   )::before {
-    width: 6px !important;
+    width: 4px !important;
     background: var(--gradient-encadre) !important;
   }
 }

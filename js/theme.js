@@ -2,7 +2,6 @@
   "use strict";
 
   const root = document.documentElement;
-  const preference = window.matchMedia("(prefers-color-scheme: dark)");
   const storageKey = "aestheia-theme";
   let requestedTheme = new URLSearchParams(window.location.search).get("theme");
   let forcedTheme = null;
@@ -16,21 +15,25 @@
   }
 
   if (requestedTheme === "light" || requestedTheme === "dark" || requestedTheme === "auto") {
-    forcedTheme = requestedTheme === "auto" ? null : requestedTheme;
+    if (!forcedTheme && requestedTheme !== "auto") forcedTheme = requestedTheme;
   }
 
   function applyTheme() {
-    const theme = forcedTheme || (preference.matches ? "dark" : "light");
+    const hour = new Date().getHours();
+    const theme = forcedTheme || (hour >= 7 && hour < 19 ? "light" : "dark");
     root.classList.toggle("theme-light", theme === "light");
     root.classList.toggle("theme-dark", theme === "dark");
     root.dataset.theme = theme;
     if (toggle) {
+      toggle.setAttribute("aria-pressed", String(theme === "dark"));
       toggle.setAttribute("aria-label", theme === "light" ? "Passer en mode nuit" : "Passer en mode jour");
     }
   }
 
   applyTheme();
-  preference.addEventListener("change", applyTheme);
+  document.addEventListener("visibilitychange", function () {
+    if (!document.hidden) applyTheme();
+  });
 
   document.addEventListener("DOMContentLoaded", function () {
     const shell = document.querySelector(".nav-shell");

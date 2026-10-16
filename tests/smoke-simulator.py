@@ -120,7 +120,7 @@ with sync_playwright() as pw:
                 href = banner.locator(f'a[href="/simulateur-gain-de-temps/?profil={profile}"]').last.get_attribute('href')
                 page.goto(base + href + '&theme=' + theme)
                 assert page.locator('.time-task input').count() == 6
-                assert page.locator('[aria-pressed=true]').get_attribute('data-profile') == profile
+                assert page.locator('.time-profiles [aria-pressed=true]').get_attribute('data-profile') == profile
                 assert page.locator('.time-invite').is_visible()
                 for task, hours in values.items():
                     page.locator(f'[data-task="{task}"]').fill(str(hours))
@@ -144,7 +144,7 @@ with sync_playwright() as pw:
                 banner = page.locator('.time-banner')
             print(f'PASS : {theme}, {width} px')
     page.goto(base + '/simulateur-gain-de-temps/')
-    assert page.locator('[aria-pressed=true]').get_attribute('data-profile') == 'spa-hotelier'
+    assert page.locator('.time-profiles [aria-pressed=true]').get_attribute('data-profile') == 'spa-hotelier'
     stored = page.evaluate('JSON.stringify({local:{...localStorage},session:{...sessionStorage},cookies:document.cookie})')
     requests = []
     page.on('request', lambda request: requests.append(request.url))
@@ -200,7 +200,7 @@ with sync_playwright() as pw:
                 report['weights'].append({'theme': theme, 'home': weights})
                 note = page.locator('.transition-note').filter(has_text='Résultat recherché')
                 style = note.evaluate("e=>({image:getComputedStyle(e,'::before').backgroundImage,width:getComputedStyle(e,'::before').width,padding:getComputedStyle(e).paddingLeft})")
-                assert style['width'] == '6px' and float(style['padding'][:-2]) >= 19
+                assert style['width'] == '4px' and float(style['padding'][:-2]) >= 19
                 pixels = Image.open(BytesIO(note.screenshot())).convert('RGB')
                 samples = []
                 for at in [.05, .95]:
@@ -232,7 +232,7 @@ with sync_playwright() as pw:
             assert contrast([31, 43, 79], [255, 255, 255]) >= 4.5
             assert page.locator('.time-booking').evaluate('e=>getComputedStyle(e).color') == 'rgb(255, 255, 255)'
             assert page.locator('.time-booking').evaluate('e=>getComputedStyle(e).borderTopColor') == 'rgb(255, 255, 255)'
-            assert page.locator('.time-benefit').evaluate("e=>getComputedStyle(e,'::before').width") == '6px'
+            assert page.locator('.time-benefit').evaluate("e=>getComputedStyle(e,'::before').width") == '4px'
             assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
 
     # Exercise actual animation, including interrupted slider input and reduced motion.
@@ -244,7 +244,7 @@ with sync_playwright() as pw:
         animated.get_by_role('button', name='Tout refuser', exact=True).click()
     animated.evaluate('document.fonts.ready')
     banner = animated.locator('.time-banner')
-    texts = banner.locator('.time-banner-weekly, .time-banner-annual').all_text_contents()
+    texts = banner.locator('[data-time-final]').all_text_contents()
     initial_height = banner.bounding_box()['height']
     animated.evaluate("document.querySelector('.time-banner').scrollIntoView({block:'center',behavior:'instant'})")
     animated.wait_for_function("document.querySelector('.time-banner [data-time-visual]') !== null")
@@ -256,7 +256,7 @@ with sync_playwright() as pw:
     middle = banner.locator('[data-time-visual]').all_text_contents()
     assert middle != first and middle != texts, middle
     assert abs(banner.bounding_box()['height'] - initial_height) < 1
-    animated.wait_for_timeout(850)
+    animated.wait_for_timeout(1450)
     assert banner.locator('[data-time-visual]').all_text_contents() == texts
     assert banner.locator('[aria-live]').count() == 0
     assert banner.locator('[data-time-visual][aria-hidden=true]').count() == 8
@@ -264,6 +264,8 @@ with sync_playwright() as pw:
     animated.wait_for_timeout(80)
     animated.evaluate("document.querySelector('.time-banner').scrollIntoView({block:'center',behavior:'instant'})")
     animated.wait_for_timeout(100)
+    assert banner.locator('[data-time-visual]').all_text_contents() != texts
+    animated.wait_for_timeout(1800)
     assert banner.locator('[data-time-visual]').all_text_contents() == texts
     for profile, values, week, annual in examples:
         animated.goto(base + '/simulateur-gain-de-temps/?profil=' + profile)
@@ -298,7 +300,7 @@ with sync_playwright() as pw:
             height = banner.bounding_box()['height']
             animated.evaluate("document.querySelector('.time-banner').scrollIntoView({block:'center',behavior:'instant'})")
             animated.wait_for_function("document.querySelector('.time-banner [data-time-visual]') !== null")
-            for delay in [200, 400, 700]:
+            for delay in [200, 400, 1300]:
                 animated.wait_for_timeout(delay)
                 assert abs(banner.bounding_box()['height'] - height) < 1
                 assert animated.evaluate('document.documentElement.scrollWidth <= innerWidth')
@@ -314,7 +316,7 @@ with sync_playwright() as pw:
     plain = browser.new_page(java_script_enabled=False)
     plain.goto(base + '/')
     assert plain.locator('.time-banner-weekly, .time-banner-annual').all_text_contents() == texts
-    report['animation'] = 'PASS: final values, interruptions, reduced motion, one run, no layout jump, no JavaScript'
+    report['animation'] = 'PASS: final values, interruptions, reduced motion, replay on reentry, no layout jump, no JavaScript'
     report['white_button_contrast'] = round(contrast([31, 43, 79], [255, 255, 255]), 2)
     assert not errors, errors
     browser.close()
