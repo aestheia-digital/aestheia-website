@@ -4,7 +4,6 @@ import json
 from pathlib import Path
 import re
 import shutil
-from urllib.parse import parse_qs, urlparse
 from playwright.sync_api import sync_playwright
 
 parser = argparse.ArgumentParser()
@@ -14,10 +13,10 @@ args = parser.parse_args()
 base = args.base_url.rstrip('/')
 root = Path(__file__).resolve().parents[1]
 examples = [
-    ('medecine-esthetique', {'rappels': 6, 'devis': 3}, '3,5 à 4,5 h', 'soit 160 à 205 h par an'),
-    ('spa-hotelier', {'demandes': 4, 'echanges': 4, 'analyse': 2}, '3,5 à 5 h', 'soit 165 à 230 h par an'),
-    ('thalasso-thermal', {'dossiers': 5, 'echanges': 4, 'avis': 2}, '4 à 5,5 h', 'soit 175 à 255 h par an'),
-    ('instituts-independantes', {'suivi': 4, 'messages': 2, 'contenus': 3}, '3 à 4,5 h', 'soit 140 à 205 h par an'),
+    ('medecine-esthetique', {'rappels': 6, 'devis': 3}, '3\u00a0h\u00a030 à 4\u00a0h\u00a030', 'soit 160 à 205 h par an'),
+    ('spa-hotelier', {'demandes': 4, 'echanges': 4, 'analyse': 2}, '3\u00a0h\u00a030 à 5\u00a0h', 'soit 165 à 230 h par an'),
+    ('thalasso-thermal', {'dossiers': 5, 'echanges': 4, 'avis': 2}, '3\u00a0h\u00a045 à 5\u00a0h\u00a030', 'soit 175 à 255 h par an'),
+    ('instituts-independantes', {'suivi': 4, 'messages': 2, 'contenus': 3}, '3\u00a0h à 4\u00a0h\u00a030', 'soit 140 à 205 h par an'),
 ]
 report = {'banner': [], 'contrast': [], 'fallback': False}
 
@@ -128,10 +127,10 @@ with sync_playwright() as pw:
                 assert page.locator('.time-annual [data-time-final]').inner_text() == annual
                 assert page.locator('.time-benefit').evaluate('(e)=>parseFloat(getComputedStyle(e).paddingLeft)') >= 19
                 assert page.locator('.time-result').get_attribute('aria-live') == 'polite'
-                body = parse_qs(urlparse(page.locator('.time-email').get_attribute('href')).query)['body'][0]
-                for label in page.locator('.time-task label').all_text_contents():
-                    assert label in body
-                assert 'Secteur :' in body and week + ' par semaine' in body
+                assert page.locator('.time-email').count() == 0
+                assert page.locator('.time-results a[href^="mailto:"]').count() == 0
+                assert page.locator('.time-declared').inner_text() == f'{sum(values.values())}\u00a0h par semaine'
+                assert page.locator('.time-calculated > p').all_text_contents()[:2] == ['Temps déclaré, toutes tâches confondues', f'{sum(values.values())}\u00a0h par semaine']
                 assert not re.search(r'\d+\.\d|%', page.locator('[data-time-simulator]').inner_text())
                 assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
                 if profile == 'medecine-esthetique':
@@ -139,7 +138,7 @@ with sync_playwright() as pw:
                     assert 'patients' in page.locator('.time-benefit').inner_text()
                 page.locator('.time-profiles button[aria-pressed=false]').first.click()
                 assert all(field.input_value() == '0' for field in page.locator('.time-task input').all())
-                assert page.locator('.time-email').get_attribute('href') is None
+                assert page.locator('.time-calculated').is_hidden()
                 page.goto(base + '/?theme=' + theme)
                 banner = page.locator('.time-banner')
             print(f'PASS : {theme}, {width} px')
@@ -151,8 +150,9 @@ with sync_playwright() as pw:
     page.locator('[data-profile=medecine-esthetique]').click()
     page.locator('.time-task input').first.focus()
     page.keyboard.press('ArrowRight')
-    assert page.locator('.time-task input').first.input_value() == '0.5'
-    assert page.locator('.time-result-value [data-time-final]').inner_text() == 'moins de 0,5 h'
+    assert abs(float(page.locator('.time-task input').first.input_value()) - 1/12) < 1e-10
+    assert page.locator('.time-task output').first.inner_text() == '5\u00a0min'
+    assert page.locator('.time-result-value [data-time-final]').inner_text() == 'moins de 15\u00a0min'
     assert page.evaluate('JSON.stringify({local:{...localStorage},session:{...sessionStorage},cookies:document.cookie})') == stored
     assert not requests
     # Exercise the fallback with subgrid disabled only in this test page.
@@ -221,22 +221,98 @@ with sync_playwright() as pw:
             assert not excessive, excessive
             invite = page.locator('.time-invite')
             assert invite.evaluate('e=>getComputedStyle(e).fontWeight') == '400'
-            email = page.locator('.time-email')
-            colors = email.evaluate('e=>({fg:getComputedStyle(e).color,bg:getComputedStyle(e).backgroundColor,border:getComputedStyle(e).borderTopColor})')
+            booking = page.locator('.time-booking')
+            colors = booking.evaluate('e=>({fg:getComputedStyle(e).color,bg:getComputedStyle(e).backgroundColor,border:getComputedStyle(e).borderTopColor})')
             assert colors == {'fg': 'rgb(31, 43, 79)', 'bg': 'rgb(255, 255, 255)', 'border': 'rgb(31, 43, 79)'}, colors
             page.locator('.time-task input').first.fill('10')
-            email.hover()
-            assert email.evaluate('e=>getComputedStyle(e).backgroundColor') == 'rgb(237, 242, 251)'
-            email.focus()
+            booking.hover()
+            assert booking.evaluate('e=>getComputedStyle(e).backgroundColor') == 'rgb(237, 242, 251)'
+            booking.focus()
             # Keyboard focus must remain visible independently of hover.
             page.keyboard.press('Tab')
             page.keyboard.press('Shift+Tab')
-            assert email.evaluate('e=>getComputedStyle(e).outlineWidth') == '2px'
+            assert booking.evaluate('e=>getComputedStyle(e).outlineWidth') == '2px'
             assert contrast([31, 43, 79], [255, 255, 255]) >= 4.5
-            assert page.locator('.time-booking').evaluate('e=>getComputedStyle(e).color') == 'rgb(255, 255, 255)'
-            assert page.locator('.time-booking').evaluate('e=>getComputedStyle(e).borderTopColor') == 'rgb(255, 255, 255)'
+            assert booking.get_attribute('href') == 'https://calendar.app.google/qx6dT7WJfTrsFe6j9'
+            assert booking.evaluate('e=>getComputedStyle(e).borderTopColor') == 'rgb(31, 43, 79)'
             assert page.locator('.time-benefit').evaluate("e=>getComputedStyle(e,'::before').width") == '3px'
             assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
+
+    # Long duration labels, declared total, and the retained booking action.
+    report['minute_layouts'] = []
+    for theme in ['light', 'dark']:
+        for width in [1440, 1024, 768, 390, 320]:
+            page.set_viewport_size({'width': width, 'height': 1000})
+            page.goto(base + '/?theme=' + theme)
+            page.evaluate('document.fonts.ready')
+            assert page.locator('.time-banner-weekly [data-time-final]').all_text_contents() == [item[2] for item in examples]
+            assert page.locator('.time-banner-annual [data-time-final]').all_text_contents() == [item[3] for item in examples]
+            # Every complete hour/minute duration occupies one line, including the animated overlay.
+            for element in page.locator('.time-banner-weekly [data-time-final]').all():
+                assert element.evaluate("""e => {
+                    const node=e.firstChild;
+                    return [...node.textContent.matchAll(/\\d+\\u00a0(?:h(?:\\u00a0\\d+)?|min)/g)].every(match=>{
+                        const r=document.createRange();r.setStart(node,match.index);r.setEnd(node,match.index+match[0].length);
+                        return r.getClientRects().length===1;
+                    });
+                }""")
+            assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
+            page.goto(base + '/simulateur-gain-de-temps/?theme=' + theme)
+            inputs = page.locator('.time-task input')
+            assert all(abs(float(field.get_attribute('step')) - 1/12) < 1e-10 and field.get_attribute('max') == '20' for field in inputs.all())
+            for value, expected in [('0', '0\u00a0h'), (str(1/3), '20\u00a0min'), ('0.75', '45\u00a0min'), ('1', '1\u00a0h'), ('1.25', '1\u00a0h\u00a015'), ('2.5', '2\u00a0h\u00a030'), ('20', '20\u00a0h')]:
+                if value == str(1/3):
+                    inputs.first.press('Home')
+                    for _ in range(4):
+                        inputs.first.press('ArrowRight')
+                else:
+                    inputs.first.fill(value)
+                assert page.locator('.time-task output').first.inner_text() == expected
+            inputs.first.fill('1.25')
+            inputs.nth(1).fill('8.25')
+            assert page.locator('.time-declared').inner_text() == '9\u00a0h\u00a030 par semaine'
+            declared = page.locator('.time-declared')
+            assert declared.evaluate('e=>getComputedStyle(e).fontWeight') == '400'
+            assert declared.evaluate('e=>parseFloat(getComputedStyle(e).fontSize)') < page.locator('.time-result-value').evaluate('e=>parseFloat(getComputedStyle(e).fontSize)')
+            assert not re.search(r'\d+[,.]\d+\s*h', page.locator('.time-calculated').inner_text())
+            assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
+            report['minute_layouts'].append({'theme': theme, 'width': width, 'passed': True})
+
+    for theme in ['light', 'dark']:
+        for width in [1440, 390, 352, 351, 320]:
+            page.set_viewport_size({'width': width, 'height': 1000})
+            for sector, _, _, _ in examples:
+                page.goto(base + '/' + sector + '/?theme=' + theme)
+                page.evaluate('document.fonts.ready')
+                assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
+                assert page.locator('.time-banner-sector').evaluate_all("""es=>es.every(e=>{
+                    const n=e.querySelector('.time-banner-name'),v=e.querySelector('.time-banner-weekly');
+                    const r=document.createRange();r.selectNodeContents(n);const b=v.getBoundingClientRect();
+                    return [...r.getClientRects()].every(a=>a.right<=b.left||a.left>=b.right||a.top>=b.bottom||a.bottom<=b.top);
+                })""")
+                assert not re.search(r'\d+,\d+\s*h', ' '.join(page.locator('.time-banner-weekly').all_text_contents()))
+
+    # The desktop sweep retains its 6 s cycle and 1.44 s forward passage, with no return.
+    halo = browser.new_page(viewport={'width': 1440, 'height': 1000}, reduced_motion='no-preference')
+    for theme in ['light', 'dark']:
+        halo.goto(base + '/?theme=' + theme)
+        sweep = halo.locator('.site-header .header-phone-direct').evaluate("""e=>{
+            const a=e.getAnimations().find(a=>a.animationName==='header-phone-night-blue-wave');
+            a.pause();
+            const positions=[0,1680,2000,2500,3120,4000,5999].map(t=>{a.currentTime=t;return parseFloat(getComputedStyle(e).backgroundPositionX)});
+            return {duration:a.effect.getTiming().duration,positions,frames:a.effect.getKeyframes().map(f=>parseFloat(f.backgroundPositionX)),image:getComputedStyle(e).backgroundImage};
+        }""")
+        assert sweep['duration'] == 6000 and sweep['frames'] == [100, 100, 0, 0], sweep
+        if theme == 'dark':
+            assert sweep['positions'][0] == 100 and sweep['positions'][-1] == 0, sweep
+            assert all(a >= b for a,b in zip(sweep['positions'],sweep['positions'][1:])), sweep
+        else:
+            # The existing day header rule masks the gradient; preserve that approved surface.
+            assert sweep['image'] == 'none', sweep
+        halo.emulate_media(reduced_motion='reduce')
+        assert halo.locator('.header-phone-direct').evaluate('e=>getComputedStyle(e).animationName') == 'none'
+        halo.emulate_media(reduced_motion='no-preference')
+    halo.close()
 
     # Exercise actual animation, including interrupted slider input and reduced motion.
     animated = browser.new_page(viewport={'width': 1440, 'height': 1000}, reduced_motion='no-preference')
@@ -252,7 +328,7 @@ with sync_playwright() as pw:
     animated.evaluate("document.querySelector('.time-banner').scrollIntoView({block:'center',behavior:'instant'})")
     animated.wait_for_function("document.querySelector('.time-banner [data-time-visual]') !== null")
     assert banner.locator('[data-time-final]').all_text_contents() == texts
-    assert all(text in banner.aria_snapshot() for text in texts)
+    assert all(text.replace('\u00a0', ' ') in banner.aria_snapshot().replace('\u00a0', ' ') for text in texts)
     first = banner.locator('[data-time-visual]').all_text_contents()
     assert first != texts, first
     animated.wait_for_timeout(450)
@@ -295,7 +371,7 @@ with sync_playwright() as pw:
             assert animated.locator(selector + ' [data-time-visual]').text_content() == animated.locator(selector + ' [data-time-final]').text_content()
         animated.emulate_media(reduced_motion='no-preference')
     for theme in ['light', 'dark']:
-        for width in [1440, 390, 320]:
+        for width in [1440, 1024, 768, 390, 320]:
             animated.set_viewport_size({'width': width, 'height': 1000})
             animated.goto(base + '/?theme=' + theme)
             animated.evaluate('document.fonts.ready')

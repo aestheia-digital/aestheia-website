@@ -1,3 +1,19 @@
+// Les valeurs restent en heures ; seuls les libellés utilisent les minutes.
+function formatTimeDuration(hours) {
+  const minutes = Math.round(hours * 60);
+  if (!minutes) return '0\u00a0h';
+  if (minutes < 60) return `${minutes}\u00a0min`;
+  const rest = minutes % 60;
+  return `${Math.floor(minutes / 60)}\u00a0h${rest ? `\u00a0${String(rest).padStart(2, '0')}` : ''}`;
+}
+
+function describeWeeklyDuration(values, { zero = false, range = false } = {}) {
+  if (zero && values.every(value => value === 0)) return formatTimeDuration(0);
+  if (values[1] === 0) return 'moins de 15\u00a0min';
+  if (!range && values[0] === values[1]) return `environ ${formatTimeDuration(values[0])}`;
+  return `${formatTimeDuration(values[0])} à ${formatTimeDuration(values[1])}`;
+}
+
 /* Présentation animée uniquement : les calculs et les valeurs finales restent inchangés. */
 function interpolateTimeCount(from, to, progress, step) {
   const t = Math.min(1, Math.max(0, progress));
@@ -6,10 +22,11 @@ function interpolateTimeCount(from, to, progress, step) {
   return to.map((value, index) => Math.round((from[index] + (value - from[index]) * eased) / step) * step);
 }
 
-if (typeof module !== 'undefined' && module.exports) module.exports = { interpolateTimeCount };
+if (typeof module !== 'undefined' && module.exports) module.exports = { interpolateTimeCount, formatTimeDuration, describeWeeklyDuration };
 
 (() => {
   if (typeof document === 'undefined') return;
+  window.TimeDuration = { formatTimeDuration, describeWeeklyDuration };
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   const states = new WeakMap();
   const active = new Set();
@@ -30,7 +47,7 @@ if (typeof module !== 'undefined' && module.exports) module.exports = { interpol
     return state;
   }
 
-  function animate(element, to, { duration = 400, step = .5, format, from } = {}) {
+  function animate(element, to, { duration = 400, step = .25, format, from } = {}) {
     const state = stateFor(element, from || to.map(() => 0));
     const text = format(to);
     if (state.text === text) return;
@@ -78,8 +95,10 @@ if (typeof module !== 'undefined' && module.exports) module.exports = { interpol
   const counters = [...banner.querySelectorAll('.time-banner-weekly, .time-banner-annual')].map(element => {
     const text = element.textContent;
     const pattern = /\d+(?:[ \u202f]\d{3})*(?:,\d+)?/g;
-    const to = [...text.matchAll(pattern)].map(match => Number(match[0].replace(/[ \u202f]/g, '').replace(',', '.')));
-    const format = values => {
+    const weekly = element.matches('.time-banner-weekly');
+    const to = weekly ? element.dataset.timeWeekly.split(',').map(Number) :
+      [...text.matchAll(pattern)].map(match => Number(match[0].replace(/[ \u202f]/g, '').replace(',', '.')));
+    const format = weekly ? values => describeWeeklyDuration(values, { zero: true, range: true }) : values => {
       let index = 0;
       return text.replace(pattern, () => number.format(values[index++]));
     };
@@ -87,7 +106,7 @@ if (typeof module !== 'undefined' && module.exports) module.exports = { interpol
     const state = stateFor(element, zero);
     state.final.textContent = text;
     state.visual.textContent = motion.matches ? text : format(zero);
-    return { element, to, zero, format, state, step: element.matches('.time-banner-weekly') ? .5 : 5 };
+    return { element, to, zero, format, state, step: weekly ? .25 : 5 };
   });
   let entered = false;
   const observer = new IntersectionObserver(entries => {

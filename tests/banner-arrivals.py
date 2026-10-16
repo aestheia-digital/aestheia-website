@@ -51,7 +51,7 @@ with sync_playwright() as pw:
             # Below the trigger no timer runs; all visible numbers stay at zero.
             page.evaluate("const e=document.querySelector('.time-banner'),r=e.getBoundingClientRect();scrollTo({top:scrollY+r.top-innerHeight+r.height*.1,behavior:'instant'})")
             page.wait_for_timeout(250)
-            assert page.locator('.time-banner-weekly [data-time-visual]').all_text_contents() == ['0 à 0 h'] * 4
+            assert page.locator('.time-banner-weekly [data-time-visual]').all_text_contents() == ['0\u00a0h'] * 4
             page.evaluate("const e=document.querySelector('.time-banner'),r=e.getBoundingClientRect();scrollTo({top:scrollY+r.top-innerHeight+r.height*.22,behavior:'instant'})")
         page.wait_for_function('window.arrival?.samples.length===4')
         data = page.evaluate('arrival')
@@ -77,7 +77,7 @@ with sync_playwright() as pw:
     assert page.locator('.time-banner [data-time-visual]').all_text_contents() == final
     page.evaluate('scrollTo({top:0,behavior:"instant"})')
     page.wait_for_timeout(100)
-    assert page.locator('.time-banner-weekly [data-time-visual]').all_text_contents() == ['0 à 0 h'] * 4
+    assert page.locator('.time-banner-weekly [data-time-visual]').all_text_contents() == ['0\u00a0h'] * 4
     page.evaluate("document.querySelector('.time-banner').scrollIntoView({block:'center',behavior:'instant'})")
     page.wait_for_timeout(200)
     assert page.locator('.time-banner [data-time-visual]').all_text_contents() != final
@@ -97,7 +97,7 @@ with sync_playwright() as pw:
     report['simulator']['samples'] = page.evaluate('simSamples')
     assert report['simulator']['samples'][0]['weekly'] != report['simulator']['from']
     assert report['simulator']['samples'][0]['weekly'] != report['simulator']['samples'][1]['weekly']
-    assert report['simulator']['samples'][-1]['weekly'] == '8 à 10 h'
+    assert report['simulator']['samples'][-1]['weekly'] == '8\u00a0h à 10\u00a0h'
     assert report['simulator']['samples'][-1]['annual'] == 'soit 370 à 460 h par an'
     page.emulate_media(reduced_motion='reduce')
     page.goto(base + '/?theme=light#time-banner-title')
@@ -106,7 +106,7 @@ with sync_playwright() as pw:
     assert page.locator('.time-banner [data-time-visual]').all_text_contents() == final
     page.goto(base + '/simulateur-gain-de-temps/?profil=medecine-esthetique')
     page.locator('[data-task=rappels]').fill('20')
-    assert page.locator('.time-result-value [data-time-visual]').text_content() == '8 à 10 h'
+    assert page.locator('.time-result-value [data-time-visual]').text_content() == '8\u00a0h à 10\u00a0h'
     report['reduced_motion'] = 'PASS: valeurs finales directes sur les deux pages'
     assert not report['errors'], report['errors']
     assert any(r['status'] == 200 for r in report['resources'])

@@ -28,6 +28,8 @@
 .time-result-value { margin: 0; line-height: 1.1; }
 .time-week-unit { margin: .35rem 0 .75rem; }
 .time-annual { margin: 0; }
+.time-result-label { margin: 1rem 0 .5rem; }
+.time-declared { margin: 0 0 1.25rem; }
 .time-invite { margin: 1rem 0; }
 .time-actions { display: flex; flex-direction: column; gap: .75rem; margin-top: 1.5rem; }
 .time-action {
@@ -43,11 +45,9 @@
   line-height: 1.4;
   text-decoration: none;
 }
-.time-email { background: var(--time-white); color: var(--time-ink); border-color: var(--time-ink); }
-.time-email:hover { background: var(--time-pale); }
-.time-email[aria-disabled="true"] { cursor: default; }
-.time-booking { background: transparent; color: var(--time-white); }
-.time-action:not([aria-disabled="true"]):hover { text-decoration: underline; text-underline-offset: .2em; }
+.time-booking { background: var(--time-white); color: var(--time-ink); border-color: var(--time-ink); }
+.time-booking:hover { background: var(--time-pale); }
+.time-action:hover { text-decoration: underline; text-underline-offset: .2em; }
 .time-disclaimer { margin: 1rem 0 0; }
 .time-method { max-width: var(--container); padding-bottom: 2rem; }
 .time-floating { position: fixed; right: max(1rem, env(safe-area-inset-right)); bottom: max(.75rem, env(safe-area-inset-bottom)); z-index: 40; max-width: calc(100vw - 2rem); font-size: .875rem; padding: .65rem 1rem; min-height: 44px; text-align: center; white-space: normal; }
@@ -70,7 +70,7 @@
     color: var(--time-night) !important;
     -webkit-text-fill-color: var(--time-night) !important;
   }
-  html[data-theme] .time-simulator .time-results p, html[data-theme] .time-simulator .time-booking {
+  html[data-theme] .time-simulator .time-results p {
     color: var(--time-white) !important;
     -webkit-text-fill-color: var(--time-white) !important;
   }
@@ -78,7 +78,7 @@
     color: var(--time-cyan) !important;
     -webkit-text-fill-color: var(--time-cyan) !important;
   }
-  html[data-theme] .time-simulator .time-email {
+  html[data-theme] .time-simulator .time-booking {
     color: var(--time-ink) !important;
     -webkit-text-fill-color: var(--time-ink) !important;
   }
@@ -86,6 +86,15 @@
     font-family: var(--font-display) !important;
     font-size: clamp(2.25rem, 5vw, 3.5rem) !important;
     line-height: 1.1 !important;
+  }
+  html[data-theme] body .time-simulator .time-result-label {
+    font-size: var(--fs-secondary) !important;
+    line-height: var(--lh-secondary) !important;
+  }
+  html[data-theme] body .time-simulator .time-declared {
+    font-size: calc(var(--fs-introduction) * 1.5) !important;
+    line-height: var(--lh-introduction) !important;
+    font-weight: 400 !important;
   }
   html[data-theme] .time-simulator .time-disclaimer {
     font-size: var(--fs-secondary) !important;
@@ -172,6 +181,21 @@
   .time-banner-unit { text-align: right; }
   .time-banner-annual { margin-top: 0; }
   .time-banner-link { width: 100%; }
+  body.home-page .time-banner-sector {
+    grid-template-areas: "name" "weekly" "unit" "annual";
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto auto auto;
+  }
+  body.home-page .time-banner :is(.time-banner-weekly, .time-banner-unit) { text-align: left; }
+
+}
+@media (max-width: 351px) {
+  body:is(.medicine-page, .spa-page, .thalasso-page, .institutes-page) .time-banner-sector {
+    grid-template-areas: "name" "weekly" "unit" "annual";
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto auto auto;
+  }
+  body:is(.medicine-page, .spa-page, .thalasso-page, .institutes-page) .time-banner :is(.time-banner-weekly, .time-banner-unit) { text-align: left; }
 }
 @layer typography {
   html[data-theme] body .time-banner h3 {
@@ -266,7 +290,7 @@ body.home-page :is(.time-banner-inner, .time-banner-sectors, .time-banner-link),
 .time-simulator :is(.time-inputs, .time-results, .time-profiles button, .time-action) {
   border-radius: 0 !important;
 }
-.time-simulator .time-email:focus-visible { outline: 2px solid var(--time-white); outline-offset: 3px; box-shadow: 0 0 0 2px var(--time-ink); }
+.time-simulator .time-booking:focus-visible { outline: 2px solid var(--time-white); outline-offset: 3px; box-shadow: 0 0 0 2px var(--time-ink); }
 .time-count { position: relative; font-variant-numeric: tabular-nums; }
 .time-count [data-time-final] { opacity: 0; }
 .time-count [data-time-visual] { position: absolute; inset: 0; pointer-events: none; }

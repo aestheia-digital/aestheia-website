@@ -32,7 +32,7 @@ def check(page, theme):
     assert page.evaluate('window.firstThemeFrame') == theme, page.url
     for note in page.locator('.transition-note,.sector-editorial-benefit,.sector-reality-conclusion,.sector-method-conclusion,.thalasso-turnover-benefit,.time-benefit').all():
         style = note.evaluate("e=>({width:getComputedStyle(e,'::before').width,bg:getComputedStyle(e,'::before').backgroundImage,pad:getComputedStyle(e).paddingLeft})")
-        assert style['width'] == '4px', (page.url, style)
+        assert style['width'] == '3px', (page.url, style)
         assert ('rgb(91, 63, 216)' if theme == 'light' else 'rgb(139, 123, 255)') in style['bg'], (page.url, style)
         assert float(style['pad'][:-2]) >= 19
     checks += 1

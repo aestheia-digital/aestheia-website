@@ -126,8 +126,8 @@ html:where([data-theme="dark"]):not(.theme-light) .site-header .header-phone-dir
 
 /* Accueil — desktop nuit uniquement : restaure un passage bleu franc sur le téléphone. */
 @keyframes header-phone-night-blue-wave {
-  0%, 28%, 100% { background-position: 100% 50%; }
-  52% { background-position: 0% 50%; }
+  0%, 28% { background-position: 100% 50%; }
+  52%, 100% { background-position: 0% 50%; }
 }
 
 @media (min-width: 1100px) {
