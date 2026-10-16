@@ -271,8 +271,11 @@ body.home-page :is(.time-banner-inner, .time-banner-sectors, .time-banner-link),
 .time-count [data-time-final] { opacity: 0; }
 .time-count [data-time-visual] { position: absolute; inset: 0; pointer-events: none; }
 @layer typography {
-  html[data-theme] body.home-page .time-banner :is(h3, .time-banner-name, .time-banner-weekly, .time-banner-annual) {
+  html[data-theme] body.home-page .time-banner :is(h3, .time-banner-name) {
     font-weight: 600 !important;
+  }
+  html[data-theme] body.home-page .time-banner :is(.time-banner-weekly, .time-banner-annual) {
+    font-weight: 500 !important;
   }
   html[data-theme] body.home-page .time-banner .time-banner-link,
   html[data-theme] body .time-floating { font-weight: 500 !important; }

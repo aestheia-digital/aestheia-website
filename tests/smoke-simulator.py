@@ -196,16 +196,19 @@ with sync_playwright() as pw:
             weights = page.evaluate('''()=>Object.fromEntries(['.time-banner h3','.time-banner-name','.time-banner-weekly','.time-banner-annual','.time-banner-link','.time-floating'].map(s=>[s,Number(getComputedStyle(document.querySelector(s)).fontWeight)]))''')
             assert weights['.time-banner-link'] == weights['.time-floating'] == 500, weights
             assert max(weights.values()) <= 600, weights
+            assert weights['.time-banner-weekly'] == weights['.time-banner-annual'] == 500, weights
+            for count in page.locator('.time-banner .time-count').all():
+                assert count.evaluate('e=>getComputedStyle(e).fontVariantNumeric') == 'tabular-nums'
             if width == 1440:
                 report['weights'].append({'theme': theme, 'home': weights})
                 note = page.locator('.transition-note').filter(has_text='Résultat recherché')
                 style = note.evaluate("e=>({image:getComputedStyle(e,'::before').backgroundImage,width:getComputedStyle(e,'::before').width,padding:getComputedStyle(e).paddingLeft})")
-                assert style['width'] == '4px' and float(style['padding'][:-2]) >= 19
+                assert style['width'] == '3px' and float(style['padding'][:-2]) >= 19
                 pixels = Image.open(BytesIO(note.screenshot())).convert('RGB')
                 samples = []
                 for at in [.05, .95]:
                     y = min(pixels.height - 1, int(pixels.height * at))
-                    color = pixels.getpixel((3, y))
+                    color = pixels.getpixel((1, y))
                     adjacent = pixels.getpixel((10, y))
                     samples.append({'height': at, 'color': '#%02X%02X%02X' % color, 'contrast': round(contrast(color, adjacent), 2)})
                 assert samples[0]['color'] != samples[1]['color'], samples
@@ -232,7 +235,7 @@ with sync_playwright() as pw:
             assert contrast([31, 43, 79], [255, 255, 255]) >= 4.5
             assert page.locator('.time-booking').evaluate('e=>getComputedStyle(e).color') == 'rgb(255, 255, 255)'
             assert page.locator('.time-booking').evaluate('e=>getComputedStyle(e).borderTopColor') == 'rgb(255, 255, 255)'
-            assert page.locator('.time-benefit').evaluate("e=>getComputedStyle(e,'::before').width") == '4px'
+            assert page.locator('.time-benefit').evaluate("e=>getComputedStyle(e,'::before').width") == '3px'
             assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
 
     # Exercise actual animation, including interrupted slider input and reduced motion.
