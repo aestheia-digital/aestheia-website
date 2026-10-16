@@ -13,7 +13,6 @@
   --time-violet-hover: #6C4DE6;
   max-width: var(--container);
 }
-body.home-page #premier-pas { scroll-margin-top: 100px; }
 .time-simulator-section { scroll-margin-top: 100px; }
 .time-simulator .time-title { max-width: 24ch; }
 .time-intro { max-width: 65ch; }

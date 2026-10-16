@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 import re
 import shutil
+from html.parser import HTMLParser
 from playwright.sync_api import sync_playwright
 
 parser = argparse.ArgumentParser()
@@ -19,6 +20,22 @@ examples = [
     ('instituts-independantes', {'suivi': 4, 'messages': 2, 'contenus': 3}, '3\u00a0h à 4\u00a0h\u00a030', 'soit 140 à 205 h par an'),
 ]
 report = {'banner': [], 'contrast': [], 'fallback': False}
+
+class ProjectLinkParser(HTMLParser):
+    def __init__(self):
+        super().__init__()
+        self.links = []
+
+    def handle_starttag(self, tag, attrs):
+        if tag == 'a':
+            self.links.append(dict(attrs))
+
+
+project_parser = ProjectLinkParser()
+project_parser.feed(re.search(r'<section class="section conversion-band".*?</section>', (root / 'index.html').read_text(), re.S).group())
+assert len(project_parser.links) == 1
+project_link = project_parser.links[0]
+
 
 
 def rgb(value):
@@ -251,7 +268,10 @@ with sync_playwright() as pw:
             page.locator('.time-task input').first.fill('5')
             assert start.is_visible()
             assert page.locator('.time-actions a').all_text_contents() == ['Savoir par où commencer', 'Réserver un échange de 30 minutes']
-            assert start.get_attribute('href') == '/#premier-pas' and start.get_attribute('target') is None
+            for attribute in ['href', 'target', 'rel']:
+                assert start.get_attribute(attribute) == project_link[attribute]
+            assert start.get_attribute('target') == '_blank' and start.get_attribute('rel') == 'noopener noreferrer'
+            assert start.get_attribute('aria-label') == 'Savoir par où commencer (s’ouvre dans un nouvel onglet)'
             assert booking.get_attribute('href') == 'https://calendar.app.google/qx6dT7WJfTrsFe6j9'
             a,b = start.bounding_box(),booking.bounding_box()
             assert abs(a['width']-b['width']) < 1 and abs(a['height']-b['height']) < 1, (theme,width,a,b)
@@ -273,15 +293,30 @@ with sync_playwright() as pw:
             page.locator('.time-task input').first.fill('0')
             assert start.is_hidden() and booking.is_visible() and page.locator('.time-invite').is_visible()
             page.locator('.time-task input').first.fill('5')
-            start.click()
-            page.wait_for_url(base + '/#premier-pas')
-            page.evaluate('document.fonts.ready')
-            page.wait_for_function('''()=>{const top=document.querySelector("#premier-pas").getBoundingClientRect().top;return top>=Math.max(0,document.querySelector(".site-header").getBoundingClientRect().bottom) && top<innerHeight/2}''')
-            target = page.locator('#premier-pas')
-            assert target.locator('.eyebrow').text_content().strip() == 'Premier pas', (theme,width,repr(target.locator('.eyebrow').text_content()),page.url)
-            assert target.get_by_role('link',name='Parlez-moi de votre projet',exact=True).get_attribute('href') == 'https://forms.gle/W7JrgaJ6yDSuwgFe7'
+            original_url = page.url
+            original_values = page.locator('.time-task input').evaluate_all('es=>es.map(e=>e.value)')
+            original_result = page.locator('.time-calculated').inner_text()
+            opened_requests = []
+            def capture_form(route):
+                opened_requests.append(route.request.url)
+                route.fulfill(status=200, content_type='text/html', body='<html lang="fr"><title>Formulaire de contact</title></html>')
+            # Exercise a real popup without sending a request to Google Forms.
+            page.context.route(project_link['href'], capture_form)
+            with page.expect_popup() as opened:
+                start.click()
+            popup = opened.value
+            popup.wait_for_url(project_link['href'])
+            popup.wait_for_load_state()
+            assert opened_requests == [project_link['href']]
+            assert page.url == original_url
+            assert page.locator('.time-task input').evaluate_all('es=>es.map(e=>e.value)') == original_values
+            assert page.locator('.time-calculated').inner_text() == original_result
+            assert popup.evaluate('window.opener === null')
+            popup.close()
+            page.context.unroute(project_link['href'], capture_form)
             assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
-            report['start_action'].append({'theme':theme,'width':width,'contrast':round(ratio,2),'height':round(a['height'],2),'anchor':page.url})
+            report['start_action'].append({'theme':theme,'width':width,'contrast':round(ratio,2),'height':round(a['height'],2),'form':project_link['href'],'result_retained':True})
+
 
     # Long duration labels, declared total, and the retained booking action.
     report['minute_layouts'] = []

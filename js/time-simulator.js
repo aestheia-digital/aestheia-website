@@ -260,7 +260,7 @@ if (typeof module !== 'undefined' && module.exports) {
           </div>
           <p class="time-benefit">Du temps pour se consacrer à l’accueil, au soin et à l’expérience client.</p>
           <div class="time-actions">
-            <a class="time-action time-start" href="/#premier-pas" hidden>Savoir par où commencer</a>
+            <a class="time-action time-start" href="https://forms.gle/W7JrgaJ6yDSuwgFe7" target="_blank" rel="noopener noreferrer" aria-label="Savoir par où commencer (s’ouvre dans un nouvel onglet)" hidden>Savoir par où commencer</a>
             <a class="time-action time-booking" href="https://calendar.app.google/qx6dT7WJfTrsFe6j9" target="_blank" rel="noopener noreferrer">Réserver un échange de 30 minutes</a>
           </div>
           <p class="time-disclaimer">Estimation indicative, selon vos processus actuels. Aucun résultat n’est garanti.</p>
