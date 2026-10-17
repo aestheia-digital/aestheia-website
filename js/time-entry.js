@@ -1,5 +1,6 @@
 (() => {
   if (/^\/(simulateur-gain-de-temps|contact)(\/|\.html)?$/.test(location.pathname)) return;
+  const mobile = window.matchMedia('(max-width: 820px)');
   const link = document.createElement('a');
   link.className = 'btn btn-primary time-floating';
   const homeBanner = document.querySelector('body.home-page .time-banner');
@@ -7,11 +8,10 @@
   link.href = '/simulateur-gain-de-temps/' + (sector ? `?profil=${sector}` : '');
   link.textContent = 'Estimer mon gain de temps';
   link.hidden = true;
-  // Reserve an empty strip, including on mobile, instead of covering useful content.
+  // Reserve an empty strip on desktop instead of covering useful content.
   const space = document.createElement('div');
   space.className = 'time-floating-space';
   space.setAttribute('aria-hidden', 'true');
-  document.body.append(space, link);
   const sections = Array.from(document.querySelectorAll('section')).filter(section =>
     Array.from(section.querySelectorAll('.eyebrow')).some(label => label.textContent.trim() === 'Premier pas')
   );
@@ -20,6 +20,14 @@
   let requested = false;
   function refresh() {
     requested = false;
+    // Remove both nodes on phones, including after rotation or a queued refresh.
+    if (mobile.matches) {
+      link.hidden = true;
+      link.remove();
+      space.remove();
+      return;
+    }
+    if (!link.isConnected) document.body.append(space, link);
     const blocked = document.querySelector('[data-consent-banner]:not([hidden]), [data-consent-dialog-backdrop]:not([hidden])');
     const viewport = window.visualViewport;
     const keyboard = viewport && viewport.height < window.innerHeight * 0.75;
@@ -54,6 +62,8 @@
     sections.forEach(section => observer.observe(section));
   }
   new MutationObserver(records => { if (records.some(record => record.target !== link)) schedule(); }).observe(document.body, { subtree: true, childList: true, attributes: true, attributeFilter: ['hidden'] });
+  if (mobile.addEventListener) mobile.addEventListener('change', refresh);
+  else mobile.addListener(refresh);
   window.addEventListener('scroll', schedule, { passive: true });
   window.addEventListener('resize', schedule);
   window.visualViewport?.addEventListener('resize', schedule);

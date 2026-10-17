@@ -361,7 +361,7 @@ with sync_playwright() as pw:
     # Sector banners are removed; floating entry links keep their existing safeguards.
     report['sector_entries'] = []
     for theme in ['light', 'dark']:
-        for width in [1440, 1024, 768, 390, 320]:
+        for width in [1440, 1024, 768, 767, 390, 320]:
             page.set_viewport_size({'width': width, 'height': 1000})
             for sector in [None, *[item[0] for item in examples]]:
                 page.goto(base + '/' + (sector + '/' if sector else '') + '?theme=' + theme)
@@ -385,20 +385,30 @@ with sync_playwright() as pw:
                     assert page.locator('.time-banner').count() == 1
                 assert page.evaluate('document.documentElement.scrollWidth <= innerWidth')
                 visible_at = None
-                max_scroll = page.evaluate('document.documentElement.scrollHeight-innerHeight')
-                # Fine scroll samples find genuine gaps without disabling collision protection.
-                for y in range(0, int(max_scroll) + 1, 25):
-                    page.evaluate('y=>scrollTo({top:y,behavior:"instant"})', y)
-                    page.wait_for_timeout(40)
-                    if floating.is_visible():
-                        visible_at = y
-                        break
-                assert visible_at is not None, (sector,theme,width)
-                box = floating.bounding_box()
-                assert box['x'] >= 0 and box['x'] + box['width'] <= width
-                assert floating.evaluate('e=>getComputedStyle(e).borderRadius') == '0px'
+                if width < 768:
+                    for progress in [0, .25, .5, .75, 1]:
+                        page.evaluate('p=>scrollTo({top:p*(document.documentElement.scrollHeight-innerHeight),behavior:"instant"})', progress)
+                        page.wait_for_timeout(40)
+                        assert floating.evaluate('e=>getComputedStyle(e).display') == 'none'
+                        assert page.locator('.time-floating-space').evaluate('e=>getComputedStyle(e).display === "none" && e.getBoundingClientRect().height === 0')
+                else:
+                    max_scroll = page.evaluate('document.documentElement.scrollHeight-innerHeight')
+                    # Fine scroll samples find genuine gaps without disabling collision protection.
+                    for y in range(0, int(max_scroll) + 1, 25):
+                        page.evaluate('y=>scrollTo({top:y,behavior:"instant"})', y)
+                        page.wait_for_timeout(40)
+                        if floating.is_visible():
+                            visible_at = y
+                            break
+                    assert visible_at is not None, (sector,theme,width)
+                    box = floating.bounding_box()
+                    assert box['x'] >= 0 and box['x'] + box['width'] <= width
+                    assert floating.evaluate('e=>getComputedStyle(e).borderRadius') == '0px'
                 if sector:
-                    floating.click()
+                    if width < 768:
+                        page.goto(base + expected)
+                    else:
+                        floating.click()
                     assert page.locator('.time-profiles [aria-pressed=true]').get_attribute('data-profile') == sector
                     assert page.locator('.time-invite').is_visible()
                     assert all(field.input_value() == '0' for field in page.locator('.time-task input').all())
