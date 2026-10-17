@@ -6,9 +6,10 @@
   let requestedTheme = new URLSearchParams(window.location.search).get("theme");
   let forcedTheme = null;
   let toggle = null;
+  let clockTimer = null;
 
   try {
-    const savedTheme = localStorage.getItem(storageKey);
+    const savedTheme = sessionStorage.getItem(storageKey);
     if (savedTheme === "light" || savedTheme === "dark") forcedTheme = savedTheme;
   } catch (_) {
     // Le paramètre reste utilisable lorsque le stockage est indisponible.
@@ -19,7 +20,8 @@
   }
 
   function applyTheme() {
-    const hour = new Date().getHours();
+    const now = new Date();
+    const hour = now.getHours();
     const theme = forcedTheme || (hour >= 7 && hour < 19 ? "light" : "dark");
     root.classList.toggle("theme-light", theme === "light");
     root.classList.toggle("theme-dark", theme === "dark");
@@ -27,6 +29,13 @@
     if (toggle) {
       toggle.setAttribute("aria-pressed", String(theme === "dark"));
       toggle.setAttribute("aria-label", theme === "light" ? "Passer en mode nuit" : "Passer en mode jour");
+    }
+    clearTimeout(clockTimer);
+    if (!forcedTheme) {
+      const nextChange = new Date(now);
+      if (hour >= 19) nextChange.setDate(nextChange.getDate() + 1);
+      nextChange.setHours(hour >= 7 && hour < 19 ? 19 : 7, 0, 0, 0);
+      clockTimer = setTimeout(applyTheme, nextChange.getTime() - now.getTime());
     }
   }
 
@@ -48,7 +57,7 @@
     nav.after(toggle);
     toggle.addEventListener("click", function () {
       forcedTheme = root.dataset.theme === "light" ? "dark" : "light";
-      try { localStorage.setItem(storageKey, forcedTheme); } catch (_) {}
+      try { sessionStorage.setItem(storageKey, forcedTheme); } catch (_) {}
       if (["light", "dark", "auto"].includes(requestedTheme)) {
         const url = new URL(window.location.href);
         url.searchParams.set("theme", forcedTheme);

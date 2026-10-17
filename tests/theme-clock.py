@@ -2,6 +2,7 @@
 import argparse
 from datetime import datetime
 from pathlib import Path
+import re
 import shutil
 from zoneinfo import ZoneInfo
 from playwright.sync_api import sync_playwright
@@ -18,18 +19,35 @@ checks = 0
 errors = []
 
 
-def at(hour, minute=0):
-    return datetime(2026, 10, 16, hour, minute, tzinfo=zone)
+def at(hour, minute=0, timezone=zone):
+    return datetime(2026, 10, 17, hour, minute, tzinfo=timezone)
 
 
-def check(page, theme):
+def prepare(page, hour=12, minute=0, timezone=zone):
+    page.on('pageerror', lambda e: errors.append(str(e)))
+    page.on('console', lambda m: errors.append(m.text) if m.type == 'error' else None)
+    page.add_init_script('''requestAnimationFrame(function firstContentFrame(){
+        if(!document.body){requestAnimationFrame(firstContentFrame);return;}
+        window.firstThemeFrame=document.documentElement.dataset.theme;
+        window.themeFrameRecorded=true;
+    })''')
+    page.clock.install(time=at(hour, minute, timezone))
+
+
+def loaded(page, path='/'):
+    page.goto(base + path)
+    page.wait_for_function('window.themeFrameRecorded === true')
+
+
+def check(page, theme, first_frame=True):
     global checks
     assert page.locator('html').get_attribute('data-theme') == theme, page.url
     assert page.locator('html').evaluate('(e,t)=>e.classList.contains("theme-"+t)', theme)
     toggle = page.locator('.theme-toggle')
     assert toggle.get_attribute('aria-pressed') == str(theme == 'dark').lower(), page.url
     assert toggle.get_attribute('aria-label') == ('Passer en mode jour' if theme == 'dark' else 'Passer en mode nuit')
-    assert page.evaluate('window.firstThemeFrame') == theme, page.url
+    if first_frame:
+        assert page.evaluate('window.firstThemeFrame') == theme, page.url
     for note in page.locator('.transition-note,.sector-editorial-benefit,.sector-reality-conclusion,.sector-method-conclusion,.thalasso-turnover-benefit,.time-benefit').all():
         style = note.evaluate("e=>({width:getComputedStyle(e,'::before').width,bg:getComputedStyle(e,'::before').backgroundImage,pad:getComputedStyle(e).paddingLeft})")
         assert style['width'] == '3px', (page.url, style)
@@ -38,65 +56,103 @@ def check(page, theme):
     checks += 1
 
 
+# The existing synchronous head script must run before stylesheet rendering on every page.
+for path in pages:
+    head = re.search(r'<head\b[^>]*>(.*?)</head>', (root / path).read_text(), re.S).group(1)
+    tag = re.search(r'<script\b[^>]*src=["\'][^"\']*js/theme\.js["\'][^>]*>', head).group()
+    assert not re.search(r'\b(?:async|defer)\b', tag)
+    assert head.index(tag) < head.index('rel="stylesheet"'), path
+
 with sync_playwright() as pw:
     browser = pw.chromium.launch(executable_path=shutil.which('chromium'), args=['--no-sandbox'])
     for system in ['light', 'dark']:
         context = browser.new_context(timezone_id='Europe/Paris', color_scheme=system, reduced_motion='reduce')
         page = context.new_page()
-        page.on('pageerror', lambda e: errors.append(str(e)))
-        page.on('console', lambda m: errors.append(m.text) if m.type == 'error' else None)
-        page.add_init_script('requestAnimationFrame(()=>{window.firstThemeFrame=document.documentElement.dataset.theme})')
-        page.clock.install(time=at(12))
-        for hour, minute, theme in cases:
-            page.clock.set_fixed_time(at(hour, minute))
-            page.goto(base + '/')
-            page.wait_for_function('window.firstThemeFrame !== undefined')
-            check(page, theme)
-            assert page.evaluate('localStorage.getItem("aestheia-theme")') is None
-        # Every HTML page applies both automatic themes using the same head script.
+        prepare(page)
+        loaded(page)
+        # None or either session preference, with a conflicting legacy persistent preference.
+        for manual in [None, 'light', 'dark']:
+            for hour, minute, automatic in cases:
+                legacy = 'light' if automatic == 'dark' else 'dark'
+                page.evaluate('''({manual,legacy})=>{
+                    localStorage.setItem('aestheia-theme',legacy);
+                    if(manual)sessionStorage.setItem('aestheia-theme',manual);
+                    else sessionStorage.removeItem('aestheia-theme');
+                }''', {'manual': manual, 'legacy': legacy})
+                page.clock.set_fixed_time(at(hour, minute))
+                loaded(page)
+                check(page, manual or automatic)
+                assert page.evaluate('localStorage.getItem("aestheia-theme")') == legacy
+                assert page.evaluate('sessionStorage.getItem("aestheia-theme")') == manual
+        page.evaluate('sessionStorage.removeItem("aestheia-theme")')
+        # Every HTML page still applies both automatic themes before its first frame.
         for hour, theme in [(7, 'light'), (19, 'dark')]:
             page.clock.set_fixed_time(at(hour))
             for path in pages:
-                page.goto(base + '/' + path)
-                page.wait_for_function('window.firstThemeFrame !== undefined')
+                loaded(page, '/' + path)
                 check(page, theme)
-        # Returning to a visible tab recalculates the automatic theme.
         page.clock.set_fixed_time(at(18, 59))
-        page.goto(base + '/')
+        loaded(page)
         page.clock.set_fixed_time(at(19))
         page.evaluate('document.dispatchEvent(new Event("visibilitychange"))')
-        assert page.locator('html').get_attribute('data-theme') == 'dark'
-        assert page.locator('.theme-toggle').get_attribute('aria-pressed') == 'true'
+        check(page, 'dark', first_frame=False)
         page.clock.set_fixed_time(at(7))
         page.evaluate('document.dispatchEvent(new Event("visibilitychange"))')
-        assert page.locator('html').get_attribute('data-theme') == 'light'
-        # Only a manual click writes the existing preference key.
+        check(page, 'light', first_frame=False)
+        # Manual choice survives reload and navigation but never writes persistent storage.
         before = page.evaluate('JSON.stringify({...localStorage})')
         page.locator('.theme-toggle').click()
-        assert page.evaluate('localStorage.getItem("aestheia-theme")') == 'dark'
-        page.goto(base + '/simulateur-gain-de-temps/')
-        page.wait_for_function('window.firstThemeFrame !== undefined')
+        assert page.evaluate('sessionStorage.getItem("aestheia-theme")') == 'dark'
+        page.reload()
+        page.wait_for_function('window.themeFrameRecorded === true')
+        check(page, 'dark')
+        loaded(page, '/simulateur-gain-de-temps/')
         check(page, 'dark')
         page.clock.set_fixed_time(at(12))
         page.evaluate('document.dispatchEvent(new Event("visibilitychange"))')
-        assert page.locator('html').get_attribute('data-theme') == 'dark'
+        check(page, 'dark', first_frame=False)
         page.locator('.theme-toggle').click()
         page.clock.set_fixed_time(at(0))
-        page.goto(base + '/contact')
-        page.wait_for_function('window.firstThemeFrame !== undefined')
+        loaded(page, '/contact')
         check(page, 'light')
-        page.evaluate('document.dispatchEvent(new Event("visibilitychange"))')
-        assert page.locator('html').get_attribute('data-theme') == 'light'
-        page.evaluate('localStorage.removeItem("aestheia-theme")')
         assert page.evaluate('JSON.stringify({...localStorage})') == before
-        # The hourly default also works if browser storage is unavailable.
+        persistent_state = context.storage_state()
+        context.close()
+        # A new visit restores persistent browser state, without the previous sessionStorage.
+        context = browser.new_context(timezone_id='Europe/Paris', color_scheme=system, reduced_motion='reduce', storage_state=persistent_state)
+        page = context.new_page()
+        prepare(page, 0)
+        loaded(page)
+        check(page, 'dark')
+        assert page.evaluate('sessionStorage.getItem("aestheia-theme")') is None
+        assert page.evaluate('JSON.stringify({...localStorage})') == before
+        # Unavailable storage still permits the hourly default and the manual control.
         page.add_init_script('Storage.prototype.getItem=()=>{throw new Error("storage unavailable")};Storage.prototype.setItem=()=>{throw new Error("storage unavailable")}')
-        page.goto(base + '/')
-        page.wait_for_function('window.firstThemeFrame !== undefined')
+        loaded(page)
         check(page, 'dark')
         page.locator('.theme-toggle').click()
-        assert page.locator('html').get_attribute('data-theme') == 'light'
+        check(page, 'light', first_frame=False)
+        context.close()
+        # Real timer transitions while the tab remains visible, including manual overrides.
+        for hour, minute, automatic in [(6, 59, 'light'), (18, 59, 'dark')]:
+            for manual in [None, 'light', 'dark']:
+                context = browser.new_context(timezone_id='Europe/Paris', color_scheme=system, reduced_motion='reduce')
+                page = context.new_page()
+                if manual:
+                    page.add_init_script(f"sessionStorage.setItem('aestheia-theme','{manual}')")
+                prepare(page, hour, minute)
+                loaded(page)
+                page.clock.fast_forward(61_000)
+                check(page, manual or automatic, first_frame=False)
+                context.close()
+    # The same instant uses the device timezone, rather than the server or a fixed Paris clock.
+    for timezone, expected in [('America/New_York', 'light'), ('Asia/Tokyo', 'dark')]:
+        context = browser.new_context(timezone_id=timezone, color_scheme='dark', reduced_motion='reduce')
+        page = context.new_page()
+        prepare(page, 12, timezone=ZoneInfo('UTC'))
+        loaded(page)
+        check(page, expected)
         context.close()
     assert not errors, errors
     browser.close()
-print(f'PASS : {checks} contrôles, 5 horaires, {len(pages)} pages dans les deux thèmes, priorité manuelle, retour visible, premier rendu, stockage indisponible')
+print(f'PASS : {checks} contrôles, 5 horaires, systèmes clair et sombre, {len(pages)} pages, choix limité à la session, anciennes préférences ignorées, bascules en direct, premier rendu, fuseau local, stockage indisponible')
