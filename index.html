@@ -310,52 +310,34 @@
 
 
       <section class="time-banner" aria-labelledby="time-banner-title">
+        <style>
+          body.home-page .time-banner .time-banner-inner { grid-template-areas: "intro action"; }
+          @media (max-width: 760px) {
+            body.home-page .time-banner .time-banner-inner { grid-template-areas: "intro" "action"; }
+          }
+          body.home-page .time-banner { --sector-bottom: 2.85rem; margin-top: calc(90px - var(--sector-bottom)); margin-bottom: 0; padding-bottom: 56px; }
+          @media (min-width: 721px) {
+            body.home-page .time-banner { --sector-bottom: 4rem; }
+          }
+          @media (min-width: 1051px) {
+            body.home-page .time-banner { --sector-bottom: 4.75rem; }
+          }
+          @media (max-width: 759px) {
+            body.home-page .time-banner { margin-top: calc(56px - var(--sector-bottom)); padding-bottom: 40px; }
+          }
+          @layer typography {
+            html[data-theme] body.home-page .time-banner #time-banner-title { font-weight: 400 !important; }
+            html[data-theme="light"] body.home-page .time-banner .time-banner-link { font-weight: 400 !important; }
+          }
+          html[data-theme="light"] body.home-page .time-banner .time-banner-link { background: #3B4A73; }
+          html[data-theme="light"] body.home-page .time-banner .time-banner-link:hover { background: #2F3B5C; }
+        </style>
         <div class="container">
           <div class="time-banner-inner">
             <div class="time-banner-intro">
               <h3 id="time-banner-title">Combien d’heures pourriez-vous retrouver</h3>
-              <p>Estimez en 30 secondes le temps que l’automatisation pourrait libérer dans votre activité.</p>
             </div>
             <a class="time-banner-link" href="/simulateur-gain-de-temps/">Estimer mon gain de temps</a>
-            <ul class="time-banner-sectors" aria-label="Exemples de gains de temps par secteur">
-              <li>
-                <a class="time-banner-sector" href="/simulateur-gain-de-temps/?profil=medecine-esthetique">
-                  <strong class="time-banner-name">Médecine esthétique</strong>
-                  <span class="time-banner-task">Rappels et consignes post-acte, relances de devis</span>
-                  <strong class="time-banner-weekly" data-time-weekly="3.5,4.5">3 h 30 à 4 h 30</strong>
-                  <span class="time-banner-unit">par semaine</span>
-                  <strong class="time-banner-annual">soit 160 à 205 h par an</strong>
-                </a>
-              </li>
-              <li>
-                <a class="time-banner-sector" href="/simulateur-gain-de-temps/?profil=spa-hotelier">
-                  <strong class="time-banner-name">Spa hôtelier</strong>
-                  <span class="time-banner-task">Demandes entrantes, échanges avant et après soin, analyse du taux d’occupation</span>
-                  <strong class="time-banner-weekly" data-time-weekly="3.5,5">3 h 30 à 5 h</strong>
-                  <span class="time-banner-unit">par semaine</span>
-                  <strong class="time-banner-annual">soit 165 à 230 h par an</strong>
-                </a>
-              </li>
-              <li>
-                <a class="time-banner-sector" href="/simulateur-gain-de-temps/?profil=thalasso-thermal">
-                  <strong class="time-banner-name">Thalasso et thermal</strong>
-                  <span class="time-banner-task">Dossiers de cure, échanges avant séjour, avis Google</span>
-                  <strong class="time-banner-weekly" data-time-weekly="3.75,5.5">3 h 45 à 5 h 30</strong>
-                  <span class="time-banner-unit">par semaine</span>
-                  <strong class="time-banner-annual">soit 175 à 255 h par an</strong>
-                </a>
-              </li>
-              <li>
-                <a class="time-banner-sector" href="/simulateur-gain-de-temps/?profil=instituts-independantes">
-                  <strong class="time-banner-name">Instituts</strong>
-                  <span class="time-banner-task">Suivi après soin, messages, réseaux sociaux</span>
-                  <strong class="time-banner-weekly" data-time-weekly="3,4.5">3 h à 4 h 30</strong>
-                  <span class="time-banner-unit">par semaine</span>
-                  <strong class="time-banner-annual">soit 140 à 205 h par an</strong>
-                </a>
-              </li>
-            </ul>
-            <p class="time-banner-note">Exemples calculés avec le simulateur à partir de volumes d’heures types. Estimation indicative, selon vos processus actuels. Aucun résultat n’est garanti.</p>
           </div>
         </div>
       </section>
