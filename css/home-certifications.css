@@ -682,10 +682,10 @@ body.home-page .home-offers .offer-disclosure:focus-visible { outline: 2px solid
     color: #eef2ff !important;
     -webkit-text-fill-color: #eef2ff !important;
   }
-  html[data-theme] body.home-page .home-hero .hero-reassurance.transition-note > span {
+  html[data-theme] body.home-page .home-hero .hero-content > .eyebrow {
     font-size: .72rem !important;
     font-weight: 400 !important;
-    letter-spacing: .12em;
+    letter-spacing: .14em !important;
     color: #d9e5ff !important;
     -webkit-text-fill-color: #d9e5ff !important;
   }
@@ -697,4 +697,22 @@ body.home-page .home-why > .container { padding-bottom: 2.85rem; }
 }
 @media (min-width: 1051px) {
   body.home-page .home-why > .container { padding-bottom: 4.75rem; }
+}
+
+/* Hiérarchie des textes sous le titre du hero, limitée à l’accueil. */
+@layer typography {
+  html[data-theme] body.home-page .home-hero .hero-subtitle {
+    font-family: var(--font-body) !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    color: #eef2ff !important;
+    -webkit-text-fill-color: #eef2ff !important;
+  }
+  html[data-theme] body.home-page .home-hero .hero-reassurance:not(.transition-note) {
+    font-size: .72rem !important;
+    font-weight: 300 !important;
+    letter-spacing: .04em;
+    color: #d9e5ff !important;
+    -webkit-text-fill-color: #d9e5ff !important;
+  }
 }
