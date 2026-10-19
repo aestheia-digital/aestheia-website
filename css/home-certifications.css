@@ -716,3 +716,10 @@ body.home-page .home-why > .container { padding-bottom: 2.85rem; }
     -webkit-text-fill-color: #d9e5ff !important;
   }
 }
+
+/* Jonction secteurs et simulateur de l’accueil uniquement. */
+body.home-page #contenu > .section:has(+ .time-banner) { padding-bottom: 0; }
+body.home-page #contenu > .time-banner { margin-block: 48px; }
+@media (max-width: 720px) {
+  body.home-page #contenu > .time-banner { margin-block: 28px; }
+}
