@@ -73,6 +73,8 @@
       <link rel="stylesheet" href="../css/cta-global.css?v=20260920-cta-lock">
       <link rel="stylesheet" href="../css/dark-no-purple-halos.css?v=20260920-sector-final-blue-halo">
     <link rel="stylesheet" href="../css/night-depth-desktop-cards.css?v=20261003">
+    <link rel="stylesheet" href="../css/assistant-schema.css?v=20261005">
+    <link rel="stylesheet" href="../css/multi-agent-schema.css?v=20261005">
     <link rel="stylesheet" href="/css/time-simulator.css">
   </head>
   <body class="pme-page">
@@ -215,6 +217,26 @@
             </details>
           </div>
           <p class="pme-reading-width pme-systems-scope"><strong>Agent superviseur :</strong> il reçoit l’objectif, sollicite les agents concernés, croise leurs résultats et prépare la prochaine étape. Les automatisations exécutent ensuite les actions prévisibles et les décisions sensibles restent sous validation humaine.</p>
+          <figure class="assistant-schema multi-agent-schema" aria-label="Fonctionnement du système multi-agents pour les TPE et PME">
+            <div class="flow">
+              <div class="step node">Demandes et informations<span class="sub">Spa, hôtel, e-mails, formulaires</span></div>
+              <div class="step node assistant">Agent superviseur<span class="sub">Analyse et délégation</span></div>
+              <div class="step tasks">
+                <div class="tasks-title">Agents sollicités selon la demande</div>
+                <div class="task-grid">
+<div class="node agent-role"><img src="../assets/icons/robot-customer.svg" alt="" aria-hidden="true" width="20" height="20"><span>Agent relation client</span></div>
+<div class="node agent-role"><img src="../assets/icons/robot-reservations.svg" alt="" aria-hidden="true" width="20" height="20"><span>Agent commercial et CRM</span></div>
+<div class="node agent-role"><img src="../assets/icons/robot-sales.svg" alt="" aria-hidden="true" width="20" height="20"><span>Agent opérations</span></div>
+<div class="node agent-role"><img src="../assets/icons/robot-reporting.svg" alt="" aria-hidden="true" width="20" height="20"><span>Agent connaissances internes</span></div>
+<div class="node agent-role"><img src="../assets/icons/robot-operations.svg" alt="" aria-hidden="true" width="20" height="20"><span>Agent qualité et contrôle</span></div>
+<div class="node agent-role"><img src="../assets/icons/robot-quality.svg" alt="" aria-hidden="true" width="20" height="20"><span>Agent direction et reporting</span></div>
+                </div>
+              </div>
+              <div class="step node validation">Validation humaine<span class="sub">Si nécessaire</span></div>
+              <div class="step node action">Action</div>
+            </div>
+            <figcaption class="multi-agent-caption"><img class="caption-pictogram" src="../assets/icons/agent-assistant.svg" alt="" aria-hidden="true" width="30" height="30"><span class="caption-copy">Un agent superviseur coordonne des agents spécialisés <span class="caption-arrow" aria-hidden="true">→</span> Les décisions sensibles restent entre vos mains.</span></figcaption>
+          </figure>
         </div>
       </section>
 
@@ -345,13 +367,6 @@
         </div>
       </section>
 
-      <section class="section section-soft">
-        <div class="container">
-          <h2>Agents IA pour les structures de plusieurs services</h2>
-          <p class="section-intro">Quand plusieurs services se passent des informations, des agents IA spécialisés peuvent travailler ensemble : un pour l'accueil et les demandes, un pour le suivi commercial, un pour l'administratif, coordonnés par un agent superviseur. Chaque message client et chaque action sensible reste validé par vos équipes. Pour une structure plus petite, une automatisation ou un seul agent IA suffit souvent.</p>
-        </div>
-      </section>
-
       <section class="section conversion-band">
         <div class="container conversion-inner">
           <div>
@@ -389,6 +404,7 @@
     <script src="../js/consent-manager.js"></script>
     <script src="../js/main.js?v=header-type-20260924"></script>
     <script src="../js/night-desktop-cards.js?v=20260920b"></script>
+    <script src="../js/assistant-schema.js?v=20261005" defer></script>
     <script src="/js/time-entry.js" defer></script>
   </body>
 </html>
