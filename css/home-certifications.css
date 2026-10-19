@@ -657,3 +657,44 @@ body.home-page .home-offers .offer-disclosure:focus-visible { outline: 2px solid
     }
   }
 }
+
+/* Exemple du hero : contraste sur son fond bleu dans les deux thèmes. */
+@layer refonte {
+  html[data-theme] body.home-page .home-hero .hero-reassurance.transition-note {
+    width: fit-content;
+    max-width: min(100%, 730px);
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none;
+    padding: .25rem 0 .25rem 1.2rem;
+  }
+  html[data-theme] body.home-page .home-hero .hero-reassurance.transition-note::before {
+    width: 3px;
+    border-radius: 0;
+    background: var(--gradient-encadre) !important;
+  }
+}
+@layer typography {
+  html[data-theme] body.home-page .home-hero .hero-reassurance.transition-note {
+    font-size: var(--fs-secondary) !important;
+    font-weight: 400 !important;
+    color: #eef2ff !important;
+    -webkit-text-fill-color: #eef2ff !important;
+  }
+  html[data-theme] body.home-page .home-hero .hero-reassurance.transition-note > span {
+    font-size: .72rem !important;
+    font-weight: 400 !important;
+    letter-spacing: .12em;
+    color: #d9e5ff !important;
+    -webkit-text-fill-color: #d9e5ff !important;
+  }
+}
+/* Même respiration sous les cartes Pourquoi AesthéIA qu'au-dessus. */
+body.home-page .home-why > .container { padding-bottom: 2.85rem; }
+@media (min-width: 721px) {
+  body.home-page .home-why > .container { padding-bottom: 4rem; }
+}
+@media (min-width: 1051px) {
+  body.home-page .home-why > .container { padding-bottom: 4.75rem; }
+}
