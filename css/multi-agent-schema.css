@@ -16,7 +16,7 @@
 .multi-agent-schema .assistant .sub { color: inherit; }
 .multi-agent-schema .validation { background: #00B0FF; color: #13213B; font-weight: 400; box-shadow: none; }
 .multi-agent-schema .validation .sub { color: inherit; }
-body:is(.home-page, .spa-page, .thalasso-page) .multi-agent-caption {
+body:is(.home-page, .spa-page, .thalasso-page, .pme-page) .multi-agent-caption {
   display: flex;
   align-items: flex-start;
   gap: 0.5rem;
@@ -49,4 +49,17 @@ body:is(.home-page, .spa-page, .thalasso-page) .multi-agent-caption {
   html[data-theme="light"] .agents-schema .as-node text { fill: #1B2A6B !important; }
   .agents-schema .as-action rect, html[data-theme="light"] .agents-schema .as-action rect { fill: #1E2B70 !important; stroke: #5B6CC9 !important; }
   .agents-schema .as-action text, html[data-theme="light"] .agents-schema .as-action text { fill: #FFFFFF !important; }
+}
+
+/* Schéma TPE/PME : angles droits et couleurs du schéma Spas existant. */
+body.pme-page .multi-agent-schema :is(.node, .tasks) { border-radius: 0; font-weight: 400; }
+body.pme-page .multi-agent-schema .assistant-schema-frame rect { rx: 0; }
+@layer refonte {
+  html[data-theme="light"] body.pme-page .multi-agent-schema .node:not(.action) {
+    background: #E3ECFA !important;
+    border-color: #5B84CF !important;
+  }
+  html[data-theme="light"] body.pme-page .multi-agent-schema:not(.has-motion-decor) .tasks { border-color: #2F5FB8 !important; }
+  html[data-theme="light"] body.pme-page .multi-agent-schema :is(.assistant-schema-line, .assistant-schema-head, .assistant-schema-frame rect) { stroke: #2F5FB8 !important; }
+  html[data-theme="light"] body.pme-page .multi-agent-schema .step::after { color: #2F5FB8 !important; }
 }
