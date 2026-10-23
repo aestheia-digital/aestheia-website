@@ -1,11 +1,10 @@
 (() => {
-  if (/^\/(simulateur-gain-de-temps|contact)(\/|\.html)?$/.test(location.pathname)) return;
+  if (/^\/contact(\/|\.html)?$/.test(location.pathname)) return;
   const mobile = window.matchMedia('(max-width: 820px)');
   const link = document.createElement('a');
   link.className = 'btn btn-primary time-floating';
-  const homeBanner = document.querySelector('body.home-page .time-banner');
-  const sector = location.pathname.match(/^\/(medecine-esthetique|spa-hotelier|thalasso-thermal|instituts-independantes)(?:\/(?:index\.html)?)?$/)?.[1];
-  link.href = '/simulateur-gain-de-temps/' + (sector ? `?profil=${sector}` : '');
+  const homeBanner = document.querySelector('body.home-page #simulateur');
+  link.href = '/#simulateur';
   link.textContent = 'Estimer mon gain de temps';
   link.hidden = true;
   // Reserve an empty strip on desktop instead of covering useful content.

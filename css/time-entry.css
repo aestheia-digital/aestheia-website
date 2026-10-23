@@ -1,0 +1,14 @@
+/* Point d’entrée partagé vers le simulateur de l’accueil. */
+.time-floating { position: fixed; right: max(1rem, env(safe-area-inset-right)); bottom: max(.75rem, env(safe-area-inset-bottom)); z-index: 40; max-width: calc(100vw - 2rem); font-size: .875rem; padding: .65rem 1rem; min-height: 44px; text-align: center; white-space: normal; }
+.time-floating-space { height: calc(80px + env(safe-area-inset-bottom)); }
+.time-floating[hidden] { display: none !important; }
+.time-floating:focus-visible { outline: 3px solid var(--color-ink); outline-offset: 4px; }
+@media (max-width: 820px) {
+  .time-floating, .time-floating-space { display: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .time-floating { animation: none !important; transition: none !important; }
+}
+@layer typography {
+  html[data-theme] body .time-floating { font-weight: 500 !important; }
+}

@@ -176,7 +176,8 @@
       <link rel="stylesheet" href="css/dark-no-purple-halos.css?v=20260920-dark-no-purple">
     <link rel="stylesheet" href="css/night-depth-desktop-cards.css?v=20261003">
     <link rel="stylesheet" href="css/multi-agent-schema.css?v=20261005">
-  <link rel="stylesheet" href="/css/time-simulator.css?v=rythme-horaire-20261016">
+  <link rel="stylesheet" href="/css/time-entry.css">
+    <link rel="stylesheet" href="/css/home-simulator.css">
 </head>
   <body class="home-page">
     <a class="skip-link" href="#contenu">Aller au contenu</a>
@@ -228,7 +229,7 @@
       </section>
 
 
-      <section class="section home-demo">
+      <section class="section home-demo home-demo--with-simulator">
         <div class="container">
           <p class="eyebrow">CONCRÈTEMENT</p>
           <h2>Une demande ne devrait pas se perdre entre deux outils</h2>
@@ -264,6 +265,28 @@
             </article>
           </div>
           <p class="transition-note"><strong>Résultat recherché :</strong> moins de demandes oubliées, un suivi plus régulier et une équipe qui sait plus facilement quoi traiter en priorité.</p>
+          <section class="sim" id="simulateur" aria-labelledby="sim-titre">
+            <div class="sim-band">
+              <div class="sim-grid">
+                <div class="sim-intro">
+                  <span class="sim-eyebrow">Simulateur</span>
+                  <h2 id="sim-titre" class="sim-title">Combien d'heures l'administratif vous prend-il par semaine ?</h2>
+                </div>
+                <div class="sim-slider">
+                  <label class="sim-label" for="sim-heures">Tâches répétitives <span class="sim-val"><span id="sim-valeur">8</span> h / semaine</span></label>
+                  <input id="sim-heures" type="range" min="2" max="30" step="1" value="8" aria-describedby="sim-methode">
+                </div>
+                <div class="sim-result">
+                  <span class="sim-label">Récupérable par semaine, estimation</span>
+                  <div class="sim-gain" id="sim-gain" aria-live="polite">3 h 15 à 4 h</div>
+                </div>
+                <div class="sim-cta-cell">
+                  <a class="sim-cta" href="https://calendar.app.google/qx6dT7WJfTrsFe6j9" target="_blank" rel="noopener noreferrer">Échangeons sur votre cas</a>
+                </div>
+              </div>
+              <p class="sim-method" id="sim-methode">Estimation indicative : de 40 à 50 % de ce temps libéré, pas une promesse. La part réellement récupérable dépend de vos tâches. Soit <span id="sim-mois">12 à 15</span> h par mois.</p>
+            </div>
+          </section>
         </div>
       </section>
 
@@ -310,39 +333,6 @@
       </section>
 
 
-      <section class="time-banner" aria-labelledby="time-banner-title">
-        <style>
-          body.home-page .time-banner .time-banner-inner { grid-template-areas: "intro action"; padding-block: 1rem; gap: 1rem; }
-          body.home-page .time-banner .time-banner-link { min-height: 44px; padding: .65rem 1.25rem; }
-          @media (max-width: 760px) {
-            body.home-page .time-banner .time-banner-inner { grid-template-areas: "intro" "action"; padding-block: .667rem; }
-          }
-          body.home-page .time-banner { --sector-bottom: 2.85rem; margin: var(--sector-bottom) 0; padding: 0; }
-          @media (min-width: 721px) {
-            body.home-page .time-banner { --sector-bottom: 4rem; }
-          }
-          @media (min-width: 1051px) {
-            body.home-page .time-banner { --sector-bottom: 4.75rem; }
-          }
-          @media (max-width: 759px) {
-            body.home-page .time-banner { margin: var(--sector-bottom) 0; }
-          }
-          @layer typography {
-            html[data-theme] body.home-page .time-banner #time-banner-title { font-size: .95rem !important; font-weight: 400 !important; }
-            html[data-theme] body.home-page .time-banner .time-banner-link { font-size: calc(var(--fs-action) * .94) !important; font-weight: 400 !important; }
-          }
-          html[data-theme="light"] body.home-page .time-banner .time-banner-link { background: #3B4A73; }
-          html[data-theme="light"] body.home-page .time-banner .time-banner-link:hover { background: #2F3B5C; }
-        </style>
-        <div class="container">
-          <div class="time-banner-inner">
-            <div class="time-banner-intro">
-              <h3 id="time-banner-title">Estimez le temps que vous pourriez gagner sur vos tâches quotidiennes</h3>
-            </div>
-            <a class="time-banner-link" href="/simulateur-gain-de-temps/">Estimer mon gain de temps</a>
-          </div>
-        </div>
-      </section>
 
       <section class="section section-mist home-problems" id="services">
         <div class="container">
@@ -657,7 +647,7 @@
     <script src="js/main.js?v=secteurs-20261016"></script>
     <script src="js/home-mobile-tablet-rhythm.js?v=secteurs-20261016"></script>
     <script src="js/night-desktop-cards.js?v=20260920b"></script>
-    <script src="/js/time-count.js?v=rythme-horaire-20261016" defer></script>
+    <script src="/js/home-simulator.js" defer></script>
     <script src="/js/time-entry.js" defer></script>
   </body>
 </html>
