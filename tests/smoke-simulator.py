@@ -109,7 +109,7 @@ with sync_playwright() as pw:
         for attr in ['href', 'target', 'rel']:
             assert cta.get_attribute(attr) == existing.get_attribute(attr)
         colors = cta.evaluate("e=>({bg:getComputedStyle(e).backgroundColor,fg:getComputedStyle(e).color,fill:getComputedStyle(e).webkitTextFillColor})")
-        expected = {'bg': 'rgb(31, 43, 79)', 'fg': 'rgb(250, 252, 255)'} if theme == 'light' else {'bg': 'rgb(250, 252, 255)', 'fg': 'rgb(31, 43, 79)'}
+        expected = {'bg': 'rgb(255, 255, 255)', 'fg': 'rgb(27, 42, 107)'} if theme == 'light' else {'bg': 'rgb(250, 252, 255)', 'fg': 'rgb(31, 43, 79)'}
         assert colors['bg'] == expected['bg'] and colors['fg'] == colors['fill'] == expected['fg'], colors
         old_background = section.locator('.sim-band').evaluate("e=>getComputedStyle(e).backgroundColor")
         page.locator('.theme-toggle').click()
