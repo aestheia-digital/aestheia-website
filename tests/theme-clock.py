@@ -106,7 +106,7 @@ with sync_playwright() as pw:
         page.reload()
         page.wait_for_function('window.themeFrameRecorded === true')
         check(page, 'dark')
-        loaded(page, '/simulateur-gain-de-temps/')
+        loaded(page, '/#simulateur')
         check(page, 'dark')
         page.clock.set_fixed_time(at(12))
         page.evaluate('document.dispatchEvent(new Event("visibilitychange"))')
