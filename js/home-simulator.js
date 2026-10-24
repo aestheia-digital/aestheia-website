@@ -26,3 +26,20 @@
   range.addEventListener('input', update);
   update();
 })();
+
+/* Situations par métier : accordéon sur mobile, cartes ouvertes ailleurs. */
+(function () {
+  var cases = document.querySelectorAll('.cases .case');
+  if (!cases.length || !window.matchMedia) return;
+  var mq = window.matchMedia('(max-width: 640px)');
+  function sync() {
+    for (var i = 0; i < cases.length; i++) {
+      if (mq.matches) cases[i].removeAttribute('open'); else cases[i].setAttribute('open', '');
+    }
+  }
+  for (var i = 0; i < cases.length; i++) {
+    cases[i].querySelector('.case-head').addEventListener('click', function (e) { if (!mq.matches) e.preventDefault(); });
+  }
+  if (mq.addEventListener) mq.addEventListener('change', sync); else mq.addListener(sync);
+  sync();
+})();
