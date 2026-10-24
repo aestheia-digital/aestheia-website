@@ -219,8 +219,8 @@ const commercialPages = [
   "/medecine-esthetique/index.html",
   "/spa-hotelier/",
   "/spa-hotelier/index.html",
-  "/thalasso-thermal/",
-  "/thalasso-thermal/index.html",
+  "/thalasso/",
+  "/thalasso/index.html",
   "/instituts-independantes/",
   "/instituts-independantes/index.html",
   "/automatisation-pme/",
@@ -564,7 +564,7 @@ if (homeOffers && homeFaq) {
 const sectorAuditCopy = {
   "/medecine-esthetique/": "La mission peut démarrer par un Audit Visibilité & Acquisition pour examiner la présence digitale et le parcours de prise de contact, ou par un Audit Automatisation & IA pour identifier les tâches non médicales et les processus à simplifier.",
   "/spa-hotelier/": "La mission peut démarrer par un Audit Visibilité & Acquisition pour examiner la visibilité, les contenus et le parcours de réservation, ou par un Audit Automatisation & IA pour identifier les demandes, le suivi client et la coordination à simplifier.",
-  "/thalasso-thermal/": "La mission peut démarrer par un Audit Visibilité & Acquisition pour examiner la visibilité, les contenus et les demandes de séjour, ou par un Audit Automatisation & IA pour identifier les devis, le suivi, la coordination et la planification à simplifier.",
+  "/thalasso/": "La mission peut démarrer par un Audit Visibilité & Acquisition pour examiner la visibilité, les contenus et les demandes de séjour, ou par un Audit Automatisation & IA pour identifier les devis, le suivi, la coordination et la planification à simplifier.",
   "/instituts-independantes/": "La mission peut démarrer par un Audit Visibilité & Acquisition pour examiner la visibilité locale, le site, les contenus et le parcours de réservation, ou par un Audit Automatisation & IA pour identifier les tâches administratives, les relances, les rappels et le suivi à simplifier.",
   "/automatisation-pme/": "La mission peut démarrer par un Audit Automatisation & IA pour identifier les tâches, les demandes, les relances et les processus à simplifier, ou par un Audit Visibilité & Acquisition lorsque le principal frein concerne la présence en ligne, les contenus et la conversion.",
 };
