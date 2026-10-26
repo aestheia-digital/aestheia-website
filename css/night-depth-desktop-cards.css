@@ -187,7 +187,7 @@ html[data-theme] body.pme-page details.sector-card-accordion > summary::after {
 
 
 /* --------------------------------------------------------------------------
-   Thalasso & Thermal — desktop nuit : « Lire la suite » en lien texte,
+   Thalasso — desktop nuit : « Lire la suite » en lien texte,
    identique à l'intention mobile, sans apparence de bouton.
    -------------------------------------------------------------------------- */
 @media (min-width: 1051px) {
