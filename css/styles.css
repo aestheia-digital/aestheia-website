@@ -3923,7 +3923,7 @@ html[data-theme="dark"] .faq-accordion-item summary::after {
   }
 
   .engagement-card .deliverable {
-    min-height: 9rem;
+    min-height: 10rem;
   }
 
   .split {
@@ -5875,6 +5875,8 @@ a.btn[href="https://calendar.app.google/qx6dT7WJfTrsFe6j9"]:focus-visible {
   }
   .sector-card-accordion > .sector-editorial-content { display: flex !important; flex: 1 1 auto; flex-direction: column; height: auto; }
   .sector-card-accordion > .sector-editorial-content > .sector-editorial-benefit { margin-top: auto !important; }
+  /* Cartes fermées par défaut : celle qu'on ouvre ne tire pas ses voisines. */
+  body:not(.medicine-page) .sector-card-accordion { height: auto; align-self: start; }
 }
 
 /* Hero accueil : typographie plus fine et secteurs jamais coupés */
@@ -6744,5 +6746,48 @@ html[data-theme="dark"] .theme-toggle-moon { display: none; }
   )::before {
     width: 3px !important;
     background: var(--gradient-encadre) !important;
+  }
+}
+
+
+/* Instituts : toutes les cartes gardent exactement le même format, ouvertes ou fermées, et les blocs bénéfices restent alignés. */
+@media (min-width: 721px) {
+  body.institutes-page .institutes-editorial-list { grid-auto-rows: 1fr; }
+  body.institutes-page .institutes-editorial-list > .sector-card-accordion {
+    display: flex !important;
+    flex-direction: column;
+    height: 100%;
+    align-self: stretch;
+  }
+  body.institutes-page .institutes-editorial-list > .sector-card-accordion::details-content {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+  }
+  body.institutes-page .institutes-editorial-list > .sector-card-accordion > .institutes-editorial-content {
+    display: flex !important;
+    flex: 1 1 auto;
+    flex-direction: column;
+  }
+  body.institutes-page .institutes-editorial-list > .sector-card-accordion > .institutes-editorial-content > .institutes-editorial-benefit {
+    margin-top: auto !important;
+  }
+}
+
+/* Ordinateur : flèche en bas au centre de chaque carte. Sur tablette, elle reste à droite. */
+@media (min-width: 1051px) {
+  body.institutes-page .institutes-editorial-list > .sector-card-accordion {
+    position: relative;
+    padding-bottom: 3.4rem !important;
+  }
+  body.institutes-page .institutes-editorial-list > .sector-card-accordion > summary::after {
+    position: absolute;
+    left: 50%;
+    bottom: 1.2rem;
+    margin: 0;
+    transform: translateX(-50%) rotate(45deg);
+  }
+  body.institutes-page .institutes-editorial-list > .sector-card-accordion[open] > summary::after {
+    transform: translateX(-50%) rotate(225deg);
   }
 }

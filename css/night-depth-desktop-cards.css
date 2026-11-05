@@ -130,56 +130,32 @@ html[data-theme] body.pme-page details.sector-card-accordion > *:not(summary) {
 
   html:is(.theme-dark,.theme-light) body.medicine-page details.sector-card-accordion > summary,
 html[data-theme] body.medicine-page details.sector-card-accordion > summary,
-html:is(.theme-dark,.theme-light) body.spa-page details.sector-card-accordion > summary,
-html[data-theme] body.spa-page details.sector-card-accordion > summary,
-html:is(.theme-dark,.theme-light) body.thalasso-page details.sector-card-accordion > summary,
-html[data-theme] body.thalasso-page details.sector-card-accordion > summary,
-html:is(.theme-dark,.theme-light) body.institutes-page details.sector-card-accordion > summary,
-html[data-theme] body.institutes-page details.sector-card-accordion > summary,
-html:is(.theme-dark,.theme-light) body.pme-page details.sector-card-accordion > summary,
-html[data-theme] body.pme-page details.sector-card-accordion > summary {
+html:is(.theme-dark,
+html:is(.theme-dark,
+html:is(.theme-dark,
+html:is(.theme-dark{
     cursor: default !important;
     pointer-events: none !important;
   }
 
   html.theme-dark body.medicine-page details.sector-card-accordion > summary,
-  html[data-theme="dark"] body.medicine-page details.sector-card-accordion > summary,
-  html.theme-dark body.spa-page details.sector-card-accordion > summary,
-  html[data-theme="dark"] body.spa-page details.sector-card-accordion > summary,
-  html.theme-dark body.thalasso-page details.sector-card-accordion > summary,
-  html[data-theme="dark"] body.thalasso-page details.sector-card-accordion > summary,
-  html.theme-dark body.institutes-page details.sector-card-accordion > summary,
-  html[data-theme="dark"] body.institutes-page details.sector-card-accordion > summary,
-  html.theme-dark body.pme-page details.sector-card-accordion > summary,
-  html[data-theme="dark"] body.pme-page details.sector-card-accordion > summary {
+  html[data-theme="dark"] body.medicine-page details.sector-card-accordion > summary{
     cursor: default !important;
     pointer-events: none !important;
   }
 
   html:is(.theme-dark,.theme-light) body.medicine-page details.sector-card-accordion > summary::after,
 html[data-theme] body.medicine-page details.sector-card-accordion > summary::after,
-html:is(.theme-dark,.theme-light) body.spa-page details.sector-card-accordion > summary::after,
-html[data-theme] body.spa-page details.sector-card-accordion > summary::after,
-html:is(.theme-dark,.theme-light) body.thalasso-page details.sector-card-accordion > summary::after,
-html[data-theme] body.thalasso-page details.sector-card-accordion > summary::after,
-html:is(.theme-dark,.theme-light) body.institutes-page details.sector-card-accordion > summary::after,
-html[data-theme] body.institutes-page details.sector-card-accordion > summary::after,
-html:is(.theme-dark,.theme-light) body.pme-page details.sector-card-accordion > summary::after,
-html[data-theme] body.pme-page details.sector-card-accordion > summary::after {
+html:is(.theme-dark,
+html:is(.theme-dark,
+html:is(.theme-dark,
+html:is(.theme-dark{
     display: none !important;
     content: none !important;
   }
 
   html.theme-dark body.medicine-page details.sector-card-accordion > summary::after,
-  html[data-theme="dark"] body.medicine-page details.sector-card-accordion > summary::after,
-  html.theme-dark body.spa-page details.sector-card-accordion > summary::after,
-  html[data-theme="dark"] body.spa-page details.sector-card-accordion > summary::after,
-  html.theme-dark body.thalasso-page details.sector-card-accordion > summary::after,
-  html[data-theme="dark"] body.thalasso-page details.sector-card-accordion > summary::after,
-  html.theme-dark body.institutes-page details.sector-card-accordion > summary::after,
-  html[data-theme="dark"] body.institutes-page details.sector-card-accordion > summary::after,
-  html.theme-dark body.pme-page details.sector-card-accordion > summary::after,
-  html[data-theme="dark"] body.pme-page details.sector-card-accordion > summary::after {
+  html[data-theme="dark"] body.medicine-page details.sector-card-accordion > summary::after{
     display: none !important;
     content: none !important;
   }
