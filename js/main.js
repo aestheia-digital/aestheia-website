@@ -642,3 +642,19 @@ if (aquaticSections.length) {
  });
  typographyObserver.observe(document.body, { childList: true, subtree: true });
 })();
+
+// Instituts : toutes les cartes s'ouvrent et se ferment ensemble dès la tablette, pour garder le même format partout.
+(() => {
+  const list = document.querySelector("body.institutes-page .institutes-editorial-list");
+  if (!list) return;
+  const media = window.matchMedia("(min-width: 721px)");
+  const cards = Array.from(list.querySelectorAll(":scope > details"));
+  cards.forEach((card) => {
+    card.addEventListener("toggle", () => {
+      if (!media.matches) return;
+      cards.forEach((other) => {
+        if (other !== card && other.open !== card.open) other.open = card.open;
+      });
+    });
+  });
+})();
