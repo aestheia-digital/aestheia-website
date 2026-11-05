@@ -6254,6 +6254,7 @@ a.btn[href="https://calendar.app.google/qx6dT7WJfTrsFe6j9"]:focus-visible {
 /* La couleur des titres reste celle des surfaces de la charte jour. */
 @layer typography {
   html[data-theme="light"] [data-typo-role="h1"] { color: #EEF2FF !important; -webkit-text-fill-color: #EEF2FF !important; }
+  html[data-theme="light"] .article-header [data-typo-role="h1"] { color: #1B2A6B !important; -webkit-text-fill-color: #1B2A6B !important; }
   html[data-theme="light"] [data-typo-role="h2"],
   html[data-theme="light"] [data-typo-role="card-title"],
   html[data-theme="light"] [data-typo-role="faq-question"] { color: #1B2A6B !important; -webkit-text-fill-color: #1B2A6B !important; }
