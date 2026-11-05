@@ -6818,8 +6818,8 @@ html body .resource-sector {
 
 html.theme-dark body .resource-category,
 html[data-theme="dark"] body .resource-category {
-  color: #212a59 !important;
-  -webkit-text-fill-color: #212a59 !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
   background: #00b0ff !important;
   border-color: #00b0ff !important;
 }
