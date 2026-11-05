@@ -3923,7 +3923,7 @@ html[data-theme="dark"] .faq-accordion-item summary::after {
   }
 
   .engagement-card .deliverable {
-    min-height: 9rem;
+    min-height: 10rem;
   }
 
   .split {
