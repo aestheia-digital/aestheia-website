@@ -5875,6 +5875,8 @@ a.btn[href="https://calendar.app.google/qx6dT7WJfTrsFe6j9"]:focus-visible {
   }
   .sector-card-accordion > .sector-editorial-content { display: flex !important; flex: 1 1 auto; flex-direction: column; height: auto; }
   .sector-card-accordion > .sector-editorial-content > .sector-editorial-benefit { margin-top: auto !important; }
+  /* Cartes fermées par défaut : celle qu'on ouvre ne tire pas ses voisines. */
+  body:not(.medicine-page) .sector-card-accordion { height: auto; align-self: start; }
 }
 
 /* Hero accueil : typographie plus fine et secteurs jamais coupés */

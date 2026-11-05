@@ -3,7 +3,8 @@
 
   const targets = () => [
     ...document.querySelectorAll(
-      "body.home-page details.home-section-accordion"
+      "body.home-page details.home-section-accordion, " +
+      "body.medicine-page details.sector-card-accordion"
     )
   ];
 
