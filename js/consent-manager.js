@@ -22,9 +22,9 @@
   uiVisualOverrides.textContent = `
     .resource-category {
       color: #fff !important;
-      border-color: transparent !important;
-      background: var(--gradient-ia, linear-gradient(135deg, #540ce4 0%, #00b0ff 100%)) !important;
-      box-shadow: 0 8px 20px rgba(0, 176, 255, 0.12);
+      border-color: #212a59 !important;
+      background: #212a59 !important;
+      box-shadow: none !important;
     }
 
     :where(html[data-theme="dark"]) .medicine-card-benefit,

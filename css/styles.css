@@ -6793,24 +6793,41 @@ html[data-theme="dark"] .theme-toggle-moon { display: none; }
   }
 }
 
-/* Page ressources : pastilles des cartes d'articles à angles droits, catégorie en bleu AesthéIA uni (sans dégradé). */
-.resource-card .resource-category,
-.resource-card .resource-sector {
+/* Pastilles des cartes d'articles, partout sur le site (ressources, articles liés, pages secteur) :
+   angles droits, couleurs unies sans dégradé. Jour : catégorie bleu AesthéIA. Nuit : catégorie bleu clair. */
+html body .resource-category,
+html body .resource-sector {
   border-radius: 0 !important;
-}
-
-.resource-card .resource-category,
-html.theme-dark .resource-card .resource-category,
-html[data-theme] .resource-card .resource-category {
-  color: #fff !important;
-  -webkit-text-fill-color: #fff !important;
-  background: #212a59 !important;
-  border-color: #212a59 !important;
   box-shadow: none !important;
   text-shadow: none !important;
 }
 
-html.theme-dark .resource-card .resource-category,
-html[data-theme="dark"] .resource-card .resource-category {
+html body .resource-category {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  background: #212a59 !important;
+  border-color: #212a59 !important;
+}
+
+html body .resource-sector {
+  color: var(--color-muted) !important;
+  -webkit-text-fill-color: var(--color-muted) !important;
+  background: var(--color-soft) !important;
+  border: 1px solid var(--color-border) !important;
+}
+
+html.theme-dark body .resource-category,
+html[data-theme="dark"] body .resource-category {
+  color: #212a59 !important;
+  -webkit-text-fill-color: #212a59 !important;
+  background: #00b0ff !important;
+  border-color: #00b0ff !important;
+}
+
+html.theme-dark body .resource-sector,
+html[data-theme="dark"] body .resource-sector {
+  color: #c9d2ee !important;
+  -webkit-text-fill-color: #c9d2ee !important;
+  background: transparent !important;
   border-color: rgba(255, 255, 255, 0.28) !important;
 }
