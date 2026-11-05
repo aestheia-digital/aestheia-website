@@ -6750,13 +6750,34 @@ html[data-theme="dark"] .theme-toggle-moon { display: none; }
 }
 
 
-/* Instituts : toutes les cartes gardent exactement le même format, ouvertes ou fermées. Flèche en bas au centre. */
+/* Instituts : toutes les cartes gardent exactement le même format, ouvertes ou fermées, et les blocs bénéfices restent alignés. */
 @media (min-width: 721px) {
   body.institutes-page .institutes-editorial-list { grid-auto-rows: 1fr; }
   body.institutes-page .institutes-editorial-list > .sector-card-accordion {
-    position: relative;
+    display: flex !important;
+    flex-direction: column;
     height: 100%;
     align-self: stretch;
+  }
+  body.institutes-page .institutes-editorial-list > .sector-card-accordion::details-content {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+  }
+  body.institutes-page .institutes-editorial-list > .sector-card-accordion > .institutes-editorial-content {
+    display: flex !important;
+    flex: 1 1 auto;
+    flex-direction: column;
+  }
+  body.institutes-page .institutes-editorial-list > .sector-card-accordion > .institutes-editorial-content > .institutes-editorial-benefit {
+    margin-top: auto !important;
+  }
+}
+
+/* Ordinateur : flèche en bas au centre de chaque carte. Sur tablette, elle reste à droite. */
+@media (min-width: 1051px) {
+  body.institutes-page .institutes-editorial-list > .sector-card-accordion {
+    position: relative;
     padding-bottom: 3.4rem !important;
   }
   body.institutes-page .institutes-editorial-list > .sector-card-accordion > summary::after {
