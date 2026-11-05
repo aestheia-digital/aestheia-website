@@ -6748,3 +6748,25 @@ html[data-theme="dark"] .theme-toggle-moon { display: none; }
     background: var(--gradient-encadre) !important;
   }
 }
+
+
+/* Instituts : toutes les cartes gardent exactement le même format, ouvertes ou fermées. Flèche en bas au centre. */
+@media (min-width: 721px) {
+  body.institutes-page .institutes-editorial-list { grid-auto-rows: 1fr; }
+  body.institutes-page .institutes-editorial-list > .sector-card-accordion {
+    position: relative;
+    height: 100%;
+    align-self: stretch;
+    padding-bottom: 3.4rem !important;
+  }
+  body.institutes-page .institutes-editorial-list > .sector-card-accordion > summary::after {
+    position: absolute;
+    left: 50%;
+    bottom: 1.2rem;
+    margin: 0;
+    transform: translateX(-50%) rotate(45deg);
+  }
+  body.institutes-page .institutes-editorial-list > .sector-card-accordion[open] > summary::after {
+    transform: translateX(-50%) rotate(225deg);
+  }
+}
