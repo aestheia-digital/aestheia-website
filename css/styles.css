@@ -6792,3 +6792,25 @@ html[data-theme="dark"] .theme-toggle-moon { display: none; }
     transform: translateX(-50%) rotate(225deg);
   }
 }
+
+/* Page ressources : pastilles des cartes d'articles à angles droits, catégorie en bleu AesthéIA uni (sans dégradé). */
+.resource-card .resource-category,
+.resource-card .resource-sector {
+  border-radius: 0 !important;
+}
+
+.resource-card .resource-category,
+html.theme-dark .resource-card .resource-category,
+html[data-theme] .resource-card .resource-category {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  background: #212a59 !important;
+  border-color: #212a59 !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+html.theme-dark .resource-card .resource-category,
+html[data-theme="dark"] .resource-card .resource-category {
+  border-color: rgba(255, 255, 255, 0.28) !important;
+}

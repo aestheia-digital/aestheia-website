@@ -160,3 +160,7 @@ html[data-theme="dark"] .cases {
   html[data-theme] body .sim :is(.sim-title, .sim-eyebrow, .sim-label, .sim-val, .sim-gain, .sim-method) { -webkit-text-fill-color: currentColor !important; }
   html[data-theme] body .sim .sim-title, html[data-theme] body .sim .sim-gain, html[data-theme] body .sim .sim-val { color: var(--sim-ink) !important; }
 }
+
+/* Accroche sous le titre du simulateur */
+.sim-hook { margin: 6px 0 0; font: 400 14px/1.5 var(--font-body); color: var(--sim-muted); }
+html[data-theme] body .sim .sim-hook { font: 400 14px/1.5 var(--font-body) !important; color: var(--sim-muted) !important; -webkit-text-fill-color: currentColor !important; }
