@@ -409,9 +409,9 @@ if (homeOffers) {
 
   const proposalTexts = [
     "Audit Automatisation & IA, mise en place d’une première solution ou mise en œuvre plus complète selon les processus à améliorer.",
-    "Audit Visibilité & Acquisition, optimisation du parcours de demande ou mise en œuvre plus complète selon les points de friction identifiés.",
-    "Audit Visibilité & Acquisition, structuration des contenus ou mission éditoriale assistée par IA selon les besoins.",
-    "Audit Visibilité & Acquisition, optimisation de la présence locale et digitale ou mission SEO/GEO selon les priorités identifiées.",
+    "Diagnostic visibilité & acquisition, optimisation du parcours de demande ou mise en œuvre plus complète selon les points de friction identifiés.",
+    "Diagnostic visibilité & acquisition, structuration des contenus ou mission éditoriale assistée par IA selon les besoins.",
+    "Diagnostic visibilité & acquisition, optimisation de la présence locale et digitale ou mission SEO/GEO selon les priorités identifiées.",
   ];
 
   homeOffers.querySelectorAll(".offer-card").forEach((card, index) => {
@@ -524,7 +524,7 @@ if (firstHomeStep) {
     title.textContent = "Commencer par l’audit adapté";
   }
   if (text) {
-    text.innerHTML = "Selon le besoin, démarrer par un <strong>Audit Visibilité & Acquisition</strong> ou un <strong>Audit Automatisation & IA</strong> afin d’identifier les freins, les priorités et les premières actions utiles.";
+    text.innerHTML = "Selon le besoin, démarrer par un <strong>Diagnostic visibilité & acquisition</strong> ou un <strong>Audit Automatisation & IA</strong> afin d’identifier les freins, les priorités et les premières actions utiles.";
   }
 }
 
@@ -562,11 +562,11 @@ if (homeOffers && homeFaq) {
 }
 
 const sectorAuditCopy = {
-  "/medecine-esthetique/": "La mission peut démarrer par un Audit Visibilité & Acquisition pour examiner la présence digitale et le parcours de prise de contact, ou par un Audit Automatisation & IA pour identifier les tâches non médicales et les processus à simplifier.",
-  "/spa-hotelier/": "La mission peut démarrer par un Audit Visibilité & Acquisition pour examiner la visibilité, les contenus et le parcours de réservation, ou par un Audit Automatisation & IA pour identifier les demandes, le suivi client et la coordination à simplifier.",
-  "/thalasso/": "La mission peut démarrer par un Audit Visibilité & Acquisition pour examiner la visibilité, les contenus et les demandes de séjour, ou par un Audit Automatisation & IA pour identifier les devis, le suivi, la coordination et la planification à simplifier.",
-  "/instituts-independantes/": "La mission peut démarrer par un Audit Visibilité & Acquisition pour examiner la visibilité locale, le site, les contenus et le parcours de réservation, ou par un Audit Automatisation & IA pour identifier les tâches administratives, les relances, les rappels et le suivi à simplifier.",
-  "/automatisation-pme/": "La mission peut démarrer par un Audit Automatisation & IA pour identifier les tâches, les demandes, les relances et les processus à simplifier, ou par un Audit Visibilité & Acquisition lorsque le principal frein concerne la présence en ligne, les contenus et la conversion.",
+  "/medecine-esthetique/": "La mission peut démarrer par un Diagnostic visibilité & acquisition pour examiner la présence digitale et le parcours de prise de contact, ou par un Audit Automatisation & IA pour identifier les tâches non médicales et les processus à simplifier.",
+  "/spa-hotelier/": "La mission peut démarrer par un Diagnostic visibilité & acquisition pour examiner la visibilité, les contenus et le parcours de réservation, ou par un Audit Automatisation & IA pour identifier les demandes, le suivi client et la coordination à simplifier.",
+  "/thalasso/": "La mission peut démarrer par un Diagnostic visibilité & acquisition pour examiner la visibilité, les contenus et les demandes de séjour, ou par un Audit Automatisation & IA pour identifier les devis, le suivi, la coordination et la planification à simplifier.",
+  "/instituts-independantes/": "La mission peut démarrer par un Diagnostic visibilité & acquisition pour examiner la visibilité locale, le site, les contenus et le parcours de réservation, ou par un Audit Automatisation & IA pour identifier les tâches administratives, les relances, les rappels et le suivi à simplifier.",
+  "/automatisation-pme/": "La mission peut démarrer par un Audit Automatisation & IA pour identifier les tâches, les demandes, les relances et les processus à simplifier, ou par un Diagnostic visibilité & acquisition lorsque le principal frein concerne la présence en ligne, les contenus et la conversion.",
 };
 
 const sectorPath = Object.keys(sectorAuditCopy).find((path) => currentPath === path || currentPath === `${path}index.html`);
@@ -578,7 +578,7 @@ if (sectorPath) {
     const auditIntro = document.createElement("p");
     auditIntro.className = "sector-audit-intro";
     auditIntro.innerHTML = sectorAuditCopy[sectorPath]
-      .replace("Audit Visibilité & Acquisition", "<strong>Audit Visibilité &amp; Acquisition</strong>")
+      .replace("Diagnostic visibilité & acquisition", "<strong>Audit Visibilité &amp; Acquisition</strong>")
       .replace("Audit Automatisation & IA", "<strong>Audit Automatisation &amp; IA</strong>");
     methodHeading.insertAdjacentElement("afterend", auditIntro);
   }
