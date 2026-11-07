@@ -763,6 +763,6 @@ html body .home-hero.home-hero-photo::after {
   }
 
   .home-hero-photo .home-hero-veil {
-    background: linear-gradient(180deg, rgba(17, 24, 61, 0.5) 0%, rgba(17, 24, 61, 0.72) 45%, rgba(17, 24, 61, 0.84) 100%);
+    background: linear-gradient(180deg, rgba(17, 24, 61, 0.35) 0%, rgba(17, 24, 61, 0.35) 38%, rgba(17, 24, 61, 0.8) 68%, rgba(17, 24, 61, 0.88) 100%);
   }
 }
