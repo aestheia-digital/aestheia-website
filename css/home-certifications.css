@@ -21,7 +21,7 @@
 .certification-badge img {
   width: auto;
   max-width: 100%;
-  height: 96px;
+  height: 76px;
   object-fit: contain;
   filter: drop-shadow(0 4px 8px rgba(33, 42, 89, 0.08));
 }
@@ -188,7 +188,7 @@
   }
 
   .certification-badge img {
-    height: 80px;
+    height: 66px;
   }
 
   .home-safety .safety-grid .card h3::before {
@@ -1117,51 +1117,10 @@ html[data-theme="dark"] .home-engagements .home-section-accordion--plain {
   background: var(--color-accent);
 }
 
-@media (min-width: 721px) {
-  .home-engagements .iv-group + .iv-group {
-    margin-top: 3rem;
-  }
-
-  .home-engagements .iv-items-two {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: repeat(4, auto);
-  }
-
-  .home-engagements .iv-items-two .iv-item {
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-rows: subgrid;
-    grid-row: span 4;
-    row-gap: 0.55rem;
-    padding: 1.3rem 0 0;
-    border-bottom: 0;
-  }
-
-  .home-engagements .iv-items-two .iv-item > * {
-    grid-column: 1;
-  }
-
-  .home-engagements .iv-items-two .iv-item > .iv-inc,
-  .home-engagements .iv-items-two .iv-item > .iv-desc {
-    align-self: start;
-  }
-
-  .home-engagements .iv-items-two .iv-item > .iv-deliverable {
-    align-self: start;
-  }
-
-  .home-engagements .iv-items-two .iv-item:first-child {
-    padding-right: 2.5rem;
-  }
-
-  .home-engagements .iv-items-two .iv-item + .iv-item {
-    padding-left: 2.5rem;
-    border-left: 1px solid var(--color-border);
-  }
-}
-
 @media (min-width: 1051px) {
   .home-engagements .home-section-accordion--plain {
     border-top: 0;
+    border-bottom: 0;
   }
 
   .home-engagements .home-section-accordion--plain .iv-list {
@@ -1214,8 +1173,8 @@ html[data-theme="dark"] .home-engagements .home-section-accordion--plain {
   }
 }
 
-/* Accueil, Interventions : sur téléphone, cartes resserrées (option B) ; la grille tarifaire reste dès 721 px */
-@media (max-width: 720px) {
+/* Accueil, Interventions : cartes resserrées sur tous les écrans */
+@media all {
   .home-engagements .iv-group {
     padding-top: 0;
     border-top: 0;
@@ -1267,7 +1226,7 @@ html[data-theme="dark"] .home-engagements .home-section-accordion--plain {
 }
 
 @layer typography {
-  @media (max-width: 720px) {
+  @media all {
     .home-engagements .iv-title[data-typo-role]:not(#_),
     .home-engagements .iv-group:last-child .iv-label[data-typo-role]:not(#_) {
       font-family: var(--font-body) !important;
@@ -1287,6 +1246,60 @@ html[data-theme="dark"] .home-engagements .home-section-accordion--plain {
       font-size: 0.93rem !important;
       line-height: 1.55 !important;
     }
+  }
+}
+
+.home-engagements .iv-items .iv-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.home-engagements .iv-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.home-engagements .iv-top > * {
+  margin: 0;
+}
+
+.home-engagements .iv-top .iv-price-short {
+  flex: none;
+  white-space: nowrap;
+}
+
+.home-engagements .iv-item > .iv-deliverable {
+  margin-top: auto;
+}
+
+@media (min-width: 721px) {
+  .home-engagements .iv-items-two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .home-engagements .iv-group + .iv-group {
+    margin-top: 2.2rem;
+  }
+
+  .home-engagements .iv-items .iv-item,
+  .home-engagements .iv-items .iv-item:last-child,
+  .home-engagements .iv-group:last-child {
+    padding: 22px 24px 20px;
+  }
+
+  .home-engagements .iv-group:last-child .iv-head {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1051px) {
+  .home-engagements .iv-group:last-child .iv-dash {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 2rem;
   }
 }
 
