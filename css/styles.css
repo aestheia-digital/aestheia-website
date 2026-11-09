@@ -6950,3 +6950,33 @@ html body #contenu .iv-deliverable {
   border-left: 2px solid #B89A72 !important;
   padding-left: 12px !important;
 }
+
+
+/* Harmonisation ciblée 2026-11-09 : cartes illustrées, chevrons, filets. */
+/* Cartes photographiques de l'accueil : le champagne signe le BAS de la carte. */
+html body.home-page #contenu .sector-grid > .sector-card {
+  border-top: 0 !important;
+  border-bottom: 2px solid #B89A72 !important;
+}
+/* FAQ, chapitres et cartes accordéon : même chevron champagne jour/nuit. */
+html body :is(.faq-accordion-item, .sector-card-accordion, .home-card-accordion, .home-section-accordion, .thalasso-turnover-block) > summary::after,
+html body .sector-editorial-chapter > summary::after {
+  border-right-color: #B89A72 !important;
+  border-bottom-color: #B89A72 !important;
+  border-color: #B89A72 !important;
+}
+/* Bandeau de réassurance de l'accueil : conserver le filet vertical, remplacer le bleu. */
+html body.home-page .home-hero .transition-note {
+  border-left-color: #B89A72 !important;
+}
+html body.home-page .home-hero .transition-note::before {
+  background: #B89A72 !important;
+}
+/* Blocs bénéfice thalasso : filet vertical champagne, sans bordure haute ajoutée. */
+html body.thalasso-page #contenu .thalasso-turnover-benefit {
+  border-top: 0 !important;
+  border-left: 2px solid #B89A72 !important;
+}
+html body.thalasso-page #contenu .thalasso-turnover-benefit::before {
+  background: #B89A72 !important;
+}
