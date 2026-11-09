@@ -19,6 +19,11 @@
     background-color: #FFFFFF !important;
   }
 
+  /* Pourquoi AesthéIA contient le bloc fondatrice : sans marge basse, la FAQ suit directement */
+  body.home-page #contenu > .home-why {
+    padding-bottom: 0 !important;
+  }
+
   /* Étiquettes d'indicateurs : lavande pâle, sans cadre */
   html[data-theme="light"] body.home-page .home-pains .perf-tags li {
     border: 0 !important;
