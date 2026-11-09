@@ -980,3 +980,28 @@ html[data-theme="light"] .home-pains .problem-card {
   margin-top: 0.8em;
   background: var(--color-accent);
 }
+
+/* Accueil, Interventions : cinq cartes, deux diagnostics puis trois cartes */
+@media (min-width: 721px) and (max-width: 1050px) {
+  .home-engagements .engagement-grid > .engagement-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (min-width: 1051px) {
+  .home-engagements .engagement-grid:has(> .engagement-card:nth-child(5)) {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .home-engagements .engagement-grid:has(> .engagement-card:nth-child(5)) > .engagement-card {
+    grid-column: span 2;
+  }
+
+  .home-engagements .engagement-grid:has(> .engagement-card:nth-child(5)) > .engagement-card:nth-child(-n + 2) {
+    grid-column: span 3;
+  }
+
+  .home-engagements .engagement-grid:has(> .engagement-card:nth-child(5)) > .engagement-card:nth-child(-n + 2) .deliverable {
+    min-height: 5rem;
+  }
+}
