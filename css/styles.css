@@ -7104,3 +7104,66 @@ html body.thalasso-page #contenu li.thalasso-reality-turnover > details.thalasso
     }
   }
 }
+
+/* Tablette : identité lisible, signature champagne rapprochée, commandes regroupées.
+   Aucun changement sur téléphone (<=720px) ou ordinateur (>1050px). */
+@media (min-width: 721px) and (max-width: 1050px) {
+  html body .site-header .nav-shell {
+    justify-content: flex-start !important;
+    gap: 0 !important;
+  }
+  html body .site-header .brand-link {
+    flex: 0 0 auto !important;
+    margin-right: 14px !important;
+  }
+  html body .site-header .brand-name {
+    font-size: clamp(1.45rem, 2.5vw, 1.8rem) !important;
+    line-height: 1.15 !important;
+    font-weight: 500 !important;
+  }
+  html body .site-header a.header-phone-direct {
+    flex: 0 0 auto !important;
+    margin-right: auto !important;
+    gap: 12px !important;
+    font-size: clamp(0.94rem, 1.55vw, 1.08rem) !important;
+  }
+  html body .site-header a.header-phone-direct::before {
+    height: 24px !important;
+    background: #B89A72 !important;
+  }
+  html body .site-header .theme-toggle {
+    flex: 0 0 32px !important;
+    margin: 0 8px 0 0 !important;
+    order: 2 !important;
+  }
+  html body .site-header .nav-toggle {
+    position: relative;
+    order: 3 !important;
+    flex: 0 0 88px !important;
+    width: 88px !important;
+    height: 42px !important;
+    margin: 0 !important;
+    padding: 0 9px 0 34px !important;
+    font-family: var(--font-structure) !important;
+  }
+  html body .site-header .nav-toggle span {
+    position: absolute;
+    left: 11px;
+    width: 17px;
+    margin: 0;
+  }
+  html body .site-header .nav-toggle span:nth-child(1) { top: 14px; }
+  html body .site-header .nav-toggle span:nth-child(2) { top: 20px; }
+  html body .site-header .nav-toggle span:nth-child(3) { top: 26px; }
+  html body .site-header .nav-toggle::after {
+    content: "Menu";
+    display: block;
+    font-size: 0.83rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    line-height: 40px;
+    text-align: center;
+  }
+  html body.nav-open .site-header .nav-toggle span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  html body.nav-open .site-header .nav-toggle span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+}
