@@ -1,0 +1,68 @@
+/* Essai, simulateur de l'accueil : même mise en page, seul le fond du bloc change. La phrase garde son bandeau. */
+@layer typography {
+  html[data-sim] body.home-page .sim {
+    --sim-accent-lit: var(--sim-accent) !important;
+    --sim-line: #2C3766 !important;
+    --sim-soft: #222C5C !important;
+  }
+  html[data-sim] body.home-page #sim-heures::-webkit-slider-runnable-track {
+    background: linear-gradient(90deg, var(--sim-accent) 0, var(--sim-accent) var(--pct, 25%), var(--sim-line) var(--pct, 25%)) !important;
+  }
+  html[data-sim] body.home-page .sim-band::before { display: none !important; }
+  html[data-sim] body.home-page .sim { margin-top: 0 !important; }
+  html[data-sim] body.home-page #contenu > .home-demo { padding-top: 32px !important; }
+
+  /* 1 : bleu nuit plus profond et plus calme que le bleu actuel */
+  html[data-sim="1"] body.home-page .sim-band,
+  html[data-sim="3"] body.home-page .sim-band {
+    background: #121A3F !important;
+    border-color: #26305E !important;
+  }
+  html[data-sim="1"] body.home-page .sim,
+  html[data-sim="3"] body.home-page .sim { --sim-surface: #121A3F !important; }
+
+  /* 2 : photo du header sous un voile bleu nuit uni */
+  html[data-sim="2"] body.home-page .sim-band,
+  html[data-sim="4"] body.home-page .sim-band {
+    background:
+      linear-gradient(rgba(14, 20, 48, 0.86), rgba(14, 20, 48, 0.86)),
+      url("../assets/images/metiers/accueil_mur_eau_1280.webp") 70% 45% / cover no-repeat !important;
+    border-color: transparent !important;
+  }
+  html[data-sim="2"] body.home-page .sim,
+  html[data-sim="4"] body.home-page .sim { --sim-surface: #0E1430 !important; }
+
+  /* 3 et 4 : liseré champagne en haut du bloc */
+  html[data-sim="3"] body.home-page .sim-band,
+  html[data-sim="4"] body.home-page .sim-band {
+    border-top: 2px solid #B89A72 !important;
+  }
+}
+
+.sim-switch {
+  position: fixed;
+  left: max(12px, env(safe-area-inset-left, 0px));
+  bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+  z-index: 9999;
+  display: flex;
+  gap: 4px;
+  padding: 6px;
+  background: #1B2A6B;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.sim-switch button {
+  min-width: 44px;
+  min-height: 40px;
+  padding: 0 10px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: transparent;
+  color: #fff;
+  font: 500 0.85rem "DM Sans", Arial, sans-serif;
+  cursor: pointer;
+}
+
+.sim-switch button[aria-pressed="true"] {
+  background: #fff;
+  color: #1B2A6B;
+}

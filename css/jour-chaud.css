@@ -1,0 +1,37 @@
+/* Accueil en mode jour : fonds bleu et blanc en alternance, liseré champagne sur les cartes.
+   Les règles de fond du site sont dans le calque refonte avec !important : seul le calque typography, déclaré avant lui, peut les surclasser. */
+@layer typography {
+  html[data-theme="light"] body.home-page {
+    --warm-champagne: #B89A72 !important;
+    --cool-band: #F2F5FC !important;
+  }
+
+  /* Un bandeau sur deux en bleu très pâle, les autres en blanc */
+  html[data-theme="light"] body.home-page #contenu > :is(.home-pains, .home-demo, .home-method, .home-engagements, .home-why, .faq-section, .location-section) {
+    background-color: #FFFFFF !important;
+  }
+
+  html[data-theme="light"] body.home-page #contenu > :is(.home-demo, .home-method, .home-why, .location-section) {
+    background-color: var(--cool-band) !important;
+  }
+
+  html[data-theme="light"] body.home-page #contenu > .section-soft {
+    background-color: #FFFFFF !important;
+  }
+
+  /* Pourquoi AesthéIA contient le bloc fondatrice : sans marge basse, la FAQ suit directement */
+  body.home-page #contenu > .home-why {
+    padding-bottom: 0 !important;
+  }
+
+  /* Étiquettes d'indicateurs : lavande pâle, sans cadre */
+  html[data-theme="light"] body.home-page .home-pains .perf-tags li {
+    border: 0 !important;
+    background: #EEEAFB !important;
+  }
+
+  /* Cartes blanches, liseré champagne en haut : la seule touche chaude */
+  html[data-theme="light"] body.home-page #contenu :is(.pain-card, .perf-block, .home-why .card, .iv-item, .home-engagements .iv-group:last-child) {
+    border-top: 2px solid var(--warm-champagne) !important;
+  }
+}
