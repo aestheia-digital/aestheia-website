@@ -485,18 +485,6 @@ if (homeEngagements) {
   if (headingText) {
     headingText.textContent = "Une intervention calibrée sur vos priorités";
   }
-
-  const completeCard = homeEngagements.querySelector(".engagement-card-complete");
-  if (completeCard) {
-    const title = completeCard.querySelector("h3 span");
-    const deliverable = completeCard.querySelector(".deliverable");
-    if (title) {
-      title.textContent = "Mise en œuvre complète";
-    }
-    if (deliverable) {
-      deliverable.innerHTML = "<strong>Livrable :</strong> stratégie, mise en place, automatisations, coordination et documentation.";
-    }
-  }
 }
 
 const firstHomeStep = document.querySelector(".home-method .process-step:first-child");
