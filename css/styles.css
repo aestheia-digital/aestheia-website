@@ -6862,3 +6862,168 @@ html[data-theme="dark"] body .resource-sector {
 html:is(.theme-dark,[data-theme="dark"]) body.home-page .faq-section .faq-accordion-item > summary::after {
   border-color: #B89A72 !important;
 }
+
+
+/* AesthéIA — signature mobile : favicon officiel existant, sans nouveau logo. */
+@media (max-width: 1050px) {
+  html body .site-header .brand-link {
+    display: inline-flex !important;
+    flex: 0 0 30px !important;
+    width: 30px !important;
+    min-width: 30px !important;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+  html body .site-header .brand-link::before {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: url("/assets/images/brand/favicon-a-champagne.svg") center / contain no-repeat;
+    flex: 0 0 30px;
+  }
+  html body .site-header .nav-shell { gap: clamp(5px, 1.7vw, 14px); }
+  html body .site-header a.header-phone-direct { min-width: 0; white-space: nowrap; }
+}
+@media (max-width: 380px) {
+  html body .site-header .brand-link { flex-basis: 26px !important; width: 26px !important; min-width: 26px !important; }
+  html body .site-header .brand-link::before { width: 26px; height: 26px; flex-basis: 26px; }
+  html body .site-header .nav-shell { gap: 4px; }
+}
+
+/* Liseré signature champagne : uniquement les cartes de contenu, jour et nuit.
+   Les FAQ, champs, CTA, simulateurs et conteneurs de mise en page sont exclus. */
+html body #contenu :is(
+  .pain-card, .perf-block, .home-why .card, .iv-item,
+  .home-engagements .iv-group:last-child, .problem-card, .offer-card,
+  .engagement-card, .sector-card, .target-control-card,
+  .positioning-section .card, .number-card,
+  .medicine-method-card, .medicine-solution-card,
+  .institutes-method-card, .institutes-solution-card,
+  .sector-method-card, .sector-editorial-benefit, .institutes-editorial-benefit,
+  .thalasso-dark-grid-card, .thalasso-turnover-benefit,
+  .resource-card, .related-resource-card,
+  .pme-page .card, .spa-page .card, .thalasso-page .card,
+  .medicine-page .card, .institutes-page .card
+) {
+  border-top: 2px solid #B89A72 !important;
+}
+
+
+/* Harmonisation des chevrons : FAQ et accordéons éditoriaux, jour/nuit. */
+html body :is(
+  .faq-accordion-item > summary,
+  .home-card-accordion > summary,
+  .home-section-accordion > summary,
+  .sector-card-accordion > summary
+)::after,
+html body .institutes-editorial-list > .sector-card-accordion > summary::after {
+  border-right-color: #B89A72 !important;
+  border-bottom-color: #B89A72 !important;
+  border-color: #B89A72 !important;
+}
+/* Les encadrés à accent vertical conservent leur orientation originale. */
+html body #contenu :is(.quote-box, .institutes-reality-metric) {
+  border-left-color: #B89A72 !important;
+}
+/* Blocs « Livrable » : remplacer le trait bleu par un liseré champagne vertical,
+   sans rajouter un trait horizontal sur ces textes. */
+html body #contenu :is(.engagement-card .deliverable, .home-engagements .iv-item > .iv-deliverable, .home-engagements .iv-group:last-child > .iv-deliverable) {
+  border-top: 0 !important;
+  border-left: 2px solid #B89A72 !important;
+  padding-left: 12px !important;
+}
+
+/* Favicon officiel : contour champagne discret et visible sur fond nuit. */
+@media (max-width: 1050px) {
+  html body .site-header .brand-link::before {
+    border: 1px solid #B89A72 !important;
+    border-radius: 6px;
+    box-sizing: border-box;
+  }
+}
+/* Les livrables utilisent un filet vertical, pas un liseré supérieur. */
+html body #contenu .iv-deliverable {
+  border-top: 0 !important;
+  border-left: 2px solid #B89A72 !important;
+  padding-left: 12px !important;
+}
+
+
+/* Harmonisation ciblée 2026-11-09 : cartes illustrées, chevrons, filets. */
+/* Cartes photographiques de l'accueil : le champagne signe le BAS de la carte. */
+html body.home-page #contenu .sector-grid > .sector-card {
+  border-top: 0 !important;
+  border-bottom: 2px solid #B89A72 !important;
+}
+/* FAQ, chapitres et cartes accordéon : même chevron champagne jour/nuit. */
+html body :is(.faq-accordion-item, .sector-card-accordion, .home-card-accordion, .home-section-accordion, .thalasso-turnover-block) > summary::after,
+html body .sector-editorial-chapter > summary::after {
+  border-right-color: #B89A72 !important;
+  border-bottom-color: #B89A72 !important;
+  border-color: #B89A72 !important;
+}
+/* Bandeau de réassurance de l'accueil : conserver le filet vertical, remplacer le bleu. */
+html body.home-page .home-hero .transition-note {
+  border-left-color: #B89A72 !important;
+}
+html body.home-page .home-hero .transition-note::before {
+  background: #B89A72 !important;
+}
+/* Blocs bénéfice thalasso : filet vertical champagne, sans bordure haute ajoutée. */
+html body.thalasso-page #contenu .thalasso-turnover-benefit {
+  border-top: 0 !important;
+  border-left: 2px solid #B89A72 !important;
+}
+html body.thalasso-page #contenu .thalasso-turnover-benefit::before {
+  background: #B89A72 !important;
+}
+
+/* Signature champagne des filets verticaux d'encadrés, tous thèmes. */
+html body #contenu :is(
+ .transition-note, .sector-editorial-benefit, .institutes-editorial-benefit,
+ .institutes-reality-conclusion, .sector-reality-conclusion,
+ .sector-method-conclusion, .institutes-method-conclusion,
+ .medicine-card-benefit, .institutes-card-benefit,
+ .thalasso-turnover-benefit
+)::before {
+  background: #B89A72 !important;
+}
+html body #contenu :is(
+ .transition-note, .sector-editorial-benefit, .institutes-editorial-benefit,
+ .institutes-reality-conclusion, .sector-reality-conclusion,
+ .sector-method-conclusion, .institutes-method-conclusion
+) { border-left-color: #B89A72 !important; }
+
+/* Source unique : tous les filets verticaux de type encadré sont champagne. */
+@layer refonte {
+  :root, html[data-theme="light"], html[data-theme="dark"], html.theme-light, html.theme-dark {
+    --gradient-encadre: #B89A72 !important;
+  }
+}
+html body #contenu :is(.transition-note,.sector-editorial-benefit,.institutes-editorial-benefit,.sector-reality-conclusion,.sector-method-conclusion,.institutes-reality-conclusion,.institutes-method-conclusion,.thalasso-turnover-benefit,.spa-turnover-benefit,.time-benefit,.medicine-card-benefit,.institutes-card-benefit)::before {
+  background: #B89A72 !important;
+  background-image: none !important;
+}
+html body #contenu :is(.transition-note,.sector-editorial-benefit,.institutes-editorial-benefit,.sector-reality-conclusion,.sector-method-conclusion,.institutes-reality-conclusion,.institutes-method-conclusion,.thalasso-turnover-benefit,.spa-turnover-benefit,.time-benefit,.medicine-card-benefit,.institutes-card-benefit) {
+  border-left-color: #B89A72 !important;
+}
+
+/* Uniformité des cartes accordéon : filet champagne sur CHAQUE carte,
+   y compris les cartes thalasso non marquées thalasso-dark-grid-card.
+   Tous les thèmes et toutes les largeurs d'écran. */
+html body #contenu details.sector-card-accordion,
+html body #contenu details.sector-editorial-chapter.sector-card-accordion,
+html body #contenu details.sector-card-accordion[open] {
+  border-top: 2px solid #B89A72 !important;
+  border-top-color: #B89A72 !important;
+}
+
+/* Exception volontaire : pas de liseré sur le détail « Turnover et continuité opérationnelle »
+   dans la liste de constats Thalasso ; les cartes des systèmes restent inchangées. */
+html body.thalasso-page #contenu li.thalasso-reality-turnover > details.thalasso-reality-turnover-accordion {
+  border-top: 0 !important;
+  border-top-color: transparent !important;
+}
