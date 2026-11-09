@@ -7020,3 +7020,10 @@ html body #contenu details.sector-card-accordion[open] {
   border-top: 2px solid #B89A72 !important;
   border-top-color: #B89A72 !important;
 }
+
+/* Exception volontaire : pas de liseré sur le détail « Turnover et continuité opérationnelle »
+   dans la liste de constats Thalasso ; les cartes des systèmes restent inchangées. */
+html body.thalasso-page #contenu li.thalasso-reality-turnover > details.thalasso-reality-turnover-accordion {
+  border-top: 0 !important;
+  border-top-color: transparent !important;
+}
