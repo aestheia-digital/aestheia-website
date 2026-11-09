@@ -6928,8 +6928,10 @@ html body .institutes-editorial-list > .sector-card-accordion > summary::after {
 html body #contenu :is(.quote-box, .institutes-reality-metric) {
   border-left-color: #B89A72 !important;
 }
-/* Le trait de séparation du livrable n'est pas une bordure de carte :
-   il reste horizontal mais prend la même teinte champagne. */
+/* Blocs « Livrable » : remplacer le trait bleu par un liseré champagne vertical,
+   sans rajouter un trait horizontal sur ces textes. */
 html body #contenu :is(.engagement-card .deliverable, .home-engagements .iv-item > .iv-deliverable, .home-engagements .iv-group:last-child > .iv-deliverable) {
-  border-top-color: #B89A72 !important;
+  border-top: 0 !important;
+  border-left: 2px solid #B89A72 !important;
+  padding-left: 12px !important;
 }
