@@ -17,7 +17,11 @@
   }
   html body.home-page .sim-band::before { display: none !important; }
   html body.home-page #contenu > .home-demo { padding-top: 32px !important; }
-  html body.home-page .home-slogan {
+  html body.home-page .home-slogan,
+  html body.home-page .home-slogan[data-typo-role]:not(#_) {
+    font-family: var(--font-display) !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
     font-size: clamp(12px, 1.05vw, 15px) !important;
     line-height: 1.5 !important;
     letter-spacing: 0 !important;
