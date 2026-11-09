@@ -6996,3 +6996,17 @@ html body #contenu :is(
  .institutes-reality-conclusion, .sector-reality-conclusion,
  .sector-method-conclusion, .institutes-method-conclusion
 ) { border-left-color: #B89A72 !important; }
+
+/* Source unique : tous les filets verticaux de type encadré sont champagne. */
+@layer refonte {
+  :root, html[data-theme="light"], html[data-theme="dark"], html.theme-light, html.theme-dark {
+    --gradient-encadre: #B89A72 !important;
+  }
+}
+html body #contenu :is(.transition-note,.sector-editorial-benefit,.institutes-editorial-benefit,.sector-reality-conclusion,.sector-method-conclusion,.institutes-reality-conclusion,.institutes-method-conclusion,.thalasso-turnover-benefit,.spa-turnover-benefit,.time-benefit,.medicine-card-benefit,.institutes-card-benefit)::before {
+  background: #B89A72 !important;
+  background-image: none !important;
+}
+html body #contenu :is(.transition-note,.sector-editorial-benefit,.institutes-editorial-benefit,.sector-reality-conclusion,.sector-method-conclusion,.institutes-reality-conclusion,.institutes-method-conclusion,.thalasso-turnover-benefit,.spa-turnover-benefit,.time-benefit,.medicine-card-benefit,.institutes-card-benefit) {
+  border-left-color: #B89A72 !important;
+}
