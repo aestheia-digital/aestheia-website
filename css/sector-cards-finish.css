@@ -39,3 +39,22 @@ body.home-page .sector-grid > .sector-card:focus-visible::after {
     transition: none;
   }
 }
+
+/* Accueil mobile, mode jour : filet champagne visible en bas de chacune des cartes métiers.
+   Conserver l'effet interactif sur ordinateur et les règles existantes du mode nuit. */
+@media (max-width: 900px) {
+  @layer typography {
+    html[data-theme="light"] body.home-page #contenu .sector-grid > a.sector-card {
+      border-bottom: 2px solid #B89A72 !important;
+    }
+    html[data-theme="light"] body.home-page #contenu .sector-grid > a.sector-card::after {
+      display: none !important;
+    }
+  }
+}
+/* Les trois cartes de contrôle : même filet champagne en jour qu'en nuit. */
+@layer typography {
+  html[data-theme="light"] body.home-page #contenu .home-section-safety > article.target-control-card {
+    border-top: 2px solid #B89A72 !important;
+  }
+}
