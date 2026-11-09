@@ -7010,3 +7010,13 @@ html body #contenu :is(.transition-note,.sector-editorial-benefit,.institutes-ed
 html body #contenu :is(.transition-note,.sector-editorial-benefit,.institutes-editorial-benefit,.sector-reality-conclusion,.sector-method-conclusion,.institutes-reality-conclusion,.institutes-method-conclusion,.thalasso-turnover-benefit,.spa-turnover-benefit,.time-benefit,.medicine-card-benefit,.institutes-card-benefit) {
   border-left-color: #B89A72 !important;
 }
+
+/* Uniformité des cartes accordéon : filet champagne sur CHAQUE carte,
+   y compris les cartes thalasso non marquées thalasso-dark-grid-card.
+   Tous les thèmes et toutes les largeurs d'écran. */
+html body #contenu details.sector-card-accordion,
+html body #contenu details.sector-editorial-chapter.sector-card-accordion,
+html body #contenu details.sector-card-accordion[open] {
+  border-top: 2px solid #B89A72 !important;
+  border-top-color: #B89A72 !important;
+}
