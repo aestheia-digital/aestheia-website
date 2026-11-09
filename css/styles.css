@@ -6831,3 +6831,34 @@ html[data-theme="dark"] body .resource-sector {
   background: transparent !important;
   border-color: rgba(255, 255, 255, 0.28) !important;
 }
+
+
+/* Harmonisation AesthéIA — signature et téléphone sur toutes les pages et tous les thèmes. */
+@media (min-width: 1051px) {
+  html body .site-header a.header-phone-direct {
+    display: inline-flex !important;
+    align-items: center !important;
+    align-self: center !important;
+    gap: 20px !important;
+  }
+  html body .site-header a.header-phone-direct::before {
+    content: "";
+    display: block;
+    width: 1px;
+    height: 23px;
+    flex: 0 0 1px;
+    background: #B89A72 !important;
+    border: 0;
+    mask: none;
+    -webkit-mask: none;
+  }
+}
+/* Finitions champagne de l'accueil en mode nuit, sans changer les fonds ni les textes. */
+@layer typography {
+  html:is(.theme-dark,[data-theme="dark"]) body.home-page #contenu :is(.pain-card,.perf-block,.home-why .card,.iv-item,.home-engagements .iv-group:last-child) {
+    border-top: 2px solid #B89A72 !important;
+  }
+}
+html:is(.theme-dark,[data-theme="dark"]) body.home-page .faq-section .faq-accordion-item > summary::after {
+  border-color: #B89A72 !important;
+}
