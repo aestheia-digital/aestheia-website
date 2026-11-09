@@ -1070,3 +1070,11 @@ html body.institutes-page #contenu .institutes-editorial-chapter > summary::afte
   border-color: #B89A72 !important;
 }
 
+
+/* Méthode Instituts — mode jour : remplacer les contours gris par le champagne.
+   Tous formats ; ne modifie ni le mode nuit ni la typographie. */
+html[data-theme="light"] body.institutes-page #contenu > .institutes-method-section .institutes-method-card,
+html:not(.theme-dark):not([data-theme="dark"]) body.institutes-page #contenu > .institutes-method-section .institutes-method-card {
+  border-color: #B89A72 !important;
+  border-top: 2px solid #B89A72 !important;
+}
