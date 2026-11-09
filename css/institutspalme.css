@@ -1032,3 +1032,40 @@ body.institutes-page .assistant-schema > figcaption.caption .caption-arrow {
   margin: 0 0.25em;
   vertical-align: baseline;
 }
+
+
+/* Signature champagne — page Instituts, mobile et desktop, jour et nuit.
+   Les fonds, titres, icônes et textes conservent leurs couleurs d'origine. */
+html body.institutes-page {
+  --institutes-day-liseret: #B89A72 !important;
+}
+/* Indicateur « 5 à 10 h » : supprimer le dégradé bleu-violet. */
+html body.institutes-page #contenu .institutes-reality-metric-value {
+  background: none !important;
+  background-image: none !important;
+  color: #B89A72 !important;
+  -webkit-text-fill-color: #B89A72 !important;
+}
+html body.institutes-page #contenu .institutes-reality-metric::before {
+  background: #B89A72 !important;
+  background-image: none !important;
+}
+/* Filets verticaux des encadrés : aucune exception selon le thème. */
+html body.institutes-page #contenu > .section :is(
+  .institutes-reality-conclusion, .institutes-editorial-benefit,
+  .institutes-method-conclusion, .institutes-onboarding-benefit
+)::before {
+  background: #B89A72 !important;
+  background-image: none !important;
+}
+/* Cartes des systèmes et étapes de méthode : filet supérieur identique. */
+html body.institutes-page #contenu details.institutes-editorial-chapter.sector-card-accordion,
+html body.institutes-page #contenu .institutes-method-card {
+  border-top: 2px solid #B89A72 !important;
+  border-top-color: #B89A72 !important;
+}
+/* FAQ et accordéons : chevrons champagne, ouverts ou fermés. */
+html body.institutes-page #contenu .faq-accordion-item > summary::after,
+html body.institutes-page #contenu .institutes-editorial-chapter > summary::after {
+  border-color: #B89A72 !important;
+}
