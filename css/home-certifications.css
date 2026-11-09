@@ -795,7 +795,7 @@ html body .home-hero.home-hero-photo::after {
   font-size: 0.74rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-muted);
+  color: var(--color-accent);
 }
 
 .home-pains .pain-grid {
@@ -814,21 +814,6 @@ html body .home-hero.home-hero-photo::after {
 
 .home-pains .pain-card h3 {
   margin: 0;
-}
-
-.home-pains .pain-pic {
-  flex: none;
-  width: 26px;
-  height: 26px;
-  fill: none;
-  stroke: var(--color-accent);
-  stroke-width: 2.2;
-  stroke-linecap: square;
-}
-
-.home-pains .pain-pic .pic-accent {
-  fill: var(--color-accent);
-  stroke: none;
 }
 
 .home-pains .pain-card p {
@@ -893,10 +878,7 @@ html[data-theme="light"] .home-pains .problem-card {
 
 /* Accueil : bloc pilotage de la performance */
 .home-pains .perf-block {
-  display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-  align-items: center;
-  gap: 28px;
+  display: block;
 }
 
 .home-pains .perf-text { display: grid; gap: 10px; }
@@ -904,6 +886,7 @@ html[data-theme="light"] .home-pains .problem-card {
 .home-pains .perf-text p { margin: 0; color: var(--color-muted); }
 
 .home-pains .perf-tags {
+  margin-top: 6px !important;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
@@ -919,7 +902,6 @@ html[data-theme="light"] .home-pains .problem-card {
 }
 
 @media (max-width: 899.98px) {
-  .home-pains .perf-block { grid-template-columns: 1fr; }
 }
 
 @layer typography {
@@ -930,19 +912,33 @@ html[data-theme="light"] .home-pains .problem-card {
 }
 
 
-/* Accueil : phrase seule avant le simulateur */
-.home-slogan {
-  margin: 2.6rem 0 1.2rem;
-  max-width: 820px;
+/* Accueil : bandeau étroit avec la phrase, avant le simulateur */
+.home-slogan-band {
+  position: relative;
+  padding: 26px 0;
+  background: var(--color-mist);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.home-slogan-band .home-slogan {
+  margin: 0 auto;
+  max-width: none;
+  text-align: center;
   color: var(--color-ink);
+  text-wrap: balance;
+}
+
+.home-sim-only.section {
+  padding-top: 2.5rem;
 }
 
 @layer typography {
   html body .home-slogan[data-typo-role]:not(#_) {
     font-family: var(--font-display) !important;
-    font-size: clamp(1.1rem, 2.2vw, 1.35rem) !important;
+    font-size: clamp(1.1rem, 1.9vw, 1.4rem) !important;
     font-weight: 400 !important;
-    font-style: italic !important;
+    font-style: normal !important;
     line-height: 1.35 !important;
   }
 }
