@@ -947,3 +947,36 @@ html[data-theme="light"] .home-pains .problem-card {
 .home-pains .pain-card-wide {
   grid-column: 1 / -1;
 }
+
+/* Accueil, Interventions : accordéons alignés juste au-dessus du livrable, liste du suivi */
+.home-engagements .engagement-card > .sector-card-accordion {
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.home-engagements .engagement-card > .sector-card-accordion + .deliverable {
+  margin-top: 0;
+}
+
+.home-engagements .aftercare-list {
+  display: grid;
+  gap: 0.6rem;
+  margin: 0.4rem 0 1.2rem;
+  padding: 0;
+  list-style: none;
+}
+
+.home-engagements .aftercare-list li {
+  display: flex;
+  gap: 10px;
+  color: var(--color-muted);
+}
+
+.home-engagements .aftercare-list li::before {
+  content: "";
+  flex: none;
+  width: 14px;
+  height: 1px;
+  margin-top: 0.8em;
+  background: var(--color-accent);
+}
