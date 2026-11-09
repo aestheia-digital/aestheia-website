@@ -179,6 +179,19 @@
   <link rel="stylesheet" href="/css/time-entry.css">
     <link rel="stylesheet" href="/css/home-simulator.css">
     <link rel="stylesheet" href="/css/jour-chaud.css">
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const set = (v) => { document.documentElement.dataset.warm = v; bar.querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.v === v))); };
+        const bar = document.createElement("div");
+        bar.className = "warm-switch";
+        bar.setAttribute("role", "group");
+        bar.setAttribute("aria-label", "Variante des cartes");
+        bar.innerHTML = '<button type="button" data-v="0">Sans</button><button type="button" data-v="1">1</button><button type="button" data-v="2">2</button><button type="button" data-v="3">3</button>';
+        bar.addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) set(b.dataset.v); });
+        document.body.appendChild(bar);
+        set("1");
+      });
+    </script>
     <style>
       .home-demo .home-process .process-step-heading { display: flex; align-items: baseline; gap: 0.7rem; }
       .home-demo .home-process .step-label { flex: 0 0 auto; margin-bottom: 0; }
