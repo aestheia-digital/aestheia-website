@@ -1,76 +1,42 @@
-/* Essai, simulateur de l'accueil : trois présentations sans encadré, la phrase rattachée au simulateur. */
+/* Essai, simulateur de l'accueil : même mise en page, seul le fond du bloc change. La phrase garde son bandeau. */
 @layer typography {
-  .sim-slogan { display: none !important; }
-
-  html[data-sim] body.home-page .home-slogan-band { display: none !important; }
-  html[data-sim] body.home-page .sim-slogan[data-typo-role]:not(#_) {
-    display: block !important;
-    max-width: 30ch !important;
-    margin: 0 0 1.6rem !important;
-    font-family: var(--font-display) !important;
-    font-size: clamp(1.5rem, 2.8vw, 2.25rem) !important;
-    font-weight: 400 !important;
-    line-height: 1.22 !important;
-    text-wrap: balance;
+  html[data-sim] body.home-page .sim {
+    --sim-accent-lit: var(--sim-accent) !important;
+    --sim-line: #2C3766 !important;
+    --sim-soft: #222C5C !important;
   }
-
-  html[data-sim] body.home-page .sim { margin-top: 0 !important; }
-  html[data-sim] body.home-page .sim-band {
-    padding: 0 !important;
-    border: 0 !important;
-    background: transparent !important;
+  html[data-sim] body.home-page #sim-heures::-webkit-slider-runnable-track {
+    background: linear-gradient(90deg, var(--sim-accent) 0, var(--sim-accent) var(--pct, 25%), var(--sim-line) var(--pct, 25%)) !important;
   }
   html[data-sim] body.home-page .sim-band::before { display: none !important; }
-  html[data-sim] body.home-page #contenu > .home-demo { padding-block: clamp(56px, 8vw, 96px) !important; }
-  html[data-sim] body.home-page #contenu > .home-demo::before,
-  html[data-sim] body.home-page #contenu > .home-demo::after { display: none !important; }
-  html[data-sim] body.home-page #sim-heures::-webkit-slider-runnable-track { background: linear-gradient(90deg, var(--sim-accent) 0, var(--sim-accent) var(--pct, 25%), var(--sim-line) var(--pct, 25%)) !important; }
+  html[data-sim] body.home-page .sim { margin-top: 0 !important; }
+  html[data-sim] body.home-page #contenu > .home-demo { padding-top: 32px !important; }
 
-  /* 1 : photo du header très fondue sous un voile bleu nuit uni */
-  html[data-sim="1"] body.home-page #contenu > .home-demo {
-    background:
-      linear-gradient(rgba(17, 24, 61, 0.88), rgba(17, 24, 61, 0.88)),
-      url("../assets/images/metiers/accueil_mur_eau_1280.webp") 70% 45% / cover no-repeat !important;
-  }
-  html[data-sim="1"] body.home-page .sim-slogan[data-typo-role]:not(#_),
-  html[data-sim="3"] body.home-page .sim-slogan[data-typo-role]:not(#_) {
-    color: #F4F7FF !important;
-    -webkit-text-fill-color: #F4F7FF !important;
+  /* 1 : bleu nuit plus profond et plus calme que le bleu actuel */
+  html[data-sim="1"] body.home-page .sim-band,
+  html[data-sim="3"] body.home-page .sim-band {
+    background: #121A3F !important;
+    border-color: #26305E !important;
   }
   html[data-sim="1"] body.home-page .sim,
-  html[data-sim="3"] body.home-page .sim { --sim-accent-lit: var(--sim-accent) !important; }
+  html[data-sim="3"] body.home-page .sim { --sim-surface: #121A3F !important; }
 
-  /* 2 : fond clair, sans bloc bleu, filets fins */
-  html[data-sim="2"] body.home-page #contenu > .home-demo { background: #FFFFFF !important; }
-  html[data-sim="2"] body.home-page .sim {
-    --sim-surface: #FFFFFF !important;
-    --sim-ink: #1B2A6B !important;
-    --sim-body: #3B4880 !important;
-    --sim-muted: #5A6699 !important;
-    --sim-accent: #6C4DE6 !important;
-    --sim-accent-lit: #6C4DE6 !important;
-    --sim-line: #D9DEF0 !important;
-    --sim-soft: #EEEAFB !important;
-    --sim-btn-bg: #1B2A6B !important;
-    --sim-btn-fg: #FFFFFF !important;
+  /* 2 : photo du header sous un voile bleu nuit uni */
+  html[data-sim="2"] body.home-page .sim-band,
+  html[data-sim="4"] body.home-page .sim-band {
+    background:
+      linear-gradient(rgba(14, 20, 48, 0.86), rgba(14, 20, 48, 0.86)),
+      url("../assets/images/metiers/accueil_mur_eau_1280.webp") 70% 45% / cover no-repeat !important;
+    border-color: transparent !important;
   }
-  html[data-sim="2"] body.home-page .sim-band {
-    padding: 22px 0 !important;
-    border-top: 1px solid #D9DEF0 !important;
-    border-bottom: 1px solid #D9DEF0 !important;
-  }
-  html[data-sim="2"] body.home-page .sim-slogan[data-typo-role]:not(#_) {
-    color: #1B2A6B !important;
-    -webkit-text-fill-color: #1B2A6B !important;
-  }
+  html[data-sim="2"] body.home-page .sim,
+  html[data-sim="4"] body.home-page .sim { --sim-surface: #0E1430 !important; }
 
-  html[data-sim="2"] body.home-page .sim-hook[data-typo-role]:not(#_) {
-    color: #3B4880 !important;
-    -webkit-text-fill-color: #3B4880 !important;
+  /* 3 et 4 : liseré champagne en haut du bloc */
+  html[data-sim="3"] body.home-page .sim-band,
+  html[data-sim="4"] body.home-page .sim-band {
+    border-top: 2px solid #B89A72 !important;
   }
-
-  /* 3 : bleu nuit uni, pleine largeur, sans photo ni dégradé */
-  html[data-sim="3"] body.home-page #contenu > .home-demo { background: #1B2A6B !important; }
 }
 
 .sim-switch {
