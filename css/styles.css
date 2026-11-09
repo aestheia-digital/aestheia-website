@@ -6980,3 +6980,19 @@ html body.thalasso-page #contenu .thalasso-turnover-benefit {
 html body.thalasso-page #contenu .thalasso-turnover-benefit::before {
   background: #B89A72 !important;
 }
+
+/* Signature champagne des filets verticaux d'encadrés, tous thèmes. */
+html body #contenu :is(
+ .transition-note, .sector-editorial-benefit, .institutes-editorial-benefit,
+ .institutes-reality-conclusion, .sector-reality-conclusion,
+ .sector-method-conclusion, .institutes-method-conclusion,
+ .medicine-card-benefit, .institutes-card-benefit,
+ .thalasso-turnover-benefit
+)::before {
+  background: #B89A72 !important;
+}
+html body #contenu :is(
+ .transition-note, .sector-editorial-benefit, .institutes-editorial-benefit,
+ .institutes-reality-conclusion, .sector-reality-conclusion,
+ .sector-method-conclusion, .institutes-method-conclusion
+) { border-left-color: #B89A72 !important; }
