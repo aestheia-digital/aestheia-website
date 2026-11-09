@@ -179,6 +179,23 @@
   <link rel="stylesheet" href="/css/time-entry.css">
     <link rel="stylesheet" href="/css/home-simulator.css">
     <link rel="stylesheet" href="/css/jour-chaud.css">
+    <link rel="stylesheet" href="/css/sim-essai.css">
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const host = document.querySelector(".home-demo .container");
+        const phrase = document.querySelector(".home-slogan");
+        if (host && phrase) { const p = document.createElement("p"); p.className = "sim-slogan"; p.textContent = phrase.textContent; host.prepend(p); }
+        const bar = document.createElement("div");
+        bar.className = "sim-switch";
+        bar.setAttribute("role", "group");
+        bar.setAttribute("aria-label", "Présentation du simulateur");
+        bar.innerHTML = '<button type="button" data-v="">Actuel</button><button type="button" data-v="1">1</button><button type="button" data-v="2">2</button><button type="button" data-v="3">3</button>';
+        const set = (v) => { if (v) document.documentElement.dataset.sim = v; else delete document.documentElement.dataset.sim; bar.querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.v === v))); };
+        bar.addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) set(b.dataset.v); });
+        document.body.appendChild(bar);
+        set("1");
+      });
+    </script>
     <style>
       .home-demo .home-process .process-step-heading { display: flex; align-items: baseline; gap: 0.7rem; }
       .home-demo .home-process .step-label { flex: 0 0 auto; margin-bottom: 0; }

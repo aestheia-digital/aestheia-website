@@ -1,0 +1,102 @@
+/* Essai, simulateur de l'accueil : trois présentations sans encadré, la phrase rattachée au simulateur. */
+@layer typography {
+  .sim-slogan { display: none !important; }
+
+  html[data-sim] body.home-page .home-slogan-band { display: none !important; }
+  html[data-sim] body.home-page .sim-slogan[data-typo-role]:not(#_) {
+    display: block !important;
+    max-width: 30ch !important;
+    margin: 0 0 1.6rem !important;
+    font-family: var(--font-display) !important;
+    font-size: clamp(1.5rem, 2.8vw, 2.25rem) !important;
+    font-weight: 400 !important;
+    line-height: 1.22 !important;
+    text-wrap: balance;
+  }
+
+  html[data-sim] body.home-page .sim { margin-top: 0 !important; }
+  html[data-sim] body.home-page .sim-band {
+    padding: 0 !important;
+    border: 0 !important;
+    background: transparent !important;
+  }
+  html[data-sim] body.home-page .sim-band::before { display: none !important; }
+  html[data-sim] body.home-page #contenu > .home-demo { padding-block: clamp(56px, 8vw, 96px) !important; }
+  html[data-sim] body.home-page #contenu > .home-demo::before,
+  html[data-sim] body.home-page #contenu > .home-demo::after { display: none !important; }
+  html[data-sim] body.home-page #sim-heures::-webkit-slider-runnable-track { background: linear-gradient(90deg, var(--sim-accent) 0, var(--sim-accent) var(--pct, 25%), var(--sim-line) var(--pct, 25%)) !important; }
+
+  /* 1 : photo du header très fondue sous un voile bleu nuit uni */
+  html[data-sim="1"] body.home-page #contenu > .home-demo {
+    background:
+      linear-gradient(rgba(17, 24, 61, 0.88), rgba(17, 24, 61, 0.88)),
+      url("../assets/images/metiers/accueil_mur_eau_1280.webp") 70% 45% / cover no-repeat !important;
+  }
+  html[data-sim="1"] body.home-page .sim-slogan[data-typo-role]:not(#_),
+  html[data-sim="3"] body.home-page .sim-slogan[data-typo-role]:not(#_) {
+    color: #F4F7FF !important;
+    -webkit-text-fill-color: #F4F7FF !important;
+  }
+  html[data-sim="1"] body.home-page .sim,
+  html[data-sim="3"] body.home-page .sim { --sim-accent-lit: var(--sim-accent) !important; }
+
+  /* 2 : fond clair, sans bloc bleu, filets fins */
+  html[data-sim="2"] body.home-page #contenu > .home-demo { background: #FFFFFF !important; }
+  html[data-sim="2"] body.home-page .sim {
+    --sim-surface: #FFFFFF !important;
+    --sim-ink: #1B2A6B !important;
+    --sim-body: #3B4880 !important;
+    --sim-muted: #5A6699 !important;
+    --sim-accent: #6C4DE6 !important;
+    --sim-accent-lit: #6C4DE6 !important;
+    --sim-line: #D9DEF0 !important;
+    --sim-soft: #EEEAFB !important;
+    --sim-btn-bg: #1B2A6B !important;
+    --sim-btn-fg: #FFFFFF !important;
+  }
+  html[data-sim="2"] body.home-page .sim-band {
+    padding: 22px 0 !important;
+    border-top: 1px solid #D9DEF0 !important;
+    border-bottom: 1px solid #D9DEF0 !important;
+  }
+  html[data-sim="2"] body.home-page .sim-slogan[data-typo-role]:not(#_) {
+    color: #1B2A6B !important;
+    -webkit-text-fill-color: #1B2A6B !important;
+  }
+
+  html[data-sim="2"] body.home-page .sim-hook[data-typo-role]:not(#_) {
+    color: #3B4880 !important;
+    -webkit-text-fill-color: #3B4880 !important;
+  }
+
+  /* 3 : bleu nuit uni, pleine largeur, sans photo ni dégradé */
+  html[data-sim="3"] body.home-page #contenu > .home-demo { background: #1B2A6B !important; }
+}
+
+.sim-switch {
+  position: fixed;
+  left: max(12px, env(safe-area-inset-left, 0px));
+  bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+  z-index: 9999;
+  display: flex;
+  gap: 4px;
+  padding: 6px;
+  background: #1B2A6B;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.sim-switch button {
+  min-width: 44px;
+  min-height: 40px;
+  padding: 0 10px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: transparent;
+  color: #fff;
+  font: 500 0.85rem "DM Sans", Arial, sans-serif;
+  cursor: pointer;
+}
+
+.sim-switch button[aria-pressed="true"] {
+  background: #fff;
+  color: #1B2A6B;
+}
