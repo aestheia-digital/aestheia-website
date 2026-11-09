@@ -486,8 +486,7 @@ if (homeEngagements) {
     headingText.textContent = "Une intervention calibrée sur vos priorités";
   }
 
-  const cards = homeEngagements.querySelectorAll(".engagement-card");
-  const completeCard = cards[2];
+  const completeCard = homeEngagements.querySelector(".engagement-card-complete");
   if (completeCard) {
     const title = completeCard.querySelector("h3 span");
     const deliverable = completeCard.querySelector(".deliverable");
@@ -508,7 +507,7 @@ if (firstHomeStep) {
     title.textContent = "Commencer par un diagnostic";
   }
   if (text) {
-    text.innerHTML = "Selon le besoin, démarrer par le <strong>Diagnostic visibilité & acquisition</strong> afin d’identifier les freins, les priorités et les premières actions utiles.";
+    text.innerHTML = "Selon le besoin, démarrer par le <strong>Diagnostic visibilité & acquisition</strong> ou le <strong>Diagnostic automatisation & IA</strong> afin d’identifier les freins, les priorités et les premières actions utiles.";
   }
 }
 
