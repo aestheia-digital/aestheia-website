@@ -6862,3 +6862,51 @@ html[data-theme="dark"] body .resource-sector {
 html:is(.theme-dark,[data-theme="dark"]) body.home-page .faq-section .faq-accordion-item > summary::after {
   border-color: #B89A72 !important;
 }
+
+
+/* AesthéIA — signature mobile : favicon officiel existant, sans nouveau logo. */
+@media (max-width: 1050px) {
+  html body .site-header .brand-link {
+    display: inline-flex !important;
+    flex: 0 0 30px !important;
+    width: 30px !important;
+    min-width: 30px !important;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+  html body .site-header .brand-link::before {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: url("/assets/images/brand/favicon-a-champagne.svg") center / contain no-repeat;
+    flex: 0 0 30px;
+  }
+  html body .site-header .nav-shell { gap: clamp(5px, 1.7vw, 14px); }
+  html body .site-header a.header-phone-direct { min-width: 0; white-space: nowrap; }
+}
+@media (max-width: 380px) {
+  html body .site-header .brand-link { flex-basis: 26px !important; width: 26px !important; min-width: 26px !important; }
+  html body .site-header .brand-link::before { width: 26px; height: 26px; flex-basis: 26px; }
+  html body .site-header .nav-shell { gap: 4px; }
+}
+
+/* Liseré signature champagne : uniquement les cartes de contenu, jour et nuit.
+   Les FAQ, champs, CTA, simulateurs et conteneurs de mise en page sont exclus. */
+html body #contenu :is(
+  .pain-card, .perf-block, .home-why .card, .iv-item,
+  .home-engagements .iv-group:last-child, .problem-card, .offer-card,
+  .engagement-card, .sector-card, .target-control-card,
+  .positioning-section .card, .number-card,
+  .medicine-method-card, .medicine-solution-card,
+  .institutes-method-card, .institutes-solution-card,
+  .sector-method-card, .sector-editorial-benefit, .institutes-editorial-benefit,
+  .thalasso-dark-grid-card, .thalasso-turnover-benefit,
+  .resource-card, .related-resource-card,
+  .pme-page .card, .spa-page .card, .thalasso-page .card,
+  .medicine-page .card, .institutes-page .card
+) {
+  border-top: 2px solid #B89A72 !important;
+}
