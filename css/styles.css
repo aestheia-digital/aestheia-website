@@ -7231,7 +7231,26 @@ html:is([data-theme="dark"],.theme-dark) .ia-resume img.ia-brand {
     min-width: 0 !important;
     max-width: none !important;
   }
-  html body.home-page #services .pain-family:first-of-type .pain-grid.pain-grid-3 > .pain-card:last-child {
+  html body.home-page #services .pain-grid.pain-grid-3 > .pain-card:nth-child(3):last-child {
     grid-column: 1 / -1 !important;
+  }
+}
+
+/* Fondatrice : sur tablette, portrait réduit à gauche et présentation à droite. */
+@media (min-width: 700px) and (max-width: 1100px) {
+  html body.home-page #derriere-aestheia .behind-inner {
+    display: grid !important;
+    grid-template-columns: minmax(170px, 0.32fr) minmax(0, 0.68fr) !important;
+    gap: clamp(20px, 3vw, 40px) !important;
+    align-items: center !important;
+  }
+  html body.home-page #derriere-aestheia .behind-media {
+    width: 100% !important;
+    max-width: 270px !important;
+    margin: 0 !important;
+  }
+  html body.home-page #derriere-aestheia .behind-content {
+    min-width: 0 !important;
+    max-width: none !important;
   }
 }
