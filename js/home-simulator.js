@@ -21,7 +21,7 @@
     range.style.setProperty('--pct', ((h - min) / (max - min)) * 100 + '%');
     el('sim-valeur').textContent = h;
     el('sim-gain').textContent = plage(q(h * LO), q(h * HI));
-    el('sim-mois').textContent = plageMois(h * LO * SEM_PAR_MOIS, h * HI * SEM_PAR_MOIS);
+    if (el('sim-mois')) el('sim-mois').textContent = plageMois(h * LO * SEM_PAR_MOIS, h * HI * SEM_PAR_MOIS);
   }
   range.addEventListener('input', update);
   update();

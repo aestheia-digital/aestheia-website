@@ -478,12 +478,12 @@ const homeEngagements = document.querySelector(".home-engagements");
 if (homeEngagements) {
   const eyebrow = homeEngagements.querySelector(".eyebrow");
   if (eyebrow) {
-    eyebrow.textContent = "Les accompagnements";
+    eyebrow.textContent = "Interventions";
   }
 
   const headingText = homeEngagements.querySelector("h2 span");
   if (headingText) {
-    headingText.textContent = "Un accompagnement à votre mesure";
+    headingText.textContent = "Une intervention calibrée sur vos priorités";
   }
 
   const cards = homeEngagements.querySelectorAll(".engagement-card");
