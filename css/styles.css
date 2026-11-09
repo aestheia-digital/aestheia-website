@@ -7254,3 +7254,16 @@ html:is([data-theme="dark"],.theme-dark) .ia-resume img.ia-brand {
     max-width: none !important;
   }
 }
+
+/* Contour du monogramme A du header : blanc en nuit, bleu nuit en jour.
+   Ne modifie ni la lettre ni le favicon lui-même. */
+@media (max-width: 1050px) {
+  html[data-theme="dark"] body .site-header .brand-link::before,
+  html.theme-dark body .site-header .brand-link::before {
+    border-color: #FFFFFF !important;
+  }
+  html[data-theme="light"] body .site-header .brand-link::before,
+  html:not(.theme-dark):not([data-theme="dark"]) body .site-header .brand-link::before {
+    border-color: #17234B !important;
+  }
+}
