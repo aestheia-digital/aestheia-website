@@ -6935,3 +6935,18 @@ html body #contenu :is(.engagement-card .deliverable, .home-engagements .iv-item
   border-left: 2px solid #B89A72 !important;
   padding-left: 12px !important;
 }
+
+/* Favicon officiel : contour champagne discret et visible sur fond nuit. */
+@media (max-width: 1050px) {
+  html body .site-header .brand-link::before {
+    border: 1px solid #B89A72 !important;
+    border-radius: 6px;
+    box-sizing: border-box;
+  }
+}
+/* Les livrables utilisent un filet vertical, pas un liseré supérieur. */
+html body #contenu .iv-deliverable {
+  border-top: 0 !important;
+  border-left: 2px solid #B89A72 !important;
+  padding-left: 12px !important;
+}
