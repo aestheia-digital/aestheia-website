@@ -1213,3 +1213,79 @@ html[data-theme="dark"] .home-engagements .home-section-accordion--plain {
     font-weight: 600 !important;
   }
 }
+
+/* Accueil, Interventions : sur téléphone, cartes resserrées (option B) ; la grille tarifaire reste dès 721 px */
+@media (max-width: 720px) {
+  .home-engagements .iv-group {
+    padding-top: 0;
+    border-top: 0;
+  }
+
+  .home-engagements .iv-group + .iv-group {
+    margin-top: 1.6rem;
+  }
+
+  .home-engagements .iv-note {
+    margin: 0.2rem 0 0.7rem;
+  }
+
+  .home-engagements .iv-items {
+    gap: 12px;
+  }
+
+  .home-engagements .iv-items .iv-item,
+  .home-engagements .iv-items .iv-item:last-child,
+  .home-engagements .iv-group:last-child {
+    row-gap: 0.6rem;
+    padding: 18px 18px 16px;
+    border: 1px solid var(--color-border);
+    background: var(--color-soft);
+  }
+
+  .home-engagements .iv-items-two {
+    margin-top: 0.6rem;
+  }
+
+  .home-engagements .iv-group:first-child .iv-items-two {
+    margin-top: 0;
+  }
+
+  .home-engagements .iv-item > .iv-deliverable,
+  .home-engagements .iv-group:last-child > .iv-deliverable {
+    padding-top: 0.6rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .home-engagements .iv-group:last-child .iv-head {
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .home-engagements .iv-group:last-child .iv-dash {
+    margin: 0.8rem 0 0.8rem;
+  }
+}
+
+@layer typography {
+  @media (max-width: 720px) {
+    .home-engagements .iv-title[data-typo-role]:not(#_),
+    .home-engagements .iv-group:last-child .iv-label[data-typo-role]:not(#_) {
+      font-family: var(--font-body) !important;
+      font-size: 1.02rem !important;
+      font-weight: 600 !important;
+      line-height: 1.3 !important;
+      letter-spacing: 0 !important;
+      text-transform: none !important;
+    }
+
+    .home-engagements .iv-group:last-child .iv-label[data-typo-role]:not(#_) {
+      color: var(--color-ink) !important;
+      -webkit-text-fill-color: var(--color-ink) !important;
+    }
+
+    .home-engagements :is(.iv-price, .iv-desc, .iv-inc p, .iv-deliverable, .iv-dash li, .iv-inc summary)[data-typo-role]:not(#_) {
+      font-size: 0.93rem !important;
+      line-height: 1.55 !important;
+    }
+  }
+}
