@@ -6661,7 +6661,7 @@ html[data-theme="dark"] .theme-toggle-moon { display: none; }
   }
 }
 
-/* Téléphone mobile : bleu marine en jour, reflet bleu uniquement vers la droite. */
+/* Téléphone mobile : couleur de base inchangée, reflet champagne uniquement vers la droite. */
 @layer typography {
   @media (max-width: 720px) {
     html[data-theme] .site-header a.header-phone-direct {
@@ -6672,9 +6672,9 @@ html[data-theme="dark"] .theme-toggle-moon { display: none; }
         105deg,
         var(--header-phone-base) 0%,
         var(--header-phone-base) 38%,
-        #368AF1 44%,
-        #00B0FF 50%,
-        #368AF1 56%,
+        #B89A72 44%,
+        #D7BE96 50%,
+        #B89A72 56%,
         var(--header-phone-base) 62%,
         var(--header-phone-base) 100%
       ) !important;
