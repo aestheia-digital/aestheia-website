@@ -1,0 +1,17 @@
+/* Accueil : séparateur champagne discret entre signature et téléphone. */
+@media (min-width: 1051px) {
+  body.home-page .site-header a.header-phone-direct {
+    display: inline-flex !important;
+    align-items: center !important;
+    align-self: center !important;
+    gap: 20px !important;
+  }
+  body.home-page .site-header a.header-phone-direct::before {
+    content: "";
+    display: block;
+    flex: 0 0 1px;
+    width: 1px;
+    height: 23px;
+    background: #B89A72;
+  }
+}
