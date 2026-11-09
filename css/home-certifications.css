@@ -942,3 +942,8 @@ html[data-theme="light"] .home-pains .problem-card {
     line-height: 1.35 !important;
   }
 }
+
+/* Accueil : carte pleine largeur sous les trois cartes Processus et gestion */
+.home-pains .pain-card-wide {
+  grid-column: 1 / -1;
+}
