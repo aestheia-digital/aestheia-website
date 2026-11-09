@@ -6,7 +6,7 @@
       <stop offset="1" stop-color="#00b0ff"/>
     </linearGradient>
   </defs>
-  <g stroke="url(#aestheiaGradient)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+  <g stroke="url(#aestheiaGradient)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="12" cy="12" r="9"/>
     <path d="m15.7 8.3-2.2 5.2-5.2 2.2 2.2-5.2 5.2-2.2z"/>
     <circle cx="12" cy="12" r=".7"/>
