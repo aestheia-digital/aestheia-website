@@ -1,0 +1,32 @@
+/* Simulateur : variante 4 validée, sans sélecteur de test. */
+@layer typography {
+  html body.home-page .sim {
+    --sim-accent-lit: var(--sim-accent) !important;
+    --sim-line: #2C3766 !important;
+    --sim-soft: #222C5C !important;
+    --sim-surface: #0E1430 !important;
+    margin-top: 0 !important;
+  }
+  html body.home-page #sim-heures::-webkit-slider-runnable-track {
+    background: linear-gradient(90deg, var(--sim-accent) 0, var(--sim-accent) var(--pct, 25%), var(--sim-line) var(--pct, 25%)) !important;
+  }
+  html body.home-page .sim-band {
+    background: linear-gradient(rgba(14, 20, 48, .86), rgba(14, 20, 48, .86)), url("../assets/images/metiers/accueil_mur_eau_1280.webp") 70% 45% / cover no-repeat !important;
+    border-color: transparent !important;
+    border-top: 2px solid #B89A72 !important;
+  }
+  html body.home-page .sim-band::before { display: none !important; }
+  html body.home-page #contenu > .home-demo { padding-top: 32px !important; }
+  html body.home-page .home-slogan {
+    font-size: clamp(12px, 1.05vw, 15px) !important;
+    line-height: 1.5 !important;
+    letter-spacing: 0 !important;
+    text-transform: none !important;
+  }
+  @media (min-width: 1100px) {
+    html body.home-page .home-slogan { white-space: nowrap !important; }
+  }
+  @media (max-width: 1099px) {
+    html body.home-page .home-slogan { white-space: normal !important; }
+  }
+}
