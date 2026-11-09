@@ -7214,3 +7214,24 @@ html body.thalasso-page #contenu li.thalasso-reality-turnover > details.thalasso
 html:is([data-theme="dark"],.theme-dark) .ia-resume img.ia-brand {
   filter: grayscale(1) brightness(0) invert(1) !important;
 }
+
+
+/* Accueil tablette : deux colonnes régulières en jour comme en nuit.
+   La troisième carte acquisition occupe la rangée entière. */
+@media (min-width: 700px) and (max-width: 1100px) {
+  html body.home-page #services .pain-grid.pain-grid-3 {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 16px !important;
+    align-items: stretch !important;
+  }
+  html body.home-page #services .pain-grid.pain-grid-3 > .pain-card {
+    grid-column: auto !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+  }
+  html body.home-page #services .pain-family:first-of-type .pain-grid.pain-grid-3 > .pain-card:last-child {
+    grid-column: 1 / -1 !important;
+  }
+}
