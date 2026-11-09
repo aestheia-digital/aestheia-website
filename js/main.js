@@ -473,20 +473,6 @@ if (homeOffers) {
   window.addEventListener("resize", alignHomeOfferRows, { passive: true });
 }
 
-const homeEngagements = document.querySelector(".home-engagements");
-
-if (homeEngagements) {
-  const eyebrow = homeEngagements.querySelector(".eyebrow");
-  if (eyebrow) {
-    eyebrow.textContent = "Interventions";
-  }
-
-  const headingText = homeEngagements.querySelector("h2 span");
-  if (headingText) {
-    headingText.textContent = "Une intervention calibrée sur vos priorités";
-  }
-}
-
 const firstHomeStep = document.querySelector(".home-method .process-step:first-child");
 if (firstHomeStep) {
   const title = firstHomeStep.querySelector("h3");
@@ -644,4 +630,27 @@ if (aquaticSections.length) {
       });
     });
   });
+})();
+
+// Accueil, fondatrice : le chiffre monte de 0 à sa valeur à chaque arrivée dans l'écran.
+(() => {
+  const counters = document.querySelectorAll("[data-count-to]");
+  if (!counters.length || !("IntersectionObserver" in window)) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const run = (el) => {
+    const target = Number(el.dataset.countTo);
+    const start = performance.now();
+    const duration = 1600;
+    const step = (now) => {
+      const progress = Math.min(1, (now - start) / duration);
+      el.textContent = String(Math.round(target * (1 - Math.pow(1 - progress, 3))));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    el.textContent = "0";
+    requestAnimationFrame(step);
+  };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => { if (entry.isIntersecting) run(entry.target); });
+  }, { threshold: 0.6 });
+  counters.forEach((el) => observer.observe(el));
 })();
