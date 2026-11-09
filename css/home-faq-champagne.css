@@ -1,0 +1,12 @@
+/* Accueil uniquement : chevrons champagne de la FAQ, sans modifier les titres. */
+html body.home-page .faq-section .faq-accordion-item > summary::after,
+html[data-theme="dark"] body.home-page .faq-section .faq-accordion-item > summary::after,
+html.theme-dark body.home-page .faq-section .faq-accordion-item > summary::after {
+  border-color: #B89A72 !important;
+  transition: transform 260ms ease !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  html body.home-page .faq-section .faq-accordion-item > summary::after {
+    transition: none !important;
+  }
+}
