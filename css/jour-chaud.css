@@ -1,0 +1,102 @@
+/* Accueil, mode jour : chaleur lin et champagne tirée de la photo d'accueil.
+   Le bleu nuit et le violet de la charte restent les couleurs d'identité. Le mode nuit n'est pas concerné. */
+/* Les règles de fond du site sont posées dans le calque refonte avec !important : seul le calque typography, déclaré avant lui, peut les surclasser. */
+@layer typography {
+html[data-theme="light"] body.home-page {
+  --warm-linen: #F7F2EB;
+  --warm-ivory: #FBF8F3;
+  --warm-sand-line: #E6DCCF;
+  --warm-champagne: #B89A72;
+  --warm-champagne-ink: #8C6E48;
+  --warm-lavender: #EEEAFB;
+  background: var(--warm-ivory) !important;
+}
+
+/* Rythme des fonds : lin et ivoire en alternance, bleu nuit inchangé pour le header, le simulateur et le bandeau final */
+html[data-theme="light"] body.home-page #contenu > :is(.home-pains, .section-soft, .home-engagements, .faq-section) {
+  background-color: var(--warm-linen) !important;
+}
+
+html[data-theme="light"] body.home-page #contenu > :is(.home-demo, .home-method, .home-why, .location-section) {
+  background-color: var(--warm-ivory) !important;
+}
+
+html[data-theme="light"] body.home-page #contenu > .home-why .behind-section {
+  background: var(--warm-linen) !important;
+}
+
+/* Cartes blanches : bordure sable, liseré champagne, ombre chaude */
+html[data-theme="light"] body.home-page #contenu :is(.pain-card, .perf-block, .home-why .card, .home-method .process-step, .iv-item, .home-engagements .iv-group:last-child, .faq-accordion-item) {
+  border-color: var(--warm-sand-line) !important;
+  box-shadow: 0 14px 32px rgba(120, 96, 64, 0.08) !important;
+}
+
+html[data-theme="light"] body.home-page #contenu :is(.pain-card, .perf-block, .home-why .card, .iv-item, .home-engagements .iv-group:last-child) {
+  border-top: 2px solid var(--warm-champagne) !important;
+}
+
+html[data-theme="light"] body.home-page .home-engagements .iv-item > .iv-deliverable,
+html[data-theme="light"] body.home-page .home-engagements .iv-group:last-child > .iv-deliverable {
+  border-top-color: var(--warm-sand-line) !important;
+}
+
+/* Étiquettes d'indicateurs : lavande pâle, sans cadre */
+html[data-theme="light"] body.home-page .home-pains .perf-tags li {
+  border: 0 !important;
+  background: var(--warm-lavender) !important;
+  color: var(--color-ink) !important;
+}
+
+/* Surtitres : petit trait champagne */
+html[data-theme="light"] body.home-page #contenu > section:not(.home-hero):not(.conversion-band) .eyebrow {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+html[data-theme="light"] body.home-page #contenu > section:not(.home-hero):not(.conversion-band) .eyebrow::before {
+  content: "" !important;
+  flex: none !important;
+  width: 22px !important;
+  height: 1px !important;
+  background: var(--warm-champagne) !important;
+}
+
+/* Prix : champagne profond */
+html[data-theme="light"] body.home-page .home-engagements .iv-price-short {
+  color: var(--warm-champagne-ink) !important;
+}
+
+/* Bandeau de la phrase sur l'IA : matière de la photo d'accueil sous un voile bleu nuit */
+html[data-theme="light"] body.home-page .home-slogan-band {
+  padding: clamp(56px, 9vw, 104px) 0 !important;
+  border: 0 !important;
+  background:
+    linear-gradient(90deg, rgba(16, 25, 41, 0.93) 0%, rgba(16, 25, 41, 0.74) 46%, rgba(16, 25, 41, 0.22) 100%),
+    url("../assets/images/metiers/accueil_mur_eau_1280.webp") 72% 45% / cover no-repeat !important;
+}
+
+html[data-theme="light"] body.home-page .home-slogan-band .home-slogan {
+  max-width: 26ch !important;
+  margin: 0 !important;
+  text-align: left !important;
+  color: #F4EFE8 !important;
+  -webkit-text-fill-color: #F4EFE8 !important;
+}
+
+html[data-theme="light"] body.home-page .home-slogan[data-typo-role]:not(#_) {  
+    color: #F4EFE8 !important;
+    -webkit-text-fill-color: #F4EFE8 !important;
+    font-size: clamp(1.45rem, 3vw, 2.2rem) !important;
+    line-height: 1.25 !important;
+  }
+
+@media (max-width: 720px) {
+  html[data-theme="light"] body.home-page .home-slogan-band {
+    background:
+      linear-gradient(180deg, rgba(16, 25, 41, 0.9) 0%, rgba(16, 25, 41, 0.72) 100%),
+      url("../assets/images/metiers/accueil_mur_eau_1280.webp") 70% 50% / cover no-repeat !important;
+  }
+}
+
+}
