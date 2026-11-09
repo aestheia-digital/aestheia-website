@@ -1,0 +1,41 @@
+/* Accueil : respiration sous les secteurs et liseré champagne interactif. */
+@media (min-width: 901px) {
+  body.home-page #contenu > .section-soft:has(.sector-grid) {
+    padding-bottom: 48px !important;
+  }
+}
+@media (max-width: 900px) {
+  body.home-page #contenu > .section-soft:has(.sector-grid) {
+    padding-bottom: 28px !important;
+  }
+}
+body.home-page .sector-grid > .sector-card {
+  position: relative;
+  overflow: hidden;
+}
+body.home-page .sector-grid > .sector-card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: #B89A72;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 360ms ease;
+  pointer-events: none;
+}
+@media (hover: hover) {
+  body.home-page .sector-grid > .sector-card:hover::after {
+    transform: scaleX(1);
+  }
+}
+body.home-page .sector-grid > .sector-card:focus-visible::after {
+  transform: scaleX(1);
+}
+@media (prefers-reduced-motion: reduce) {
+  body.home-page .sector-grid > .sector-card::after {
+    transition: none;
+  }
+}
