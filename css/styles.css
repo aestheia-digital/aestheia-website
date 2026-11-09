@@ -7207,3 +7207,10 @@ html body.thalasso-page #contenu li.thalasso-reality-turnover > details.thalasso
     }
   }
 }
+
+
+/* Ressources : logos des trois assistants lisibles sur fond nuit.
+   Filtre limité aux images de ce module, sans toucher au mode jour. */
+html:is([data-theme="dark"],.theme-dark) .ia-resume img.ia-brand {
+  filter: grayscale(1) brightness(0) invert(1) !important;
+}
