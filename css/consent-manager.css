@@ -77,7 +77,7 @@ html:where([data-theme="light"]):not(.theme-dark) #contenu > .section:not(.conve
     color: #1e2a50;
   }
 
-/* Téléphone du header : passage bleu actif partout, sur toutes les pages et tous les supports. */
+/* Téléphone du header : reflet champagne sur toutes les pages et tous les supports. */
 .site-header .header-phone-direct,
 .site-header .header-phone-direct:hover,
 .site-header .header-phone-direct:focus-visible {
@@ -88,9 +88,9 @@ html:where([data-theme="light"]):not(.theme-dark) #contenu > .section:not(.conve
     105deg,
     var(--header-phone-base) 0%,
     var(--header-phone-base) 38%,
-    rgba(67, 91, 216, 0.34) 45%,
-    rgba(0, 176, 255, 0.42) 50%,
-    rgba(67, 91, 216, 0.34) 55%,
+    rgba(184, 154, 114, 0.34) 45%,
+    rgba(215, 190, 150, 0.42) 50%,
+    rgba(184, 154, 114, 0.34) 55%,
     var(--header-phone-base) 62%,
     var(--header-phone-base) 100%
   ) !important;
@@ -124,7 +124,7 @@ html:where([data-theme="dark"]):not(.theme-light) .site-header .header-phone-dir
   }
 }
 
-/* Accueil — desktop nuit uniquement : restaure un passage bleu franc sur le téléphone. */
+/* Accueil — desktop nuit : reflet champagne, durée et sens conservés. */
 @keyframes header-phone-night-blue-wave {
   0%, 28% { background-position: 100% 50%; }
   52%, 100% { background-position: 0% 50%; }
@@ -148,9 +148,9 @@ html:is(.theme-dark,.theme-light) body:has(.home-hero) .site-header .header-phon
       105deg,
       #ffffff 0%,
       #ffffff 31%,
-      #5d7cff 40%,
-      #00b0ff 48%,
-      #248cff 56%,
+      #B89A72 40%,
+      #D7BE96 48%,
+      #B89A72 56%,
       #ffffff 67%,
       #ffffff 100%
     ) !important;
@@ -160,7 +160,7 @@ html:is(.theme-dark,.theme-light) body:has(.home-hero) .site-header .header-phon
     -webkit-background-clip: text !important;
     background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
-    text-shadow: 0 0 10px rgba(0, 176, 255, 0.10);
+    text-shadow: 0 0 10px rgba(184, 154, 114, 0.10);
     animation: header-phone-night-blue-wave 6s ease-in-out infinite !important;
   }
 }
@@ -183,9 +183,9 @@ html:where([data-theme]):is(:is(.theme-dark,.theme-light),.theme-light) body:has
       105deg,
       #ffffff 0%,
       #ffffff 31%,
-      #5d7cff 40%,
-      #00b0ff 48%,
-      #248cff 56%,
+      #B89A72 40%,
+      #D7BE96 48%,
+      #B89A72 56%,
       #ffffff 67%,
       #ffffff 100%
     ) !important;
@@ -195,7 +195,7 @@ html:where([data-theme]):is(:is(.theme-dark,.theme-light),.theme-light) body:has
     -webkit-background-clip: text !important;
     background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
-    text-shadow: 0 0 10px rgba(0, 176, 255, 0.10);
+    text-shadow: 0 0 10px rgba(184, 154, 114, 0.10);
     animation: header-phone-night-blue-wave 6s ease-in-out infinite !important;
   }
 }
