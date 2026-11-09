@@ -1070,25 +1070,3 @@ html body.institutes-page #contenu .institutes-editorial-chapter > summary::afte
   border-color: #B89A72 !important;
 }
 
-/* Encadrés de conclusion : même beige que le thème jour, y compris en nuit.
-   La bordure verticale champagne reste inchangée. */
-html:is(.theme-dark,[data-theme="dark"]) body.institutes-page #contenu > .section :is(
-  .institutes-reality-conclusion,
-  .institutes-editorial-benefit,
-  .institutes-method-conclusion,
-  .institutes-onboarding-benefit
-) {
-  background: #F4EDE6 !important;
-  background-color: #F4EDE6 !important;
-  color: #1E2A50 !important;
-  border-color: #E3D5C8 !important;
-}
-html:is(.theme-dark,[data-theme="dark"]) body.institutes-page #contenu > .section :is(
-  .institutes-reality-conclusion,
-  .institutes-editorial-benefit,
-  .institutes-method-conclusion,
-  .institutes-onboarding-benefit
-) :is(p,strong,span,a) {
-  color: #1E2A50 !important;
-  -webkit-text-fill-color: #1E2A50 !important;
-}
