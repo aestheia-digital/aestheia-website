@@ -1480,3 +1480,13 @@ html body.home-page #derriere-aestheia h2 .founder-brand-rest {
   text-transform: none !important;
   vertical-align: baseline !important;
 }
+
+/* Fondatrice : chiffre animé 20+ champagne, sans modifier typographie.
+   Identique jour/nuit et desktop/tablette/mobile. */
+html body.home-page #derriere-aestheia .founder-stat__num,
+html body.home-page #derriere-aestheia .founder-stat__num span {
+  color: #C6A477 !important;
+  -webkit-text-fill-color: #C6A477 !important;
+  background: none !important;
+  background-image: none !important;
+}
