@@ -7285,3 +7285,36 @@ html:is([data-theme="dark"],.theme-dark) .ia-resume img.ia-brand {
 @media (min-width: 721px) and (max-width: 1050px) {
   .resources-photo-hero .hero-content { max-width: min(100%, 650px); }
 }
+
+/* Signature AesthéIA dans tous les footers : même rendu sur fond nuit
+   en modes jour/nuit et sur toutes les tailles d'écran. */
+html body .site-footer .footer-logo {
+  display: inline-flex !important;
+  align-items: baseline;
+  gap: 0;
+  font-family: var(--font-display) !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.025em;
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+html body .site-footer .footer-logo .brand-core {
+  display: inline-block;
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+html body .site-footer .footer-logo .brand-core::first-letter {
+  color: #C6A477 !important;
+  -webkit-text-fill-color: #C6A477 !important;
+}
+html body .site-footer .footer-logo .brand-ia,
+html[data-theme="light"] body .site-footer .footer-logo .brand-ia,
+html[data-theme="dark"] body .site-footer .footer-logo .brand-ia,
+html.theme-dark body .site-footer .footer-logo .brand-ia {
+  color: #C6A477 !important;
+  background: none !important;
+  background-image: none !important;
+  -webkit-background-clip: initial !important;
+  background-clip: initial !important;
+  -webkit-text-fill-color: #C6A477 !important;
+}
