@@ -364,7 +364,7 @@ if (!document.getElementById("commercial-alignment-rules")) {
   if (document.getElementById("brand-signature-test-styles")) return;
   const style = document.createElement("style");
   style.id = "brand-signature-test-styles";
-  style.textContent = \`
+  style.textContent = `
     .site-header .brand-signature-test {
       display: inline-flex !important;
       align-items: baseline !important;
@@ -401,7 +401,7 @@ if (!document.getElementById("commercial-alignment-rules")) {
         letter-spacing: -0.04em !important;
       }
     }
-  \`;
+  `;
   document.head.appendChild(style);
 })();
 
