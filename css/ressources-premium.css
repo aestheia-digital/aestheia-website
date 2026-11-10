@@ -110,9 +110,9 @@ html:not([data-theme="dark"]) body.resources-page .resource-card {
   }
   html[data-theme="dark"] body.resources-page #contenu .resource-card .resource-category,
   html.theme-dark body.resources-page #contenu .resource-card .resource-category {
-    background: #212A59 !important;
-    border-color: #212A59 !important;
-    color: #FFFFFF !important;
-    -webkit-text-fill-color: #FFFFFF !important;
+    background: #F2EDE5 !important;
+    border-color: #F2EDE5 !important;
+    color: #1B254D !important;
+    -webkit-text-fill-color: #1B254D !important;
   }
 }
