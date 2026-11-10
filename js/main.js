@@ -354,6 +354,57 @@ if (!document.getElementById("commercial-alignment-rules")) {
   document.head.appendChild(commercialStyles);
 }
 
+// Essai isolé du mot-symbole AesthéIA dans le header (jour/nuit, responsive).
+// La typographie et le numéro de téléphone restent ceux du site.
+(() => {
+  document.querySelectorAll(".site-header .brand-name").forEach((wordmark) => {
+    wordmark.classList.add("brand-signature-test");
+    wordmark.innerHTML = '<span class="brand-signature-a">A</span><span class="brand-signature-rest">esthéIA</span>';
+  });
+  if (document.getElementById("brand-signature-test-styles")) return;
+  const style = document.createElement("style");
+  style.id = "brand-signature-test-styles";
+  style.textContent = \`
+    .site-header .brand-signature-test {
+      display: inline-flex !important;
+      align-items: baseline !important;
+      white-space: nowrap;
+      font-family: var(--font-display), Georgia, serif !important;
+      font-size: clamp(1.08rem, 1.35vw, 1.35rem) !important;
+      font-weight: 400 !important;
+      line-height: 1.05 !important;
+      letter-spacing: -0.025em !important;
+    }
+    .site-header .brand-signature-test .brand-signature-a {
+      color: #B99B73 !important;
+      font-size: 1.30em;
+      font-weight: 400 !important;
+      line-height: 0.92;
+    }
+    .site-header .brand-signature-test .brand-signature-rest {
+      color: #0B1232 !important;
+      background: none !important;
+      -webkit-background-clip: initial !important;
+      background-clip: initial !important;
+      -webkit-text-fill-color: #0B1232 !important;
+      font-weight: 400 !important;
+      line-height: 1;
+    }
+    html.theme-dark .site-header .brand-signature-test .brand-signature-rest,
+    html[data-theme="dark"] .site-header .brand-signature-test .brand-signature-rest {
+      color: #FFFFFF !important;
+      -webkit-text-fill-color: #FFFFFF !important;
+    }
+    @media (max-width: 720px) {
+      .site-header .brand-signature-test {
+        font-size: clamp(0.92rem, 3.6vw, 1.13rem) !important;
+        letter-spacing: -0.04em !important;
+      }
+    }
+  \`;
+  document.head.appendChild(style);
+})();
+
 const homeProblems = document.querySelector(".home-problems");
 
 if (homeProblems) {
