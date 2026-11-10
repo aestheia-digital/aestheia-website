@@ -724,3 +724,23 @@ if (aquaticSections.length) {
   }, { threshold: 0.6 });
   counters.forEach((el) => observer.observe(el));
 })();
+
+
+/* Identité AesthéIA : même signature dans tous les footers.
+   Réécrit les anciens fragments Aesthé + IA pour garantir le A champagne,
+   le reste blanc, sans dépendre de ::first-letter ni du thème. */
+(() => {
+  const paintSignature = (element) => {
+    if (!element || element.querySelector(".signature-a")) return;
+    const name = element.textContent.replace(/\s+/g, "").trim();
+    if (name !== "AesthéIA") return;
+    const a = document.createElement("span");
+    a.className = "signature-a";
+    a.textContent = "A";
+    const rest = document.createElement("span");
+    rest.className = "signature-rest";
+    rest.textContent = "esthéIA";
+    element.replaceChildren(a, rest);
+  };
+  document.querySelectorAll(".site-footer .footer-logo, .location-section .location-heading h2").forEach(paintSignature);
+})();
