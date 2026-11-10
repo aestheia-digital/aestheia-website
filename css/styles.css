@@ -7335,3 +7335,22 @@ html body :is(.site-footer .footer-logo, .location-section .location-heading h2)
   -webkit-text-fill-color: #FFFFFF !important;
   background: none !important;
 }
+
+/* Accueil mode jour : identité AesthéIA et coordonnées en bleu nuit.
+   Le A est champagne directement dans le HTML pour ne plus subir la cascade. */
+@layer refonte {
+  html[data-theme="light"] body.home-page #contenu .behind-section .founder-brand-rest,
+  html.theme-light body.home-page #contenu .behind-section .founder-brand-rest,
+  html[data-theme="light"] body.home-page #contenu .location-section .signature-rest,
+  html.theme-light body.home-page #contenu .location-section .signature-rest {
+    color: #17234B !important;
+    -webkit-text-fill-color: #17234B !important;
+  }
+  html[data-theme="light"] body.home-page #contenu .location-section .location-heading a.location-contact-item,
+  html[data-theme="light"] body.home-page #contenu .location-section .location-heading a.location-contact-item *,
+  html.theme-light body.home-page #contenu .location-section .location-heading a.location-contact-item,
+  html.theme-light body.home-page #contenu .location-section .location-heading a.location-contact-item * {
+    color: #17234B !important;
+    -webkit-text-fill-color: #17234B !important;
+  }
+}
