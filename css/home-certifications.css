@@ -1464,3 +1464,19 @@ html body.home-page #derriere-aestheia h2 .founder-brand-rest {
   -webkit-text-fill-color: #FFFFFF !important;
   background: none !important;
 }
+
+/* Fondatrice : le A champagne et le IA final partagent exactement
+   la même typographie et la même taille, sur tous les supports. */
+html body.home-page #derriere-aestheia h2 .founder-brand,
+html body.home-page #derriere-aestheia h2 .founder-brand-a,
+html body.home-page #derriere-aestheia h2 .founder-brand-rest {
+  font-family: inherit !important;
+  font-size: 1em !important;
+  font-weight: inherit !important;
+  font-style: inherit !important;
+  font-variant: normal !important;
+  line-height: inherit !important;
+  letter-spacing: inherit !important;
+  text-transform: none !important;
+  vertical-align: baseline !important;
+}
