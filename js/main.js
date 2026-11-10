@@ -732,7 +732,7 @@ if (aquaticSections.length) {
 (() => {
   const paintSignature = (element) => {
     if (!element || element.querySelector(".signature-a")) return;
-    const name = element.textContent.replace(/\\s+/g, "").trim();
+    const name = element.textContent.replace(/\s+/g, "").trim();
     if (name !== "AesthéIA") return;
     const a = document.createElement("span");
     a.className = "signature-a";
