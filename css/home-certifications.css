@@ -1407,3 +1407,24 @@ html[data-theme="dark"] .home-engagements .home-section-accordion--plain {
     }
   }
 }
+
+/* Phrase au-dessus du simulateur : lisibilité renforcée sans graisse.
+   Desktop et tablette, identique en jour/nuit ; mobile inchangé. */
+@layer typography {
+  @media (min-width: 721px) {
+    html body.home-page .home-slogan-band .home-slogan,
+    html body.home-page .home-slogan-band .home-slogan[data-typo-role]:not(#_) {
+      font-size: clamp(1.28rem, 2.05vw, 1.75rem) !important;
+      font-weight: 400 !important;
+      line-height: 1.45 !important;
+      max-width: 100% !important;
+      text-wrap: pretty;
+    }
+  }
+  @media (min-width: 721px) and (max-width: 1050px) {
+    html body.home-page .home-slogan-band .home-slogan,
+    html body.home-page .home-slogan-band .home-slogan[data-typo-role]:not(#_) {
+      font-size: clamp(1.24rem, 2.35vw, 1.52rem) !important;
+    }
+  }
+}
