@@ -62,7 +62,7 @@ html:not([data-theme="dark"]) body.resources-page .resource-card > a.text-link:h
 /* Liseré champagne discret en bas de toutes les cartes, mode jour. */
 html[data-theme="light"] body.resources-page .resource-card,
 html:not([data-theme="dark"]) body.resources-page .resource-card {
-  border-bottom: 2px solid #B89A72 !important;
+  border-top: 2px solid #B89A72 !important;\n  border-bottom: 0 !important;
 }
 
 /* Priorité réelle : les styles globaux utilisent @layer refonte avec !important.
@@ -83,8 +83,6 @@ html:not([data-theme="dark"]) body.resources-page .resource-card {
     -webkit-text-fill-color: #FFFFFF !important;
   }
   html[data-theme="light"] body.resources-page #contenu .resource-card {
-    border-bottom-color: #B89A72 !important;
-    border-bottom-style: solid !important;
-    border-bottom-width: 3px !important;
+    border-top-color: #B89A72 !important;\n    border-top-style: solid !important;\n    border-top-width: 3px !important;\n    border-bottom-width: 0 !important;
   }
 }
