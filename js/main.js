@@ -395,6 +395,23 @@ if (!document.getElementById("commercial-alignment-rules")) {
       color: #FFFFFF !important;
       -webkit-text-fill-color: #FFFFFF !important;
     }
+    /* Ajustement desktop : signature plus présente, champagne plus contrasté en jour. */
+    @media (min-width: 1051px) {
+      .site-header .brand-signature-test {
+        font-size: clamp(1.42rem, 1.6vw, 1.58rem) !important;
+      }
+      .site-header .header-phone-direct {
+        position: relative;
+        top: 3px;
+      }
+    }
+    @media (min-width: 1051px) {
+      html[data-theme="light"] .site-header .brand-signature-test .brand-signature-a,
+      html.theme-light .site-header .brand-signature-test .brand-signature-a,
+      html:not([data-theme="dark"]):not(.theme-dark) .site-header .brand-signature-test .brand-signature-a {
+        color: #9E794D !important;
+      }
+    }
     @media (max-width: 720px) {
       .site-header .brand-signature-test {
         font-size: clamp(0.92rem, 3.6vw, 1.13rem) !important;
