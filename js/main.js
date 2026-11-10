@@ -230,6 +230,17 @@ const commercialPages = [
 const currentPath = window.location.pathname;
 const isCommercialPage = commercialPages.some((path) => currentPath === path || currentPath.endsWith(path));
 
+// Navigation commune : téléphone présent sur toutes les pages, y compris Contact et Ressources.
+const brandLink = document.querySelector(".site-header .brand-link");
+if (brandLink && !document.querySelector(".site-header .header-phone-direct")) {
+  const headerPhone = document.createElement("a");
+  headerPhone.className = "header-phone-direct";
+  headerPhone.href = "tel:+33642789057";
+  headerPhone.setAttribute("aria-label", "Appeler AesthéIA au 06 42 78 90 57");
+  headerPhone.textContent = "06 42 78 90 57";
+  brandLink.insertAdjacentElement("afterend", headerPhone);
+}
+
 if (isCommercialPage) {
   document.querySelectorAll(".hero .hero-actions .btn").forEach((button) => {
     const label = button.textContent.trim();
@@ -239,15 +250,6 @@ if (isCommercialPage) {
     }
   });
 
-  const brandLink = document.querySelector(".site-header .brand-link");
-  if (brandLink && !document.querySelector(".site-header .header-phone-direct")) {
-    const headerPhone = document.createElement("a");
-    headerPhone.className = "header-phone-direct";
-    headerPhone.href = "tel:+33642789057";
-    headerPhone.setAttribute("aria-label", "Appeler AesthéIA au 06 42 78 90 57");
-    headerPhone.textContent = "06 42 78 90 57";
-    brandLink.insertAdjacentElement("afterend", headerPhone);
-  }
 }
 
 if (!document.getElementById("commercial-alignment-rules")) {
