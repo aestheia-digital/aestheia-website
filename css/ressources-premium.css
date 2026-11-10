@@ -1,0 +1,43 @@
+/* Ressources uniquement : cadrage prêt pour le futur visuel éditorial.
+   Le fichier photo actuel reste en place jusqu'à l'ajout de l'image validée. */
+body.resources-page .resources-photo-hero .home-hero-media img {
+  object-fit: cover;
+  object-position: 72% center;
+}
+@media (min-width: 721px) and (max-width: 1050px) {
+  body.resources-page .resources-photo-hero .home-hero-media img { object-position: 75% center; }
+}
+@media (max-width: 720px) {
+  body.resources-page .resources-photo-hero .home-hero-media img { object-position: 78% center; }
+}
+/* Boutons de lecture : champagne soutenu, texte bleu nuit, jour et nuit. */
+html body.resources-page .resource-card > a.text-link,
+html[data-theme="light"] body.resources-page .resource-card > a.text-link,
+html[data-theme="dark"] body.resources-page .resource-card > a.text-link {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  width: fit-content;
+  max-width: 100%;
+  padding: .72rem 1rem;
+  border: 1px solid #B89A72;
+  border-radius: 6px;
+  background: #B89A72;
+  color: #101B39;
+  -webkit-text-fill-color: #101B39;
+  font-weight: 600;
+  line-height: 1.4;
+  text-decoration: none;
+  white-space: normal;
+  transition: background-color .2s ease, border-color .2s ease;
+}
+html body.resources-page .resource-card > a.text-link:hover {
+  background: #D1B995;
+  border-color: #D1B995;
+  color: #101B39;
+  -webkit-text-fill-color: #101B39;
+}
+html body.resources-page .resource-card > a.text-link:focus-visible {
+  outline: 3px solid #101B39;
+  outline-offset: 3px;
+}
