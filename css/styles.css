@@ -7273,3 +7273,15 @@ html:is([data-theme="dark"],.theme-dark) .ia-resume img.ia-brand {
   body.home-page .home-hero .hero-title-tablet-line { display: block; }
   body.home-page .home-hero .hero-content { max-width: min(100%, 650px); }
 }
+
+/* Harmonisation des bandeaux Contact et Ressources avec l'accueil.
+   Ne touche pas à la navigation des autres pages. */
+.contact-photo-hero,
+.resources-photo-hero { position: relative; isolation: isolate; overflow: hidden; }
+.contact-photo-hero .hero-inner,
+.resources-photo-hero .hero-inner { position: relative; z-index: 1; }
+.resources-photo-hero .hero-content { max-width: min(100%, 820px); }
+.resources-photo-hero h1 { max-width: 820px; }
+@media (min-width: 721px) and (max-width: 1050px) {
+  .resources-photo-hero .hero-content { max-width: min(100%, 650px); }
+}
