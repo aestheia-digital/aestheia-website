@@ -1428,3 +1428,27 @@ html[data-theme="dark"] .home-engagements .home-section-accordion--plain {
     }
   }
 }
+
+/* Phrase sur UNE ligne, largeur du simulateur : desktop/tablette seulement.
+   Taille fluide selon la largeur disponible, sans graisse supplémentaire. */
+@layer typography {
+  @media (min-width: 721px) {
+    html body.home-page .home-slogan-band .container {
+      max-width: 100% !important;
+      width: 100% !important;
+    }
+    html body.home-page .home-slogan-band .home-slogan,
+    html body.home-page .home-slogan-band .home-slogan[data-typo-role]:not(#_) {
+      display: block !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      white-space: nowrap !important;
+      text-wrap: nowrap !important;
+      font-size: clamp(0.75rem, 1.27vw, 1.38rem) !important;
+      font-weight: 400 !important;
+      line-height: 1.45 !important;
+      letter-spacing: -0.018em !important;
+      text-align: center !important;
+    }
+  }
+}
