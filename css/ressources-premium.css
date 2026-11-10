@@ -41,3 +41,26 @@ html body.resources-page .resource-card > a.text-link:focus-visible {
   outline: 3px solid #101B39;
   outline-offset: 3px;
 }
+
+/* Mode jour uniquement : CTA lisible, blanc sur champagne plus profond.
+   La version nuit validée reste inchangée. */
+html[data-theme="light"] body.resources-page .resource-card > a.text-link,
+html:not([data-theme="dark"]) body.resources-page .resource-card > a.text-link {
+  background: #80613B !important;
+  border-color: #80613B !important;
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  text-shadow: none !important;
+}
+html[data-theme="light"] body.resources-page .resource-card > a.text-link:hover,
+html:not([data-theme="dark"]) body.resources-page .resource-card > a.text-link:hover {
+  background: #70532F !important;
+  border-color: #70532F !important;
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+/* Liseré champagne discret en bas de toutes les cartes, mode jour. */
+html[data-theme="light"] body.resources-page .resource-card,
+html:not([data-theme="dark"]) body.resources-page .resource-card {
+  border-bottom: 2px solid #B89A72 !important;
+}
