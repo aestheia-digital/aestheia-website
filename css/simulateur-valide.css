@@ -34,3 +34,57 @@
     html body.home-page .home-slogan { white-space: normal !important; }
   }
 }
+
+/* Ajustements validés : respiration du simulateur, tous écrans, jour et nuit. */
+@layer typography {
+  html[data-theme] body.home-page .sim-band {
+    padding-block: 24px !important;
+  }
+  html[data-theme] body.home-page .sim-grid {
+    column-gap: clamp(24px, 2.4vw, 40px) !important;
+    row-gap: 22px !important;
+  }
+  html[data-theme] body.home-page .sim-eyebrow {
+    margin-bottom: 15px !important;
+  }
+  html[data-theme] body.home-page .sim-label {
+    margin-bottom: 9px !important;
+  }
+  html[data-theme] body.home-page .sim-result {
+    align-self: center;
+  }
+  html[data-theme] body.home-page .sim #sim-gain {
+    font-weight: 400 !important;
+  }
+  html[data-theme] body.home-page .sim .sim-cta {
+    background: #fff !important;
+    --sim-btn-bg: #fff;
+  }
+  @media (min-width: 1100px) {
+    html[data-theme] body.home-page .home-slogan {
+      display: block;
+      width: 100%;
+      max-width: none !important;
+      text-align: center;
+    }
+  }
+  @media (max-width: 900px) {
+    html[data-theme] body.home-page .sim-grid {
+      row-gap: 25px !important;
+    }
+    html[data-theme] body.home-page .sim-band {
+      padding-block: 25px !important;
+    }
+  }
+  @media (max-width: 520px) {
+    html[data-theme] body.home-page .sim-grid {
+      row-gap: 24px !important;
+    }
+    html[data-theme] body.home-page .sim-band {
+      padding: 24px 18px !important;
+    }
+    html[data-theme] body.home-page .sim-eyebrow {
+      margin-bottom: 17px !important;
+    }
+  }
+}
