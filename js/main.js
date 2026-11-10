@@ -377,7 +377,7 @@ if (!document.getElementById("commercial-alignment-rules")) {
     }
     .site-header .brand-signature-test .brand-signature-a {
       color: #B99B73 !important;
-      font-size: 1.12em;
+      font-size: 1.30em;
       font-weight: 400 !important;
       line-height: 0.92;
     }
