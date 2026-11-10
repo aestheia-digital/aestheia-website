@@ -7267,3 +7267,9 @@ html:is([data-theme="dark"],.theme-dark) .ia-resume img.ia-brand {
     border-color: #17234B !important;
   }
 }
+
+/* Accueil tablette uniquement : préserver la photo à droite du titre. */
+@media (min-width: 721px) and (max-width: 1050px) {
+  body.home-page .home-hero .hero-title-tablet-line { display: block; }
+  body.home-page .home-hero .hero-content { max-width: min(100%, 650px); }
+}
