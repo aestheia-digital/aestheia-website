@@ -33,18 +33,19 @@
 " vec3 m=texture2D(uMask,uv).rgb;float t=uT;vec2 q=uv*vec2(ir,1.);vec2 d=vec2(0.);vec3 lit=vec3(1.),cw=vec3(0.);float k=0.,fl2=0.;",
 " if(m.r>.004){",
 "  k=m.r*smoothstep(.06,.15,uv.y);",
+  "  float yb=.80+(uv.x-.933)*1.55;k*=1.-smoothstep(yb-.12,yb-.04,uv.y);",
 // ombres sur l'eau : la lumiere de fond va et vient
 "  float ph=fbm(q*2.6+7.)*8.+q.y*2.5;",
 "  vec2 u2=uv+uAmp*vec2(wind(t,ph)*.0065,wind(t*1.13+4.,ph*1.3+2.)*.0033);u2.x=max(u2.x,.9125);",
 "  vec3 base=texture2D(uSoft,u2).rgb;float lb=dot(base,vec3(.333));",
 // vaguelettes qui descendent
-"  float y1=q.y-t*.19,wx=q.x*24.;",
+"  float y1=q.y-t*.105,wx=q.x*24.;",
 "  float r1=n(vec2(wx+1.3*n(vec2(q.x*7.,y1*5.)),y1*64.));",
 "  float r2=n(vec2(wx+1.3*n(vec2(q.x*7.,(y1+.004)*5.)),(y1+.004)*64.));",
 "  float gy=(r2-r1)/.004;",
 "  vec2 dw=vec2(0.,gy*.00003*uAmp);",
 // la texture de l'eau elle-meme coule vers le bas (deux passes fondues)
-"  float p1=fract(t/1.1),p2=fract(t/1.1+.5),w=abs(1.-2.*p1);",
+"  float p1=fract(t/2.),p2=fract(t/2.+.5),w=abs(1.-2.*p1);",
 "  vec2 a1=uv+dw-vec2(0.,(p1-.5)*.075),a2=uv+dw-vec2(0.,(p2-.5)*.075);",
 "  vec3 s1=texture2D(uSoft,a1).rgb,s2=texture2D(uSoft,a2).rgb;",
 "  vec3 d1=(texture2D(uImg,a1).rgb-s1)*texture2D(uMask,a1).r*clamp((lb+.03)/(dot(s1,vec3(.333))+.03),.5,1.6);",
@@ -52,20 +53,30 @@
 "  vec3 det=(d1*(1.-w)+d2*w)/sqrt(w*w+(1.-w)*(1.-w));",
 "  cw=base+det*1.1;",
 // filets brillants qui tombent
-"  float f1=n(vec2(q.x*170.,(q.y-t*.33)*12.)+3.7),f2=n(vec2(q.x*110.+40.,(q.y-t*.23)*7.)+1.2);",
+"  float f1=n(vec2(q.x*170.,(q.y-t*.14)*9.)+3.7),f2=n(vec2(q.x*110.+40.,(q.y-t*.095)*5.)+1.2);",
 "  float lum2=.3+.7*smoothstep(.3,.8,lb);",
-"  cw+=vec3(1.,.97,.9)*(pow(f1,5.)*.9+pow(f2,6.)*.6)*uAmp*.13*lum2;",
+"  cw+=vec3(1.,.97,.9)*(pow(f1,5.)*.9+pow(f2,6.)*.6)*uAmp*.075*lum2;",
 "  cw+=vec3(1.,.97,.9)*clamp(gy*.012,-.6,1.)*uAmp*.035*(.4+.6*lb);",
-"  cw*=1.+uAmp*.06*(n(vec2(q.x*5.,(q.y-t*.14)*4.))-.5);",
+"  cw*=1.+uAmp*.06*(n(vec2(q.x*5.,(q.y-t*.07)*4.))-.5);",
 " }",
 " if(m.g>.004){",
 "  float ph=fbm(q*2.2)*9.+q.x*2.;",
 "  float fl=sin(t*4.3+n(q*13.)*18.)*(.5+.5*sin(t*.31+ph*.2));",
 "  vec2 ds=uAmp*vec2(wind(t,ph)*.011+fl*.0014,wind(t*1.13+4.,ph*1.3+2.)*.0052+fl*.0008);",
-"  vec2 u3=uv+ds;if(uv.x<.7){u3=clamp(u3,vec2(.445,.15),vec2(.614,.69));}else{u3=clamp(u3,vec2(.757,.676),vec2(.925,.935));}",
+"  if(uv.x>.7)ds*=2.3;",
+  "  vec2 u3=uv+ds;if(uv.x<.7){u3=clamp(u3,vec2(.445,.15),vec2(.614,.69));}else{u3=clamp(u3,vec2(.757,.676),vec2(.925,.935));}",
 "  lit=mix(lit,ratio(uv,u3),m.g);",
+  "  if(uv.x>.7){float dq=fbm(vec2(q.x*8.+wind(t,ph)*.55+q.y*3.,q.y*6.5+wind(t*1.13+4.,ph*1.3+2.)*.35)+5.);lit*=1.+m.g*uAmp*(smoothstep(.34,.7,dq)-.5)*.2;}",
 " }",
-" if(m.b>.004){",
+" if(m.b>.004&&uv.y>=.688){",
+  "  float ph=fbm(q*1.8+3.)*6.+q.x*2.;",
+  "  float wa=wind(t,ph),wb=wind(t*1.13+4.,ph*1.3+2.);",
+  "  vec2 u4=clamp(uv+uAmp*vec2(wa*.009,wb*.004),vec2(.5,.71),vec2(.72,1.));",
+  "  lit=mix(lit,ratio(uv,u4),m.b*step(uv.x,.72));",
+  "  float dp=fbm(vec2(q.x*6.5+wa*.4+q.y*2.5,q.y*19.+wb*.3)+11.);",
+  "  lit*=1.+m.b*uAmp*(smoothstep(.36,.68,dp)-.5)*.3;",
+  " }",
+  " if(m.b>.004&&uv.y<.688){",
 "  float ph=fbm(q*3.)*4.+q.y*2.5;",
 "  float a=wind(t*.55,ph),b=wind(t*.6+2.,ph*1.4+1.);",
 "  float fl=sin(t*2.4+n(q*38.)*25.)*(.55+.45*sin(t*.27+ph*.3));",
@@ -135,7 +146,7 @@
   function init() {
     if (starting || ready || failed) return;
     starting = true;
-    Promise.all([decoded(), load(BASE + "accueil_mur_eau_masque.png"), load(BASE + "accueil_mur_eau_lumiere.webp")]).then(function (r) {
+    Promise.all([decoded(), load(BASE + "accueil_mur_eau_masque.png?v=2"), load(BASE + "accueil_mur_eau_lumiere.webp")]).then(function (r) {
       cv = document.createElement("canvas");
       cv.className = "home-hero-water";
       cv.setAttribute("aria-hidden", "true");
