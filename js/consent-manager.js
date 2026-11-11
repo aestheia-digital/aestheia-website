@@ -287,6 +287,22 @@
     applyPreferences();
   }
 
+  const CONTACT_CLICK_EVENTS = [
+    { host: "forms.gle", eventName: "clic_formulaire_projet" },
+    { host: "calendar.app.google", eventName: "clic_rdv" },
+  ];
+
+  function trackContactClick(event) {
+    if (!preferences.analytics || typeof window.gtag !== "function") return;
+    const link = event.target.closest("a[href]");
+    if (!link) return;
+    let hostname = "";
+    try { hostname = new URL(link.href, location.href).hostname; } catch (error) { return; }
+    const match = CONTACT_CLICK_EVENTS.find((item) => item.host === hostname);
+    if (!match) return;
+    window.gtag("event", match.eventName, { page_path: location.pathname });
+  }
+
   function trapDialogFocus(event) {
     const dialog = document.querySelector("[data-consent-dialog]");
     if (event.key === "Escape") return closePreferences();
@@ -319,6 +335,7 @@
   document.addEventListener("click", (event) => {
     if (event.target.closest("[data-manage-cookies]")) { event.preventDefault(); openPreferences(); }
     if (event.target.closest("[data-enable-map]")) { event.preventDefault(); openPreferences({ suggestExternal: true }); }
+    trackContactClick(event);
   });
 
   window.AestheiaConsent = Object.freeze({ openPreferences, categories: CONSENT_CATEGORIES });
