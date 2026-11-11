@@ -7391,3 +7391,17 @@ html:not(.theme-dark):not([data-theme="dark"]) body .site-header .brand-link::be
     flex-basis: 32px !important;
   }
 }
+
+/* Signature AesthéIA : compensation optique de la capitale A champagne.
+   Le A doit atteindre la hauteur visuelle des capitales IA finales.
+   Tous les mots-sigles, thèmes et tailles d'écran ; monogramme SVG exclu. */
+html body :is(.signature-a, .founder-brand-a, .brand-signature-a) {
+  display: inline-block !important;
+  font-family: inherit !important;
+  font-weight: inherit !important;
+  font-style: inherit !important;
+  font-size: 1.09em !important;
+  line-height: 1 !important;
+  vertical-align: baseline !important;
+  letter-spacing: inherit !important;
+}
