@@ -7354,3 +7354,10 @@ html body :is(.site-footer .footer-logo, .location-section .location-heading h2)
     -webkit-text-fill-color: #17234B !important;
   }
 }
+
+/* Monogramme A du header : contour champagne discret en mode jour,
+   sur ordinateur, tablette et mobile. Mode nuit blanc inchangé. */
+html[data-theme="light"] body .site-header .brand-link::before,
+html:not(.theme-dark):not([data-theme="dark"]) body .site-header .brand-link::before {
+  border-color: #C6A477 !important;
+}
