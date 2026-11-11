@@ -85,3 +85,46 @@
     box-shadow: none !important;
   }
 }
+
+/* Instituts nuit : encadrés éditoriaux sans aplat ni filet ; texte blanc. */
+@layer typography {
+  html:is(.theme-dark, [data-theme="dark"]) body.institutes-page #contenu > .section :is(
+    .institutes-reality-conclusion, .institutes-editorial-benefit,
+    .institutes-method-conclusion, .institutes-onboarding-benefit
+  ) {
+    background: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+  }
+  html:is(.theme-dark, [data-theme="dark"]) body.institutes-page #contenu > .section :is(
+    .institutes-reality-conclusion, .institutes-editorial-benefit,
+    .institutes-method-conclusion, .institutes-onboarding-benefit
+  ) :is(strong, a) {
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+  }
+  html:is(.theme-dark, [data-theme="dark"]) body.institutes-page #contenu > .section :is(
+    .institutes-reality-conclusion, .institutes-editorial-benefit,
+    .institutes-method-conclusion, .institutes-onboarding-benefit
+  )::before {
+    content: none !important;
+    display: none !important;
+  }
+  /* Titres des cartes Systèmes et Méthode : violet lisible sur bleu nuit. */
+  html:is(.theme-dark, [data-theme="dark"]) body.institutes-page #contenu :is(
+    .institutes-method-card, .institutes-editorial-heading, .institutes-onboarding-heading
+  ) :is(h3, h3 span) {
+    color: #B69CFF !important;
+    -webkit-text-fill-color: #B69CFF !important;
+  }
+  html:is(.theme-dark, [data-theme="dark"]) body.institutes-page #contenu :is(
+    .institutes-editorial-chapter, .institutes-onboarding-block, .sector-card-accordion
+  ) > summary::after {
+    border-color: #FFFFFF !important;
+  }
+}
