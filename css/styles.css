@@ -7361,3 +7361,33 @@ html[data-theme="light"] body .site-header .brand-link::before,
 html:not(.theme-dark):not([data-theme="dark"]) body .site-header .brand-link::before {
   border-color: #C6A477 !important;
 }
+
+/* Monogramme A : 36 px uniquement sur mobile (jour et nuit).
+   Sur les très petits écrans, 32 px pour préserver téléphone et navigation.
+   Aucun changement tablette/ordinateur, ni de police ou de couleurs. */
+@media (max-width: 720px) {
+  html body .site-header .brand-link {
+    flex: 0 0 36px !important;
+    width: 36px !important;
+    min-width: 36px !important;
+    height: 36px !important;
+  }
+  html body .site-header .brand-link::before {
+    width: 36px !important;
+    height: 36px !important;
+    flex: 0 0 36px !important;
+  }
+}
+@media (max-width: 380px) {
+  html body .site-header .brand-link {
+    flex-basis: 32px !important;
+    width: 32px !important;
+    min-width: 32px !important;
+    height: 32px !important;
+  }
+  html body .site-header .brand-link::before {
+    width: 32px !important;
+    height: 32px !important;
+    flex-basis: 32px !important;
+  }
+}
