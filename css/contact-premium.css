@@ -247,6 +247,7 @@ html body #contenu > .contact-signature-section .contact-signature-icon {
     max-width: 1120px;
     padding: clamp(1.5rem, 3vw, 2.25rem) !important;
     border: 1px solid #E6E8EF !important;
+    border-top: 2px solid #B89A72 !important;
     border-radius: 20px;
     background: #FFFFFF !important;
     box-shadow: none !important;
