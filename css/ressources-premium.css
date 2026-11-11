@@ -81,10 +81,7 @@ html:not([data-theme="dark"]) body.resources-page .resource-card {
     letter-spacing: 0 !important;
     line-height: 1.4 !important;
     white-space: normal !important;
-    text-decoration-line: underline !important;
-    text-decoration-thickness: 1px !important;
-    text-underline-offset: .28em !important;
-    text-decoration-skip-ink: auto !important;
+    text-decoration: none !important;
   }
   html body.resources-page #contenu .resource-card > a.text-link::after {
     content: "↗" !important;
@@ -103,11 +100,11 @@ html:not([data-theme="dark"]) body.resources-page .resource-card {
   html[data-theme="light"] body.resources-page #contenu .resource-card > a.text-link:focus-visible {
     color: #1E2A50 !important;
     -webkit-text-fill-color: #1E2A50 !important;
-    text-decoration-color: #B89A72 !important;
+    text-decoration-color: #1E2A50 !important;
   }
   html[data-theme="light"] body.resources-page #contenu .resource-card > a.text-link::after {
-    color: #B89A72 !important;
-    -webkit-text-fill-color: #B89A72 !important;
+    color: #1E2A50 !important;
+    -webkit-text-fill-color: #1E2A50 !important;
   }
   html[data-theme="dark"] body.resources-page #contenu .resource-card > a.text-link,
   html[data-theme="dark"] body.resources-page #contenu .resource-card > a.text-link:visited,
@@ -128,5 +125,24 @@ html:not([data-theme="dark"]) body.resources-page .resource-card {
   html body.resources-page #contenu .resource-card > a.text-link:focus-visible {
     outline: 2px solid #B89A72 !important;
     outline-offset: 4px !important;
+  }
+}
+
+/* Le soulignement est porté par le texte uniquement : jamais par la flèche ::after. */
+@layer refonte {
+  html body.resources-page #contenu .resource-card > a.text-link .resource-read-label {
+    display: inline !important;
+    text-decoration-line: underline !important;
+    text-decoration-style: solid !important;
+    text-decoration-thickness: 1px !important;
+    text-underline-offset: .28em !important;
+    text-decoration-skip-ink: auto !important;
+  }
+  html[data-theme="light"] body.resources-page #contenu .resource-card > a.text-link .resource-read-label {
+    text-decoration-color: #1E2A50 !important;
+  }
+  html[data-theme="dark"] body.resources-page #contenu .resource-card > a.text-link .resource-read-label,
+  html.theme-dark body.resources-page #contenu .resource-card > a.text-link .resource-read-label {
+    text-decoration-color: #D1B995 !important;
   }
 }
