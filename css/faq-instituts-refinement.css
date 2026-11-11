@@ -24,7 +24,7 @@
     .institutes-reality-conclusion, .institutes-editorial-benefit,
     .institutes-method-conclusion, .institutes-onboarding-benefit
   ),
-  html:is(.theme-dark, [data-theme="dark"]) body.institutes-page #contenu .assistant-schema .node.assistant,
+  html:is(.theme-dark, [data-theme="dark"]) body.institutes-page #contenu .assistant-schema :is(.node.assistant, .node.validation),
   html:is(.theme-dark, [data-theme="dark"]) body.institutes-page #contenu :is(.btn-primary, .btn-secondary) {
     background: var(--institutes-night-cream) !important;
     background-image: none !important;
@@ -42,10 +42,89 @@
   }
   html:is(.theme-dark, [data-theme="dark"]) body.institutes-page #contenu .faq-accordion-item > summary,
   html:is(.theme-dark, [data-theme="dark"]) body.institutes-page #contenu .faq-accordion-item > summary :is(h3, span, strong) {
-    color: var(--institutes-night-cream) !important;
-    -webkit-text-fill-color: var(--institutes-night-cream) !important;
+    color: #C6A477 !important;
+    -webkit-text-fill-color: #C6A477 !important;
   }
   html:is(.theme-dark, [data-theme="dark"]) body.institutes-page #contenu :is(.btn-primary, .btn-secondary):is(:hover, :focus-visible) {
     background: #E8DCC9 !important;
+  }
+}
+
+/* Retouches Instituts, mode nuit, toutes largeurs. */
+@layer typography {
+  html:is(.theme-dark, [data-theme="dark"]) body.institutes-page #contenu .assistant-schema :is(
+    .assistant-schema-line, .assistant-schema-head, .assistant-schema-frame rect
+  ) {
+    stroke: #B89A72 !important;
+  }
+  html:is(.theme-dark, [data-theme="dark"]) body.institutes-page #contenu .assistant-schema:not(.has-motion-decor) .tasks {
+    border-color: #B89A72 !important;
+  }
+  html:is(.theme-dark, [data-theme="dark"]) body.institutes-page #contenu .assistant-schema .step::after {
+    color: #B89A72 !important;
+    -webkit-text-fill-color: #B89A72 !important;
+  }
+  html:is(.theme-dark, [data-theme="dark"]) body.institutes-page #contenu .institutes-method-card :is(h3, h3 span) {
+    color: var(--institutes-night-cream) !important;
+    -webkit-text-fill-color: var(--institutes-night-cream) !important;
+  }
+  html:is(.theme-dark, [data-theme="dark"]) body.institutes-page #contenu .faq-accordion-item > summary::after {
+    border-color: #FFFFFF !important;
+  }
+}
+
+/* Puces Instituts : réalité du métier, assistant IA et réassurance, nuit. */
+@layer typography {
+  html:is(.theme-dark, [data-theme="dark"]) body.institutes-page #contenu :is(
+    .institutes-reality-list, .institutes-assistant-section .feature-list,
+    .section-mist.section-aqua .feature-list
+  ) > li::before {
+    background: #B89A72 !important;
+    background-image: none !important;
+    color: #B89A72 !important;
+    box-shadow: none !important;
+  }
+}
+
+/* Instituts nuit : encadrés éditoriaux sans aplat ni filet ; texte blanc. */
+@layer typography {
+  html:is(.theme-dark, [data-theme="dark"]) body.institutes-page #contenu > .section :is(
+    .institutes-reality-conclusion, .institutes-editorial-benefit,
+    .institutes-method-conclusion, .institutes-onboarding-benefit
+  ) {
+    background: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+  }
+  html:is(.theme-dark, [data-theme="dark"]) body.institutes-page #contenu > .section :is(
+    .institutes-reality-conclusion, .institutes-editorial-benefit,
+    .institutes-method-conclusion, .institutes-onboarding-benefit
+  ) :is(strong, a) {
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+  }
+  html:is(.theme-dark, [data-theme="dark"]) body.institutes-page #contenu > .section :is(
+    .institutes-reality-conclusion, .institutes-editorial-benefit,
+    .institutes-method-conclusion, .institutes-onboarding-benefit
+  )::before {
+    content: none !important;
+    display: none !important;
+  }
+  /* Titres des cartes Systèmes et Méthode : violet lisible sur bleu nuit. */
+  html:is(.theme-dark, [data-theme="dark"]) body.institutes-page #contenu :is(
+    .institutes-method-card, .institutes-editorial-heading, .institutes-onboarding-heading
+  ) :is(h3, h3 span) {
+    color: #B69CFF !important;
+    -webkit-text-fill-color: #B69CFF !important;
+  }
+  html:is(.theme-dark, [data-theme="dark"]) body.institutes-page #contenu :is(
+    .institutes-editorial-chapter, .institutes-onboarding-block, .sector-card-accordion
+  ) > summary::after {
+    border-color: #FFFFFF !important;
   }
 }
