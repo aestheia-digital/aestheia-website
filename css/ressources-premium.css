@@ -10,55 +10,6 @@ body.resources-page .resources-photo-hero .home-hero-media img {
 @media (max-width: 720px) {
   body.resources-page .resources-photo-hero .home-hero-media img { object-position: 78% center; }
 }
-/* Boutons de lecture : champagne soutenu, texte bleu nuit, jour et nuit. */
-html body.resources-page .resource-card > a.text-link,
-html[data-theme="light"] body.resources-page .resource-card > a.text-link,
-html[data-theme="dark"] body.resources-page .resource-card > a.text-link {
-  display: inline-flex;
-  align-items: center;
-  align-self: flex-start;
-  width: fit-content;
-  max-width: 100%;
-  padding: .72rem 1rem;
-  border: 1px solid #B89A72;
-  border-radius: 6px;
-  background: #B89A72;
-  color: #101B39;
-  -webkit-text-fill-color: #101B39;
-  font-weight: 600;
-  line-height: 1.4;
-  text-decoration: none;
-  white-space: normal;
-  transition: background-color .2s ease, border-color .2s ease;
-}
-html body.resources-page .resource-card > a.text-link:hover {
-  background: #D1B995;
-  border-color: #D1B995;
-  color: #101B39;
-  -webkit-text-fill-color: #101B39;
-}
-html body.resources-page .resource-card > a.text-link:focus-visible {
-  outline: 3px solid #101B39;
-  outline-offset: 3px;
-}
-
-/* Mode jour uniquement : CTA lisible, blanc sur champagne plus profond.
-   La version nuit validée reste inchangée. */
-html[data-theme="light"] body.resources-page .resource-card > a.text-link,
-html:not([data-theme="dark"]) body.resources-page .resource-card > a.text-link {
-  background: #80613B !important;
-  border-color: #80613B !important;
-  color: #FFFFFF !important;
-  -webkit-text-fill-color: #FFFFFF !important;
-  text-shadow: none !important;
-}
-html[data-theme="light"] body.resources-page .resource-card > a.text-link:hover,
-html:not([data-theme="dark"]) body.resources-page .resource-card > a.text-link:hover {
-  background: #70532F !important;
-  border-color: #70532F !important;
-  color: #FFFFFF !important;
-  -webkit-text-fill-color: #FFFFFF !important;
-}
 /* Liseré champagne discret en bas de toutes les cartes, mode jour. */
 html[data-theme="light"] body.resources-page .resource-card,
 html:not([data-theme="dark"]) body.resources-page .resource-card {
@@ -66,23 +17,8 @@ html:not([data-theme="dark"]) body.resources-page .resource-card {
   border-bottom: 0 !important;
 }
 
-/* Priorité réelle : les styles globaux utilisent @layer refonte avec !important.
-   Définir les corrections dans cette même couche évite leur écrasement. */
+/* Liserés champagne de cartes : règle existante, conservée. */
 @layer refonte {
-  html[data-theme="light"] body.resources-page #contenu .resource-card > a.text-link,
-  html[data-theme="light"] body.resources-page #contenu .resource-card > a.text-link:visited {
-    background: #80613B !important;
-    border-color: #80613B !important;
-    color: #FFFFFF !important;
-    -webkit-text-fill-color: #FFFFFF !important;
-    text-shadow: none !important;
-  }
-  html[data-theme="light"] body.resources-page #contenu .resource-card > a.text-link:hover {
-    background: #70532F !important;
-    border-color: #70532F !important;
-    color: #FFFFFF !important;
-    -webkit-text-fill-color: #FFFFFF !important;
-  }
   html[data-theme="light"] body.resources-page #contenu .resource-card {
     border-top-color: #B89A72 !important;
     border-top-style: solid !important;
@@ -114,5 +50,94 @@ html:not([data-theme="dark"]) body.resources-page .resource-card {
     border-color: #F2EDE5 !important;
     color: #1B254D !important;
     -webkit-text-fill-color: #1B254D !important;
+  }
+}
+
+/* Lecture éditoriale : aucun fond de bouton ni bordure, liens alignés en bas.
+   Un libellé court reste accessible via aria-label sur chaque carte. */
+@layer refonte {
+  html body.resources-page #contenu .resource-card > a.text-link,
+  html body.resources-page #contenu .resource-card > a.text-link:visited,
+  html body.resources-page #contenu .resource-card > a.text-link:hover,
+  html body.resources-page #contenu .resource-card > a.text-link:focus-visible {
+    display: inline-flex !important;
+    align-items: center !important;
+    align-self: flex-start !important;
+    gap: .45rem !important;
+    width: fit-content !important;
+    max-width: 100% !important;
+    min-height: 44px !important;
+    margin-top: auto !important;
+    padding: .65rem 0 .2rem !important;
+    background: none !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    filter: none !important;
+    font-size: .96rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0 !important;
+    line-height: 1.4 !important;
+    white-space: normal !important;
+    text-decoration: none !important;
+  }
+  /* Aucun pictogramme : lien éditorial souligné uniquement. */
+  html body.resources-page #contenu .resource-card > a.text-link::after,
+  html body.resources-page #contenu .resource-card > a.text-link:hover::after {
+    content: none !important;
+    display: none !important;
+  }
+  html[data-theme="light"] body.resources-page #contenu .resource-card > a.text-link,
+  html[data-theme="light"] body.resources-page #contenu .resource-card > a.text-link:visited,
+  html[data-theme="light"] body.resources-page #contenu .resource-card > a.text-link:hover,
+  html[data-theme="light"] body.resources-page #contenu .resource-card > a.text-link:focus-visible {
+    color: #1E2A50 !important;
+    -webkit-text-fill-color: #1E2A50 !important;
+    text-decoration-color: #1E2A50 !important;
+  }
+  html[data-theme="light"] body.resources-page #contenu .resource-card > a.text-link::after {
+    color: #1E2A50 !important;
+    -webkit-text-fill-color: #1E2A50 !important;
+  }
+  html[data-theme="dark"] body.resources-page #contenu .resource-card > a.text-link,
+  html[data-theme="dark"] body.resources-page #contenu .resource-card > a.text-link:visited,
+  html[data-theme="dark"] body.resources-page #contenu .resource-card > a.text-link:hover,
+  html[data-theme="dark"] body.resources-page #contenu .resource-card > a.text-link:focus-visible,
+  html.theme-dark body.resources-page #contenu .resource-card > a.text-link,
+  html.theme-dark body.resources-page #contenu .resource-card > a.text-link:visited,
+  html.theme-dark body.resources-page #contenu .resource-card > a.text-link:hover {
+    color: #D1B995 !important;
+    -webkit-text-fill-color: #D1B995 !important;
+    text-decoration-color: #D1B995 !important;
+  }
+  html[data-theme="dark"] body.resources-page #contenu .resource-card > a.text-link::after,
+  html.theme-dark body.resources-page #contenu .resource-card > a.text-link::after {
+    color: #D1B995 !important;
+    -webkit-text-fill-color: #D1B995 !important;
+  }
+  html body.resources-page #contenu .resource-card > a.text-link:focus-visible {
+    outline: 2px solid #B89A72 !important;
+    outline-offset: 4px !important;
+  }
+}
+
+/* Le soulignement est porté par le texte uniquement : jamais par la flèche ::after. */
+@layer refonte {
+  html body.resources-page #contenu .resource-card > a.text-link .resource-read-label {
+    display: inline !important;
+    text-decoration-line: underline !important;
+    text-decoration-style: solid !important;
+    text-decoration-thickness: 1px !important;
+    text-underline-offset: .28em !important;
+    text-decoration-skip-ink: auto !important;
+  }
+  html[data-theme="light"] body.resources-page #contenu .resource-card > a.text-link .resource-read-label {
+    text-decoration-color: #1E2A50 !important;
+  }
+  html[data-theme="dark"] body.resources-page #contenu .resource-card > a.text-link .resource-read-label,
+  html.theme-dark body.resources-page #contenu .resource-card > a.text-link .resource-read-label {
+    text-decoration-color: #D1B995 !important;
   }
 }
