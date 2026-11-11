@@ -7409,3 +7409,16 @@ html body :is(.founder-brand, .location-heading h2, .site-footer .footer-logo) :
   line-height: inherit !important;
   vertical-align: baseline !important;
 }
+
+/* Ajustement optique validé : A champagne aligné visuellement aux capitales IA.
+   Taille +5 %, graisse et police inchangées, tous supports et thèmes.
+   Le A reste dans le flux et sur la même ligne de base. */
+html body :is(.founder-brand, .location-heading h2, .site-footer .footer-logo) > :is(.founder-brand-a, .signature-a),
+html body :is(.founder-brand, .location-heading h2, .site-footer .footer-logo) .signature-a {
+  display: inline-block !important;
+  font-size: 1.05em !important;
+  font-family: "Playfair Display", Georgia, serif !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  vertical-align: baseline !important;
+}
