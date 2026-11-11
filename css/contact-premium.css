@@ -192,3 +192,49 @@ html body #contenu > .contact-signature-section .contact-signature-icon {
   color: #B89A72;
   vertical-align: middle;
 }
+
+/* Correction du conflit avec le thème global (dans la MÊME couche @layer refonte).
+   La règle globale du mode jour impose un ::before violet sur chaque .section.
+   Les anciennes corrections hors couche ne pouvaient pas la surcharger. */
+@layer refonte {
+  html[data-theme="light"] body #contenu > section.section.contact-signature-section:not(.hero):not(.section-aqua):not(.conversion-band),
+  html.theme-light:not(.theme-dark) body #contenu > section.section.contact-signature-section:not(.hero):not(.section-aqua):not(.conversion-band) {
+    background: #FFFFFF !important;
+    background-color: #FFFFFF !important;
+    background-image: none !important;
+    box-shadow: inset 0 1px 0 rgba(30,42,80,.08) !important;
+    --halo-violet-primary: transparent;
+    --halo-violet-secondary: transparent;
+  }
+  html[data-theme="light"] body #contenu > section.section.contact-signature-section:not(.hero):not(.section-aqua):not(.conversion-band)::before,
+  html.theme-light:not(.theme-dark) body #contenu > section.section.contact-signature-section:not(.hero):not(.section-aqua):not(.conversion-band)::before,
+  html[data-theme="light"] body #contenu > section.section.contact-signature-section:not(.hero):not(.section-aqua):not(.conversion-band)::after,
+  html.theme-light:not(.theme-dark) body #contenu > section.section.contact-signature-section:not(.hero):not(.section-aqua):not(.conversion-band)::after {
+    content: none !important;
+    display: none !important;
+    background: none !important;
+    background-image: none !important;
+    opacity: 0 !important;
+  }
+  html[data-theme="light"] body #contenu > .contact-signature-section .contact-signature .eyebrow,
+  html.theme-light:not(.theme-dark) body #contenu > .contact-signature-section .contact-signature .eyebrow,
+  html[data-theme="light"] body #contenu > .contact-signature-section .contact-signature-label,
+  html.theme-light:not(.theme-dark) body #contenu > .contact-signature-section .contact-signature-label,
+  html[data-theme="light"] body #contenu > .contact-signature-section .contact-signature-item a,
+  html.theme-light:not(.theme-dark) body #contenu > .contact-signature-section .contact-signature-item a,
+  html[data-theme="light"] body #contenu > .contact-signature-section .contact-signature-item a:visited,
+  html.theme-light:not(.theme-dark) body #contenu > .contact-signature-section .contact-signature-item a:visited,
+  html[data-theme="light"] body #contenu > .contact-signature-section .contact-signature-item a:hover,
+  html.theme-light:not(.theme-dark) body #contenu > .contact-signature-section .contact-signature-item a:hover,
+  html[data-theme="light"] body #contenu > .contact-signature-section .contact-signature-item a:focus-visible,
+  html.theme-light:not(.theme-dark) body #contenu > .contact-signature-section .contact-signature-item a:focus-visible {
+    color: #1E2A50 !important;
+    -webkit-text-fill-color: #1E2A50 !important;
+    text-shadow: none !important;
+  }
+  html[data-theme="light"] body #contenu > .contact-signature-section .contact-signature-icon,
+  html.theme-light:not(.theme-dark) body #contenu > .contact-signature-section .contact-signature-icon {
+    color: #B89A72 !important;
+    stroke: #B89A72 !important;
+  }
+}
