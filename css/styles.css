@@ -7447,3 +7447,25 @@ html:is(.theme-dark,[data-theme="dark"]) body.home-page .faq-section .faq-accord
   color: #F5F2EC !important;
   -webkit-text-fill-color: #F5F2EC !important;
 }
+
+/* Raffinements accueil nuit : champagne discret dans la FAQ. */
+html:is(.theme-dark,[data-theme="dark"]) body.home-page .faq-section .faq-accordion-item > summary,
+html:is(.theme-dark,[data-theme="dark"]) body.home-page .faq-section .faq-accordion-item > summary h3 {
+  color: #C6A477 !important;
+  -webkit-text-fill-color: #C6A477 !important;
+}
+/* Adresse : réduire le mot-sigle entier sans toucher au rapport A / IA. */
+html body.home-page #contenu .location-section .location-heading h2 {
+  font-size: clamp(2rem, 3vw, 2.8rem) !important;
+  line-height: 1.16 !important;
+}
+/* Signature fondatrice, nuit : blanc et A champagne, sans violet ni dégradé. */
+html:is(.theme-dark,[data-theme="dark"]) body.home-page .founder-signature__role {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+html:is(.theme-dark,[data-theme="dark"]) body.home-page .founder-signature__role .founder-role-a {
+  color: #C6A477 !important;
+  -webkit-text-fill-color: #C6A477 !important;
+  background: none !important;
+}
