@@ -10,3 +10,15 @@ html.theme-dark body.home-page .faq-section .faq-accordion-item > summary::after
     transition: none !important;
   }
 }
+
+/* FAQ accueil nuit : chevrons blancs, questions champagne plus fines.
+   Ne touche pas au titre, aux réponses, ni au mode jour. */
+html:is(.theme-dark,[data-theme="dark"]) body.home-page .faq-section .faq-accordion-item > summary::after {
+  border-right-color: #FFFFFF !important;
+  border-bottom-color: #FFFFFF !important;
+  border-color: #FFFFFF !important;
+}
+html:is(.theme-dark,[data-theme="dark"]) body.home-page .faq-section .faq-accordion-item > summary,
+html:is(.theme-dark,[data-theme="dark"]) body.home-page .faq-section .faq-accordion-item > summary h3 {
+  font-weight: 400 !important;
+}
