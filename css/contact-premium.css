@@ -1,22 +1,22 @@
 /* Page Contact uniquement — cartes et CTA, tous formats */
 @layer refonte {
-  html body #contenu > .contact-cube-hero + .section {
+  html body #contenu > .contact-photo-hero + .section {
     background: #F9F8F6 !important;
     background-image: none !important;
   }
-  html body #contenu > .contact-cube-hero + .section .contact-option {
+  html body #contenu > .contact-photo-hero + .section .contact-option {
     background: #FFFFFF !important;
     border: 1px solid #DED9D0 !important;
     border-top: 2px solid #B89A72 !important;
     box-shadow: 0 7px 24px rgba(18, 29, 57, .045) !important;
   }
-  html body #contenu > .contact-cube-hero + .section .contact-option > h3 {
+  html body #contenu > .contact-photo-hero + .section .contact-option > h3 {
     color: #1E2A50 !important;
     -webkit-text-fill-color: #1E2A50 !important;
   }
-  html body #contenu > .contact-cube-hero + .section .contact-option .contact-choice-button,
-  html body #contenu > .contact-cube-hero + .section .contact-option .contact-choice-button:hover,
-  html body #contenu > .contact-cube-hero + .section .contact-option .contact-choice-button:focus-visible {
+  html body #contenu > .contact-photo-hero + .section .contact-option .contact-choice-button,
+  html body #contenu > .contact-photo-hero + .section .contact-option .contact-choice-button:hover,
+  html body #contenu > .contact-photo-hero + .section .contact-option .contact-choice-button:focus-visible {
     background: #1E2A50 !important;
     background-image: none !important;
     border: 1px solid #1E2A50 !important;
@@ -26,27 +26,27 @@
     filter: none !important;
     text-shadow: none !important;
   }
-  html body #contenu > .contact-cube-hero + .section .contact-option .contact-choice-button:hover {
+  html body #contenu > .contact-photo-hero + .section .contact-option .contact-choice-button:hover {
     background: #293A68 !important;
     border-color: #293A68 !important;
   }
-  html:is([data-theme="dark"], .theme-dark) body #contenu > .contact-cube-hero + .section {
+  html:is([data-theme="dark"], .theme-dark) body #contenu > .contact-photo-hero + .section {
     background: #0D1430 !important;
     background-image: none !important;
   }
-  html:is([data-theme="dark"], .theme-dark) body #contenu > .contact-cube-hero + .section .contact-option {
+  html:is([data-theme="dark"], .theme-dark) body #contenu > .contact-photo-hero + .section .contact-option {
     background: #151D3C !important;
     border: 1px solid #394363 !important;
     border-top: 2px solid #B89A72 !important;
     box-shadow: none !important;
   }
-  html:is([data-theme="dark"], .theme-dark) body #contenu > .contact-cube-hero + .section .contact-option > h3 {
+  html:is([data-theme="dark"], .theme-dark) body #contenu > .contact-photo-hero + .section .contact-option > h3 {
     color: #F2EDE5 !important;
     -webkit-text-fill-color: #F2EDE5 !important;
   }
-  html:is([data-theme="dark"], .theme-dark) body #contenu > .contact-cube-hero + .section .contact-option .contact-choice-button,
-  html:is([data-theme="dark"], .theme-dark) body #contenu > .contact-cube-hero + .section .contact-option .contact-choice-button:hover,
-  html:is([data-theme="dark"], .theme-dark) body #contenu > .contact-cube-hero + .section .contact-option .contact-choice-button:focus-visible {
+  html:is([data-theme="dark"], .theme-dark) body #contenu > .contact-photo-hero + .section .contact-option .contact-choice-button,
+  html:is([data-theme="dark"], .theme-dark) body #contenu > .contact-photo-hero + .section .contact-option .contact-choice-button:hover,
+  html:is([data-theme="dark"], .theme-dark) body #contenu > .contact-photo-hero + .section .contact-option .contact-choice-button:focus-visible {
     background: #B89A72 !important;
     background-image: none !important;
     border: 1px solid #B89A72 !important;
@@ -56,8 +56,100 @@
     filter: none !important;
     text-shadow: none !important;
   }
-  html:is([data-theme="dark"], .theme-dark) body #contenu > .contact-cube-hero + .section .contact-option .contact-choice-button:hover {
+  html:is([data-theme="dark"], .theme-dark) body #contenu > .contact-photo-hero + .section .contact-option .contact-choice-button:hover {
     background: #D2B48C !important;
     border-color: #D2B48C !important;
+  }
+}
+
+/* Bandeau signature — aucune concurrence avec les deux CTA principaux. */
+@layer refonte {
+  html body #contenu > .contact-signature-section {
+    background: #FAF9F7 !important;
+    background-image: none !important;
+    padding-block: clamp(2.5rem, 5vw, 4.5rem);
+  }
+  html body #contenu > .contact-signature-section::before,
+  html body #contenu > .contact-signature-section::after {
+    background: none !important;
+    box-shadow: none !important;
+  }
+  html body .contact-signature {
+    max-width: 1160px;
+  }
+  html body .contact-signature .eyebrow {
+    color: #80613B !important;
+    -webkit-text-fill-color: #80613B !important;
+    margin-bottom: .7rem;
+  }
+  html body .contact-signature h2 {
+    color: #1E2A50 !important;
+    -webkit-text-fill-color: #1E2A50 !important;
+    font-weight: 400;
+    margin-bottom: .6rem;
+  }
+  html body .contact-signature-intro {
+    color: #34415F !important;
+    -webkit-text-fill-color: #34415F !important;
+    margin: 0;
+  }
+  html body .contact-signature-divider {
+    height: 1px;
+    background: #B89A72;
+    margin: 1.75rem 0 1.5rem;
+  }
+  html body .contact-signature-details {
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 1.25rem 3rem;
+  }
+  html body .contact-signature-item {
+    display: flex;
+    flex-direction: column;
+    gap: .45rem;
+    min-width: 0;
+  }
+  html body .contact-signature-label {
+    color: #80613B !important;
+    font-size: .82rem;
+    letter-spacing: .025em;
+  }
+  html body .contact-signature-item a {
+    color: #1E2A50 !important;
+    -webkit-text-fill-color: #1E2A50 !important;
+    text-decoration: none;
+    font-weight: 500;
+    overflow-wrap: anywhere;
+    width: fit-content;
+  }
+  html body .contact-signature-item a:hover,
+  html body .contact-signature-item a:focus-visible {
+    text-decoration: underline;
+    text-decoration-color: #B89A72;
+    text-underline-offset: .25em;
+  }
+  html:is([data-theme="dark"], .theme-dark) body #contenu > .contact-signature-section {
+    background: #101831 !important;
+    background-image: none !important;
+  }
+  html:is([data-theme="dark"], .theme-dark) body .contact-signature .eyebrow,
+  html:is([data-theme="dark"], .theme-dark) body .contact-signature-label {
+    color: #B89A72 !important;
+    -webkit-text-fill-color: #B89A72 !important;
+  }
+  html:is([data-theme="dark"], .theme-dark) body .contact-signature h2,
+  html:is([data-theme="dark"], .theme-dark) body .contact-signature-item a {
+    color: #F2EDE5 !important;
+    -webkit-text-fill-color: #F2EDE5 !important;
+  }
+  html:is([data-theme="dark"], .theme-dark) body .contact-signature-intro {
+    color: #D3D7E4 !important;
+    -webkit-text-fill-color: #D3D7E4 !important;
+  }
+  @media (max-width: 640px) {
+    html body .contact-signature-details {
+      grid-template-columns: minmax(0,1fr);
+      gap: 1.35rem;
+    }
   }
 }
