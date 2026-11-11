@@ -7422,3 +7422,20 @@ html body :is(.founder-brand, .location-heading h2, .site-footer .footer-logo) .
   line-height: 1 !important;
   vertical-align: baseline !important;
 }
+
+/* Signature officielle : correction optique de la hauteur visible du A.
+   Le scaleY agit sur le glyphe et non sur la taille de ligne : pas de
+   déplacement du texte voisin ni de modification de graisse ou de fonte.
+   Appliqué aux signatures injectées par JS et au titre Fondatrice. */
+html body .founder-brand > .founder-brand-a,
+html body .location-section .location-heading h2 > .signature-a,
+html body .site-footer .footer-logo > .signature-a {
+  display: inline-block !important;
+  font-size: 1em !important;
+  font-weight: 400 !important;
+  font-family: "Playfair Display", Georgia, serif !important;
+  line-height: inherit !important;
+  transform: scaleY(1.09) !important;
+  transform-origin: center bottom !important;
+  vertical-align: baseline !important;
+}
