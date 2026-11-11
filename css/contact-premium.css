@@ -1,0 +1,63 @@
+/* Page Contact uniquement — cartes et CTA, tous formats */
+@layer refonte {
+  html body #contenu > .contact-cube-hero + .section {
+    background: #F9F8F6 !important;
+    background-image: none !important;
+  }
+  html body #contenu > .contact-cube-hero + .section .contact-option {
+    background: #FFFFFF !important;
+    border: 1px solid #DED9D0 !important;
+    border-top: 2px solid #B89A72 !important;
+    box-shadow: 0 7px 24px rgba(18, 29, 57, .045) !important;
+  }
+  html body #contenu > .contact-cube-hero + .section .contact-option > h3 {
+    color: #1E2A50 !important;
+    -webkit-text-fill-color: #1E2A50 !important;
+  }
+  html body #contenu > .contact-cube-hero + .section .contact-option .contact-choice-button,
+  html body #contenu > .contact-cube-hero + .section .contact-option .contact-choice-button:hover,
+  html body #contenu > .contact-cube-hero + .section .contact-option .contact-choice-button:focus-visible {
+    background: #1E2A50 !important;
+    background-image: none !important;
+    border: 1px solid #1E2A50 !important;
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+    box-shadow: none !important;
+    filter: none !important;
+    text-shadow: none !important;
+  }
+  html body #contenu > .contact-cube-hero + .section .contact-option .contact-choice-button:hover {
+    background: #293A68 !important;
+    border-color: #293A68 !important;
+  }
+  html:is([data-theme="dark"], .theme-dark) body #contenu > .contact-cube-hero + .section {
+    background: #0D1430 !important;
+    background-image: none !important;
+  }
+  html:is([data-theme="dark"], .theme-dark) body #contenu > .contact-cube-hero + .section .contact-option {
+    background: #151D3C !important;
+    border: 1px solid #394363 !important;
+    border-top: 2px solid #B89A72 !important;
+    box-shadow: none !important;
+  }
+  html:is([data-theme="dark"], .theme-dark) body #contenu > .contact-cube-hero + .section .contact-option > h3 {
+    color: #F2EDE5 !important;
+    -webkit-text-fill-color: #F2EDE5 !important;
+  }
+  html:is([data-theme="dark"], .theme-dark) body #contenu > .contact-cube-hero + .section .contact-option .contact-choice-button,
+  html:is([data-theme="dark"], .theme-dark) body #contenu > .contact-cube-hero + .section .contact-option .contact-choice-button:hover,
+  html:is([data-theme="dark"], .theme-dark) body #contenu > .contact-cube-hero + .section .contact-option .contact-choice-button:focus-visible {
+    background: #B89A72 !important;
+    background-image: none !important;
+    border: 1px solid #B89A72 !important;
+    color: #101831 !important;
+    -webkit-text-fill-color: #101831 !important;
+    box-shadow: none !important;
+    filter: none !important;
+    text-shadow: none !important;
+  }
+  html:is([data-theme="dark"], .theme-dark) body #contenu > .contact-cube-hero + .section .contact-option .contact-choice-button:hover {
+    background: #D2B48C !important;
+    border-color: #D2B48C !important;
+  }
+}
