@@ -7391,3 +7391,21 @@ html:not(.theme-dark):not([data-theme="dark"]) body .site-header .brand-link::be
     flex-basis: 32px !important;
   }
 }
+
+/* Mot-sigle AesthéIA : capitales A et IA de même fonte, même taille
+   et même graisse, indépendamment du thème et du viewport. */
+html body :is(.founder-brand, .location-heading h2, .site-footer .footer-logo) :is(.founder-brand-a, .founder-brand-rest, .signature-a, .signature-rest),
+html body :is(.founder-brand, .location-heading h2, .site-footer .footer-logo) {
+  font-family: "Playfair Display", Georgia, serif !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  font-synthesis: none !important;
+  font-variant: normal !important;
+  letter-spacing: normal !important;
+  text-transform: none !important;
+}
+html body :is(.founder-brand, .location-heading h2, .site-footer .footer-logo) :is(.founder-brand-a, .founder-brand-rest, .signature-a, .signature-rest) {
+  font-size: 1em !important;
+  line-height: inherit !important;
+  vertical-align: baseline !important;
+}
