@@ -1,0 +1,118 @@
+/* Ressources liées (pages secteur et articles) : même finition que les cartes Ressources et Contact.
+   Jour : fond blanc, liseré champagne, lien éditorial bleu nuit souligné.
+   Nuit : fond bleu nuit, liseré champagne, pastille crème, lien champagne souligné.
+   Aucun violet sur ces cartes. */
+@layer refonte {
+  /* Carte, jour */
+  html body .related-resources .related-resource-card {
+    background: #FFFFFF !important;
+    background-image: none !important;
+    border: 1px solid rgba(27, 42, 107, .2) !important;
+    border-top: 3px solid #B89A72 !important;
+    border-bottom: 0 !important;
+    border-radius: 8px !important;
+    box-shadow: 0 12px 32px rgba(18, 29, 57, .06) !important;
+  }
+  /* Carte, nuit */
+  html:is([data-theme="dark"], .theme-dark) body .related-resources .related-resource-card {
+    background: #131A3D !important;
+    background-image: none !important;
+    border: 1px solid #2F3A68 !important;
+    border-top: 2px solid #B89A72 !important;
+    box-shadow: 0 16px 38px rgba(2, 5, 18, .3) !important;
+  }
+
+  /* Pastille de catégorie */
+  html body .related-resources .related-resource-card .resource-category {
+    background: #212A59 !important;
+    background-image: none !important;
+    border-color: #212A59 !important;
+    color: #FFFFFF !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+  html:is([data-theme="dark"], .theme-dark) body .related-resources .related-resource-card .resource-category {
+    background: #F2EDE5 !important;
+    border-color: #F2EDE5 !important;
+    color: #1B254D !important;
+    -webkit-text-fill-color: #1B254D !important;
+  }
+
+  /* Pastille de secteur */
+  html body .related-resources .related-resource-card .resource-sector {
+    background: #FFFFFF !important;
+    background-image: none !important;
+    border: 1px solid #D8C9B3 !important;
+    color: #1B254D !important;
+    -webkit-text-fill-color: #1B254D !important;
+    box-shadow: none !important;
+  }
+  html:is([data-theme="dark"], .theme-dark) body .related-resources .related-resource-card .resource-sector {
+    background: transparent !important;
+    border-color: #B89A72 !important;
+    color: #E8DCC9 !important;
+    -webkit-text-fill-color: #E8DCC9 !important;
+  }
+
+  /* Titre : pas de violet au survol */
+  html body .related-resources .related-resource-card h3 a:hover,
+  html body .related-resources .related-resource-card h3 a:focus-visible {
+    color: #1B2A6B !important;
+    -webkit-text-fill-color: #1B2A6B !important;
+    text-decoration: underline !important;
+    text-decoration-color: #B89A72 !important;
+    text-underline-offset: .2em !important;
+  }
+  html:is([data-theme="dark"], .theme-dark) body .related-resources .related-resource-card h3 a:hover,
+  html:is([data-theme="dark"], .theme-dark) body .related-resources .related-resource-card h3 a:focus-visible {
+    color: #EEF2FF !important;
+    -webkit-text-fill-color: #EEF2FF !important;
+  }
+
+  /* Lien éditorial : ni bouton ni pictogramme, souligné uniquement */
+  html:not([data-theme="dark"]):not(.theme-dark) body #contenu .related-resources .related-resource-card > a.text-link.text-link,
+  html:not([data-theme="dark"]):not(.theme-dark) body #contenu .related-resources .related-resource-card > a.text-link.text-link:visited,
+  html:not([data-theme="dark"]):not(.theme-dark) body #contenu .related-resources .related-resource-card > a.text-link.text-link:hover,
+  html:not([data-theme="dark"]):not(.theme-dark) body #contenu .related-resources .related-resource-card > a.text-link.text-link:focus-visible {
+    display: inline-flex !important;
+    align-items: center !important;
+    align-self: flex-start !important;
+    width: fit-content !important;
+    max-width: 100% !important;
+    min-height: 44px !important;
+    margin-top: auto !important;
+    padding: .65rem 0 .2rem !important;
+    background: none !important;
+    background-image: none !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    filter: none !important;
+    white-space: normal !important;
+    color: #1E2A50 !important;
+    -webkit-text-fill-color: #1E2A50 !important;
+    text-decoration-line: underline !important;
+    text-decoration-style: solid !important;
+    text-decoration-thickness: 1px !important;
+    text-decoration-color: #1E2A50 !important;
+    text-underline-offset: .28em !important;
+    text-decoration-skip-ink: auto !important;
+  }
+  html:not([data-theme="dark"]):not(.theme-dark) body #contenu .related-resources .related-resource-card > a.text-link.text-link::after {
+    content: none !important;
+    display: none !important;
+  }
+  html:is([data-theme="dark"], .theme-dark) body #contenu .related-resources .related-resource-card > a.text-link.text-link,
+  html:is([data-theme="dark"], .theme-dark) body #contenu .related-resources .related-resource-card > a.text-link.text-link:visited,
+  html:is([data-theme="dark"], .theme-dark) body #contenu .related-resources .related-resource-card > a.text-link.text-link:hover,
+  html:is([data-theme="dark"], .theme-dark) body #contenu .related-resources .related-resource-card > a.text-link.text-link:focus-visible {
+    color: #D1B995 !important;
+    -webkit-text-fill-color: #D1B995 !important;
+    text-decoration-color: #D1B995 !important;
+  }
+  html:not([data-theme="dark"]):not(.theme-dark) body #contenu .related-resources .related-resource-card > a.text-link.text-link:focus-visible {
+    outline: 2px solid #B89A72 !important;
+    outline-offset: 4px !important;
+  }
+}
