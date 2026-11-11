@@ -7439,3 +7439,11 @@ html body .site-footer .footer-logo > .signature-a {
   transform-origin: center bottom !important;
   vertical-align: baseline !important;
 }
+
+/* FAQ accueil, mode nuit uniquement : questions blanc cassé premium.
+   Titre, réponses, flèches, séparateurs et mode jour inchangés. */
+html:is(.theme-dark,[data-theme="dark"]) body.home-page .faq-section .faq-accordion-item > summary,
+html:is(.theme-dark,[data-theme="dark"]) body.home-page .faq-section .faq-accordion-item > summary h3 {
+  color: #F5F2EC !important;
+  -webkit-text-fill-color: #F5F2EC !important;
+}
