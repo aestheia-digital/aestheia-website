@@ -24,7 +24,7 @@
     .institutes-reality-conclusion, .institutes-editorial-benefit,
     .institutes-method-conclusion, .institutes-onboarding-benefit
   ),
-  html:is(.theme-dark, [data-theme="dark"]) body.institutes-page #contenu .assistant-schema .node.assistant,
+  html:is(.theme-dark, [data-theme="dark"]) body.institutes-page #contenu .assistant-schema :is(.node.assistant, .node.validation),
   html:is(.theme-dark, [data-theme="dark"]) body.institutes-page #contenu :is(.btn-primary, .btn-secondary) {
     background: var(--institutes-night-cream) !important;
     background-image: none !important;
@@ -42,10 +42,33 @@
   }
   html:is(.theme-dark, [data-theme="dark"]) body.institutes-page #contenu .faq-accordion-item > summary,
   html:is(.theme-dark, [data-theme="dark"]) body.institutes-page #contenu .faq-accordion-item > summary :is(h3, span, strong) {
-    color: var(--institutes-night-cream) !important;
-    -webkit-text-fill-color: var(--institutes-night-cream) !important;
+    color: #C6A477 !important;
+    -webkit-text-fill-color: #C6A477 !important;
   }
   html:is(.theme-dark, [data-theme="dark"]) body.institutes-page #contenu :is(.btn-primary, .btn-secondary):is(:hover, :focus-visible) {
     background: #E8DCC9 !important;
+  }
+}
+
+/* Retouches Instituts, mode nuit, toutes largeurs. */
+@layer typography {
+  html:is(.theme-dark, [data-theme="dark"]) body.institutes-page #contenu .assistant-schema :is(
+    .assistant-schema-line, .assistant-schema-head, .assistant-schema-frame rect
+  ) {
+    stroke: #B89A72 !important;
+  }
+  html:is(.theme-dark, [data-theme="dark"]) body.institutes-page #contenu .assistant-schema:not(.has-motion-decor) .tasks {
+    border-color: #B89A72 !important;
+  }
+  html:is(.theme-dark, [data-theme="dark"]) body.institutes-page #contenu .assistant-schema .step::after {
+    color: #B89A72 !important;
+    -webkit-text-fill-color: #B89A72 !important;
+  }
+  html:is(.theme-dark, [data-theme="dark"]) body.institutes-page #contenu .institutes-method-card :is(h3, h3 span) {
+    color: var(--institutes-night-cream) !important;
+    -webkit-text-fill-color: var(--institutes-night-cream) !important;
+  }
+  html:is(.theme-dark, [data-theme="dark"]) body.institutes-page #contenu .faq-accordion-item > summary::after {
+    border-color: #FFFFFF !important;
   }
 }
