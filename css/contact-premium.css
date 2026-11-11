@@ -276,3 +276,35 @@ html body #contenu > .contact-signature-section .contact-signature-icon {
     font-weight: 400 !important;
   }
 }
+
+/* Signature Contact — mode jour : coordonnées fines, lisibles et alignées sous le libellé (pas sous l'icône). */
+@layer refonte {
+  html[data-theme="light"] body #contenu > .contact-signature-section .contact-signature-item,
+  html.theme-light:not(.theme-dark) body #contenu > .contact-signature-section .contact-signature-item {
+    --signature-icon-size: 1.15rem;
+    --signature-icon-gap: .65rem;
+    gap: .4rem !important;
+  }
+  html[data-theme="light"] body #contenu > .contact-signature-section .contact-signature-label,
+  html.theme-light:not(.theme-dark) body #contenu > .contact-signature-section .contact-signature-label {
+    display: flex !important;
+    align-items: center !important;
+    gap: var(--signature-icon-gap) !important;
+  }
+  html[data-theme="light"] body #contenu > .contact-signature-section .contact-signature-icon,
+  html.theme-light:not(.theme-dark) body #contenu > .contact-signature-section .contact-signature-icon {
+    width: var(--signature-icon-size) !important;
+    height: var(--signature-icon-size) !important;
+    flex: 0 0 var(--signature-icon-size) !important;
+  }
+  html[data-theme="light"] body #contenu > .contact-signature-section .contact-signature-item a,
+  html.theme-light:not(.theme-dark) body #contenu > .contact-signature-section .contact-signature-item a {
+    margin-inline-start: calc(var(--signature-icon-size) + var(--signature-icon-gap)) !important;
+    font-size: clamp(1rem, 1.1vw, 1.1rem) !important;
+    line-height: 1.45 !important;
+    font-weight: 400 !important;
+    letter-spacing: 0 !important;
+    max-width: calc(100% - var(--signature-icon-size) - var(--signature-icon-gap));
+    overflow-wrap: anywhere;
+  }
+}
