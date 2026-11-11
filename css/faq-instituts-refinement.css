@@ -128,3 +128,11 @@
     border-color: #FFFFFF !important;
   }
 }
+
+/* Instituts : liens Ressources courts, sans soulignement, jour et nuit. */
+@layer typography {
+  html body.institutes-page #contenu .related-resources .related-resource-card > a.text-link,
+  html body.institutes-page #contenu .related-resources .related-resource-card > a.text-link:is(:visited, :hover, :focus-visible) {
+    text-decoration: none !important;
+  }
+}
