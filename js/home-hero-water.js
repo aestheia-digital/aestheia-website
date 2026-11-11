@@ -17,7 +17,7 @@
   var VS = "attribute vec2 p;varying vec2 v;void main(){v=vec2(p.x*.5+.5,.5-p.y*.5);gl_Position=vec4(p,0.,1.);}";
   var FS = [
 "precision highp float;",
-"uniform sampler2D uImg,uMask,uSoft;uniform vec2 uRes,uSize;uniform float uT,uAmp,uPosX;varying vec2 v;",
+"uniform sampler2D uImg,uMask,uSoft,uWater;uniform vec2 uRes,uSize;uniform float uT,uAmp,uPosX;varying vec2 v;",
 "float h(vec2 p){p=fract(p*vec2(123.34,456.21));p+=dot(p,p+45.32);return fract(p.x*p.y);}",
 "float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}",
 "float fbm(vec2 p){float a=.5,s=0.;for(int i=0;i<3;i++){s+=a*n(p);p=p*2.03+17.1;a*=.5;}return s/.875;}",
@@ -26,56 +26,53 @@
 " return g*(sin(t*1.05+ph)+.5*sin(t*1.83+ph*1.7+1.)+.28*sin(t*3.1+ph*2.3+2.))/1.5;}",
 // nappe d'eau : trois couches qui descendent a des vitesses differentes
 "vec3 sb(vec2 p){return (texture2D(uSoft,p+vec2(.003,.004)).rgb+texture2D(uSoft,p+vec2(-.003,.004)).rgb+texture2D(uSoft,p+vec2(.003,-.004)).rgb+texture2D(uSoft,p+vec2(-.003,-.004)).rgb)*.25;}",
+"float ll(vec2 p){return dot(texture2D(uSoft,clamp(p,vec2(.45,.2),vec2(.612,.66))).rgb,vec3(.333));}",
+"float leaf(vec2 p){float a=(ll(p+vec2(.03,.04))+ll(p+vec2(-.03,.04))+ll(p+vec2(.03,-.04))+ll(p+vec2(-.03,-.04)))*.25;return clamp((ll(p)+.02)/(a+.02),.74,1.24);}",
 "vec3 ratio(vec2 a,vec2 b){return clamp((sb(b)+.03)/(sb(a)+.03),.72,1.4);}",
 "void main(){",
 " float cr=uRes.x/uRes.y,ir=uSize.x/uSize.y;vec2 uv=v;",
 " if(cr>ir){uv.y=(v.y-.5)*(ir/cr)+.5;}else{uv.x=uPosX*(1.-cr/ir)+v.x*(cr/ir);}",
 " vec3 m=texture2D(uMask,uv).rgb;float t=uT;vec2 q=uv*vec2(ir,1.);vec2 d=vec2(0.);vec3 lit=vec3(1.),cw=vec3(0.);float k=0.,fl2=0.;",
+" float tw=t*.42;",
 " if(m.r>.004){",
 "  k=m.r*smoothstep(.06,.15,uv.y);",
-  "  float yb=.80+(uv.x-.933)*1.55;k*=1.-smoothstep(yb-.12,yb-.04,uv.y);",
-// ombres sur l'eau : la lumiere de fond va et vient
+"  float yb=.80+(uv.x-.933)*1.55;k*=1.-smoothstep(yb-.12,yb-.04,uv.y);",
 "  float ph=fbm(q*2.6+7.)*8.+q.y*2.5;",
-"  vec2 u2=uv+uAmp*vec2(wind(t,ph)*.0065,wind(t*1.13+4.,ph*1.3+2.)*.0033);u2.x=max(u2.x,.9125);",
-"  vec3 base=texture2D(uSoft,u2).rgb;float lb=dot(base,vec3(.333));",
-// vaguelettes qui descendent
-"  float y1=q.y-t*.105,wx=q.x*24.;",
+"  vec2 u2=uv+uAmp*vec2(wind(tw,ph)*.0065,wind(tw*1.13+4.,ph*1.3+2.)*.0033);u2.x=max(u2.x,.9125);",
+"  vec2 wu=vec2((uv.x-.9)*10.,uv.y);",
+"  vec3 base=texture2D(uWater,wu).rgb*mix(vec3(1.),ratio(uv,u2),.9);float lb=dot(base,vec3(.333));",
+"  float y1=q.y-t*.05,wx=q.x*24.;",
 "  float r1=n(vec2(wx+1.3*n(vec2(q.x*7.,y1*5.)),y1*64.));",
 "  float r2=n(vec2(wx+1.3*n(vec2(q.x*7.,(y1+.004)*5.)),(y1+.004)*64.));",
 "  float gy=(r2-r1)/.004;",
 "  vec2 dw=vec2(0.,gy*.00003*uAmp);",
-// la texture de l'eau elle-meme coule vers le bas (deux passes fondues)
-"  float p1=fract(t/2.),p2=fract(t/2.+.5),w=abs(1.-2.*p1);",
-"  vec2 a1=uv+dw-vec2(0.,(p1-.5)*.075),a2=uv+dw-vec2(0.,(p2-.5)*.075);",
-"  vec3 s1=texture2D(uSoft,a1).rgb,s2=texture2D(uSoft,a2).rgb;",
+"  float p1=fract(t/3.6),p2=fract(t/3.6+.5),w=abs(1.-2.*p1);",
+"  vec2 a1=uv+dw-vec2(0.,(p1-.5)*.07),a2=uv+dw-vec2(0.,(p2-.5)*.07);",
+"  vec3 s1=texture2D(uWater,vec2(wu.x,a1.y)).rgb,s2=texture2D(uWater,vec2(wu.x,a2.y)).rgb;",
 "  vec3 d1=(texture2D(uImg,a1).rgb-s1)*texture2D(uMask,a1).r*clamp((lb+.03)/(dot(s1,vec3(.333))+.03),.5,1.6);",
 "  vec3 d2=(texture2D(uImg,a2).rgb-s2)*texture2D(uMask,a2).r*clamp((lb+.03)/(dot(s2,vec3(.333))+.03),.5,1.6);",
 "  vec3 det=(d1*(1.-w)+d2*w)/sqrt(w*w+(1.-w)*(1.-w));",
-"  cw=base+det*1.1;",
-// filets brillants qui tombent
-"  float f1=n(vec2(q.x*170.,(q.y-t*.14)*9.)+3.7),f2=n(vec2(q.x*110.+40.,(q.y-t*.095)*5.)+1.2);",
+"  cw=base+det;",
+"  float f1=n(vec2(q.x*170.,(q.y-t*.07)*9.)+3.7),f2=n(vec2(q.x*110.+40.,(q.y-t*.048)*5.)+1.2);",
 "  float lum2=.3+.7*smoothstep(.3,.8,lb);",
-"  cw+=vec3(1.,.97,.9)*(pow(f1,5.)*.9+pow(f2,6.)*.6)*uAmp*.075*lum2;",
-"  cw+=vec3(1.,.97,.9)*clamp(gy*.012,-.6,1.)*uAmp*.035*(.4+.6*lb);",
-"  cw*=1.+uAmp*.06*(n(vec2(q.x*5.,(q.y-t*.07)*4.))-.5);",
+"  cw+=vec3(1.,.97,.9)*(pow(f1,5.)*.9+pow(f2,6.)*.6)*uAmp*.06*lum2;",
 " }",
 " if(m.g>.004){",
 "  float ph=fbm(q*2.2)*9.+q.x*2.;",
-"  float fl=sin(t*4.3+n(q*13.)*18.)*(.5+.5*sin(t*.31+ph*.2));",
-"  vec2 ds=uAmp*vec2(wind(t,ph)*.011+fl*.0014,wind(t*1.13+4.,ph*1.3+2.)*.0052+fl*.0008);",
+"  vec2 ds=uAmp*vec2(wind(tw,ph)*.011,wind(tw*1.13+4.,ph*1.3+2.)*.0052);",
 "  if(uv.x>.7)ds*=2.3;",
-  "  vec2 u3=uv+ds;if(uv.x<.7){u3=clamp(u3,vec2(.445,.15),vec2(.614,.69));}else{u3=clamp(u3,vec2(.757,.676),vec2(.925,.935));}",
+"  vec2 u3=uv+ds;if(uv.x<.7){u3=clamp(u3,vec2(.445,.15),vec2(.614,.69));}else{u3=clamp(u3,vec2(.757,.676),vec2(.925,.935));}",
 "  lit=mix(lit,ratio(uv,u3),m.g);",
-  "  if(uv.x>.7){float dq=fbm(vec2(q.x*8.+wind(t,ph)*.55+q.y*3.,q.y*6.5+wind(t*1.13+4.,ph*1.3+2.)*.35)+5.);lit*=1.+m.g*uAmp*(smoothstep(.34,.7,dq)-.5)*.2;}",
+"  if(uv.x>.7){vec2 lp=vec2(.468,.27)+(uv-vec2(.757,.676))*vec2(.78,1.2)+uAmp*vec2(wind(tw,1.+q.y*1.5)*.022,wind(tw*1.13+4.,3.)*.009);",
+"   lit*=mix(1.,leaf(lp),m.g*.85);}",
 " }",
 " if(m.b>.004&&uv.y>=.688){",
-  "  float ph=fbm(q*1.8+3.)*6.+q.x*2.;",
-  "  float wa=wind(t,ph),wb=wind(t*1.13+4.,ph*1.3+2.);",
-  "  vec2 u4=clamp(uv+uAmp*vec2(wa*.009,wb*.004),vec2(.5,.71),vec2(.72,1.));",
-  "  lit=mix(lit,ratio(uv,u4),m.b*step(uv.x,.72));",
-  "  float dp=fbm(vec2(q.x*6.5+wa*.4+q.y*2.5,q.y*19.+wb*.3)+11.);",
-  "  lit*=1.+m.b*uAmp*(smoothstep(.36,.68,dp)-.5)*.3;",
-  " }",
+"  float ph=fbm(q*1.8+3.)*6.+q.x*2.;",
+"  vec2 u4=clamp(uv+uAmp*vec2(wind(tw,ph)*.009,wind(tw*1.13+4.,ph*1.3+2.)*.004),vec2(.5,.71),vec2(.72,1.));",
+"  lit=mix(lit,ratio(uv,u4),m.b*step(uv.x,.72));",
+"  vec2 lp=vec2(.47,.28)+(uv-vec2(.5,.71))*vec2(.42,1.05)+uAmp*vec2(wind(tw,2.+q.x)*.02,wind(tw*1.13+4.,5.)*.012);",
+"  lit*=mix(1.,leaf(lp),m.b*.8);",
+" }",
   " if(m.b>.004&&uv.y<.688){",
 "  float ph=fbm(q*3.)*4.+q.y*2.5;",
 "  float a=wind(t*.55,ph),b=wind(t*.6+2.,ph*1.4+1.);",
@@ -146,7 +143,7 @@
   function init() {
     if (starting || ready || failed) return;
     starting = true;
-    Promise.all([decoded(), load(BASE + "accueil_mur_eau_masque.png?v=2"), load(BASE + "accueil_mur_eau_lumiere.webp")]).then(function (r) {
+    Promise.all([decoded(), load(BASE + "accueil_mur_eau_masque.png?v=2"), load(BASE + "accueil_mur_eau_lumiere.webp"), load(BASE + "accueil_mur_eau_nappe.webp")]).then(function (r) {
       cv = document.createElement("canvas");
       cv.className = "home-hero-water";
       cv.setAttribute("aria-hidden", "true");
@@ -164,9 +161,9 @@
       gl.enableVertexAttribArray(loc);
       gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
       U = {};
-      ["uImg", "uMask", "uSoft", "uRes", "uSize", "uT", "uAmp", "uPosX"].forEach(function (k) { U[k] = gl.getUniformLocation(pr, k); });
-      texture(0, img); texture(1, r[1]); texture(2, r[2]);
-      gl.uniform1i(U.uImg, 0); gl.uniform1i(U.uMask, 1); gl.uniform1i(U.uSoft, 2);
+      ["uImg", "uMask", "uSoft", "uWater", "uRes", "uSize", "uT", "uAmp", "uPosX"].forEach(function (k) { U[k] = gl.getUniformLocation(pr, k); });
+      texture(0, img); texture(1, r[1]); texture(2, r[2]); texture(3, r[3]);
+      gl.uniform1i(U.uImg, 0); gl.uniform1i(U.uMask, 1); gl.uniform1i(U.uSoft, 2); gl.uniform1i(U.uWater, 3);
       gl.uniform2f(U.uSize, img.naturalWidth, img.naturalHeight);
       gl.uniform1f(U.uAmp, AMP);
       gl.clearColor(0, 0, 0, 0);
@@ -181,8 +178,8 @@
   function size() {
     var cw = cv.clientWidth, ch = cv.clientHeight;
     if (!cw || !ch) return false;
-    var d = Math.min(window.devicePixelRatio || 1, 1.5);
-    var w = Math.min(Math.round(cw * d), 2200), h = Math.round(w * ch / cw);
+    var d = Math.min(window.devicePixelRatio || 1, 2);
+    var w = Math.min(Math.round(cw * d), 2560), h = Math.round(w * ch / cw);
     if (cv.width !== w || cv.height !== h) { cv.width = w; cv.height = h; gl.viewport(0, 0, w, h); }
     gl.uniform2f(U.uRes, w, h);
     var px = parseFloat(getComputedStyle(img).objectPosition);
