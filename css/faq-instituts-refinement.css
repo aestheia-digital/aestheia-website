@@ -72,3 +72,16 @@
     border-color: #FFFFFF !important;
   }
 }
+
+/* Puces Instituts : réalité du métier, assistant IA et réassurance, nuit. */
+@layer typography {
+  html:is(.theme-dark, [data-theme="dark"]) body.institutes-page #contenu :is(
+    .institutes-reality-list, .institutes-assistant-section .feature-list,
+    .section-mist.section-aqua .feature-list
+  ) > li::before {
+    background: #B89A72 !important;
+    background-image: none !important;
+    color: #B89A72 !important;
+    box-shadow: none !important;
+  }
+}
