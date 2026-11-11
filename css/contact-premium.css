@@ -1,7 +1,7 @@
 /* Page Contact uniquement — cartes et CTA, tous formats */
 @layer refonte {
   html body #contenu > .contact-photo-hero + .section {
-    background: #F9F8F6 !important;
+    background: #FFFFFF !important;
     background-image: none !important;
   }
   html body #contenu > .contact-photo-hero + .section .contact-option {
@@ -65,8 +65,7 @@
 /* Bandeau signature — aucune concurrence avec les deux CTA principaux. */
 @layer refonte {
   html body #contenu > .contact-signature-section {
-    background: #FAF9F7 !important;
-    background-image: none !important;
+    background: radial-gradient(ellipse at 85% 15%, rgba(45, 91, 158, .055), transparent 56%), #FFFFFF !important;
     padding-block: clamp(2.5rem, 5vw, 4.5rem);
   }
   html body #contenu > .contact-signature-section::before,
