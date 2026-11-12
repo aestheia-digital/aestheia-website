@@ -136,3 +136,88 @@
     }
   }
 }
+
+
+/* Affinage simulateur 12/11 : photo strictement dans le panneau, contrôles lisibles. */
+@layer typography {
+  html[data-theme] body.home-page .sim {
+    --sim-accent: #8d54d5;
+    --sim-muted: #ffffff;
+  }
+  html[data-theme] body.home-page .sim .sim-eyebrow {
+    color: #8d54d5 !important;
+    letter-spacing: .17em !important;
+  }
+  html[data-theme] body.home-page .sim .sim-label {
+    color: #fff !important;
+    -webkit-text-fill-color: #fff !important;
+    font-weight: 400 !important;
+  }
+  html[data-theme] body.home-page .sim .sim-method {
+    color: #b9c6e6 !important;
+    -webkit-text-fill-color: #b9c6e6 !important;
+    font-size: 11.5px !important;
+    opacity: .82;
+  }
+  html[data-theme] body.home-page .sim .sim-val {
+    float: none;
+    display: block;
+    margin-top: 10px;
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    color: #fff !important;
+  }
+  html[data-theme] body.home-page .sim .sim-slider,
+  html[data-theme] body.home-page .sim .sim-result {
+    align-self: center;
+  }
+  html[data-theme] body.home-page .sim .sim-cta-cell {
+    align-self: end;
+    padding-bottom: 3px;
+  }
+  html[data-theme] body.home-page .sim #sim-heures {
+    margin-top: 12px;
+    min-height: 30px;
+  }
+  html[data-theme] body.home-page .sim #sim-heures::-webkit-slider-runnable-track {
+    height: 5px;
+    border-radius: 99px;
+    background: linear-gradient(to right, #c6a477 0%, #c6a477 var(--pct, 25%), #fff var(--pct, 25%), #fff 100%) !important;
+  }
+  html[data-theme] body.home-page .sim #sim-heures::-moz-range-track {
+    height: 5px;
+    border-radius: 99px;
+    background: #fff !important;
+  }
+  html[data-theme] body.home-page .sim #sim-heures::-moz-range-progress {
+    height: 5px;
+    border-radius: 99px;
+    background: #c6a477 !important;
+  }
+  html[data-theme] body.home-page .sim #sim-heures::-webkit-slider-thumb {
+    width: 21px;
+    height: 21px;
+    margin-top: -8px;
+    background: #fff !important;
+    border: 2px solid #c6a477 !important;
+    box-shadow: 0 1px 6px rgba(0,0,0,.2) !important;
+  }
+  html[data-theme] body.home-page .sim #sim-heures::-moz-range-thumb {
+    width: 19px;
+    height: 19px;
+    background: #fff !important;
+    border: 2px solid #c6a477 !important;
+    box-shadow: 0 1px 6px rgba(0,0,0,.2) !important;
+  }
+  html[data-theme] body.home-page .sim .sim-cta {
+    background: #fff !important;
+    color: #1e2a50 !important;
+    -webkit-text-fill-color: #1e2a50 !important;
+  }
+  @media (max-width: 900px) {
+    html[data-theme] body.home-page .sim .sim-cta-cell {
+      align-self: auto;
+      padding-bottom: 0;
+    }
+  }
+}
