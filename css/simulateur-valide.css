@@ -221,3 +221,37 @@
     }
   }
 }
+
+/* Ajustement post-fusion : lumière et alignement du simulateur.
+   Photo toujours confinée au panneau, CTA et slider inchangés en couleur. */
+@layer typography {
+  html[data-theme="light"] body.home-page .sim-band {
+    background:
+      linear-gradient(90deg, rgba(14,20,48,.58) 0%, rgba(14,20,48,.48) 48%, rgba(14,20,48,.38) 100%),
+      url("../assets/images/metiers/accueil_mur_eau_1280.webp") 70% 45% / cover no-repeat !important;
+  }
+  html[data-theme="dark"] body.home-page .sim-band {
+    background:
+      linear-gradient(90deg, rgba(14,20,48,.68) 0%, rgba(14,20,48,.58) 48%, rgba(14,20,48,.48) 100%),
+      url("../assets/images/metiers/accueil_mur_eau_1280.webp") 70% 45% / cover no-repeat !important;
+  }
+  @media (min-width: 901px) {
+    html[data-theme] body.home-page .sim-grid {
+      align-items: start !important;
+    }
+    html[data-theme] body.home-page .sim .sim-slider,
+    html[data-theme] body.home-page .sim .sim-result {
+      align-self: start !important;
+    }
+    html[data-theme] body.home-page .sim .sim-slider,
+    html[data-theme] body.home-page .sim .sim-result {
+      padding-top: 2px !important;
+    }
+    html[data-theme] body.home-page .sim #sim-heures {
+      margin-top: 28px !important;
+    }
+    html[data-theme] body.home-page .sim .sim-cta-cell {
+      align-self: center !important;
+    }
+  }
+}
