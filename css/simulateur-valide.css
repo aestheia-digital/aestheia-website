@@ -255,3 +255,47 @@
     }
   }
 }
+
+/* Correction structurelle desktop : repères verticaux communs.
+   Les deux intitulés partagent exactement le même point de départ.
+   Ne s'applique pas aux mises en page tablette/mobile. */
+@layer typography {
+  @media (min-width: 1100px) {
+    html[data-theme] body.home-page .sim-band {
+      padding-top: 30px !important;
+      padding-bottom: 30px !important;
+    }
+    html[data-theme] body.home-page .sim-grid {
+      align-items: start !important;
+      min-height: 158px !important;
+    }
+    html[data-theme] body.home-page .sim .sim-intro {
+      align-self: start !important;
+    }
+    html[data-theme] body.home-page .sim .sim-slider,
+    html[data-theme] body.home-page .sim .sim-result {
+      align-self: start !important;
+      padding-top: 43px !important;
+      margin-top: 0 !important;
+    }
+    html[data-theme] body.home-page .sim .sim-slider .sim-label,
+    html[data-theme] body.home-page .sim .sim-result > .sim-label {
+      margin: 0 !important;
+      line-height: 1.4 !important;
+    }
+    html[data-theme] body.home-page .sim .sim-slider .sim-val {
+      margin-top: 20px !important;
+    }
+    html[data-theme] body.home-page .sim #sim-heures {
+      margin-top: 30px !important;
+    }
+    html[data-theme] body.home-page .sim #sim-gain {
+      margin-top: 20px !important;
+    }
+    html[data-theme] body.home-page .sim .sim-cta-cell {
+      align-self: start !important;
+      padding-top: 100px !important;
+      padding-bottom: 0 !important;
+    }
+  }
+}
