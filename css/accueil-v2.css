@@ -93,11 +93,10 @@ body.v2 { margin: 0; background: var(--white); color: var(--text); font-family: 
 .v2-hero-text { max-width: 640px; }
 .v2-hero .v2-eyebrow { color: var(--gold); }
 .v2-hero h1 { color: var(--on-navy); font-size: clamp(33px, 3.9vw, 50px); line-height: 1.12; letter-spacing: -0.015em; }
-.v2-hero h1 em { color: var(--gold); font-style: italic; }
+.v2-hero h1 .v2-gold { color: var(--gold); }
 .v2-hero-lead { margin-top: 22px; color: var(--on-navy-soft); font-size: 18.5px; max-width: 54ch; }
 .v2-hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
-.v2-hero-proof { display: flex; align-items: center; gap: 12px; margin-top: 30px; color: var(--on-navy); font-size: 15.5px; }
-.v2-hero-proof::before { content: ""; flex: none; width: 34px; height: 1px; background: var(--gold); }
+.v2-hero-proof { margin-top: 32px; padding: 3px 0 3px 16px; border-left: 2px solid var(--gold); color: var(--on-navy); font-size: 15.5px; }
 
 /* Quatre bénéfices */
 .v2-benefits { border-bottom: 1px solid var(--line); }
@@ -131,12 +130,13 @@ body.v2 { margin: 0; background: var(--white); color: var(--text); font-family: 
 
 /* Secteurs */
 .v2-sectors { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 38px; }
-.v2-sector { position: relative; display: block; overflow: hidden; background: var(--navy); border-bottom: 2px solid var(--gold); text-decoration: none; }
-.v2-sector img { width: 100%; aspect-ratio: 3 / 4.4; object-fit: cover; transition: transform .6s ease; }
+.v2-sector { display: flex; flex-direction: column; background: var(--white); border-bottom: 2px solid var(--gold); text-decoration: none; }
+.v2-sector-img { display: block; overflow: hidden; }
+.v2-sector img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; transition: transform .6s ease; }
 .v2-sector:hover img { transform: scale(1.04); }
-.v2-sector-body { position: absolute; inset: auto 0 0 0; display: flex; flex-direction: column; gap: 12px; padding: 70px 18px 18px; background: linear-gradient(180deg, rgba(15,22,54,0) 0%, rgba(15,22,54,.78) 55%, rgba(15,22,54,.94) 100%); }
-.v2-sector h3 { font-family: var(--display); font-size: 21px; font-weight: 400; line-height: 1.22; color: var(--on-navy); }
-.v2-arrow { width: 26px; height: 12px; stroke: var(--gold); fill: none; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+.v2-sector-body { display: flex; flex-direction: column; gap: 12px; flex: 1; padding: 18px 2px 16px; }
+.v2-sector h3 { font-family: var(--display); font-size: 20px; font-weight: 400; line-height: 1.25; color: var(--ink); }
+.v2-arrow { margin-top: auto; width: 26px; height: 12px; stroke: var(--gold-deep); fill: none; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
 
 /* Expertises */
 .v2-levers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 40px; }
@@ -187,6 +187,10 @@ body.v2 { margin: 0; background: var(--white); color: var(--text); font-family: 
 .v2-footer ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
 .v2-footer a { text-decoration: none; color: var(--on-navy-soft); }
 .v2-footer a:hover { color: var(--on-navy); }
+.v2-social { display: flex; gap: 12px; margin-top: 18px; }
+.v2-social a { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; border: 1px solid rgba(255,255,255,.28); color: var(--on-navy); }
+.v2-social a:hover { border-color: var(--gold); color: var(--gold); }
+.v2-social svg { width: 18px; height: 18px; }
 .v2-footer-tag { margin-top: 14px; max-width: 34ch; }
 .v2-footer-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; padding-block: 20px 26px; border-top: 1px solid rgba(255,255,255,.14); font-size: 14px; }
 .v2-footer-bottom nav { display: flex; flex-wrap: wrap; gap: 8px 22px; }
@@ -239,12 +243,12 @@ body.v2 { margin: 0; background: var(--white); color: var(--text); font-family: 
   .v2-sim-grid { grid-template-columns: 1fr; }
   .v2-sim-grid > div { padding-inline: 0; border-left: 0; }
   .v2-sim .v2-btn { width: 100%; }
-  .v2-sectors { grid-template-columns: 1fr; gap: 14px; }
+  .v2-sectors { grid-template-columns: 1fr; gap: 24px; }
   .v2-sector, .v2-sector:nth-child(n+4) { grid-column: auto; }
   .v2-sector img { aspect-ratio: 16 / 11; }
-  .v2-sector-body { flex-direction: row; align-items: flex-end; justify-content: space-between; padding: 60px 18px 16px; }
-  .v2-sector h3 { font-size: 22px; }
-  .v2-arrow { flex: none; margin-bottom: 7px; }
+  .v2-sector-body { flex-direction: row; align-items: center; justify-content: space-between; padding: 14px 2px 14px; }
+  .v2-sector h3 { font-size: 21px; }
+  .v2-arrow { flex: none; margin-top: 0; }
   .v2-tel--bar { font-size: 14.5px; gap: 6px; }
   .v2-levers { grid-template-columns: 1fr; gap: 16px; }
   .v2-offers { grid-template-columns: 1fr; gap: 16px; }
