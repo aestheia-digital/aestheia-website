@@ -65,7 +65,7 @@ body.v2 { margin: 0; background: var(--white); color: var(--text); font-family: 
 .v2-logo { font-family: var(--display); font-size: 34px; line-height: 1; color: var(--on-navy); text-decoration: none; letter-spacing: -0.01em; white-space: nowrap; }
 .v2-logo b { font-weight: 400; color: var(--gold); font-size: 1.12em; }
 .v2-nav { display: flex; align-items: center; gap: 2px; margin-left: auto; white-space: nowrap; }
-.v2-nav > a:not(.v2-btn), .v2-drop > button { display: inline-flex; align-items: center; gap: 6px; padding: 10px 12px; background: none; border: 0; color: var(--on-navy); font-family: var(--body); font-size: 15.5px; font-weight: 400; text-decoration: none; cursor: pointer; }
+.v2-nav > a:not(.v2-btn), .v2-drop > button { display: inline-flex; align-items: center; gap: 6px; padding: 10px 8px; background: none; border: 0; color: var(--on-navy); font-family: var(--body); font-size: 15px; font-weight: 400; text-decoration: none; cursor: pointer; }
 .v2-nav > a:not(.v2-btn):hover, .v2-drop > button:hover { color: var(--gold-soft); }
 .v2-nav > a[aria-current="page"] { box-shadow: inset 0 -2px 0 var(--gold); }
 .v2-drop { position: relative; }
@@ -78,9 +78,9 @@ body.v2 { margin: 0; background: var(--white); color: var(--text); font-family: 
 .v2-tel { display: inline-flex; align-items: center; gap: 8px; color: var(--on-navy); font-size: 15.5px; text-decoration: none; white-space: nowrap; }
 .v2-tel:hover { color: var(--gold-soft); }
 .v2-tel svg { width: 17px; height: 17px; flex: none; stroke: var(--gold); }
-.v2-tel--nav { padding: 10px 4px 10px 16px; margin-left: 8px; border-left: 1px solid rgba(255,255,255,.22); }
+.v2-tel--nav { padding: 10px 2px 10px 14px; margin-left: 6px; font-size: 15px; border-left: 1px solid rgba(255,255,255,.22); }
 .v2-tel--bar { display: none; margin-left: auto; }
-.v2-nav .v2-btn { min-height: 44px; padding: 9px 16px; font-size: 15px; margin-left: 12px; }
+.v2-nav .v2-btn { min-height: 44px; padding: 9px 14px; font-size: 15px; margin-left: 10px; }
 .v2-burger { display: none; margin-left: 6px; width: 46px; height: 46px; background: none; border: 0; cursor: pointer; padding: 12px 10px; }
 .v2-burger span { display: block; height: 1.5px; background: var(--on-navy); margin-block: 5px; }
 
