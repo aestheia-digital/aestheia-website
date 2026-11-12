@@ -256,27 +256,27 @@
   }
 }
 
-/* Correction structurelle desktop : repères verticaux communs.
-   Les deux intitulés partagent exactement le même point de départ.
-   Ne s'applique pas aux mises en page tablette/mobile. */
+/* Desktop : disposition stable, sans déplacement du bandeau ni de son image.
+   Les libellés du curseur et du résultat partagent le même repère vertical. */
 @layer typography {
   @media (min-width: 1100px) {
     html[data-theme] body.home-page .sim-band {
       padding-top: 30px !important;
-      padding-bottom: 30px !important;
+      padding-bottom: 24px !important;
     }
     html[data-theme] body.home-page .sim-grid {
+      min-height: 190px !important;
       align-items: start !important;
-      min-height: 158px !important;
     }
     html[data-theme] body.home-page .sim .sim-intro {
       align-self: start !important;
+      padding-top: 28px !important;
     }
     html[data-theme] body.home-page .sim .sim-slider,
     html[data-theme] body.home-page .sim .sim-result {
       align-self: start !important;
-      padding-top: 43px !important;
       margin-top: 0 !important;
+      padding-top: 80px !important;
     }
     html[data-theme] body.home-page .sim .sim-slider .sim-label,
     html[data-theme] body.home-page .sim .sim-result > .sim-label {
@@ -284,18 +284,28 @@
       line-height: 1.4 !important;
     }
     html[data-theme] body.home-page .sim .sim-slider .sim-val {
-      margin-top: 20px !important;
+      margin-top: 14px !important;
     }
     html[data-theme] body.home-page .sim #sim-heures {
-      margin-top: 30px !important;
-    }
-    html[data-theme] body.home-page .sim #sim-gain {
       margin-top: 20px !important;
     }
+    html[data-theme] body.home-page .sim #sim-gain {
+      margin-top: 14px !important;
+    }
     html[data-theme] body.home-page .sim .sim-cta-cell {
-      align-self: start !important;
-      padding-top: 100px !important;
-      padding-bottom: 0 !important;
+      align-self: end !important;
+      padding: 0 0 4px !important;
+      margin: 0 !important;
+    }
+    html[data-theme] body.home-page .sim .sim-cta {
+      padding: 15px 22px !important;
+      background: #1e2a50 !important;
+      color: #ffffff !important;
+      -webkit-text-fill-color: #ffffff !important;
+      border: 1px solid rgba(198,164,119,.55) !important;
+    }
+    html[data-theme] body.home-page .sim .sim-cta:hover {
+      background: #293862 !important;
     }
   }
 }
