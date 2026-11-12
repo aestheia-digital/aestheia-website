@@ -95,12 +95,12 @@
 @layer typography {
   html[data-theme="light"] body.home-page .sim-band {
     background:
-      linear-gradient(rgba(14, 20, 48, .76), rgba(14, 20, 48, .76)),
+      linear-gradient(rgba(14, 20, 48, .70), rgba(14, 20, 48, .70)),
       url("../assets/images/metiers/accueil_mur_eau_1280.webp") 70% 45% / cover no-repeat !important;
   }
 
   html[data-theme="light"] body.home-page .home-slogan-band {
-    background: var(--color-mist);
+    background: #f8f7fc !important;
     box-shadow: none !important;
   }
 
@@ -108,6 +108,7 @@
   html[data-theme="light"] body.home-page .home-slogan-band .home-slogan[data-typo-role]:not(#_) {
     font-weight: 400 !important;
     font-size: clamp(12px, 1vw, 14px) !important;
+    font-weight: 400 !important;
     text-shadow: none !important;
   }
 }
