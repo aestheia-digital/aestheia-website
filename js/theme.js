@@ -19,10 +19,27 @@
     if (!forcedTheme && requestedTheme !== "auto") forcedTheme = requestedTheme;
   }
 
+  function lastSunday(year, monthIndex) {
+    const date = new Date(Date.UTC(year, monthIndex + 1, 0));
+    return date.getUTCDate() - date.getUTCDay();
+  }
+
+  function parisClock() {
+    const parts = new Intl.DateTimeFormat("en-GB", {
+      timeZone: "Europe/Paris", year: "numeric", month: "2-digit",
+      day: "2-digit", hour: "2-digit", hourCycle: "h23"
+    }).formatToParts(new Date());
+    const v = Object.fromEntries(parts.map(p => [p.type, p.value]));
+    return { year: +v.year, month: +v.month, day: +v.day, hour: +v.hour };
+  }
+
   function applyTheme() {
-    const now = new Date();
-    const hour = now.getHours();
-    const theme = forcedTheme || (hour >= 7 && hour < 19 ? "light" : "dark");
+    const now = parisClock();
+    const summer = (now.month > 3 && now.month < 10) ||
+      (now.month === 3 && now.day >= lastSunday(now.year, 2)) ||
+      (now.month === 10 && now.day < lastSunday(now.year, 9));
+    const nightStarts = summer ? 19 : 17;
+    const theme = forcedTheme || (now.hour >= 7 && now.hour < nightStarts ? "light" : "dark");
     root.classList.toggle("theme-light", theme === "light");
     root.classList.toggle("theme-dark", theme === "dark");
     root.dataset.theme = theme;
@@ -31,12 +48,7 @@
       toggle.setAttribute("aria-label", theme === "light" ? "Passer en mode nuit" : "Passer en mode jour");
     }
     clearTimeout(clockTimer);
-    if (!forcedTheme) {
-      const nextChange = new Date(now);
-      if (hour >= 19) nextChange.setDate(nextChange.getDate() + 1);
-      nextChange.setHours(hour >= 7 && hour < 19 ? 19 : 7, 0, 0, 0);
-      clockTimer = setTimeout(applyTheme, nextChange.getTime() - now.getTime());
-    }
+    if (!forcedTheme) clockTimer = setTimeout(applyTheme, 60 * 1000);
   }
 
   applyTheme();

@@ -88,3 +88,51 @@
     }
   }
 }
+
+
+/* Raffinement accueil — mode jour uniquement, tous formats.
+   Voile bleu du simulateur moins opaque, slogan plus discret. */
+@layer typography {
+  html[data-theme="light"] body.home-page .sim-band {
+    background:
+      linear-gradient(rgba(14, 20, 48, .70), rgba(14, 20, 48, .70)),
+      url("../assets/images/metiers/accueil_mur_eau_1280.webp") 70% 45% / cover no-repeat !important;
+  }
+
+  html[data-theme="light"] body.home-page .home-slogan-band {
+    background: #f8f7fc !important;
+    box-shadow: none !important;
+  }
+
+  html[data-theme="light"] body.home-page .home-slogan-band .home-slogan,
+  html[data-theme="light"] body.home-page .home-slogan-band .home-slogan[data-typo-role]:not(#_) {
+    font-weight: 400 !important;
+    font-size: clamp(12px, 1vw, 14px) !important;
+    font-weight: 400 !important;
+    text-shadow: none !important;
+  }
+}
+
+
+/* Accueil : micro-interactions sobres sur cartes, uniquement avec pointeur précis. */
+@layer typography {
+  @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    html body.home-page .home-pains .pain-card,
+    html body.home-page .home-section-safety .target-control-card {
+      transition: transform 250ms ease, box-shadow 250ms ease !important;
+      will-change: auto;
+    }
+    html body.home-page .home-pains .pain-card:hover,
+    html body.home-page .home-section-safety .target-control-card:hover {
+      transform: translateY(-3px) !important;
+      box-shadow: 0 10px 24px rgba(15, 26, 57, .10) !important;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html body.home-page .home-pains .pain-card,
+    html body.home-page .home-section-safety .target-control-card {
+      transition: none !important;
+      transform: none !important;
+    }
+  }
+}

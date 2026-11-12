@@ -7469,3 +7469,34 @@ html:is(.theme-dark,[data-theme="dark"]) body.home-page .founder-signature__role
   -webkit-text-fill-color: #C6A477 !important;
   background: none !important;
 }
+
+/* PR 305 — Adresse : sobriété et lisibilité en mode jour uniquement. */
+html:not(.theme-dark):not([data-theme="dark"]) .location-section {
+  background: #fffdfa;
+}
+html:not(.theme-dark):not([data-theme="dark"]) .location-heading .location-contact-item {
+  font-family: var(--font-structure), sans-serif;
+  font-size: 1.08rem;
+  font-weight: 400;
+  letter-spacing: 0.005em;
+  line-height: 1.5;
+}
+html:not(.theme-dark):not([data-theme="dark"]) .location-contact-icon-email,
+html:not(.theme-dark):not([data-theme="dark"]) .location-contact-icon-phone {
+  border: 1.5px solid #b99b70;
+  border-image: none;
+  color: #b99b70;
+}
+html:not(.theme-dark):not([data-theme="dark"]) .location-contact-icon-email::before,
+html:not(.theme-dark):not([data-theme="dark"]) .location-contact-icon-email::after,
+html:not(.theme-dark):not([data-theme="dark"]) .location-contact-icon-phone::before,
+html:not(.theme-dark):not([data-theme="dark"]) .location-contact-icon-phone::after {
+  background: #b99b70;
+}
+@media (max-width: 600px) {
+  html:not(.theme-dark):not([data-theme="dark"]) .location-heading .location-contact-item {
+    font-size: 1.02rem;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+}
