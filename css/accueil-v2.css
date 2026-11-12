@@ -140,6 +140,13 @@ body.v2 { margin: 0; background: var(--white); color: var(--text); font-family: 
 .v2-lever h3 { font-family: var(--body); font-size: 19px; font-weight: 500; line-height: 1.3; }
 .v2-lever p { margin-top: 14px; font-size: 16.5px; }
 
+/* Offre */
+.v2-offers { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 40px; }
+.v2-offers .v2-lever { background: var(--band); border-color: transparent; border-top-color: var(--gold); }
+.v2-deliverable { padding-top: 14px; border-top: 1px solid var(--line); color: var(--ink); }
+.v2-deliverable strong { display: block; font-size: 12.5px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 4px; }
+.v2-offer-next { margin-block: 30px 24px; max-width: 70ch; }
+
 /* À propos */
 .v2-about { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: 56px; align-items: center; }
 .v2-about-photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: center 20%; }
@@ -226,6 +233,7 @@ body.v2 { margin: 0; background: var(--white); color: var(--text); font-family: 
   .v2-sector-body { justify-content: center; }
   .v2-arrow { margin-top: 0; }
   .v2-levers { grid-template-columns: 1fr; gap: 16px; }
+  .v2-offers { grid-template-columns: 1fr; gap: 16px; }
   .v2-about { grid-template-columns: 1fr; gap: 28px; }
   .v2-about-photo { max-width: 240px; }
   .v2-cta-actions .v2-btn { width: 100%; }
