@@ -2079,3 +2079,17 @@ body.v2.v2-medicine-page #assistant-ia .assistant-schema .caption-arrow {
 @layer refonte {
   body.v2.v2-medicine-page #assistant-ia .assistant-schema .step.node.action { background: #C6A477 !important; border-color: #C6A477 !important; color: #0F1636 !important; }
 }
+
+/* Cabinet esthétique : systèmes restaurés, uniquement sur cette page */
+body.v2 .v2-medicine-systems { background:#fff; color:#1f2b4f; }
+body.v2 .v2-medicine-systems .v2-h2 { color:#1f2b4f; }
+body.v2 .v2-medicine-systems .sector-editorial-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin:28px 0; }
+body.v2 .v2-medicine-systems .sector-editorial-chapter { border:1px solid #c6a477; border-top:3px solid #c6a477; background:#fff; padding:22px; min-width:0; }
+body.v2 .v2-medicine-systems .sector-editorial-chapter summary { cursor:pointer; list-style:none; }
+body.v2 .v2-medicine-systems .sector-editorial-chapter summary::-webkit-details-marker { display:none; }
+body.v2 .v2-medicine-systems .sector-editorial-chapter h3 { display:flex; align-items:center; gap:12px; font-size:1.2rem; line-height:1.4; color:#1f2b4f; margin:0; font-weight:500; }
+body.v2 .v2-medicine-systems .title-pictogram { width:30px; height:30px; object-fit:contain; flex:none; }
+body.v2 .v2-medicine-systems .sector-editorial-content { padding-top:16px; line-height:1.7; color:#263453; }
+body.v2 .v2-medicine-systems .sector-editorial-content p { margin:0 0 12px; }
+body.v2 .v2-medicine-assistant .medicine-feature-icon { display:inline-block; margin-right:12px; font-size:1.25em; vertical-align:middle; }
+@media(max-width:700px){body.v2 .v2-medicine-systems .sector-editorial-list{grid-template-columns:1fr;}body.v2 .v2-medicine-systems .sector-editorial-chapter{padding:20px;}}
