@@ -556,8 +556,10 @@ body.v2.v2-home-page .v2-home-growth .v2-family:last-child .v2-family-label {
 }
 body.v2.v2-home-page .v2-home-growth .v2-family-list--1 .v2-solution {
   background: #FFFFFF !important;
-  border: none !important;
-  padding: 0 !important;
+  border: 1px solid rgba(198,164,119,.7) !important;
+  border-top: 2px solid #C6A477 !important;
+  border-radius: 0;
+  padding: 26px 30px 28px !important;
   max-width: none;
 }
 body.v2.v2-home-page .v2-home-growth .v2-family-list--1 :is(h3,p,li) {
@@ -578,6 +580,11 @@ body.v2.v2-home-page .v2-sim {
 
 /* Restaurer la présentation encadrée des 4 cartes Secteurs de l'ancien accueil.
    Les titres, descriptions, photos et liens d'origine sont repris dans le HTML. */
+/* Revenir aux dimensions du bandeau Secteurs de la version de référence,
+   sans modifier les images ni les textes des quatre cartes. */
+body.v2.v2-home-page .v2-home-sectors > .v2-wrap {
+  max-width: 1600px;
+}
 body.v2.v2-home-page .v2-home-sectors .sector-grid {
   display: grid;
   grid-template-columns: repeat(4,minmax(0,1fr));
@@ -608,7 +615,8 @@ body.v2.v2-home-page .v2-home-sectors .sector-card:focus-visible {
 }
 body.v2.v2-home-page .v2-home-sectors .sector-card img {
   width: 100%;
-  height: 244px;
+  height: auto;
+  aspect-ratio: 6 / 7;
   object-fit: cover;
   object-position: center;
   display: block;
@@ -709,5 +717,8 @@ body.v2.v2-home-page .v2-home-founder .v2-about-photo img {
 }
 @media (max-width: 600px) {
   body.v2.v2-home-page .v2-home-sectors .sector-grid { grid-template-columns: 1fr; gap: 18px; }
-  body.v2.v2-home-page .v2-home-sectors .sector-card img { height: 220px; }
+  body.v2.v2-home-page .v2-home-sectors .sector-card img {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
 }
