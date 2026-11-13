@@ -121,13 +121,15 @@ html body .site-header .header-cta::before {
   -webkit-mask: url("../assets/icons/calendar.svg") center / contain no-repeat !important; mask: url("../assets/icons/calendar.svg") center / contain no-repeat !important;
 }
 html body .site-header .nav-toggle { background: transparent !important; border: 1px solid rgba(198, 164, 119, 0.5) !important; border-radius: 3px !important; width: 44px !important; height: 44px !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; gap: 5px !important; padding: 0 !important; }
+html body .site-header .nav-toggle::before, html body .site-header .nav-toggle::after { content: none !important; }
+html body .site-header .nav-toggle { min-width: 44px !important; max-width: 44px !important; overflow: hidden !important; font-size: 0 !important; }
 html body .site-header .nav-toggle span { display: block !important; width: 20px !important; height: 1.5px !important; background: #fff !important; }
 @media (max-width: 1180px) {
   html body .site-header a.header-phone-direct span, html body .site-header .main-nav { gap: 0.9rem !important; }
   html body .site-header .main-nav > a:not(.btn):not(.header-phone-direct), html body .site-header .nav-dropdown-toggle { font-size: 0.92rem !important; }
   html body .site-header .header-cta { padding: 0.8rem 1rem !important; font-size: 0.92rem !important; }
 }
-@media (max-width: 1050px) {
+@media (max-width: 1180px) {
   html body .site-header .nav-shell { min-height: 68px !important; }
   html body .site-header .brand-name { font-size: 1.7rem !important; }
   html body .site-header .nav-toggle { display: inline-flex !important; }
@@ -281,4 +283,5 @@ html body .conversion-band .conversion-buttons .btn { padding: 1rem 1.6rem !impo
   html body .home-hero .home-hero-veil { background: linear-gradient(180deg, rgba(14, 23, 71, 0.92) 0%, rgba(14, 23, 71, 0.86) 55%, rgba(14, 23, 71, 0.7) 100%) !important; }
   html body .page-hero { background-image: linear-gradient(180deg, rgba(14, 23, 71, 0.9), rgba(14, 23, 71, 0.8)), var(--hero-image) !important; }
 }
+@media (min-width: 1181px) { html body .site-header .nav-toggle { display: none !important; } }
 }
