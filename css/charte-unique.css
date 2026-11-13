@@ -1477,28 +1477,31 @@ body.v2.v2-thalasso-page .v2-hero--sector {
   background: #0F1636 !important;
   background-image: none !important;
 }
-body.v2.v2-thalasso-page .v2-hero--sector > .v2-hero-media {
+/* Preserve the complete portrait instead of cropping it to a wide background. */
+body.v2.v2-thalasso-page .v2-hero--sector .v2-hero-in {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(28px, 4vw, 64px);
+  padding-block: 40px;
+}
+body.v2.v2-thalasso-page .v2-hero--sector .v2-hero-media {
   display: block !important;
-  position: absolute;
-  inset: 0;
+  position: relative;
+  inset: auto;
   width: 100%;
-  overflow: hidden;
-  pointer-events: none;
+  max-width: 450px;
+  justify-self: end;
+  border: 1px solid #C6A477;
 }
-body.v2.v2-thalasso-page .v2-hero--sector > .v2-hero-media img {
+body.v2.v2-thalasso-page .v2-hero--sector .v2-hero-media img {
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 70% center;
+  height: auto;
+  object-fit: contain;
 }
-body.v2.v2-thalasso-page .v2-hero--sector > .v2-hero-media::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(15,22,54,.97), rgba(15,22,54,.82) 36%, rgba(15,22,54,.43) 70%, rgba(15,22,54,.2));
-}
-body.v2.v2-thalasso-page .v2-hero--sector .v2-hero-in { z-index: 1; }
-body.v2.v2-thalasso-page .v2-hero--sector .v2-hero-text { max-width: 760px; }
+body.v2.v2-thalasso-page .v2-hero--sector .v2-hero-media::after { content: none; }
+body.v2.v2-thalasso-page .v2-hero--sector .v2-hero-text { max-width: none; }
 body.v2.v2-thalasso-page .v2-hero--sector .v2-thalasso-hero-proof {
   margin-top: 18px;
   padding-left: 14px;
@@ -1561,16 +1564,49 @@ body.v2.v2-thalasso-page .v2-thalasso-challenges-lead {
   max-width: 95ch;
 }
 body.v2.v2-thalasso-page .v2-thalasso-challenges p + p { margin-top: 14px; }
-body.v2.v2-thalasso-page .v2-thalasso-challenges ul {
+body.v2.v2-thalasso-page .v2-thalasso-challenge-grid {
   display: grid;
   grid-template-columns: repeat(2,minmax(0,1fr));
-  column-gap: 40px;
-  row-gap: 12px;
-  padding-left: 21px;
-  margin-top: 22px;
+  gap: 16px;
+  padding: 0;
+  margin-top: 24px;
+  list-style: none;
 }
-body.v2.v2-thalasso-page .v2-thalasso-challenges li { padding-left: 4px; }
-body.v2.v2-thalasso-page .v2-thalasso-challenges li::marker { color: #A8854F; }
+body.v2.v2-thalasso-page .v2-thalasso-challenge-grid li {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 20px 22px;
+  border: 1px solid #C6A477;
+  background: #FFFFFF;
+  color: #1F2B4F;
+}
+body.v2.v2-thalasso-page .v2-thalasso-challenge-grid li:last-child { grid-column: 1 / -1; }
+body.v2.v2-thalasso-page .v2-thalasso-challenge-grid svg {
+  width: 32px;
+  height: 32px;
+  flex: none;
+  fill: none;
+  stroke: #A8854F;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+body.v2.v2-thalasso-page :is(.v2-thalasso-section-head,.v2-cta) { text-align: left; }
+body.v2.v2-thalasso-page .v2-cta-actions { justify-content: flex-start; }
+body.v2.v2-thalasso-page .v2-thalasso-benefit {
+  display: block;
+  min-height: 0;
+  height: auto;
+  margin-top: 18px;
+  padding: 14px 18px;
+  background: #FFFFFF;
+  border: 1px solid #C6A477;
+  border-left-width: 3px;
+  color: #1F2B4F;
+  line-height: 1.6;
+}
+body.v2.v2-thalasso-page .v2-thalasso-benefit strong { color: #1F2B4F; font-weight: 500; }
 @media (hover:hover) and (pointer:fine) {
   body.v2.v2-thalasso-page :is(#enjeux,#solutions) .v2-lever:hover,
   body.v2.v2-thalasso-page .v2-thalasso-system:hover,
@@ -1828,8 +1864,8 @@ body.v2.v2-thalasso-page .v2-cta :is(.v2-h2,p) { color: #FFFFFF; }
   }
 }
 @media (max-width:720px) {
-  body.v2.v2-thalasso-page .v2-hero--sector > .v2-hero-media img { object-position: 65% center; }
-  body.v2.v2-thalasso-page .v2-hero--sector > .v2-hero-media::after { background: rgba(15,22,54,.75); }
+  body.v2.v2-thalasso-page .v2-hero--sector .v2-hero-in { grid-template-columns: minmax(0,1fr); }
+  body.v2.v2-thalasso-page .v2-hero--sector .v2-hero-media { justify-self: center; }
   body.v2.v2-thalasso-page .v2-thalasso-challenges ul,
   body.v2.v2-thalasso-page .v2-thalasso-systems-grid,
   body.v2.v2-thalasso-page .v2-thalasso-agents-grid,
