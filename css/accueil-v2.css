@@ -50,7 +50,7 @@ body.v2 { margin: 0; background: var(--white); color: var(--text); font-family: 
 /* Boutons */
 .v2-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 50px; padding: 12px 24px; border: 1px solid transparent; border-radius: var(--radius); font-family: var(--body); font-size: 16px; font-weight: 500; text-decoration: none; cursor: pointer; transition: background-color .2s, color .2s, border-color .2s; }
 .v2-btn svg { width: 19px; height: 19px; flex: none; }
-.v2-btn--gold { background: linear-gradient(135deg, var(--gold-soft), var(--gold)); color: var(--navy); }
+.v2-btn--gold { background: #C6A477; background-image: none; color: #0F1636; }
 .v2-btn--gold:hover { background: var(--gold); }
 .v2-btn--ghost { border-color: rgba(255,255,255,.75); color: var(--on-navy); background: transparent; }
 .v2-btn--ghost:hover { background: rgba(255,255,255,.1); }
