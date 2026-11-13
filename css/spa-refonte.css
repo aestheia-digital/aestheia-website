@@ -1,0 +1,38 @@
+/* Page Spas hôteliers et urbains : cartes métier sur fond clair, charte bleu nuit, ivoire et champagne. */
+html body main .spa-lead { max-width: 78ch; margin: 1.1rem 0 0; }
+html body main .spa-lead p { font-size: 1.12rem; line-height: 1.65; color: var(--rf-ink-soft); margin: 0 0 .8rem; }
+html body main .spa-section-intro { max-width: 78ch; font-size: 1.12rem; line-height: 1.65; color: var(--rf-ink-soft); margin: .9rem 0 0; }
+html body main .spa-grid { display: grid; gap: 1.4rem; margin-top: 2.2rem; }
+html body main .spa-grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+html body main .spa-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+html body main .spa-grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+html body main .spa-grid > .card { padding: 1.7rem 1.7rem 1.5rem !important; margin: 0 !important; display: flex; flex-direction: column; gap: .85rem; min-width: 0; }
+html body main .spa-grid > .card:hover { transform: none !important; box-shadow: var(--rf-shadow) !important; }
+html body main .spa-card-title { display: flex; align-items: center; gap: .8rem; margin: 0 !important; font-family: var(--font-body, "DM Sans", sans-serif) !important; font-size: 1.14rem !important; font-weight: 500 !important; line-height: 1.3 !important; color: var(--rf-navy-700) !important; }
+html body main .spa-card-title img { width: 28px; height: 28px; flex: 0 0 28px; }
+html body main .spa-grid > .card > p { margin: 0 !important; font-size: 1rem; line-height: 1.6; color: var(--rf-ink-soft); }
+html body main .spa-card-benefit strong { display: block; margin-bottom: .2rem; font-size: .78rem; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--rf-champagne-deep); }
+html body main .spa-card-more { margin-top: auto; padding-top: .85rem; border-top: 1px solid var(--rf-line); }
+html body main .spa-card-more summary { display: flex; align-items: center; justify-content: space-between; gap: 1rem; cursor: pointer; list-style: none; font-size: .95rem; font-weight: 500; color: var(--rf-navy-700); }
+html body main .spa-card-more summary::-webkit-details-marker { display: none; }
+html body main .spa-card-more summary::after { content: ""; width: 8px; height: 8px; flex: none; border-right: 1.5px solid var(--rf-champagne-deep); border-bottom: 1.5px solid var(--rf-champagne-deep); transform: rotate(45deg); transition: transform .2s ease; }
+html body main .spa-card-more[open] summary::after { transform: rotate(-135deg); }
+html body main .spa-card-more summary:focus-visible { outline: 2px solid var(--rf-champagne); outline-offset: 3px; }
+html body main .spa-card-more p { margin: .8rem 0 0; font-size: .98rem; line-height: 1.65; color: var(--rf-ink-soft); }
+html body main .spa-note { margin: 2rem 0 0 !important; padding: 1.1rem 1.3rem !important; background: var(--rf-ivory) !important; border: 0 !important; border-left: 2px solid var(--rf-champagne) !important; border-radius: 0 !important; color: var(--rf-navy-700) !important; font-size: 1.02rem; line-height: 1.6; }
+html body main .spa-crosslink { margin: 2rem 0 0; max-width: 90ch; color: var(--rf-ink-soft); }
+html body main .spa-crosslink a { color: var(--rf-champagne-deep); font-weight: 500; }
+html body main .spa-agents .multi-agent-schema { margin-top: 2.2rem; }
+@media (max-width: 1100px) {
+  html body main .spa-grid--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  html body main .spa-grid--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 720px) {
+  html body main .spa-grid--2, html body main .spa-grid--3, html body main .spa-grid--4 { grid-template-columns: 1fr; }
+  html body main .spa-grid > .card { padding: 1.35rem 1.25rem 1.25rem !important; }
+}
+@media (prefers-reduced-motion: reduce) { html body main .spa-card-more summary::after { transition: none; } }
+/* Schéma multi-agents : cases ivoire à liseré champagne, action en bleu nuit */
+html body main .spa-agents .assistant-schema .node:not(.action) { background: var(--rf-ivory) !important; border-color: var(--rf-champagne-light) !important; color: var(--rf-navy-700) !important; }
+html body main .spa-agents .assistant-schema .node .sub { color: var(--rf-ink-soft) !important; }
+html body main .spa-agents .assistant-schema .node.action { background: var(--rf-navy-900) !important; border-color: var(--rf-navy-900) !important; color: #fff !important; }
