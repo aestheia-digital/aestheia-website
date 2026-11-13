@@ -62,7 +62,8 @@
         ]
       }
     </script>
-      <link rel="stylesheet" href="/css/charte-unique.css?v=20261113-charte">
+      <link rel="stylesheet" href="/css/assistant-schema.css?v=20261004-animation">
+    <link rel="stylesheet" href="/css/charte-unique.css?v=20261113-charte">
   </head>
   <body class="v2 v2-sector-page v2-institutes-page">
     <a class="v2-skip" href="#contenu">Aller au contenu</a>
@@ -279,15 +280,22 @@
             <strong>Chaque matin, vous gardez la main.</strong>
             Les demandes et les documents utiles peuvent être organisés, les brouillons préparés et les points à vérifier signalés. Vous contrôlez les réponses, les comparaisons et les décisions avant toute action.
           </div>
-          <div class="v2-institute-flow" role="group" aria-label="Fonctionnement d’un assistant IA avec validation humaine">
-            <div class="v2-institute-flow-step">Demandes et documents<span>Mails, formulaires, contrats et devis</span></div>
-            <span class="v2-institute-flow-arrow" aria-hidden="true">→</span>
-            <div class="v2-institute-flow-step">Assistant IA<span>Tri, recherches et préparation</span></div>
-            <span class="v2-institute-flow-arrow" aria-hidden="true">→</span>
-            <div class="v2-institute-flow-step">Votre validation<span>Vous vérifiez et décidez</span></div>
-            <span class="v2-institute-flow-arrow" aria-hidden="true">→</span>
-            <div class="v2-institute-flow-step v2-institute-flow-action">Action<span>Envoi ou suivi autorisé</span></div>
-          </div>
+          <figure class="assistant-schema" aria-label="Schéma assistant de l’institut">
+<div class="flow">
+<div class="step node">Demandes des clientes<span class="sub">Mails et formulaires</span></div>
+<div class="step node assistant">Agent assistant IA</div>
+<div class="step tasks">
+<div class="tasks-title">Ce que l’assistant prépare</div>
+<div class="task-grid">
+<div class="node">Tri des mails prioritaires</div><div class="node">Réponses en brouillon</div>
+<div class="node">Prestations et infos pratiques</div><div class="node">Rappels et suivis</div>
+</div>
+</div>
+<div class="step node validation">Votre validation</div>
+<div class="step node action">Action</div>
+</div>
+            <figcaption class="caption"><img class="caption-pictogram" src="/assets/icons/agent-assistant.svg" alt="" aria-hidden="true" width="30" height="30"><span class="caption-copy">L’assistant trie, retrouve les informations et prépare vos réponses <span class="caption-arrow" aria-hidden="true">→</span> Vous gardez la main sur la relation avec vos clientes.</span></figcaption>
+          </figure>
         </div>
       </section>
 
@@ -456,5 +464,6 @@
       })();
     </script>
     <script src="/js/consent-manager.js"></script>
+      <script src="/js/assistant-schema.js?v=20261004"></script>
   </body>
 </html>
