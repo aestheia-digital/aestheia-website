@@ -2153,3 +2153,14 @@ body.v2.v2-medicine-page #assistant-ia .medicine-feature-heading strong{color:#1
  body.v2-pme-restored #contenu .pme-hero .hero-actions .btn.btn-ghost {background:#c6a477!important;background-image:none!important;border:1px solid #c6a477!important;color:#0f1636!important;-webkit-text-fill-color:#0f1636!important;box-shadow:none!important;}
  body.v2-pme-restored #contenu .conversion-band .btn.btn-primary {background:#c6a477!important;border:1px solid #c6a477!important;color:#0f1636!important;-webkit-text-fill-color:#0f1636!important;box-shadow:none!important;}
 }
+
+/* TPE-PME : six systèmes — titres bleu nuit, pictogrammes champagne uniquement. */
+@layer refonte {
+ body.v2-pme-restored #contenu .section-aqua .sector-editorial-list .sector-editorial-chapter summary h3,
+ body.v2-pme-restored #contenu .section-aqua .sector-editorial-list .sector-editorial-chapter summary h3 span {
+   color:#0f1636!important;-webkit-text-fill-color:#0f1636!important;
+ }
+ body.v2-pme-restored #contenu .section-aqua .sector-editorial-list .sector-editorial-chapter summary .title-pictogram {
+   filter:brightness(0) saturate(100%) invert(71%) sepia(19%) saturate(573%) hue-rotate(355deg) brightness(91%) contrast(86%)!important;
+ }
+}
