@@ -1456,3 +1456,390 @@ body.v2.v2-institutes-page #assistant-ia .assistant-schema .caption-arrow {
     transform: none !important;
   }
 }
+
+
+/* ===============================================================
+   THALASSOTHÉRAPIE — simulation graphique ciblée (PR 311)
+   Palette blanche #FFF, bleu nuit #0F1636, champagne #C6A477.
+   Ne touche pas aux trois pages Accueil / Spa hôtelier / Instituts validées.
+   =============================================================== */
+body.v2.v2-thalasso-page {
+  --band: #FFFFFF;
+  --color-bg: #FFFFFF;
+  --color-ink: #1F2B4F;
+  --color-muted: #3B4A73;
+  --color-mist: #FFFFFF;
+  --color-border: #C6A477;
+  --color-accent: #0F1636;
+  background: #FFFFFF;
+}
+body.v2.v2-thalasso-page .v2-hero--sector {
+  background: #0F1636 !important;
+  background-image: none !important;
+}
+body.v2.v2-thalasso-page .v2-hero--sector > .v2-hero-media {
+  display: block !important;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+body.v2.v2-thalasso-page .v2-hero--sector > .v2-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 70% center;
+}
+body.v2.v2-thalasso-page .v2-hero--sector > .v2-hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(15,22,54,.97), rgba(15,22,54,.82) 36%, rgba(15,22,54,.43) 70%, rgba(15,22,54,.2));
+}
+body.v2.v2-thalasso-page .v2-hero--sector .v2-hero-in { z-index: 1; }
+body.v2.v2-thalasso-page .v2-hero--sector .v2-hero-text { max-width: 760px; }
+body.v2.v2-thalasso-page .v2-hero--sector .v2-thalasso-hero-proof {
+  margin-top: 18px;
+  padding-left: 14px;
+  border-left: 2px solid #C6A477;
+  max-width: 70ch;
+  font-size: 15px;
+  color: #FFFFFF;
+  line-height: 1.6;
+}
+body.v2.v2-thalasso-page .v2-benefits { background: #FFFFFF; }
+/* Alternance volontaire de huit sections, sans beige ni bleu délavé. */
+body.v2.v2-thalasso-page :is(#enjeux,#systemes,#etablissements,#ressources) {
+  background: #FFFFFF !important;
+  background-image: none !important;
+  color: #1F2B4F;
+}
+body.v2.v2-thalasso-page :is(#solutions,#agents-ia,#questions,.v2-cta) {
+  background: #0F1636 !important;
+  background-image: none !important;
+  color: #FFFFFF;
+}
+body.v2.v2-thalasso-page :is(#solutions,#agents-ia,#questions,.v2-cta) .v2-h2 {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+body.v2.v2-thalasso-page :is(#solutions,#agents-ia,#questions,.v2-cta) .v2-intro {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+body.v2.v2-thalasso-page :is(#solutions,#agents-ia,#questions,.v2-cta) .v2-eyebrow { color: #C6A477 !important; }
+body.v2.v2-thalasso-page :is(#enjeux,#systemes,#etablissements,#ressources) .v2-h2 { color: #1F2B4F !important; }
+body.v2.v2-thalasso-page :is(#enjeux,#systemes,#etablissements,#ressources) .v2-eyebrow { color: #A8854F !important; }
+body.v2.v2-thalasso-page :is(#enjeux,#systemes,#etablissements,#ressources) .v2-intro {
+  color: #3B4A73 !important;
+  opacity: 1;
+}
+/* Enjeux : même structure de 3 cartes, mise en contexte étoffée. */
+body.v2.v2-thalasso-page #enjeux .v2-lever,
+body.v2.v2-thalasso-page #solutions .v2-lever {
+  background: #FFFFFF !important;
+  background-image: none !important;
+  border: 1px solid rgba(198,164,119,.65);
+  border-top: 2px solid #C6A477;
+  color: #1F2B4F;
+  transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+body.v2.v2-thalasso-page :is(#enjeux,#solutions) .v2-lever :is(h3,p) { color: #1F2B4F !important; }
+body.v2.v2-thalasso-page #solutions .v2-solutions-note { color: #FFFFFF !important; }
+body.v2.v2-thalasso-page .v2-thalasso-challenges {
+  margin-top: 34px;
+  border-top: 1px solid rgba(198,164,119,.55);
+  padding-top: 24px;
+  color: #3B4A73;
+  line-height: 1.65;
+}
+body.v2.v2-thalasso-page .v2-thalasso-challenges-lead {
+  color: #1F2B4F;
+  font-size: 19px;
+  line-height: 1.65;
+  max-width: 95ch;
+}
+body.v2.v2-thalasso-page .v2-thalasso-challenges p + p { margin-top: 14px; }
+body.v2.v2-thalasso-page .v2-thalasso-challenges ul {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  column-gap: 40px;
+  row-gap: 12px;
+  padding-left: 21px;
+  margin-top: 22px;
+}
+body.v2.v2-thalasso-page .v2-thalasso-challenges li { padding-left: 4px; }
+body.v2.v2-thalasso-page .v2-thalasso-challenges li::marker { color: #A8854F; }
+@media (hover:hover) and (pointer:fine) {
+  body.v2.v2-thalasso-page :is(#enjeux,#solutions) .v2-lever:hover,
+  body.v2.v2-thalasso-page .v2-thalasso-system:hover,
+  body.v2.v2-thalasso-page .v2-thalasso-agent:hover,
+  body.v2.v2-thalasso-page #ressources .v2-resource:hover {
+    transform: translateY(-4px);
+    border-color: #C6A477 !important;
+    box-shadow: 0 9px 18px rgba(15,22,54,.10);
+  }
+}
+/* Huit systèmes historiques — cartes bleu nuit sur section blanche. */
+body.v2.v2-thalasso-page #systemes .v2-intro { max-width: 82ch; }
+body.v2.v2-thalasso-page .v2-thalasso-systems-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 18px;
+  margin-top: 36px;
+  align-items: start;
+}
+body.v2.v2-thalasso-page .v2-thalasso-system {
+  min-width: 0;
+  background: #0F1636;
+  border: 1px solid rgba(198,164,119,.65);
+  border-top: 2px solid #C6A477;
+  color: #FFFFFF;
+  transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+body.v2.v2-thalasso-page .v2-thalasso-system > summary,
+body.v2.v2-thalasso-page .v2-thalasso-agent > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  list-style: none;
+  cursor: pointer;
+  padding: 20px 22px;
+  min-height: 104px;
+}
+body.v2.v2-thalasso-page :is(.v2-thalasso-system,.v2-thalasso-agent) > summary::-webkit-details-marker { display: none; }
+body.v2.v2-thalasso-page .v2-thalasso-card-head {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-width: 0;
+  color: inherit;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+body.v2.v2-thalasso-page .v2-thalasso-card-head img {
+  width: 29px;
+  height: 29px;
+  flex: none;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(71%) sepia(20%) saturate(487%) hue-rotate(352deg) brightness(91%) contrast(89%);
+}
+body.v2.v2-thalasso-page .v2-thalasso-chevron {
+  width: 20px;
+  height: 20px;
+  flex: none;
+  stroke: #C6A477;
+  stroke-width: 1.8;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform .22s ease;
+}
+body.v2.v2-thalasso-page :is(.v2-thalasso-system,.v2-thalasso-agent)[open] .v2-thalasso-chevron { transform: rotate(180deg); }
+body.v2.v2-thalasso-page .v2-thalasso-card-detail {
+  padding: 0 22px 23px;
+  line-height: 1.6;
+  font-size: 15.5px;
+  color: inherit;
+}
+body.v2.v2-thalasso-page .v2-thalasso-card-detail p + p { margin-top: 14px; }
+body.v2.v2-thalasso-page .v2-thalasso-card-detail strong { color: #C6A477; font-weight: 500; }
+/* Six agents spécialistes : bandeau bleu nuit, cartes blanches. */
+body.v2.v2-thalasso-page .v2-thalasso-agents-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 18px;
+  margin-top: 38px;
+  align-items: start;
+}
+body.v2.v2-thalasso-page .v2-thalasso-agent {
+  min-width: 0;
+  background: #FFFFFF;
+  border: 1px solid rgba(198,164,119,.65);
+  border-top: 2px solid #C6A477;
+  color: #1F2B4F;
+  transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+body.v2.v2-thalasso-page .v2-thalasso-agent .v2-thalasso-card-detail { color: #3B4A73; }
+body.v2.v2-thalasso-page .v2-thalasso-agent .v2-thalasso-card-detail strong { color: #A8854F; }
+body.v2.v2-thalasso-page .v2-thalasso-supervisor {
+  border-left: 3px solid #C6A477;
+  margin: 34px 0 0;
+  padding: 17px 22px;
+  color: #FFFFFF;
+  line-height: 1.7;
+}
+body.v2.v2-thalasso-page .v2-thalasso-supervisor strong { color: #C6A477; font-weight: 500; }
+/* Diagramme multi-agent historique : grille complète et connecteurs animés. */
+body.v2.v2-thalasso-page #agents-ia .assistant-schema {
+  --color-ink: #1F2B4F;
+  --color-bg: #FFFFFF;
+  --color-mist: #FFFFFF;
+  --color-muted: #3B4A73;
+  --color-border: #C6A477;
+  --color-accent: #0F1636;
+  color: #FFFFFF;
+  width: 100%;
+  margin-top: 54px;
+}
+body.v2.v2-thalasso-page #agents-ia .assistant-schema .flow {
+  display: grid;
+  grid-template-columns: minmax(0,1.2fr) minmax(0,1fr) minmax(0,2.7fr) minmax(0,1.12fr) minmax(0,.65fr);
+  gap: 21px;
+  align-items: center;
+}
+body.v2.v2-thalasso-page #agents-ia .assistant-schema .step { min-width: 0; }
+body.v2.v2-thalasso-page #agents-ia .assistant-schema .node {
+  background: #FFFFFF !important;
+  border-color: #C6A477 !important;
+  color: #1F2B4F !important;
+  border-radius: 0;
+  line-height: 1.45;
+}
+body.v2.v2-thalasso-page #agents-ia .assistant-schema .node .sub { color: #3B4A73 !important; }
+body.v2.v2-thalasso-page #agents-ia .assistant-schema .step.node.assistant,
+body.v2.v2-thalasso-page #agents-ia .assistant-schema .step.node.action {
+  background: #C6A477 !important;
+  border-color: #C6A477 !important;
+  color: #0F1636 !important;
+}
+body.v2.v2-thalasso-page #agents-ia .assistant-schema .step.node.assistant .sub { color: #0F1636 !important; }
+body.v2.v2-thalasso-page #agents-ia .assistant-schema .step.node.validation {
+  background: #FFFFFF !important;
+  border-color: #C6A477 !important;
+  color: #1F2B4F !important;
+}
+body.v2.v2-thalasso-page #agents-ia .assistant-schema .tasks {
+  background: transparent !important;
+  border: 1px dashed #C6A477;
+  border-radius: 0;
+}
+body.v2.v2-thalasso-page #agents-ia .assistant-schema.has-motion-decor .tasks { border-color: transparent; }
+body.v2.v2-thalasso-page #agents-ia .assistant-schema .tasks-title { color: #FFFFFF !important; }
+body.v2.v2-thalasso-page #agents-ia .assistant-schema .task-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; }
+body.v2.v2-thalasso-page #agents-ia .assistant-schema .agent-role {
+  background: #FFFFFF !important;
+  border: 1px solid #C6A477 !important;
+  border-radius: 0;
+  color: #1F2B4F !important;
+  padding: 12px 8px;
+  font-size: 13.5px;
+  min-width: 0;
+}
+body.v2.v2-thalasso-page #agents-ia .assistant-schema .agent-role span { color: #1F2B4F !important; }
+body.v2.v2-thalasso-page #agents-ia .assistant-schema .agent-role img {
+  filter: brightness(0) saturate(100%) invert(67%) sepia(25%) saturate(460%) hue-rotate(351deg) brightness(88%) contrast(90%);
+}
+body.v2.v2-thalasso-page #agents-ia .assistant-schema :is(.assistant-schema-line,.assistant-schema-head,.assistant-schema-frame rect) { stroke: #C6A477 !important; }
+body.v2.v2-thalasso-page #agents-ia .assistant-schema .step:not(:last-child)::after { color: #C6A477 !important; }
+body.v2.v2-thalasso-page #agents-ia .multi-agent-caption {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #FFFFFF;
+  margin: 35px 0 0;
+  max-width: none;
+  text-align: left;
+  font-size: 16px;
+}
+body.v2.v2-thalasso-page #agents-ia .multi-agent-caption .caption-pictogram { width: 30px; height: 30px; flex: none; }
+body.v2.v2-thalasso-page #agents-ia .multi-agent-caption :is(.caption-copy,.caption-arrow) { color: #FFFFFF; }
+@layer refonte {
+  html[data-theme="light"] body.v2.v2-thalasso-page #agents-ia .assistant-schema .node {
+    background: #FFFFFF !important;
+    border-color: #C6A477 !important;
+    color: #1F2B4F !important;
+  }
+  html[data-theme="light"] body.v2.v2-thalasso-page #agents-ia .assistant-schema .node .sub { color: #3B4A73 !important; }
+  html[data-theme="light"] body.v2.v2-thalasso-page #agents-ia .assistant-schema .step.node.assistant,
+  html[data-theme="light"] body.v2.v2-thalasso-page #agents-ia .assistant-schema .step.node.action {
+    background: #C6A477 !important;
+    border-color: #C6A477 !important;
+    color: #0F1636 !important;
+  }
+  html[data-theme="light"] body.v2.v2-thalasso-page #agents-ia .assistant-schema .step.node.validation {
+    background: #FFFFFF !important;
+    border-color: #C6A477 !important;
+    color: #1F2B4F !important;
+  }
+}
+/* Établissements : blanc franc + deux encadrés champagne. */
+body.v2.v2-thalasso-page .v2-thalasso-audience-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 20px;
+  margin-top: 35px;
+}
+body.v2.v2-thalasso-page .v2-thalasso-audience-item {
+  padding: 24px 26px;
+  border-left: 3px solid #C6A477;
+  background: #FFFFFF;
+  color: #1F2B4F;
+  font-size: 18px;
+  line-height: 1.5;
+}
+body.v2.v2-thalasso-page .v2-thalasso-audience-note {
+  color: #3B4A73;
+  margin-top: 28px;
+  max-width: 92ch;
+  line-height: 1.65;
+}
+/* FAQ nuit : libellés champagne, questions et réponses blanches. */
+body.v2.v2-thalasso-page #questions .v2-faq { border-top-color: rgba(198,164,119,.55); }
+body.v2.v2-thalasso-page #questions .v2-faq details { border-bottom-color: rgba(198,164,119,.45); }
+body.v2.v2-thalasso-page #questions .v2-faq summary,
+body.v2.v2-thalasso-page #questions .v2-faq details { background: transparent; }
+body.v2.v2-thalasso-page #questions .v2-faq :is(summary h3,.v2-answer) { color: #FFFFFF !important; }
+body.v2.v2-thalasso-page #questions .v2-faq summary::after { border-color: #C6A477; }
+/* Ressources blanches, cartes bleu nuit. */
+body.v2.v2-thalasso-page #ressources .v2-resource {
+  background: #0F1636 !important;
+  background-image: none !important;
+  color: #FFFFFF;
+  border: 1px solid rgba(198,164,119,.7);
+  border-top: 2px solid #C6A477;
+  transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+body.v2.v2-thalasso-page #ressources .v2-resource :is(h3,p,.v2-resource-link) { color: #FFFFFF !important; }
+body.v2.v2-thalasso-page #ressources .v2-resource :is(.v2-resource-tag,.v2-arrow) { color: #C6A477 !important; stroke: #C6A477; }
+body.v2.v2-thalasso-page .v2-cta :is(.v2-h2,p) { color: #FFFFFF; }
+/* Responsive, sans changer l'ordre des contenus. */
+@media (max-width:1100px) {
+  body.v2.v2-thalasso-page .v2-thalasso-agents-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  body.v2.v2-thalasso-page #agents-ia .assistant-schema .flow {
+    grid-template-columns: minmax(0,1fr);
+    max-width: 560px;
+    margin-inline: auto;
+    gap: 30px;
+  }
+  body.v2.v2-thalasso-page #agents-ia .assistant-schema .assistant-schema-connector {
+    left: 50%;
+    top: calc(100% + 6px);
+    transform: translateX(-50%) rotate(90deg);
+  }
+  body.v2.v2-thalasso-page #agents-ia .assistant-schema .step:not(:last-child)::after {
+    content: "↓";
+    left: 50%;
+    top: calc(100% + 6px);
+    transform: translateX(-50%);
+  }
+}
+@media (max-width:720px) {
+  body.v2.v2-thalasso-page .v2-hero--sector > .v2-hero-media img { object-position: 65% center; }
+  body.v2.v2-thalasso-page .v2-hero--sector > .v2-hero-media::after { background: rgba(15,22,54,.75); }
+  body.v2.v2-thalasso-page .v2-thalasso-challenges ul,
+  body.v2.v2-thalasso-page .v2-thalasso-systems-grid,
+  body.v2.v2-thalasso-page .v2-thalasso-agents-grid,
+  body.v2.v2-thalasso-page .v2-thalasso-audience-grid { grid-template-columns: minmax(0,1fr); }
+  body.v2.v2-thalasso-page .v2-thalasso-system > summary,
+  body.v2.v2-thalasso-page .v2-thalasso-agent > summary { min-height: 84px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  body.v2.v2-thalasso-page :is(.v2-thalasso-system,.v2-thalasso-agent,.v2-lever,.v2-resource) {
+    transition: none !important;
+    transform: none !important;
+  }
+}
