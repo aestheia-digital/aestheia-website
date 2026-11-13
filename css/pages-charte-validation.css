@@ -130,7 +130,7 @@
     background:linear-gradient(90deg,#0f1636 35%,rgba(15,22,54,.84) 50%,rgba(15,22,54,.22) 79%,rgba(15,22,54,.08)) !important;
   }
   html body.v2.v2-charte-page #contenu > .pme-hero {
-    background:linear-gradient(90deg,#0f1636 0%,rgba(15,22,54,.84) 50%,rgba(15,22,54,.22) 79%,rgba(15,22,54,.08)),var(--hero-image) right center/cover !important;
+    background:#0f1636 !important;
   }
   /* Pictogrammes existants : conserver les formes, appliquer le champagne. */
   html body.v2.v2-charte-page #contenu :is(.title-pictogram,.caption-pictogram,.agent-role img) {
@@ -168,7 +168,7 @@
   @media(max-width:720px) {
     html body.v2.v2-charte-page #contenu .hero .home-hero-media { width:100% !important; }
     html body.v2.v2-charte-page #contenu .hero .home-hero-veil { background:rgba(15,22,54,.76) !important; }
-    html body.v2.v2-charte-page #contenu > .pme-hero { background:linear-gradient(rgba(15,22,54,.76),rgba(15,22,54,.76)),var(--hero-image) center/cover !important; }
+    html body.v2.v2-charte-page #contenu > .pme-hero { background:#0f1636 !important; }
     html body.v2.v2-charte-page #contenu .hero .hero-inner { padding-block:48px 56px !important; }
   }
 
@@ -183,5 +183,11 @@
   @media(max-width:720px) {
     html body.v2.v2-charte-page #contenu :is(p,li) { font-size:16px !important; }
     html body.v2.v2-charte-page #contenu :is(.eyebrow,.v2-eyebrow) { font-size:13px !important; }
+  }
+
+  html body.v2.v2-charte-page :is(header.v2-header,footer.v2-footer) a.v2-logo[data-typo-role],
+  html body.v2.v2-charte-page :is(header.v2-header,footer.v2-footer) a.v2-logo b[data-typo-role] { font-family:"Playfair Display",Georgia,serif !important; }
+  html body.v2.v2-charte-page #contenu section:is(.charte-white,.charte-navy) p.eyebrow {
+    color:#c6a477 !important; -webkit-text-fill-color:#c6a477 !important;
   }
 }
