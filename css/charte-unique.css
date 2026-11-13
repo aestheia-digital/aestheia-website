@@ -882,3 +882,57 @@ body.v2.v2-home-page :is(
     transition: none;
   }
 }
+
+
+/* Correction ciblée : +20 ans dans « Derrière AesthéIA ».
+   Le + reste discret, le nombre animé est grand et champagne.
+   Nécessaire : l'ancienne règle générique .v2-founder-stat span imposait 17px et du blanc. */
+body.v2.v2-home-page .v2-home-founder .v2-founder-stat > strong {
+  display: inline-flex;
+  align-items: center;
+  flex: none;
+  gap: 2px;
+  font-family: var(--display);
+  font-size: clamp(27px, 2.9vw, 38px) !important;
+  font-weight: 400;
+  line-height: 1 !important;
+  color: #C6A477 !important;
+  -webkit-text-fill-color: #C6A477 !important;
+  white-space: nowrap;
+}
+body.v2.v2-home-page .v2-home-founder .v2-founder-stat > strong > span[data-count-to] {
+  display: inline-block;
+  max-width: none;
+  font-family: var(--display);
+  font-size: clamp(61px, 6vw, 84px) !important;
+  font-weight: 400;
+  line-height: 1 !important;
+  color: #C6A477 !important;
+  -webkit-text-fill-color: #C6A477 !important;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+/* Dropdown Secteurs : souligner l'intégralité du libellé, pas un tiret avant le texte.
+   Une vraie décoration de texte accompagne aussi les intitulés sur plusieurs lignes. */
+.v2-nav .v2-drop-menu a {
+  padding-left: 12px;
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 7px;
+  transition: text-decoration-color .2s ease, color .2s ease;
+}
+.v2-nav .v2-drop-menu a::before {
+  display: none !important;
+}
+.v2-nav .v2-drop-menu a:hover,
+.v2-nav .v2-drop-menu a:focus-visible,
+.v2-nav .v2-drop-menu a[aria-current="page"] {
+  text-decoration-color: #C6A477;
+}
+@media (max-width: 1240px) {
+  .v2-nav .v2-drop-menu a { padding-left: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .v2-nav .v2-drop-menu a { transition: none; }
+}
