@@ -722,3 +722,65 @@ body.v2.v2-home-page .v2-home-founder .v2-about-photo img {
     aspect-ratio: 4 / 3;
   }
 }
+
+
+/* Derniers ajustements accueil : pictogrammes alignés aux titres, cartes plus compactes,
+   micro-mouvement au survol. Portée strictement limitée à la page d'accueil. */
+body.v2.v2-home-page .v2-home-controls .v2-home-control {
+  display: grid;
+  grid-template-columns: 30px minmax(0,1fr);
+  align-content: start;
+  align-items: center;
+  column-gap: 14px;
+  row-gap: 10px;
+  padding: 20px 22px;
+}
+body.v2.v2-home-page .v2-home-controls .v2-home-control > .v2-card-ico {
+  grid-column: 1;
+  grid-row: 1;
+  width: 30px;
+  height: 30px;
+  align-self: center;
+}
+body.v2.v2-home-page .v2-home-controls .v2-home-control > h3 {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+  margin: 0 !important;
+  font-size: 18px;
+  line-height: 1.35;
+}
+body.v2.v2-home-page .v2-home-controls .v2-home-control > p {
+  grid-column: 1 / -1;
+  margin: 0 !important;
+  line-height: 1.5;
+}
+/* Un léger soulèvement identique aux cartes Secteurs, sans effets décoratifs. */
+body.v2.v2-home-page :is(
+  .v2-home-growth .v2-solution,
+  .v2-home-controls .v2-home-control,
+  .v2-home-offers .v2-lever
+) {
+  transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  body.v2.v2-home-page :is(
+    .v2-home-growth .v2-solution,
+    .v2-home-controls .v2-home-control,
+    .v2-home-offers .v2-lever
+  ):hover {
+    transform: translateY(-4px);
+    border-color: #C6A477 !important;
+    box-shadow: 0 8px 18px rgba(15,22,54,.09);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.v2.v2-home-page :is(
+    .v2-home-growth .v2-solution,
+    .v2-home-controls .v2-home-control,
+    .v2-home-offers .v2-lever
+  ) {
+    transition: none;
+    transform: none !important;
+  }
+}
