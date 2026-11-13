@@ -242,3 +242,200 @@ body.v2 .v2-home-sectors .v2-sector-link {
   padding-top: 12px;
 }
 body.v2 .v2-home-sectors .v2-sector-link .v2-arrow { margin-top: 0; }
+
+
+/* Page Spa hôtelier et urbain — validation du 13/11/2026.
+   Palette strictement blanc / bleu nuit / champagne, sans beige ni dégradé.
+   Modification isolée : les autres pages, notamment l'accueil, restent inchangées. */
+body.v2.v2-spa-page {
+  --band: #ffffff;
+  --white: #ffffff;
+  --navy: #0f1636;
+  --navy-2: #1f2b4f;
+  --ink: #1f2b4f;
+  --gold: #c6a477;
+  --gold-deep: #a8854f;
+  --gold-soft: rgba(198, 164, 119, .45);
+  background: #ffffff;
+}
+body.v2.v2-spa-page :is(#enjeux, #agents-ia, #ressources),
+body.v2.v2-spa-page .v2-benefits {
+  background: #ffffff;
+  background-image: none;
+}
+body.v2.v2-spa-page :is(#enjeux, #agents-ia, #ressources) .v2-h2 {
+  color: #1f2b4f;
+}
+body.v2.v2-spa-page :is(#enjeux, #agents-ia, #ressources) .v2-eyebrow {
+  color: #a8854f;
+}
+
+/* Bandeaux bleu nuit franc, jamais bleu pâle ou beige. */
+body.v2.v2-spa-page :is(#systemes, #etablissements, #questions, .v2-cta) {
+  background: #0f1636 !important;
+  background-image: none !important;
+  color: #ffffff;
+}
+body.v2.v2-spa-page :is(#systemes, #etablissements, #questions, .v2-cta) .v2-h2 {
+  color: #ffffff;
+}
+body.v2.v2-spa-page :is(#systemes, #etablissements, #questions, .v2-cta) .v2-eyebrow {
+  color: #c6a477;
+}
+body.v2.v2-spa-page :is(#systemes, #etablissements, #questions, .v2-cta) .v2-intro,
+body.v2.v2-spa-page .v2-cta > .v2-wrap > p {
+  color: #ffffff;
+}
+
+/* Boutons champagne sans dégradé, de la première à la dernière page du spa. */
+body.v2.v2-spa-page .v2-btn--gold,
+body.v2.v2-spa-page .v2-btn--gold:hover,
+body.v2.v2-spa-page .v2-btn--gold:focus-visible {
+  background: #c6a477 !important;
+  background-image: none !important;
+  color: #0f1636 !important;
+  -webkit-text-fill-color: #0f1636 !important;
+  border-color: #c6a477;
+  box-shadow: none;
+  filter: none;
+}
+body.v2.v2-spa-page .v2-hero--sector {
+  background: #0f1636 !important;
+  background-image: none !important;
+}
+
+/* Systèmes conçus : chaque bande devient une carte blanche individuelle.
+   Le petit intervalle visible reprend le fond bleu nuit de la section. */
+body.v2.v2-spa-page #systemes .v2-rows {
+  display: grid;
+  gap: 12px;
+  margin-top: 34px;
+  padding: 0;
+  background: transparent !important;
+  border: 0;
+}
+body.v2.v2-spa-page #systemes .v2-row {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  background: #ffffff !important;
+  border: 1px solid rgba(198, 164, 119, .75);
+  border-top: 2px solid #c6a477;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: hidden;
+}
+body.v2.v2-spa-page #systemes .v2-row > summary,
+body.v2.v2-spa-page #systemes .v2-row > summary:hover,
+body.v2.v2-spa-page #systemes .v2-row--plain {
+  background: #ffffff !important;
+  color: #1f2b4f;
+}
+body.v2.v2-spa-page #systemes .v2-row :is(h3,p,li) {
+  color: #1f2b4f;
+}
+body.v2.v2-spa-page #systemes .v2-row strong {
+  color: #a8854f;
+}
+
+/* Agents : fond blanc pur, aucune carte ou légende crème. */
+body.v2.v2-spa-page #agents-ia .v2-agents,
+body.v2.v2-spa-page #agents-ia .v2-agent {
+  background: #ffffff !important;
+}
+body.v2.v2-spa-page #agents-ia .v2-note {
+  background: #0f1636 !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  border-left: 3px solid #c6a477;
+  padding: 20px 24px;
+}
+body.v2.v2-spa-page #agents-ia .v2-note strong {
+  color: #ffffff !important;
+}
+body.v2.v2-spa-page #agents-ia .assistant-schema {
+  --color-mist: #ffffff;
+  --color-bg: #ffffff;
+  --color-border: rgba(198, 164, 119, .75);
+  --color-accent: #0f1636;
+}
+body.v2.v2-spa-page #agents-ia .assistant-schema :is(.node, .agent-role, .tasks) {
+  background-color: #ffffff !important;
+  color: #1f2b4f;
+}
+body.v2.v2-spa-page #agents-ia .assistant-schema .node.assistant,
+body.v2.v2-spa-page #agents-ia .assistant-schema .node.action {
+  background: #0f1636 !important;
+  border-color: #c6a477 !important;
+  color: #ffffff !important;
+}
+body.v2.v2-spa-page #agents-ia .assistant-schema :is(.node.assistant, .node.action) .sub {
+  color: #ffffff !important;
+}
+body.v2.v2-spa-page #agents-ia .assistant-schema .node.validation {
+  background: #ffffff !important;
+  color: #1f2b4f !important;
+}
+body.v2.v2-spa-page #agents-ia .assistant-schema .step::after {
+  color: #c6a477 !important;
+}
+body.v2.v2-spa-page #agents-ia .assistant-schema :is(.assistant-schema-line, .assistant-schema-head, .assistant-schema-frame rect) {
+  stroke: #c6a477 !important;
+}
+
+/* Établissements : bandeau nuit sous et autour de la photo. */
+body.v2.v2-spa-page #etablissements :is(.v2-venue, .v2-venues) {
+  background: transparent;
+}
+body.v2.v2-spa-page #etablissements :is(.v2-venue h3, .v2-venue p, .v2-crosslink) {
+  color: #ffffff !important;
+}
+body.v2.v2-spa-page #etablissements .v2-crosslink a {
+  color: #c6a477;
+}
+body.v2.v2-spa-page #etablissements .v2-solutions-photo img {
+  border: 1px solid rgba(198, 164, 119, .8);
+}
+
+/* Ressources : section blanche, deux vraies cartes bleu nuit. */
+body.v2.v2-spa-page #ressources .v2-resource,
+body.v2.v2-spa-page #ressources .v2-resource:hover,
+body.v2.v2-spa-page #ressources .v2-resource:focus-visible {
+  background: #0f1636 !important;
+  background-image: none !important;
+  border: 1px solid #c6a477;
+  border-top-width: 2px;
+  box-shadow: none;
+  color: #ffffff;
+}
+body.v2.v2-spa-page #ressources .v2-resource :is(h3,p,.v2-resource-link) {
+  color: #ffffff !important;
+}
+body.v2.v2-spa-page #ressources .v2-resource :is(.v2-resource-tag,.v2-arrow) {
+  color: #c6a477 !important;
+  stroke: #c6a477;
+}
+
+/* FAQ : bandeau nuit, questions et réponses blanches, flèches à droite champagne. */
+body.v2.v2-spa-page #questions .v2-faq {
+  background: transparent;
+  border-top-color: rgba(198, 164, 119, .6);
+}
+body.v2.v2-spa-page #questions .v2-faq details {
+  background: transparent;
+  border-bottom-color: rgba(198, 164, 119, .45);
+}
+body.v2.v2-spa-page #questions .v2-faq summary {
+  background: transparent;
+  width: 100%;
+}
+body.v2.v2-spa-page #questions .v2-faq :is(summary h3, .v2-answer) {
+  color: #ffffff !important;
+}
+body.v2.v2-spa-page #questions .v2-faq summary::after {
+  margin-left: auto;
+  border-color: #c6a477;
+}
+body.v2.v2-spa-page #questions .v2-faq details[open] summary::after {
+  border-color: #c6a477;
+}
