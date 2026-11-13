@@ -2125,3 +2125,12 @@ body.v2.v2-medicine-page .medicine-line-icon {stroke:#c6a477!important;fill:none
 body.v2.v2-medicine-page #systemes-cabinet .medicine-line-icon{width:28px!important;height:28px!important;min-width:28px!important;max-width:28px!important;flex-basis:28px!important;}
 body.v2.v2-medicine-page #assistant-ia .medicine-feature-heading{display:flex!important;align-items:center!important;gap:14px!important;}
 body.v2.v2-medicine-page #assistant-ia .medicine-feature-heading strong{color:#1f2b4f!important;}
+
+/* Contraste section Solutions : priorité dans la couche refonte (règles !important). */
+@layer refonte {
+  html body.v2.v2-medicine-page section#solutions,
+  html body.v2.v2-medicine-page section#solutions .v2-solution { background-color:#0f1636 !important; }
+  html body.v2.v2-medicine-page section#solutions :is(.v2-h2,.v2-intro,.v2-solutions-note,.v2-solution h3,.v2-solution p) { color:#ffffff !important; -webkit-text-fill-color:#ffffff !important; }
+  html body.v2.v2-medicine-page section#solutions .v2-eyebrow { color:#c6a477 !important; -webkit-text-fill-color:#c6a477 !important; }
+  html body.v2.v2-medicine-page section#solutions .v2-card-ico { stroke:#c6a477 !important; }
+}
