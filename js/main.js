@@ -230,17 +230,6 @@ const commercialPages = [
 const currentPath = window.location.pathname;
 const isCommercialPage = commercialPages.some((path) => currentPath === path || currentPath.endsWith(path));
 
-// Navigation commune : téléphone présent sur toutes les pages, y compris Contact et Ressources.
-const brandLink = document.querySelector(".site-header .brand-link");
-if (brandLink && !document.querySelector(".site-header .header-phone-direct")) {
-  const headerPhone = document.createElement("a");
-  headerPhone.className = "header-phone-direct";
-  headerPhone.href = "tel:+33642789057";
-  headerPhone.setAttribute("aria-label", "Appeler AesthéIA au 06 42 78 90 57");
-  headerPhone.textContent = "06 42 78 90 57";
-  brandLink.insertAdjacentElement("afterend", headerPhone);
-}
-
 if (isCommercialPage) {
   document.querySelectorAll(".hero .hero-actions .btn").forEach((button) => {
     const label = button.textContent.trim();
@@ -252,110 +241,6 @@ if (isCommercialPage) {
 
 }
 
-if (!document.getElementById("commercial-alignment-rules")) {
-  const commercialStyles = document.createElement("style");
-  commercialStyles.id = "commercial-alignment-rules";
-  commercialStyles.textContent = `
-    .site-header .header-phone-direct {
-      margin-right: auto;
-      color: var(--color-primary);
-      font-family: var(--font-display);
-      font-size: 1.02rem;
-      font-weight: 400;
-      line-height: 1;
-      white-space: nowrap;
-    }
-
-    .site-header .header-phone-direct:hover {
-      color: var(--color-accent);
-    }
-
-    @media (min-width: 1051px) {
-      .site-header .header-phone-direct {
-        font-weight: 400;
-      }
-    }
-
-    .site-header .brand-ia {
-      color: #1fa4dd;
-      background: linear-gradient(135deg, #8f6f3e 0%, #1b2a6b 50%, #1fa4dd 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .home-offers .commercial-offer-proposal {
-      margin-bottom: 0.65rem !important;
-    }
-
-    @media (min-width: 960px) {
-      .home-offers .offer-grid {
-        align-items: stretch;
-      }
-
-      .home-offers .offer-card {
-        display: flex;
-        height: 100%;
-        flex-direction: column;
-      }
-
-      .home-offers .offer-result {
-        margin-top: auto;
-      }
-
-      .home-offers .commercial-offer-proposal + .offer-result {
-        margin-top: 0;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .site-header .header-phone-direct {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.38rem;
-        padding: 0.4rem 0.56rem;
-        border: 1px solid rgba(198, 164, 119, 0.16);
-        border-radius: 999px;
-        color: #8f6f3e;
-        background: rgba(198, 164, 119, 0.055);
-        box-shadow: 0 5px 14px rgba(11, 18, 56, 0.08);
-        font-family: var(--font-structure);
-        font-size: 0.84rem;
-        font-weight: 600;
-        letter-spacing: 0.01em;
-        transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-      }
-
-      .site-header .header-phone-direct::before {
-        content: "";
-        width: 0.76rem;
-        height: 0.76rem;
-        flex: 0 0 0.76rem;
-        background: currentColor;
-        -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 3.7c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1l-2.2 2.2z'/%3E%3C/svg%3E") center / contain no-repeat;
-        mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 3.7c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1l-2.2 2.2z'/%3E%3C/svg%3E") center / contain no-repeat;
-      }
-
-      .site-header .header-phone-direct:hover,
-      .site-header .header-phone-direct:focus-visible {
-        color: #8f6f3e;
-        background: rgba(198, 164, 119, 0.09);
-        box-shadow: 0 0 0 4px rgba(198, 164, 119, 0.08), 0 7px 18px rgba(11, 18, 56, 0.1);
-        transform: translateY(-1px);
-      }
-    }
-
-    @media (max-width: 380px) {
-      .site-header .header-phone-direct {
-        gap: 0.28rem;
-        padding-inline: 0.42rem;
-        font-size: 0.78rem;
-      }
-    }
-  `;
-  document.head.appendChild(commercialStyles);
-}
-
 // Essai isolé du mot-symbole AesthéIA dans le header (jour/nuit, responsive).
 // La typographie et le numéro de téléphone restent ceux du site.
 (() => {
@@ -363,65 +248,6 @@ if (!document.getElementById("commercial-alignment-rules")) {
     wordmark.classList.add("brand-signature-test");
     wordmark.innerHTML = '<span class="brand-signature-a">A</span><span class="brand-signature-rest">esthéIA</span>';
   });
-  if (document.getElementById("brand-signature-test-styles")) return;
-  const style = document.createElement("style");
-  style.id = "brand-signature-test-styles";
-  style.textContent = `
-    .site-header .brand-signature-test {
-      display: inline-flex !important;
-      align-items: baseline !important;
-      white-space: nowrap;
-      font-family: var(--font-display), Georgia, serif !important;
-      font-size: clamp(1.08rem, 1.35vw, 1.35rem) !important;
-      font-weight: 400 !important;
-      line-height: 1.05 !important;
-      letter-spacing: -0.025em !important;
-    }
-    .site-header .brand-signature-test .brand-signature-a {
-      color: #B99B73 !important;
-      font-size: 1.30em;
-      font-weight: 400 !important;
-      line-height: 0.92;
-    }
-    .site-header .brand-signature-test .brand-signature-rest {
-      color: #0B1232 !important;
-      background: none !important;
-      -webkit-background-clip: initial !important;
-      background-clip: initial !important;
-      -webkit-text-fill-color: #0B1232 !important;
-      font-weight: 400 !important;
-      line-height: 1;
-    }
-    html.theme-dark .site-header .brand-signature-test .brand-signature-rest,
-    html[data-theme="dark"] .site-header .brand-signature-test .brand-signature-rest {
-      color: #FFFFFF !important;
-      -webkit-text-fill-color: #FFFFFF !important;
-    }
-    /* Ajustement desktop : signature plus présente, champagne plus contrasté en jour. */
-    @media (min-width: 1051px) {
-      .site-header .brand-signature-test {
-        font-size: clamp(1.42rem, 1.6vw, 1.58rem) !important;
-      }
-      .site-header .header-phone-direct {
-        position: relative;
-        top: 3px;
-      }
-    }
-    @media (min-width: 1051px) {
-      html[data-theme="light"] .site-header .brand-signature-test .brand-signature-a,
-      html.theme-light .site-header .brand-signature-test .brand-signature-a,
-      html:not([data-theme="dark"]):not(.theme-dark) .site-header .brand-signature-test .brand-signature-a {
-        color: #9E794D !important;
-      }
-    }
-    @media (max-width: 720px) {
-      .site-header .brand-signature-test {
-        font-size: clamp(0.92rem, 3.6vw, 1.13rem) !important;
-        letter-spacing: -0.04em !important;
-      }
-    }
-  `;
-  document.head.appendChild(style);
 })();
 
 const homeProblems = document.querySelector(".home-problems");
