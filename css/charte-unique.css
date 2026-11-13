@@ -2150,6 +2150,6 @@ body.v2.v2-medicine-page #assistant-ia .medicine-feature-heading strong{color:#1
  body.v2-pme-restored #contenu > section.faq-section .faq-accordion-item {background:#fff!important;color:#1f2b4f!important;}
  body.v2-pme-restored #contenu > section.faq-section .faq-accordion-item :is(summary,.faq-answer,.faq-answer p) {color:#1f2b4f!important;-webkit-text-fill-color:#1f2b4f!important;}
  body.v2-pme-restored #contenu > section.faq-section .faq-accordion-item summary::after {color:#c6a477!important;}
- body.v2-pme-restored #contenu .pme-hero .hero-actions .btn.btn-ghost {background:transparent!important;border:1px solid #c6a477!important;color:#fff!important;-webkit-text-fill-color:#fff!important;box-shadow:none!important;}
+ body.v2-pme-restored #contenu .pme-hero .hero-actions .btn.btn-ghost {background:#c6a477!important;background-image:none!important;border:1px solid #c6a477!important;color:#0f1636!important;-webkit-text-fill-color:#0f1636!important;box-shadow:none!important;}
  body.v2-pme-restored #contenu .conversion-band .btn.btn-primary {background:#c6a477!important;border:1px solid #c6a477!important;color:#0f1636!important;-webkit-text-fill-color:#0f1636!important;box-shadow:none!important;}
 }
