@@ -1902,3 +1902,180 @@ body.v2.v2-thalasso-page .v2-cta :is(.v2-h2,p) { color: #FFFFFF; }
     transform: none !important;
   }
 }
+
+/* Médecine : photographie du header et assistant administratif historique. */
+body.v2.v2-medicine-page .v2-hero--sector > .v2-hero-media {
+  display: block !important; inset: 0 0 0 auto; width: 65%;
+}
+body.v2.v2-medicine-page .v2-hero--sector .v2-hero-media img { object-position: center 38%; }
+body.v2.v2-medicine-page .v2-hero--sector .v2-hero-media::after {
+  background: linear-gradient(90deg,#0F1636 0%,rgba(15,22,54,.84) 23%,rgba(15,22,54,.22) 68%,rgba(15,22,54,.08));
+}
+body.v2.v2-medicine-page .v2-hero-text { position: relative; z-index: 1; max-width: 740px; }
+body.v2.v2-medicine-page #solutions .v2-solution-list { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 22px; }
+body.v2.v2-medicine-page #solutions .v2-solution { margin: 0; padding: 24px; border: 1px solid #C6A477; border-top-width: 2px; }
+body.v2.v2-medicine-page #assistant-ia { background: #0F1636; color: #FFFFFF; }
+body.v2.v2-medicine-page #assistant-ia .v2-h2,
+body.v2.v2-medicine-page #assistant-ia .v2-intro { color: #FFFFFF; }
+body.v2.v2-medicine-page #assistant-ia .v2-eyebrow { color: #C6A477; }
+body.v2.v2-medicine-page #assistant-ia .feature-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 22px; margin: 30px 0; }
+body.v2.v2-medicine-page #assistant-ia .feature-list li { background: #FFFFFF; color: #1F2B4F; padding: 24px; border: 1px solid #C6A477; border-top-width: 2px; line-height: 1.65; }
+body.v2.v2-medicine-page #assistant-ia strong { font-weight: 500; }
+body.v2.v2-medicine-page #assistant-ia .feature-list strong { display: block; margin-bottom: 10px; }
+body.v2.v2-medicine-page #assistant-ia .sector-reality-conclusion { margin-top: 20px; padding-left: 20px; border-left: 2px solid #C6A477; line-height: 1.65; }
+@media (max-width:720px) {
+  body.v2.v2-medicine-page .v2-hero--sector > .v2-hero-media { width: 100%; }
+  body.v2.v2-medicine-page .v2-hero--sector .v2-hero-media::after { background: rgba(15,22,54,.76); }
+  body.v2.v2-medicine-page #solutions .v2-solution-list,
+  body.v2.v2-medicine-page #assistant-ia .feature-list { grid-template-columns: minmax(0,1fr); }
+}
+body.v2.v2-medicine-page #assistant-ia .assistant-schema {
+  --color-ink: #1F2B4F;
+  --color-bg: #FFFFFF;
+  --color-mist: #FFFFFF;
+  --color-muted: #3B4A73;
+  --color-border: #C6A477;
+  --color-accent: #0F1636;
+  color: #FFFFFF;
+  margin-top: 46px;
+  width: 100%;
+}
+body.v2.v2-medicine-page #assistant-ia .assistant-schema .flow {
+  grid-template-columns: minmax(0,1.1fr) minmax(0,1fr) minmax(0,2.3fr) minmax(0,1fr) minmax(0,.8fr);
+  gap: 18px;
+  align-items: stretch;
+}
+body.v2.v2-medicine-page #assistant-ia .assistant-schema .step {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body.v2.v2-medicine-page #assistant-ia .assistant-schema .node {
+  background: #FFFFFF !important;
+  border-color: #C6A477 !important;
+  border-radius: 0;
+  color: #1F2B4F !important;
+  font-weight: 500;
+  line-height: 1.5;
+  padding: 18px 12px;
+}
+body.v2.v2-medicine-page #assistant-ia .assistant-schema .node .sub {
+  color: #3B4A73 !important;
+}
+body.v2.v2-medicine-page #assistant-ia .assistant-schema .step.node.assistant {
+  background: #C6A477 !important;
+  border-color: #C6A477 !important;
+  color: #0F1636 !important;
+}
+body.v2.v2-medicine-page #assistant-ia .assistant-schema .step.node.validation {
+  background: #FFFFFF !important;
+  border-color: #C6A477 !important;
+  color: #1F2B4F !important;
+}
+body.v2.v2-medicine-page #assistant-ia .assistant-schema .step.node.action {
+  background: #C6A477 !important;
+  border-color: #C6A477 !important;
+  color: #0F1636 !important;
+}
+body.v2.v2-medicine-page #assistant-ia .assistant-schema .tasks {
+  display: block;
+  background: transparent !important;
+  border: 1px dashed #C6A477;
+  border-radius: 0;
+  padding: 14px 12px;
+}
+body.v2.v2-medicine-page #assistant-ia .assistant-schema.has-motion-decor .tasks {
+  border-color: transparent;
+}
+body.v2.v2-medicine-page #assistant-ia .assistant-schema .tasks-title {
+  color: #FFFFFF !important;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.4;
+}
+body.v2.v2-medicine-page #assistant-ia .assistant-schema .task-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 9px;
+}
+body.v2.v2-medicine-page #assistant-ia .assistant-schema .task-grid .node {
+  background: #FFFFFF !important;
+  color: #1F2B4F !important;
+  padding: 14px 8px;
+  border-radius: 0;
+}
+body.v2.v2-medicine-page #assistant-ia .assistant-schema .assistant-schema-line,
+body.v2.v2-medicine-page #assistant-ia .assistant-schema .assistant-schema-head,
+body.v2.v2-medicine-page #assistant-ia .assistant-schema .assistant-schema-frame rect {
+  stroke: #C6A477;
+}
+body.v2.v2-medicine-page #assistant-ia .assistant-schema .step:not(:last-child)::after {
+  color: #C6A477;
+}
+body.v2.v2-medicine-page #assistant-ia .assistant-schema .caption {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #FFFFFF !important;
+  max-width: none;
+  margin-top: 35px;
+  text-align: left;
+  font-size: 15.5px;
+}
+body.v2.v2-medicine-page #assistant-ia .assistant-schema .caption-pictogram {
+  height: 30px;
+  width: 30px;
+  flex: none;
+  object-fit: contain;
+}
+body.v2.v2-medicine-page #assistant-ia .assistant-schema .caption-copy,
+body.v2.v2-medicine-page #assistant-ia .assistant-schema .caption-arrow {
+  color: #FFFFFF;
+}
+/* Anciennes règles violettes en cascade @layer refonte avec !important :
+   les surcharger dans leur propre couche, uniquement sur cette page. */
+@layer refonte {
+  html[data-theme="light"] body.v2.v2-medicine-page #assistant-ia .assistant-schema .node {
+    background: #FFFFFF !important;
+    border-color: #C6A477 !important;
+    color: #1F2B4F !important;
+  }
+  html[data-theme="light"] body.v2.v2-medicine-page #assistant-ia .assistant-schema .node .sub {
+    color: #3B4A73 !important;
+  }
+  html[data-theme="light"] body.v2.v2-medicine-page #assistant-ia .assistant-schema .step.node.assistant,
+  html[data-theme="light"] body.v2.v2-medicine-page #assistant-ia .assistant-schema .step.node.action {
+    background: #C6A477 !important;
+    border-color: #C6A477 !important;
+    color: #0F1636 !important;
+  }
+  html[data-theme="light"] body.v2.v2-medicine-page #assistant-ia .assistant-schema .step.node.validation {
+    background: #FFFFFF !important;
+    border-color: #C6A477 !important;
+    color: #1F2B4F !important;
+  }
+}
+@media (max-width: 1020px) {
+  body.v2.v2-medicine-page #assistant-ia .assistant-schema .flow {
+    grid-template-columns: minmax(0,1fr);
+    gap: 31px;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  body.v2.v2-medicine-page #assistant-ia .assistant-schema .step:not(:last-child)::after {
+    content: "↓";
+    left: 50%;
+    top: calc(100% + 9px);
+    transform: translateX(-50%);
+  }
+  body.v2.v2-medicine-page #assistant-ia .assistant-schema .assistant-schema-connector {
+    left: 50%;
+    top: calc(100% + 6px);
+    transform: translateX(-50%) rotate(90deg);
+  }
+}
+
+@layer refonte {
+  body.v2.v2-medicine-page #assistant-ia .assistant-schema .step.node.action { background: #C6A477 !important; border-color: #C6A477 !important; color: #0F1636 !important; }
+}
