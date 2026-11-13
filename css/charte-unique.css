@@ -2185,3 +2185,20 @@ body.v2.v2-medicine-page #assistant-ia .medicine-feature-heading strong{color:#1
    color:#c6a477!important;-webkit-text-fill-color:#c6a477!important;
  }
 }
+
+/* TPE-PME : bandeau final « Parlons de vos priorités » bleu nuit uniforme. */
+@layer refonte {
+ body.v2.v2-pme-restored #contenu > section.conversion-band {
+   background:#0f1636!important;background-image:none!important;color:#fff!important;
+ }
+ body.v2.v2-pme-restored #contenu > section.conversion-band :is(h2,p:not(.eyebrow),.conversion-note) {
+   color:#fff!important;-webkit-text-fill-color:#fff!important;
+ }
+ body.v2.v2-pme-restored #contenu > section.conversion-band .eyebrow {
+   color:#c6a477!important;-webkit-text-fill-color:#c6a477!important;
+ }
+ body.v2.v2-pme-restored #contenu > section.conversion-band .btn.btn-primary {
+   background:#c6a477!important;background-image:none!important;border-color:#c6a477!important;
+   color:#0f1636!important;-webkit-text-fill-color:#0f1636!important;
+ }
+}
