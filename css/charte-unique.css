@@ -1477,31 +1477,39 @@ body.v2.v2-thalasso-page .v2-hero--sector {
   background: #0F1636 !important;
   background-image: none !important;
 }
-/* Preserve the complete portrait instead of cropping it to a wide background. */
+/* Full-width photographic hero, focused on the swimmer and waterfall. */
 body.v2.v2-thalasso-page .v2-hero--sector .v2-hero-in {
-  display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
-  align-items: center;
-  gap: clamp(28px, 4vw, 64px);
-  padding-block: 40px;
+  position: static;
+  display: block;
+  padding-block: clamp(56px, 6vw, 90px);
 }
 body.v2.v2-thalasso-page .v2-hero--sector .v2-hero-media {
   display: block !important;
-  position: relative;
-  inset: auto;
+  position: absolute;
+  inset: 0;
   width: 100%;
-  max-width: 450px;
-  justify-self: end;
-  border: 1px solid #C6A477;
+  max-width: none;
+  border: 0;
+  pointer-events: none;
 }
 body.v2.v2-thalasso-page .v2-hero--sector .v2-hero-media img {
   display: block;
   width: 100%;
-  height: auto;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 76%;
 }
-body.v2.v2-thalasso-page .v2-hero--sector .v2-hero-media::after { content: none; }
-body.v2.v2-thalasso-page .v2-hero--sector .v2-hero-text { max-width: none; }
+body.v2.v2-thalasso-page .v2-hero--sector .v2-hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(15,22,54,.93), rgba(15,22,54,.78) 38%, rgba(15,22,54,.25) 75%, rgba(15,22,54,.12));
+}
+body.v2.v2-thalasso-page .v2-hero--sector .v2-hero-text {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+}
 body.v2.v2-thalasso-page .v2-hero--sector .v2-thalasso-hero-proof {
   margin-top: 18px;
   padding-left: 14px;
@@ -1864,8 +1872,8 @@ body.v2.v2-thalasso-page .v2-cta :is(.v2-h2,p) { color: #FFFFFF; }
   }
 }
 @media (max-width:720px) {
-  body.v2.v2-thalasso-page .v2-hero--sector .v2-hero-in { grid-template-columns: minmax(0,1fr); }
-  body.v2.v2-thalasso-page .v2-hero--sector .v2-hero-media { justify-self: center; }
+  body.v2.v2-thalasso-page .v2-hero--sector .v2-hero-media img { object-position: center 76%; }
+  body.v2.v2-thalasso-page .v2-hero--sector .v2-hero-media::after { background: rgba(15,22,54,.68); }
   body.v2.v2-thalasso-page .v2-thalasso-challenges ul,
   body.v2.v2-thalasso-page .v2-thalasso-systems-grid,
   body.v2.v2-thalasso-page .v2-thalasso-agents-grid,
