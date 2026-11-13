@@ -92,7 +92,7 @@ body.medicine-page #contenu > .medicine-assistant-section .eyebrow {
 
 /* Même palette sur les quatre schémas assistants et les deux flux multi-agents. */
 @layer refonte {
-  html[data-theme="light"] .assistant-schema .node { background: #F3F0FF !important; border-color: #CBBFF7 !important; color: #1B2A6B !important; }
+  html[data-theme="light"] .assistant-schema .node { background: #f7f1e6 !important; border-color: #d9bd8c !important; color: #1B2A6B !important; }
   html[data-theme="light"] .assistant-schema .node .sub { color: #1B2A6B !important; }
   .assistant-schema .action, html[data-theme="light"] .assistant-schema .action { background: #1E2B70 !important; border: 1px solid #5B6CC9 !important; color: #FFFFFF !important; }
 }

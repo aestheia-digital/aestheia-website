@@ -37,20 +37,6 @@ html:not([data-theme="dark"]) body.resources-page .resource-card {
     color: #1B254D !important;
     -webkit-text-fill-color: #1B254D !important;
   }
-  html[data-theme="dark"] body.resources-page #contenu .resource-card .resource-sector,
-  html.theme-dark body.resources-page #contenu .resource-card .resource-sector {
-    background: transparent !important;
-    border: 1px solid #B89A72 !important;
-    color: #E8DCC9 !important;
-    -webkit-text-fill-color: #E8DCC9 !important;
-  }
-  html[data-theme="dark"] body.resources-page #contenu .resource-card .resource-category,
-  html.theme-dark body.resources-page #contenu .resource-card .resource-category {
-    background: #F2EDE5 !important;
-    border-color: #F2EDE5 !important;
-    color: #1B254D !important;
-    -webkit-text-fill-color: #1B254D !important;
-  }
 }
 
 /* Lecture éditoriale : aucun fond de bouton ni bordure, liens alignés en bas.
@@ -101,22 +87,6 @@ html:not([data-theme="dark"]) body.resources-page .resource-card {
     color: #1E2A50 !important;
     -webkit-text-fill-color: #1E2A50 !important;
   }
-  html[data-theme="dark"] body.resources-page #contenu .resource-card > a.text-link,
-  html[data-theme="dark"] body.resources-page #contenu .resource-card > a.text-link:visited,
-  html[data-theme="dark"] body.resources-page #contenu .resource-card > a.text-link:hover,
-  html[data-theme="dark"] body.resources-page #contenu .resource-card > a.text-link:focus-visible,
-  html.theme-dark body.resources-page #contenu .resource-card > a.text-link,
-  html.theme-dark body.resources-page #contenu .resource-card > a.text-link:visited,
-  html.theme-dark body.resources-page #contenu .resource-card > a.text-link:hover {
-    color: #D1B995 !important;
-    -webkit-text-fill-color: #D1B995 !important;
-    text-decoration-color: #D1B995 !important;
-  }
-  html[data-theme="dark"] body.resources-page #contenu .resource-card > a.text-link::after,
-  html.theme-dark body.resources-page #contenu .resource-card > a.text-link::after {
-    color: #D1B995 !important;
-    -webkit-text-fill-color: #D1B995 !important;
-  }
   html body.resources-page #contenu .resource-card > a.text-link:focus-visible {
     outline: 2px solid #B89A72 !important;
     outline-offset: 4px !important;
@@ -135,9 +105,5 @@ html:not([data-theme="dark"]) body.resources-page .resource-card {
   }
   html[data-theme="light"] body.resources-page #contenu .resource-card > a.text-link .resource-read-label {
     text-decoration-color: #1E2A50 !important;
-  }
-  html[data-theme="dark"] body.resources-page #contenu .resource-card > a.text-link .resource-read-label,
-  html.theme-dark body.resources-page #contenu .resource-card > a.text-link .resource-read-label {
-    text-decoration-color: #D1B995 !important;
   }
 }

@@ -4,7 +4,7 @@
   --color-soft: #1B2A6B;
   --color-ink: #F4F7FF;
   --color-muted: #C9D5F2;
-  --color-accent: #A9B4FF;
+  --color-accent: #d9bd8c;
   --color-border: #3A4C9A;
   --color-mist: #26398A;
   --sim-bg: var(--color-bg);
@@ -18,19 +18,6 @@
   --sim-soft: var(--color-mist);
   --sim-btn-bg: #FFFFFF;
   --sim-btn-fg: #1B2A6B;
-}
-html[data-theme="dark"] .sim {
-  --color-bg: #0F1636;
-  --color-soft: #141C44;
-  --color-ink: #EAF0FF;
-  --color-muted: #B9C6E6;
-  --color-accent: #9A9AFF;
-  --color-border: #2B3766;
-  --color-mist: #1A2350;
-  --sim-muted: #8C9BC4;
-  --sim-accent-lit: #8FBBFF;
-  --sim-btn-bg: #FAFCFF;
-  --sim-btn-fg: #1F2B4F;
 }
 /* Le simulateur remplit le conteneur de Concrètement, après le résultat. */
 .sim { position: relative; z-index: 1; width: 100%; margin: 32px 0 0; padding: 0; scroll-margin-top: 100px; font-family: var(--font-body); font-weight: 400; line-height: 1.65; color: var(--sim-body); background: none; border: 0; box-shadow: none; border-radius: 0; }
@@ -81,7 +68,7 @@ body.home-page #contenu > .home-demo--with-simulator + .section { padding-bottom
     background-color: #FFFFFF !important;
   }
   html[data-theme="light"] body.home-page #contenu > .home-demo--with-simulator ~ section.section:nth-of-type(even) {
-    background-color: #FAF9FF !important;
+    background-color: #f7f1e6 !important;
   }
   html[data-theme="light"] body.home-page #contenu > .home-demo--with-simulator ~ section.section:not(.section-aqua):not(.conversion-band):nth-of-type(odd) {
     --halo-side: 85%;
@@ -90,7 +77,7 @@ body.home-page #contenu > .home-demo--with-simulator + .section { padding-bottom
     --halo-side: 15%;
   }
   html[data-theme="light"] body.home-page #contenu > .home-demo.home-demo--with-simulator + section.section.section-soft:not(.section-aqua):not(.conversion-band) {
-    background-color: #FAF9FF !important;
+    background-color: #f7f1e6 !important;
     --halo-side: 15%;
   }
 }
@@ -109,15 +96,6 @@ body.home-page #contenu > .home-demo--with-simulator + .section { padding-bottom
   font-weight: 400;
   line-height: 1.65;
   color: var(--cases-body);
-}
-html[data-theme="dark"] .cases {
-  --cases-surface: #141C44;
-  --cases-ink: #EAF0FF;
-  --cases-body: #B9C6E6;
-  --cases-muted: #8C9BC4;
-  --cases-accent: #9A9AFF;
-  --cases-accent-lit: #8FBBFF;
-  --cases-line: #2B3766;
 }
 .cases-title { margin: 0 0 6px; font: 400 clamp(24px, 2.6vw, 28px)/1.2 var(--font-display); color: var(--cases-ink); text-wrap: balance; }
 .cases-intro { margin: 0 0 18px; max-width: 70ch; font-size: 15px; color: var(--cases-body); }
@@ -148,10 +126,8 @@ html[data-theme="dark"] .cases {
 /* Mobile : halo violet doux, comme les premières cartes */
 @media (max-width: 640px) {
   .cases { position: relative; isolation: isolate; }
-  .cases::before { content: ""; position: absolute; z-index: -1; inset: -40px -16px -24px; pointer-events: none; -webkit-mask-image: linear-gradient(to bottom, transparent, #000 22%, #000 78%, transparent); mask-image: linear-gradient(to bottom, transparent, #000 22%, #000 78%, transparent); background: radial-gradient(70% 38% at 85% 0%, rgba(94, 23, 235, .13), transparent 72%), radial-gradient(60% 30% at 0% 55%, rgba(0, 176, 255, .07), transparent 75%), radial-gradient(70% 30% at 90% 100%, rgba(94, 23, 235, .10), transparent 75%); }
-  .case { background-image: radial-gradient(120% 90% at 100% 0%, rgba(94, 23, 235, .07), transparent 62%); background-color: var(--cases-surface); }
-  html[data-theme="dark"] .cases::before { background: radial-gradient(70% 38% at 85% 0%, rgba(154, 154, 255, .16), transparent 72%), radial-gradient(70% 30% at 90% 100%, rgba(154, 154, 255, .12), transparent 75%); }
-  html[data-theme="dark"] .case { background-image: radial-gradient(120% 90% at 100% 0%, rgba(154, 154, 255, .10), transparent 62%); }
+  .cases::before { content: ""; position: absolute; z-index: -1; inset: -40px -16px -24px; pointer-events: none; -webkit-mask-image: linear-gradient(to bottom, transparent, #000 22%, #000 78%, transparent); mask-image: linear-gradient(to bottom, transparent, #000 22%, #000 78%, transparent); background: radial-gradient(70% 38% at 85% 0%, rgba(198, 164, 119, .13), transparent 72%), radial-gradient(60% 30% at 0% 55%, rgba(0, 176, 255, .07), transparent 75%), radial-gradient(70% 30% at 90% 100%, rgba(198, 164, 119, .10), transparent 75%); }
+  .case { background-image: radial-gradient(120% 90% at 100% 0%, rgba(198, 164, 119, .07), transparent 62%); background-color: var(--cases-surface); }
   .case-sector { font-size: 12px; }
 }
 

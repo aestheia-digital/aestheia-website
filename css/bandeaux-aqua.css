@@ -29,17 +29,10 @@ html:not(.theme-dark) #contenu > .section.section-aqua {
 }
 
 /* Mode nuit : le site bascule via la classe html.theme-dark */
-html.theme-dark #contenu > .section.section-aqua {
-  --aqua-veil: rgba(17, 24, 61, 0.82);
-  background:
-    linear-gradient(var(--aqua-veil), var(--aqua-veil)),
-    var(--aqua-image) center / cover no-repeat !important;
-}
 
 /* Connexion limitee : repli sur un aplat sobre */
 @media (prefers-reduced-data: reduce) {
-  html:not(.theme-dark) #contenu > .section.section-aqua,
-  html.theme-dark #contenu > .section.section-aqua {
+  html:not(.theme-dark) #contenu > .section.section-aqua {
     background: var(--color-soft) !important;
   }
 }

@@ -60,7 +60,7 @@
       :where(html[data-theme="dark"]) .resources-hero,
       :where(html[data-theme="dark"]) .contact-cube-hero {
         background:
-          radial-gradient(circle at 86% 22%, rgba(84, 12, 228, 0.10), transparent 34%),
+          radial-gradient(circle at 86% 22%, rgba(198, 164, 119, 0.10), transparent 34%),
           radial-gradient(circle at 12% 88%, rgba(0, 176, 255, 0.08), transparent 38%),
           linear-gradient(135deg, #080d22 0%, #0a1028 58%, #131b40 100%) !important;
       }
@@ -106,7 +106,7 @@
     html.theme-dark .resources-hero,
     html.theme-dark .contact-cube-hero {
       background:
-        radial-gradient(circle at 86% 22%, rgba(84, 12, 228, 0.10), transparent 34%),
+        radial-gradient(circle at 86% 22%, rgba(198, 164, 119, 0.10), transparent 34%),
         radial-gradient(circle at 12% 88%, rgba(0, 176, 255, 0.08), transparent 38%),
         linear-gradient(135deg, #080d22 0%, #0a1028 58%, #131b40 100%) !important;
     }

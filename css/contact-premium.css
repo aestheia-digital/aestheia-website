@@ -30,36 +30,6 @@
     background: #293A68 !important;
     border-color: #293A68 !important;
   }
-  html:is([data-theme="dark"], .theme-dark) body #contenu > .contact-photo-hero + .section {
-    background: #0D1430 !important;
-    background-image: none !important;
-  }
-  html:is([data-theme="dark"], .theme-dark) body #contenu > .contact-photo-hero + .section .contact-option {
-    background: #151D3C !important;
-    border: 1px solid #394363 !important;
-    border-top: 2px solid #B89A72 !important;
-    box-shadow: none !important;
-  }
-  html:is([data-theme="dark"], .theme-dark) body #contenu > .contact-photo-hero + .section .contact-option > h3 {
-    color: #F2EDE5 !important;
-    -webkit-text-fill-color: #F2EDE5 !important;
-  }
-  html:is([data-theme="dark"], .theme-dark) body #contenu > .contact-photo-hero + .section .contact-option .contact-choice-button,
-  html:is([data-theme="dark"], .theme-dark) body #contenu > .contact-photo-hero + .section .contact-option .contact-choice-button:hover,
-  html:is([data-theme="dark"], .theme-dark) body #contenu > .contact-photo-hero + .section .contact-option .contact-choice-button:focus-visible {
-    background: #B89A72 !important;
-    background-image: none !important;
-    border: 1px solid #B89A72 !important;
-    color: #101831 !important;
-    -webkit-text-fill-color: #101831 !important;
-    box-shadow: none !important;
-    filter: none !important;
-    text-shadow: none !important;
-  }
-  html:is([data-theme="dark"], .theme-dark) body #contenu > .contact-photo-hero + .section .contact-option .contact-choice-button:hover {
-    background: #D2B48C !important;
-    border-color: #D2B48C !important;
-  }
 }
 
 /* Bandeau signature — aucune concurrence avec les deux CTA principaux. */
@@ -126,24 +96,6 @@
     text-decoration: underline;
     text-decoration-color: #B89A72;
     text-underline-offset: .25em;
-  }
-  html:is([data-theme="dark"], .theme-dark) body #contenu > .contact-signature-section {
-    background: #101831 !important;
-    background-image: none !important;
-  }
-  html:is([data-theme="dark"], .theme-dark) body .contact-signature .eyebrow,
-  html:is([data-theme="dark"], .theme-dark) body .contact-signature-label {
-    color: #B89A72 !important;
-    -webkit-text-fill-color: #B89A72 !important;
-  }
-  html:is([data-theme="dark"], .theme-dark) body .contact-signature h2,
-  html:is([data-theme="dark"], .theme-dark) body .contact-signature-item a {
-    color: #F2EDE5 !important;
-    -webkit-text-fill-color: #F2EDE5 !important;
-  }
-  html:is([data-theme="dark"], .theme-dark) body .contact-signature-intro {
-    color: #D3D7E4 !important;
-    -webkit-text-fill-color: #D3D7E4 !important;
   }
   @media (max-width: 640px) {
     html body .contact-signature-details {

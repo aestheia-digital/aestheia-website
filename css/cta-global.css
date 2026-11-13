@@ -16,11 +16,11 @@
     color: #EEF2FF !important;
   }
   .conversion-band::before, .conversion-band::after { content: none !important; display: none !important; }
-  html[data-theme="light"] .conversion-band { background: #EEE9FF !important; }
+  html[data-theme="light"] .conversion-band { background: #f7f1e6 !important; }
   .conversion-band h2 { color: #EEF2FF !important; }
   html[data-theme="light"] .conversion-band h2 { color: #1B2A6B !important; }
-  .conversion-band .eyebrow { color: #9B7CFF !important; }
-  html[data-theme="light"] .conversion-band .eyebrow { color: #6C4DE6 !important; }
+  .conversion-band .eyebrow { color: #d9bd8c !important; }
+  html[data-theme="light"] .conversion-band .eyebrow { color: #8f6f3e !important; }
   .conversion-action { display: flex; flex-direction: column; align-items: center; flex: 0 1 390px; text-align: center; }
   .conversion-band .btn {
     background: #EEF2FF !important;

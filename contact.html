@@ -1,8 +1,7 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" class="theme-light" data-theme="light">
   <head>
     <meta charset="utf-8">
-    <script src="js/theme.js"></script>
     <link rel="preload" href="assets/fonts/dm-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Contacter AesthéIA | Stratégie digitale et automatisation</title>
@@ -40,60 +39,11 @@
         color: #3B4880 !important;
       }
 
-      html.theme-dark .contact-option > .contact-project-note,
-      html[data-theme="dark"] .contact-option > .contact-project-note {
-        color: #C7CEE9 !important;
-      }
-
-      html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) .contact-option > .contact-project-note {
-          color: #C7CEE9 !important;
-        }
-
 
       /* Contact — mode nuit : distinguer le bandeau « Deux options simples » du header. */
-      html.theme-dark #contenu > .contact-cube-hero + .section,
-      html[data-theme="dark"] #contenu > .contact-cube-hero + .section {
-        background:
-          radial-gradient(circle at 86% 22%, rgba(84, 12, 228, 0.11), transparent 38%),
-          radial-gradient(circle at 12% 88%, rgba(0, 176, 255, 0.09), transparent 42%),
-          linear-gradient(135deg, #11183d 0%, #172149 58%, #202d60 100%);
-      }
-
-      html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) #contenu > .contact-cube-hero + .section {
-          background:
-            radial-gradient(circle at 86% 22%, rgba(84, 12, 228, 0.11), transparent 38%),
-            radial-gradient(circle at 12% 88%, rgba(0, 176, 255, 0.09), transparent 42%),
-            linear-gradient(135deg, #11183d 0%, #172149 58%, #202d60 100%);
-        }
 
 
       /* Contact — mode nuit : halo violet atténué dans « Coordonnées d’AesthéIA ». */
-      html.theme-dark #contenu > .contact-cube-hero + .section + .section-soft,
-      html[data-theme="dark"] #contenu > .contact-cube-hero + .section + .section-soft {
-        background:
-          radial-gradient(circle at 90% 18%, rgba(94, 23, 235, 0.09), transparent 34%),
-          #11183d;
-      }
-
-
-      html.theme-dark #contenu > .contact-cube-hero + .section + .section-soft::before,
-      html[data-theme="dark"] #contenu > .contact-cube-hero + .section + .section-soft::before {
-        background:
-          radial-gradient(circle at 84% 24%, rgba(94, 23, 235, 0.17), transparent 42%),
-          radial-gradient(circle at 16% 78%, rgba(139, 92, 246, 0.09), transparent 46%) !important;
-      }
-
-      html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) #contenu > .contact-cube-hero + .section + .section-soft {
-          background:
-            radial-gradient(circle at 90% 18%, rgba(94, 23, 235, 0.09), transparent 34%),
-            #11183d;
-        }
-
-      html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) #contenu > .contact-cube-hero + .section + .section-soft::before {
-          background:
-            radial-gradient(circle at 84% 24%, rgba(94, 23, 235, 0.17), transparent 42%),
-            radial-gradient(circle at 16% 78%, rgba(139, 92, 246, 0.09), transparent 46%) !important;
-        }
 
       @media (min-width: 900px) and (max-width: 1179px) {
         .contact-cube-hero .hero-tech-backdrop { display: block; opacity: 0.5; }
@@ -127,24 +77,16 @@
       }
 
       /* Footer Contact : le « IA » conserve le dégradé bleu validé. */
-      html:is(.theme-dark,.theme-light):has(.contact-cube-hero) .site-footer .footer-logo .brand-ia {
+      html.theme-light:has(.contact-cube-hero) .site-footer .footer-logo .brand-ia {
         display: inline-block;
-      }
-      html.theme-dark:has(.contact-cube-hero) .site-footer .footer-logo .brand-ia {
-        display: inline-block;
-        color: #00b0ff !important;
-        background: linear-gradient(135deg, #0077dd 0%, #00b0ff 100%) !important;
-        -webkit-background-clip: text !important;
-        background-clip: text !important;
-        -webkit-text-fill-color: transparent !important;
       }
 
       /* Contact, ordinateur et mode jour : halo violet léger sur le bandeau Coordonnées. */
       @media (min-width: 1180px) {
         html:not(.theme-dark):not([data-theme="dark"]) #contenu > .contact-cube-hero + .section + .section-soft {
           background:
-            radial-gradient(circle at 90% 18%, rgba(94, 23, 235, 0.24), transparent 42%),
-            radial-gradient(circle at 12% 82%, rgba(139, 92, 246, 0.14), transparent 46%),
+            radial-gradient(circle at 90% 18%, rgba(198, 164, 119, 0.24), transparent 42%),
+            radial-gradient(circle at 12% 82%, rgba(198, 164, 119, 0.14), transparent 46%),
             var(--color-soft) !important;
         }
 
@@ -154,23 +96,14 @@
       }
 
       /* Numéro dans “Informations de contact” : blanc au repos avec balayage bleu. */
-      html:is(.theme-dark,.theme-light):has(.contact-cube-hero) .contact-phone-display {
+      html.theme-light:has(.contact-cube-hero) .contact-phone-display {
         position: relative;
         display: inline-block;
         width: fit-content;
-        isolation: isolate;
-      }
-      html.theme-dark:has(.contact-cube-hero) .contact-phone-display {
-        position: relative;
-        display: inline-block;
-        width: fit-content;
-        color: #ffffff !important;
-        background: none !important;
-        -webkit-text-fill-color: #ffffff !important;
         isolation: isolate;
       }
 
-      html:is(.theme-dark,.theme-light):has(.contact-cube-hero) .contact-phone-display::after {
+      html.theme-light:has(.contact-cube-hero) .contact-phone-display::after {
         content: attr(data-text);
         position: absolute;
         inset: 0;
@@ -178,51 +111,16 @@
         pointer-events: none;
         background-size: 260% 100%;
         background-position: 220% 0;
-        will-change: background-position, opacity;
-        animation: contact-phone-blue-sweep 14s linear infinite;
-      }
-
-      html.theme-dark:has(.contact-cube-hero) .contact-phone-display::after {
-        content: attr(data-text);
-        position: absolute;
-        inset: 0;
-        z-index: 1;
-        pointer-events: none;
-        color: transparent;
-        background: linear-gradient(90deg, transparent 0%, transparent 37%, #0077dd 45%, #00b0ff 50%, #4dc8ff 54%, transparent 63%, transparent 100%);
-        background-size: 260% 100%;
-        background-position: 220% 0;
-        opacity: 0;
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent !important;
         will-change: background-position, opacity;
         animation: contact-phone-blue-sweep 14s linear infinite;
       }
 
       /* Numéro du footer : violet statique, sans balayage ni halo. */
-      html:is(.theme-dark,.theme-light):has(.contact-cube-hero) .site-footer .footer-phone,
-html:is(.theme-dark,.theme-light):has(.contact-cube-hero) .site-footer .footer-phone:hover,
-html:is(.theme-dark,.theme-light):has(.contact-cube-hero) .site-footer .footer-phone:focus-visible {
-        animation: none !important;
-      }
-      html.theme-dark:has(.contact-cube-hero) .site-footer .footer-phone,
-      html.theme-dark:has(.contact-cube-hero) .site-footer .footer-phone:hover,
-      html.theme-dark:has(.contact-cube-hero) .site-footer .footer-phone:focus-visible {
-        color: #a788ff !important;
-        background: none !important;
-        background-image: none !important;
-        -webkit-text-fill-color: #a788ff !important;
+      html.theme-light:has(.contact-cube-hero) .site-footer .footer-phone,html.theme-light:has(.contact-cube-hero) .site-footer .footer-phone:hover,html.theme-light:has(.contact-cube-hero) .site-footer .footer-phone:focus-visible {
         animation: none !important;
       }
 
-      html:is(.theme-dark,.theme-light):has(.contact-cube-hero) .site-footer .footer-phone::after {
-        content: none !important;
-        display: none !important;
-        animation: none !important;
-      }
-
-      html.theme-dark:has(.contact-cube-hero) .site-footer .footer-phone::after {
+      html.theme-light:has(.contact-cube-hero) .site-footer .footer-phone::after {
         content: none !important;
         display: none !important;
         animation: none !important;
@@ -248,12 +146,10 @@ html:is(.theme-dark,.theme-light):has(.contact-cube-hero) .site-footer .footer-p
       }
 
       @media (prefers-reduced-motion: reduce) {
-        html:is(.theme-dark,.theme-light):has(.contact-cube-hero) .contact-phone-display::after { animation: none; }
-        html.theme-dark:has(.contact-cube-hero) .contact-phone-display::after { animation: none; opacity: 0; }
+        html.theme-light:has(.contact-cube-hero) .contact-phone-display::after { animation: none; }
       }
     </style>
       <link rel="stylesheet" href="css/cta-global.css?v=20260920-cta-lock">
-      <link rel="stylesheet" href="css/dark-no-purple-halos.css?v=20260920-dark-no-purple">
   </head>
   <body>
     <a class="skip-link" href="#contenu">Aller au contenu</a>

@@ -27,7 +27,7 @@
   /* Étiquettes d'indicateurs : lavande pâle, sans cadre */
   html[data-theme="light"] body.home-page .home-pains .perf-tags li {
     border: 0 !important;
-    background: #EEEAFB !important;
+    background: #f7f1e6 !important;
   }
 
   /* Cartes blanches, liseré champagne en haut : la seule touche chaude */

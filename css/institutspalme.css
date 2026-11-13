@@ -7,23 +7,11 @@
   --pal-veil: rgba(252, 249, 246, 0.24);
 }
 
-html.theme-dark,
-html[data-theme="dark"] {
-  --pal-image: url("../assets/images/metiers/palmenuit.webp");
-  --pal-veil: rgba(6, 10, 30, 0.72);
-}
-
-html:where([data-theme="dark"]):not([data-theme="light"]) {
-    --pal-image: url("../assets/images/metiers/palmenuit.webp");
-    --pal-veil: rgba(6, 10, 30, 0.72);
-  }
-
-html:not(.theme-dark) body.institutes-page #contenu > .section.section-aqua,
-html.theme-dark body.institutes-page #contenu > .section.section-aqua {
+html:not(.theme-dark) body.institutes-page #contenu > .section.section-aqua {
   background: var(--color-soft) !important;
 }
 
-html:is(.theme-dark,.theme-light) body.institutes-page #contenu > .section.section-aqua::before {
+html.theme-light body.institutes-page #contenu > .section.section-aqua::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -31,8 +19,7 @@ html:is(.theme-dark,.theme-light) body.institutes-page #contenu > .section.secti
   pointer-events: none;
 }
 
-html:not(.theme-dark) body.institutes-page #contenu > .section.section-aqua::before,
-html.theme-dark body.institutes-page #contenu > .section.section-aqua::before {
+html:not(.theme-dark) body.institutes-page #contenu > .section.section-aqua::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -43,12 +30,11 @@ html.theme-dark body.institutes-page #contenu > .section.section-aqua::before {
     var(--pal-image) left center / cover no-repeat !important;
 }
 
-html:is(.theme-dark,.theme-light) body.institutes-page #contenu > .section.section-mist.section-aqua::before {
+html.theme-light body.institutes-page #contenu > .section.section-mist.section-aqua::before {
   transform: scaleY(-1);
 }
 
-html:not(.theme-dark) body.institutes-page #contenu > .section.section-mist.section-aqua::before,
-html.theme-dark body.institutes-page #contenu > .section.section-mist.section-aqua::before {
+html:not(.theme-dark) body.institutes-page #contenu > .section.section-mist.section-aqua::before {
   transform: scaleY(-1);
 }
 
@@ -59,16 +45,8 @@ html:not(.theme-dark) body.institutes-page .section-aqua .sector-editorial-chapt
   -webkit-backdrop-filter: blur(3px);
 }
 
-html.theme-dark body.institutes-page .section-aqua .card,
-html.theme-dark body.institutes-page .section-aqua .sector-editorial-chapter {
-  background: rgba(17, 24, 61, 0.84) !important;
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-}
-
 @media (max-width: 720px) {
-  html:not(.theme-dark) body.institutes-page #contenu > .section.section-aqua::before,
-  html.theme-dark body.institutes-page #contenu > .section.section-aqua::before {
+  html:not(.theme-dark) body.institutes-page #contenu > .section.section-aqua::before {
     background:
       linear-gradient(var(--pal-veil), var(--pal-veil)),
       var(--pal-image) top center / 170vw auto repeat-y,
@@ -80,38 +58,15 @@ html.theme-dark body.institutes-page .section-aqua .sector-editorial-chapter {
   }
 }
 
-html.theme-dark body.institutes-page,
-html[data-theme="dark"] body.institutes-page {
-  --dark-body-cloud-opacity: 0;
-}
-
-html:is(.theme-dark,.theme-light) body.institutes-page #contenu > .section:not(.conversion-band)::after,
-html[data-theme] body.institutes-page #contenu > .section:not(.conversion-band)::after {
+html.theme-light body.institutes-page #contenu > .section:not(.conversion-band)::after,html[data-theme] body.institutes-page #contenu > .section:not(.conversion-band)::after {
   content: none !important;
   display: none !important;
   visibility: hidden !important;
 }
 
-html.theme-dark body.institutes-page #contenu > .section:not(.conversion-band)::after,
-html[data-theme="dark"] body.institutes-page #contenu > .section:not(.conversion-band)::after {
+html.theme-light body.institutes-page #contenu > .section:not(.conversion-band):not(.section-aqua)::before,html[data-theme] body.institutes-page #contenu > .section:not(.conversion-band):not(.section-aqua)::before {
   content: none !important;
   display: none !important;
-  visibility: hidden !important;
-  background: none !important;
-  opacity: 0 !important;
-}
-
-html:is(.theme-dark,.theme-light) body.institutes-page #contenu > .section:not(.conversion-band):not(.section-aqua)::before,
-html[data-theme] body.institutes-page #contenu > .section:not(.conversion-band):not(.section-aqua)::before {
-  content: none !important;
-  display: none !important;
-}
-
-html.theme-dark body.institutes-page #contenu > .section:not(.conversion-band):not(.section-aqua)::before,
-html[data-theme="dark"] body.institutes-page #contenu > .section:not(.conversion-band):not(.section-aqua)::before {
-  content: none !important;
-  display: none !important;
-  background: none !important;
 }
 
 body.institutes-page .institutes-team-issue h3 {
@@ -205,21 +160,11 @@ body.institutes-page .institutes-onboarding-benefit::before {
   position: absolute;
   inset: 0 auto 0 0;
   width: 4px;
-  background: linear-gradient(180deg, #540ce4 0%, #00b0ff 100%);
+  background: linear-gradient(180deg, #8f6f3e 0%, #00b0ff 100%);
 }
 
 body.institutes-page .institutes-onboarding-benefit strong {
   color: var(--color-primary);
-}
-
-html.theme-dark body.institutes-page .institutes-onboarding-benefit {
-  color: #f3f6ff;
-  border-color: #9b7cff;
-  background: linear-gradient(135deg, #26365f 0%, #2a3e68 52%, #304673 100%);
-}
-
-html.theme-dark body.institutes-page .institutes-onboarding-benefit strong {
-  color: #fff;
 }
 
 @media (max-width: 960px) {
@@ -263,11 +208,11 @@ html.theme-dark body.institutes-page .institutes-onboarding-benefit strong {
 }
 
 html:not(.theme-dark) body.institutes-page {
-  --institutes-day-lavender: #eee8fa;
-  --institutes-day-violet: #6b4bb3;
-  --institutes-day-violet-electric: #5e17eb;
-  --institutes-day-liseret: linear-gradient(180deg, #540ce4 0%, #5e17eb 52%, #00b0ff 100%);
-  --institutes-day-border: rgba(94, 23, 235, 0.22);
+  --institutes-day-lavender: #f7f1e6;
+  --institutes-day-violet: #8f6f3e;
+  --institutes-day-violet-electric: #8f6f3e;
+  --institutes-day-liseret: linear-gradient(180deg, #8f6f3e 0%, #8f6f3e 52%, #00b0ff 100%);
+  --institutes-day-border: rgba(198, 164, 119, 0.22);
 }
 
 html:not(.theme-dark) body.institutes-page .institutes-reality-conclusion,
@@ -291,7 +236,7 @@ html:not(.theme-dark) body.institutes-page .institutes-onboarding-benefit::befor
     border: 1px solid #E3D5C8 !important;
   }
   html:not(.theme-dark) body.institutes-page .institutes-method-conclusion::before {
-    background: #6C4DE6 !important;
+    background: #8f6f3e !important;
   }
 }
 
@@ -316,7 +261,7 @@ body.institutes-page .faq-accordion-item summary {
 
 html:not(.theme-dark) body.institutes-page .faq-accordion,
 html:not(.theme-dark) body.institutes-page .faq-accordion-item {
-  border-color: rgba(107, 75, 179, 0.14);
+  border-color: rgba(198, 164, 119, 0.14);
 }
 
 html:not(.theme-dark) body.institutes-page #contenu > .institutes-method-section::before,
@@ -326,26 +271,8 @@ html:not(.theme-dark) body.institutes-page #contenu > .faq-section::before {
 
 html:not(.theme-dark) body.institutes-page #contenu > .section.section-mist.section-aqua p > a,
 html:not(.theme-dark) body.institutes-page #contenu > .section.section-mist.section-aqua a[href$="medecine-esthetique/index.html"] {
-  color: #6b4bb3 !important;
-  -webkit-text-fill-color: #6b4bb3 !important;
-}
-
-html.theme-dark body.institutes-page #contenu > .section.section-soft.section-aqua .institutes-editorial-content p > a,
-html[data-theme="dark"] body.institutes-page #contenu > .section.section-soft.section-aqua .institutes-editorial-content p > a {
-  color: #b69cff !important;
-  -webkit-text-fill-color: #b69cff !important;
-}
-
-html.theme-dark body.institutes-page #contenu > .section.section-mist.section-aqua p > a,
-html[data-theme="dark"] body.institutes-page #contenu > .section.section-mist.section-aqua p > a,
-html.theme-dark body.institutes-page #contenu > .section.section-mist.section-aqua a[href$="medecine-esthetique/index.html"],
-html[data-theme="dark"] body.institutes-page #contenu > .section.section-mist.section-aqua a[href$="medecine-esthetique/index.html"] {
-  color: #b69cff !important;
-  -webkit-text-fill-color: #b69cff !important;
-}
-html.theme-dark body.institutes-page #contenu > .section.section-mist.section-aqua .feature-list li::before,
-html[data-theme="dark"] body.institutes-page #contenu > .section.section-mist.section-aqua .feature-list li::before {
-  background: linear-gradient(135deg, #008bd1, #4f46c7) !important;
+  color: #8f6f3e !important;
+  -webkit-text-fill-color: #8f6f3e !important;
 }
 
 body.institutes-page .institutes-reality-metric {
@@ -358,21 +285,18 @@ body.institutes-page .institutes-reality-metric::before {
   position: absolute;
   inset: 0 auto 0 0;
   width: 3px;
-  background: linear-gradient(180deg, #540ce4 0%, #5e17eb 52%, #00b0ff 100%);
+  background: linear-gradient(180deg, #8f6f3e 0%, #8f6f3e 52%, #00b0ff 100%);
 }
 
 html:not(.theme-dark) body.institutes-page .institutes-team-issue h3 {
-  color: #6b4bb3 !important;
+  color: #8f6f3e !important;
 }
 
-html:is(.theme-dark,.theme-light) body.institutes-page .institutes-reality-list > li:nth-child(-n+5),
-html[data-theme] body.institutes-page .institutes-reality-list > li:nth-child(-n+5) {
+html.theme-light body.institutes-page .institutes-reality-list > li:nth-child(-n+5),html[data-theme] body.institutes-page .institutes-reality-list > li:nth-child(-n+5) {
   font-weight: 400 !important;
 }
 
-html:not(.theme-dark) body.institutes-page .institutes-reality-list > li:nth-child(-n+5),
-html.theme-dark body.institutes-page .institutes-reality-list > li:nth-child(-n+5),
-html[data-theme="dark"] body.institutes-page .institutes-reality-list > li:nth-child(-n+5) {
+html:not(.theme-dark) body.institutes-page .institutes-reality-list > li:nth-child(-n+5) {
   font-weight: 400 !important;
 }
 
@@ -380,233 +304,31 @@ html:not(.theme-dark) body.institutes-page .institutes-reality-issue-label {
   color: #25325f !important;
 }
 
-html.theme-dark body.institutes-page .institutes-reality-list > li:nth-child(-n+5),
-html[data-theme="dark"] body.institutes-page .institutes-reality-list > li:nth-child(-n+5) {
-  color: #d9e0f3 !important;
-}
-
-html:is(.theme-dark,.theme-light) body.institutes-page .institutes-reality-issue-label,
-html[data-theme] body.institutes-page .institutes-reality-issue-label {
+html.theme-light body.institutes-page .institutes-reality-issue-label,html[data-theme] body.institutes-page .institutes-reality-issue-label {
   font-weight: 600 !important;
 }
 
-html.theme-dark body.institutes-page .institutes-reality-issue-label,
-html[data-theme="dark"] body.institutes-page .institutes-reality-issue-label {
-  color: #eef2ff !important;
-  font-weight: 600 !important;
-}
-
-html.theme-dark body.institutes-page .institutes-team-issue h3,
-html[data-theme="dark"] body.institutes-page .institutes-team-issue h3 {
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
-}
-
-html.theme-dark body.institutes-page .section-aqua .institutes-editorial-chapter,
-html[data-theme="dark"] body.institutes-page .section-aqua .institutes-editorial-chapter,
-html.theme-dark body.institutes-page .institutes-onboarding-block,
-html[data-theme="dark"] body.institutes-page .institutes-onboarding-block,
-html.theme-dark body.institutes-page .institutes-method-card,
-html[data-theme="dark"] body.institutes-page .institutes-method-card {
-  background: linear-gradient(135deg, rgba(17, 24, 61, 0.76) 0%, rgba(30, 42, 80, 0.76) 58%, rgba(39, 52, 124, 0.76) 100%) !important;
-  border-color: rgba(255, 255, 255, 0.12) !important;
-  backdrop-filter: blur(3px);
-  -webkit-backdrop-filter: blur(3px);
-}
-
-html.theme-dark body.institutes-page .institutes-method-card,
-html[data-theme="dark"] body.institutes-page .institutes-method-card {
-  background: linear-gradient(135deg, rgba(17, 24, 61, 0.90) 0%, rgba(30, 42, 80, 0.90) 58%, rgba(39, 52, 124, 0.90) 100%) !important;
-}
-
-html.theme-dark body.institutes-page .institutes-onboarding-benefit,
-html[data-theme="dark"] body.institutes-page .institutes-onboarding-benefit {
-  background: #a9c0dc !important;
-  color: #14244a !important;
-  border-color: rgba(0, 176, 255, 0.14) !important;
-}
-
-html:is(.theme-dark,.theme-light) body.institutes-page .institutes-onboarding-benefit::before,
-html[data-theme] body.institutes-page .institutes-onboarding-benefit::before {
+html.theme-light body.institutes-page .institutes-onboarding-benefit::before,html[data-theme] body.institutes-page .institutes-onboarding-benefit::before {
   width: 4px !important;
 }
 
-html.theme-dark body.institutes-page .institutes-onboarding-benefit::before,
-html[data-theme="dark"] body.institutes-page .institutes-onboarding-benefit::before {
-  width: 4px !important;
-  background: linear-gradient(180deg, rgba(94, 23, 235, 0.82), rgba(0, 176, 255, 0.76)) !important;
-}
-
-html.theme-dark body.institutes-page .institutes-onboarding-benefit strong,
-html[data-theme="dark"] body.institutes-page .institutes-onboarding-benefit strong {
-  color: #14244a !important;
-}
-
-html.theme-dark body.institutes-page #contenu > .section.section-soft.section-aqua > .container > .eyebrow,
-html[data-theme="dark"] body.institutes-page #contenu > .section.section-soft.section-aqua > .container > .eyebrow,
-html.theme-dark body.institutes-page #contenu > .section.section-mist.section-aqua > .container > .eyebrow,
-html[data-theme="dark"] body.institutes-page #contenu > .section.section-mist.section-aqua > .container > .eyebrow {
-  color: #b69cff !important;
-  -webkit-text-fill-color: #b69cff !important;
-}
-
-html:is(.theme-dark,.theme-light) body.institutes-page .institutes-team-issue-benefit,
-html[data-theme] body.institutes-page .institutes-team-issue-benefit {
+html.theme-light body.institutes-page .institutes-team-issue-benefit,html[data-theme] body.institutes-page .institutes-team-issue-benefit {
   padding-left: 1rem !important;
 }
 
-html.theme-dark body.institutes-page .institutes-team-issue-benefit,
-html[data-theme="dark"] body.institutes-page .institutes-team-issue-benefit {
-  padding-left: 1rem !important;
-}
-
-html:is(.theme-dark,.theme-light) body.institutes-page .institutes-method-conclusion,
-html[data-theme] body.institutes-page .institutes-method-conclusion {
-  padding: 0.9rem 1.15rem !important;
-}
-
-html.theme-dark body.institutes-page .institutes-method-conclusion,
-html[data-theme="dark"] body.institutes-page .institutes-method-conclusion {
+html.theme-light body.institutes-page .institutes-method-conclusion,html[data-theme] body.institutes-page .institutes-method-conclusion {
   padding: 0.9rem 1.15rem !important;
 }
 
 /* Mode nuit : transparence renforcée des blocs lavande pour réduire leur luminosité. */
-html.theme-dark body.institutes-page .institutes-reality-conclusion,
-html[data-theme="dark"] body.institutes-page .institutes-reality-conclusion,
-html.theme-dark body.institutes-page .institutes-editorial-benefit,
-html[data-theme="dark"] body.institutes-page .institutes-editorial-benefit,
-html.theme-dark body.institutes-page .institutes-method-conclusion,
-html[data-theme="dark"] body.institutes-page .institutes-method-conclusion,
-html.theme-dark body.institutes-page .institutes-onboarding-benefit,
-html[data-theme="dark"] body.institutes-page .institutes-onboarding-benefit {
-  background: rgba(226, 216, 247, 0.62) !important;
-  color: #1e2a50 !important;
-}
-
-html:where([data-theme="dark"]):not([data-theme="light"]) body.institutes-page .institutes-reality-conclusion,
-  html:where([data-theme="dark"]):not([data-theme="light"]) body.institutes-page .institutes-editorial-benefit,
-  html:where([data-theme="dark"]):not([data-theme="light"]) body.institutes-page .institutes-method-conclusion,
-  html:where([data-theme="dark"]):not([data-theme="light"]) body.institutes-page .institutes-onboarding-benefit {
-    background: rgba(226, 216, 247, 0.62) !important;
-    color: #1e2a50 !important;
-  }
-
-html.theme-dark body.institutes-page .institutes-reality-conclusion strong,
-html[data-theme="dark"] body.institutes-page .institutes-reality-conclusion strong,
-html.theme-dark body.institutes-page .institutes-editorial-benefit strong,
-html[data-theme="dark"] body.institutes-page .institutes-editorial-benefit strong,
-html.theme-dark body.institutes-page .institutes-method-conclusion strong,
-html[data-theme="dark"] body.institutes-page .institutes-method-conclusion strong,
-html.theme-dark body.institutes-page .institutes-onboarding-benefit strong,
-html[data-theme="dark"] body.institutes-page .institutes-onboarding-benefit strong {
-  color: #1e2a50 !important;
-}
 
 /* Tablette nuit : opacité réelle à 76 %, sans flou masquant la transparence. */
-@media (min-width: 721px) and (max-width: 1440px) {
-  html.theme-dark body.institutes-page .section-aqua .institutes-editorial-chapter,
-  html[data-theme="dark"] body.institutes-page .section-aqua .institutes-editorial-chapter,
-  html.theme-dark body.institutes-page .institutes-onboarding-block,
-  html[data-theme="dark"] body.institutes-page .institutes-onboarding-block {
-    background: linear-gradient(135deg, rgba(17, 24, 61, 0.76) 0%, rgba(30, 42, 80, 0.76) 58%, rgba(39, 52, 124, 0.76) 100%) !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-  }
-}
-
-@media (min-width: 721px) and (max-width: 1440px) {
-  html:where([data-theme="dark"]):not([data-theme="light"]) body.institutes-page .section-aqua .institutes-editorial-chapter,
-  html:where([data-theme="dark"]):not([data-theme="light"]) body.institutes-page .institutes-onboarding-block {
-    background: linear-gradient(135deg, rgba(17, 24, 61, 0.76) 0%, rgba(30, 42, 80, 0.76) 58%, rgba(39, 52, 124, 0.76) 100%) !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-  }
-}
 
 /* Mode nuit : le titre FAQ reste blanc ; les questions reprennent le violet des cartes systèmes. */
-html.theme-dark body.institutes-page .faq-section h2,
-html[data-theme="dark"] body.institutes-page .faq-section h2 {
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
-}
-
-html.theme-dark body.institutes-page .faq-accordion-item summary,
-html[data-theme="dark"] body.institutes-page .faq-accordion-item summary {
-  color: #b69cff !important;
-  -webkit-text-fill-color: #b69cff !important;
-}
-
-html:where([data-theme="dark"]):not([data-theme="light"]) body.institutes-page .faq-section h2 {
-    color: #ffffff !important;
-    -webkit-text-fill-color: #ffffff !important;
-  }
-
-html:where([data-theme="dark"]):not([data-theme="light"]) body.institutes-page .faq-accordion-item summary {
-    color: #b69cff !important;
-    -webkit-text-fill-color: #b69cff !important;
-  }
 
 /* Mode nuit : lavande uniforme pour les intitulés de section, les titres de cartes et le lien sectoriel. */
-html.theme-dark body.institutes-page #contenu > .section:not(.conversion-band) > .container > .eyebrow,
-html[data-theme="dark"] body.institutes-page #contenu > .section:not(.conversion-band) > .container > .eyebrow,
-html.theme-dark body.institutes-page .institutes-editorial-heading h3,
-html[data-theme="dark"] body.institutes-page .institutes-editorial-heading h3,
-html.theme-dark body.institutes-page .institutes-onboarding-heading h3,
-html[data-theme="dark"] body.institutes-page .institutes-onboarding-heading h3,
-html.theme-dark body.institutes-page .institutes-method-card .card-title-with-icon,
-html[data-theme="dark"] body.institutes-page .institutes-method-card .card-title-with-icon,
-html.theme-dark body.institutes-page #contenu > .section.section-mist.section-aqua a[href$="medecine-esthetique/index.html"],
-html[data-theme="dark"] body.institutes-page #contenu > .section.section-mist.section-aqua a[href$="medecine-esthetique/index.html"] {
-  color: #b69cff !important;
-  -webkit-text-fill-color: #b69cff !important;
-}
-
-html:where([data-theme="dark"]):not([data-theme="light"]) body.institutes-page #contenu > .section:not(.conversion-band) > .container > .eyebrow,
-  html:where([data-theme="dark"]):not([data-theme="light"]) body.institutes-page .institutes-editorial-heading h3,
-  html:where([data-theme="dark"]):not([data-theme="light"]) body.institutes-page .institutes-onboarding-heading h3,
-  html:where([data-theme="dark"]):not([data-theme="light"]) body.institutes-page .institutes-method-card .card-title-with-icon,
-  html:where([data-theme="dark"]):not([data-theme="light"]) body.institutes-page #contenu > .section.section-mist.section-aqua a[href$="medecine-esthetique/index.html"] {
-    color: #b69cff !important;
-    -webkit-text-fill-color: #b69cff !important;
-  }
-
-html:where([data-theme="dark"]):not([data-theme="light"]) body.institutes-page .institutes-team-issue h3 {
-    color: #ffffff !important;
-    -webkit-text-fill-color: #ffffff !important;
-  }
 
 /* Mode nuit : le bandeau « Les systèmes que nous mettons en place » est légèrement plus sombre. */
-html.theme-dark body.institutes-page #contenu > .section.section-soft.section-aqua::before,
-html[data-theme="dark"] body.institutes-page #contenu > .section.section-soft.section-aqua::before {
-  background:
-    linear-gradient(rgba(6, 10, 30, 0.78), rgba(6, 10, 30, 0.78)),
-    var(--pal-image) left center / cover no-repeat !important;
-}
-
-@media (max-width: 720px) {
-  html.theme-dark body.institutes-page #contenu > .section.section-soft.section-aqua::before,
-  html[data-theme="dark"] body.institutes-page #contenu > .section.section-soft.section-aqua::before {
-    background:
-      linear-gradient(rgba(6, 10, 30, 0.78), rgba(6, 10, 30, 0.78)),
-      var(--pal-image) top center / 170vw auto repeat-y,
-      var(--color-soft) !important;
-  }
-}
-
-html:where([data-theme="dark"]):not([data-theme="light"]) body.institutes-page #contenu > .section.section-soft.section-aqua::before {
-    background:
-      linear-gradient(rgba(6, 10, 30, 0.78), rgba(6, 10, 30, 0.78)),
-      var(--pal-image) left center / cover no-repeat !important;
-  }
-
-@media (max-width: 720px) {
-  html:where([data-theme="dark"]):not([data-theme="light"]) body.institutes-page #contenu > .section.section-soft.section-aqua::before {
-    background:
-      linear-gradient(rgba(6, 10, 30, 0.78), rgba(6, 10, 30, 0.78)),
-      var(--pal-image) top center / 170vw auto repeat-y,
-      var(--color-soft) !important;
-  }
-}
 
 /* Cartes systèmes : titres alignés sur l'impact visuel d'Onboarding & procédures internes. */
 body.institutes-page .section-soft.section-aqua .institutes-editorial-heading h3 {
@@ -622,33 +344,11 @@ body.institutes-page .section-soft.section-aqua .institutes-editorial-heading .t
 }
 
 /* Bandeau systèmes : blocs Bénéfice plus transparents et texte bleu renforcé sans gras. */
-html:is(.theme-dark,.theme-light) body.institutes-page .section-soft.section-aqua .institutes-editorial-benefit,
-html[data-theme] body.institutes-page .section-soft.section-aqua .institutes-editorial-benefit,
-html:is(.theme-dark,.theme-light) body.institutes-page .section-soft.section-aqua .institutes-onboarding-benefit,
-html[data-theme] body.institutes-page .section-soft.section-aqua .institutes-onboarding-benefit {
-  font-weight: 500;
-}
-html.theme-dark body.institutes-page .section-soft.section-aqua .institutes-editorial-benefit,
-html[data-theme="dark"] body.institutes-page .section-soft.section-aqua .institutes-editorial-benefit,
-html.theme-dark body.institutes-page .section-soft.section-aqua .institutes-onboarding-benefit,
-html[data-theme="dark"] body.institutes-page .section-soft.section-aqua .institutes-onboarding-benefit {
-  background: rgba(226, 216, 247, 0.55) !important;
-  color: #1e2a50 !important;
+html.theme-light body.institutes-page .section-soft.section-aqua .institutes-editorial-benefit,html[data-theme] body.institutes-page .section-soft.section-aqua .institutes-editorial-benefit,html.theme-light body.institutes-page .section-soft.section-aqua .institutes-onboarding-benefit,html[data-theme] body.institutes-page .section-soft.section-aqua .institutes-onboarding-benefit {
   font-weight: 500;
 }
 
-html:is(.theme-dark,.theme-light) body.institutes-page .section-soft.section-aqua .institutes-editorial-benefit strong,
-html[data-theme] body.institutes-page .section-soft.section-aqua .institutes-editorial-benefit strong,
-html:is(.theme-dark,.theme-light) body.institutes-page .section-soft.section-aqua .institutes-onboarding-benefit strong,
-html[data-theme] body.institutes-page .section-soft.section-aqua .institutes-onboarding-benefit strong {
-  font-weight: 500;
-}
-
-html.theme-dark body.institutes-page .section-soft.section-aqua .institutes-editorial-benefit strong,
-html[data-theme="dark"] body.institutes-page .section-soft.section-aqua .institutes-editorial-benefit strong,
-html.theme-dark body.institutes-page .section-soft.section-aqua .institutes-onboarding-benefit strong,
-html[data-theme="dark"] body.institutes-page .section-soft.section-aqua .institutes-onboarding-benefit strong {
-  color: #1e2a50 !important;
+html.theme-light body.institutes-page .section-soft.section-aqua .institutes-editorial-benefit strong,html[data-theme] body.institutes-page .section-soft.section-aqua .institutes-editorial-benefit strong,html.theme-light body.institutes-page .section-soft.section-aqua .institutes-onboarding-benefit strong,html[data-theme] body.institutes-page .section-soft.section-aqua .institutes-onboarding-benefit strong {
   font-weight: 500;
 }
 
@@ -657,58 +357,12 @@ html:where([data-theme])[data-theme] body.institutes-page .section-soft.section-
     font-weight: 500;
   }
 
-html:where([data-theme="dark"]):not([data-theme="light"]) body.institutes-page .section-soft.section-aqua .institutes-editorial-benefit,
-  html:where([data-theme="dark"]):not([data-theme="light"]) body.institutes-page .section-soft.section-aqua .institutes-onboarding-benefit {
-    background: rgba(226, 216, 247, 0.55) !important;
-    color: #1e2a50 !important;
-    font-weight: 500;
-  }
-
 html:where([data-theme])[data-theme] body.institutes-page .section-soft.section-aqua .institutes-editorial-benefit strong,
 html:where([data-theme])[data-theme] body.institutes-page .section-soft.section-aqua .institutes-onboarding-benefit strong {
     font-weight: 500;
   }
 
-html:where([data-theme="dark"]):not([data-theme="light"]) body.institutes-page .section-soft.section-aqua .institutes-editorial-benefit strong,
-  html:where([data-theme="dark"]):not([data-theme="light"]) body.institutes-page .section-soft.section-aqua .institutes-onboarding-benefit strong {
-    color: #1e2a50 !important;
-    font-weight: 500;
-  }
-
 /* Mobile nuit : une seule palme agrandie, sans répétition verticale ni raccord visible. */
-@media (max-width: 720px) {
-  html.theme-dark body.institutes-page #contenu > .section.section-aqua::before,
-  html[data-theme="dark"] body.institutes-page #contenu > .section.section-aqua::before {
-    background:
-      linear-gradient(var(--pal-veil), var(--pal-veil)),
-      var(--pal-image) center center / cover no-repeat,
-      var(--color-soft) !important;
-  }
-
-  html.theme-dark body.institutes-page #contenu > .section.section-soft.section-aqua::before,
-  html[data-theme="dark"] body.institutes-page #contenu > .section.section-soft.section-aqua::before {
-    background:
-      linear-gradient(rgba(6, 10, 30, 0.78), rgba(6, 10, 30, 0.78)),
-      var(--pal-image) center center / cover no-repeat,
-      var(--color-soft) !important;
-  }
-}
-
-@media (max-width: 720px) {
-  html:where([data-theme="dark"]):not([data-theme="light"]) body.institutes-page #contenu > .section.section-aqua::before {
-    background:
-      linear-gradient(var(--pal-veil), var(--pal-veil)),
-      var(--pal-image) center center / cover no-repeat,
-      var(--color-soft) !important;
-  }
-
-  html:where([data-theme="dark"]):not([data-theme="light"]) body.institutes-page #contenu > .section.section-soft.section-aqua::before {
-    background:
-      linear-gradient(rgba(6, 10, 30, 0.78), rgba(6, 10, 30, 0.78)),
-      var(--pal-image) center center / cover no-repeat,
-      var(--color-soft) !important;
-  }
-}
 
 /* Mobile jour : une seule palme sur le bandeau « Pour qui ? », sans répétition ni raccord visible. */
 @media (max-width: 720px) {
@@ -757,11 +411,11 @@ html:where([data-theme="light"]):not(.theme-dark):not([data-theme="dark"]) body.
 
 /* La réalité du métier — mode jour uniquement : halo violet légèrement adouci sur tous les supports. */
 html[data-theme="light"] body.institutes-page #contenu > .institutes-reality-section::before {
-  background: radial-gradient(circle at 88% 14%, rgba(94, 23, 235, 0.035), transparent 34%) !important;
+  background: radial-gradient(circle at 88% 14%, rgba(198, 164, 119, 0.035), transparent 34%) !important;
 }
 
 html:where([data-theme="light"]):not(.theme-dark):not([data-theme="dark"]) body.institutes-page #contenu > .institutes-reality-section::before {
-    background: radial-gradient(circle at 88% 14%, rgba(94, 23, 235, 0.035), transparent 34%) !important;
+    background: radial-gradient(circle at 88% 14%, rgba(198, 164, 119, 0.035), transparent 34%) !important;
   }
 
 /* La réalité du métier : titre turnover aligné sur les cinq libellés précédents. */
@@ -789,47 +443,13 @@ html:where([data-theme="light"]):not(.theme-dark):not([data-theme="dark"]) body.
    ========================================================================== */
 
 /* Bandeaux structurants et footer : bleu nuit légèrement éclairci. */
-html.theme-dark body.institutes-page #contenu > .institutes-reality-section,
-html[data-theme="dark"] body.institutes-page #contenu > .institutes-reality-section,
-html.theme-dark body.institutes-page #contenu > .institutes-method-section,
-html[data-theme="dark"] body.institutes-page #contenu > .institutes-method-section,
-html.theme-dark body.institutes-page #contenu > .faq-section,
-html[data-theme="dark"] body.institutes-page #contenu > .faq-section,
-html.theme-dark body.institutes-page .site-footer,
-html[data-theme="dark"] body.institutes-page .site-footer {
-  background: #11183d !important;
-  background-image: none !important;
-}
 
 /* Systèmes : image de fond légèrement éclaircie, au niveau validé sur Thalasso. */
-html.theme-dark body.institutes-page #contenu > .section.section-soft.section-aqua::before,
-html[data-theme="dark"] body.institutes-page #contenu > .section.section-soft.section-aqua::before {
-  background:
-    linear-gradient(rgba(17, 24, 61, 0.68), rgba(17, 24, 61, 0.68)),
-    var(--pal-image) left center / cover no-repeat !important;
-}
 
 /* Réassurance : visuel davantage dégagé tout en conservant la lisibilité. */
-html.theme-dark body.institutes-page #contenu > .section.section-mist.section-aqua::before,
-html[data-theme="dark"] body.institutes-page #contenu > .section.section-mist.section-aqua::before {
-  background:
-    linear-gradient(rgba(17, 24, 61, 0.52), rgba(17, 24, 61, 0.52)),
-    var(--pal-image) left center / cover no-repeat !important;
-}
 
 @media (max-width: 720px) {
-  html:is(.theme-dark,.theme-light) body.institutes-page #contenu > .section.section-soft.section-aqua::before,
-html[data-theme] body.institutes-page #contenu > .section.section-soft.section-aqua::before,
-html:is(.theme-dark,.theme-light) body.institutes-page #contenu > .section.section-mist.section-aqua::before,
-html[data-theme] body.institutes-page #contenu > .section.section-mist.section-aqua::before {
-    background-position: center center !important;
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-  }
-  html.theme-dark body.institutes-page #contenu > .section.section-soft.section-aqua::before,
-  html[data-theme="dark"] body.institutes-page #contenu > .section.section-soft.section-aqua::before,
-  html.theme-dark body.institutes-page #contenu > .section.section-mist.section-aqua::before,
-  html[data-theme="dark"] body.institutes-page #contenu > .section.section-mist.section-aqua::before {
+  html.theme-light body.institutes-page #contenu > .section.section-soft.section-aqua::before,html[data-theme] body.institutes-page #contenu > .section.section-soft.section-aqua::before,html.theme-light body.institutes-page #contenu > .section.section-mist.section-aqua::before,html[data-theme] body.institutes-page #contenu > .section.section-mist.section-aqua::before {
     background-position: center center !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
@@ -837,60 +457,11 @@ html[data-theme] body.institutes-page #contenu > .section.section-mist.section-a
 }
 
 /* Titres des cartes Systèmes en blanc pur. */
-html.theme-dark body.institutes-page #contenu > .section.section-soft.section-aqua .institutes-editorial-heading h3,
-html[data-theme="dark"] body.institutes-page #contenu > .section.section-soft.section-aqua .institutes-editorial-heading h3,
-html.theme-dark body.institutes-page #contenu > .section.section-soft.section-aqua .institutes-onboarding-heading h3,
-html[data-theme="dark"] body.institutes-page #contenu > .section.section-soft.section-aqua .institutes-onboarding-heading h3 {
-  color: #ffffff !important;
-  -webkit-text-fill-color: #ffffff !important;
-}
 
 /* Flèches d'accordéon du bandeau Systèmes en violet. */
-html.theme-dark body.institutes-page #contenu > .section.section-soft.section-aqua .sector-card-accordion > summary::after,
-html[data-theme="dark"] body.institutes-page #contenu > .section.section-soft.section-aqua .sector-card-accordion > summary::after {
-  border-color: #9b7cff !important;
-}
-
-html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.institutes-page #contenu > .institutes-reality-section,
-  html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.institutes-page #contenu > .institutes-method-section,
-  html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.institutes-page #contenu > .faq-section,
-  html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.institutes-page .site-footer {
-    background: #11183d !important;
-    background-image: none !important;
-  }
-
-html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.institutes-page #contenu > .section.section-soft.section-aqua::before {
-    background:
-      linear-gradient(rgba(17, 24, 61, 0.68), rgba(17, 24, 61, 0.68)),
-      var(--pal-image) left center / cover no-repeat !important;
-  }
-
-html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.institutes-page #contenu > .section.section-mist.section-aqua::before {
-    background:
-      linear-gradient(rgba(17, 24, 61, 0.52), rgba(17, 24, 61, 0.52)),
-      var(--pal-image) left center / cover no-repeat !important;
-  }
-
-html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.institutes-page #contenu > .section.section-soft.section-aqua .institutes-editorial-heading h3,
-  html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.institutes-page #contenu > .section.section-soft.section-aqua .institutes-onboarding-heading h3 {
-    color: #ffffff !important;
-    -webkit-text-fill-color: #ffffff !important;
-  }
-
-html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.institutes-page #contenu > .section.section-soft.section-aqua .sector-card-accordion > summary::after {
-    border-color: #9b7cff !important;
-  }
 
 
 /* Mobile sombre automatique : cadrage conservé. */
-@media (max-width: 720px) {
-  html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.institutes-page #contenu > .section.section-soft.section-aqua::before,
-  html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.institutes-page #contenu > .section.section-mist.section-aqua::before {
-    background-position: center center !important;
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-  }
-}
 
 
 /* Méthode Instituts : typographie plus légère et premium. */
@@ -950,13 +521,6 @@ body.institutes-page [class*="benefit"]::after {
 }
 
 /* Assistant IA : bleu nuit légèrement éclairci, tous supports. */
-html.theme-dark body.institutes-page #contenu > .section.institutes-assistant-section,
-html[data-theme="dark"] body.institutes-page #contenu > .section.institutes-assistant-section {
-  background-color: #141c3b !important;
-}
-html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.institutes-page #contenu > .section.institutes-assistant-section {
-    background-color: #141c3b !important;
-  }
 
 /* Assistant de l’institut : titre plus discret et contenu mieux espacé. */
 body.institutes-page #contenu > .institutes-assistant-section h2.section-title-with-icon {
@@ -995,7 +559,7 @@ html body.institutes-page #contenu > .section :is(.institutes-reality-conclusion
   width: 3px !important;
   border: 0 !important;
   box-shadow: none !important;
-  background: linear-gradient(180deg, #5E17EB 0%, #00B0FF 100%) !important;
+  background: linear-gradient(180deg, #8f6f3e 0%, #00B0FF 100%) !important;
 }
 
 /* Encadrés violets : texte plus léger, sans changer la palette. */

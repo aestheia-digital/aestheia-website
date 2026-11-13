@@ -25,23 +25,8 @@ html:where([data-theme="light"]):not(.theme-dark):not([data-theme="dark"]) body.
   }
 
 /* FAQ TPE-PME — mode nuit : questions en bleu clair, titre et réponses en blanc. */
-html.theme-dark body.pme-page .faq-accordion-item summary,
-html.theme-dark body.pme-page .faq-accordion-item summary h3,
-html[data-theme="dark"] body.pme-page .faq-accordion-item summary,
-html[data-theme="dark"] body.pme-page .faq-accordion-item summary h3 {
-  color: #a9c0dc !important;
-}
-
-html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.pme-page .faq-accordion-item summary,
-  html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.pme-page .faq-accordion-item summary h3 {
-    color: #a9c0dc !important;
-  }
 
 /* TPE-PME — footer harmonisé avec les autres pages secteur en mode nuit. */
-html.theme-dark body.pme-page .site-footer,
-html[data-theme="dark"] body.pme-page .site-footer {
-  background: #080D22 !important;
-}
 
 /* TPE-PME — corrections mobiles uniquement, identiques en mode jour et nuit. */
 @media (max-width: 720px) {

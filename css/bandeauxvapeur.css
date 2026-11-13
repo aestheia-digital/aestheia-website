@@ -2,19 +2,17 @@
    Bandeaux condensation — page Spa & hôtellerie
    ========================================================================== */
 
-:root,
-html.theme-dark {
+:root {
   --spa-condensation-image: url("../assets/images/metiers/condensation-bleue-spa.webp");
 }
 
 /* Les deux bandeaux utilisent directement l'image, sans voile ni flou. */
-html:is(.theme-dark,.theme-light) body.spa-page #contenu > .section.section-aqua {
+html.theme-light body.spa-page #contenu > .section.section-aqua {
   background-position: center center !important;
   background-size: cover !important;
   background-repeat: no-repeat !important;
 }
-html:not(.theme-dark) body.spa-page #contenu > .section.section-aqua,
-html.theme-dark body.spa-page #contenu > .section.section-aqua {
+html:not(.theme-dark) body.spa-page #contenu > .section.section-aqua {
   background-color: transparent !important;
   background-image: var(--spa-condensation-image) !important;
   background-position: center center !important;
@@ -23,16 +21,13 @@ html.theme-dark body.spa-page #contenu > .section.section-aqua {
 }
 
 /* Aucun pseudo-element ne doit recouvrir ou flouter l'image. */
-html:is(.theme-dark,.theme-light) body.spa-page #contenu > .section.section-aqua::before,
-html:is(.theme-dark,.theme-light) body.spa-page #contenu > .section.section-aqua::after {
+html.theme-light body.spa-page #contenu > .section.section-aqua::before,html.theme-light body.spa-page #contenu > .section.section-aqua::after {
   content: none !important;
   display: none !important;
   transform: none !important;
 }
 html:not(.theme-dark) body.spa-page #contenu > .section.section-aqua::before,
-html.theme-dark body.spa-page #contenu > .section.section-aqua::before,
-html:not(.theme-dark) body.spa-page #contenu > .section.section-aqua::after,
-html.theme-dark body.spa-page #contenu > .section.section-aqua::after {
+html:not(.theme-dark) body.spa-page #contenu > .section.section-aqua::after {
   content: none !important;
   display: none !important;
   background: none !important;
@@ -48,21 +43,14 @@ html:not(.theme-dark) body.spa-page .section-aqua .sector-editorial-chapter {
   -webkit-backdrop-filter: none !important;
 }
 
-html.theme-dark body.spa-page .section-aqua .sector-editorial-chapter {
-  background: rgba(17, 24, 61, 0.78) !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-}
-
 /* Mobile : même image nette, sans répétition, sans voile. */
 @media (max-width: 720px) {
-  html:is(.theme-dark,.theme-light) body.spa-page #contenu > .section.section-aqua {
+  html.theme-light body.spa-page #contenu > .section.section-aqua {
     background-position: center center !important;
     background-size: cover !important;
     background-repeat: no-repeat !important;
   }
-  html:not(.theme-dark) body.spa-page #contenu > .section.section-aqua,
-  html.theme-dark body.spa-page #contenu > .section.section-aqua {
+  html:not(.theme-dark) body.spa-page #contenu > .section.section-aqua {
     background-image: var(--spa-condensation-image) !important;
     background-position: center center !important;
     background-size: cover !important;
@@ -75,21 +63,15 @@ html.theme-dark body.spa-page .section-aqua .sector-editorial-chapter {
 }
 
 /* Mode nuit : aucune nuée de particules sur la page Spa & hôtellerie. */
-html:is(.theme-dark,.theme-light) body.spa-page #contenu > .section:not(.conversion-band)::after {
+html.theme-light body.spa-page #contenu > .section:not(.conversion-band)::after {
   content: none !important;
   display: none !important;
-}
-html.theme-dark body.spa-page #contenu > .section:not(.conversion-band)::after {
-  content: none !important;
-  display: none !important;
-  background: none !important;
-  opacity: 0 !important;
 }
 
 /* Halo violet doux sur les autres sections en mode jour. */
 html:not(.theme-dark) body.spa-page {
-  --spa-halo-violet-primary: rgba(94, 23, 235, 0.085);
-  --spa-halo-violet-secondary: rgba(139, 92, 246, 0.045);
+  --spa-halo-violet-primary: rgba(198, 164, 119, 0.085);
+  --spa-halo-violet-secondary: rgba(198, 164, 119, 0.045);
 }
 
 html:not(.theme-dark) body.spa-page #contenu > .section:not(.conversion-band):not(.section-aqua)::before {
@@ -100,9 +82,5 @@ html:not(.theme-dark) body.spa-page #contenu > .section:not(.conversion-band):no
 
 /* Intitules de section violets sur tous supports. */
 html:not(.theme-dark) body.spa-page #contenu > .section:not(.conversion-band) > .container > .eyebrow {
-  color: #5e17eb !important;
-}
-
-html.theme-dark body.spa-page #contenu > .section:not(.conversion-band) > .container > .eyebrow {
-  color: #b69cff !important;
+  color: #8f6f3e !important;
 }

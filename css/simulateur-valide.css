@@ -100,7 +100,7 @@
   }
 
   html[data-theme="light"] body.home-page .home-slogan-band {
-    background: #f8f7fc !important;
+    background: #f7f1e6 !important;
     box-shadow: none !important;
   }
 
@@ -141,11 +141,11 @@
 /* Affinage simulateur 12/11 : photo strictement dans le panneau, contrôles lisibles. */
 @layer typography {
   html[data-theme] body.home-page .sim {
-    --sim-accent: #8d54d5;
+    --sim-accent: #8f6f3e;
     --sim-muted: #ffffff;
   }
   html[data-theme] body.home-page .sim .sim-eyebrow {
-    color: #8d54d5 !important;
+    color: #8f6f3e !important;
     letter-spacing: .17em !important;
   }
   html[data-theme] body.home-page .sim .sim-label {
@@ -228,11 +228,6 @@
   html[data-theme="light"] body.home-page .sim-band {
     background:
       linear-gradient(90deg, rgba(14,20,48,.58) 0%, rgba(14,20,48,.48) 48%, rgba(14,20,48,.38) 100%),
-      url("../assets/images/metiers/accueil_mur_eau_1280.webp") 70% 45% / cover no-repeat !important;
-  }
-  html[data-theme="dark"] body.home-page .sim-band {
-    background:
-      linear-gradient(90deg, rgba(14,20,48,.68) 0%, rgba(14,20,48,.58) 48%, rgba(14,20,48,.48) 100%),
       url("../assets/images/metiers/accueil_mur_eau_1280.webp") 70% 45% / cover no-repeat !important;
   }
   @media (min-width: 901px) {

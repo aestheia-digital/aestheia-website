@@ -14,13 +14,6 @@
     box-shadow: 0 12px 32px rgba(18, 29, 57, .06) !important;
   }
   /* Carte, nuit */
-  html:is([data-theme="dark"], .theme-dark) body .related-resources .related-resource-card {
-    background: #131A3D !important;
-    background-image: none !important;
-    border: 1px solid #2F3A68 !important;
-    border-top: 2px solid #B89A72 !important;
-    box-shadow: 0 16px 38px rgba(2, 5, 18, .3) !important;
-  }
 
   /* Pastille de catégorie */
   html body .related-resources .related-resource-card .resource-category {
@@ -32,12 +25,6 @@
     box-shadow: none !important;
     text-shadow: none !important;
   }
-  html:is([data-theme="dark"], .theme-dark) body .related-resources .related-resource-card .resource-category {
-    background: #F2EDE5 !important;
-    border-color: #F2EDE5 !important;
-    color: #1B254D !important;
-    -webkit-text-fill-color: #1B254D !important;
-  }
 
   /* Pastille de secteur */
   html body .related-resources .related-resource-card .resource-sector {
@@ -48,12 +35,6 @@
     -webkit-text-fill-color: #1B254D !important;
     box-shadow: none !important;
   }
-  html:is([data-theme="dark"], .theme-dark) body .related-resources .related-resource-card .resource-sector {
-    background: transparent !important;
-    border-color: #B89A72 !important;
-    color: #E8DCC9 !important;
-    -webkit-text-fill-color: #E8DCC9 !important;
-  }
 
   /* Titre : pas de violet au survol */
   html body .related-resources .related-resource-card h3 a:hover,
@@ -63,11 +44,6 @@
     text-decoration: underline !important;
     text-decoration-color: #B89A72 !important;
     text-underline-offset: .2em !important;
-  }
-  html:is([data-theme="dark"], .theme-dark) body .related-resources .related-resource-card h3 a:hover,
-  html:is([data-theme="dark"], .theme-dark) body .related-resources .related-resource-card h3 a:focus-visible {
-    color: #EEF2FF !important;
-    -webkit-text-fill-color: #EEF2FF !important;
   }
 
   /* Lien éditorial : ni bouton ni pictogramme, souligné uniquement */
@@ -102,14 +78,6 @@
   html:not([data-theme="dark"]):not(.theme-dark) body #contenu .related-resources .related-resource-card > a.text-link.text-link::after {
     content: none !important;
     display: none !important;
-  }
-  html:is([data-theme="dark"], .theme-dark) body #contenu .related-resources .related-resource-card > a.text-link.text-link,
-  html:is([data-theme="dark"], .theme-dark) body #contenu .related-resources .related-resource-card > a.text-link.text-link:visited,
-  html:is([data-theme="dark"], .theme-dark) body #contenu .related-resources .related-resource-card > a.text-link.text-link:hover,
-  html:is([data-theme="dark"], .theme-dark) body #contenu .related-resources .related-resource-card > a.text-link.text-link:focus-visible {
-    color: #D1B995 !important;
-    -webkit-text-fill-color: #D1B995 !important;
-    text-decoration-color: #D1B995 !important;
   }
   html:not([data-theme="dark"]):not(.theme-dark) body #contenu .related-resources .related-resource-card > a.text-link.text-link:focus-visible {
     outline: 2px solid #B89A72 !important;

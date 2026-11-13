@@ -1,8 +1,7 @@
 <!doctype html>
-<html lang="fr">
+<html lang="fr" class="theme-light" data-theme="light">
   <head>
     <meta charset="utf-8">
-    <script src="../js/theme.js"></script>
     <link rel="preload" href="../assets/fonts/dm-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Thalasso : visibilité, automatisation et agents IA | AesthéIA</title>
@@ -30,23 +29,9 @@
     <link rel="stylesheet" href="../css/bandeaux-aqua-reglages.css?v=premium-violet-headings-20260924">
     <style>
       :root {
-        --halo-violet-primary: rgba(94, 23, 235, 0.095);
-        --halo-violet-secondary: rgba(139, 92, 246, 0.055);
+        --halo-violet-primary: rgba(198, 164, 119, 0.095);
+        --halo-violet-secondary: rgba(198, 164, 119, 0.055);
       }
-
-      html.theme-dark {
-        --halo-violet-primary: rgba(139, 92, 246, 0.23);
-        --halo-violet-secondary: rgba(94, 23, 235, 0.16);
-        --dark-body-halo-primary: rgba(94, 23, 235, 0.20);
-        --dark-body-halo-secondary: rgba(139, 92, 246, 0.115);
-      }
-
-      html:where([data-theme="dark"]):not(.theme-dark) {
-          --halo-violet-primary: rgba(139, 92, 246, 0.23);
-          --halo-violet-secondary: rgba(94, 23, 235, 0.16);
-          --dark-body-halo-primary: rgba(94, 23, 235, 0.20);
-          --dark-body-halo-secondary: rgba(139, 92, 246, 0.115);
-        }
 
       .thalasso-turnover-block {
         display: grid;
@@ -107,30 +92,12 @@
         position: absolute;
         inset: 0 auto 0 0;
         width: 4px;
-        background: linear-gradient(180deg, rgba(94, 23, 235, 0.82), rgba(0, 176, 255, 0.76));
+        background: linear-gradient(180deg, rgba(198, 164, 119, 0.82), rgba(0, 176, 255, 0.76));
       }
 
       .thalasso-turnover-benefit strong {
         color: var(--color-primary);
       }
-
-      html.theme-dark .thalasso-turnover-benefit {
-        color: #f3f6ff;
-        background: linear-gradient(135deg, #26365f 0%, #2a3e68 52%, #304673 100%);
-      }
-
-      html.theme-dark .thalasso-turnover-benefit strong {
-        color: #fff;
-      }
-
-      html:where([data-theme="dark"]):not(.theme-dark) .thalasso-turnover-benefit {
-          color: #f3f6ff;
-          background: linear-gradient(135deg, #26365f 0%, #2a3e68 52%, #304673 100%);
-        }
-
-      html:where([data-theme="dark"]):not(.theme-dark) .thalasso-turnover-benefit strong {
-          color: #fff;
-        }
 
       @media (max-width: 960px) {
         .thalasso-turnover-block {
@@ -195,27 +162,8 @@
       }
 
       /* Mode nuit : le titre du bandeau Questions fréquentes reste blanc. */
-      html.theme-dark body.thalasso-page .faq-section > .container > h2,
-      html[data-theme="dark"] body.thalasso-page .faq-section > .container > h2 {
-        color: #ffffff !important;
-      }
-
-      html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.thalasso-page .faq-section > .container > h2 {
-          color: #ffffff !important;
-        }
 
       /* Mode nuit : titres des cartes du bandeau Systèmes dans le même bleu lumineux que Médecine et Spa. */
-      html.theme-dark body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-heading h3,
-      html[data-theme="dark"] body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-heading h3,
-      html.theme-dark body.thalasso-page #contenu > .section.section-soft.section-aqua .thalasso-turnover-heading h3,
-      html[data-theme="dark"] body.thalasso-page #contenu > .section.section-soft.section-aqua .thalasso-turnover-heading h3 {
-        color: #a9cfff !important;
-      }
-
-      html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.thalasso-page #contenu > .section.section-soft.section-aqua .sector-editorial-heading h3,
-        html:where([data-theme="dark"]):not(.theme-dark):not([data-theme="light"]) body.thalasso-page #contenu > .section.section-soft.section-aqua .thalasso-turnover-heading h3 {
-          color: #a9cfff !important;
-        }
     </style>
     <script type="application/ld+json">
       {
@@ -257,8 +205,6 @@
       }
     </script>
       <link rel="stylesheet" href="../css/cta-global.css?v=20260920-cta-lock">
-      <link rel="stylesheet" href="../css/dark-no-purple-halos.css?v=20260920-sector-final-blue-halo">
-    <link rel="stylesheet" href="../css/night-depth-desktop-cards.css?v=20261003">
     <link rel="stylesheet" href="../css/assistant-schema.css?v=20261005">
   <link rel="stylesheet" href="../css/multi-agent-schema.css?v=20261005">
   <link rel="stylesheet" href="/css/related-resources-premium.css?v=20261111-2">
@@ -580,7 +526,6 @@
     </footer>
     <script src="../js/consent-manager.js"></script>
     <script src="../js/main.js?v=header-type-20260924"></script>
-    <script src="../js/night-desktop-cards.js?v=20260920b"></script>
     <script src="../js/mobile-read-more.js?v=20260919"></script>
     <script src="../js/assistant-schema.js?v=20261005" defer></script>
 </body>
