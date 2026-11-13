@@ -159,9 +159,11 @@
   /* Coordonnées : bandeau nuit et encadrement identiques aux autres sections. */
   html body.v2.v2-charte-page #contenu .contact-signature {
     background:#0f1636 !important; border:1px solid #c6a477 !important;
+    padding:clamp(24px,3vw,36px) !important;
     border-top-width:2px !important; border-radius:0 !important; box-shadow:none !important;
   }
   html body.v2.v2-charte-page #contenu .contact-signature :is(a,.contact-signature-label) { color:#fff !important; -webkit-text-fill-color:#fff !important; }
+  html body.v2.v2-charte-page #contenu .contact-signature-item a { font-size:17px !important; font-weight:400 !important; }
   html body.v2.v2-charte-page #contenu .contact-signature-divider { background:#c6a477 !important; }
   html body.v2.v2-charte-page .v2-footer p { color:#d5dcee !important; }
   html body.v2.v2-charte-page .v2-footer h3 { font-family:var(--font-body) !important; font-size:13px !important; color:#c6a477 !important; }
