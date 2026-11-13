@@ -1581,6 +1581,7 @@ body.v2.v2-thalasso-page .v2-thalasso-challenge-grid {
   list-style: none;
 }
 body.v2.v2-thalasso-page .v2-thalasso-challenge-grid li {
+  transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
   display: flex;
   align-items: center;
   gap: 18px;
@@ -1617,6 +1618,7 @@ body.v2.v2-thalasso-page .v2-thalasso-benefit {
 body.v2.v2-thalasso-page .v2-thalasso-benefit strong { color: #1F2B4F; font-weight: 500; }
 @media (hover:hover) and (pointer:fine) {
   body.v2.v2-thalasso-page :is(#enjeux,#solutions) .v2-lever:hover,
+  body.v2.v2-thalasso-page .v2-thalasso-challenge-grid li:hover,
   body.v2.v2-thalasso-page .v2-thalasso-system:hover,
   body.v2.v2-thalasso-page .v2-thalasso-agent:hover,
   body.v2.v2-thalasso-page #ressources .v2-resource:hover {
@@ -1818,12 +1820,25 @@ body.v2.v2-thalasso-page .v2-thalasso-audience-grid {
   margin-top: 35px;
 }
 body.v2.v2-thalasso-page .v2-thalasso-audience-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
   padding: 24px 26px;
   border-left: 3px solid #C6A477;
   background: #FFFFFF;
   color: #1F2B4F;
   font-size: 18px;
   line-height: 1.5;
+}
+body.v2.v2-thalasso-page .v2-thalasso-audience-item svg {
+  width: 32px;
+  height: 32px;
+  flex: none;
+  fill: none;
+  stroke: #A8854F;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 body.v2.v2-thalasso-page .v2-thalasso-audience-note {
   color: #3B4A73;
@@ -1882,7 +1897,7 @@ body.v2.v2-thalasso-page .v2-cta :is(.v2-h2,p) { color: #FFFFFF; }
   body.v2.v2-thalasso-page .v2-thalasso-agent > summary { min-height: 84px; }
 }
 @media (prefers-reduced-motion:reduce) {
-  body.v2.v2-thalasso-page :is(.v2-thalasso-system,.v2-thalasso-agent,.v2-lever,.v2-resource) {
+  body.v2.v2-thalasso-page :is(.v2-thalasso-system,.v2-thalasso-agent,.v2-lever,.v2-resource,.v2-thalasso-challenge-grid li) {
     transition: none !important;
     transform: none !important;
   }
