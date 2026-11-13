@@ -32,7 +32,13 @@ html body main .spa-agents .multi-agent-schema { margin-top: 2.2rem; }
   html body main .spa-grid > .card { padding: 1.35rem 1.25rem 1.25rem !important; }
 }
 @media (prefers-reduced-motion: reduce) { html body main .spa-card-more summary::after { transition: none; } }
-/* Schéma multi-agents : cases ivoire à liseré champagne, action en bleu nuit */
-html body main .spa-agents .assistant-schema .node:not(.action) { background: var(--rf-ivory) !important; border-color: var(--rf-champagne-light) !important; color: var(--rf-navy-700) !important; }
-html body main .spa-agents .assistant-schema .node .sub { color: var(--rf-ink-soft) !important; }
-html body main .spa-agents .assistant-schema .node.action { background: var(--rf-navy-900) !important; border-color: var(--rf-navy-900) !important; color: #fff !important; }
+/* Schéma multi-agents : cases ivoire à liseré champagne, action en bleu nuit.
+   Placé dans la couche refonte : les anciennes règles bleues y sont en !important et l'emportent sur toute règle hors couche. */
+@layer refonte {
+  html body.spa-page main .spa-agents .multi-agent-schema .node:not(.action) { background: var(--rf-ivory) !important; border-color: var(--rf-champagne-light) !important; color: var(--rf-navy-700) !important; }
+  html body.spa-page main .spa-agents .multi-agent-schema .node .sub { color: var(--rf-ink-soft) !important; }
+  html body.spa-page main .spa-agents .multi-agent-schema .node.action { background: var(--rf-navy-900) !important; border-color: var(--rf-navy-900) !important; color: #fff !important; }
+  html body.spa-page main .spa-agents .multi-agent-schema:not(.has-motion-decor) .tasks { border-color: var(--rf-champagne) !important; }
+  html body.spa-page main .spa-agents .multi-agent-schema :is(.assistant-schema-line, .assistant-schema-head, .assistant-schema-frame rect) { stroke: var(--rf-champagne-deep) !important; }
+  html body.spa-page main .spa-agents .multi-agent-schema .step::after { color: var(--rf-champagne-deep) !important; }
+}
