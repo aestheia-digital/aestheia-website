@@ -211,6 +211,10 @@ body.v2 { margin: 0; background: var(--white); color: var(--text); font-family: 
 .v2-row summary p, .v2-row--plain p { font-size: 16px; }
 .v2-row strong, .v2-agent p strong { display: block; font-size: 12px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--gold-deep); margin-bottom: 3px; }
 .v2-row-detail { padding: 0 26px 26px; max-width: 86ch; font-size: 16px; }
+.v2-row-detail p + p { margin-top: 12px; }
+.v2-row-detail ul { margin: 14px 0 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 28px; }
+.v2-row-detail li { position: relative; padding-left: 18px; }
+.v2-row-detail li::before { content: ""; position: absolute; left: 0; top: .62em; width: 8px; height: 1px; background: var(--gold-deep); }
 .v2-agents { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 40px; border-top: 1px solid var(--gold-soft); border-left: 1px solid var(--gold-soft); }
 .v2-agent { display: flex; flex-direction: column; gap: 10px; padding: 24px 24px 20px; border-right: 1px solid var(--gold-soft); border-bottom: 1px solid var(--gold-soft); }
 .v2-agent h3, .v2-venue h3 { display: flex; align-items: center; gap: 12px; font-family: var(--body); font-size: 17.5px; font-weight: 500; line-height: 1.3; color: var(--ink); }
@@ -253,13 +257,13 @@ body.v2 { margin: 0; background: var(--white); color: var(--text); font-family: 
 .v2-certs img { height: 74px; width: auto; }
 
 /* FAQ */
-.v2-faq { margin-top: 30px; border-top: 1px solid var(--line); max-width: 900px; }
+.v2-faq { margin-top: 30px; border-top: 1px solid var(--line); }
 .v2-faq details { border-bottom: 1px solid var(--line); }
-.v2-faq summary { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 19px 2px; cursor: pointer; list-style: none; }
+.v2-faq summary { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 19px 14px 19px 2px; cursor: pointer; list-style: none; }
 .v2-faq summary::-webkit-details-marker { display: none; }
 .v2-faq summary::after { content: ""; flex: none; width: 9px; height: 9px; border-right: 1.5px solid var(--gold-deep); border-bottom: 1.5px solid var(--gold-deep); transform: rotate(45deg); transition: transform .2s; }
 .v2-faq details[open] summary::after { transform: rotate(-135deg); }
-.v2-faq summary h3 { font-family: var(--body); font-size: 17.5px; font-weight: 400; line-height: 1.4; color: var(--ink); }
+.v2-faq summary h3 { flex: 1; min-width: 0; text-align: left; font-family: var(--body); font-size: 17.5px; font-weight: 400; line-height: 1.4; color: var(--ink); }
 .v2-faq .v2-answer { padding: 0 2px 22px; max-width: 72ch; font-size: 16.5px; }
 
 /* Appel à l'action final */
@@ -363,6 +367,7 @@ body.v2 { margin: 0; background: var(--white); color: var(--text); font-family: 
   .v2-row > summary p, .v2-row--plain p { grid-column: 1; grid-row: 2; }
   .v2-row > summary::after { grid-column: 2; grid-row: 1; }
   .v2-row-detail { padding: 0 16px 20px; }
+  .v2-row-detail ul { grid-template-columns: 1fr; }
   .v2-agents { grid-template-columns: 1fr; }
   .v2-venues { grid-template-columns: 1fr; gap: 20px; }
   .v2-reassure ul { grid-template-columns: 1fr; }
