@@ -2134,18 +2134,22 @@ body.v2.v2-medicine-page #assistant-ia .medicine-feature-heading strong{color:#1
   html body.v2.v2-medicine-page section#solutions .v2-eyebrow { color:#c6a477 !important; -webkit-text-fill-color:#c6a477 !important; }
   html body.v2.v2-medicine-page section#solutions .v2-card-ico { stroke:#c6a477 !important; }
 }
-/* TPE-PME : uniquement les couleurs de la charte commune ; structure historique conservée. */
+
+/* TPE-PME — palette identique aux secteurs validés, sans altérer le contenu. */
 @layer refonte {
-  body.v2-pme-restored #contenu > section:not(:first-child) { background:#fff !important; color:#1f2b4f !important; }
-  body.v2-pme-restored #contenu > section:nth-of-type(even) { background:#0f1636 !important; color:#fff !important; }
-  body.v2-pme-restored #contenu > section:first-child {
-    background:linear-gradient(90deg,#0f1636 0%,rgba(15,22,54,.83) 55%,rgba(15,22,54,.3) 100%),var(--hero-image) center/cover !important;
-    color:#fff !important;
-  }
-  body.v2-pme-restored #contenu > section:nth-of-type(even) > .container > :is(h1,h2,h3,p),
-  body.v2-pme-restored #contenu > section:nth-of-type(even) > .container > div > :is(h2,h3,p) { color:#fff !important; }
-  body.v2-pme-restored #contenu > section .eyebrow { color:#c6a477 !important; }
-  body.v2-pme-restored #contenu > section:nth-of-type(even) :is(.card,.faq-accordion-item,.sector-card) { background:#fff; color:#1f2b4f; }
-  body.v2-pme-restored #contenu > section:nth-of-type(even) :is(.card,.faq-accordion-item,.sector-card) :is(h3,h4,p,li,summary) { color:#1f2b4f !important; }
-  body.v2-pme-restored #contenu > section.faq-section :is(h2,summary,.faq-answer p) { color:#fff !important; }
+ body.v2-pme-restored #contenu > section:not(:first-child) {background:#fff!important;color:#1f2b4f!important;}
+ body.v2-pme-restored #contenu > section:nth-of-type(even) {background:#0f1636!important;color:#fff!important;}
+ body.v2-pme-restored #contenu > section:first-child {background:linear-gradient(90deg,#0f1636 0%,rgba(15,22,54,.83) 55%,rgba(15,22,54,.3) 100%),var(--hero-image) center/cover!important;color:#fff!important;}
+ body.v2-pme-restored #contenu > section:nth-of-type(even) > .container > :is(h1,h2,h3,p),
+ body.v2-pme-restored #contenu > section:nth-of-type(even) > .container > div > :is(h2,h3,p) {color:#fff!important;-webkit-text-fill-color:#fff!important;}
+ body.v2-pme-restored #contenu > section .eyebrow {color:#c6a477!important;}
+ body.v2-pme-restored #contenu > section:nth-of-type(even) :is(.card,.sector-card) {background:#fff!important;color:#1f2b4f!important;}
+ body.v2-pme-restored #contenu > section:nth-of-type(even) :is(.card,.sector-card) :is(h3,h4,p,li,summary) {color:#1f2b4f!important;-webkit-text-fill-color:#1f2b4f!important;}
+ body.v2-pme-restored #contenu > section.faq-section {background:#0f1636!important;}
+ body.v2-pme-restored #contenu > section.faq-section > .container > h2 {color:#fff!important;-webkit-text-fill-color:#fff!important;}
+ body.v2-pme-restored #contenu > section.faq-section .faq-accordion-item {background:#fff!important;color:#1f2b4f!important;}
+ body.v2-pme-restored #contenu > section.faq-section .faq-accordion-item :is(summary,.faq-answer,.faq-answer p) {color:#1f2b4f!important;-webkit-text-fill-color:#1f2b4f!important;}
+ body.v2-pme-restored #contenu > section.faq-section .faq-accordion-item summary::after {color:#c6a477!important;}
+ body.v2-pme-restored #contenu .pme-hero .hero-actions .btn.btn-ghost {background:transparent!important;border:1px solid #c6a477!important;color:#fff!important;-webkit-text-fill-color:#fff!important;box-shadow:none!important;}
+ body.v2-pme-restored #contenu .conversion-band .btn.btn-primary {background:#c6a477!important;border:1px solid #c6a477!important;color:#0f1636!important;-webkit-text-fill-color:#0f1636!important;box-shadow:none!important;}
 }
