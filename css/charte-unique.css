@@ -936,3 +936,323 @@ body.v2.v2-home-page .v2-home-founder .v2-founder-stat > strong > span[data-coun
 @media (prefers-reduced-motion: reduce) {
   .v2-nav .v2-drop-menu a { transition: none; }
 }
+
+
+/* === Page Instituts & indépendantes — première simulation ===
+   Couleurs autorisées : bleu nuit, blanc, champagne. Aucun fond beige/bleu pâle.
+   Scoped : la page Accueil et le Spa hôtelier validés ne sont pas modifiés. */
+body.v2.v2-institutes-page {
+  --band: #FFFFFF;
+  background: #FFFFFF;
+}
+body.v2.v2-institutes-page .v2-hero--sector {
+  background: #0F1636 !important;
+  background-image: none !important;
+}
+body.v2.v2-institutes-page .v2-hero--sector > .v2-hero-media {
+  display: block !important;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+body.v2.v2-institutes-page .v2-hero--sector > .v2-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 68% 47%;
+}
+body.v2.v2-institutes-page .v2-hero--sector > .v2-hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(15,22,54,.97) 0%, rgba(15,22,54,.84) 35%, rgba(15,22,54,.47) 67%, rgba(15,22,54,.24) 100%);
+}
+body.v2.v2-institutes-page .v2-hero--sector .v2-hero-in { z-index: 1; }
+body.v2.v2-institutes-page .v2-hero--sector .v2-hero-text { max-width: 660px; }
+body.v2.v2-institutes-page :is(#enjeux,#systemes,#pour-qui,#questions) {
+  background: #FFFFFF !important;
+  background-image: none !important;
+  color: #1F2B4F;
+}
+body.v2.v2-institutes-page :is(#solutions,#assistant-ia,#ressources,.v2-cta) {
+  background: #0F1636 !important;
+  background-image: none !important;
+  color: #FFFFFF;
+}
+body.v2.v2-institutes-page :is(#solutions,#assistant-ia,#ressources,.v2-cta) .v2-h2 {
+  color: #FFFFFF !important;
+}
+body.v2.v2-institutes-page :is(#solutions,#assistant-ia,#ressources,.v2-cta) .v2-intro {
+  color: #FFFFFF !important;
+}
+body.v2.v2-institutes-page :is(#solutions,#assistant-ia,#ressources) .v2-eyebrow {
+  color: #C6A477 !important;
+}
+body.v2.v2-institutes-page :is(#enjeux,#systemes,#pour-qui,#questions) .v2-eyebrow {
+  color: #A8854F !important;
+}
+body.v2.v2-institutes-page #enjeux .v2-lever,
+body.v2.v2-institutes-page #solutions .v2-lever {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(198,164,119,.65);
+  border-top: 2px solid #C6A477;
+  color: #1F2B4F;
+}
+body.v2.v2-institutes-page :is(#enjeux,#solutions) .v2-lever h3 { color: #1F2B4F !important; }
+body.v2.v2-institutes-page :is(#enjeux,#solutions) .v2-lever p { color: #3B4A73 !important; }
+body.v2.v2-institutes-page #solutions .v2-solutions-note {
+  color: #FFFFFF !important;
+  border-top-color: rgba(198,164,119,.6);
+}
+@media (hover:hover) and (pointer:fine) {
+  body.v2.v2-institutes-page :is(#enjeux,#solutions) .v2-lever {
+    transition: transform .22s ease, border-color .22s ease;
+  }
+  body.v2.v2-institutes-page :is(#enjeux,#solutions) .v2-lever:hover {
+    transform: translateY(-4px);
+    border-color: #C6A477;
+  }
+}
+/* Huit systèmes historiques : vraies cartes séparées en grille 4x2, lisibles,
+   accordéons natifs conservés. */
+body.v2.v2-institutes-page #systemes .v2-intro { max-width: 74ch; }
+body.v2.v2-institutes-page .v2-institute-systems-grid {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 18px;
+  margin-top: 34px;
+  align-items: start;
+}
+body.v2.v2-institutes-page .v2-institute-system {
+  min-width: 0;
+  min-height: 174px;
+  background: #0F1636;
+  border: 1px solid rgba(198,164,119,.65);
+  border-top: 2px solid #C6A477;
+  color: #FFFFFF;
+  transition: transform .22s ease, border-color .22s ease;
+}
+body.v2.v2-institutes-page .v2-institute-system > summary {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  justify-content: space-between;
+  min-height: 170px;
+  padding: 20px 20px 17px;
+  list-style: none;
+  cursor: pointer;
+}
+body.v2.v2-institutes-page .v2-institute-system > summary::-webkit-details-marker { display: none; }
+body.v2.v2-institutes-page .v2-institute-system-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+body.v2.v2-institutes-page .v2-institute-system-title img {
+  width: 29px;
+  height: 29px;
+  object-fit: contain;
+  flex: none;
+  filter: brightness(0) saturate(100%) invert(70%) sepia(20%) saturate(563%) hue-rotate(352deg) brightness(90%) contrast(84%);
+}
+body.v2.v2-institutes-page .v2-institute-chevron {
+  width: 20px;
+  height: 20px;
+  stroke: #C6A477;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  align-self: center;
+  transition: transform .2s ease;
+}
+body.v2.v2-institutes-page .v2-institute-system[open] .v2-institute-chevron {
+  transform: rotate(180deg);
+}
+body.v2.v2-institutes-page .v2-institute-system-detail {
+  padding: 0 20px 22px;
+  color: #FFFFFF;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+body.v2.v2-institutes-page .v2-institute-system-detail p + p { margin-top: 14px; }
+body.v2.v2-institutes-page .v2-institute-system-detail strong {
+  color: #C6A477;
+  font-weight: 500;
+}
+@media (hover:hover) and (pointer:fine) {
+  body.v2.v2-institutes-page .v2-institute-system:hover {
+    transform: translateY(-3px);
+    border-color: #C6A477;
+  }
+}
+
+/* Assistant IA : bandeau bleu nuit, cartes blanches, parcours avec contrôle humain. */
+body.v2.v2-institutes-page #assistant-ia .v2-intro { max-width: 78ch; }
+body.v2.v2-institutes-page .v2-institute-assistant-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 18px;
+  margin-top: 38px;
+}
+body.v2.v2-institutes-page .v2-institute-task {
+  background: #FFFFFF;
+  color: #1F2B4F;
+  border: 1px solid rgba(198,164,119,.7);
+  border-top: 2px solid #C6A477;
+  padding: 23px 24px;
+}
+body.v2.v2-institutes-page .v2-institute-task h3 {
+  font-family: var(--body);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #1F2B4F;
+}
+body.v2.v2-institutes-page .v2-institute-task p {
+  font-size: 15.5px;
+  color: #3B4A73;
+  line-height: 1.6;
+  margin-top: 12px;
+}
+body.v2.v2-institutes-page .v2-institute-assistant-note {
+  border-left: 2px solid #C6A477;
+  padding: 16px 22px;
+  margin-top: 34px;
+  color: #FFFFFF;
+  line-height: 1.65;
+}
+body.v2.v2-institutes-page .v2-institute-assistant-note strong {
+  color: #C6A477;
+  font-weight: 500;
+}
+body.v2.v2-institutes-page .v2-institute-flow {
+  display: grid;
+  grid-template-columns: repeat(7,auto);
+  align-items: stretch;
+  gap: 12px;
+  margin-top: 36px;
+}
+body.v2.v2-institutes-page .v2-institute-flow-step {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding: 18px 16px;
+  background: #FFFFFF;
+  border-top: 2px solid #C6A477;
+  color: #1F2B4F;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.35;
+}
+body.v2.v2-institutes-page .v2-institute-flow-step span {
+  color: #3B4A73;
+  font-size: 13px;
+  font-weight: 400;
+}
+body.v2.v2-institutes-page .v2-institute-flow-action {
+  background: #C6A477;
+  color: #0F1636;
+}
+body.v2.v2-institutes-page .v2-institute-flow-action span { color: #0F1636; }
+body.v2.v2-institutes-page .v2-institute-flow-arrow {
+  color: #C6A477;
+  align-self: center;
+  font-size: 24px;
+}
+
+/* Pour qui : présentation blanche, sans photo texturée de fond. */
+body.v2.v2-institutes-page .v2-institute-audience-list {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 18px;
+  list-style: none;
+  margin: 36px 0 24px;
+  padding: 0;
+}
+body.v2.v2-institutes-page .v2-institute-audience-list li {
+  padding: 22px;
+  border-left: 2px solid #C6A477;
+  color: #1F2B4F;
+  background: #FFFFFF;
+  line-height: 1.55;
+}
+body.v2.v2-institutes-page .v2-institute-audience-copy {
+  max-width: 80ch;
+  color: #3B4A73;
+}
+body.v2.v2-institutes-page .v2-institute-audience-link {
+  display: inline-block;
+  margin-top: 24px;
+  color: #A8854F;
+  text-underline-offset: 4px;
+}
+
+/* Ressources : bandeau nuit + cartes vraiment blanches. */
+body.v2.v2-institutes-page #ressources .v2-resource,
+body.v2.v2-institutes-page #ressources .v2-resource:hover {
+  background: #FFFFFF !important;
+  background-image: none !important;
+  color: #1F2B4F !important;
+  border: 1px solid rgba(198,164,119,.75);
+  border-top: 2px solid #C6A477;
+}
+body.v2.v2-institutes-page #ressources .v2-resource h3 {
+  color: #1F2B4F !important;
+}
+body.v2.v2-institutes-page #ressources .v2-resource p {
+  color: #3B4A73 !important;
+}
+body.v2.v2-institutes-page #ressources .v2-resource :is(.v2-resource-tag,.v2-resource-link) {
+  color: #A8854F !important;
+}
+body.v2.v2-institutes-page #ressources .v2-resource .v2-arrow { stroke: #A8854F; }
+body.v2.v2-institutes-page #questions .v2-h2 { color: #1F2B4F; }
+body.v2.v2-institutes-page #questions .v2-faq details { border-bottom-color: rgba(198,164,119,.5); }
+body.v2.v2-institutes-page #questions .v2-faq summary::after { border-color: #A8854F; }
+body.v2.v2-institutes-page #questions .v2-faq :is(h3,.v2-answer) { color: #1F2B4F; }
+body.v2.v2-institutes-page .v2-cta .v2-h2 { color: #FFFFFF; }
+body.v2.v2-institutes-page .v2-cta p { color: #FFFFFF; }
+
+/* Tablettes et mobiles : mêmes sections, lecture fluide et photos préservées. */
+@media (max-width:1100px) {
+  body.v2.v2-institutes-page .v2-institute-systems-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  body.v2.v2-institutes-page .v2-institute-assistant-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  body.v2.v2-institutes-page .v2-institute-flow {
+    grid-template-columns: 1fr;
+    justify-items: stretch;
+  }
+  body.v2.v2-institutes-page .v2-institute-flow-arrow { transform: rotate(90deg); }
+}
+@media (max-width:720px) {
+  body.v2.v2-institutes-page .v2-hero--sector > .v2-hero-media img {
+    object-position: 62% center;
+  }
+  body.v2.v2-institutes-page .v2-hero--sector > .v2-hero-media::after {
+    background: rgba(15,22,54,.76);
+  }
+  body.v2.v2-institutes-page .v2-institute-systems-grid,
+  body.v2.v2-institutes-page .v2-institute-assistant-grid,
+  body.v2.v2-institutes-page .v2-institute-audience-list {
+    grid-template-columns: 1fr;
+  }
+  body.v2.v2-institutes-page .v2-institute-system,
+  body.v2.v2-institutes-page .v2-institute-system > summary { min-height: 135px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  body.v2.v2-institutes-page .v2-institute-system,
+  body.v2.v2-institutes-page .v2-institute-chevron,
+  body.v2.v2-institutes-page :is(#enjeux,#solutions) .v2-lever {
+    transition: none !important;
+    transform: none !important;
+  }
+}
