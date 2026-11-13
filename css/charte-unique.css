@@ -2164,3 +2164,24 @@ body.v2.v2-medicine-page #assistant-ia .medicine-feature-heading strong{color:#1
    filter:brightness(0) saturate(100%) invert(71%) sepia(19%) saturate(573%) hue-rotate(355deg) brightness(91%) contrast(86%)!important;
  }
 }
+
+/* FAQ TPE-PME : accordéon intégralement bleu nuit, typographie blanche. */
+@layer refonte {
+ body.v2.v2-pme-restored #contenu section.faq-section,
+ body.v2.v2-pme-restored #contenu section.faq-section .faq-accordion,
+ body.v2.v2-pme-restored #contenu section.faq-section .faq-accordion-item,
+ body.v2.v2-pme-restored #contenu section.faq-section .faq-accordion-item[open],
+ body.v2.v2-pme-restored #contenu section.faq-section .faq-accordion-item summary,
+ body.v2.v2-pme-restored #contenu section.faq-section .faq-answer {
+   background:#0f1636!important;background-image:none!important;
+ }
+ body.v2.v2-pme-restored #contenu section.faq-section :is(h2,summary,.faq-answer,.faq-answer p,.faq-accordion-item strong) {
+   color:#fff!important;-webkit-text-fill-color:#fff!important;
+ }
+ body.v2.v2-pme-restored #contenu section.faq-section .faq-accordion-item {
+   border:0!important;border-bottom:1px solid rgba(198,164,119,.35)!important;box-shadow:none!important;
+ }
+ body.v2.v2-pme-restored #contenu section.faq-section .faq-accordion-item summary::after {
+   color:#c6a477!important;-webkit-text-fill-color:#c6a477!important;
+ }
+}
