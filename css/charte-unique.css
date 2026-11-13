@@ -1,0 +1,52 @@
+/* Charte AesthéIA unique — couche commune de validation.
+   Les pages v2 gardent leur composition; les pages historiques conservent leur contenu. */
+html { color-scheme: light; }
+.v2-hero--sector {
+  background: linear-gradient(115deg, #0f1636 0%, #1f2b4f 100%);
+}
+.v2-hero--sector .v2-hero-in { padding-block: clamp(48px, 5vw, 74px); }
+.v2-hero--sector .v2-hero-text { max-width: 790px; }
+.v2-hero--sector .v2-hero-lead { max-width: 63ch; }
+.v2-hero--sector .v2-gold { color: #c6a477; }
+.v2-hero--sector .v2-hero-actions { margin-top: 26px; }
+.v2-hero--sector .v2-btn--ghost { background: transparent; color: white; border-color: rgba(255,255,255,.75); }
+.v2-hero--sector .v2-btn--ghost:hover { background: rgba(255,255,255,.1); }
+.v2-hero--sector .v2-btn--gold { color: #0f1636; }
+/* Aucun décor photographique de fond sur les pages sectorielles. */
+.v2-hero--sector > .v2-hero-media { display: none !important; }
+/* Pages historiques : palette alignée sans modifier leur architecture métier. */
+html[data-theme="light"] body.v2-legacy {
+  background: #fff !important;
+  color: #1f2b4f;
+  font-family: "DM Sans", sans-serif;
+}
+html[data-theme="light"] body.v2-legacy #contenu { background: #fff; }
+body.v2-legacy #contenu :is(h1,h2,h3) { font-family: "Playfair Display", Georgia, serif; font-weight: 400; }
+body.v2-legacy #contenu :is(.eyebrow,.section-kicker,.kicker,.overline) {
+  color: #a8854f !important;
+  -webkit-text-fill-color: #a8854f !important;
+}
+body.v2-legacy #contenu :is(.section-mist,.section-soft,.soft-section) {
+  background-color: #f2f5fc !important;
+}
+body.v2-legacy #contenu :is(.card,.resource-card,.contact-option) {
+  border-color: #e9d8b8;
+}
+body.v2-legacy #contenu :is(a.text-link,.text-link) { color: #8f6f3e; }
+body.v2-legacy #contenu :is(a.btn,.btn-primary,.button-primary) {
+  box-shadow: none;
+}
+body.v2-legacy #contenu a:focus-visible,
+body.v2-legacy .v2-header a:focus-visible,
+body.v2-legacy .v2-footer a:focus-visible { outline: 2px solid #c6a477; outline-offset: 3px; }
+body.v2-legacy .v2-header,
+body.v2-legacy .v2-footer { background: #0f1636; }
+body.v2-legacy .v2-cta { background: linear-gradient(120deg,#0f1636,#1f2b4f); }
+/* L'ancien bandeau de conversion, remplacé par le CTA harmonisé, est masqué
+   uniquement sur les pages historiques si présent. */
+body.v2-legacy #contenu > .conversion-band,
+body.v2-legacy #contenu > .section.conversion-band { display: none !important; }
+@media (max-width:720px) {
+  .v2-hero--sector .v2-hero-in { padding-block: 48px 56px; }
+  .v2-hero--sector .v2-hero-text { max-width: 100%; }
+}
