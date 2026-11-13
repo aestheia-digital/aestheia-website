@@ -60,9 +60,10 @@
         ]
       }
     </script>
+      <link rel="stylesheet" href="/css/assistant-schema.css?v=20261004-animation">
       <link rel="stylesheet" href="/css/charte-unique.css?v=20261113-charte">
   </head>
-  <body class="v2 v2-sector-page">
+  <body class="v2 v2-sector-page v2-medicine-page">
     <a class="v2-skip" href="#contenu">Aller au contenu</a>
     <header class="v2-header">
       <div class="v2-wrap v2-header-in">
@@ -92,6 +93,7 @@
     <main id="contenu">
 
       <section class="v2-hero v2-hero--sector">
+        <div class="v2-hero-media"><img src="/assets/images/metiers/chirurgien-esthetique-marketing-digital.webp" alt="Chirurgien esthétique en intervention" width="933" height="1400" loading="eager" fetchpriority="high" decoding="async"></div>
         <div class="v2-wrap v2-hero-in">
           <div class="v2-hero-text">
             <p class="v2-eyebrow">Médecine et chirurgie esthétiques</p>
@@ -144,10 +146,7 @@
       </section>
 
       <section class="v2-section v2-section--band" id="solutions">
-        <div class="v2-wrap v2-solutions">
-          <div class="v2-solutions-photo">
-            <img src="/assets/images/metiers/chirurgien-esthetique-marketing-digital.webp" alt="Chirurgien esthétique en intervention" width="933" height="1400" loading="lazy" decoding="async">
-          </div>
+        <div class="v2-wrap">
           <div>
             <p class="v2-eyebrow">Solutions</p>
             <h2 class="v2-h2">Des leviers concrets pour développer votre cabinet</h2>
@@ -168,6 +167,39 @@
             </div>
             <p class="v2-solutions-note">Les données de santé sont hébergées en France, dans un environnement certifié HDS.</p>
           </div>
+        </div>
+      </section>
+
+      <section class="v2-section v2-medicine-assistant" id="assistant-ia">
+        <div class="v2-wrap">
+          <p class="v2-eyebrow">Un agent assistant pour votre cabinet</p>
+          <h2 class="v2-h2">
+            <span>Un appui pour le secrétariat, des décisions qui restent humaines</span>
+          </h2>
+          <p class="v2-intro">Lorsqu’une demande nécessite de comprendre un contexte ou de consulter plusieurs informations, un agent IA assistant peut aider votre équipe à préparer la prochaine étape. Il s’appuie sur les documents et les outils du cabinet auxquels vous lui autorisez l’accès.</p>
+          <ul class="feature-list">
+            <li><strong>Préparer les réponses administratives :</strong> identifier l’objet d’une demande, repérer les informations manquantes et proposer un brouillon à relire.</li>
+            <li><strong>Retrouver les informations pratiques :</strong> rechercher les horaires, les modalités de rendez-vous ou les procédures administratives dans vos sources validées.</li>
+            <li><strong>Organiser le suivi :</strong> résumer les échanges administratifs et préparer les tâches ou les rappels utiles au secrétariat.</li>
+          </ul>
+          <p><strong>Par exemple :</strong> pour une demande de première consultation, l’agent rassemble les informations administratives disponibles, signale celles qui manquent et prépare une réponse. Votre équipe vérifie et valide le message avant son envoi.</p>
+          <p class="sector-reality-conclusion">Son rôle reste administratif : il ne pose pas de diagnostic et ne recommande pas de traitement. Toute question médicale est transmise à l’équipe soignante. Les accès et les données utilisées sont définis avec le cabinet avant la mise en place.</p>
+          <figure class="assistant-schema" aria-label="Schéma assistant du cabinet">
+<div class="flow">
+<div class="step node">Demandes des patients<span class="sub">Mails et formulaires</span></div>
+<div class="step node assistant">Agent assistant IA</div>
+<div class="step tasks">
+<div class="tasks-title">Ce que l’assistant prépare</div>
+<div class="task-grid">
+<div class="node">Tri des demandes</div><div class="node">Réponses en brouillon</div>
+<div class="node">Informations pratiques</div><div class="node">Suivis administratifs</div>
+</div>
+</div>
+<div class="step node validation">Validation du cabinet</div>
+<div class="step node action">Action</div>
+</div>
+            <figcaption class="caption"><img class="caption-pictogram" src="/assets/icons/agent-assistant.svg" alt="" aria-hidden="true" width="30" height="30"><span class="caption-copy">L’assistant prépare les échanges administratifs <span class="caption-arrow" aria-hidden="true">→</span> Votre équipe valide les réponses et conserve les décisions médicales.</span></figcaption>
+          </figure>
         </div>
       </section>
 
@@ -285,20 +317,7 @@
       </div>
     </footer>
 
-    <script>
-      (function () {
-        var burger = document.querySelector('.v2-burger'), nav = document.getElementById('navigation');
-        burger.addEventListener('click', function () {
-          var open = nav.classList.toggle('is-open');
-          burger.setAttribute('aria-expanded', open);
-          burger.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
-        });
-        nav.addEventListener('click', function (e) { if (e.target.closest('a')) nav.classList.remove('is-open'); });
-        var drop = document.querySelector('.v2-drop'), dropBtn = drop.querySelector('button');
-        dropBtn.addEventListener('click', function () { dropBtn.setAttribute('aria-expanded', drop.classList.toggle('is-open')); });
-        document.addEventListener('click', function (e) { if (!drop.contains(e.target)) { drop.classList.remove('is-open'); dropBtn.setAttribute('aria-expanded', 'false'); } });
-      })();
-    </script>
+
     <script>
       (function () {
         var burger = document.querySelector('.v2-burger'), nav = document.getElementById('navigation');
@@ -314,5 +333,6 @@
       })();
     </script>
     <script src="/js/consent-manager.js"></script>
+    <script src="/js/assistant-schema.js?v=20261004" defer></script>
   </body>
 </html>
