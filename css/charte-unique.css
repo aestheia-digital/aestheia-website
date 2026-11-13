@@ -1256,3 +1256,203 @@ body.v2.v2-institutes-page .v2-cta p { color: #FFFFFF; }
     transform: none !important;
   }
 }
+
+
+/* Finissions de la page Instituts — texte sur blanc, schéma d'origine et microinteractions. */
+body.v2.v2-institutes-page #systemes {
+  background: #FFFFFF !important;
+  background-image: none !important;
+}
+body.v2.v2-institutes-page #systemes .v2-h2 {
+  color: #1F2B4F !important;
+  -webkit-text-fill-color: #1F2B4F !important;
+  margin-top: 0;
+}
+body.v2.v2-institutes-page #systemes .v2-intro {
+  color: #3B4A73 !important;
+  -webkit-text-fill-color: #3B4A73 !important;
+  opacity: 1 !important;
+  margin-top: 10px;
+  max-width: 76ch;
+}
+body.v2.v2-institutes-page #systemes .v2-eyebrow {
+  color: #A8854F !important;
+  margin-bottom: 8px;
+}
+body.v2.v2-institutes-page #systemes .v2-institute-systems-grid {
+  margin-top: 29px;
+}
+body.v2.v2-institutes-page #assistant-ia .v2-institute-task,
+body.v2.v2-institutes-page #ressources .v2-resource {
+  transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  body.v2.v2-institutes-page #assistant-ia .v2-institute-task:hover,
+  body.v2.v2-institutes-page #ressources .v2-resource:hover {
+    transform: translateY(-4px);
+    border-color: #C6A477;
+    box-shadow: 0 9px 18px rgba(15, 22, 54, .1);
+  }
+}
+body.v2.v2-institutes-page #assistant-ia .v2-institute-task:focus-within,
+body.v2.v2-institutes-page #ressources .v2-resource:focus-visible {
+  outline: 2px solid #C6A477;
+  outline-offset: 3px;
+}
+
+/* Schéma restauré : demandes -> assistant -> 4 préparations -> validation -> action.
+   Fichier de disposition/animation historique conservé, seules couleurs et fonds changent. */
+body.v2.v2-institutes-page #assistant-ia .assistant-schema {
+  --color-ink: #1F2B4F;
+  --color-bg: #FFFFFF;
+  --color-mist: #FFFFFF;
+  --color-muted: #3B4A73;
+  --color-border: #C6A477;
+  --color-accent: #0F1636;
+  color: #FFFFFF;
+  margin-top: 46px;
+  width: 100%;
+}
+body.v2.v2-institutes-page #assistant-ia .assistant-schema .flow {
+  grid-template-columns: minmax(0,1.1fr) minmax(0,1fr) minmax(0,2.3fr) minmax(0,1fr) minmax(0,.8fr);
+  gap: 18px;
+  align-items: stretch;
+}
+body.v2.v2-institutes-page #assistant-ia .assistant-schema .step {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body.v2.v2-institutes-page #assistant-ia .assistant-schema .node {
+  background: #FFFFFF !important;
+  border-color: #C6A477 !important;
+  border-radius: 0;
+  color: #1F2B4F !important;
+  font-weight: 500;
+  line-height: 1.5;
+  padding: 18px 12px;
+}
+body.v2.v2-institutes-page #assistant-ia .assistant-schema .node .sub {
+  color: #3B4A73 !important;
+}
+body.v2.v2-institutes-page #assistant-ia .assistant-schema .step.node.assistant {
+  background: #C6A477 !important;
+  border-color: #C6A477 !important;
+  color: #0F1636 !important;
+}
+body.v2.v2-institutes-page #assistant-ia .assistant-schema .step.node.validation {
+  background: #FFFFFF !important;
+  border-color: #C6A477 !important;
+  color: #1F2B4F !important;
+}
+body.v2.v2-institutes-page #assistant-ia .assistant-schema .step.node.action {
+  background: #C6A477 !important;
+  border-color: #C6A477 !important;
+  color: #0F1636 !important;
+}
+body.v2.v2-institutes-page #assistant-ia .assistant-schema .tasks {
+  display: block;
+  background: transparent !important;
+  border: 1px dashed #C6A477;
+  border-radius: 0;
+  padding: 14px 12px;
+}
+body.v2.v2-institutes-page #assistant-ia .assistant-schema.has-motion-decor .tasks {
+  border-color: transparent;
+}
+body.v2.v2-institutes-page #assistant-ia .assistant-schema .tasks-title {
+  color: #FFFFFF !important;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.4;
+}
+body.v2.v2-institutes-page #assistant-ia .assistant-schema .task-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 9px;
+}
+body.v2.v2-institutes-page #assistant-ia .assistant-schema .task-grid .node {
+  background: #FFFFFF !important;
+  color: #1F2B4F !important;
+  padding: 14px 8px;
+  border-radius: 0;
+}
+body.v2.v2-institutes-page #assistant-ia .assistant-schema .assistant-schema-line,
+body.v2.v2-institutes-page #assistant-ia .assistant-schema .assistant-schema-head,
+body.v2.v2-institutes-page #assistant-ia .assistant-schema .assistant-schema-frame rect {
+  stroke: #C6A477;
+}
+body.v2.v2-institutes-page #assistant-ia .assistant-schema .step:not(:last-child)::after {
+  color: #C6A477;
+}
+body.v2.v2-institutes-page #assistant-ia .assistant-schema .caption {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #FFFFFF !important;
+  max-width: none;
+  margin-top: 35px;
+  text-align: left;
+  font-size: 15.5px;
+}
+body.v2.v2-institutes-page #assistant-ia .assistant-schema .caption-pictogram {
+  height: 30px;
+  width: 30px;
+  flex: none;
+  object-fit: contain;
+}
+body.v2.v2-institutes-page #assistant-ia .assistant-schema .caption-copy,
+body.v2.v2-institutes-page #assistant-ia .assistant-schema .caption-arrow {
+  color: #FFFFFF;
+}
+/* Anciennes règles violettes en cascade @layer refonte avec !important :
+   les surcharger dans leur propre couche, uniquement sur cette page. */
+@layer refonte {
+  html[data-theme="light"] body.v2.v2-institutes-page #assistant-ia .assistant-schema .node {
+    background: #FFFFFF !important;
+    border-color: #C6A477 !important;
+    color: #1F2B4F !important;
+  }
+  html[data-theme="light"] body.v2.v2-institutes-page #assistant-ia .assistant-schema .node .sub {
+    color: #3B4A73 !important;
+  }
+  html[data-theme="light"] body.v2.v2-institutes-page #assistant-ia .assistant-schema .step.node.assistant,
+  html[data-theme="light"] body.v2.v2-institutes-page #assistant-ia .assistant-schema .step.node.action {
+    background: #C6A477 !important;
+    border-color: #C6A477 !important;
+    color: #0F1636 !important;
+  }
+  html[data-theme="light"] body.v2.v2-institutes-page #assistant-ia .assistant-schema .step.node.validation {
+    background: #FFFFFF !important;
+    border-color: #C6A477 !important;
+    color: #1F2B4F !important;
+  }
+}
+@media (max-width: 1020px) {
+  body.v2.v2-institutes-page #assistant-ia .assistant-schema .flow {
+    grid-template-columns: minmax(0,1fr);
+    gap: 31px;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  body.v2.v2-institutes-page #assistant-ia .assistant-schema .step:not(:last-child)::after {
+    content: "↓";
+    left: 50%;
+    top: calc(100% + 9px);
+    transform: translateX(-50%);
+  }
+  body.v2.v2-institutes-page #assistant-ia .assistant-schema .assistant-schema-connector {
+    left: 50%;
+    top: calc(100% + 6px);
+    transform: translateX(-50%) rotate(90deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.v2.v2-institutes-page #assistant-ia .assistant-schema .node,
+  body.v2.v2-institutes-page #assistant-ia .v2-institute-task,
+  body.v2.v2-institutes-page #ressources .v2-resource {
+    transition: none;
+    transform: none !important;
+  }
+}
