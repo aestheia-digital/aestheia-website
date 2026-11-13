@@ -314,10 +314,10 @@ if (!document.getElementById("commercial-alignment-rules")) {
         align-items: center;
         gap: 0.38rem;
         padding: 0.4rem 0.56rem;
-        border: 1px solid rgba(94, 23, 235, 0.16);
+        border: 1px solid rgba(198,164,119, 0.16);
         border-radius: 999px;
-        color: #5e17eb;
-        background: rgba(94, 23, 235, 0.055);
+        color: #C6A477;
+        background: rgba(198,164,119, 0.055);
         box-shadow: 0 5px 14px rgba(41, 31, 94, 0.08);
         font-family: var(--font-structure);
         font-size: 0.84rem;
@@ -338,9 +338,9 @@ if (!document.getElementById("commercial-alignment-rules")) {
 
       .site-header .header-phone-direct:hover,
       .site-header .header-phone-direct:focus-visible {
-        color: #5e17eb;
-        background: rgba(94, 23, 235, 0.09);
-        box-shadow: 0 0 0 4px rgba(94, 23, 235, 0.08), 0 7px 18px rgba(41, 31, 94, 0.1);
+        color: #C6A477;
+        background: rgba(198,164,119, 0.09);
+        box-shadow: 0 0 0 4px rgba(198,164,119, 0.08), 0 7px 18px rgba(41, 31, 94, 0.1);
         transform: translateY(-1px);
       }
     }
