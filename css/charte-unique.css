@@ -222,3 +222,23 @@ body.v2 .v2-section#systemes .v2-rows strong { color: #a8854f; }
   body.v2 .v2-home-control { padding: 22px; }
   body.v2 .v2-home-founder .v2-founder-stat { align-items: flex-start; }
 }
+
+/* Textes et liens des cartes secteurs restaurés depuis la version d'origine. */
+body.v2 .v2-home-sectors .v2-sector-body { gap: 12px; padding-inline: 10px; }
+body.v2 .v2-home-sectors .v2-sector-desc {
+  color: #3b4a73;
+  font-size: 15.5px;
+  line-height: 1.5;
+}
+body.v2 .v2-home-sectors .v2-sector-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  color: #a8854f;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: auto;
+  padding-top: 12px;
+}
+body.v2 .v2-home-sectors .v2-sector-link .v2-arrow { margin-top: 0; }
