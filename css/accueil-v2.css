@@ -167,6 +167,8 @@ body.v2 { margin: 0; background: var(--white); color: var(--text); font-family: 
 .v2-split-aside { padding-left: 22px; border-left: 2px solid var(--gold); font-family: var(--display); font-size: 21px; line-height: 1.4; color: var(--ink); }
 .v2-solutions { display: grid; grid-template-columns: minmax(0, 380px) minmax(0, 1fr); gap: 56px; align-items: center; }
 .v2-solutions-photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+.v2-solutions-photo img[src*="ia-automatisation-institut"] { object-position: 18% center; }
+.v2-hero-media img[src*="institut-beaute-marketing"] { object-position: center 35%; }
 .v2-solution-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 34px; }
 .v2-solution { padding: 4px 22px; border-left: 1px solid var(--gold-soft); }
 .v2-solution:first-child { padding-left: 0; border-left: 0; }

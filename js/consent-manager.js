@@ -139,7 +139,7 @@
       <div class="consent-banner__content">
         <div>
           <h2>Vos choix en matière de cookies</h2>
-          <p>AesthéIA utilise des cookies de mesure d’audience pour comprendre la fréquentation du site et améliorer ses contenus. Certains contenus externes, comme Google Maps, peuvent également déposer des traceurs. Vous pouvez accepter, refuser ou personnaliser vos choix.</p>
+          <p>AesthéIA utilise des cookies de mesure d’audience pour comprendre la fréquentation du site et améliorer ses contenus. Vous pouvez accepter, refuser ou personnaliser vos choix.</p>
           <a href="${COOKIE_POLICY_URL}">Consulter la gestion des cookies</a>
         </div>
         <div class="consent-actions" aria-label="Actions de consentement">
@@ -164,7 +164,7 @@
           <span><strong>Mesure d’audience – Google Analytics</strong><span>Permet de comprendre la fréquentation du site.</span></span>
           <input type="checkbox" data-consent-analytics>
         </label>
-        <label class="consent-category">
+        <label class="consent-category" hidden>
           <span><strong>Contenus externes – Google Maps</strong><span>Autorise l’affichage de la carte intégrée.</span></span>
           <input type="checkbox" data-consent-external>
         </label>
