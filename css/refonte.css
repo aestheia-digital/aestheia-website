@@ -120,7 +120,8 @@ html body .site-header .header-cta::before {
   content: "" !important; width: 18px !important; height: 18px !important; background-color: currentColor !important;
   -webkit-mask: url("../assets/icons/calendar.svg") center / contain no-repeat !important; mask: url("../assets/icons/calendar.svg") center / contain no-repeat !important;
 }
-html body .site-header .nav-toggle span { background: #fff !important; }
+html body .site-header .nav-toggle { background: transparent !important; border: 1px solid rgba(198, 164, 119, 0.5) !important; border-radius: 3px !important; width: 44px !important; height: 44px !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; gap: 5px !important; padding: 0 !important; }
+html body .site-header .nav-toggle span { display: block !important; width: 20px !important; height: 1.5px !important; background: #fff !important; }
 @media (max-width: 1180px) {
   html body .site-header a.header-phone-direct span, html body .site-header .main-nav { gap: 0.9rem !important; }
   html body .site-header .main-nav > a:not(.btn):not(.header-phone-direct), html body .site-header .nav-dropdown-toggle { font-size: 0.92rem !important; }
@@ -195,9 +196,8 @@ html body .home-benefits-list img { width: 40px !important; height: 40px !import
   html body .home-benefits-list li:nth-child(2) { border-top: 1px solid #ece3d2 !important; }
 }
 /* ---------- Sections et fonds ---------- */
-html body main .section:not(.conversion-band):not(.hero) { background: #fff !important; }
-html body main .section-soft:not(.conversion-band), html body main .section-mist:not(.conversion-band), html body main .section-warm:not(.conversion-band) { background: var(--rf-ivory) !important; }
-html body main .section::before, html body main .section::after { background-image: none !important; }
+html body main .section:not(.conversion-band):not(.hero):not(.section-aqua) { background-color: #fff !important; }
+html body main .section-soft:not(.conversion-band):not(.section-aqua), html body main .section-mist:not(.conversion-band):not(.section-aqua), html body main .section-warm:not(.conversion-band):not(.section-aqua) { background-color: var(--rf-ivory) !important; }
 html body .home-slogan-band { background: var(--rf-ivory) !important; border-block: 1px solid #efe6d6 !important; }
 html body .home-slogan-band .home-slogan { color: var(--rf-navy-700) !important; font-family: var(--rf-serif) !important; }
 /* ---------- Cartes ---------- */
@@ -276,5 +276,9 @@ html body .conversion-band .conversion-buttons .btn { padding: 1rem 1.6rem !impo
 @media (max-width: 860px) {
   html body .conversion-band .conversion-inner { grid-template-columns: 1fr !important; gap: 1.6rem !important; }
   html body .conversion-band .conversion-buttons .btn, html body .home-hero .hero-actions .btn, html body .page-hero .hero-actions .btn { width: 100% !important; justify-content: center !important; text-align: center !important; }
+}
+@media (max-width: 899px) {
+  html body .home-hero .home-hero-veil { background: linear-gradient(180deg, rgba(14, 23, 71, 0.92) 0%, rgba(14, 23, 71, 0.86) 55%, rgba(14, 23, 71, 0.7) 100%) !important; }
+  html body .page-hero { background-image: linear-gradient(180deg, rgba(14, 23, 71, 0.9), rgba(14, 23, 71, 0.8)), var(--hero-image) !important; }
 }
 }

@@ -5859,29 +5859,6 @@ body.home-page .target-control-card-existing > p {
 }
 
 /* Bouton autonome : aucun style des éléments existants de l'en-tête ne change. */
-.theme-toggle {
-  display: inline-grid;
-  place-items: center;
-  width: 32px;
-  height: 32px;
-  flex: 0 0 32px;
-  margin: 0 4px;
-  padding: 0;
-  border: 1px solid color-mix(in srgb, currentColor 40%, transparent);
-  border-radius: 50%;
-  background: transparent;
-  color: #1B2A6B;
-  cursor: pointer;
-}
-.theme-toggle:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
-.theme-toggle svg { grid-area: 1 / 1; width: 16px; height: 16px; }
-html[data-theme="light"] .theme-toggle-sun { display: none; }
-@media (max-width: 1050px) {
-  .theme-toggle { position: absolute; top: calc(50% - 16px); right: calc(14px + 44px + 0.5rem + 4px); margin: 0; }
-}
-@media (min-width: 721px) and (max-width: 1050px) {
-  .theme-toggle { right: calc(20px + 44px + 1rem + 4px); }
-}
 
 @media (max-width: 1050px) {
   .site-header .brand-name {
@@ -5901,11 +5878,6 @@ html[data-theme="light"] .theme-toggle-sun { display: none; }
     flex-shrink: 0;
     margin-right: 0 !important;
     transform: none !important;
-  }
-  .site-header .theme-toggle {
-    position: static;
-    order: 2;
-    margin: 0;
   }
   .site-header .nav-toggle {
     order: 3;
@@ -6377,11 +6349,6 @@ html body.thalasso-page #contenu li.thalasso-reality-turnover > details.thalasso
   html body .site-header a.header-phone-direct::before {
     height: 24px !important;
     background: #B89A72 !important;
-  }
-  html body .site-header .theme-toggle {
-    flex: 0 0 32px !important;
-    margin: 0 8px 0 0 !important;
-    order: 2 !important;
   }
   html body .site-header .nav-toggle {
     position: relative;

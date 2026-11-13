@@ -27,11 +27,11 @@ cases = [
 errors = []
 with sync_playwright() as pw:
     browser = pw.chromium.launch(executable_path=shutil.which('chromium'), args=['--no-sandbox'])
-    for theme in ['light', 'dark']:
+    for theme in ['light']:
         page = browser.new_page(reduced_motion='reduce')
         page.on('pageerror', lambda error: errors.append(str(error)))
         page.on('console', lambda message: errors.append(message.text) if message.type == 'error' else None)
-        page.goto(base + '/?theme=' + theme + '#simulateur')
+        page.goto(base + '/#simulateur')
         page.evaluate('document.fonts.ready')
         assert page.locator('h1').count() == 1
         section = page.locator('section.sim#simulateur')
@@ -111,9 +111,6 @@ with sync_playwright() as pw:
         colors = cta.evaluate("e=>({bg:getComputedStyle(e).backgroundColor,fg:getComputedStyle(e).color,fill:getComputedStyle(e).webkitTextFillColor})")
         expected = {'bg': 'rgb(255, 255, 255)', 'fg': 'rgb(27, 42, 107)'} if theme == 'light' else {'bg': 'rgb(250, 252, 255)', 'fg': 'rgb(31, 43, 79)'}
         assert colors['bg'] == expected['bg'] and colors['fg'] == colors['fill'] == expected['fg'], colors
-        old_background = section.locator('.sim-band').evaluate("e=>getComputedStyle(e).backgroundColor")
-        page.locator('.theme-toggle').click()
-        assert section.locator('.sim-band').evaluate("e=>getComputedStyle(e).backgroundColor") != old_background
         assert range_input.input_value() == '9'
         page.close()
     # Les points d’entrée partagés gardent leur destination sur chaque page concernée.
@@ -125,4 +122,4 @@ with sync_playwright() as pw:
         assert page.locator('.time-floating').get_attribute('href') == '/#simulateur', path
     browser.close()
 assert not errors, errors
-print('PASS : calculs aux bornes et valeurs intermédiaires, clavier, 4 largeurs, 2 thèmes, bascule sans perte de saisie, CTA et liens partagés')
+print('PASS : calculs aux bornes et valeurs intermédiaires, clavier, 4 largeurs, thème unique, CTA et liens partagés')
