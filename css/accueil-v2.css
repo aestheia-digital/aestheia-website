@@ -146,7 +146,7 @@ body.v2 { margin: 0; background: var(--white); color: var(--text); font-family: 
 .v2-sector:hover img { transform: scale(1.04); }
 .v2-sector-body { display: flex; flex-direction: column; gap: 12px; flex: 1; padding: 18px 2px 16px; }
 .v2-sector h3 { font-family: var(--display); font-size: 20px; font-weight: 400; line-height: 1.25; color: var(--ink); }
-.v2-arrow { margin-top: auto; width: 26px; height: 12px; stroke: var(--gold-deep); fill: none; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+.v2-arrow { margin-top: auto; width: 24px; height: 24px; stroke: var(--gold-deep); fill: none; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
 
 /* Expertises */
 .v2-levers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 40px; }
@@ -184,6 +184,17 @@ body.v2 { margin: 0; background: var(--white); color: var(--text); font-family: 
 .v2-resource p { font-size: 16px; }
 .v2-resource-link { display: inline-flex; align-items: center; gap: 12px; margin-top: auto; padding-top: 8px; color: var(--ink); font-size: 15.5px; font-weight: 500; }
 .v2-resource-link .v2-arrow { margin-top: 0; }
+
+.v2-head-center { text-align: center; }
+.v2-head-center .v2-intro { margin-inline: auto; }
+.v2-solutions-note--center { text-align: center; border-top: 0; padding-top: 0; }
+.v2-split-aside--plain { font-family: var(--body); font-size: 17.5px; line-height: 1.6; color: var(--text); }
+.v2-reassure { border-top: 1px solid var(--line); }
+.v2-reassure ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); }
+.v2-reassure li { display: flex; align-items: center; gap: 14px; padding: 26px 22px; border-left: 1px solid var(--gold-soft); color: var(--ink); font-size: 16.5px; line-height: 1.35; }
+.v2-reassure li:first-child { border-left: 0; padding-left: 0; }
+.v2-hero-media img[src*="cure-thermale"] { object-position: center 62%; }
+.v2-hero-media img[src*="spa-hotelier-marketing"] { object-position: center 70%; }
 
 /* À propos */
 .v2-about { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: 56px; align-items: center; }
@@ -298,6 +309,9 @@ body.v2 { margin: 0; background: var(--white); color: var(--text); font-family: 
   .v2-solution .v2-lever-head { flex-direction: row; align-items: center; }
   .v2-solutions-photo img { aspect-ratio: 16 / 10; }
   .v2-resources { grid-template-columns: 1fr; gap: 16px; }
+  .v2-reassure ul { grid-template-columns: 1fr; }
+  .v2-reassure li { border-left: 0; padding: 16px 0; border-top: 1px solid var(--line); }
+  .v2-reassure li:first-child { border-top: 0; }
   .v2-offers { grid-template-columns: 1fr; gap: 16px; }
   .v2-about { grid-template-columns: 1fr; gap: 28px; }
   .v2-about-photo { max-width: 240px; }
