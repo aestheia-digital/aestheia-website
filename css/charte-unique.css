@@ -2093,3 +2093,23 @@ body.v2 .v2-medicine-systems .sector-editorial-content { padding-top:16px; line-
 body.v2 .v2-medicine-systems .sector-editorial-content p { margin:0 0 12px; }
 body.v2 .v2-medicine-assistant .medicine-feature-icon { display:inline-block; margin-right:12px; font-size:1.25em; vertical-align:middle; }
 @media(max-width:700px){body.v2 .v2-medicine-systems .sector-editorial-list{grid-template-columns:1fr;}body.v2 .v2-medicine-systems .sector-editorial-chapter{padding:20px;}}
+
+/* Médecine esthétique : alternance stricte, pictogrammes discrets et FAQ nuit */
+body.v2.v2-medicine-page #enjeux,
+body.v2.v2-medicine-page #systemes-cabinet,
+body.v2.v2-medicine-page #ressources {background:#fff!important;color:#1f2b4f!important;}
+body.v2.v2-medicine-page #solutions,
+body.v2.v2-medicine-page #assistant-ia,
+body.v2.v2-medicine-page #questions {background:#0f1636!important;color:#fff!important;}
+body.v2.v2-medicine-page #questions :is(.v2-h2,.v2-faq summary h3,.v2-faq .v2-answer){color:#fff!important;}
+body.v2.v2-medicine-page #questions .v2-eyebrow{color:#c6a477!important;}
+body.v2.v2-medicine-page #questions .v2-faq details{border-bottom-color:rgba(198,164,119,.45)!important;}
+body.v2.v2-medicine-page #questions .v2-faq summary::after{border-color:#c6a477!important;}
+body.v2.v2-medicine-page #systemes-cabinet .sector-editorial-chapter summary{display:block!important;}
+body.v2.v2-medicine-page #systemes-cabinet .sector-editorial-heading,
+body.v2.v2-medicine-page #systemes-cabinet .title-with-icon{display:flex!important;align-items:center!important;gap:12px!important;}
+body.v2.v2-medicine-page #systemes-cabinet .title-pictogram{display:block!important;width:28px!important;height:28px!important;max-width:28px!important;max-height:28px!important;flex:0 0 28px!important;object-fit:contain!important;}
+body.v2.v2-medicine-page #systemes-cabinet .sector-editorial-chapter h3{font-family:inherit!important;font-size:1.1rem!important;line-height:1.45!important;}
+body.v2.v2-medicine-page #assistant-ia .medicine-feature-heading{display:flex!important;align-items:center!important;gap:12px!important;margin-bottom:14px!important;}
+body.v2.v2-medicine-page #assistant-ia .medicine-feature-heading strong{display:inline!important;margin:0!important;}
+body.v2.v2-medicine-page #assistant-ia .medicine-feature-icon{display:inline-flex!important;align-items:center;justify-content:center;flex:0 0 26px;margin:0!important;font-size:1.15rem!important;}
