@@ -35,7 +35,7 @@
 
 /* Une vague bleue traverse directement les chiffres, sans halo périphérique. */
 .site-header .header-phone-direct {
-  --header-phone-base: #5e17eb;
+  --header-phone-base: #C6A477;
   position: relative;
   color: var(--header-phone-base) !important;
   font-family: var(--font-body) !important;
@@ -60,7 +60,7 @@
 }
 
 .site-header .header-phone-direct:hover {
-  color: #5e17eb !important;
+  color: #C6A477 !important;
   opacity: 0.82;
 }
 
@@ -166,7 +166,7 @@ html.theme-dark .site-header .header-phone-direct:focus-visible {
 
 /* Retour strict au rendu violet léger d’origine pour les numéros 01 à 04. */
 .home-process .process-step::after {
-  color: #5e17eb !important;
+  color: #C6A477 !important;
   opacity: 0.08 !important;
 }
 
@@ -618,6 +618,6 @@ html:is(.theme-dark,.theme-light):has(.contact-cube-hero) .contact-phone-display
 
 /* Harmonisation globale du mode sombre : halos violets discrets sur tous les corps de page. */
 html.theme-dark {
-  --dark-body-halo-primary: rgba(94, 23, 235, 0.11);
+  --dark-body-halo-primary: rgba(198,164,119, 0.11);
   --dark-body-halo-secondary: rgba(139, 92, 246, 0.06);
 }
