@@ -508,3 +508,206 @@ body.v2.v2-spa-page .v2-hero--sector .v2-hero-text { max-width: 650px; }
     background: linear-gradient(90deg, rgba(15,22,54,.94) 0%, rgba(15,22,54,.86) 42%, rgba(15,22,54,.58) 100%);
   }
 }
+
+
+/* === Validation accueil : alternance blanc / bleu nuit et cartes d'origine ===
+   Scoped to .v2-home-page : ne modifie PAS le spa hôtelier validé. */
+body.v2 .v2-btn--gold,
+body.v2 .v2-btn--gold:hover,
+body.v2 .v2-btn--gold:focus-visible {
+  background: #C6A477 !important;
+  background-image: none !important;
+  border-color: #C6A477;
+  color: #0F1636 !important;
+  -webkit-text-fill-color: #0F1636 !important;
+  box-shadow: none;
+  filter: none;
+}
+/* Afficher davantage le mur d'eau, situé à droite du fichier source. */
+body.v2.v2-home-page .v2-hero-media img {
+  object-position: 82% center;
+}
+/* Croissance, secteurs, audits, FAQ : sections blanc pur. */
+body.v2.v2-home-page :is(.v2-home-growth,.v2-home-sectors,.v2-home-offers,#questions) {
+  background: #FFFFFF !important;
+  background-image: none !important;
+}
+body.v2.v2-home-page .v2-home-growth {
+  padding-bottom: 24px;
+}
+body.v2.v2-home-page .v2-home-growth .v2-families {
+  margin-top: 32px;
+}
+/* Pilotage des performances fait partie du même ensemble blanc.
+   Aucun encadrement marin, aucune seconde carte décorative. */
+body.v2.v2-home-page .v2-home-growth .v2-family:last-child {
+  margin: 0;
+  padding: 32px 0 0;
+  background: #FFFFFF !important;
+  background-image: none !important;
+  border: 0 !important;
+  border-top: 1px solid rgba(198,164,119,.55) !important;
+}
+body.v2.v2-home-page .v2-home-growth .v2-family:last-child .v2-family-head h3 {
+  color: #1F2B4F !important;
+}
+body.v2.v2-home-page .v2-home-growth .v2-family:last-child .v2-family-label {
+  color: #A8854F !important;
+}
+body.v2.v2-home-page .v2-home-growth .v2-family-list--1 .v2-solution {
+  background: #FFFFFF !important;
+  border: none !important;
+  padding: 0 !important;
+  max-width: none;
+}
+body.v2.v2-home-page .v2-home-growth .v2-family-list--1 :is(h3,p,li) {
+  color: #1F2B4F;
+}
+body.v2.v2-home-page .v2-home-growth .v2-family-list--1 .v2-path li {
+  border: 1px solid rgba(198,164,119,.6);
+  background: #FFFFFF !important;
+}
+/* Rapprocher le simulateur du bandeau Croissance sans modifier sa mécanique. */
+body.v2.v2-home-page .v2-sim-zone {
+  background: #FFFFFF !important;
+  padding-top: 12px;
+}
+body.v2.v2-home-page .v2-sim {
+  color: #FFFFFF;
+}
+
+/* Restaurer la présentation encadrée des 4 cartes Secteurs de l'ancien accueil.
+   Les titres, descriptions, photos et liens d'origine sont repris dans le HTML. */
+body.v2.v2-home-page .v2-home-sectors .sector-grid {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 22px;
+  margin-top: 36px;
+}
+body.v2.v2-home-page .v2-home-sectors .sector-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #FFFFFF !important;
+  border: 1px solid rgba(198,164,119,.56);
+  border-bottom: 3px solid #C6A477;
+  border-radius: 0;
+  text-decoration: none;
+  transition: transform .2s ease, border-color .2s ease;
+}
+body.v2.v2-home-page .v2-home-sectors .sector-card:hover {
+  transform: translateY(-3px);
+  border-color: #C6A477;
+  border-bottom-color: #C6A477;
+}
+body.v2.v2-home-page .v2-home-sectors .sector-card:focus-visible {
+  outline: 2px solid #C6A477;
+  outline-offset: 3px;
+}
+body.v2.v2-home-page .v2-home-sectors .sector-card img {
+  width: 100%;
+  height: 244px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  background: #FFFFFF;
+}
+body.v2.v2-home-page .v2-home-sectors .sector-card-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 11px;
+  padding: 21px 20px 22px;
+}
+body.v2.v2-home-page .v2-home-sectors .sector-card h3 {
+  margin: 0;
+  color: #1F2B4F !important;
+  font-family: var(--display);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+body.v2.v2-home-page .v2-home-sectors .sector-card p {
+  margin: 0;
+  color: #3B4A73 !important;
+  font-size: 15.5px;
+  line-height: 1.55;
+}
+body.v2.v2-home-page .v2-home-sectors .sector-card .text-link {
+  display: inline-flex;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 10px;
+  color: #A8854F !important;
+  -webkit-text-fill-color: #A8854F !important;
+  font-family: var(--body);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Le contrôle humain : fond marine, cartes blanches contrastées. */
+body.v2.v2-home-page .v2-home-controls {
+  background: #0F1636 !important;
+  background-image: none !important;
+  color: #FFFFFF;
+}
+body.v2.v2-home-page .v2-home-controls :is(.v2-h2,.v2-intro) {
+  color: #FFFFFF;
+}
+body.v2.v2-home-page .v2-home-controls .v2-eyebrow { color: #C6A477; }
+body.v2.v2-home-page .v2-home-controls .v2-home-control {
+  background: #FFFFFF !important;
+  background-image: none !important;
+  border: 1px solid rgba(198,164,119,.75);
+  border-top: 2px solid #C6A477;
+  color: #1F2B4F;
+}
+body.v2.v2-home-page .v2-home-controls .v2-home-control h3 {
+  color: #1F2B4F !important;
+}
+body.v2.v2-home-page .v2-home-controls .v2-home-control p {
+  color: #3B4A73 !important;
+}
+body.v2.v2-home-page .v2-home-controls .v2-home-control .v2-card-ico {
+  stroke: #A8854F;
+}
+
+/* Fondatrice : section bleu nuit intégral, portrait et certifications conservés. */
+body.v2.v2-home-page .v2-home-founder {
+  background: #0F1636 !important;
+  background-image: none !important;
+  color: #FFFFFF;
+}
+body.v2.v2-home-page .v2-home-founder .v2-eyebrow {
+  color: #C6A477;
+}
+body.v2.v2-home-page .v2-home-founder :is(.v2-h2,.v2-about-text p,.v2-founder-stat span,.v2-sign strong,.v2-sign span) {
+  color: #FFFFFF !important;
+}
+body.v2.v2-home-page .v2-home-founder .v2-founder-stat strong {
+  color: #C6A477 !important;
+}
+body.v2.v2-home-page .v2-home-founder .v2-founder-name > span {
+  color: #C6A477;
+}
+body.v2.v2-home-page .v2-home-founder .v2-about-photo img {
+  border: 1px solid rgba(198,164,119,.55);
+}
+
+/* Responsive, sans changer les contenus ni toucher au Spa. */
+@media (max-width: 1120px) {
+  body.v2.v2-home-page .v2-home-sectors .sector-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+}
+@media (max-width: 720px) {
+  body.v2.v2-home-page .v2-hero-media img { object-position: 84% center; }
+  body.v2.v2-home-page .v2-home-growth { padding-bottom: 18px; }
+  body.v2.v2-home-page .v2-sim-zone { padding-top: 5px; }
+}
+@media (max-width: 600px) {
+  body.v2.v2-home-page .v2-home-sectors .sector-grid { grid-template-columns: 1fr; gap: 18px; }
+  body.v2.v2-home-page .v2-home-sectors .sector-card img { height: 220px; }
+}
