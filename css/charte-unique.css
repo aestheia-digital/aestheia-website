@@ -50,3 +50,175 @@ body.v2-legacy #contenu > .section.conversion-band { display: none !important; }
   .v2-hero--sector .v2-hero-in { padding-block: 48px 56px; }
   .v2-hero--sector .v2-hero-text { max-width: 100%; }
 }
+
+
+/* Accueil restauré : conserver l'ordre et les cartes métier de la version d'origine. */
+body.v2 .v2-home-growth { background: #fff; }
+body.v2 .v2-home-growth .v2-families { margin-top: 32px; }
+body.v2 .v2-home-growth .v2-family {
+  display: block;
+  padding-block: 32px 38px;
+  border-top: 1px solid #e9d8b8;
+}
+body.v2 .v2-home-growth .v2-family-head {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  margin-bottom: 26px;
+}
+body.v2 .v2-home-growth .v2-family-head h3 {
+  font-family: var(--display);
+  font-size: clamp(25px,3vw,34px);
+  line-height: 1.2;
+  order: -1;
+}
+body.v2 .v2-home-growth .v2-family-label {
+  margin-bottom: 0;
+  color: #a8854f;
+}
+body.v2 .v2-home-growth .v2-family-list {
+  margin-top: 0;
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 18px;
+}
+body.v2 .v2-home-growth .v2-family-list--1 {
+  grid-template-columns: minmax(0,1fr);
+}
+body.v2 .v2-home-growth .v2-family-list--4 .v2-solution:nth-child(4) {
+  grid-column: 1 / -1;
+}
+body.v2 .v2-home-growth .v2-family-list .v2-solution {
+  padding: 23px 24px 25px;
+  background: #fff;
+  border: 1px solid #e9d8b8;
+  border-top: 2px solid #c6a477;
+  color: #3b4a73;
+}
+body.v2 .v2-home-growth .v2-family-list .v2-solution h3 {
+  color: #1f2b4f;
+  font-size: 17.5px;
+}
+body.v2 .v2-home-growth .v2-family-list .v2-solution p {
+  color: #3b4a73;
+  font-size: 16px;
+}
+body.v2 .v2-home-growth .v2-family-list .v2-solution .v2-family-result {
+  color: #1f2b4f;
+}
+body.v2 .v2-home-growth .v2-family:last-child {
+  background: linear-gradient(120deg,#0f1636,#1f2b4f);
+  margin-top: 6px;
+  padding: 36px;
+  border-top: 2px solid #c6a477;
+}
+body.v2 .v2-home-growth .v2-family:last-child .v2-family-head h3 { color: #fff; }
+body.v2 .v2-home-growth .v2-family:last-child .v2-family-label { color: #e9d8b8; }
+body.v2 .v2-home-growth .v2-family-list--1 .v2-solution { max-width: none; }
+
+/* Secteurs : quatre cartes de référence (TPE-PME différée sur la page d'accueil). */
+body.v2 .v2-home-sectors .v2-sectors {
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 22px;
+}
+body.v2 .v2-home-sectors .v2-sector { border-bottom-color: #c6a477; }
+
+/* Contrôle humain sans les quatre étapes de méthodologie. */
+body.v2 .v2-home-controls {
+  color: #d5dcee;
+  background: linear-gradient(120deg,#0f1636,#1f2b4f);
+}
+body.v2 .v2-home-controls .v2-h2 { color: #fff; }
+body.v2 .v2-home-controls .v2-eyebrow { color: #c6a477; }
+body.v2 .v2-home-controls .v2-intro { color: #d5dcee; }
+body.v2 .v2-home-controls-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 20px;
+  margin-top: 36px;
+}
+body.v2 .v2-home-control {
+  border: 1px solid rgba(198,164,119,.6);
+  border-top: 2px solid #c6a477;
+  padding: 26px 28px;
+  background: #1f2b4f;
+}
+body.v2 .v2-home-control .v2-card-ico { stroke: #c6a477; }
+body.v2 .v2-home-control h3 {
+  font-family: var(--body);
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.35;
+  margin-top: 18px;
+  color: #fff;
+}
+body.v2 .v2-home-control p { color: #d5dcee; font-size: 16px; margin-top: 12px; }
+
+/* Audits conservés, aucune étiquette de prix. */
+body.v2 .v2-home-offers { background: #fff; }
+body.v2 .v2-home-offers .v2-lever {
+  background: #fff;
+  border: 1px solid #e9d8b8;
+  border-top: 2px solid #c6a477;
+}
+
+/* Restaurer le bloc Fondatrice et ses textes d'origine, sans liste d'établissements. */
+body.v2 .v2-home-founder { background: #fff; }
+body.v2 .v2-home-founder .v2-founder-name > span { color: #c6a477; }
+body.v2 .v2-home-founder .v2-founder-stat {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 22px;
+}
+body.v2 .v2-home-founder .v2-founder-stat strong {
+  display: block;
+  font-family: var(--display);
+  font-size: clamp(50px,5vw,78px);
+  font-weight: 400;
+  line-height: 1;
+  color: #a8854f;
+}
+body.v2 .v2-home-founder .v2-founder-stat span {
+  max-width: 28ch;
+  color: #1f2b4f;
+  font-size: 17px;
+  line-height: 1.45;
+}
+body.v2 .v2-home-founder .v2-sign strong { font-weight: 400; }
+
+/* Une plage bleu nuit assumée sur la page Spa, sans modifier les cartes et systèmes. */
+body.v2 .v2-section#systemes {
+  background: linear-gradient(125deg,#0f1636 0%,#1f2b4f 100%);
+  color: #d5dcee;
+}
+body.v2 .v2-section#systemes .v2-eyebrow { color: #c6a477; }
+body.v2 .v2-section#systemes .v2-h2 { color: #fff; }
+body.v2 .v2-section#systemes .v2-intro { color: #d5dcee; }
+body.v2 .v2-section#systemes .v2-rows {
+  color: #3b4a73;
+  background: #fff;
+  border-top-color: #c6a477;
+}
+body.v2 .v2-section#systemes .v2-rows .v2-row { color: #3b4a73; }
+body.v2 .v2-section#systemes .v2-rows h3 { color: #1f2b4f; }
+body.v2 .v2-section#systemes .v2-rows p { color: #3b4a73; }
+body.v2 .v2-section#systemes .v2-rows strong { color: #a8854f; }
+
+@media (max-width: 900px) {
+  body.v2 .v2-home-growth .v2-family-list { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  body.v2 .v2-home-growth .v2-family-list--4 .v2-solution:nth-child(4) { grid-column: auto; }
+  body.v2 .v2-home-growth .v2-family-list--1 { grid-template-columns: 1fr; }
+  body.v2 .v2-home-sectors .v2-sectors { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  body.v2 .v2-home-controls-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  body.v2 .v2-home-growth .v2-family-list,
+  body.v2 .v2-home-growth .v2-family-list--1,
+  body.v2 .v2-home-sectors .v2-sectors,
+  body.v2 .v2-home-controls-grid { grid-template-columns: 1fr; }
+  body.v2 .v2-home-growth .v2-family:last-child { padding: 24px 18px; }
+  body.v2 .v2-home-control { padding: 22px; }
+  body.v2 .v2-home-founder .v2-founder-stat { align-items: flex-start; }
+}
