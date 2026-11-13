@@ -419,7 +419,7 @@
           <div class="v2-about-text">
             <p class="v2-eyebrow">Fondatrice</p>
             <h2 class="v2-h2">Derrière <span class="v2-founder-name"><span>A</span>esthéIA</span></h2>
-            <p class="v2-founder-stat"><strong>20+</strong><span>ans d’expérience terrain dans l’esthétique et le wellness</span></p>
+            <p class="v2-founder-stat"><strong>+<span data-count-to="20">20</span></strong><span>ans d’expérience terrain dans l’esthétique et le wellness</span></p>
             <p>Du soin à la gestion d’équipe, en passant par l’accueil et l’administratif, je connais de l’intérieur ce qui se joue derrière l’expérience client. Je relie aujourd’hui cette connaissance du terrain à la visibilité en ligne, du référencement aux réseaux sociaux, à l’intelligence artificielle et à l’automatisation.</p>
             <div class="v2-about-foot">
               <div class="v2-sign"><strong>Magalie Stankovic</strong><span>Fondatrice d’AesthéIA</span></div>
@@ -549,6 +549,49 @@
         var drop = document.querySelector('.v2-drop'), dropBtn = drop.querySelector('button');
         dropBtn.addEventListener('click', function () { dropBtn.setAttribute('aria-expanded', drop.classList.toggle('is-open')); });
         document.addEventListener('click', function (e) { if (!drop.contains(e.target)) { drop.classList.remove('is-open'); dropBtn.setAttribute('aria-expanded', 'false'); } });
+      })();
+    </script>
+    <script>
+      // Compteur historique de la section Fondatrice, isolé des anciens scripts du site.
+      (function () {
+        var counter = document.querySelector('.v2-home-founder [data-count-to]');
+        if (!counter) return;
+        var target = Number(counter.getAttribute('data-count-to')) || 20;
+        var reducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reducedMotion || !('IntersectionObserver' in window)) {
+          counter.textContent = String(target);
+          return;
+        }
+        var duration = 1600;
+        var running = false;
+        var frameId = null;
+        // Valeur accessible en HTML même si JavaScript est désactivé.
+        counter.textContent = '0';
+        function animate() {
+          if (running) return;
+          running = true;
+          var start = null;
+          function tick(time) {
+            if (start === null) start = time;
+            var progress = Math.min(1, (time - start) / duration);
+            var eased = 1 - Math.pow(1 - progress, 3);
+            counter.textContent = String(Math.round(target * eased));
+            if (progress < 1) {
+              frameId = window.requestAnimationFrame(tick);
+            } else {
+              counter.textContent = String(target);
+              running = false;
+              frameId = null;
+            }
+          }
+          frameId = window.requestAnimationFrame(tick);
+        }
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) animate();
+          });
+        }, { threshold: 0.6 });
+        observer.observe(counter);
       })();
     </script>
     <script src="js/consent-manager.js"></script>
