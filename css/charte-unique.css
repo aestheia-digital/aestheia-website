@@ -2151,3 +2151,24 @@ body.v2-pme-restored #contenu :is(.card,.sector-card,.sector-editorial-chapter) 
 body.v2-pme-restored #contenu .faq-section :is(summary,h2,h3,p) {color:#fff!important;}
 body.v2-pme-restored #contenu .faq-section details p {color:#fff!important;}
 body.v2-pme-restored #contenu :is(.hero,.section) {scroll-margin-top:90px;}
+
+/* TPE-PME: charte sectorielle finale, après retrait méthode et tarifs. */
+@layer refonte {
+ body.v2-pme-final #contenu > section:not(:first-child) {background:#fff!important;color:#1f2b4f!important;}
+ body.v2-pme-final #contenu > section:nth-of-type(even) {background:#0f1636!important;color:#fff!important;}
+ body.v2-pme-final #contenu > section:first-child {background:linear-gradient(90deg,#0f1636 0%,rgba(15,22,54,.85) 53%,rgba(15,22,54,.35) 100%),var(--hero-image) center/cover!important;color:#fff!important;}
+ body.v2-pme-final #contenu > section:nth-of-type(even) > .container > :is(h1,h2,h3,p),
+ body.v2-pme-final #contenu > section:nth-of-type(even) > .container > div > :is(h2,h3,p) {color:#fff!important;-webkit-text-fill-color:#fff!important;}
+ body.v2-pme-final #contenu > section:nth-of-type(even) .eyebrow {color:#c6a477!important;-webkit-text-fill-color:#c6a477!important;}
+ body.v2-pme-final #contenu .card,
+ body.v2-pme-final #contenu .sector-method-card {background:#fff!important;color:#1f2b4f!important;border-top:3px solid #c6a477!important;}
+ body.v2-pme-final #contenu .card :is(h3,h4,p,li,strong,span:not(.eyebrow)),
+ body.v2-pme-final #contenu .sector-method-card :is(h3,p,strong) {color:#1f2b4f!important;-webkit-text-fill-color:#1f2b4f!important;}
+ body.v2-pme-final #contenu .faq-section {background:#0f1636!important;}
+ body.v2-pme-final #contenu .faq-section :is(h2,summary,.faq-answer p) {color:#fff!important;-webkit-text-fill-color:#fff!important;}
+ body.v2-pme-final #contenu .faq-section summary::after {color:#c6a477!important;}
+ body.v2-pme-final #contenu :is(.title-with-icon,.card-title-with-icon) {display:flex!important;align-items:center!important;gap:12px!important;}
+ body.v2-pme-final #contenu :is(.title-with-icon,.card-title-with-icon) img {width:30px!important;height:30px!important;max-width:30px!important;object-fit:contain!important;flex:none!important;}
+ body.v2-pme-final #contenu .hero-actions .btn,
+ body.v2-pme-final #contenu .conversion-band .btn {border-radius:4px!important;}
+}
