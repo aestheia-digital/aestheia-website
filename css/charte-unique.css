@@ -2113,3 +2113,15 @@ body.v2.v2-medicine-page #systemes-cabinet .sector-editorial-chapter h3{font-fam
 body.v2.v2-medicine-page #assistant-ia .medicine-feature-heading{display:flex!important;align-items:center!important;gap:12px!important;margin-bottom:14px!important;}
 body.v2.v2-medicine-page #assistant-ia .medicine-feature-heading strong{display:inline!important;margin:0!important;}
 body.v2.v2-medicine-page #assistant-ia .medicine-feature-icon{display:inline-flex!important;align-items:center;justify-content:center;flex:0 0 26px;margin:0!important;font-size:1.15rem!important;}
+
+/* Medicine page: readable contrast and consistent champagne line icons */
+body.v2.v2-medicine-page #solutions :is(.v2-h2,.v2-intro,.v2-solutions-note),
+body.v2.v2-medicine-page #solutions .v2-solution :is(h3,p),
+body.v2.v2-medicine-page #questions :is(.v2-h2,.v2-faq summary h3,.v2-answer),
+body.v2.v2-medicine-page #assistant-ia :is(.v2-h2,.v2-intro) {color:#fff!important;}
+body.v2.v2-medicine-page #solutions .v2-solution {background:rgba(255,255,255,.045)!important;border-color:#c6a477!important;}
+body.v2.v2-medicine-page #solutions .v2-solution .v2-card-ico,
+body.v2.v2-medicine-page .medicine-line-icon {stroke:#c6a477!important;fill:none!important;stroke-width:1.6!important;stroke-linecap:round!important;stroke-linejoin:round!important;width:30px!important;height:30px!important;min-width:30px!important;max-width:30px!important;max-height:30px!important;flex:0 0 30px!important;vertical-align:middle!important;}
+body.v2.v2-medicine-page #systemes-cabinet .medicine-line-icon{width:28px!important;height:28px!important;min-width:28px!important;max-width:28px!important;flex-basis:28px!important;}
+body.v2.v2-medicine-page #assistant-ia .medicine-feature-heading{display:flex!important;align-items:center!important;gap:14px!important;}
+body.v2.v2-medicine-page #assistant-ia .medicine-feature-heading strong{color:#1f2b4f!important;}
