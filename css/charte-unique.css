@@ -2134,3 +2134,20 @@ body.v2.v2-medicine-page #assistant-ia .medicine-feature-heading strong{color:#1
   html body.v2.v2-medicine-page section#solutions .v2-eyebrow { color:#c6a477 !important; -webkit-text-fill-color:#c6a477 !important; }
   html body.v2.v2-medicine-page section#solutions .v2-card-ico { stroke:#c6a477 !important; }
 }
+
+/* PR311 — TPE/PME historique : habillage unique, sans modifier les autres secteurs. */
+body.v2-pme-restored {background:#fff;color:#1f2b4f;}
+body.v2-pme-restored #contenu {background:#fff;color:#1f2b4f;}
+body.v2-pme-restored #contenu > section {background:#fff!important;color:#1f2b4f!important;}
+body.v2-pme-restored #contenu > section:nth-of-type(even) {background:#0f1636!important;color:#fff!important;}
+body.v2-pme-restored #contenu > section:first-child {background:linear-gradient(90deg,#0f1636 0%,rgba(15,22,54,.82) 52%,rgba(15,22,54,.28) 100%),var(--hero-image) center/cover!important;color:#fff!important;}
+body.v2-pme-restored #contenu > section:nth-of-type(even) :is(h1,h2,h3,h4,.section-title,.section-intro,.eyebrow,p,li,strong,summary) {color:#fff!important;}
+body.v2-pme-restored #contenu > section:nth-of-type(even) :is(.card,.sector-card,.sector-editorial-chapter,.faq-item,details,.system-card,.method-card) {color:#1f2b4f;}
+body.v2-pme-restored #contenu > section:nth-of-type(even) :is(.card,.sector-card,.sector-editorial-chapter,.system-card,.method-card) :is(h3,p,li,strong) {color:inherit!important;}
+body.v2-pme-restored #contenu .eyebrow {color:#c6a477!important;}
+body.v2-pme-restored #contenu .title-pictogram {width:32px!important;height:32px!important;max-width:32px!important;max-height:32px!important;object-fit:contain!important;flex:none;}
+body.v2-pme-restored #contenu :is(.title-with-icon,.sector-editorial-heading) {display:flex;align-items:center;gap:14px;}
+body.v2-pme-restored #contenu :is(.card,.sector-card,.sector-editorial-chapter) {border-top-color:#c6a477;}
+body.v2-pme-restored #contenu .faq-section :is(summary,h2,h3,p) {color:#fff!important;}
+body.v2-pme-restored #contenu .faq-section details p {color:#fff!important;}
+body.v2-pme-restored #contenu :is(.hero,.section) {scroll-margin-top:90px;}
