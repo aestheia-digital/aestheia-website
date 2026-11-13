@@ -1922,7 +1922,7 @@ body.v2.v2-medicine-page #assistant-ia .feature-list { list-style: none; padding
 body.v2.v2-medicine-page #assistant-ia .feature-list li { background: #FFFFFF; color: #1F2B4F; padding: 24px; border: 1px solid #C6A477; border-top-width: 2px; line-height: 1.65; }
 body.v2.v2-medicine-page #assistant-ia strong { font-weight: 500; }
 body.v2.v2-medicine-page #assistant-ia .feature-list strong { display: block; margin-bottom: 10px; }
-body.v2.v2-medicine-page #assistant-ia .sector-reality-conclusion { margin-top: 20px; padding-left: 20px; border-left: 2px solid #C6A477; line-height: 1.65; }
+body.v2.v2-medicine-page #assistant-ia .v2-medicine-assistant-note { margin-top: 20px; padding-left: 20px; border-left: 2px solid #C6A477; line-height: 1.65; }
 @media (max-width:720px) {
   body.v2.v2-medicine-page .v2-hero--sector > .v2-hero-media { width: 100%; }
   body.v2.v2-medicine-page .v2-hero--sector .v2-hero-media::after { background: rgba(15,22,54,.76); }
