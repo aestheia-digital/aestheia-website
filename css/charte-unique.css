@@ -2134,41 +2134,18 @@ body.v2.v2-medicine-page #assistant-ia .medicine-feature-heading strong{color:#1
   html body.v2.v2-medicine-page section#solutions .v2-eyebrow { color:#c6a477 !important; -webkit-text-fill-color:#c6a477 !important; }
   html body.v2.v2-medicine-page section#solutions .v2-card-ico { stroke:#c6a477 !important; }
 }
-
-/* PR311 — TPE/PME historique : habillage unique, sans modifier les autres secteurs. */
-body.v2-pme-restored {background:#fff;color:#1f2b4f;}
-body.v2-pme-restored #contenu {background:#fff;color:#1f2b4f;}
-body.v2-pme-restored #contenu > section {background:#fff!important;color:#1f2b4f!important;}
-body.v2-pme-restored #contenu > section:nth-of-type(even) {background:#0f1636!important;color:#fff!important;}
-body.v2-pme-restored #contenu > section:first-child {background:linear-gradient(90deg,#0f1636 0%,rgba(15,22,54,.82) 52%,rgba(15,22,54,.28) 100%),var(--hero-image) center/cover!important;color:#fff!important;}
-body.v2-pme-restored #contenu > section:nth-of-type(even) :is(h1,h2,h3,h4,.section-title,.section-intro,.eyebrow,p,li,strong,summary) {color:#fff!important;}
-body.v2-pme-restored #contenu > section:nth-of-type(even) :is(.card,.sector-card,.sector-editorial-chapter,.faq-item,details,.system-card,.method-card) {color:#1f2b4f;}
-body.v2-pme-restored #contenu > section:nth-of-type(even) :is(.card,.sector-card,.sector-editorial-chapter,.system-card,.method-card) :is(h3,p,li,strong) {color:inherit!important;}
-body.v2-pme-restored #contenu .eyebrow {color:#c6a477!important;}
-body.v2-pme-restored #contenu .title-pictogram {width:32px!important;height:32px!important;max-width:32px!important;max-height:32px!important;object-fit:contain!important;flex:none;}
-body.v2-pme-restored #contenu :is(.title-with-icon,.sector-editorial-heading) {display:flex;align-items:center;gap:14px;}
-body.v2-pme-restored #contenu :is(.card,.sector-card,.sector-editorial-chapter) {border-top-color:#c6a477;}
-body.v2-pme-restored #contenu .faq-section :is(summary,h2,h3,p) {color:#fff!important;}
-body.v2-pme-restored #contenu .faq-section details p {color:#fff!important;}
-body.v2-pme-restored #contenu :is(.hero,.section) {scroll-margin-top:90px;}
-
-/* TPE-PME: charte sectorielle finale, après retrait méthode et tarifs. */
+/* TPE-PME : uniquement les couleurs de la charte commune ; structure historique conservée. */
 @layer refonte {
- body.v2-pme-final #contenu > section:not(:first-child) {background:#fff!important;color:#1f2b4f!important;}
- body.v2-pme-final #contenu > section:nth-of-type(even) {background:#0f1636!important;color:#fff!important;}
- body.v2-pme-final #contenu > section:first-child {background:linear-gradient(90deg,#0f1636 0%,rgba(15,22,54,.85) 53%,rgba(15,22,54,.35) 100%),var(--hero-image) center/cover!important;color:#fff!important;}
- body.v2-pme-final #contenu > section:nth-of-type(even) > .container > :is(h1,h2,h3,p),
- body.v2-pme-final #contenu > section:nth-of-type(even) > .container > div > :is(h2,h3,p) {color:#fff!important;-webkit-text-fill-color:#fff!important;}
- body.v2-pme-final #contenu > section:nth-of-type(even) .eyebrow {color:#c6a477!important;-webkit-text-fill-color:#c6a477!important;}
- body.v2-pme-final #contenu .card,
- body.v2-pme-final #contenu .sector-method-card {background:#fff!important;color:#1f2b4f!important;border-top:3px solid #c6a477!important;}
- body.v2-pme-final #contenu .card :is(h3,h4,p,li,strong,span:not(.eyebrow)),
- body.v2-pme-final #contenu .sector-method-card :is(h3,p,strong) {color:#1f2b4f!important;-webkit-text-fill-color:#1f2b4f!important;}
- body.v2-pme-final #contenu .faq-section {background:#0f1636!important;}
- body.v2-pme-final #contenu .faq-section :is(h2,summary,.faq-answer p) {color:#fff!important;-webkit-text-fill-color:#fff!important;}
- body.v2-pme-final #contenu .faq-section summary::after {color:#c6a477!important;}
- body.v2-pme-final #contenu :is(.title-with-icon,.card-title-with-icon) {display:flex!important;align-items:center!important;gap:12px!important;}
- body.v2-pme-final #contenu :is(.title-with-icon,.card-title-with-icon) img {width:30px!important;height:30px!important;max-width:30px!important;object-fit:contain!important;flex:none!important;}
- body.v2-pme-final #contenu .hero-actions .btn,
- body.v2-pme-final #contenu .conversion-band .btn {border-radius:4px!important;}
+  body.v2-pme-restored #contenu > section:not(:first-child) { background:#fff !important; color:#1f2b4f !important; }
+  body.v2-pme-restored #contenu > section:nth-of-type(even) { background:#0f1636 !important; color:#fff !important; }
+  body.v2-pme-restored #contenu > section:first-child {
+    background:linear-gradient(90deg,#0f1636 0%,rgba(15,22,54,.83) 55%,rgba(15,22,54,.3) 100%),var(--hero-image) center/cover !important;
+    color:#fff !important;
+  }
+  body.v2-pme-restored #contenu > section:nth-of-type(even) > .container > :is(h1,h2,h3,p),
+  body.v2-pme-restored #contenu > section:nth-of-type(even) > .container > div > :is(h2,h3,p) { color:#fff !important; }
+  body.v2-pme-restored #contenu > section .eyebrow { color:#c6a477 !important; }
+  body.v2-pme-restored #contenu > section:nth-of-type(even) :is(.card,.faq-accordion-item,.sector-card) { background:#fff; color:#1f2b4f; }
+  body.v2-pme-restored #contenu > section:nth-of-type(even) :is(.card,.faq-accordion-item,.sector-card) :is(h3,h4,p,li,summary) { color:#1f2b4f !important; }
+  body.v2-pme-restored #contenu > section.faq-section :is(h2,summary,.faq-answer p) { color:#fff !important; }
 }
