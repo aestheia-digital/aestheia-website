@@ -784,3 +784,101 @@ body.v2.v2-home-page :is(
     transform: none !important;
   }
 }
+
+
+/* Navigation simplifiée : soulignement champagne qui suit l'élément survolé.
+   S'applique à tous les headers v2, sans changer l'aspect des CTA ni des pages. */
+.v2-nav > a:not(.v2-btn):not(.v2-tel),
+.v2-nav .v2-drop > button {
+  position: relative;
+}
+.v2-nav > a:not(.v2-btn):not(.v2-tel)::after,
+.v2-nav .v2-drop > button::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  bottom: 2px;
+  height: 2px;
+  background: #C6A477;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform .2s ease;
+  pointer-events: none;
+}
+.v2-nav > a[aria-current="page"],
+.v2-nav .v2-drop > button.is-current {
+  box-shadow: none;
+}
+.v2-nav > a[aria-current="page"]::after,
+.v2-nav .v2-drop > button.is-current::before,
+.v2-nav .v2-drop.is-open > button::before,
+.v2-nav > a:not(.v2-btn):not(.v2-tel):focus-visible::after,
+.v2-nav .v2-drop > button:focus-visible::before {
+  transform: scaleX(1);
+}
+@media (hover: hover) and (pointer: fine) {
+  .v2-nav > a:not(.v2-btn):not(.v2-tel):hover::after,
+  .v2-nav .v2-drop > button:hover::before,
+  .v2-nav .v2-drop:hover > button::before {
+    transform: scaleX(1);
+  }
+}
+/* Sous-menu Secteurs : fin tiret champagne à gauche de chaque lien actif. */
+.v2-nav .v2-drop-menu { border-color: rgba(198,164,119,.55); }
+.v2-nav .v2-drop-menu a {
+  position: relative;
+  padding-left: 34px;
+  transition: color .2s ease, background-color .2s ease;
+}
+.v2-nav .v2-drop-menu a::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  width: 13px;
+  height: 2px;
+  background: #C6A477;
+  transform: translateY(-50%) scaleX(0);
+  transform-origin: left;
+  transition: transform .18s ease;
+  pointer-events: none;
+}
+.v2-nav .v2-drop-menu a:focus-visible::before {
+  transform: translateY(-50%) scaleX(1);
+}
+.v2-nav .v2-drop-menu a:focus-visible {
+  background: #FFFFFF;
+  color: #0F1636;
+}
+@media (hover: hover) and (pointer: fine) {
+  .v2-nav .v2-drop-menu a:hover::before {
+    transform: translateY(-50%) scaleX(1);
+  }
+  .v2-nav .v2-drop-menu a:hover {
+    background: #FFFFFF;
+    color: #0F1636;
+  }
+}
+@media (max-width:1240px) {
+  .v2-nav > a:not(.v2-btn):not(.v2-tel)::after,
+  .v2-nav .v2-drop > button::before {
+    left: 0;
+    right: auto;
+    width: 24px;
+  }
+  .v2-nav .v2-drop-menu { border-color: transparent; }
+  .v2-nav .v2-drop-menu a { padding-left: 34px; }
+  .v2-nav .v2-drop-menu a:focus-visible {
+    color: #FFFFFF;
+    background: transparent;
+  }
+}
+@media (prefers-reduced-motion:reduce) {
+  .v2-nav > a:not(.v2-btn):not(.v2-tel)::after,
+  .v2-nav .v2-drop > button::before,
+  .v2-nav .v2-drop-menu a,
+  .v2-nav .v2-drop-menu a::before {
+    transition: none;
+  }
+}
