@@ -2243,3 +2243,33 @@ body.v2.v2-home-page .v2-home-growth .v2-solution .v2-lever-head .v2-card-ico { 
     margin-bottom: 10px;
   }
 }
+
+/* Cabinet esthétique : indicateur explicite d'ouverture des cartes sur mobile. */
+@media (max-width: 700px) {
+  body.v2.v2-medicine-page #systemes-cabinet .sector-card-accordion > summary {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+  }
+  body.v2.v2-medicine-page #systemes-cabinet .sector-card-accordion > summary > .sector-editorial-heading {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  body.v2.v2-medicine-page #systemes-cabinet .sector-card-accordion > summary::after {
+    content: "";
+    display: block;
+    flex: 0 0 9px;
+    width: 9px;
+    height: 9px;
+    border-right: 2px solid #c6a477;
+    border-bottom: 2px solid #c6a477;
+    transform: rotate(45deg);
+    transition: transform .2s ease;
+    margin: 0 4px 5px 0;
+  }
+  body.v2.v2-medicine-page #systemes-cabinet .sector-card-accordion[open] > summary::after {
+    transform: rotate(225deg);
+    margin-bottom: 0;
+  }
+}
