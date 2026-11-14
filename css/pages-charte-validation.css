@@ -297,3 +297,16 @@ html body.v2.v2-resources-page .v2-cta .v2-h2 {
   margin-right: auto !important;
   text-align: center !important;
 }
+
+/* Ressources — cartes d'articles : léger mouvement au survol, comme sur TPE-PME. */
+@media (prefers-reduced-motion: no-preference) {
+  html body.v2.v2-resources-page #contenu .resource-card {
+    transition: transform .2s ease, box-shadow .2s ease !important;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    html body.v2.v2-resources-page #contenu .resource-card:hover {
+      transform: translateY(-4px) !important;
+      box-shadow: 0 8px 20px rgba(15,22,54,.1) !important;
+    }
+  }
+}
