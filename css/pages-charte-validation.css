@@ -219,7 +219,7 @@
     display: flex !important;
     align-items: center !important;
     gap: 12px !important;
-    margin: 24px 0 0 !important;
+    margin: 40px 0 0 !important;
     max-width: none !important;
     text-align: left !important;
   }
@@ -254,6 +254,32 @@
     html body.v2.v2-pme-restored #contenu :is(.sector-editorial-chapter,.card,.related-resource-card,.assistant-schema .node) {
       transition: none !important;
       transform: none !important;
+    }
+  }
+}
+
+/* Votre quotidien : liseré champagne glissant au bas de chaque carte. */
+@layer typography {
+  html body.v2.v2-pme-restored #contenu section:has(.pme-daily-title) .sector-editorial-chapter {
+    position: relative !important;
+    overflow: hidden;
+  }
+  html body.v2.v2-pme-restored #contenu section:has(.pme-daily-title) .sector-editorial-chapter::after {
+    content: "" !important;
+    position: absolute;
+    inset: auto auto 0 0;
+    width: 35%;
+    height: 3px;
+    background: #c6a477 !important;
+    pointer-events: none;
+    transform: translateX(0);
+  }
+  @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    html body.v2.v2-pme-restored #contenu section:has(.pme-daily-title) .sector-editorial-chapter::after {
+      transition: transform .45s ease;
+    }
+    html body.v2.v2-pme-restored #contenu section:has(.pme-daily-title) .sector-editorial-chapter:hover::after {
+      transform: translateX(185.714%);
     }
   }
 }
