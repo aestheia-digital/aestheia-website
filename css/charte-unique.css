@@ -2210,3 +2210,36 @@ body.v2.v2-home-page .v2-home-growth .v2-solution .v2-lever-head {
   gap: 14px;
 }
 body.v2.v2-home-page .v2-home-growth .v2-solution .v2-lever-head .v2-card-ico { flex: 0 0 auto; }
+
+
+/* Spa hôtelier — première carte : rythme vertical fluide sur petits écrans.
+   Hauteur intrinsèque, sans valeur fixe ni modification des autres cartes. */
+@media (max-width: 767px) {
+  body.v2.v2-spa-page #systemes .v2-row--plain {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 22px;
+    padding: 26px 20px 28px;
+    min-height: 0;
+    height: auto;
+  }
+  body.v2.v2-spa-page #systemes .v2-row--plain h3 {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 0;
+    min-width: 0;
+  }
+  body.v2.v2-spa-page #systemes .v2-row--plain h3 .v2-card-ico {
+    flex: 0 0 34px;
+  }
+  body.v2.v2-spa-page #systemes .v2-row--plain p {
+    margin: 0;
+    min-width: 0;
+  }
+  body.v2.v2-spa-page #systemes .v2-row--plain p strong {
+    margin-bottom: 10px;
+  }
+}
