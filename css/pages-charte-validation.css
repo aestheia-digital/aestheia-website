@@ -290,3 +290,10 @@
     }
   }
 }
+
+/* Ressources — bandeau « Et si nous faisions le point… » : titre recentré. */
+html body.v2.v2-resources-page .v2-cta .v2-h2 {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+}
