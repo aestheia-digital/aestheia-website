@@ -2,8 +2,8 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8">
-    <script src="../js/theme.js"></script>
-    <link rel="preload" href="../assets/fonts/dm-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/dm-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/playfair-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Stratégie digitale, automatisation et IA pour TPE et PME | AesthéIA</title>
     <meta name="description" content="Consultante en stratégie digitale : visibilité en ligne, automatisations et agents IA pour les TPE, PME et réseaux multi-sites.">
@@ -21,13 +21,13 @@
     <meta name="twitter:description" content="Consultante en stratégie digitale : visibilité en ligne, automatisations et agents IA pour les TPE, PME et réseaux multi-sites.">
     <meta name="twitter:image" content="https://aestheia.fr/assets/images/partage/partage_pme.jpg?v=3">
     <link rel="icon" type="image/svg+xml" href="/assets/images/brand/favicon-a-champagne.svg?v=2">
-
-
-
-    <link rel="stylesheet" href="../css/styles.css?v=tablette-champagne-20261109">
-    <link rel="stylesheet" href="../css/pme-faq-day.css?v=20261003-tarifs-mobile">
-    <link rel="stylesheet" href="../css/consent-manager.css">
-    <link rel="stylesheet" href="../css/pmecourbes.css?v=20261001-methode2">
+    <link rel="stylesheet" href="/css/styles.css?v=20261113-pme-restore">
+    <link rel="stylesheet" href="/css/pme-faq-day.css?v=20261003-tarifs-mobile">
+    <link rel="stylesheet" href="/css/pmecourbes.css?v=20261001-methode2">
+    <link rel="stylesheet" href="/css/assistant-schema.css?v=20261005">
+    <link rel="stylesheet" href="/css/multi-agent-schema.css?v=20261005">
+    <link rel="stylesheet" href="/css/accueil-v2.css?v=20261112b">
+    <link rel="stylesheet" href="/css/consent-manager-base.css?v=20261112">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -45,6 +45,7 @@
             "@type": "FAQPage",
             "@id": "https://aestheia.fr/automatisation-pme/#faq",
             "mainEntity": [
+              {"@type":"Question","name":"Intervenez-vous à distance ou sur site ?","acceptedAnswer":{"@type":"Answer","text":"J’accompagne les entreprises à distance partout en France. Des interventions sur site sont possibles en Île-de-France, selon les besoins de la mission et les modalités convenues ensemble. Ailleurs en France, un déplacement ponctuel peut être envisagé pour vous rencontrer ou organiser une séance de travail."}},
               {"@type": "Question", "name": "Mon entreprise est-elle trop petite pour automatiser ?", "acceptedAnswer": {"@type": "Answer", "text": "Pas forcément. L’automatisation peut commencer par un seul processus simple : une demande entrante à qualifier, une relance à ne pas oublier, un devis à préparer ou un reporting à simplifier. L’objectif n’est pas de transformer toute l’entreprise, mais d’identifier les tâches répétitives qui font perdre du temps ou des opportunités."}},
               {"@type": "Question", "name": "Faut-il changer tous mes logiciels ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. La première étape consiste généralement à partir des outils déjà utilisés : email, agenda, CRM, tableur, formulaire, outil de facturation ou logiciel métier. Lorsque c’est possible, AesthéIA construit des systèmes autour de l’existant pour éviter d’ajouter une complexité inutile."}},
               {"@type": "Question", "name": "Une meilleure visibilité suffit-elle à générer plus de clients ?", "acceptedAnswer": {"@type": "Answer", "text": "Non. La visibilité permet d’être trouvé, mais elle ne garantit pas que les demandes soient bien traitées. Pour transformer cette visibilité en clients, il faut aussi qualifier les demandes, organiser les relances, suivre les devis et garder une vision claire du parcours commercial. C’est là que l’automatisation devient utile."}},
@@ -70,47 +71,40 @@
         ]
       }
     </script>
-      <link rel="stylesheet" href="../css/cta-global.css?v=20260920-cta-lock">
-      <link rel="stylesheet" href="../css/dark-no-purple-halos.css?v=20260920-sector-final-blue-halo">
-    <link rel="stylesheet" href="../css/night-depth-desktop-cards.css?v=20261003">
-    <link rel="stylesheet" href="../css/assistant-schema.css?v=20261005">
-    <link rel="stylesheet" href="../css/multi-agent-schema.css?v=20261005">
-    <link rel="stylesheet" href="/css/related-resources-premium.css?v=20261111-2">
-      <link rel="stylesheet" href="/css/faq-instituts-refinement.css?v=20261111">
-</head>
-  <body class="pme-page">
-    <a class="skip-link" href="#contenu">Aller au contenu</a>
-    <header class="site-header">
-      <div class="nav-shell">
-        <a class="brand-link" href="/" aria-label="Accueil AesthéIA">
-          <span class="brand-name"><span class="brand-core">Aesthé</span><span class="brand-ia">IA</span></span>
-        </a>
-        <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navigation">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <nav class="main-nav" id="navigation" aria-label="Navigation principale">
+      <link rel="stylesheet" href="/css/charte-unique.css?v=20261113-pme-priorites-navy">
+    <link rel="stylesheet" href="/css/pages-charte-validation.css?v=20261113-1">
+  </head>
+  <body class="v2 v2-sector-page v2-pme-restored v2-charte-page">
+    <a class="v2-skip" href="#contenu">Aller au contenu</a>
+    <header class="v2-header">
+      <div class="v2-wrap v2-header-in">
+        <a class="v2-logo" href="/" aria-label="Accueil AesthéIA"><b>A</b>esthéIA</a>
+        <a class="v2-tel v2-tel--bar" href="tel:+33642789057" aria-label="Appeler le 06 42 78 90 57"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg><span>06 42 78 90 57</span></a>
+        <button class="v2-burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navigation"><span></span><span></span><span></span></button>
+        <nav class="v2-nav" id="navigation" aria-label="Navigation principale">
           <a href="/">Accueil</a>
-          <a href="/#services">Services</a>
-          <div class="nav-dropdown">
-            <button class="nav-dropdown-toggle" type="button" aria-expanded="false">Secteurs</button>
-            <div class="nav-dropdown-menu">
-              <a href="/medecine-esthetique/">Médecine et chirurgie esthétiques</a>
-              <a href="/spa-hotelier/">Spas urbains & hôtellerie</a>
-              <a href="/thalasso/">Thalasso</a>
-              <a href="/instituts-independantes/">Instituts & indépendantes</a>
-              <a href="/automatisation-pme/">Automatisation pour TPE et PME</a>
+          <div class="v2-drop">
+            <button type="button" aria-expanded="false" class="is-current">Secteurs</button>
+            <div class="v2-drop-menu">
+              <a href="/medecine-esthetique/">Médecins et chirurgiens esthétiques</a>
+              <a href="/spa-hotelier/">Spas hôteliers et urbains</a>
+              <a href="/thalasso/">Thalassothérapie et centres aquatiques</a>
+              <a href="/instituts-independantes/">Instituts de beauté et indépendants</a>
+              <a href="/automatisation-pme/">TPE et PME</a>
             </div>
           </div>
           <a href="/ressources/">Ressources</a>
-<a href="/contact">Contact</a>
+          <a href="/contact">Contact</a>
+          <a class="v2-tel v2-tel--nav" href="tel:+33642789057"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg><span>06 42 78 90 57</span></a>
+          <a class="v2-btn v2-btn--gold" href="https://calendar.app.google/qx6dT7WJfTrsFe6j9" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v4" /> <path d="M16 2v4" /> <rect width="18" height="18" x="3" y="4" rx="2" /> <path d="M3 10h18" /></svg>Prendre rendez-vous</a>
         </nav>
       </div>
     </header>
 
     <main id="contenu" class="pme-page">
       <section class="hero page-hero pme-hero" style="--hero-image: url('../assets/images/metiers/agents-ia-automatisation-tpe-pme.webp');">
+        <picture class="home-hero-media"><img src="/assets/images/metiers/agents-ia-automatisation-tpe-pme.webp" alt="" width="1672" height="941" fetchpriority="high" loading="eager"></picture>
+        <div class="home-hero-veil" aria-hidden="true"></div>
         <div class="hero-inner">
           <div class="hero-content">
             <p class="eyebrow">TPE, PME</p>
@@ -125,7 +119,18 @@
         </div>
       </section>
 
-      <section class="section">
+      <div class="v2-benefits charte-white" role="region" aria-label="Ce que vous y gagnez">
+        <div class="v2-wrap">
+          <ul>
+            <li><svg style="stroke:#c6a477" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg><span>Des devis et relances <strong>mieux suivis</strong></span></li>
+            <li><svg style="stroke:#c6a477" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" /> <circle cx="12" cy="12" r="3" /></svg><span>Moins de tâches <strong>administratives</strong></span></li>
+            <li><svg style="stroke:#c6a477" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="19" r="3" /> <path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15" /> <circle cx="18" cy="5" r="3" /></svg><span>Des informations <strong>centralisées</strong></span></li>
+            <li><svg style="stroke:#c6a477" viewBox="0 0 24 24" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17" /> <polyline points="16 7 22 7 22 13" /></svg><span>Un pilotage <strong>plus simple</strong></span></li>
+          </ul>
+        </div>
+      </div>
+
+      <section class="section charte-navy">
         <div class="container">
           <p class="eyebrow">Votre quotidien</p>
           <h2 class="pme-daily-title">Ces situations vous parlent <span class="nowrap">peut-être</span></h2>
@@ -150,7 +155,7 @@
           </div>
         </div>
       </section>
-      <section class="section section-soft section-aqua">
+      <section class="section section-soft section-aqua charte-white">
         <div class="container">
           <p class="eyebrow">Ce que je mets en place</p>
           <h2>Six systèmes concrets pour automatiser et intégrer l’IA</h2>
@@ -161,15 +166,15 @@
               <div class="sector-editorial-content"><p>Les demandes reçues par formulaire, par e-mail ou par téléphone sont centralisées au même endroit. Le système en extrait les informations utiles, prépare une proposition à partir de vos modèles et programme les relances de devis au bon moment. Rien ne part sans votre validation.</p><p><strong>Exemple :</strong> pour une société de services ou un artisan, chaque demande de devis arrivée le soir est prête à être relue le lendemain matin.</p><p class="sector-editorial-benefit"><strong>Ce que vous y gagnez :</strong> des réponses plus rapides et moins d’opportunités perdues.</p></div>
             </details>
             <details class="sector-editorial-chapter sector-card-accordion">
-              <summary><div class="sector-editorial-heading"><h3 class="title-with-icon card-title card-title-long"><img class="title-pictogram" src="../assets/icons/complete-coordination.svg" alt="" aria-hidden="true"><span>Reporting et KPI automatisés, chaque semaine et chaque mois</span></h3></div></summary>
+              <summary><div class="sector-editorial-heading"><h3 class="title-with-icon card-title card-title-long"><svg class="title-pictogram" viewBox="0 0 24 24" fill="none" stroke="#c6a477" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18M7 17v-5M12 17V8M17 17v-8M6 8l5-4 5 2 5-4"/></svg><span>Reporting et KPI automatisés, chaque semaine et chaque mois</span></h3></div></summary>
               <div class="sector-editorial-content"><p>Chaque semaine, chaque mois, les mêmes chiffres à extraire, copier et mettre en forme. Le système collecte les données de vos outils, services ou sites, calcule vos indicateurs et prépare vos tableaux de bord et vos rapports hebdomadaires ou mensuels. Vous relisez, vous commentez, vous validez avant diffusion.</p><p><strong>Exemple :</strong> une responsable qui reconstruisait ses KPI à la main chaque lundi et chaque fin de mois reçoit désormais un rapport prêt à valider.</p><p class="sector-editorial-benefit"><strong>Ce que vous y gagnez :</strong> des heures de reporting récupérées chaque mois et des chiffres présentés toujours de la même façon.</p></div>
             </details>
             <details class="sector-editorial-chapter sector-card-accordion">
-              <summary><div class="sector-editorial-heading"><h3 class="title-with-icon card-title card-title-long"><img class="title-pictogram" src="../assets/icons/acquisition-target.svg" alt="" aria-hidden="true"><span>Un assistant IA connecté à vos documents</span></h3></div></summary>
+              <summary><div class="sector-editorial-heading"><h3 class="title-with-icon card-title card-title-long"><svg class="title-pictogram" viewBox="0 0 24 24" fill="none" stroke="#c6a477" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7M13 3l5 5h-5V3M7 8h2M7 12h3"/><circle cx="16" cy="15" r="4"/><path d="m19 18 3 3"/></svg><span>Un assistant IA connecté à vos documents</span></h3></div></summary>
               <div class="sector-editorial-content"><p>Vos contrats, dossiers clients, fournisseurs et historiques sont dispersés dans plusieurs outils ?</p><p>AesthéIA vous accompagne dans la mise en place de solutions permettant de retrouver et de rassembler les informations essentielles à votre activité.</p><p>Préparation de rendez-vous, suivi des échéances, rappels et accès aux documents : moins de recherches manuelles, plus de temps pour vos décisions.</p><p>Vos équipes posent leurs questions en langage courant : quelle procédure appliquer, quel tarif proposer, quelle clause s’applique. L’assistant cherche la réponse dans vos propres documents (procédures internes, grilles tarifaires, conditions générales, fiches produits), et uniquement dans ceux-là, puis indique sa source. S’il ne trouve pas, il le dit au lieu d’inventer.</p><p><strong>Exemple :</strong> dans un réseau de plusieurs établissements, un nouveau collaborateur trouve seul la procédure propre à son site, sans mobiliser son responsable.</p><p class="sector-editorial-benefit"><strong>Ce que vous y gagnez :</strong> une information fiable en quelques secondes et des nouveaux arrivants autonomes plus vite.</p></div>
             </details>
             <details class="sector-editorial-chapter sector-card-accordion">
-              <summary><div class="sector-editorial-heading"><h3 class="title-with-icon card-title card-title-long"><img class="title-pictogram" src="../assets/icons/automation-network.svg" alt="" aria-hidden="true"><span>Des agents IA qui préparent, vous validez</span></h3></div></summary>
+              <summary><div class="sector-editorial-heading"><h3 class="title-with-icon card-title card-title-long"><img class="title-pictogram" src="../assets/icons/agent-robot.svg" alt="" aria-hidden="true"><span>Des agents IA qui préparent, vous validez</span></h3></div></summary>
               <div class="sector-editorial-content"><p>Un agent IA enchaîne plusieurs actions vers un objectif : trier les demandes entrantes, compléter une fiche client dans votre CRM, rédiger une première réponse, préparer un récapitulatif avant un rendez-vous. Ses accès sont limités à ce dont il a besoin et chaque action sensible passe par une validation humaine.</p><p><strong>Exemple :</strong> dans une agence immobilière, l’agent classe les demandes par type de bien et par budget, puis prépare une réponse que le conseiller relit avant envoi.</p><p class="sector-editorial-benefit"><strong>Ce que vous y gagnez :</strong> le travail préparatoire est fait, la décision reste la vôtre.</p></div>
             </details>
             <details class="sector-editorial-chapter sector-card-accordion">
@@ -177,7 +182,7 @@
               <div class="sector-editorial-content"><p>Confirmations, rappels avant le rendez-vous, gestion des annulations et des listes d’attente : l’automatisation de la prise de rendez-vous réduit les créneaux perdus. Dans les structures multi-sites, les plannings sont consolidés et les absences signalées plus tôt.</p><p>Un agenda qui se remplit à toute heure, week-end compris ; des relances clients automatiques ; des documents générés à la demande. Votre fichier clients vous appartient.</p><p><strong>Exemple :</strong> un organisme de formation envoie automatiquement convocations, rappels et documents à chaque participant.</p><p class="sector-editorial-benefit"><strong>Ce que vous y gagnez :</strong> moins de rendez-vous manqués et des plannings tenus sans y passer vos journées.</p></div>
             </details>
             <details class="sector-editorial-chapter sector-card-accordion">
-              <summary><div class="sector-editorial-heading"><h3 class="title-with-icon card-title card-title-long"><img class="title-pictogram" src="../assets/icons/complete-coordination.svg" alt="" aria-hidden="true"><span>Comptes rendus de réunion structurés</span></h3></div></summary>
+              <summary><div class="sector-editorial-heading"><h3 class="title-with-icon card-title card-title-long"><img class="title-pictogram" src="../assets/icons/folder-open.svg" alt="" aria-hidden="true"><span>Comptes rendus de réunion structurés</span></h3></div></summary>
               <div class="sector-editorial-content"><p>Les échanges autorisés (réunion d’équipe, point client, comité de direction) sont transformés en synthèses claires : décisions prises, tâches, responsables, échéances. Les tâches peuvent être envoyées directement dans votre outil de suivi.</p><p><strong>Exemple :</strong> après un séminaire réunissant plusieurs services, chacun reçoit la liste de ses actions le jour même.</p><p class="sector-editorial-benefit"><strong>Ce que vous y gagnez :</strong> moins de temps à chercher qui fait quoi, et des décisions réellement suivies.</p></div>
             </details>
           </div>
@@ -185,7 +190,7 @@
         </div>
       </section>
 
-      <section class="section section-mist">
+      <section class="section section-mist charte-navy">
         <div class="container">
           <p class="eyebrow">Systèmes multi-agents</p>
           <h2>Plusieurs agents IA spécialisés, un seul système de pilotage</h2>
@@ -240,7 +245,7 @@
         </div>
       </section>
 
-      <section class="section section-soft">
+      <section class="section section-soft charte-white">
         <div class="container">
           <p class="eyebrow">Deux façons de travailler ensemble</p>
           <h2>Une intervention adaptée à la taille de votre structure</h2>
@@ -257,34 +262,16 @@
           </div>
         </div>
       </section>
-      <section class="section sector-method-section">
-        <div class="container">
-          <p class="eyebrow">La méthode</p>
-          <h2>Une approche progressive, avec validation humaine</h2>
-              <ol class="sector-method-grid sector-method-grid-five">
-              <li class="card sector-method-card"><h3 class="title-with-icon card-title-with-icon card-title card-title-long"><span><strong>Comprendre votre fonctionnement réel</strong></span></h3><p class="sector-method-detail">Vos outils, vos processus, vos points de friction.</p><span class="sector-method-number" aria-hidden="true">01</span></li>
-              <li class="card sector-method-card"><h3 class="title-with-icon card-title-with-icon card-title card-title-long"><span><strong>Identifier les tâches à fort impact</strong></span></h3><p class="sector-method-detail">Celles qui coûtent le plus de temps ou font perdre des opportunités.</p><span class="sector-method-number" aria-hidden="true">02</span></li>
-              <li class="card sector-method-card"><h3 class="title-with-icon card-title-with-icon card-title card-title-long"><span><strong>Concevoir un système simple et maintenable</strong></span></h3><p class="sector-method-detail">Avec les outils que vous utilisez déjà quand c’est possible.</p><span class="sector-method-number" aria-hidden="true">03</span></li>
-              <li class="card sector-method-card"><h3 class="title-with-icon card-title-with-icon card-title card-title-long"><span><strong>Garder la main sur l’essentiel</strong></span></h3><p class="sector-method-detail">Communication client, devis, décisions.</p><span class="sector-method-number" aria-hidden="true">04</span></li>
-              <li class="card sector-method-card"><h3 class="title-with-icon card-title-with-icon card-title"><span><strong>Mesurer</strong></span></h3><p class="sector-method-detail">Heures récupérées, délais de réponse, suivi effectué.</p><span class="sector-method-number" aria-hidden="true">05</span></li>
-              </ol>
-              <p class="sector-method-conclusion">L’automatisation soutient votre activité. Elle ne remplace pas votre jugement.</p>
-          <h3>Vos données restent sous contrôle</h3>
-          <p class="sector-audit-intro pme-reading-width">Hébergement en France, hébergement certifié HDS dès qu’il s’agit de données de santé, accès limités au strict nécessaire et aucun envoi automatisé sans validation humaine. L’automatisation libère du temps à vos équipes, elle ne les remplace pas dans la relation avec vos clients.</p>
-        </div>
-      </section>
-      <section class="section section-mist section-aqua">
-        <div class="container">
-          <p class="eyebrow">Tarifs</p>
-          <h2>Combien coûte une première automatisation</h2>
-          <p class="pme-tariff-reading">Le diagnostic de vos processus démarre à 800 € HT, intégré au tarif global si un contrat de mise en œuvre est signé à sa suite. Une mission est sur devis, après définition de vos besoins, des outils à connecter et du niveau de validation souhaité. Le premier échange de 30 minutes reste gratuit. Les agents IA et les systèmes multi-agents, notamment pour les structures multi-sites, sont chiffrés sur devis après cadrage.</p>
-        </div>
-      </section>
-
-      <section class="section faq-section">
+      <section class="section faq-section charte-navy">
         <div class="container">
           <h2>Questions fréquentes</h2>
           <div class="faq-accordion">
+            <details class="faq-accordion-item">
+              <summary>Intervenez-vous à distance ou sur site ?</summary>
+              <div class="faq-answer">
+                <p>J’accompagne les entreprises à distance partout en France. Des interventions sur site sont possibles en Île-de-France, selon les besoins de la mission et les modalités convenues ensemble. Ailleurs en France, un déplacement ponctuel peut être envisagé pour vous rencontrer ou organiser une séance de travail.</p>
+              </div>
+            </details>
             <details class="faq-accordion-item">
               <summary>Mon entreprise est-elle trop petite pour automatiser ?</summary>
               <div class="faq-answer">
@@ -361,7 +348,7 @@
         </div>
       </section>
 
-      <section class="section section-mist related-resources" aria-labelledby="ressources-automatisation-pme">
+      <section class="section section-mist related-resources charte-white" aria-labelledby="ressources-automatisation-pme">
         <div class="container">
           <p class="eyebrow">Conseils &amp; ressources</p>
           <h2 id="ressources-automatisation-pme">Pour aller plus loin</h2>
@@ -377,13 +364,7 @@
         </div>
       </section>
 
-      <section class="section section-soft">
-        <div class="container">
-          <p>Ma méthode est née dans un secteur où chaque échange client compte : plus de vingt ans dans l’esthétique premium, les spas et la médecine esthétique. C’est cette exigence que j’applique à votre entreprise, quel que soit votre métier.</p>
-        </div>
-      </section>
-
-      <section class="section conversion-band">
+      <section class="section conversion-band charte-navy">
         <div class="container conversion-inner">
           <div>
             <p class="eyebrow">Premier pas</p>
@@ -398,28 +379,78 @@
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="container">
-        <div class="footer-top">
-          <div class="footer-identity">
-            <a class="footer-logo" href="/" aria-label="Accueil AesthéIA"><span class="brand-core">Aesthé</span><span class="brand-ia">IA</span></a>
-            <p class="footer-tagline">Le digital et l'IA au service de votre développement.</p>
+    <footer class="v2-footer">
+      <div class="v2-wrap">
+        <div class="v2-footer-top">
+          <div>
+            <a class="v2-logo" href="/" aria-label="Accueil AesthéIA"><b>A</b>esthéIA</a>
+            <p class="v2-footer-tag">Stratégie digitale, IA et automatisation pour l’esthétique et le wellness.</p>
           </div>
-          <div class="footer-icons" aria-label="Contacter et suivre AesthéIA"><a href="https://www.linkedin.com/in/magalie-stankovic/" aria-label="LinkedIn de Magalie Stankovic" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor" stroke="none"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a><a href="https://share.google/1qsqoiA7MmCKgN2aT" aria-label="Fiche Google d’AesthéIA" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor" stroke="none"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg></a><a href="mailto:contact@aestheia.fr" aria-label="Envoyer un e-mail à AesthéIA"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 5 10 8L22 5"/></svg></a><a href="tel:+33642789057" aria-label="Appeler AesthéIA"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h3l2 5-3 2a15 15 0 0 0 6 6l2-3 5 2v3a3 3 0 0 1-3 3A18 18 0 0 1 3 6a3 3 0 0 1 3-3z"/></svg></a></div>
+          <div>
+            <h3>Secteurs</h3>
+            <ul>
+              <li><a href="/medecine-esthetique/">Médecins et chirurgiens esthétiques</a></li>
+              <li><a href="/spa-hotelier/">Spas hôteliers et urbains</a></li>
+              <li><a href="/thalasso/">Thalassothérapie et centres aquatiques</a></li>
+              <li><a href="/instituts-independantes/">Instituts de beauté et indépendants</a></li>
+              <li><a href="/automatisation-pme/">TPE et PME</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Contact</h3>
+            <ul>
+              <li>6 rue d’Armaillé, 75017 Paris</li>
+              <li>Accueil sur rendez-vous</li>
+              <li><a href="mailto:contact@aestheia.fr">contact@aestheia.fr</a></li>
+              <li><a href="tel:+33642789057">06 42 78 90 57</a></li>
+            </ul>
+            <div class="v2-social" aria-label="Suivre AesthéIA">
+              <a href="https://www.linkedin.com/in/magalie-stankovic/" aria-label="LinkedIn de Magalie Stankovic" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+              <a href="https://share.google/1qsqoiA7MmCKgN2aT" aria-label="Fiche Google d’AesthéIA" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/></svg></a>
+            </div>
+          </div>
         </div>
-        <div class="footer-bottom">
-          <p class="footer-copyright">© 2026 AesthéIA Tous droits réservés</p>
-          <nav class="footer-legal" aria-label="Informations légales">
+        <div class="v2-footer-bottom">
+          <p>© 2026 AesthéIA Tous droits réservés</p>
+          <nav aria-label="Informations légales">
+            <a href="/ressources/">Ressources</a>
             <a href="/mentions-legales">Mentions légales</a>
             <a href="/politique-confidentialite">Politique de confidentialité</a>
-            <button class="footer-cookie-button" type="button" data-manage-cookies>Gérer mes cookies</button>
+            <a href="/conditions-utilisation">Conditions d’utilisation</a>
+            <button type="button" data-manage-cookies>Gérer mes cookies</button>
           </nav>
         </div>
       </div>
     </footer>
-    <script src="../js/consent-manager.js"></script>
-    <script src="../js/main.js?v=header-type-20260924"></script>
-    <script src="../js/night-desktop-cards.js?v=20260920b"></script>
-    <script src="../js/assistant-schema.js?v=20261005" defer></script>
+
+    <script>
+      (function () {
+        var burger = document.querySelector('.v2-burger'), nav = document.getElementById('navigation');
+        burger.addEventListener('click', function () {
+          var open = nav.classList.toggle('is-open');
+          burger.setAttribute('aria-expanded', open);
+          burger.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+        });
+        nav.addEventListener('click', function (e) { if (e.target.closest('a')) nav.classList.remove('is-open'); });
+        var drop = document.querySelector('.v2-drop'), dropBtn = drop.querySelector('button');
+        dropBtn.addEventListener('click', function () { dropBtn.setAttribute('aria-expanded', drop.classList.toggle('is-open')); });
+        document.addEventListener('click', function (e) { if (!drop.contains(e.target)) { drop.classList.remove('is-open'); dropBtn.setAttribute('aria-expanded', 'false'); } });
+      })();
+    </script>
+    <script>
+      (function () {
+        var burger = document.querySelector('.v2-burger'), nav = document.getElementById('navigation');
+        burger.addEventListener('click', function () {
+          var open = nav.classList.toggle('is-open');
+          burger.setAttribute('aria-expanded', open);
+          burger.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+        });
+        nav.addEventListener('click', function (e) { if (e.target.closest('a')) nav.classList.remove('is-open'); });
+        var drop = document.querySelector('.v2-drop'), dropBtn = drop.querySelector('button');
+        dropBtn.addEventListener('click', function () { dropBtn.setAttribute('aria-expanded', drop.classList.toggle('is-open')); });
+        document.addEventListener('click', function (e) { if (!drop.contains(e.target)) { drop.classList.remove('is-open'); dropBtn.setAttribute('aria-expanded', 'false'); } });
+      })();
+    </script>
+    <script src="/js/consent-manager.js"></script>
   </body>
 </html>

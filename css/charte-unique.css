@@ -1,0 +1,2212 @@
+/* Charte AesthéIA unique — couche commune de validation.
+   Les pages v2 gardent leur composition; les pages historiques conservent leur contenu. */
+html { color-scheme: light; }
+.v2-hero--sector {
+  background: linear-gradient(115deg, #0f1636 0%, #1f2b4f 100%);
+}
+.v2-hero--sector .v2-hero-in { padding-block: clamp(48px, 5vw, 74px); }
+.v2-hero--sector .v2-hero-text { max-width: 790px; }
+.v2-hero--sector .v2-hero-lead { max-width: 63ch; }
+.v2-hero--sector .v2-gold { color: #c6a477; }
+.v2-hero--sector .v2-hero-actions { margin-top: 26px; }
+.v2-hero--sector .v2-btn--ghost { background: transparent; color: white; border-color: rgba(255,255,255,.75); }
+.v2-hero--sector .v2-btn--ghost:hover { background: rgba(255,255,255,.1); }
+.v2-hero--sector .v2-btn--gold { color: #0f1636; }
+/* Aucun décor photographique de fond sur les pages sectorielles. */
+.v2-hero--sector > .v2-hero-media { display: none !important; }
+/* Pages historiques : palette alignée sans modifier leur architecture métier. */
+html[data-theme="light"] body.v2-legacy {
+  background: #fff !important;
+  color: #1f2b4f;
+  font-family: "DM Sans", sans-serif;
+}
+html[data-theme="light"] body.v2-legacy #contenu { background: #fff; }
+body.v2-legacy #contenu :is(h1,h2,h3) { font-family: "Playfair Display", Georgia, serif; font-weight: 400; }
+body.v2-legacy #contenu :is(.eyebrow,.section-kicker,.kicker,.overline) {
+  color: #a8854f !important;
+  -webkit-text-fill-color: #a8854f !important;
+}
+body.v2-legacy #contenu :is(.section-mist,.section-soft,.soft-section) {
+  background-color: #f2f5fc !important;
+}
+body.v2-legacy #contenu :is(.card,.resource-card,.contact-option) {
+  border-color: #e9d8b8;
+}
+body.v2-legacy #contenu :is(a.text-link,.text-link) { color: #8f6f3e; }
+body.v2-legacy #contenu :is(a.btn,.btn-primary,.button-primary) {
+  box-shadow: none;
+}
+body.v2-legacy #contenu a:focus-visible,
+body.v2-legacy .v2-header a:focus-visible,
+body.v2-legacy .v2-footer a:focus-visible { outline: 2px solid #c6a477; outline-offset: 3px; }
+body.v2-legacy .v2-header,
+body.v2-legacy .v2-footer { background: #0f1636; }
+body.v2-legacy .v2-cta { background: linear-gradient(120deg,#0f1636,#1f2b4f); }
+/* L'ancien bandeau de conversion, remplacé par le CTA harmonisé, est masqué
+   uniquement sur les pages historiques si présent. */
+body.v2-legacy #contenu > .conversion-band,
+body.v2-legacy #contenu > .section.conversion-band { display: none !important; }
+@media (max-width:720px) {
+  .v2-hero--sector .v2-hero-in { padding-block: 48px 56px; }
+  .v2-hero--sector .v2-hero-text { max-width: 100%; }
+}
+
+
+/* Accueil restauré : conserver l'ordre et les cartes métier de la version d'origine. */
+body.v2 .v2-home-growth { background: #fff; }
+body.v2 .v2-home-growth .v2-families { margin-top: 32px; }
+body.v2 .v2-home-growth .v2-family {
+  display: block;
+  padding-block: 32px 38px;
+  border-top: 1px solid #e9d8b8;
+}
+body.v2 .v2-home-growth .v2-family-head {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  margin-bottom: 26px;
+}
+body.v2 .v2-home-growth .v2-family-head h3 {
+  font-family: var(--display);
+  font-size: clamp(25px,3vw,34px);
+  line-height: 1.2;
+  order: -1;
+}
+body.v2 .v2-home-growth .v2-family-label {
+  margin-bottom: 0;
+  color: #a8854f;
+}
+body.v2 .v2-home-growth .v2-family-list {
+  margin-top: 0;
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 18px;
+}
+body.v2 .v2-home-growth .v2-family-list--1 {
+  grid-template-columns: minmax(0,1fr);
+}
+body.v2 .v2-home-growth .v2-family-list--4 .v2-solution:nth-child(4) {
+  grid-column: 1 / -1;
+}
+body.v2 .v2-home-growth .v2-family-list .v2-solution {
+  padding: 23px 24px 25px;
+  background: #fff;
+  border: 1px solid #e9d8b8;
+  border-top: 2px solid #c6a477;
+  color: #3b4a73;
+}
+body.v2 .v2-home-growth .v2-family-list .v2-solution h3 {
+  color: #1f2b4f;
+  font-size: 17.5px;
+}
+body.v2 .v2-home-growth .v2-family-list .v2-solution p {
+  color: #3b4a73;
+  font-size: 16px;
+}
+body.v2 .v2-home-growth .v2-family-list .v2-solution .v2-family-result {
+  color: #1f2b4f;
+}
+body.v2 .v2-home-growth .v2-family:last-child {
+  background: linear-gradient(120deg,#0f1636,#1f2b4f);
+  margin-top: 6px;
+  padding: 36px;
+  border-top: 2px solid #c6a477;
+}
+body.v2 .v2-home-growth .v2-family:last-child .v2-family-head h3 { color: #fff; }
+body.v2 .v2-home-growth .v2-family:last-child .v2-family-label { color: #e9d8b8; }
+body.v2 .v2-home-growth .v2-family-list--1 .v2-solution { max-width: none; }
+
+/* Secteurs : quatre cartes de référence (TPE-PME différée sur la page d'accueil). */
+body.v2 .v2-home-sectors .v2-sectors {
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 22px;
+}
+body.v2 .v2-home-sectors .v2-sector { border-bottom-color: #c6a477; }
+
+/* Contrôle humain sans les quatre étapes de méthodologie. */
+body.v2 .v2-home-controls {
+  color: #d5dcee;
+  background: linear-gradient(120deg,#0f1636,#1f2b4f);
+}
+body.v2 .v2-home-controls .v2-h2 { color: #fff; }
+body.v2 .v2-home-controls .v2-eyebrow { color: #c6a477; }
+body.v2 .v2-home-controls .v2-intro { color: #d5dcee; }
+body.v2 .v2-home-controls-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 20px;
+  margin-top: 36px;
+}
+body.v2 .v2-home-control {
+  border: 1px solid rgba(198,164,119,.6);
+  border-top: 2px solid #c6a477;
+  padding: 26px 28px;
+  background: #1f2b4f;
+}
+body.v2 .v2-home-control .v2-card-ico { stroke: #c6a477; }
+body.v2 .v2-home-control h3 {
+  font-family: var(--body);
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.35;
+  margin-top: 18px;
+  color: #fff;
+}
+body.v2 .v2-home-control p { color: #d5dcee; font-size: 16px; margin-top: 12px; }
+
+/* Audits conservés, aucune étiquette de prix. */
+body.v2 .v2-home-offers { background: #fff; }
+body.v2 .v2-home-offers .v2-lever {
+  background: #fff;
+  border: 1px solid #e9d8b8;
+  border-top: 2px solid #c6a477;
+}
+
+/* Restaurer le bloc Fondatrice et ses textes d'origine, sans liste d'établissements. */
+body.v2 .v2-home-founder { background: #fff; }
+body.v2 .v2-home-founder .v2-founder-name > span { color: #c6a477; }
+body.v2 .v2-home-founder .v2-founder-stat {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 22px;
+}
+body.v2 .v2-home-founder .v2-founder-stat strong {
+  display: block;
+  font-family: var(--display);
+  font-size: clamp(50px,5vw,78px);
+  font-weight: 400;
+  line-height: 1;
+  color: #a8854f;
+}
+body.v2 .v2-home-founder .v2-founder-stat span {
+  max-width: 28ch;
+  color: #1f2b4f;
+  font-size: 17px;
+  line-height: 1.45;
+}
+body.v2 .v2-home-founder .v2-sign strong { font-weight: 400; }
+
+/* Une plage bleu nuit assumée sur la page Spa, sans modifier les cartes et systèmes. */
+body.v2 .v2-section#systemes {
+  background: linear-gradient(125deg,#0f1636 0%,#1f2b4f 100%);
+  color: #d5dcee;
+}
+body.v2 .v2-section#systemes .v2-eyebrow { color: #c6a477; }
+body.v2 .v2-section#systemes .v2-h2 { color: #fff; }
+body.v2 .v2-section#systemes .v2-intro { color: #d5dcee; }
+body.v2 .v2-section#systemes .v2-rows {
+  color: #3b4a73;
+  background: #fff;
+  border-top-color: #c6a477;
+}
+body.v2 .v2-section#systemes .v2-rows .v2-row { color: #3b4a73; }
+body.v2 .v2-section#systemes .v2-rows h3 { color: #1f2b4f; }
+body.v2 .v2-section#systemes .v2-rows p { color: #3b4a73; }
+body.v2 .v2-section#systemes .v2-rows strong { color: #a8854f; }
+
+@media (max-width: 900px) {
+  body.v2 .v2-home-growth .v2-family-list { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  body.v2 .v2-home-growth .v2-family-list--4 .v2-solution:nth-child(4) { grid-column: auto; }
+  body.v2 .v2-home-growth .v2-family-list--1 { grid-template-columns: 1fr; }
+  body.v2 .v2-home-sectors .v2-sectors { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  body.v2 .v2-home-controls-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  body.v2 .v2-home-growth .v2-family-list,
+  body.v2 .v2-home-growth .v2-family-list--1,
+  body.v2 .v2-home-sectors .v2-sectors,
+  body.v2 .v2-home-controls-grid { grid-template-columns: 1fr; }
+  body.v2 .v2-home-growth .v2-family:last-child { padding: 24px 18px; }
+  body.v2 .v2-home-control { padding: 22px; }
+  body.v2 .v2-home-founder .v2-founder-stat { align-items: flex-start; }
+}
+
+/* Textes et liens des cartes secteurs restaurés depuis la version d'origine. */
+body.v2 .v2-home-sectors .v2-sector-body { gap: 12px; padding-inline: 10px; }
+body.v2 .v2-home-sectors .v2-sector-desc {
+  color: #3b4a73;
+  font-size: 15.5px;
+  line-height: 1.5;
+}
+body.v2 .v2-home-sectors .v2-sector-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  color: #a8854f;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: auto;
+  padding-top: 12px;
+}
+body.v2 .v2-home-sectors .v2-sector-link .v2-arrow { margin-top: 0; }
+
+
+/* Page Spa hôtelier et urbain — validation du 13/11/2026.
+   Palette strictement blanc / bleu nuit / champagne, sans beige ni dégradé.
+   Modification isolée : les autres pages, notamment l'accueil, restent inchangées. */
+body.v2.v2-spa-page {
+  --band: #ffffff;
+  --white: #ffffff;
+  --navy: #0f1636;
+  --navy-2: #1f2b4f;
+  --ink: #1f2b4f;
+  --gold: #c6a477;
+  --gold-deep: #a8854f;
+  --gold-soft: rgba(198, 164, 119, .45);
+  background: #ffffff;
+}
+body.v2.v2-spa-page :is(#enjeux, #agents-ia, #ressources),
+body.v2.v2-spa-page .v2-benefits {
+  background: #ffffff;
+  background-image: none;
+}
+body.v2.v2-spa-page :is(#enjeux, #agents-ia, #ressources) .v2-h2 {
+  color: #1f2b4f;
+}
+body.v2.v2-spa-page :is(#enjeux, #agents-ia, #ressources) .v2-eyebrow {
+  color: #a8854f;
+}
+
+/* Bandeaux bleu nuit franc, jamais bleu pâle ou beige. */
+body.v2.v2-spa-page :is(#systemes, #etablissements, #questions, .v2-cta) {
+  background: #0f1636 !important;
+  background-image: none !important;
+  color: #ffffff;
+}
+body.v2.v2-spa-page :is(#systemes, #etablissements, #questions, .v2-cta) .v2-h2 {
+  color: #ffffff;
+}
+body.v2.v2-spa-page :is(#systemes, #etablissements, #questions, .v2-cta) .v2-eyebrow {
+  color: #c6a477;
+}
+body.v2.v2-spa-page :is(#systemes, #etablissements, #questions, .v2-cta) .v2-intro,
+body.v2.v2-spa-page .v2-cta > .v2-wrap > p {
+  color: #ffffff;
+}
+
+/* Boutons champagne sans dégradé, de la première à la dernière page du spa. */
+body.v2.v2-spa-page .v2-btn--gold,
+body.v2.v2-spa-page .v2-btn--gold:hover,
+body.v2.v2-spa-page .v2-btn--gold:focus-visible {
+  background: #c6a477 !important;
+  background-image: none !important;
+  color: #0f1636 !important;
+  -webkit-text-fill-color: #0f1636 !important;
+  border-color: #c6a477;
+  box-shadow: none;
+  filter: none;
+}
+body.v2.v2-spa-page .v2-hero--sector {
+  background: #0f1636 !important;
+  background-image: none !important;
+}
+
+/* Systèmes conçus : chaque bande devient une carte blanche individuelle.
+   Le petit intervalle visible reprend le fond bleu nuit de la section. */
+body.v2.v2-spa-page #systemes .v2-rows {
+  display: grid;
+  gap: 12px;
+  margin-top: 34px;
+  padding: 0;
+  background: transparent !important;
+  border: 0;
+}
+body.v2.v2-spa-page #systemes .v2-row {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  background: #ffffff !important;
+  border: 1px solid rgba(198, 164, 119, .75);
+  border-top: 2px solid #c6a477;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: hidden;
+}
+body.v2.v2-spa-page #systemes .v2-row > summary,
+body.v2.v2-spa-page #systemes .v2-row > summary:hover,
+body.v2.v2-spa-page #systemes .v2-row--plain {
+  background: #ffffff !important;
+  color: #1f2b4f;
+}
+body.v2.v2-spa-page #systemes .v2-row :is(h3,p,li) {
+  color: #1f2b4f;
+}
+body.v2.v2-spa-page #systemes .v2-row strong {
+  color: #a8854f;
+}
+
+/* Agents : fond blanc pur, aucune carte ou légende crème. */
+body.v2.v2-spa-page #agents-ia .v2-agents,
+body.v2.v2-spa-page #agents-ia .v2-agent {
+  background: #ffffff !important;
+}
+body.v2.v2-spa-page #agents-ia .v2-note {
+  background: #0f1636 !important;
+  background-image: none !important;
+  color: #ffffff !important;
+  border-left: 3px solid #c6a477;
+  padding: 20px 24px;
+}
+body.v2.v2-spa-page #agents-ia .v2-note strong {
+  color: #ffffff !important;
+}
+body.v2.v2-spa-page #agents-ia .assistant-schema {
+  --color-mist: #ffffff;
+  --color-bg: #ffffff;
+  --color-border: rgba(198, 164, 119, .75);
+  --color-accent: #0f1636;
+}
+body.v2.v2-spa-page #agents-ia .assistant-schema :is(.node, .agent-role, .tasks) {
+  background-color: #ffffff !important;
+  color: #1f2b4f;
+}
+body.v2.v2-spa-page #agents-ia .assistant-schema .node.assistant,
+body.v2.v2-spa-page #agents-ia .assistant-schema .node.action {
+  background: #0f1636 !important;
+  border-color: #c6a477 !important;
+  color: #ffffff !important;
+}
+body.v2.v2-spa-page #agents-ia .assistant-schema :is(.node.assistant, .node.action) .sub {
+  color: #ffffff !important;
+}
+body.v2.v2-spa-page #agents-ia .assistant-schema .node.validation {
+  background: #ffffff !important;
+  color: #1f2b4f !important;
+}
+body.v2.v2-spa-page #agents-ia .assistant-schema .step::after {
+  color: #c6a477 !important;
+}
+body.v2.v2-spa-page #agents-ia .assistant-schema :is(.assistant-schema-line, .assistant-schema-head, .assistant-schema-frame rect) {
+  stroke: #c6a477 !important;
+}
+
+/* Établissements : bandeau nuit sous et autour de la photo. */
+body.v2.v2-spa-page #etablissements :is(.v2-venue, .v2-venues) {
+  background: transparent;
+}
+body.v2.v2-spa-page #etablissements :is(.v2-venue h3, .v2-venue p, .v2-crosslink) {
+  color: #ffffff !important;
+}
+body.v2.v2-spa-page #etablissements .v2-crosslink a {
+  color: #c6a477;
+}
+body.v2.v2-spa-page #etablissements .v2-solutions-photo img {
+  border: 1px solid rgba(198, 164, 119, .8);
+}
+
+/* Ressources : section blanche, deux vraies cartes bleu nuit. */
+body.v2.v2-spa-page #ressources .v2-resource,
+body.v2.v2-spa-page #ressources .v2-resource:hover,
+body.v2.v2-spa-page #ressources .v2-resource:focus-visible {
+  background: #0f1636 !important;
+  background-image: none !important;
+  border: 1px solid #c6a477;
+  border-top-width: 2px;
+  box-shadow: none;
+  color: #ffffff;
+}
+body.v2.v2-spa-page #ressources .v2-resource :is(h3,p,.v2-resource-link) {
+  color: #ffffff !important;
+}
+body.v2.v2-spa-page #ressources .v2-resource :is(.v2-resource-tag,.v2-arrow) {
+  color: #c6a477 !important;
+  stroke: #c6a477;
+}
+
+/* FAQ : bandeau nuit, questions et réponses blanches, flèches à droite champagne. */
+body.v2.v2-spa-page #questions .v2-faq {
+  background: transparent;
+  border-top-color: rgba(198, 164, 119, .6);
+}
+body.v2.v2-spa-page #questions .v2-faq details {
+  background: transparent;
+  border-bottom-color: rgba(198, 164, 119, .45);
+}
+body.v2.v2-spa-page #questions .v2-faq summary {
+  background: transparent;
+  width: 100%;
+}
+body.v2.v2-spa-page #questions .v2-faq :is(summary h3, .v2-answer) {
+  color: #ffffff !important;
+}
+body.v2.v2-spa-page #questions .v2-faq summary::after {
+  margin-left: auto;
+  border-color: #c6a477;
+}
+body.v2.v2-spa-page #questions .v2-faq details[open] summary::after {
+  border-color: #c6a477;
+}
+
+
+/* Priorité sur les règles historiques !important du schéma IA.
+   Elles étaient dans le layer "refonte" et réintroduisaient un pastel violet. */
+@layer refonte {
+  html[data-theme="light"] body.v2.v2-spa-page #agents-ia .assistant-schema .node,
+  html[data-theme="light"] body.v2.v2-spa-page #agents-ia .assistant-schema .node .sub {
+    background: #ffffff !important;
+    border-color: #c6a477 !important;
+    color: #1f2b4f !important;
+  }
+  html[data-theme="light"] body.v2.v2-spa-page #agents-ia .assistant-schema .node.assistant,
+  html[data-theme="light"] body.v2.v2-spa-page #agents-ia .assistant-schema .node.action {
+    background: #0f1636 !important;
+    border-color: #c6a477 !important;
+    color: #ffffff !important;
+  }
+  html[data-theme="light"] body.v2.v2-spa-page #agents-ia .assistant-schema .node.assistant .sub,
+  html[data-theme="light"] body.v2.v2-spa-page #agents-ia .assistant-schema .node.action .sub {
+    background: transparent !important;
+    color: #ffffff !important;
+  }
+  html[data-theme="light"] body.v2.v2-spa-page #agents-ia .assistant-schema :is(.tasks, .task-grid) {
+    background: #ffffff !important;
+    border-color: #c6a477 !important;
+  }
+  html[data-theme="light"] body.v2.v2-spa-page #agents-ia .assistant-schema .node.validation {
+    background: #ffffff !important;
+    color: #1f2b4f !important;
+  }
+  html[data-theme="light"] body.v2.v2-spa-page #agents-ia .assistant-schema :is(.assistant-schema-line, .assistant-schema-head, .assistant-schema-frame rect) {
+    stroke: #c6a477 !important;
+  }
+  html[data-theme="light"] body.v2.v2-spa-page #agents-ia .assistant-schema .step::after {
+    color: #c6a477 !important;
+  }
+}
+
+
+/* Photo d'origine rétablie uniquement dans le header Spa hôtelier.
+   Le cache-photo global des pages secteurs ne s'applique plus à ce header. */
+body.v2.v2-spa-page .v2-hero--sector > .v2-hero-media {
+  display: block !important;
+  position: absolute;
+  inset: 0 0 0 auto;
+  width: 67%;
+  overflow: hidden;
+  pointer-events: none;
+}
+body.v2.v2-spa-page .v2-hero--sector > .v2-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+body.v2.v2-spa-page .v2-hero--sector > .v2-hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #0f1636 0%, rgba(15,22,54,.90) 15%, rgba(15,22,54,.45) 42%, rgba(15,22,54,.08) 75%, transparent 100%);
+}
+body.v2.v2-spa-page .v2-hero--sector > .v2-hero-in { z-index: 1; }
+body.v2.v2-spa-page .v2-hero--sector .v2-hero-text { max-width: 650px; }
+@media (max-width: 900px) {
+  body.v2.v2-spa-page .v2-hero--sector > .v2-hero-media { inset: 0; width: 100%; }
+  body.v2.v2-spa-page .v2-hero--sector > .v2-hero-media::after {
+    background: linear-gradient(90deg, rgba(15,22,54,.94) 0%, rgba(15,22,54,.86) 42%, rgba(15,22,54,.58) 100%);
+  }
+}
+
+
+/* === Validation accueil : alternance blanc / bleu nuit et cartes d'origine ===
+   Scoped to .v2-home-page : ne modifie PAS le spa hôtelier validé. */
+body.v2 .v2-btn--gold,
+body.v2 .v2-btn--gold:hover,
+body.v2 .v2-btn--gold:focus-visible {
+  background: #C6A477 !important;
+  background-image: none !important;
+  border-color: #C6A477;
+  color: #0F1636 !important;
+  -webkit-text-fill-color: #0F1636 !important;
+  box-shadow: none;
+  filter: none;
+}
+/* Afficher davantage le mur d'eau, situé à droite du fichier source. */
+body.v2.v2-home-page .v2-hero-media img {
+  object-position: 82% center;
+}
+/* Croissance, secteurs, audits, FAQ : sections blanc pur. */
+body.v2.v2-home-page :is(.v2-home-growth,.v2-home-sectors,.v2-home-offers,#questions) {
+  background: #FFFFFF !important;
+  background-image: none !important;
+}
+body.v2.v2-home-page .v2-home-growth {
+  padding-bottom: 24px;
+}
+body.v2.v2-home-page .v2-home-growth .v2-families {
+  margin-top: 32px;
+}
+/* Pilotage des performances fait partie du même ensemble blanc.
+   Aucun encadrement marin, aucune seconde carte décorative. */
+body.v2.v2-home-page .v2-home-growth .v2-family:last-child {
+  margin: 0;
+  padding: 32px 0 0;
+  background: #FFFFFF !important;
+  background-image: none !important;
+  border: 0 !important;
+  border-top: 1px solid rgba(198,164,119,.55) !important;
+}
+body.v2.v2-home-page .v2-home-growth .v2-family:last-child .v2-family-head h3 {
+  color: #1F2B4F !important;
+}
+body.v2.v2-home-page .v2-home-growth .v2-family:last-child .v2-family-label {
+  color: #A8854F !important;
+}
+body.v2.v2-home-page .v2-home-growth .v2-family-list--1 .v2-solution {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(198,164,119,.7) !important;
+  border-top: 2px solid #C6A477 !important;
+  border-radius: 0;
+  padding: 26px 30px 28px !important;
+  max-width: none;
+}
+body.v2.v2-home-page .v2-home-growth .v2-family-list--1 :is(h3,p,li) {
+  color: #1F2B4F;
+}
+body.v2.v2-home-page .v2-home-growth .v2-family-list--1 .v2-path li {
+  border: 1px solid rgba(198,164,119,.6);
+  background: #FFFFFF !important;
+}
+/* Rapprocher le simulateur du bandeau Croissance sans modifier sa mécanique. */
+body.v2.v2-home-page .v2-sim-zone {
+  background: #FFFFFF !important;
+  padding-top: 12px;
+}
+body.v2.v2-home-page .v2-sim {
+  color: #FFFFFF;
+}
+
+/* Restaurer la présentation encadrée des 4 cartes Secteurs de l'ancien accueil.
+   Les titres, descriptions, photos et liens d'origine sont repris dans le HTML. */
+/* Revenir aux dimensions du bandeau Secteurs de la version de référence,
+   sans modifier les images ni les textes des quatre cartes. */
+body.v2.v2-home-page .v2-home-sectors > .v2-wrap {
+  max-width: 1600px;
+}
+body.v2.v2-home-page .v2-home-sectors .sector-grid {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 22px;
+  margin-top: 36px;
+}
+body.v2.v2-home-page .v2-home-sectors .sector-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+  background: #FFFFFF !important;
+  border: 1px solid rgba(198,164,119,.56);
+  border-bottom: 3px solid #C6A477;
+  border-radius: 0;
+  text-decoration: none;
+  transition: transform .2s ease, border-color .2s ease;
+}
+body.v2.v2-home-page .v2-home-sectors .sector-card:hover {
+  transform: translateY(-3px);
+  border-color: #C6A477;
+  border-bottom-color: #C6A477;
+}
+body.v2.v2-home-page .v2-home-sectors .sector-card:focus-visible {
+  outline: 2px solid #C6A477;
+  outline-offset: 3px;
+}
+body.v2.v2-home-page .v2-home-sectors .sector-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 6 / 7;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  background: #FFFFFF;
+}
+body.v2.v2-home-page .v2-home-sectors .sector-card-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 11px;
+  padding: 21px 20px 22px;
+}
+body.v2.v2-home-page .v2-home-sectors .sector-card h3 {
+  margin: 0;
+  color: #1F2B4F !important;
+  font-family: var(--display);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+body.v2.v2-home-page .v2-home-sectors .sector-card p {
+  margin: 0;
+  color: #3B4A73 !important;
+  font-size: 15.5px;
+  line-height: 1.55;
+}
+body.v2.v2-home-page .v2-home-sectors .sector-card .text-link {
+  display: inline-flex;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 10px;
+  color: #A8854F !important;
+  -webkit-text-fill-color: #A8854F !important;
+  font-family: var(--body);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Le contrôle humain : fond marine, cartes blanches contrastées. */
+body.v2.v2-home-page .v2-home-controls {
+  background: #0F1636 !important;
+  background-image: none !important;
+  color: #FFFFFF;
+}
+body.v2.v2-home-page .v2-home-controls :is(.v2-h2,.v2-intro) {
+  color: #FFFFFF;
+}
+body.v2.v2-home-page .v2-home-controls .v2-eyebrow { color: #C6A477; }
+body.v2.v2-home-page .v2-home-controls .v2-home-control {
+  background: #FFFFFF !important;
+  background-image: none !important;
+  border: 1px solid rgba(198,164,119,.75);
+  border-top: 2px solid #C6A477;
+  color: #1F2B4F;
+}
+body.v2.v2-home-page .v2-home-controls .v2-home-control h3 {
+  color: #1F2B4F !important;
+}
+body.v2.v2-home-page .v2-home-controls .v2-home-control p {
+  color: #3B4A73 !important;
+}
+body.v2.v2-home-page .v2-home-controls .v2-home-control .v2-card-ico {
+  stroke: #A8854F;
+}
+
+/* Fondatrice : section bleu nuit intégral, portrait et certifications conservés. */
+body.v2.v2-home-page .v2-home-founder {
+  background: #0F1636 !important;
+  background-image: none !important;
+  color: #FFFFFF;
+}
+body.v2.v2-home-page .v2-home-founder .v2-eyebrow {
+  color: #C6A477;
+}
+body.v2.v2-home-page .v2-home-founder :is(.v2-h2,.v2-about-text p,.v2-founder-stat span,.v2-sign strong,.v2-sign span) {
+  color: #FFFFFF !important;
+}
+body.v2.v2-home-page .v2-home-founder .v2-founder-stat strong {
+  color: #C6A477 !important;
+}
+body.v2.v2-home-page .v2-home-founder .v2-founder-name > span {
+  color: #C6A477;
+}
+body.v2.v2-home-page .v2-home-founder .v2-about-photo img {
+  border: 1px solid rgba(198,164,119,.55);
+}
+
+/* Responsive, sans changer les contenus ni toucher au Spa. */
+@media (max-width: 1120px) {
+  body.v2.v2-home-page .v2-home-sectors .sector-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+}
+@media (max-width: 720px) {
+  body.v2.v2-home-page .v2-hero-media img { object-position: 84% center; }
+  body.v2.v2-home-page .v2-home-growth { padding-bottom: 18px; }
+  body.v2.v2-home-page .v2-sim-zone { padding-top: 5px; }
+}
+@media (max-width: 600px) {
+  body.v2.v2-home-page .v2-home-sectors .sector-grid { grid-template-columns: 1fr; gap: 18px; }
+  body.v2.v2-home-page .v2-home-sectors .sector-card img {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+}
+
+
+/* Derniers ajustements accueil : pictogrammes alignés aux titres, cartes plus compactes,
+   micro-mouvement au survol. Portée strictement limitée à la page d'accueil. */
+body.v2.v2-home-page .v2-home-controls .v2-home-control {
+  display: grid;
+  grid-template-columns: 30px minmax(0,1fr);
+  align-content: start;
+  align-items: center;
+  column-gap: 14px;
+  row-gap: 10px;
+  padding: 20px 22px;
+}
+body.v2.v2-home-page .v2-home-controls .v2-home-control > .v2-card-ico {
+  grid-column: 1;
+  grid-row: 1;
+  width: 30px;
+  height: 30px;
+  align-self: center;
+}
+body.v2.v2-home-page .v2-home-controls .v2-home-control > h3 {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+  margin: 0 !important;
+  font-size: 18px;
+  line-height: 1.35;
+}
+body.v2.v2-home-page .v2-home-controls .v2-home-control > p {
+  grid-column: 1 / -1;
+  margin: 0 !important;
+  line-height: 1.5;
+}
+/* Un léger soulèvement identique aux cartes Secteurs, sans effets décoratifs. */
+body.v2.v2-home-page :is(
+  .v2-home-growth .v2-solution,
+  .v2-home-controls .v2-home-control,
+  .v2-home-offers .v2-lever
+) {
+  transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  body.v2.v2-home-page :is(
+    .v2-home-growth .v2-solution,
+    .v2-home-controls .v2-home-control,
+    .v2-home-offers .v2-lever
+  ):hover {
+    transform: translateY(-4px);
+    border-color: #C6A477 !important;
+    box-shadow: 0 8px 18px rgba(15,22,54,.09);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.v2.v2-home-page :is(
+    .v2-home-growth .v2-solution,
+    .v2-home-controls .v2-home-control,
+    .v2-home-offers .v2-lever
+  ) {
+    transition: none;
+    transform: none !important;
+  }
+}
+
+
+/* Navigation simplifiée : soulignement champagne qui suit l'élément survolé.
+   S'applique à tous les headers v2, sans changer l'aspect des CTA ni des pages. */
+.v2-nav > a:not(.v2-btn):not(.v2-tel),
+.v2-nav .v2-drop > button {
+  position: relative;
+}
+.v2-nav > a:not(.v2-btn):not(.v2-tel)::after,
+.v2-nav .v2-drop > button::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  bottom: 2px;
+  height: 2px;
+  background: #C6A477;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform .2s ease;
+  pointer-events: none;
+}
+.v2-nav > a[aria-current="page"],
+.v2-nav .v2-drop > button.is-current {
+  box-shadow: none;
+}
+.v2-nav > a[aria-current="page"]::after,
+.v2-nav .v2-drop > button.is-current::before,
+.v2-nav .v2-drop.is-open > button::before,
+.v2-nav > a:not(.v2-btn):not(.v2-tel):focus-visible::after,
+.v2-nav .v2-drop > button:focus-visible::before {
+  transform: scaleX(1);
+}
+@media (hover: hover) and (pointer: fine) {
+  .v2-nav > a:not(.v2-btn):not(.v2-tel):hover::after,
+  .v2-nav .v2-drop > button:hover::before,
+  .v2-nav .v2-drop:hover > button::before {
+    transform: scaleX(1);
+  }
+}
+/* Sous-menu Secteurs : fin tiret champagne à gauche de chaque lien actif. */
+.v2-nav .v2-drop-menu { border-color: rgba(198,164,119,.55); }
+.v2-nav .v2-drop-menu a {
+  position: relative;
+  padding-left: 34px;
+  transition: color .2s ease, background-color .2s ease;
+}
+.v2-nav .v2-drop-menu a::before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  width: 13px;
+  height: 2px;
+  background: #C6A477;
+  transform: translateY(-50%) scaleX(0);
+  transform-origin: left;
+  transition: transform .18s ease;
+  pointer-events: none;
+}
+.v2-nav .v2-drop-menu a:focus-visible::before {
+  transform: translateY(-50%) scaleX(1);
+}
+.v2-nav .v2-drop-menu a:focus-visible {
+  background: #FFFFFF;
+  color: #0F1636;
+}
+@media (hover: hover) and (pointer: fine) {
+  .v2-nav .v2-drop-menu a:hover::before {
+    transform: translateY(-50%) scaleX(1);
+  }
+  .v2-nav .v2-drop-menu a:hover {
+    background: #FFFFFF;
+    color: #0F1636;
+  }
+}
+@media (max-width:1240px) {
+  .v2-nav > a:not(.v2-btn):not(.v2-tel)::after,
+  .v2-nav .v2-drop > button::before {
+    left: 0;
+    right: auto;
+    width: 24px;
+  }
+  .v2-nav .v2-drop-menu { border-color: transparent; }
+  .v2-nav .v2-drop-menu a { padding-left: 34px; }
+  .v2-nav .v2-drop-menu a:focus-visible {
+    color: #FFFFFF;
+    background: transparent;
+  }
+}
+@media (prefers-reduced-motion:reduce) {
+  .v2-nav > a:not(.v2-btn):not(.v2-tel)::after,
+  .v2-nav .v2-drop > button::before,
+  .v2-nav .v2-drop-menu a,
+  .v2-nav .v2-drop-menu a::before {
+    transition: none;
+  }
+}
+
+
+/* Correction ciblée : +20 ans dans « Derrière AesthéIA ».
+   Le + reste discret, le nombre animé est grand et champagne.
+   Nécessaire : l'ancienne règle générique .v2-founder-stat span imposait 17px et du blanc. */
+body.v2.v2-home-page .v2-home-founder .v2-founder-stat > strong {
+  display: inline-flex;
+  align-items: center;
+  flex: none;
+  gap: 2px;
+  font-family: var(--display);
+  font-size: clamp(27px, 2.9vw, 38px) !important;
+  font-weight: 400;
+  line-height: 1 !important;
+  color: #C6A477 !important;
+  -webkit-text-fill-color: #C6A477 !important;
+  white-space: nowrap;
+}
+body.v2.v2-home-page .v2-home-founder .v2-founder-stat > strong > span[data-count-to] {
+  display: inline-block;
+  max-width: none;
+  font-family: var(--display);
+  font-size: clamp(61px, 6vw, 84px) !important;
+  font-weight: 400;
+  line-height: 1 !important;
+  color: #C6A477 !important;
+  -webkit-text-fill-color: #C6A477 !important;
+  font-variant-numeric: lining-nums tabular-nums;
+}
+
+/* Dropdown Secteurs : souligner l'intégralité du libellé, pas un tiret avant le texte.
+   Une vraie décoration de texte accompagne aussi les intitulés sur plusieurs lignes. */
+.v2-nav .v2-drop-menu a {
+  padding-left: 12px;
+  text-decoration-line: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 7px;
+  transition: text-decoration-color .2s ease, color .2s ease;
+}
+.v2-nav .v2-drop-menu a::before {
+  display: none !important;
+}
+.v2-nav .v2-drop-menu a:hover,
+.v2-nav .v2-drop-menu a:focus-visible,
+.v2-nav .v2-drop-menu a[aria-current="page"] {
+  text-decoration-color: #C6A477;
+}
+@media (max-width: 1240px) {
+  .v2-nav .v2-drop-menu a { padding-left: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .v2-nav .v2-drop-menu a { transition: none; }
+}
+
+
+/* === Page Instituts & indépendantes — première simulation ===
+   Couleurs autorisées : bleu nuit, blanc, champagne. Aucun fond beige/bleu pâle.
+   Scoped : la page Accueil et le Spa hôtelier validés ne sont pas modifiés. */
+body.v2.v2-institutes-page {
+  --band: #FFFFFF;
+  background: #FFFFFF;
+}
+body.v2.v2-institutes-page .v2-hero--sector {
+  background: #0F1636 !important;
+  background-image: none !important;
+}
+body.v2.v2-institutes-page .v2-hero--sector > .v2-hero-media {
+  display: block !important;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+body.v2.v2-institutes-page .v2-hero--sector > .v2-hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 68% 47%;
+}
+body.v2.v2-institutes-page .v2-hero--sector > .v2-hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(15,22,54,.97) 0%, rgba(15,22,54,.84) 35%, rgba(15,22,54,.47) 67%, rgba(15,22,54,.24) 100%);
+}
+body.v2.v2-institutes-page .v2-hero--sector .v2-hero-in { z-index: 1; }
+body.v2.v2-institutes-page .v2-hero--sector .v2-hero-text { max-width: 660px; }
+body.v2.v2-institutes-page :is(#enjeux,#systemes,#pour-qui,#questions) {
+  background: #FFFFFF !important;
+  background-image: none !important;
+  color: #1F2B4F;
+}
+body.v2.v2-institutes-page :is(#solutions,#assistant-ia,#ressources,.v2-cta) {
+  background: #0F1636 !important;
+  background-image: none !important;
+  color: #FFFFFF;
+}
+body.v2.v2-institutes-page :is(#solutions,#assistant-ia,#ressources,.v2-cta) .v2-h2 {
+  color: #FFFFFF !important;
+}
+body.v2.v2-institutes-page :is(#solutions,#assistant-ia,#ressources,.v2-cta) .v2-intro {
+  color: #FFFFFF !important;
+}
+body.v2.v2-institutes-page :is(#solutions,#assistant-ia,#ressources) .v2-eyebrow {
+  color: #C6A477 !important;
+}
+body.v2.v2-institutes-page :is(#enjeux,#systemes,#pour-qui,#questions) .v2-eyebrow {
+  color: #A8854F !important;
+}
+body.v2.v2-institutes-page #enjeux .v2-lever,
+body.v2.v2-institutes-page #solutions .v2-lever {
+  background: #FFFFFF !important;
+  border: 1px solid rgba(198,164,119,.65);
+  border-top: 2px solid #C6A477;
+  color: #1F2B4F;
+}
+body.v2.v2-institutes-page :is(#enjeux,#solutions) .v2-lever h3 { color: #1F2B4F !important; }
+body.v2.v2-institutes-page :is(#enjeux,#solutions) .v2-lever p { color: #3B4A73 !important; }
+body.v2.v2-institutes-page #solutions .v2-solutions-note {
+  color: #FFFFFF !important;
+  border-top-color: rgba(198,164,119,.6);
+}
+@media (hover:hover) and (pointer:fine) {
+  body.v2.v2-institutes-page :is(#enjeux,#solutions) .v2-lever {
+    transition: transform .22s ease, border-color .22s ease;
+  }
+  body.v2.v2-institutes-page :is(#enjeux,#solutions) .v2-lever:hover {
+    transform: translateY(-4px);
+    border-color: #C6A477;
+  }
+}
+/* Huit systèmes historiques : vraies cartes séparées en grille 4x2, lisibles,
+   accordéons natifs conservés. */
+body.v2.v2-institutes-page #systemes .v2-intro { max-width: 74ch; }
+body.v2.v2-institutes-page .v2-institute-systems-grid {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 18px;
+  margin-top: 34px;
+  align-items: start;
+}
+body.v2.v2-institutes-page .v2-institute-system {
+  min-width: 0;
+  min-height: 174px;
+  background: #0F1636;
+  border: 1px solid rgba(198,164,119,.65);
+  border-top: 2px solid #C6A477;
+  color: #FFFFFF;
+  transition: transform .22s ease, border-color .22s ease;
+}
+body.v2.v2-institutes-page .v2-institute-system > summary {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  justify-content: space-between;
+  min-height: 170px;
+  padding: 20px 20px 17px;
+  list-style: none;
+  cursor: pointer;
+}
+body.v2.v2-institutes-page .v2-institute-system > summary::-webkit-details-marker { display: none; }
+body.v2.v2-institutes-page .v2-institute-system-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+body.v2.v2-institutes-page .v2-institute-system-title img {
+  width: 29px;
+  height: 29px;
+  object-fit: contain;
+  flex: none;
+  filter: brightness(0) saturate(100%) invert(70%) sepia(20%) saturate(563%) hue-rotate(352deg) brightness(90%) contrast(84%);
+}
+body.v2.v2-institutes-page .v2-institute-chevron {
+  width: 20px;
+  height: 20px;
+  stroke: #C6A477;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  align-self: center;
+  transition: transform .2s ease;
+}
+body.v2.v2-institutes-page .v2-institute-system[open] .v2-institute-chevron {
+  transform: rotate(180deg);
+}
+body.v2.v2-institutes-page .v2-institute-system-detail {
+  padding: 0 20px 22px;
+  color: #FFFFFF;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+body.v2.v2-institutes-page .v2-institute-system-detail p + p { margin-top: 14px; }
+body.v2.v2-institutes-page .v2-institute-system-detail strong {
+  color: #C6A477;
+  font-weight: 500;
+}
+@media (hover:hover) and (pointer:fine) {
+  body.v2.v2-institutes-page .v2-institute-system:hover {
+    transform: translateY(-3px);
+    border-color: #C6A477;
+  }
+}
+
+/* Assistant IA : bandeau bleu nuit, cartes blanches, parcours avec contrôle humain. */
+body.v2.v2-institutes-page #assistant-ia .v2-intro { max-width: 78ch; }
+body.v2.v2-institutes-page .v2-institute-assistant-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 18px;
+  margin-top: 38px;
+}
+body.v2.v2-institutes-page .v2-institute-task {
+  background: #FFFFFF;
+  color: #1F2B4F;
+  border: 1px solid rgba(198,164,119,.7);
+  border-top: 2px solid #C6A477;
+  padding: 23px 24px;
+}
+body.v2.v2-institutes-page .v2-institute-task h3 {
+  font-family: var(--body);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #1F2B4F;
+}
+body.v2.v2-institutes-page .v2-institute-task p {
+  font-size: 15.5px;
+  color: #3B4A73;
+  line-height: 1.6;
+  margin-top: 12px;
+}
+body.v2.v2-institutes-page .v2-institute-assistant-note {
+  border-left: 2px solid #C6A477;
+  padding: 16px 22px;
+  margin-top: 34px;
+  color: #FFFFFF;
+  line-height: 1.65;
+}
+body.v2.v2-institutes-page .v2-institute-assistant-note strong {
+  color: #C6A477;
+  font-weight: 500;
+}
+body.v2.v2-institutes-page .v2-institute-flow {
+  display: grid;
+  grid-template-columns: repeat(7,auto);
+  align-items: stretch;
+  gap: 12px;
+  margin-top: 36px;
+}
+body.v2.v2-institutes-page .v2-institute-flow-step {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding: 18px 16px;
+  background: #FFFFFF;
+  border-top: 2px solid #C6A477;
+  color: #1F2B4F;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.35;
+}
+body.v2.v2-institutes-page .v2-institute-flow-step span {
+  color: #3B4A73;
+  font-size: 13px;
+  font-weight: 400;
+}
+body.v2.v2-institutes-page .v2-institute-flow-action {
+  background: #C6A477;
+  color: #0F1636;
+}
+body.v2.v2-institutes-page .v2-institute-flow-action span { color: #0F1636; }
+body.v2.v2-institutes-page .v2-institute-flow-arrow {
+  color: #C6A477;
+  align-self: center;
+  font-size: 24px;
+}
+
+/* Pour qui : présentation blanche, sans photo texturée de fond. */
+body.v2.v2-institutes-page .v2-institute-audience-list {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 18px;
+  list-style: none;
+  margin: 36px 0 24px;
+  padding: 0;
+}
+body.v2.v2-institutes-page .v2-institute-audience-list li {
+  padding: 22px;
+  border-left: 2px solid #C6A477;
+  color: #1F2B4F;
+  background: #FFFFFF;
+  line-height: 1.55;
+}
+body.v2.v2-institutes-page .v2-institute-audience-copy {
+  max-width: 80ch;
+  color: #3B4A73;
+}
+body.v2.v2-institutes-page .v2-institute-audience-link {
+  display: inline-block;
+  margin-top: 24px;
+  color: #A8854F;
+  text-underline-offset: 4px;
+}
+
+/* Ressources : bandeau nuit + cartes vraiment blanches. */
+body.v2.v2-institutes-page #ressources .v2-resource,
+body.v2.v2-institutes-page #ressources .v2-resource:hover {
+  background: #FFFFFF !important;
+  background-image: none !important;
+  color: #1F2B4F !important;
+  border: 1px solid rgba(198,164,119,.75);
+  border-top: 2px solid #C6A477;
+}
+body.v2.v2-institutes-page #ressources .v2-resource h3 {
+  color: #1F2B4F !important;
+}
+body.v2.v2-institutes-page #ressources .v2-resource p {
+  color: #3B4A73 !important;
+}
+body.v2.v2-institutes-page #ressources .v2-resource :is(.v2-resource-tag,.v2-resource-link) {
+  color: #A8854F !important;
+}
+body.v2.v2-institutes-page #ressources .v2-resource .v2-arrow { stroke: #A8854F; }
+body.v2.v2-institutes-page #questions .v2-h2 { color: #1F2B4F; }
+body.v2.v2-institutes-page #questions .v2-faq details { border-bottom-color: rgba(198,164,119,.5); }
+body.v2.v2-institutes-page #questions .v2-faq summary::after { border-color: #A8854F; }
+body.v2.v2-institutes-page #questions .v2-faq :is(h3,.v2-answer) { color: #1F2B4F; }
+body.v2.v2-institutes-page .v2-cta .v2-h2 { color: #FFFFFF; }
+body.v2.v2-institutes-page .v2-cta p { color: #FFFFFF; }
+
+/* Tablettes et mobiles : mêmes sections, lecture fluide et photos préservées. */
+@media (max-width:1100px) {
+  body.v2.v2-institutes-page .v2-institute-systems-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  body.v2.v2-institutes-page .v2-institute-assistant-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  body.v2.v2-institutes-page .v2-institute-flow {
+    grid-template-columns: 1fr;
+    justify-items: stretch;
+  }
+  body.v2.v2-institutes-page .v2-institute-flow-arrow { transform: rotate(90deg); }
+}
+@media (max-width:720px) {
+  body.v2.v2-institutes-page .v2-hero--sector > .v2-hero-media img {
+    object-position: 62% center;
+  }
+  body.v2.v2-institutes-page .v2-hero--sector > .v2-hero-media::after {
+    background: rgba(15,22,54,.76);
+  }
+  body.v2.v2-institutes-page .v2-institute-systems-grid,
+  body.v2.v2-institutes-page .v2-institute-assistant-grid,
+  body.v2.v2-institutes-page .v2-institute-audience-list {
+    grid-template-columns: 1fr;
+  }
+  body.v2.v2-institutes-page .v2-institute-system,
+  body.v2.v2-institutes-page .v2-institute-system > summary { min-height: 135px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  body.v2.v2-institutes-page .v2-institute-system,
+  body.v2.v2-institutes-page .v2-institute-chevron,
+  body.v2.v2-institutes-page :is(#enjeux,#solutions) .v2-lever {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+
+/* Finissions de la page Instituts — texte sur blanc, schéma d'origine et microinteractions. */
+body.v2.v2-institutes-page #systemes {
+  background: #FFFFFF !important;
+  background-image: none !important;
+}
+body.v2.v2-institutes-page #systemes .v2-h2 {
+  color: #1F2B4F !important;
+  -webkit-text-fill-color: #1F2B4F !important;
+  margin-top: 0;
+}
+body.v2.v2-institutes-page #systemes .v2-intro {
+  color: #3B4A73 !important;
+  -webkit-text-fill-color: #3B4A73 !important;
+  opacity: 1 !important;
+  margin-top: 10px;
+  max-width: 76ch;
+}
+body.v2.v2-institutes-page #systemes .v2-eyebrow {
+  color: #A8854F !important;
+  margin-bottom: 8px;
+}
+body.v2.v2-institutes-page #systemes .v2-institute-systems-grid {
+  margin-top: 29px;
+}
+body.v2.v2-institutes-page #assistant-ia .v2-institute-task,
+body.v2.v2-institutes-page #ressources .v2-resource {
+  transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  body.v2.v2-institutes-page #assistant-ia .v2-institute-task:hover,
+  body.v2.v2-institutes-page #ressources .v2-resource:hover {
+    transform: translateY(-4px);
+    border-color: #C6A477;
+    box-shadow: 0 9px 18px rgba(15, 22, 54, .1);
+  }
+}
+body.v2.v2-institutes-page #assistant-ia .v2-institute-task:focus-within,
+body.v2.v2-institutes-page #ressources .v2-resource:focus-visible {
+  outline: 2px solid #C6A477;
+  outline-offset: 3px;
+}
+
+/* Schéma restauré : demandes -> assistant -> 4 préparations -> validation -> action.
+   Fichier de disposition/animation historique conservé, seules couleurs et fonds changent. */
+body.v2.v2-institutes-page #assistant-ia .assistant-schema {
+  --color-ink: #1F2B4F;
+  --color-bg: #FFFFFF;
+  --color-mist: #FFFFFF;
+  --color-muted: #3B4A73;
+  --color-border: #C6A477;
+  --color-accent: #0F1636;
+  color: #FFFFFF;
+  margin-top: 46px;
+  width: 100%;
+}
+body.v2.v2-institutes-page #assistant-ia .assistant-schema .flow {
+  grid-template-columns: minmax(0,1.1fr) minmax(0,1fr) minmax(0,2.3fr) minmax(0,1fr) minmax(0,.8fr);
+  gap: 18px;
+  align-items: stretch;
+}
+body.v2.v2-institutes-page #assistant-ia .assistant-schema .step {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body.v2.v2-institutes-page #assistant-ia .assistant-schema .node {
+  background: #FFFFFF !important;
+  border-color: #C6A477 !important;
+  border-radius: 0;
+  color: #1F2B4F !important;
+  font-weight: 500;
+  line-height: 1.5;
+  padding: 18px 12px;
+}
+body.v2.v2-institutes-page #assistant-ia .assistant-schema .node .sub {
+  color: #3B4A73 !important;
+}
+body.v2.v2-institutes-page #assistant-ia .assistant-schema .step.node.assistant {
+  background: #C6A477 !important;
+  border-color: #C6A477 !important;
+  color: #0F1636 !important;
+}
+body.v2.v2-institutes-page #assistant-ia .assistant-schema .step.node.validation {
+  background: #FFFFFF !important;
+  border-color: #C6A477 !important;
+  color: #1F2B4F !important;
+}
+body.v2.v2-institutes-page #assistant-ia .assistant-schema .step.node.action {
+  background: #C6A477 !important;
+  border-color: #C6A477 !important;
+  color: #0F1636 !important;
+}
+body.v2.v2-institutes-page #assistant-ia .assistant-schema .tasks {
+  display: block;
+  background: transparent !important;
+  border: 1px dashed #C6A477;
+  border-radius: 0;
+  padding: 14px 12px;
+}
+body.v2.v2-institutes-page #assistant-ia .assistant-schema.has-motion-decor .tasks {
+  border-color: transparent;
+}
+body.v2.v2-institutes-page #assistant-ia .assistant-schema .tasks-title {
+  color: #FFFFFF !important;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.4;
+}
+body.v2.v2-institutes-page #assistant-ia .assistant-schema .task-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 9px;
+}
+body.v2.v2-institutes-page #assistant-ia .assistant-schema .task-grid .node {
+  background: #FFFFFF !important;
+  color: #1F2B4F !important;
+  padding: 14px 8px;
+  border-radius: 0;
+}
+body.v2.v2-institutes-page #assistant-ia .assistant-schema .assistant-schema-line,
+body.v2.v2-institutes-page #assistant-ia .assistant-schema .assistant-schema-head,
+body.v2.v2-institutes-page #assistant-ia .assistant-schema .assistant-schema-frame rect {
+  stroke: #C6A477;
+}
+body.v2.v2-institutes-page #assistant-ia .assistant-schema .step:not(:last-child)::after {
+  color: #C6A477;
+}
+body.v2.v2-institutes-page #assistant-ia .assistant-schema .caption {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #FFFFFF !important;
+  max-width: none;
+  margin-top: 35px;
+  text-align: left;
+  font-size: 15.5px;
+}
+body.v2.v2-institutes-page #assistant-ia .assistant-schema .caption-pictogram {
+  height: 30px;
+  width: 30px;
+  flex: none;
+  object-fit: contain;
+}
+body.v2.v2-institutes-page #assistant-ia .assistant-schema .caption-copy,
+body.v2.v2-institutes-page #assistant-ia .assistant-schema .caption-arrow {
+  color: #FFFFFF;
+}
+/* Anciennes règles violettes en cascade @layer refonte avec !important :
+   les surcharger dans leur propre couche, uniquement sur cette page. */
+@layer refonte {
+  html[data-theme="light"] body.v2.v2-institutes-page #assistant-ia .assistant-schema .node {
+    background: #FFFFFF !important;
+    border-color: #C6A477 !important;
+    color: #1F2B4F !important;
+  }
+  html[data-theme="light"] body.v2.v2-institutes-page #assistant-ia .assistant-schema .node .sub {
+    color: #3B4A73 !important;
+  }
+  html[data-theme="light"] body.v2.v2-institutes-page #assistant-ia .assistant-schema .step.node.assistant,
+  html[data-theme="light"] body.v2.v2-institutes-page #assistant-ia .assistant-schema .step.node.action {
+    background: #C6A477 !important;
+    border-color: #C6A477 !important;
+    color: #0F1636 !important;
+  }
+  html[data-theme="light"] body.v2.v2-institutes-page #assistant-ia .assistant-schema .step.node.validation {
+    background: #FFFFFF !important;
+    border-color: #C6A477 !important;
+    color: #1F2B4F !important;
+  }
+}
+@media (max-width: 1020px) {
+  body.v2.v2-institutes-page #assistant-ia .assistant-schema .flow {
+    grid-template-columns: minmax(0,1fr);
+    gap: 31px;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  body.v2.v2-institutes-page #assistant-ia .assistant-schema .step:not(:last-child)::after {
+    content: "↓";
+    left: 50%;
+    top: calc(100% + 9px);
+    transform: translateX(-50%);
+  }
+  body.v2.v2-institutes-page #assistant-ia .assistant-schema .assistant-schema-connector {
+    left: 50%;
+    top: calc(100% + 6px);
+    transform: translateX(-50%) rotate(90deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.v2.v2-institutes-page #assistant-ia .assistant-schema .node,
+  body.v2.v2-institutes-page #assistant-ia .v2-institute-task,
+  body.v2.v2-institutes-page #ressources .v2-resource {
+    transition: none;
+    transform: none !important;
+  }
+}
+
+
+/* ===============================================================
+   THALASSOTHÉRAPIE — simulation graphique ciblée (PR 311)
+   Palette blanche #FFF, bleu nuit #0F1636, champagne #C6A477.
+   Ne touche pas aux trois pages Accueil / Spa hôtelier / Instituts validées.
+   =============================================================== */
+body.v2.v2-thalasso-page {
+  --band: #FFFFFF;
+  --color-bg: #FFFFFF;
+  --color-ink: #1F2B4F;
+  --color-muted: #3B4A73;
+  --color-mist: #FFFFFF;
+  --color-border: #C6A477;
+  --color-accent: #0F1636;
+  background: #FFFFFF;
+}
+body.v2.v2-thalasso-page .v2-hero--sector {
+  background: #0F1636 !important;
+  background-image: none !important;
+}
+/* Full-width photographic hero, focused on the swimmer and waterfall. */
+body.v2.v2-thalasso-page .v2-hero--sector .v2-hero-in {
+  position: static;
+  display: block;
+  padding-block: clamp(56px, 6vw, 90px);
+}
+body.v2.v2-thalasso-page .v2-hero--sector .v2-hero-media {
+  display: block !important;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  max-width: none;
+  border: 0;
+  pointer-events: none;
+}
+body.v2.v2-thalasso-page .v2-hero--sector .v2-hero-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 76%;
+}
+body.v2.v2-thalasso-page .v2-hero--sector .v2-hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(15,22,54,.93), rgba(15,22,54,.78) 38%, rgba(15,22,54,.25) 75%, rgba(15,22,54,.12));
+}
+body.v2.v2-thalasso-page .v2-hero--sector .v2-hero-text {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+}
+body.v2.v2-thalasso-page .v2-hero--sector .v2-thalasso-hero-proof {
+  margin-top: 18px;
+  padding-left: 14px;
+  border-left: 2px solid #C6A477;
+  max-width: 70ch;
+  font-size: 15px;
+  color: #FFFFFF;
+  line-height: 1.6;
+}
+body.v2.v2-thalasso-page .v2-benefits { background: #FFFFFF; }
+/* Alternance volontaire de huit sections, sans beige ni bleu délavé. */
+body.v2.v2-thalasso-page :is(#enjeux,#systemes,#etablissements,#ressources) {
+  background: #FFFFFF !important;
+  background-image: none !important;
+  color: #1F2B4F;
+}
+body.v2.v2-thalasso-page :is(#solutions,#agents-ia,#questions,.v2-cta) {
+  background: #0F1636 !important;
+  background-image: none !important;
+  color: #FFFFFF;
+}
+body.v2.v2-thalasso-page :is(#solutions,#agents-ia,#questions,.v2-cta) .v2-h2 {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+body.v2.v2-thalasso-page :is(#solutions,#agents-ia,#questions,.v2-cta) .v2-intro {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+}
+body.v2.v2-thalasso-page :is(#solutions,#agents-ia,#questions,.v2-cta) .v2-eyebrow { color: #C6A477 !important; }
+body.v2.v2-thalasso-page :is(#enjeux,#systemes,#etablissements,#ressources) .v2-h2 { color: #1F2B4F !important; }
+body.v2.v2-thalasso-page :is(#enjeux,#systemes,#etablissements,#ressources) .v2-eyebrow { color: #A8854F !important; }
+body.v2.v2-thalasso-page :is(#enjeux,#systemes,#etablissements,#ressources) .v2-intro {
+  color: #3B4A73 !important;
+  opacity: 1;
+}
+/* Enjeux : même structure de 3 cartes, mise en contexte étoffée. */
+body.v2.v2-thalasso-page #enjeux .v2-lever,
+body.v2.v2-thalasso-page #solutions .v2-lever {
+  background: #FFFFFF !important;
+  background-image: none !important;
+  border: 1px solid rgba(198,164,119,.65);
+  border-top: 2px solid #C6A477;
+  color: #1F2B4F;
+  transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+body.v2.v2-thalasso-page :is(#enjeux,#solutions) .v2-lever :is(h3,p) { color: #1F2B4F !important; }
+body.v2.v2-thalasso-page #solutions .v2-solutions-note { color: #FFFFFF !important; }
+body.v2.v2-thalasso-page .v2-thalasso-challenges {
+  margin-top: 34px;
+  border-top: 1px solid rgba(198,164,119,.55);
+  padding-top: 24px;
+  color: #3B4A73;
+  line-height: 1.65;
+}
+body.v2.v2-thalasso-page .v2-thalasso-challenges-lead {
+  color: #1F2B4F;
+  font-size: 19px;
+  line-height: 1.65;
+  max-width: 95ch;
+}
+body.v2.v2-thalasso-page .v2-thalasso-challenges p + p { margin-top: 14px; }
+body.v2.v2-thalasso-page .v2-thalasso-challenge-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 16px;
+  padding: 0;
+  margin-top: 24px;
+  list-style: none;
+}
+body.v2.v2-thalasso-page .v2-thalasso-challenge-grid li {
+  transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 20px 22px;
+  border: 1px solid #C6A477;
+  background: #FFFFFF;
+  color: #1F2B4F;
+}
+body.v2.v2-thalasso-page .v2-thalasso-challenge-grid li:last-child { grid-column: 1 / -1; }
+body.v2.v2-thalasso-page .v2-thalasso-challenge-grid svg {
+  width: 32px;
+  height: 32px;
+  flex: none;
+  fill: none;
+  stroke: #A8854F;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+body.v2.v2-thalasso-page :is(.v2-thalasso-section-head,.v2-cta) { text-align: left; }
+body.v2.v2-thalasso-page .v2-cta-actions { justify-content: flex-start; }
+body.v2.v2-thalasso-page .v2-thalasso-benefit {
+  display: block;
+  min-height: 0;
+  height: auto;
+  margin-top: 18px;
+  padding: 14px 18px;
+  background: #FFFFFF;
+  border: 1px solid #C6A477;
+  border-left-width: 3px;
+  color: #1F2B4F;
+  line-height: 1.6;
+}
+body.v2.v2-thalasso-page .v2-thalasso-benefit strong { color: #1F2B4F; font-weight: 500; }
+@media (hover:hover) and (pointer:fine) {
+  body.v2.v2-thalasso-page :is(#enjeux,#solutions) .v2-lever:hover,
+  body.v2.v2-thalasso-page .v2-thalasso-challenge-grid li:hover,
+  body.v2.v2-thalasso-page .v2-thalasso-system:hover,
+  body.v2.v2-thalasso-page .v2-thalasso-agent:hover,
+  body.v2.v2-thalasso-page #ressources .v2-resource:hover {
+    transform: translateY(-4px);
+    border-color: #C6A477 !important;
+    box-shadow: 0 9px 18px rgba(15,22,54,.10);
+  }
+}
+/* Huit systèmes historiques — cartes bleu nuit sur section blanche. */
+body.v2.v2-thalasso-page #systemes .v2-intro { max-width: 82ch; }
+body.v2.v2-thalasso-page .v2-thalasso-systems-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 18px;
+  margin-top: 36px;
+  align-items: start;
+}
+body.v2.v2-thalasso-page .v2-thalasso-system {
+  min-width: 0;
+  background: #0F1636;
+  border: 1px solid rgba(198,164,119,.65);
+  border-top: 2px solid #C6A477;
+  color: #FFFFFF;
+  transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+body.v2.v2-thalasso-page .v2-thalasso-system > summary,
+body.v2.v2-thalasso-page .v2-thalasso-agent > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  list-style: none;
+  cursor: pointer;
+  padding: 20px 22px;
+  min-height: 104px;
+}
+body.v2.v2-thalasso-page :is(.v2-thalasso-system,.v2-thalasso-agent) > summary::-webkit-details-marker { display: none; }
+body.v2.v2-thalasso-page .v2-thalasso-card-head {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-width: 0;
+  color: inherit;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+body.v2.v2-thalasso-page .v2-thalasso-card-head img {
+  width: 29px;
+  height: 29px;
+  flex: none;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(71%) sepia(20%) saturate(487%) hue-rotate(352deg) brightness(91%) contrast(89%);
+}
+body.v2.v2-thalasso-page .v2-thalasso-chevron {
+  width: 20px;
+  height: 20px;
+  flex: none;
+  stroke: #C6A477;
+  stroke-width: 1.8;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform .22s ease;
+}
+body.v2.v2-thalasso-page :is(.v2-thalasso-system,.v2-thalasso-agent)[open] .v2-thalasso-chevron { transform: rotate(180deg); }
+body.v2.v2-thalasso-page .v2-thalasso-card-detail {
+  padding: 0 22px 23px;
+  line-height: 1.6;
+  font-size: 15.5px;
+  color: inherit;
+}
+body.v2.v2-thalasso-page .v2-thalasso-card-detail p + p { margin-top: 14px; }
+body.v2.v2-thalasso-page .v2-thalasso-card-detail strong { color: #C6A477; font-weight: 500; }
+/* Six agents spécialistes : bandeau bleu nuit, cartes blanches. */
+body.v2.v2-thalasso-page .v2-thalasso-agents-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 18px;
+  margin-top: 38px;
+  align-items: start;
+}
+body.v2.v2-thalasso-page .v2-thalasso-agent {
+  min-width: 0;
+  background: #FFFFFF;
+  border: 1px solid rgba(198,164,119,.65);
+  border-top: 2px solid #C6A477;
+  color: #1F2B4F;
+  transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+body.v2.v2-thalasso-page .v2-thalasso-agent .v2-thalasso-card-detail { color: #3B4A73; }
+body.v2.v2-thalasso-page .v2-thalasso-agent .v2-thalasso-card-detail strong { color: #A8854F; }
+body.v2.v2-thalasso-page .v2-thalasso-supervisor {
+  border-left: 3px solid #C6A477;
+  margin: 34px 0 0;
+  padding: 17px 22px;
+  color: #FFFFFF;
+  line-height: 1.7;
+}
+body.v2.v2-thalasso-page .v2-thalasso-supervisor strong { color: #C6A477; font-weight: 500; }
+/* Diagramme multi-agent historique : grille complète et connecteurs animés. */
+body.v2.v2-thalasso-page #agents-ia .assistant-schema {
+  --color-ink: #1F2B4F;
+  --color-bg: #FFFFFF;
+  --color-mist: #FFFFFF;
+  --color-muted: #3B4A73;
+  --color-border: #C6A477;
+  --color-accent: #0F1636;
+  color: #FFFFFF;
+  width: 100%;
+  margin-top: 54px;
+}
+body.v2.v2-thalasso-page #agents-ia .assistant-schema .flow {
+  display: grid;
+  grid-template-columns: minmax(0,1.2fr) minmax(0,1fr) minmax(0,2.7fr) minmax(0,1.12fr) minmax(0,.65fr);
+  gap: 21px;
+  align-items: center;
+}
+body.v2.v2-thalasso-page #agents-ia .assistant-schema .step { min-width: 0; }
+body.v2.v2-thalasso-page #agents-ia .assistant-schema .node {
+  background: #FFFFFF !important;
+  border-color: #C6A477 !important;
+  color: #1F2B4F !important;
+  border-radius: 0;
+  line-height: 1.45;
+}
+body.v2.v2-thalasso-page #agents-ia .assistant-schema .node .sub { color: #3B4A73 !important; }
+body.v2.v2-thalasso-page #agents-ia .assistant-schema .step.node.assistant,
+body.v2.v2-thalasso-page #agents-ia .assistant-schema .step.node.action {
+  background: #C6A477 !important;
+  border-color: #C6A477 !important;
+  color: #0F1636 !important;
+}
+body.v2.v2-thalasso-page #agents-ia .assistant-schema .step.node.assistant .sub { color: #0F1636 !important; }
+body.v2.v2-thalasso-page #agents-ia .assistant-schema .step.node.validation {
+  background: #FFFFFF !important;
+  border-color: #C6A477 !important;
+  color: #1F2B4F !important;
+}
+body.v2.v2-thalasso-page #agents-ia .assistant-schema .tasks {
+  background: transparent !important;
+  border: 1px dashed #C6A477;
+  border-radius: 0;
+}
+body.v2.v2-thalasso-page #agents-ia .assistant-schema.has-motion-decor .tasks { border-color: transparent; }
+body.v2.v2-thalasso-page #agents-ia .assistant-schema .tasks-title { color: #FFFFFF !important; }
+body.v2.v2-thalasso-page #agents-ia .assistant-schema .task-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; }
+body.v2.v2-thalasso-page #agents-ia .assistant-schema .agent-role {
+  background: #FFFFFF !important;
+  border: 1px solid #C6A477 !important;
+  border-radius: 0;
+  color: #1F2B4F !important;
+  padding: 12px 8px;
+  font-size: 13.5px;
+  min-width: 0;
+}
+body.v2.v2-thalasso-page #agents-ia .assistant-schema .agent-role span { color: #1F2B4F !important; }
+body.v2.v2-thalasso-page #agents-ia .assistant-schema .agent-role img {
+  filter: brightness(0) saturate(100%) invert(67%) sepia(25%) saturate(460%) hue-rotate(351deg) brightness(88%) contrast(90%);
+}
+body.v2.v2-thalasso-page #agents-ia .assistant-schema :is(.assistant-schema-line,.assistant-schema-head,.assistant-schema-frame rect) { stroke: #C6A477 !important; }
+body.v2.v2-thalasso-page #agents-ia .assistant-schema .step:not(:last-child)::after { color: #C6A477 !important; }
+body.v2.v2-thalasso-page #agents-ia .multi-agent-caption {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #FFFFFF;
+  margin: 35px 0 0;
+  max-width: none;
+  text-align: left;
+  font-size: 16px;
+}
+body.v2.v2-thalasso-page #agents-ia .multi-agent-caption .caption-pictogram { width: 30px; height: 30px; flex: none; }
+body.v2.v2-thalasso-page #agents-ia .multi-agent-caption :is(.caption-copy,.caption-arrow) { color: #FFFFFF; }
+@layer refonte {
+  html[data-theme="light"] body.v2.v2-thalasso-page #agents-ia .assistant-schema .node {
+    background: #FFFFFF !important;
+    border-color: #C6A477 !important;
+    color: #1F2B4F !important;
+  }
+  html[data-theme="light"] body.v2.v2-thalasso-page #agents-ia .assistant-schema .node .sub { color: #3B4A73 !important; }
+  html[data-theme="light"] body.v2.v2-thalasso-page #agents-ia .assistant-schema .step.node.assistant,
+  html[data-theme="light"] body.v2.v2-thalasso-page #agents-ia .assistant-schema .step.node.action {
+    background: #C6A477 !important;
+    border-color: #C6A477 !important;
+    color: #0F1636 !important;
+  }
+  html[data-theme="light"] body.v2.v2-thalasso-page #agents-ia .assistant-schema .step.node.validation {
+    background: #FFFFFF !important;
+    border-color: #C6A477 !important;
+    color: #1F2B4F !important;
+  }
+}
+/* Établissements : blanc franc + deux encadrés champagne. */
+body.v2.v2-thalasso-page .v2-thalasso-audience-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 20px;
+  margin-top: 35px;
+}
+body.v2.v2-thalasso-page .v2-thalasso-audience-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 24px 26px;
+  border-left: 3px solid #C6A477;
+  background: #FFFFFF;
+  color: #1F2B4F;
+  font-size: 18px;
+  line-height: 1.5;
+}
+body.v2.v2-thalasso-page .v2-thalasso-audience-item svg {
+  width: 32px;
+  height: 32px;
+  flex: none;
+  fill: none;
+  stroke: #A8854F;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+body.v2.v2-thalasso-page .v2-thalasso-audience-note {
+  color: #3B4A73;
+  margin-top: 28px;
+  max-width: 92ch;
+  line-height: 1.65;
+}
+/* FAQ nuit : libellés champagne, questions et réponses blanches. */
+body.v2.v2-thalasso-page #questions .v2-faq { border-top-color: rgba(198,164,119,.55); }
+body.v2.v2-thalasso-page #questions .v2-faq details { border-bottom-color: rgba(198,164,119,.45); }
+body.v2.v2-thalasso-page #questions .v2-faq summary,
+body.v2.v2-thalasso-page #questions .v2-faq details { background: transparent; }
+body.v2.v2-thalasso-page #questions .v2-faq :is(summary h3,.v2-answer) { color: #FFFFFF !important; }
+body.v2.v2-thalasso-page #questions .v2-faq summary::after { border-color: #C6A477; }
+/* Ressources blanches, cartes bleu nuit. */
+body.v2.v2-thalasso-page #ressources .v2-resource {
+  background: #0F1636 !important;
+  background-image: none !important;
+  color: #FFFFFF;
+  border: 1px solid rgba(198,164,119,.7);
+  border-top: 2px solid #C6A477;
+  transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+body.v2.v2-thalasso-page #ressources .v2-resource :is(h3,p,.v2-resource-link) { color: #FFFFFF !important; }
+body.v2.v2-thalasso-page #ressources .v2-resource :is(.v2-resource-tag,.v2-arrow) { color: #C6A477 !important; stroke: #C6A477; }
+body.v2.v2-thalasso-page .v2-cta :is(.v2-h2,p) { color: #FFFFFF; }
+/* Responsive, sans changer l'ordre des contenus. */
+@media (max-width:1100px) {
+  body.v2.v2-thalasso-page .v2-thalasso-agents-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  body.v2.v2-thalasso-page #agents-ia .assistant-schema .flow {
+    grid-template-columns: minmax(0,1fr);
+    max-width: 560px;
+    margin-inline: auto;
+    gap: 30px;
+  }
+  body.v2.v2-thalasso-page #agents-ia .assistant-schema .assistant-schema-connector {
+    left: 50%;
+    top: calc(100% + 6px);
+    transform: translateX(-50%) rotate(90deg);
+  }
+  body.v2.v2-thalasso-page #agents-ia .assistant-schema .step:not(:last-child)::after {
+    content: "↓";
+    left: 50%;
+    top: calc(100% + 6px);
+    transform: translateX(-50%);
+  }
+}
+@media (max-width:720px) {
+  body.v2.v2-thalasso-page .v2-hero--sector .v2-hero-media img { object-position: center 76%; }
+  body.v2.v2-thalasso-page .v2-hero--sector .v2-hero-media::after { background: rgba(15,22,54,.68); }
+  body.v2.v2-thalasso-page .v2-thalasso-challenges ul,
+  body.v2.v2-thalasso-page .v2-thalasso-systems-grid,
+  body.v2.v2-thalasso-page .v2-thalasso-agents-grid,
+  body.v2.v2-thalasso-page .v2-thalasso-audience-grid { grid-template-columns: minmax(0,1fr); }
+  body.v2.v2-thalasso-page .v2-thalasso-system > summary,
+  body.v2.v2-thalasso-page .v2-thalasso-agent > summary { min-height: 84px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  body.v2.v2-thalasso-page :is(.v2-thalasso-system,.v2-thalasso-agent,.v2-lever,.v2-resource,.v2-thalasso-challenge-grid li) {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* Médecine : photographie du header et assistant administratif historique. */
+body.v2.v2-medicine-page .v2-hero--sector > .v2-hero-media {
+  display: block !important; inset: 0 0 0 auto; width: 65%;
+}
+body.v2.v2-medicine-page .v2-hero--sector .v2-hero-media img { object-position: center 38%; }
+body.v2.v2-medicine-page .v2-hero--sector .v2-hero-media::after {
+  background: linear-gradient(90deg,#0F1636 0%,rgba(15,22,54,.84) 23%,rgba(15,22,54,.22) 68%,rgba(15,22,54,.08));
+}
+body.v2.v2-medicine-page .v2-hero-text { position: relative; z-index: 1; max-width: 740px; }
+body.v2.v2-medicine-page #solutions .v2-solution-list { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 22px; }
+body.v2.v2-medicine-page #solutions .v2-solution { margin: 0; padding: 24px; border: 1px solid #C6A477; border-top-width: 2px; }
+body.v2.v2-medicine-page #assistant-ia { background: #0F1636; color: #FFFFFF; }
+body.v2.v2-medicine-page #assistant-ia .v2-h2,
+body.v2.v2-medicine-page #assistant-ia .v2-intro { color: #FFFFFF; }
+body.v2.v2-medicine-page #assistant-ia .v2-eyebrow { color: #C6A477; }
+body.v2.v2-medicine-page #assistant-ia .feature-list { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 22px; margin: 30px 0; }
+body.v2.v2-medicine-page #assistant-ia .feature-list li { background: #FFFFFF; color: #1F2B4F; padding: 24px; border: 1px solid #C6A477; border-top-width: 2px; line-height: 1.65; }
+body.v2.v2-medicine-page #assistant-ia strong { font-weight: 500; }
+body.v2.v2-medicine-page #assistant-ia .feature-list strong { display: block; margin-bottom: 10px; }
+body.v2.v2-medicine-page #assistant-ia .v2-medicine-assistant-note { margin-top: 20px; padding-left: 20px; border-left: 2px solid #C6A477; line-height: 1.65; }
+@media (max-width:720px) {
+  body.v2.v2-medicine-page .v2-hero--sector > .v2-hero-media { width: 100%; }
+  body.v2.v2-medicine-page .v2-hero--sector .v2-hero-media::after { background: rgba(15,22,54,.76); }
+  body.v2.v2-medicine-page #solutions .v2-solution-list,
+  body.v2.v2-medicine-page #assistant-ia .feature-list { grid-template-columns: minmax(0,1fr); }
+}
+body.v2.v2-medicine-page #assistant-ia .assistant-schema {
+  --color-ink: #1F2B4F;
+  --color-bg: #FFFFFF;
+  --color-mist: #FFFFFF;
+  --color-muted: #3B4A73;
+  --color-border: #C6A477;
+  --color-accent: #0F1636;
+  color: #FFFFFF;
+  margin-top: 46px;
+  width: 100%;
+}
+body.v2.v2-medicine-page #assistant-ia .assistant-schema .flow {
+  grid-template-columns: minmax(0,1.1fr) minmax(0,1fr) minmax(0,2.3fr) minmax(0,1fr) minmax(0,.8fr);
+  gap: 18px;
+  align-items: stretch;
+}
+body.v2.v2-medicine-page #assistant-ia .assistant-schema .step {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body.v2.v2-medicine-page #assistant-ia .assistant-schema .node {
+  background: #FFFFFF !important;
+  border-color: #C6A477 !important;
+  border-radius: 0;
+  color: #1F2B4F !important;
+  font-weight: 500;
+  line-height: 1.5;
+  padding: 18px 12px;
+}
+body.v2.v2-medicine-page #assistant-ia .assistant-schema .node .sub {
+  color: #3B4A73 !important;
+}
+body.v2.v2-medicine-page #assistant-ia .assistant-schema .step.node.assistant {
+  background: #C6A477 !important;
+  border-color: #C6A477 !important;
+  color: #0F1636 !important;
+}
+body.v2.v2-medicine-page #assistant-ia .assistant-schema .step.node.validation {
+  background: #FFFFFF !important;
+  border-color: #C6A477 !important;
+  color: #1F2B4F !important;
+}
+body.v2.v2-medicine-page #assistant-ia .assistant-schema .step.node.action {
+  background: #C6A477 !important;
+  border-color: #C6A477 !important;
+  color: #0F1636 !important;
+}
+body.v2.v2-medicine-page #assistant-ia .assistant-schema .tasks {
+  display: block;
+  background: transparent !important;
+  border: 1px dashed #C6A477;
+  border-radius: 0;
+  padding: 14px 12px;
+}
+body.v2.v2-medicine-page #assistant-ia .assistant-schema.has-motion-decor .tasks {
+  border-color: transparent;
+}
+body.v2.v2-medicine-page #assistant-ia .assistant-schema .tasks-title {
+  color: #FFFFFF !important;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.4;
+}
+body.v2.v2-medicine-page #assistant-ia .assistant-schema .task-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 9px;
+}
+body.v2.v2-medicine-page #assistant-ia .assistant-schema .task-grid .node {
+  background: #FFFFFF !important;
+  color: #1F2B4F !important;
+  padding: 14px 8px;
+  border-radius: 0;
+}
+body.v2.v2-medicine-page #assistant-ia .assistant-schema .assistant-schema-line,
+body.v2.v2-medicine-page #assistant-ia .assistant-schema .assistant-schema-head,
+body.v2.v2-medicine-page #assistant-ia .assistant-schema .assistant-schema-frame rect {
+  stroke: #C6A477;
+}
+body.v2.v2-medicine-page #assistant-ia .assistant-schema .step:not(:last-child)::after {
+  color: #C6A477;
+}
+body.v2.v2-medicine-page #assistant-ia .assistant-schema .caption {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #FFFFFF !important;
+  max-width: none;
+  margin-top: 35px;
+  text-align: left;
+  font-size: 15.5px;
+}
+body.v2.v2-medicine-page #assistant-ia .assistant-schema .caption-pictogram {
+  height: 30px;
+  width: 30px;
+  flex: none;
+  object-fit: contain;
+}
+body.v2.v2-medicine-page #assistant-ia .assistant-schema .caption-copy,
+body.v2.v2-medicine-page #assistant-ia .assistant-schema .caption-arrow {
+  color: #FFFFFF;
+}
+/* Anciennes règles violettes en cascade @layer refonte avec !important :
+   les surcharger dans leur propre couche, uniquement sur cette page. */
+@layer refonte {
+  html[data-theme="light"] body.v2.v2-medicine-page #assistant-ia .assistant-schema .node {
+    background: #FFFFFF !important;
+    border-color: #C6A477 !important;
+    color: #1F2B4F !important;
+  }
+  html[data-theme="light"] body.v2.v2-medicine-page #assistant-ia .assistant-schema .node .sub {
+    color: #3B4A73 !important;
+  }
+  html[data-theme="light"] body.v2.v2-medicine-page #assistant-ia .assistant-schema .step.node.assistant,
+  html[data-theme="light"] body.v2.v2-medicine-page #assistant-ia .assistant-schema .step.node.action {
+    background: #C6A477 !important;
+    border-color: #C6A477 !important;
+    color: #0F1636 !important;
+  }
+  html[data-theme="light"] body.v2.v2-medicine-page #assistant-ia .assistant-schema .step.node.validation {
+    background: #FFFFFF !important;
+    border-color: #C6A477 !important;
+    color: #1F2B4F !important;
+  }
+}
+@media (max-width: 1020px) {
+  body.v2.v2-medicine-page #assistant-ia .assistant-schema .flow {
+    grid-template-columns: minmax(0,1fr);
+    gap: 31px;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  body.v2.v2-medicine-page #assistant-ia .assistant-schema .step:not(:last-child)::after {
+    content: "↓";
+    left: 50%;
+    top: calc(100% + 9px);
+    transform: translateX(-50%);
+  }
+  body.v2.v2-medicine-page #assistant-ia .assistant-schema .assistant-schema-connector {
+    left: 50%;
+    top: calc(100% + 6px);
+    transform: translateX(-50%) rotate(90deg);
+  }
+}
+
+@layer refonte {
+  body.v2.v2-medicine-page #assistant-ia .assistant-schema .step.node.action { background: #C6A477 !important; border-color: #C6A477 !important; color: #0F1636 !important; }
+}
+
+/* Cabinet esthétique : systèmes restaurés, uniquement sur cette page */
+body.v2 .v2-medicine-systems { background:#fff; color:#1f2b4f; }
+body.v2 .v2-medicine-systems .v2-h2 { color:#1f2b4f; }
+body.v2 .v2-medicine-systems .sector-editorial-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin:28px 0; }
+body.v2 .v2-medicine-systems .sector-editorial-chapter { border:1px solid #c6a477; border-top:3px solid #c6a477; background:#fff; padding:22px; min-width:0; }
+body.v2 .v2-medicine-systems .sector-editorial-chapter summary { cursor:pointer; list-style:none; }
+body.v2 .v2-medicine-systems .sector-editorial-chapter summary::-webkit-details-marker { display:none; }
+body.v2 .v2-medicine-systems .sector-editorial-chapter h3 { display:flex; align-items:center; gap:12px; font-size:1.2rem; line-height:1.4; color:#1f2b4f; margin:0; font-weight:500; }
+body.v2 .v2-medicine-systems .title-pictogram { width:30px; height:30px; object-fit:contain; flex:none; }
+body.v2 .v2-medicine-systems .sector-editorial-content { padding-top:16px; line-height:1.7; color:#263453; }
+body.v2 .v2-medicine-systems .sector-editorial-content p { margin:0 0 12px; }
+body.v2 .v2-medicine-assistant .medicine-feature-icon { display:inline-block; margin-right:12px; font-size:1.25em; vertical-align:middle; }
+@media(max-width:700px){body.v2 .v2-medicine-systems .sector-editorial-list{grid-template-columns:1fr;}body.v2 .v2-medicine-systems .sector-editorial-chapter{padding:20px;}}
+
+/* Médecine esthétique : alternance stricte, pictogrammes discrets et FAQ nuit */
+body.v2.v2-medicine-page #enjeux,
+body.v2.v2-medicine-page #systemes-cabinet,
+body.v2.v2-medicine-page #ressources {background:#fff!important;color:#1f2b4f!important;}
+body.v2.v2-medicine-page #solutions,
+body.v2.v2-medicine-page #assistant-ia,
+body.v2.v2-medicine-page #questions {background:#0f1636!important;color:#fff!important;}
+body.v2.v2-medicine-page #questions :is(.v2-h2,.v2-faq summary h3,.v2-faq .v2-answer){color:#fff!important;}
+body.v2.v2-medicine-page #questions .v2-eyebrow{color:#c6a477!important;}
+body.v2.v2-medicine-page #questions .v2-faq details{border-bottom-color:rgba(198,164,119,.45)!important;}
+body.v2.v2-medicine-page #questions .v2-faq summary::after{border-color:#c6a477!important;}
+body.v2.v2-medicine-page #systemes-cabinet .sector-editorial-chapter summary{display:block!important;}
+body.v2.v2-medicine-page #systemes-cabinet .sector-editorial-heading,
+body.v2.v2-medicine-page #systemes-cabinet .title-with-icon{display:flex!important;align-items:center!important;gap:12px!important;}
+body.v2.v2-medicine-page #systemes-cabinet .title-pictogram{display:block!important;width:28px!important;height:28px!important;max-width:28px!important;max-height:28px!important;flex:0 0 28px!important;object-fit:contain!important;}
+body.v2.v2-medicine-page #systemes-cabinet .sector-editorial-chapter h3{font-family:inherit!important;font-size:1.1rem!important;line-height:1.45!important;}
+body.v2.v2-medicine-page #assistant-ia .medicine-feature-heading{display:flex!important;align-items:center!important;gap:12px!important;margin-bottom:14px!important;}
+body.v2.v2-medicine-page #assistant-ia .medicine-feature-heading strong{display:inline!important;margin:0!important;}
+body.v2.v2-medicine-page #assistant-ia .medicine-feature-icon{display:inline-flex!important;align-items:center;justify-content:center;flex:0 0 26px;margin:0!important;font-size:1.15rem!important;}
+
+/* Medicine page: readable contrast and consistent champagne line icons */
+body.v2.v2-medicine-page #solutions :is(.v2-h2,.v2-intro,.v2-solutions-note),
+body.v2.v2-medicine-page #solutions .v2-solution :is(h3,p),
+body.v2.v2-medicine-page #questions :is(.v2-h2,.v2-faq summary h3,.v2-answer),
+body.v2.v2-medicine-page #assistant-ia :is(.v2-h2,.v2-intro) {color:#fff!important;}
+body.v2.v2-medicine-page #solutions .v2-solution {background:rgba(255,255,255,.045)!important;border-color:#c6a477!important;}
+body.v2.v2-medicine-page #solutions .v2-solution .v2-card-ico,
+body.v2.v2-medicine-page .medicine-line-icon {stroke:#c6a477!important;fill:none!important;stroke-width:1.6!important;stroke-linecap:round!important;stroke-linejoin:round!important;width:30px!important;height:30px!important;min-width:30px!important;max-width:30px!important;max-height:30px!important;flex:0 0 30px!important;vertical-align:middle!important;}
+body.v2.v2-medicine-page #systemes-cabinet .medicine-line-icon{width:28px!important;height:28px!important;min-width:28px!important;max-width:28px!important;flex-basis:28px!important;}
+body.v2.v2-medicine-page #assistant-ia .medicine-feature-heading{display:flex!important;align-items:center!important;gap:14px!important;}
+body.v2.v2-medicine-page #assistant-ia .medicine-feature-heading strong{color:#1f2b4f!important;}
+
+/* Contraste section Solutions : priorité dans la couche refonte (règles !important). */
+@layer refonte {
+  html body.v2.v2-medicine-page section#solutions,
+  html body.v2.v2-medicine-page section#solutions .v2-solution { background-color:#0f1636 !important; }
+  html body.v2.v2-medicine-page section#solutions :is(.v2-h2,.v2-intro,.v2-solutions-note,.v2-solution h3,.v2-solution p) { color:#ffffff !important; -webkit-text-fill-color:#ffffff !important; }
+  html body.v2.v2-medicine-page section#solutions .v2-eyebrow { color:#c6a477 !important; -webkit-text-fill-color:#c6a477 !important; }
+  html body.v2.v2-medicine-page section#solutions .v2-card-ico { stroke:#c6a477 !important; }
+}
+
+/* TPE-PME — palette identique aux secteurs validés, sans altérer le contenu. */
+@layer refonte {
+ body.v2-pme-restored #contenu > section:not(:first-child) {background:#fff!important;color:#1f2b4f!important;}
+ body.v2-pme-restored #contenu > section:nth-of-type(even) {background:#0f1636!important;color:#fff!important;}
+ body.v2-pme-restored #contenu > section:first-child {background:linear-gradient(90deg,#0f1636 0%,rgba(15,22,54,.83) 55%,rgba(15,22,54,.3) 100%),var(--hero-image) center/cover!important;color:#fff!important;}
+ body.v2-pme-restored #contenu > section:nth-of-type(even) > .container > :is(h1,h2,h3,p),
+ body.v2-pme-restored #contenu > section:nth-of-type(even) > .container > div > :is(h2,h3,p) {color:#fff!important;-webkit-text-fill-color:#fff!important;}
+ body.v2-pme-restored #contenu > section .eyebrow {color:#c6a477!important;}
+ body.v2-pme-restored #contenu > section:nth-of-type(even) :is(.card,.sector-card) {background:#fff!important;color:#1f2b4f!important;}
+ body.v2-pme-restored #contenu > section:nth-of-type(even) :is(.card,.sector-card) :is(h3,h4,p,li,summary) {color:#1f2b4f!important;-webkit-text-fill-color:#1f2b4f!important;}
+ body.v2-pme-restored #contenu > section.faq-section {background:#0f1636!important;}
+ body.v2-pme-restored #contenu > section.faq-section > .container > h2 {color:#fff!important;-webkit-text-fill-color:#fff!important;}
+ body.v2-pme-restored #contenu > section.faq-section .faq-accordion-item {background:#fff!important;color:#1f2b4f!important;}
+ body.v2-pme-restored #contenu > section.faq-section .faq-accordion-item :is(summary,.faq-answer,.faq-answer p) {color:#1f2b4f!important;-webkit-text-fill-color:#1f2b4f!important;}
+ body.v2-pme-restored #contenu > section.faq-section .faq-accordion-item summary::after {color:#c6a477!important;}
+ body.v2-pme-restored #contenu .pme-hero .hero-actions .btn.btn-ghost {background:#c6a477!important;background-image:none!important;border:1px solid #c6a477!important;color:#0f1636!important;-webkit-text-fill-color:#0f1636!important;box-shadow:none!important;}
+ body.v2-pme-restored #contenu .conversion-band .btn.btn-primary {background:#c6a477!important;border:1px solid #c6a477!important;color:#0f1636!important;-webkit-text-fill-color:#0f1636!important;box-shadow:none!important;}
+}
+
+/* TPE-PME : six systèmes — titres bleu nuit, pictogrammes champagne uniquement. */
+@layer refonte {
+ body.v2-pme-restored #contenu .section-aqua .sector-editorial-list .sector-editorial-chapter summary h3,
+ body.v2-pme-restored #contenu .section-aqua .sector-editorial-list .sector-editorial-chapter summary h3 span {
+   color:#0f1636!important;-webkit-text-fill-color:#0f1636!important;
+ }
+ body.v2-pme-restored #contenu .section-aqua .sector-editorial-list .sector-editorial-chapter summary .title-pictogram {
+   filter:brightness(0) saturate(100%) invert(71%) sepia(19%) saturate(573%) hue-rotate(355deg) brightness(91%) contrast(86%)!important;
+ }
+}
+
+/* FAQ TPE-PME : accordéon intégralement bleu nuit, typographie blanche. */
+@layer refonte {
+ body.v2.v2-pme-restored #contenu section.faq-section,
+ body.v2.v2-pme-restored #contenu section.faq-section .faq-accordion,
+ body.v2.v2-pme-restored #contenu section.faq-section .faq-accordion-item,
+ body.v2.v2-pme-restored #contenu section.faq-section .faq-accordion-item[open],
+ body.v2.v2-pme-restored #contenu section.faq-section .faq-accordion-item summary,
+ body.v2.v2-pme-restored #contenu section.faq-section .faq-answer {
+   background:#0f1636!important;background-image:none!important;
+ }
+ body.v2.v2-pme-restored #contenu section.faq-section :is(h2,summary,.faq-answer,.faq-answer p,.faq-accordion-item strong) {
+   color:#fff!important;-webkit-text-fill-color:#fff!important;
+ }
+ body.v2.v2-pme-restored #contenu section.faq-section .faq-accordion-item {
+   border:0!important;border-bottom:1px solid rgba(198,164,119,.35)!important;box-shadow:none!important;
+ }
+ body.v2.v2-pme-restored #contenu section.faq-section .faq-accordion-item summary::after {
+   color:#c6a477!important;-webkit-text-fill-color:#c6a477!important;
+ }
+}
+
+/* TPE-PME : bandeau final « Parlons de vos priorités » bleu nuit uniforme. */
+@layer refonte {
+ body.v2.v2-pme-restored #contenu > section.conversion-band {
+   background:#0f1636!important;background-image:none!important;color:#fff!important;
+ }
+ body.v2.v2-pme-restored #contenu > section.conversion-band :is(h2,p:not(.eyebrow),.conversion-note) {
+   color:#fff!important;-webkit-text-fill-color:#fff!important;
+ }
+ body.v2.v2-pme-restored #contenu > section.conversion-band .eyebrow {
+   color:#c6a477!important;-webkit-text-fill-color:#c6a477!important;
+ }
+ body.v2.v2-pme-restored #contenu > section.conversion-band .btn.btn-primary {
+   background:#c6a477!important;background-image:none!important;border-color:#c6a477!important;
+   color:#0f1636!important;-webkit-text-fill-color:#0f1636!important;
+ }
+}
+
+/* Accueil — « Croissance et performance » : pictogramme à gauche du titre dans chaque carte. */
+body.v2.v2-home-page .v2-home-growth .v2-solution .v2-lever-head {
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+}
+body.v2.v2-home-page .v2-home-growth .v2-solution .v2-lever-head .v2-card-ico { flex: 0 0 auto; }
