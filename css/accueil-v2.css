@@ -405,3 +405,22 @@ body.v2 { margin: 0; background: var(--white); color: var(--text); font-family: 
   html { scroll-behavior: auto; }
   .v2-sector, .v2-btn { transition: none; }
 }
+
+/* Navigation commune : répartir les quatre rubriques entre le logo
+   et les coordonnées, sans modifier le menu tablette/mobile. */
+@media (min-width: 1241px) {
+  .v2-header .v2-header-in { gap: 24px; }
+  .v2-header .v2-logo { flex-shrink: 0; }
+  .v2-header .v2-nav {
+    flex: 1;
+    min-width: 0;
+    margin-left: 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(max-content, 1fr)) auto auto;
+    column-gap: 12px;
+  }
+  .v2-header .v2-nav > :is(a:not(.v2-tel):not(.v2-btn), .v2-drop) {
+    justify-self: center;
+  }
+  .v2-header .v2-nav > :is(.v2-tel, .v2-btn) { margin-left: 0; }
+}
