@@ -2273,3 +2273,19 @@ body.v2.v2-home-page .v2-home-growth .v2-solution .v2-lever-head .v2-card-ico { 
     margin-bottom: 0;
   }
 }
+
+/* Pictogrammes champagne pour les trois profils de la section Pour qui. */
+body.v2.v2-institutes-page #pour-qui .v2-institute-audience-list li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+body.v2.v2-institutes-page #pour-qui .v2-institute-audience-list .audience-gold-icon {
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  color: #C6A477;
+}
+body.v2.v2-institutes-page #pour-qui .v2-institute-audience-list li span {
+  min-width: 0;
+}
