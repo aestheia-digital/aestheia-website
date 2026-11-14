@@ -365,12 +365,12 @@ body.v2.v2-spa-page #agents-ia .assistant-schema :is(.node, .agent-role, .tasks)
 }
 body.v2.v2-spa-page #agents-ia .assistant-schema .node.assistant,
 body.v2.v2-spa-page #agents-ia .assistant-schema .node.action {
-  background: #0f1636 !important;
+  background: #c6a477 !important;
   border-color: #c6a477 !important;
-  color: #ffffff !important;
+  color: #0f1636 !important;
 }
 body.v2.v2-spa-page #agents-ia .assistant-schema :is(.node.assistant, .node.action) .sub {
-  color: #ffffff !important;
+  color: #0f1636 !important;
 }
 body.v2.v2-spa-page #agents-ia .assistant-schema .node.validation {
   background: #ffffff !important;
@@ -452,14 +452,14 @@ body.v2.v2-spa-page #questions .v2-faq details[open] summary::after {
   }
   html[data-theme="light"] body.v2.v2-spa-page #agents-ia .assistant-schema .node.assistant,
   html[data-theme="light"] body.v2.v2-spa-page #agents-ia .assistant-schema .node.action {
-    background: #0f1636 !important;
+    background: #c6a477 !important;
     border-color: #c6a477 !important;
-    color: #ffffff !important;
+    color: #0f1636 !important;
   }
   html[data-theme="light"] body.v2.v2-spa-page #agents-ia .assistant-schema .node.assistant .sub,
   html[data-theme="light"] body.v2.v2-spa-page #agents-ia .assistant-schema .node.action .sub {
     background: transparent !important;
-    color: #ffffff !important;
+    color: #0f1636 !important;
   }
   html[data-theme="light"] body.v2.v2-spa-page #agents-ia .assistant-schema :is(.tasks, .task-grid) {
     background: #ffffff !important;
