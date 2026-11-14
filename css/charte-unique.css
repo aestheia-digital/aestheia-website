@@ -2247,7 +2247,7 @@ body.v2.v2-home-page .v2-home-growth .v2-solution .v2-lever-head .v2-card-ico { 
 /* Cabinet esthétique : indicateur explicite d'ouverture des cartes sur mobile. */
 @media (max-width: 700px) {
   body.v2.v2-medicine-page #systemes-cabinet .sector-card-accordion > summary {
-    display: flex;
+    display: flex !important;
     align-items: center;
     gap: 12px;
     min-width: 0;
