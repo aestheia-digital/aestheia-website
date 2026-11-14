@@ -193,3 +193,67 @@
     color:#c6a477 !important; -webkit-text-fill-color:#c6a477 !important;
   }
 }
+
+/* TPE-PME — dimensions, respiration et micro-interactions demandées. */
+@layer typography {
+  html body.v2.v2-pme-restored #contenu .section-aqua .sector-editorial-list {
+    align-items: stretch !important;
+  }
+  /* Les six cartes fermées partagent la hauteur de la plus haute, même
+     entre deux rangées. Une carte ouverte garde toute sa hauteur de lecture. */
+  html body.v2.v2-pme-restored #contenu .section-aqua .sector-editorial-list:not(:has(> details[open])) {
+    grid-auto-rows: 1fr !important;
+  }
+  html body.v2.v2-pme-restored #contenu .section-aqua .sector-editorial-list > details {
+    align-self: stretch !important;
+    height: 100% !important;
+    min-width: 0;
+  }
+  html body.v2.v2-pme-restored #contenu .section-aqua .sector-editorial-list > details:not([open]) > summary {
+    height: 100%;
+  }
+  html body.v2.v2-pme-restored #contenu p.pme-systems-scope {
+    margin-top: 24px !important;
+  }
+  html body.v2.v2-pme-restored #contenu .multi-agent-schema .multi-agent-caption {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    margin: 24px 0 0 !important;
+    max-width: none !important;
+    text-align: left !important;
+  }
+  html body.v2.v2-pme-restored #contenu .multi-agent-caption > .caption-pictogram {
+    filter: none !important;
+    width: 30px !important;
+    height: 30px !important;
+    flex: 0 0 30px !important;
+    margin: 0 !important;
+    object-fit: contain;
+  }
+  html body.v2.v2-pme-restored #contenu .multi-agent-caption > .caption-copy {
+    flex: 1;
+    min-width: 0;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    html body.v2.v2-pme-restored #contenu :is(.sector-editorial-chapter,.card,.related-resource-card,.assistant-schema .node) {
+      transition: transform .2s ease, box-shadow .2s ease !important;
+    }
+    @media (hover: hover) and (pointer: fine) {
+      html body.v2.v2-pme-restored #contenu :is(.sector-editorial-chapter,.card,.related-resource-card):hover {
+        transform: translateY(-4px) !important;
+        box-shadow: 0 8px 20px rgba(15,22,54,.1) !important;
+      }
+      html body.v2.v2-pme-restored #contenu .assistant-schema .node:hover {
+        transform: translateY(-3px) !important;
+        box-shadow: 0 6px 16px rgba(198,164,119,.14) !important;
+      }
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html body.v2.v2-pme-restored #contenu :is(.sector-editorial-chapter,.card,.related-resource-card,.assistant-schema .node) {
+      transition: none !important;
+      transform: none !important;
+    }
+  }
+}
