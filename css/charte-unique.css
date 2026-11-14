@@ -2202,3 +2202,11 @@ body.v2.v2-medicine-page #assistant-ia .medicine-feature-heading strong{color:#1
    color:#0f1636!important;-webkit-text-fill-color:#0f1636!important;
  }
 }
+
+/* Accueil — « Croissance et performance » : pictogramme à gauche du titre dans chaque carte. */
+body.v2.v2-home-page .v2-home-growth .v2-solution .v2-lever-head {
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+}
+body.v2.v2-home-page .v2-home-growth .v2-solution .v2-lever-head .v2-card-ico { flex: 0 0 auto; }
