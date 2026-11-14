@@ -201,6 +201,12 @@
   }
   /* Les six cartes fermées partagent la hauteur de la plus haute, même
      entre deux rangées. Une carte ouverte garde toute sa hauteur de lecture. */
+  /* Six systèmes : trois cartes par rangée sur ordinateur (3 + 3). */
+  @media (min-width: 1050px) {
+    html body.v2.v2-pme-restored #contenu .section-aqua .sector-editorial-list:has(> details:nth-child(6):last-child) {
+      grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    }
+  }
   html body.v2.v2-pme-restored #contenu .section-aqua .sector-editorial-list:not(:has(> details[open])) {
     grid-auto-rows: 1fr !important;
   }
