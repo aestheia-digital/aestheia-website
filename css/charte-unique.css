@@ -2289,3 +2289,25 @@ body.v2.v2-institutes-page #pour-qui .v2-institute-audience-list .audience-gold-
 body.v2.v2-institutes-page #pour-qui .v2-institute-audience-list li span {
   min-width: 0;
 }
+
+/* Correctif : neutraliser les styles SVG génériques du site dans cette liste. */
+body.v2.v2-institutes-page #pour-qui .v2-institute-audience-list li {
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+}
+body.v2.v2-institutes-page #pour-qui .v2-institute-audience-list li > svg.audience-gold-icon {
+  display: block !important;
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px !important;
+  min-height: 24px !important;
+  max-width: 24px !important;
+  max-height: 24px !important;
+  flex: 0 0 24px !important;
+  color: #C6A477 !important;
+  stroke: #C6A477 !important;
+  fill: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
