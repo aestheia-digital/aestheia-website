@@ -258,7 +258,7 @@
   }
 }
 
-/* Votre quotidien : liseré champagne glissant au bas de chaque carte. */
+/* Votre quotidien : liseré pleine largeur, reflet mobile au survol. */
 @layer typography {
   html body.v2.v2-pme-restored #contenu section:has(.pme-daily-title) .sector-editorial-chapter {
     position: relative !important;
@@ -267,19 +267,20 @@
   html body.v2.v2-pme-restored #contenu section:has(.pme-daily-title) .sector-editorial-chapter::after {
     content: "" !important;
     position: absolute;
-    inset: auto auto 0 0;
-    width: 35%;
+    inset: auto 0 0 0;
+    width: 100%;
     height: 3px;
-    background: #c6a477 !important;
+    background: #c6a477 linear-gradient(105deg, transparent 35%, #f2dfc1 50%, transparent 65%) no-repeat !important;
+    background-size: 40% 100% !important;
+    background-position: -70% 0 !important;
     pointer-events: none;
-    transform: translateX(0);
   }
   @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
     html body.v2.v2-pme-restored #contenu section:has(.pme-daily-title) .sector-editorial-chapter::after {
-      transition: transform .45s ease;
+      transition: background-position .6s ease;
     }
     html body.v2.v2-pme-restored #contenu section:has(.pme-daily-title) .sector-editorial-chapter:hover::after {
-      transform: translateX(185.714%);
+      background-position: 170% 0 !important;
     }
   }
 }
