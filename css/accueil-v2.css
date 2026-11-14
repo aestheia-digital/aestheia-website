@@ -424,3 +424,50 @@ body.v2 { margin: 0; background: var(--white); color: var(--text); font-family: 
   }
   .v2-header .v2-nav > :is(.v2-tel, .v2-btn) { margin-left: 0; }
 }
+
+
+/* Finitions mobiles partagées — footer compact et header proportionné. */
+@media (max-width: 720px) {
+  .v2-footer .v2-footer-top > div:nth-child(2) { display: none; }
+  .v2-footer .v2-footer-top {
+    gap: 22px;
+    padding-block: 30px 24px;
+  }
+  .v2-footer .v2-footer-tag { margin-top: 10px; }
+  .v2-footer .v2-footer-bottom { padding-block: 18px 22px; }
+
+  .v2-header .v2-header-in {
+    gap: clamp(5px, 1.6vw, 12px);
+    justify-content: space-between;
+    min-width: 0;
+  }
+  .v2-header .v2-header-in > .v2-logo {
+    font-size: clamp(22px, 6.4vw, 28px);
+    flex: 0 1 auto;
+    min-width: 0;
+    letter-spacing: -0.015em;
+  }
+  .v2-header .v2-tel--bar {
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
+    transform: translateY(2px);
+    font-size: clamp(11px, 3.45vw, 14px);
+    gap: 5px;
+    flex: 0 0 auto;
+  }
+  .v2-header .v2-tel--bar svg { width: 15px; height: 15px; }
+  .v2-header .v2-burger {
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    margin-left: 0;
+    padding: 11px 9px;
+  }
+  .v2-header .v2-burger span {
+    height: 2px;
+    border-radius: 1px;
+    background: #ffffff;
+    margin-block: 5px;
+  }
+}

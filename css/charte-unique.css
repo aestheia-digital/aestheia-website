@@ -365,12 +365,12 @@ body.v2.v2-spa-page #agents-ia .assistant-schema :is(.node, .agent-role, .tasks)
 }
 body.v2.v2-spa-page #agents-ia .assistant-schema .node.assistant,
 body.v2.v2-spa-page #agents-ia .assistant-schema .node.action {
-  background: #0f1636 !important;
+  background: #c6a477 !important;
   border-color: #c6a477 !important;
-  color: #ffffff !important;
+  color: #0f1636 !important;
 }
 body.v2.v2-spa-page #agents-ia .assistant-schema :is(.node.assistant, .node.action) .sub {
-  color: #ffffff !important;
+  color: #0f1636 !important;
 }
 body.v2.v2-spa-page #agents-ia .assistant-schema .node.validation {
   background: #ffffff !important;
@@ -452,14 +452,14 @@ body.v2.v2-spa-page #questions .v2-faq details[open] summary::after {
   }
   html[data-theme="light"] body.v2.v2-spa-page #agents-ia .assistant-schema .node.assistant,
   html[data-theme="light"] body.v2.v2-spa-page #agents-ia .assistant-schema .node.action {
-    background: #0f1636 !important;
+    background: #c6a477 !important;
     border-color: #c6a477 !important;
-    color: #ffffff !important;
+    color: #0f1636 !important;
   }
   html[data-theme="light"] body.v2.v2-spa-page #agents-ia .assistant-schema .node.assistant .sub,
   html[data-theme="light"] body.v2.v2-spa-page #agents-ia .assistant-schema .node.action .sub {
     background: transparent !important;
-    color: #ffffff !important;
+    color: #0f1636 !important;
   }
   html[data-theme="light"] body.v2.v2-spa-page #agents-ia .assistant-schema :is(.tasks, .task-grid) {
     background: #ffffff !important;
@@ -2210,3 +2210,104 @@ body.v2.v2-home-page .v2-home-growth .v2-solution .v2-lever-head {
   gap: 14px;
 }
 body.v2.v2-home-page .v2-home-growth .v2-solution .v2-lever-head .v2-card-ico { flex: 0 0 auto; }
+
+
+/* Spa hôtelier — première carte : rythme vertical fluide sur petits écrans.
+   Hauteur intrinsèque, sans valeur fixe ni modification des autres cartes. */
+@media (max-width: 767px) {
+  body.v2.v2-spa-page #systemes .v2-row--plain {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 22px;
+    padding: 26px 20px 28px;
+    min-height: 0;
+    height: auto;
+  }
+  body.v2.v2-spa-page #systemes .v2-row--plain h3 {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 0;
+    min-width: 0;
+  }
+  body.v2.v2-spa-page #systemes .v2-row--plain h3 .v2-card-ico {
+    flex: 0 0 34px;
+  }
+  body.v2.v2-spa-page #systemes .v2-row--plain p {
+    margin: 0;
+    min-width: 0;
+  }
+  body.v2.v2-spa-page #systemes .v2-row--plain p strong {
+    margin-bottom: 10px;
+  }
+}
+
+/* Cabinet esthétique : indicateur explicite d'ouverture des cartes sur mobile. */
+@media (max-width: 700px) {
+  body.v2.v2-medicine-page #systemes-cabinet .sector-card-accordion > summary {
+    display: flex !important;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+  }
+  body.v2.v2-medicine-page #systemes-cabinet .sector-card-accordion > summary > .sector-editorial-heading {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  body.v2.v2-medicine-page #systemes-cabinet .sector-card-accordion > summary::after {
+    content: "";
+    display: block;
+    flex: 0 0 9px;
+    width: 9px;
+    height: 9px;
+    border-right: 2px solid #c6a477;
+    border-bottom: 2px solid #c6a477;
+    transform: rotate(45deg);
+    transition: transform .2s ease;
+    margin: 0 4px 5px 0;
+  }
+  body.v2.v2-medicine-page #systemes-cabinet .sector-card-accordion[open] > summary::after {
+    transform: rotate(225deg);
+    margin-bottom: 0;
+  }
+}
+
+/* Pictogrammes champagne pour les trois profils de la section Pour qui. */
+body.v2.v2-institutes-page #pour-qui .v2-institute-audience-list li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+body.v2.v2-institutes-page #pour-qui .v2-institute-audience-list .audience-gold-icon {
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  color: #C6A477;
+}
+body.v2.v2-institutes-page #pour-qui .v2-institute-audience-list li span {
+  min-width: 0;
+}
+
+/* Correctif : neutraliser les styles SVG génériques du site dans cette liste. */
+body.v2.v2-institutes-page #pour-qui .v2-institute-audience-list li {
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+}
+body.v2.v2-institutes-page #pour-qui .v2-institute-audience-list li > svg.audience-gold-icon {
+  display: block !important;
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px !important;
+  min-height: 24px !important;
+  max-width: 24px !important;
+  max-height: 24px !important;
+  flex: 0 0 24px !important;
+  color: #C6A477 !important;
+  stroke: #C6A477 !important;
+  fill: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
