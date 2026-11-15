@@ -169,6 +169,10 @@
       }
     </script>
       <link rel="stylesheet" href="/css/charte-unique.css?v=20261113-charte">
+    <!-- Accueil « film de marque » : enrichissement progressif ; version douce (fondus seuls) si l'appareil demande des mouvements réduits. -->
+    <script>(function(d,w){try{if(!('IntersectionObserver' in w))return;var q=w.location.search,calm=w.matchMedia('(prefers-reduced-motion: reduce)').matches;try{if(/[?&]film=on/.test(q))w.sessionStorage.setItem('aestheia-film','on');if(/[?&]film=auto/.test(q))w.sessionStorage.setItem('aestheia-film','auto');if(w.sessionStorage.getItem('aestheia-film')==='on')calm=false}catch(e){}d.classList.add('film');if(calm)d.classList.add('film-calm');w.setTimeout(function(){if(w.__aestheiaFilm){d.classList.add('film-live')}else{d.classList.remove('film','film-calm')}},3000)}catch(e){}})(document.documentElement,window);</script>
+    <link rel="stylesheet" href="/css/accueil-film.css?v=20261115-film2">
+    <script src="/js/accueil-film.js?v=20261115-film2" defer></script>
   </head>
   <body class="v2 v2-home-page">
     <a class="v2-skip" href="#contenu">Aller au contenu</a>
