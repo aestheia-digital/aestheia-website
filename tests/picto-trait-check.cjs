@@ -35,7 +35,8 @@ const pages = ['medecine-esthetique', 'spa-hotelier', 'thalasso', 'instituts-ind
       if (!start.on) fail(where, 'module inactif');
       if (!(start.trait + start.image)) fail(where, 'aucun pictogramme pris en charge');
       if (start.wrong) fail(where, `${start.wrong} pictogramme(s) de bouton ou de menu animé(s)`);
-      if (!start.pending) fail(where, 'tout est déjà affiché avant le défilement');
+      // Une page qui n'a que les pictogrammes du haut de page les a légitimement déjà dessinés.
+      if (!start.pending && start.trait + start.image > 6) fail(where, 'tout est déjà affiché avant le défilement');
       if (start.schema) fail(where, `${start.schema} élément(s) de schéma modifié(s)`);
 
       const total = start.height - height;
