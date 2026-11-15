@@ -169,6 +169,10 @@
       }
     </script>
       <link rel="stylesheet" href="/css/charte-unique.css?v=20261113-charte">
+    <!-- Accueil « film de marque » : enrichissement progressif, désactivé si l'appareil demande des mouvements réduits. -->
+    <script>(function(d,w){try{if(!w.matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in w){d.classList.add('film');w.setTimeout(function(){if(w.__aestheiaFilm){d.classList.add('film-live')}else{d.classList.remove('film')}},3000)}}catch(e){}})(document.documentElement,window);</script>
+    <link rel="stylesheet" href="/css/accueil-film.css?v=20261115-film">
+    <script src="/js/accueil-film.js?v=20261115-film" defer></script>
   </head>
   <body class="v2 v2-home-page">
     <a class="v2-skip" href="#contenu">Aller au contenu</a>
