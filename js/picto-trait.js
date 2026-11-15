@@ -15,13 +15,20 @@
 
   // Pictogrammes au trait : hors boutons, liens, menus, chevrons d'accordéon et header photo.
   Array.prototype.forEach.call(document.querySelectorAll('main svg'), function (svg) {
-    if (svg.closest('a, button, summary, nav, .v2-hero, [class*="chevron"]')) return;
-    if (/chevron/.test(svg.getAttribute('class') || '')) return;
-    var style = getComputedStyle(svg);
-    var first = svg.querySelector(shapes);
-    if (!first) return;
-    var shapeStyle = getComputedStyle(first);
-    if (shapeStyle.fill !== 'none' || shapeStyle.stroke === 'none' || style.display === 'none') return;
+    if (svg.closest('a, button, summary, nav, figure, .v2-hero, [class*="chevron"], [class*="schema"], [class*="multi-agent"], [class*="diagram"], [class*="flow"]')) return;
+    if (/chevron|schema|diagram|flow/.test(svg.getAttribute('class') || '')) return;
+    // Uniquement de petits pictogrammes : jamais un schéma, une illustration ou un tracé animé.
+    var box = svg.getBoundingClientRect();
+    if (!box.width || box.width > 64 || box.height > 64) return;
+    if (svg.querySelector('marker, defs, animate, animateTransform, animateMotion, text, g, use')) return;
+    var list = svg.querySelectorAll(shapes);
+    if (!list.length) return;
+    var plain = Array.prototype.every.call(list, function (shape) {
+      var s = getComputedStyle(shape);
+      // Un trait déjà pointillé ou animé (flèches, liaisons) n'est pas touché.
+      return s.fill === 'none' && s.stroke !== 'none' && s.strokeDasharray === 'none' && s.animationName === 'none';
+    });
+    if (!plain) return;
     Array.prototype.forEach.call(svg.querySelectorAll(shapes), function (shape) { shape.setAttribute('pathLength', '1'); });
     svg.setAttribute('data-picto', 'trait');
     items.push(svg);
@@ -29,7 +36,7 @@
 
   // Pictogrammes en fichier image.
   Array.prototype.forEach.call(document.querySelectorAll('main img[src*="/assets/icons/"]'), function (img) {
-    if (img.closest('a, button, summary, nav, .v2-hero')) return;
+    if (img.closest('a, button, summary, nav, figure, .v2-hero, [class*="schema"], [class*="multi-agent"], [class*="diagram"], [class*="flow"]')) return; // jamais dans un schéma
     img.setAttribute('data-picto', 'image');
     items.push(img);
   });

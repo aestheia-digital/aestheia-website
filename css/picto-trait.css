@@ -5,7 +5,7 @@
    demande pas de mouvements réduits). Sans elle, les pictogrammes sont affichés tels quels. */
 
 /* Le temps que le script prenne la main (3 s maximum), pas de clignotement. */
-html.picto:not(.picto-live) main :is(.v2-benefits svg, svg.v2-card-ico, img[src*="/assets/icons/"]) {
+html.picto:not(.picto-live) main :is(.v2-benefits svg, .v2-lever-head > svg.v2-card-ico) {
   opacity: 0;
 }
 

@@ -27,6 +27,8 @@ const pages = ['medecine-esthetique', 'spa-hotelier', 'thalasso', 'instituts-ind
         image: document.querySelectorAll('[data-picto="image"]').length,
         // Rien d'interactif ne doit être concerné.
         wrong: document.querySelectorAll('a [data-picto], button [data-picto], summary [data-picto], header [data-picto], footer [data-picto]').length,
+        // Les schémas (agents IA, assistant) ne doivent jamais être modifiés : ni traits, ni pointillés, ni images.
+        schema: [...document.querySelectorAll('main figure, main [class*="schema"], main [class*="multi-agent"]')].reduce((n, f) => n + f.querySelectorAll('[data-picto], [pathLength="1"]').length, 0),
         pending: [...document.querySelectorAll('[data-picto]')].filter(e => !e.classList.contains('is-drawn')).length,
         height: document.documentElement.scrollHeight
       }));
@@ -34,6 +36,7 @@ const pages = ['medecine-esthetique', 'spa-hotelier', 'thalasso', 'instituts-ind
       if (!(start.trait + start.image)) fail(where, 'aucun pictogramme pris en charge');
       if (start.wrong) fail(where, `${start.wrong} pictogramme(s) de bouton ou de menu animé(s)`);
       if (!start.pending) fail(where, 'tout est déjà affiché avant le défilement');
+      if (start.schema) fail(where, `${start.schema} élément(s) de schéma modifié(s)`);
 
       const total = start.height - height;
       let overflow = 0, shot = false;

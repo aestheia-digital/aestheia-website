@@ -2213,6 +2213,15 @@ body.v2.v2-home-page .v2-home-growth .v2-solution .v2-lever-head {
 }
 body.v2.v2-home-page .v2-home-growth .v2-solution .v2-lever-head .v2-card-ico { flex: 0 0 auto; }
 
+/* Médecine esthétique — « Solutions » : pictogramme à gauche du titre, comme sur les autres pages.
+   Valable sur ordinateur, tablette et smartphone. */
+body.v2.v2-medicine-page #solutions .v2-solution .v2-lever-head {
+  flex-direction: row;
+  align-items: center;
+  gap: 14px;
+}
+body.v2.v2-medicine-page #solutions .v2-solution .v2-lever-head .v2-card-ico { flex: 0 0 auto; }
+
 
 /* Spa hôtelier — première carte : rythme vertical fluide sur petits écrans.
    Hauteur intrinsèque, sans valeur fixe ni modification des autres cartes. */
