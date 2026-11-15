@@ -2348,3 +2348,31 @@ body.v2.v2-institutes-page #pour-qui .v2-institute-audience-list li > svg.audien
 @media (min-width: 1024px) {
   body.v2.v2-institutes-page #pour-qui .v2-institute-audience-list li > svg.audience-gold-icon.audience-gold-icon { --audience-icon: 42px; }
 }
+
+/* TPE / PME — bandeau final centré, comme sur les autres pages secteurs :
+   titre, texte, bouton et mention alignés au milieu, sur tous les formats. */
+body.v2.v2-pme-restored #contenu > section.conversion-band .conversion-inner {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 26px !important;
+  text-align: center !important;
+}
+body.v2.v2-pme-restored #contenu > section.conversion-band .conversion-inner > div {
+  width: 100%;
+  max-width: 760px;
+  margin-inline: auto;
+  text-align: center !important;
+}
+body.v2.v2-pme-restored #contenu > section.conversion-band .conversion-inner :is(h2, p) {
+  margin-inline: auto !important;
+  text-align: center !important;
+}
+body.v2.v2-pme-restored #contenu > section.conversion-band .conversion-action {
+  display: flex !important;
+  flex: 0 0 auto !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 14px;
+}

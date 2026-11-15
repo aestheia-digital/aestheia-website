@@ -1,11 +1,11 @@
 /* Bandeau final des pages secteurs : la photo du header revient en filigrane derrière
    les deux boutons, comme sur l'accueil. Ordinateur et tablette paysage uniquement.
    Le calque est ajouté par js/cta-fond.js ; sans lui, le bandeau reste celui d'origine. */
-.v2-cta.has-cta-fond {
+.has-cta-fond {
   position: relative;
   overflow: hidden;
 }
-.v2-cta.has-cta-fond > .v2-wrap {
+.has-cta-fond > :is(.v2-wrap, .container) {
   position: relative;
   z-index: 1;
 }
