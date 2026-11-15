@@ -2255,6 +2255,15 @@ body.v2.v2-medicine-page #solutions .v2-solution .v2-lever-head .v2-card-ico { f
   }
 }
 
+/* Spa hôtelier — première carte (non dépliable) : mêmes marges intérieures que les cartes
+   dépliables sur tablette et ordinateur. La règle générale de la page met le padding des
+   cartes à zéro, ce qui l'écrasait ; le cas mobile est déjà traité juste au-dessus. */
+@media (min-width: 768px) {
+  body.v2.v2-spa-page #systemes .v2-row--plain {
+    padding: 22px 26px;
+  }
+}
+
 /* Cabinet esthétique : indicateur explicite d'ouverture des cartes sur mobile. */
 @media (max-width: 700px) {
   body.v2.v2-medicine-page #systemes-cabinet .sector-card-accordion > summary {
@@ -2347,4 +2356,32 @@ body.v2.v2-institutes-page #pour-qui .v2-institute-audience-list li > svg.audien
 }
 @media (min-width: 1024px) {
   body.v2.v2-institutes-page #pour-qui .v2-institute-audience-list li > svg.audience-gold-icon.audience-gold-icon { --audience-icon: 42px; }
+}
+
+/* TPE / PME — bandeau final centré, comme sur les autres pages secteurs :
+   titre, texte, bouton et mention alignés au milieu, sur tous les formats. */
+body.v2.v2-pme-restored #contenu > section.conversion-band .conversion-inner {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 26px !important;
+  text-align: center !important;
+}
+body.v2.v2-pme-restored #contenu > section.conversion-band .conversion-inner > div {
+  width: 100%;
+  max-width: 760px;
+  margin-inline: auto;
+  text-align: center !important;
+}
+body.v2.v2-pme-restored #contenu > section.conversion-band .conversion-inner :is(h2, p) {
+  margin-inline: auto !important;
+  text-align: center !important;
+}
+body.v2.v2-pme-restored #contenu > section.conversion-band .conversion-action {
+  display: flex !important;
+  flex: 0 0 auto !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 14px;
 }

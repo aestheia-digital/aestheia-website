@@ -6,8 +6,8 @@
   'use strict';
   var wide = window.matchMedia('(min-width: 1024px)');
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-  var cta = document.querySelector('.v2-cta');
-  var heroImg = document.querySelector('.v2-hero .v2-hero-media img');
+  var cta = document.querySelector('.v2-cta, main > .conversion-band');
+  var heroImg = document.querySelector('.v2-hero .v2-hero-media img, main .home-hero-media img');
   if (!cta || !heroImg || document.body.classList.contains('v2-home-page')) return;
 
   var plate = null;
