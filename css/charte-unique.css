@@ -2255,6 +2255,15 @@ body.v2.v2-medicine-page #solutions .v2-solution .v2-lever-head .v2-card-ico { f
   }
 }
 
+/* Spa hôtelier — première carte (non dépliable) : mêmes marges intérieures que les cartes
+   dépliables sur tablette et ordinateur. La règle générale de la page met le padding des
+   cartes à zéro, ce qui l'écrasait ; le cas mobile est déjà traité juste au-dessus. */
+@media (min-width: 768px) {
+  body.v2.v2-spa-page #systemes .v2-row--plain {
+    padding: 22px 26px;
+  }
+}
+
 /* Cabinet esthétique : indicateur explicite d'ouverture des cartes sur mobile. */
 @media (max-width: 700px) {
   body.v2.v2-medicine-page #systemes-cabinet .sector-card-accordion > summary {
