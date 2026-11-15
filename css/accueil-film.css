@@ -274,16 +274,45 @@ html.film .film-outro::after {
 /* ------------------------------------------------------------------ */
 /* 6. Garde-fous                                                       */
 /* ------------------------------------------------------------------ */
-@media (prefers-reduced-motion: reduce) {
-  /* Ceinture et bretelles : même si la classe .film était posée, rien ne bouge. */
-  html.film [data-film][data-film] { opacity: 1; translate: none; scale: none; transition: none; }
-  html.film [data-film="unveil"] > img { clip-path: none; }
-  html.film body.v2-home-page .v2-hero-text > * { animation: none; }
-  html.film :is(.film-light, .film-glow, .film-outro) { display: none; }
-  html.film body.v2.v2-home-page .v2-home-sectors .sector-card[data-film]::before,
-  html.film body.v2.v2-home-page .v2-home-sectors .sector-card[data-film-shot="water"]::after { display: none; }
-  html.film body.v2.v2-home-page .v2-home-sectors .sector-card[data-film] > img { filter: none; }
+/* Version douce (.film-calm) : l'appareil demande des mouvements réduits.
+   Plus aucun déplacement, zoom, parallaxe ni flou : uniquement des fondus lents. */
+html.film-calm [data-film][data-film] {
+  translate: 0 0;
+  scale: 1;
+  transition: opacity 1.2s ease var(--film-d, 0s);
 }
+html.film-calm [data-film="unveil"][data-film] { opacity: 0; }
+html.film-calm [data-film="unveil"].is-in[data-film] { opacity: 1; }
+html.film-calm [data-film="unveil"] > img { clip-path: none; transition: none; }
+html.film-calm body.v2-home-page .v2-hero-text { translate: none; opacity: 1; }
+html.film-calm body.v2-home-page .v2-hero-text > * { animation-name: film-fade-in; animation-duration: 1.4s; }
+@keyframes film-fade-in { from { opacity: 0; } to { opacity: 1; } }
+html.film-calm body.v2.v2-home-page .v2-home-sectors .sector-card[data-film]::before {
+  transition: opacity 1.4s ease calc(var(--film-d, 0s) + .15s);
+}
+html.film-calm body.v2.v2-home-page .v2-home-sectors .sector-card[data-film].is-in::before {
+  transform: none;
+  opacity: 0;
+}
+html.film.film-calm.film-calm body.v2.v2-home-page .v2-home-sectors .sector-card[data-film][data-film] > img { filter: none; transition: none; }
+html.film.film-calm.film-calm body.v2.v2-home-page .v2-home-sectors .sector-card[data-film-shot="water"]::after { display: none; }
+html.film-calm body.v2-home-page :is(.v2-home-controls, .v2-home-founder, .v2-cta)::before { transition: none; transform: scaleX(1); }
+
+/* Pastille de diagnostic (uniquement avec ?film=diag dans l'adresse). */
+.film-diag {
+  position: fixed;
+  z-index: 9999;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  padding: 12px 14px;
+  background: #0F1636;
+  border: 1px solid #C6A477;
+  color: #FFFFFF;
+  font: 14px/1.45 system-ui, sans-serif;
+}
+.film-diag a { color: #C6A477; }
+
 @media print {
   html.film [data-film][data-film] { opacity: 1 !important; translate: none !important; scale: none !important; }
   html.film [data-film="unveil"] > img { clip-path: none !important; }

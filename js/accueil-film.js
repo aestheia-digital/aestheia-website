@@ -9,11 +9,9 @@
   if (!root.classList.contains('film') || !body || !body.classList.contains('v2-home-page')) return;
 
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-  if (reduced.matches || !('IntersectionObserver' in window)) {
-    root.classList.remove('film');
-    return;
-  }
-  window.__aestheiaFilm = true;
+  // Version douce : fondus seuls, aucune caméra. Posée en tête de page selon le réglage de l'appareil.
+  var calm = root.classList.contains('film-calm');
+  window.__aestheiaFilm = calm ? 'calm' : 'full';
 
   var phone = window.matchMedia('(max-width: 600px)');
   var tablet = window.matchMedia('(max-width: 1120px)');
@@ -37,7 +35,7 @@
 
   /* ---------- Plans ajoutés (décoratifs, masqués aux lecteurs d'écran) ---------- */
   var header = $('.v2-header');
-  var progress = header ? layer('film-progress', header) : null;
+  var progress = header && !calm ? layer('film-progress', header) : null;
 
   var hero = $('.v2-hero');
   var heroMedia = hero && $('.v2-hero-media', hero);
@@ -45,18 +43,18 @@
   var heroText = hero && $('.v2-hero-text', hero);
   var heroIn = hero && $('.v2-hero-in', hero);
   var veil = null;
-  if (hero && heroIn) {
+  if (hero && heroIn && !calm) {
     layer('film-light', hero, heroIn);
     veil = layer('film-veil', hero, heroIn);
   }
 
-  $$('.v2-home-controls, .v2-home-founder').forEach(function (section) {
+  $$(calm ? '.film-none' : '.v2-home-controls, .v2-home-founder').forEach(function (section) {
     layer('film-glow', section, section.firstChild);
   });
 
   var cta = $('.v2-cta');
   var outroPlate = null;
-  if (cta && heroImg) {
+  if (cta && heroImg && !calm) {
     var outro = layer('film-outro', cta, cta.firstChild);
     outroPlate = document.createElement('i');
     outro.appendChild(outroPlate);
@@ -65,7 +63,7 @@
   /* ---------- Caméras : un mouvement par photographie ---------- */
   var shots = [];
   function shot(element, kind, target) {
-    if (element) shots.push({ element: element, target: target || element, kind: kind, current: null, near: false });
+    if (element && !calm) shots.push({ element: element, target: target || element, kind: kind, current: null, near: false });
   }
   var kinds = ['precision', 'spa', 'water', 'care'];
   $$('.v2-home-sectors .sector-card').forEach(function (card, index) {
@@ -120,7 +118,7 @@
   // Pictogrammes au trait : ils se dessinent avec leur carte.
   reveals.forEach(function (element) {
     $$('svg', element).forEach(function (svg) {
-      if (svg.closest('a, button') || getComputedStyle(svg).fill !== 'none') return;
+      if (calm || svg.closest('a, button') || getComputedStyle(svg).fill !== 'none') return;
       svg.setAttribute('data-film-draw', '');
       $$('path, circle, rect, polyline, line', svg).forEach(function (shape) { shape.setAttribute('pathLength', '1'); });
     });
@@ -204,7 +202,7 @@
       });
     }
 
-    if (hero && heroImg) {
+    if (hero && heroImg && !calm) {
       var heroEnd = hero.offsetTop + hero.offsetHeight;
       var target = clamp(scrollY / Math.max(1, heroEnd));
       if (heroCurrent === null) heroCurrent = target;
@@ -250,19 +248,20 @@
   document.addEventListener('toggle', schedule, true); // ouverture d'une FAQ : la page change de hauteur
   if (heroImg && !heroImg.complete) heroImg.addEventListener('load', schedule);
 
-  // Si la personne active « réduire les animations » en cours de visite : tout s'arrête.
-  function calm() {
-    if (!reduced.matches) return;
-    root.classList.remove('film');
-    $$('[style*="transform"]').forEach(function (element) {
-      if (element === heroImg || element.closest('.sector-card, .v2-about, .film-outro') || element.classList.contains('film-glow')) {
-        element.style.transform = '';
-      }
-    });
-    if (frame) { window.cancelAnimationFrame(frame); frame = 0; }
-    window.removeEventListener('scroll', schedule);
+  // Réglage « réduire les animations » modifié en cours de visite : la page repart dans le bon mode.
+  if (reduced.addEventListener) reduced.addEventListener('change', function () { window.location.reload(); });
+
+  // Diagnostic à la demande : ajouter ?film=diag à l'adresse.
+  if (/[?&]film=diag/.test(window.location.search)) {
+    var forced = false;
+    try { forced = window.sessionStorage.getItem('aestheia-film') === 'on'; } catch (error) { /* navigation privée */ }
+    var diag = document.createElement('div');
+    diag.className = 'film-diag';
+    diag.innerHTML = calm
+      ? '<strong>Film : version douce.</strong> Cet appareil demande des mouvements réduits (réglage d’accessibilité ou économie d’énergie) : seuls les fondus sont joués. <a href="?film=on">Voir la version complète quand même</a>'
+      : '<strong>Film : version complète active.</strong> ' + (forced ? 'Forcée pour ce test. <a href="?film=auto">Revenir au réglage de l’appareil</a>' : 'Aucun réglage de mouvements réduits détecté sur cet appareil.');
+    body.appendChild(diag);
   }
-  if (reduced.addEventListener) reduced.addEventListener('change', calm);
 
   schedule();
 })();

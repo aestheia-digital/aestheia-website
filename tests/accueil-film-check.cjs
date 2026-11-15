@@ -53,7 +53,7 @@ async function settle(page, ms) { await page.waitForTimeout(ms); }
       await page.evaluate(v => window.scrollTo({ top: v, behavior: 'instant' }), wanted);
       await settle(page, 260);
       const got = await page.evaluate(() => ({ y: Math.round(scrollY), sw: document.documentElement.scrollWidth, cw: document.documentElement.clientWidth }));
-      if (Math.abs(got.y - wanted) > 2) { stuck++; console.log('    retenu', wanted, got.y, total); }
+      if (Math.abs(got.y - wanted) > 2) stuck++;
       if (got.sw > got.cw + 1) overflow = Math.max(overflow, got.sw - got.cw);
       if (marks.has(i)) {
         await settle(page, 900);
@@ -113,18 +113,29 @@ async function settle(page, ms) { await page.waitForTimeout(ms); }
     await context.close();
   }
 
-  // Mouvements réduits : la page doit rester strictement celle d'origine.
-  const calm = await browser.newContext({ viewport: { width: 390, height: 844 }, reducedMotion: 'reduce' });
-  const calmPage = await calm.newPage();
-  await calmPage.goto(url, { waitUntil: 'load' });
-  await settle(calmPage, 600);
-  const calmState = await calmPage.evaluate(() => ({
-    film: document.documentElement.classList.contains('film'),
-    layers: document.querySelectorAll('.film-light, .film-veil, .film-glow, .film-outro, .film-progress, [data-film]').length
-  }));
-  if (calmState.film || calmState.layers) fail('mouvements-réduits', JSON.stringify(calmState));
-  console.log('mouvements réduits — page d\'origine, aucun plan ajouté');
-  await calm.close();
+  // Mouvements réduits : version douce — fondus seuls, aucune caméra, aucun plan ajouté, aucun déplacement.
+  for (const [label, query, wantCalm] of [['mouvements réduits', '', true], ['mouvements réduits + ?film=on', '?film=on', false]]) {
+    const calm = await browser.newContext({ viewport: { width: 390, height: 844 }, reducedMotion: 'reduce' });
+    const calmPage = await calm.newPage();
+    await calmPage.goto(url + query, { waitUntil: 'load' });
+    await settle(calmPage, 2200);
+    await calmPage.evaluate(() => window.scrollTo({ top: 2600, behavior: 'instant' }));
+    await settle(calmPage, 400);
+    const st = await calmPage.evaluate(() => ({
+      calm: document.documentElement.classList.contains('film-calm'),
+      mode: window.__aestheiaFilm,
+      layers: document.querySelectorAll('.film-light, .film-veil, .film-glow, .film-outro, .film-progress').length,
+      moved: [...document.querySelectorAll('[data-film], .v2-hero-media img, .sector-card img')].filter(e => {
+        const s = getComputedStyle(e);
+        return s.transform !== 'none' || (s.translate !== 'none' && s.translate !== '0px') || (s.scale !== 'none' && s.scale !== '1') || s.filter !== 'none';
+      }).length,
+      tagged: document.querySelectorAll('[data-film]').length
+    }));
+    if (wantCalm && (!st.calm || st.mode !== 'calm' || st.layers || st.moved || !st.tagged)) fail(label, JSON.stringify(st));
+    if (!wantCalm && (st.calm || st.mode !== 'full' || !st.layers)) fail(label, JSON.stringify(st));
+    console.log(`${label} — ${wantCalm ? 'version douce : fondus seuls, aucun déplacement' : 'version complète forcée pour le test'}`);
+    await calm.close();
+  }
 
   // Sans JavaScript : tout le contenu reste visible.
   const nojs = await browser.newContext({ viewport: { width: 390, height: 844 }, javaScriptEnabled: false });
