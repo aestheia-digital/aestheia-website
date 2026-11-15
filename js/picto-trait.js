@@ -19,7 +19,7 @@
     if (/chevron|schema|diagram|flow/.test(svg.getAttribute('class') || '')) return;
     // Uniquement de petits pictogrammes : jamais un schéma, une illustration ou un tracé animé.
     var box = svg.getBoundingClientRect();
-    if (!box.width || box.width > 64 || box.height > 64) return;
+    if (!box.width || box.width > 130 || box.height > 64) return;
     if (svg.querySelector('marker, defs, animate, animateTransform, animateMotion, text, g, use')) return;
     var list = svg.querySelectorAll(shapes);
     if (!list.length) return;

@@ -2322,3 +2322,29 @@ body.v2.v2-institutes-page #pour-qui .v2-institute-audience-list li > svg.audien
   margin: 0 !important;
   padding: 0 !important;
 }
+/* Pictogrammes « Pour qui ? » plus lisibles : 32 px sur mobile et tablette, 42 px sur ordinateur.
+   Le troisième profil est un triptyque regard / visage / ongle, plus large. */
+body.v2.v2-institutes-page #pour-qui .v2-institute-audience-list li > svg.audience-gold-icon.audience-gold-icon {
+  --audience-icon: 32px;
+  width: var(--audience-icon) !important;
+  height: var(--audience-icon) !important;
+  min-width: var(--audience-icon) !important;
+  min-height: var(--audience-icon) !important;
+  max-width: var(--audience-icon) !important;
+  max-height: var(--audience-icon) !important;
+  flex: 0 0 var(--audience-icon) !important;
+  stroke-width: 1.3;
+}
+body.v2.v2-institutes-page #pour-qui .v2-institute-audience-list li > svg.audience-gold-icon.audience-gold-icon--trio {
+  --audience-trio: calc(var(--audience-icon) * .82);
+  height: var(--audience-trio) !important;
+  min-height: var(--audience-trio) !important;
+  max-height: var(--audience-trio) !important;
+  width: calc(var(--audience-trio) * 2.75) !important;
+  min-width: calc(var(--audience-trio) * 2.75) !important;
+  max-width: calc(var(--audience-trio) * 2.75) !important;
+  flex: 0 0 calc(var(--audience-trio) * 2.75) !important;
+}
+@media (min-width: 1024px) {
+  body.v2.v2-institutes-page #pour-qui .v2-institute-audience-list li > svg.audience-gold-icon.audience-gold-icon { --audience-icon: 42px; }
+}
