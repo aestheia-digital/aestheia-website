@@ -1601,8 +1601,10 @@ body.v2.v2-thalasso-page .v2-thalasso-challenge-grid svg {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-body.v2.v2-thalasso-page :is(.v2-thalasso-section-head,.v2-cta) { text-align: left; }
-body.v2.v2-thalasso-page .v2-cta-actions { justify-content: flex-start; }
+body.v2.v2-thalasso-page .v2-thalasso-section-head { text-align: left; }
+/* Bandeau final : centré, comme sur les autres pages secteurs. */
+body.v2.v2-thalasso-page .v2-cta { text-align: center; }
+body.v2.v2-thalasso-page .v2-cta-actions { justify-content: center; }
 body.v2.v2-thalasso-page .v2-thalasso-benefit {
   display: block;
   min-height: 0;
