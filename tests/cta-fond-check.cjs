@@ -4,7 +4,7 @@ const { chromium } = require('playwright');
 const base = (process.argv[2] || 'http://127.0.0.1:8765').replace(/\/$/, '');
 const pages = ['medecine-esthetique', 'spa-hotelier', 'thalasso', 'instituts-independantes', 'automatisation-pme'];
 const BAND = '.v2-cta, main > .conversion-band';
-const formats = [[390, 844, false], [768, 1024, false], [1024, 768, true], [1366, 768, true], [1920, 1080, true]];
+const formats = [[360, 740, true], [390, 844, true], [430, 932, true], [768, 1024, true], [1024, 768, true], [1366, 768, true], [1920, 1080, true]];
 
 (async () => {
   const browser = await chromium.launch();

@@ -1,5 +1,5 @@
 /* Bandeau final des pages secteurs : la photo du header revient en filigrane derrière
-   les deux boutons, comme sur l'accueil. Ordinateur et tablette paysage uniquement.
+   les deux boutons, comme sur l'accueil. Tous formats : cadrée à droite sur ordinateur, plein cadre sur mobile.
    Le calque est ajouté par js/cta-fond.js ; sans lui, le bandeau reste celui d'origine. */
 .has-cta-fond {
   position: relative;
@@ -36,6 +36,21 @@
     linear-gradient(90deg, #0F1636 38%, rgba(15, 22, 54, .78) 62%, rgba(15, 22, 54, .30) 100%),
     linear-gradient(180deg, #0F1636 0%, rgba(15, 22, 54, 0) 28%, rgba(15, 22, 54, 0) 72%, #0F1636 100%);
 }
-@media (max-width: 1023px), print {
+/* Smartphone et tablette portrait : le bandeau est étroit et haut, la photo verticale le
+   remplit sans être étirée. Elle passe en plein cadre, sous un voile plus dense au centre,
+   là où se trouvent le texte et les boutons (même principe que sur l'accueil). */
+@media (max-width: 1023px) {
+  .cta-fond > i {
+    inset: -4%;
+    opacity: .55;
+    transform-origin: 50% 50%;
+  }
+  .cta-fond::after {
+    background:
+      radial-gradient(75% 62% at 50% 50%, rgba(15, 22, 54, .84), rgba(15, 22, 54, .62) 70%, rgba(15, 22, 54, .34) 100%),
+      linear-gradient(180deg, #0F1636 0%, rgba(15, 22, 54, 0) 16%, rgba(15, 22, 54, 0) 84%, #0F1636 100%);
+  }
+}
+@media print {
   .cta-fond { display: none; }
 }

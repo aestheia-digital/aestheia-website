@@ -1,5 +1,5 @@
 /* Bandeau final des pages secteurs : reprend la photo du header en filigrane.
-   Ordinateur et tablette paysage (≥ 1024 px). La photo est déjà en cache : aucun
+   Tous formats. La photo est déjà en cache : aucun
    téléchargement supplémentaire. Léger travelling arrière au défilement, supprimé si
    l'appareil demande des mouvements réduits. L'accueil a son propre plan final. */
 (function () {
@@ -15,7 +15,7 @@
   var near = false;
 
   function build() {
-    if (plate || !wide.matches) return;
+    if (plate) return;
     var holder = document.createElement('span');
     holder.className = 'cta-fond';
     holder.setAttribute('aria-hidden', 'true');
@@ -56,5 +56,9 @@
   }
 
   build();
-  if (wide.addEventListener) wide.addEventListener('change', build);
+  // Le cadrage du header change entre mobile et ordinateur : on le reprend à chaque bascule.
+  if (wide.addEventListener) wide.addEventListener('change', function () {
+    if (plate) plate.style.backgroundPosition = getComputedStyle(heroImg).objectPosition;
+    schedule();
+  });
 })();
