@@ -1,0 +1,45 @@
+/* Pictogrammes des pages secteurs : ils apparaissent au fil du défilement, comme sur l'accueil.
+   - pictogrammes au trait (SVG intégrés) : le trait se dessine ;
+   - pictogrammes en fichier image : fondu avec une légère montée.
+   Actif seulement quand <html> porte .picto (posée en tête de page si l'appareil ne
+   demande pas de mouvements réduits). Sans elle, les pictogrammes sont affichés tels quels. */
+
+/* Le temps que le script prenne la main (3 s maximum), pas de clignotement. */
+html.picto:not(.picto-live) main :is(.v2-benefits svg, .v2-lever-head > svg.v2-card-ico) {
+  opacity: 0;
+}
+
+html.picto [data-picto] {
+  opacity: 0;
+  transition: opacity .7s ease var(--picto-d, 0s);
+}
+html.picto [data-picto].is-drawn { opacity: 1; }
+
+@supports (translate: 0px) {
+  html.picto [data-picto="image"] {
+    translate: 0 10px;
+    scale: .9;
+    transition:
+      opacity .8s ease var(--picto-d, 0s),
+      translate .9s cubic-bezier(.2, .7, .2, 1) var(--picto-d, 0s),
+      scale .9s cubic-bezier(.2, .7, .2, 1) var(--picto-d, 0s);
+  }
+  html.picto [data-picto="image"].is-drawn { translate: 0 0; scale: 1; }
+}
+
+html.picto svg[data-picto="trait"] :is(path, circle, rect, polyline, line, ellipse, polygon) {
+  stroke-dasharray: 1 1.5;
+  stroke-dashoffset: 1.05;
+  transition: stroke-dashoffset 1.5s ease calc(var(--picto-d, 0s) + .1s);
+}
+html.picto svg[data-picto="trait"].is-drawn :is(path, circle, rect, polyline, line, ellipse, polygon) {
+  stroke-dashoffset: 0;
+}
+
+@media print {
+  html.picto [data-picto] { opacity: 1 !important; translate: none !important; scale: none !important; }
+  html.picto svg[data-picto="trait"] :is(path, circle, rect, polyline, line, ellipse, polygon) {
+    stroke-dasharray: none !important;
+    stroke-dashoffset: 0 !important;
+  }
+}

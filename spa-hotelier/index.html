@@ -66,6 +66,12 @@
       }
     </script>
       <link rel="stylesheet" href="/css/charte-unique.css?v=20261114-spa-schema">
+    <link rel="stylesheet" href="/css/cta-fond.css?v=20261115">
+    <script src="/js/cta-fond.js?v=20261115" defer></script>
+    <!-- Pictogrammes : apparition au défilement, inactive si l'appareil demande des mouvements réduits. -->
+    <script>(function(d,w){try{if('IntersectionObserver' in w&&!w.matchMedia('(prefers-reduced-motion: reduce)').matches){d.classList.add('picto');w.setTimeout(function(){if(!w.__aestheiaPicto)d.classList.remove('picto')},3000)}}catch(e){}})(document.documentElement,window);</script>
+    <link rel="stylesheet" href="/css/picto-trait.css?v=20261115">
+    <script src="/js/picto-trait.js?v=20261115" defer></script>
   </head>
   <body class="v2 v2-sector-page v2-spa-page">
     <a class="v2-skip" href="#contenu">Aller au contenu</a>
