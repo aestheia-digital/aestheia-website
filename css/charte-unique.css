@@ -2385,3 +2385,17 @@ body.v2.v2-pme-restored #contenu > section.conversion-band .conversion-action {
   align-items: center !important;
   gap: 14px;
 }
+
+/* Thalasso : hauteur uniforme des accordéons ouverts par rangée sur ordinateur.
+   La grille calcule la hauteur d'après la carte la plus longue, sans tronquer le contenu. */
+@media (min-width: 1024px) {
+  body.v2.v2-thalasso-page .v2-thalasso-systems-grid,
+  body.v2.v2-thalasso-page .v2-thalasso-agents-grid {
+    align-items: stretch;
+  }
+  body.v2.v2-thalasso-page .v2-thalasso-systems-grid > details,
+  body.v2.v2-thalasso-page .v2-thalasso-agents-grid > details {
+    height: 100%;
+    box-sizing: border-box;
+  }
+}
