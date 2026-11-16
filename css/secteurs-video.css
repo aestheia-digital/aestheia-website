@@ -1,0 +1,43 @@
+/* Accueil, cartes secteurs animées : voir js/secteurs-video.js.
+   La vidéo est dessinée sur un canvas posé exactement sur la photo. Tant que la vidéo n'est pas prête,
+   et sans JavaScript, la photo d'origine reste affichée. */
+body.v2.v2-home-page .v2-home-sectors .sector-card[data-video] {
+  position: relative;
+}
+body.v2.v2-home-page .v2-home-sectors .sector-card canvas.sc-vid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  display: block;
+  width: 100%;
+  height: auto;
+  visibility: hidden;
+  pointer-events: none;
+  background: #1B1F2A;
+}
+body.v2.v2-home-page .v2-home-sectors .sector-card.sc-live canvas.sc-vid {
+  visibility: visible;
+}
+/* Source de lecture : invisible, hors flux. */
+body.v2.v2-home-page .v2-home-sectors .sector-card video.sc-src {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  opacity: 0;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  body.v2.v2-home-page .v2-home-sectors .sector-card canvas.sc-vid,
+  body.v2.v2-home-page .v2-home-sectors .sector-card video.sc-src {
+    display: none;
+  }
+}
+@media print {
+  body.v2.v2-home-page .v2-home-sectors .sector-card canvas.sc-vid,
+  body.v2.v2-home-page .v2-home-sectors .sector-card video.sc-src {
+    display: none;
+  }
+}
