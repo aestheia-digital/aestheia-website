@@ -1,21 +1,21 @@
 /* Bandeau final des pages secteurs : reprend la photo du header en filigrane.
-   Ordinateur et tablette paysage (≥ 1024 px). La photo est déjà en cache : aucun
+   Tous formats, mobile compris. La photo est déjà en cache : aucun
    téléchargement supplémentaire. Léger travelling arrière au défilement, supprimé si
    l'appareil demande des mouvements réduits. L'accueil a son propre plan final. */
 (function () {
   'use strict';
-  var wide = window.matchMedia('(min-width: 1024px)');
+  
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   var cta = document.querySelector('.v2-cta, main > .conversion-band');
   var heroImg = document.querySelector('.v2-hero .v2-hero-media img, main .home-hero-media img');
-  if (!cta || !heroImg || document.body.classList.contains('v2-home-page')) return;
+  if (!cta || !heroImg) return;
 
   var plate = null;
   var frame = 0;
   var near = false;
 
   function build() {
-    if (plate || !wide.matches) return;
+    if (plate) return;
     var holder = document.createElement('span');
     holder.className = 'cta-fond';
     holder.setAttribute('aria-hidden', 'true');
@@ -56,5 +56,5 @@
   }
 
   build();
-  if (wide.addEventListener) wide.addEventListener('change', build);
+
 })();
